@@ -22,6 +22,18 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 
 **Inventory as of 2026-08-25:** 114 `SKILL.md` across 14 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, coding 7, cursor-cloud 5, first-party 4, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
 
+### SK017 added to the analyzer, 2026-08-25
+
+The `coding` pack landed with `ui-engineering` claiming `**/*.tsx` and `**/*.jsx` — the only bare project-wide path claims in the library. Its nearest neighbour `react-best-practices` scopes carefully (`components/**/*.tsx`, `src/components/**/*.tsx`, `src/ui/**/*.tsx`, …), so `ui-engineering` claimed a strict superset of that skill's entire territory and would have fired on every `.tsx` in a Next.js repo — API routes, lib files and tests included.
+
+**The analyzer did not catch it, and that was a genuine gap rather than a tuning question.** `SK009` flags a path pattern naming *another pack's* token; `SK010` flags one *rule regex* containing another. A pattern that is simply maximally broad names nobody and is not a rule, so neither detector had anything to test. The skill already taught subsumption as a concept — it just never inspected the field where it shows up structurally.
+
+`SK017` closes that. A pattern is flagged only when all three hold: it has **zero literal path segments**, it targets a file extension, and **another skill claims that same extension with literal segments**. That third condition is what keeps it quiet on legitimate breadth — `skill-library-audit` itself claims `**/SKILL.md` because auditing every skill file is precisely its job, and since no other skill scopes `.md`, it is correctly not reported. Verified both directions: SK017 fired on both `ui-engineering` patterns before the fix and stayed silent on `skill-library-audit` in the same run.
+
+`ui-engineering` was rescoped to `**/components/**`, `**/ui/**/*.{tsx,jsx}`, `**/app/**/*.{tsx,jsx}` — preserving its intent (component and page UI) while no longer claiming every React file in the tree. Findings returned to 17 with SK017 at zero.
+
+Worth stating plainly, since it is the second time it has happened: **the description-level scope boundary was already correct.** `ui-engineering` explicitly handed React perf to `react-best-practices`, shadcn CLI to `shadcn`, and RSC to `nextjs`. Path patterns are structural and outrank prose — a boundary in the description does not constrain a glob that contradicts it.
+
 ### Projects pack — `nyx`, 2026-08-25
 
 `skills/projects/` holds **project reference material rather than capability skills** — content the library carries so it loads and backs up alongside everything else, without pretending to teach a transferable skill. `nyx` is a character bible (appearance, physique, tattoo map, personality, voice, wardrobe, scene variants, image-generation prompt templates) for a recurring original character.

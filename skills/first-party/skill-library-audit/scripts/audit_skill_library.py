@@ -2765,6 +2765,94 @@ def detect_priority_inversion(lib):
     return out
 
 
+def _path_pattern_parts(pat):
+    """Split a glob into (literal segments, trailing extension) for subsumption analysis.
+
+    A literal segment is one carrying real path information — not `*`, `**`, or a bare
+    `*.ext` wildcard. `components/**/*.tsx` yields (["components"], ".tsx");
+    `**/*.tsx` yields ([], ".tsx"). The count of literal segments is the whole signal:
+    zero means the pattern is anchored nowhere and matches that extension repo-wide.
+    """
+    segs = [seg for seg in pat.split("/") if seg]
+    literals, ext = [], None
+    for seg in segs:
+        if seg in ("**", "*"):
+            continue
+        m = re.fullmatch(r"\*(\.[A-Za-z0-9]+)", seg)
+        if m:
+            ext = m.group(1)
+            continue
+        if "*" in seg or "?" in seg:
+            continue
+        literals.append(seg)
+        if "." in seg and seg.rsplit(".", 1)[-1].isalnum() and not ext:
+            ext = "." + seg.rsplit(".", 1)[-1]
+    return literals, ext
+
+
+def detect_path_subsumption(lib):
+    """SK017 - HEURISTIC. Path-level shadowing between skills.
+
+    SK009 catches a skill claiming ANOTHER PACK'S NAMED token. SK010 catches one rule
+    regex containing another. Neither catches the third shape: a pathPattern that is
+    simply maximally broad. `**/*.tsx` names nobody, so no ownership check fires -- yet
+    it claims a strict superset of every scoped `components/**/*.tsx` in the library.
+
+    The test is deliberately narrow to stay quiet on legitimate breadth. A pattern is
+    flagged only when ALL of:
+      1. it has ZERO literal path segments (anchored nowhere), and
+      2. it targets a file extension, and
+      3. ANOTHER skill claims the SAME extension WITH literal segments -- i.e. a real
+         rival that scoped itself while this one did not.
+
+    Condition 3 is what keeps a genuinely repo-wide skill silent: `skill-library-audit`
+    claims `**/SKILL.md` because auditing every skill file IS its job, and no other skill
+    scopes `.md` that way, so it is not reported. Breadth alone is not a defect; breadth
+    that swallows a neighbour's scoped territory is.
+    """
+    out = []
+    universal = []   # (skill, pattern, keypath, ext)
+    scoped = {}      # ext -> [(skill, pattern)]
+    for s in lib.skills:
+        for field, keypath, value in s.acquisition_patterns():
+            if field != "pathPatterns":
+                continue
+            literals, ext = _path_pattern_parts(value)
+            if not ext:
+                continue
+            if literals:
+                scoped.setdefault(ext, []).append((s, value))
+            else:
+                universal.append((s, value, keypath, ext))
+
+    for s, pat, keypath, ext in universal:
+        rivals = [(r, rp) for r, rp in scoped.get(ext, []) if r.key != s.key]
+        if not rivals:
+            continue
+        rival_names = sorted({r.key for r, _ in rivals})
+        sample = "; ".join("`%s` claims `%s`" % (r.key, rp) for r, rp in rivals[:4])
+        if len(rivals) > 4:
+            sample += "; ...and %d more" % (len(rivals) - 4)
+        out.append(Finding(
+            "SK017", "medium",
+            "Path shadowing: `%s` claims `%s`, a superset of %d scoped rival(s)"
+            % (s.key, pat, len(rival_names)),
+            "`%s` has no literal path segment, so it matches every `%s` file in the "
+            "repository. %d other skill(s) claim the same extension but scoped themselves "
+            "to real directories: %s. Every file those skills were written for is also "
+            "claimed by this pattern, so both fire and the specific one has no way to win "
+            "-- routing has no longest-prefix rule. A description-level scope boundary "
+            "does not fix this: pathPatterns are structural, and this one contradicts it. "
+            "FIX: mirror the rivals' scoping (`components/**/%s`, `src/components/**/%s`, "
+            "...) rather than claiming the extension outright."
+            % (pat, ext, len(rival_names), sample, "*" + ext, "*" + ext),
+            s.path, s.doc.line_for(("metadata", "pathPatterns")) or s.doc.line_for(("pathPatterns",)),
+            keypath, s.key, "heuristic", None,
+            {"pattern": pat, "extension": ext, "scoped_rivals": rival_names},
+        ))
+    return out
+
+
 DETECTORS = [
     detect_frontmatter,
     detect_duplicate_names,
@@ -2781,6 +2869,7 @@ DETECTORS = [
     detect_vendor_steering,
     detect_prose_dangling,
     detect_priority_inversion,
+    detect_path_subsumption,
 ]
 
 CODE_TITLES = {
@@ -2800,6 +2889,7 @@ CODE_TITLES = {
     "SK014": "Dangling prose skill reference",
     "SK015": "Unscoped skill",
     "SK016": "Priority inversion",
+    "SK017": "Path-pattern shadowing",
 }
 
 EXACT_CODES = {"SK001", "SK002", "SK004", "SK005", "SK006", "SK007", "SK013"}

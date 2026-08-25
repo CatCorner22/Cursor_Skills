@@ -4,10 +4,11 @@ description: "Modern UI implementation: component composition, design tokens, Ta
 metadata:
   priority: 6
   pathPatterns:
-    - '**/*.tsx'
-    - '**/*.jsx'
     - '**/components/**'
+    - '**/ui/**/*.tsx'
+    - '**/ui/**/*.jsx'
     - '**/app/**/*.tsx'
+    - '**/app/**/*.jsx'
   importPatterns:
     - 'react'
     - '@radix-ui/'
