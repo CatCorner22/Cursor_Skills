@@ -70,6 +70,13 @@
     }
 ,
     {
+      "name": "projects",
+      "source": "./plugins/projects",
+      "skills": "skills",
+      "description": "Skill pack projects from the Cursor_Skills snapshot"
+    }
+,
+    {
       "name": "prompt-optimizer",
       "source": "./plugins/prompt-optimizer",
       "skills": "skills",

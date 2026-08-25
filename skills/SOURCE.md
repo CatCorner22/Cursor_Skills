@@ -18,8 +18,19 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Pydantic AI | `skills/pydantic-ai/` | https://github.com/pydantic/pydantic-ai — shipped inside the `pydantic_ai_slim` PyPI wheel at `pydantic_ai/.agents/skills/` | `bfa8e9187b86aad7ec583665ab2743fadea458b1` (tag `v2.34.0`) | wheel sha256 `933acdd8139674df53e8453c1ccc39b08d6b1a80bf238d212bd6fed1d023c95d` |
 | LangChain (curated 12 of 22) | `skills/langchain/` | https://github.com/langchain-ai/langchain-skills (`config/skills/`) | `7f00812b2b8b3022f766a223db579dd381a23813` | n/a |
 | Coding (authored here, 7) | `skills/coding/` | **Not vendored** — deliverable-first engineering craft pack | n/a | n/a |
+| Projects (authored here, 1) | `skills/projects/` | **Not vendored** — project reference material, not capability skills. `nyx` is a character bible carried here so it loads and backs up with the library. | n/a | n/a |
 
-**Inventory as of 2026-08-25:** 113 `SKILL.md` across 13 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, cursor-cloud 5, first-party 4, coding 7, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1.
+**Inventory as of 2026-08-25:** 114 `SKILL.md` across 14 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, coding 7, cursor-cloud 5, first-party 4, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
+
+### Projects pack — `nyx`, 2026-08-25
+
+`skills/projects/` holds **project reference material rather than capability skills** — content the library carries so it loads and backs up alongside everything else, without pretending to teach a transferable skill. `nyx` is a character bible (appearance, physique, tattoo map, personality, voice, wardrobe, scene variants, image-generation prompt templates) for a recurring original character.
+
+Moved from `docs/nyx.md` + `assets/nyx-*.png`. Three things made that the right shape:
+
+- **Self-contained.** `scripts/load-all.sh` copies each skill directory wholesale (`tar -C "$skill_dir"`), so the five reference PNGs had to live *inside* the skill dir to travel into `~/.cursor/skills/nyx/`. They moved to `skills/projects/nyx/assets/` and the body's links were rewritten from `../assets/` to `assets/`; all five verified to resolve. Note this adds ~12 MB that `load-all.sh` now copies on every run.
+- **One canonical copy.** `docs/nyx.md` was replaced with a pointer rather than left as a second copy. Two copies of the same content is the config-drift class this file documents four separate instances of — edits land in one, the other goes silently stale.
+- **Deliberately tight trigger.** A character bible with a loose description would inject itself into unrelated sessions. It carries `minScore: 7`, `allOf` pairs that all require the literal `nyx` (`[nyx, character]`, `[nyx, scene]`, `[nyx, prompt]`, `[nyx, tattoo]`), a `pathPatterns` claim limited to its own directory, and an explicit scope boundary stating it is project reference material that must not fire on unrelated character, art, or UI work. Verified: the analyzer reports **17 findings, unchanged from before the pack, with zero mentioning `nyx`.**
 
 ### LangChain pack, 2026-08-25
 
