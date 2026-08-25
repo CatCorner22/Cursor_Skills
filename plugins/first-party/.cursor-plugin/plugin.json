@@ -1,0 +1,6 @@
+{
+  "name": "first-party",
+  "version": "1.0.0-snapshot",
+  "description": "Skill pack first-party from the Cursor_Skills snapshot",
+  "skills": "skills"
+}

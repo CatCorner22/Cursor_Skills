@@ -1,0 +1,6 @@
+{
+  "name": "langchain",
+  "version": "1.0.0-snapshot",
+  "description": "Skill pack langchain from the Cursor_Skills snapshot",
+  "skills": "skills"
+}
