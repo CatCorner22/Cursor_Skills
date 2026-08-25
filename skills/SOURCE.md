@@ -11,6 +11,7 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Adobe App Builder | `skills/adobe/` | https://github.com/adobe/skills (`plugins/app-builder`) | `253f56901e058800ccb97ffd5bf1e3329d5f2e00` | `310a33933970fc5f1e1bc6abc0037542` |
 | Supabase | `skills/supabase/` | https://github.com/supabase/agent-skills (via `supabase-community/cursor-plugin`) | `e5f7a7cfd697765848ffd6a4505f3c02e1ee17ee` | n/a |
 | Cursor Team Kit (curated) | `skills/cursor-team-kit/` | https://github.com/cursor/plugins (`cursor-team-kit/skills/`) | `bdf7aa355337897f167153e05069aca505dae17c` | n/a |
+| First-party (authored here) | `skills/first-party/` | **Not vendored** — written in this repo | n/a | n/a |
 
 Added 2026-08-25 after a gap analysis against the official Cursor Marketplace: `vercel-storage` documents Vercel Postgres/KV as sunset with no replacement guidance, and the pack had no error-tracking, database, or general PR/git-workflow skill at all. Supabase was picked over Neon per user request (their actual DB provider). Cursor Team Kit is curated, not vendored whole — see "What was excluded" below for the 10 skills left out of its 18.
 
@@ -20,6 +21,19 @@ Added 2026-08-25 after a gap analysis against the official Cursor Marketplace: `
 - Vercel plugin-author `.claude/skills/` (benchmark/release internals, not user-facing).
 - Removed 2026-08-25: `skills/vercel/vercel-agent/` — pure product/pricing reference with no procedural content (no CLI, no code, no workflow steps); its one useful fact ("Vercel Agent: AI code reviews and production investigations. Public beta.") already lived in `knowledge-update/SKILL.md`, so nothing was lost.
 - From `cursor-team-kit`'s 18 skills, only 8 directly on-topic for "GitHub PR/workflow" were vendored (`new-branch-and-pr`, `make-pr-easy-to-review`, `get-pr-comments`, `pr-review-canvas`, `fix-merge-conflicts`, `fix-ci`, `loop-on-ci`, `review-and-ship`). Left out as out-of-scope general team-productivity skills, not because of any quality issue: `control-cli`, `control-ui`, `verify-this`, `weekly-review`, `what-did-i-get-done`, `deslop`, `thermo-nuclear-code-quality-review`, `workflow-from-chats`, `run-smoke-tests`, `check-compiler-errors`. Also excluded: the `agents/` (ci-watcher, thermo-nuclear-code-quality-review subagents) and `rules/` components of the source plugin — this repo's convention (per the exclusions above) is to snapshot `skills/` only.
+
+## First-party pack (`skills/first-party/`)
+
+Unlike every other pack, this one has no upstream and no pinned commit — it is authored in this repo, so it carries no vendor-drift risk and no obligation to stay byte-identical to anything.
+
+**`proactive-agency`** — an always-on execution posture: do the work rather than describe it. It is delivered via `metadata.sessionStart: true` + `priority: 10`, the same mechanism `vercel/knowledge-update` uses, which means it is *injected* rather than trigger-matched. That choice is deliberate: this repo's documented dominant defect class is over-triggering and cross-pack trigger collision, and a session-start skill adds **zero** trigger surface. Its `pathPatterns`/`bashPatterns`/`importPatterns` are explicitly empty for the same reason.
+
+Design notes worth preserving if this file is ever edited:
+
+- The load-bearing content is the five-step gate at the top. Everything below it is a branch of that gate; deleting the gate guts the skill.
+- The **confirm-first table is deliberately narrow** and paired — each row names both the action needing confirmation and its permitted near-twin (e.g. *deploy to production* vs *preview deploys*; *destructive DB ops* vs *writing and locally applying migrations*). Widening this table is the main way to break the skill: every extra row is a pre-authorized excuse to hand work back to the user, which is exactly what it exists to prevent. The catch-all reversibility test (`git checkout` / `git revert` / delete a file / local rollback ⇒ just do it) is what keeps unlisted cases defaulting to action.
+- Clarifying questions are explicitly *unlimited* — the user's request was to minimize handoffs, not questions. The Legitimate/Illegitimate table encodes that split; do not "tighten" it into a general discouragement of asking.
+- It was drafted three ways (rule-system, anti-pattern catalog, decision-procedure) and scored by three judges — one scoring specifically for whether lines are self-detectable mid-response rather than exhortation, one for whether the safety boundary could be abused as a laziness loophole, one for context density. It is injected into every session, so any future edit should hold the same bar: no line that a model would nominally agree with but not act on.
 
 ## Cross-pack trigger deconfliction (2026-08-25)
 
