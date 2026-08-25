@@ -17,8 +17,9 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Prompt Optimizer | `skills/prompt-optimizer/` | https://github.com/getsentry/skills (`skills/prompt-optimizer/`) | `c2f99a5b04b4cd992ec3022d7c2c3e23e938d241` | n/a |
 | Pydantic AI | `skills/pydantic-ai/` | https://github.com/pydantic/pydantic-ai — shipped inside the `pydantic_ai_slim` PyPI wheel at `pydantic_ai/.agents/skills/` | `bfa8e9187b86aad7ec583665ab2743fadea458b1` (tag `v2.34.0`) | wheel sha256 `933acdd8139674df53e8453c1ccc39b08d6b1a80bf238d212bd6fed1d023c95d` |
 | LangChain (curated 12 of 22) | `skills/langchain/` | https://github.com/langchain-ai/langchain-skills (`config/skills/`) | `7f00812b2b8b3022f766a223db579dd381a23813` | n/a |
+| Coding (authored here, 7) | `skills/coding/` | **Not vendored** — deliverable-first engineering craft pack | n/a | n/a |
 
-**Inventory as of 2026-08-25:** 106 `SKILL.md` across 12 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, cursor-cloud 5, first-party 4, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1. All 106 `name:` values are unique; all 11 `overlay.yaml` files (every one of them inside `vercel/`) parse and are object-equal to their `SKILL.md` frontmatter. Every pinned commit above was re-resolved against its upstream with `git ls-remote` on 2026-08-25.
+**Inventory as of 2026-08-25:** 113 `SKILL.md` across 13 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, cursor-cloud 5, first-party 4, coding 7, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1.
 
 ### LangChain pack, 2026-08-25
 
