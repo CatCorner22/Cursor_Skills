@@ -429,7 +429,7 @@ aio app dev
 Test extensions without deploying by loading them in the AEM surface with a URL parameter:
 
 ```
-https://experience.adobe.com/?ext=https://localhost:9080
+https://experience.adobe.com/?devMode=true&ext=https://localhost:9080
 ```
 
 Or use the Extension Manager at:

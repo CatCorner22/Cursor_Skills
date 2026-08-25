@@ -108,8 +108,6 @@ validate:
     pattern: 'from\s+[''"](express)[''""]|require\s*\(\s*[''"](express)[''""\)]'
     message: 'Express.js detected in a Vercel project. Vercel Functions use the Web Request/Response API — Express middleware, req/res, and app.listen() do not work in serverless.'
     severity: recommended
-    upgradeToSkill: vercel-functions
-    upgradeWhy: 'Replace Express with Next.js route handlers (export async function GET/POST) or Vercel Functions using the Web Request/Response API.'
     skipIfFileContains: 'export\s+(async\s+)?function\s+(GET|POST|PUT|PATCH|DELETE)|from\s+[''""](next/server|@vercel/functions)[''""]'
 retrieval:
   aliases:
@@ -159,11 +157,6 @@ chainTo:
     message: 'Polling loop in serverless function detected — loading Workflow SDK for durable, crash-safe execution with pause/resume.'
     skipIfFileContains: "use workflow|use step|from\\s+['\"]workflow['\"]"
   -
-    pattern: "from\\s+['\"]express['\"]|require\\s*\\(\\s*['\"]express['\"]"
-    targetSkill: vercel-functions
-    message: 'Express.js detected — loading Vercel Functions guidance for Web Request/Response API route handlers that replace Express middleware and routing.'
-    skipIfFileContains: "export\\s+(async\\s+)?function\\s+(GET|POST|PUT|PATCH|DELETE)"
-  -
     pattern: 'from\s+[''""](lru-cache|node-cache|memory-cache)[''""]|new\s+(LRUCache|NodeCache|Map)\(\s*\).*cache'
     targetSkill: runtime-cache
     message: 'In-process memory cache in serverless function — loading Runtime Cache guidance for region-aware caching that persists across invocations.'
@@ -186,7 +179,7 @@ You are an expert in Vercel Functions — the compute layer of the Vercel platfo
 - Full Node.js runtime, all npm packages available
 - Default for Next.js API routes, Server Actions, Server Components
 - Cold starts: 800ms–2.5s (with DB connections)
-- Max duration: 10s (Hobby), 300s (Pro default), 800s (Fluid Compute Pro/Enterprise)
+- Max duration: 300s default on all plans with Fluid Compute; up to 800s on Pro/Enterprise (see Timeout Limits below)
 
 ```ts
 // app/api/hello/route.ts

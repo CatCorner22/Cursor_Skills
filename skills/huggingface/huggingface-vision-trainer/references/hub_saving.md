@@ -19,6 +19,8 @@
 
 ---
 
+> **Note on `hf_jobs(...)` examples below:** `hf_jobs()` is an MCP tool that is **not available in this snapshot** (see `SKILL.md`) — do not invent or import it. Use `hf jobs uv run ...` via the `hf` CLI, or `HfApi().run_uv_job()`, instead; translate the `hf_jobs("uv", {...})` calls below accordingly.
+
 **CRITICAL:** Training environments are ephemeral. ALL results are lost when a job completes unless pushed to the Hub.
 
 ## Why Hub Push is Required
@@ -254,7 +256,7 @@ trainer.push_to_hub()
 
 ## Authentication Methods
 
-For a complete guide on token types, `$HF_TOKEN` automatic replacement, `secrets` vs `env` differences, and security best practices, see the `hugging-face-jobs` skill → *Token Usage Guide*.
+For a complete guide on token types, `$HF_TOKEN` automatic replacement, `secrets` vs `env` differences, and security best practices, see the `hf-cli` skill (Jobs infrastructure: token authentication, hardware flavors, timeout, secrets, scheduled jobs).
 
 **Recommended:** Always pass tokens via `secrets` (encrypted server-side):
 
@@ -371,6 +373,7 @@ api.create_repo(
 If training completes but push fails, push manually:
 
 ```python
+import os
 from transformers import AutoModelForObjectDetection, AutoImageProcessor
 
 # Load from local checkpoint
@@ -378,8 +381,9 @@ model = AutoModelForObjectDetection.from_pretrained("./output_dir")
 image_processor = AutoImageProcessor.from_pretrained("./output_dir")
 
 # Push to Hub
-model.push_to_hub("username/model-name", token="hf_abc123...")
-image_processor.push_to_hub("username/model-name", token="hf_abc123...")
+hf_token = os.environ.get("HF_TOKEN")
+model.push_to_hub("username/model-name", token=hf_token)
+image_processor.push_to_hub("username/model-name", token=hf_token)
 ```
 
 **Note:** Only possible if job hasn't completed (files still exist).

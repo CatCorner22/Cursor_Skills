@@ -11,13 +11,10 @@ metadata:
     - 'src/lib/workflow/**'
     - 'lib/workflow.*'
     - 'src/lib/workflow.*'
-    - 'workflow.*'
-    - '*workflow*'
   importPatterns:
     - '@vercel/workflow'
     - 'workflow'
     - '@workflow/*'
-    - '*workflow*'
   bashPatterns:
     - '\bnpm\s+(install|i|add)\s+[^\n]*@vercel/workflow\b'
     - '\bpnpm\s+(install|i|add)\s+[^\n]*@vercel/workflow\b'
@@ -292,44 +289,20 @@ metadata:
       - [workflow, run]
       - [run, logs]
     anyOf:
-      - "long-running"
-      - "long running"
-      - "multi-step"
-      - "multi step"
-      - "pipeline"
-      - "orchestration"
-      - "step-by-step"
-      - "step by step"
-      - "each piece"
-      - "each step"
-      - "each phase"
-      - "each stage"
-      - "phase"
-      - "phases"
-      - "stage"
-      - "stages"
-      - "durable"
-      - "reliable"
-      - "fault-tolerant"
-      - "retry"
-      - "reconnect"
-      - "survive"
-      - "persist"
-      - "approval"
-      - "chain"
-      - "sequential"
-      - "trigger"
-      - "webhook"
-      - "escalation"
-      - "state machine"
-      - "orchestrate"
-      - "orchestration"
+      - "use workflow"
+      - "use step"
+      - "durable execution"
+      - "durable workflow"
+      - "vercel workflow"
+      - "workflow sdk"
+      - "@vercel/workflow"
+      - "@workflow/"
     noneOf:
       - "github actions"
       - ".github/workflows"
       - "ci workflow"
       - "aws step functions"
-    minScore: 4
+    minScore: 8
 validate:
   -
     pattern: experimental_createWorkflow
@@ -408,8 +381,8 @@ chainTo:
     skipIfFileContains: 'gateway\(|@ai-sdk/gateway|VERCEL_OIDC'
   -
     pattern: 'setTimeout\s*\(|setInterval\s*\('
-    targetSkill: vercel-functions
-    message: 'Timer-based delay in workflow code — use sleep() from "workflow" instead of setTimeout/setInterval. Loading Vercel Functions guidance.'
+    targetSkill: workflow
+    message: 'Timer-based delay in workflow code — use sleep() from "workflow" instead of setTimeout/setInterval.'
     skipIfFileContains: 'from\s+[''"]workflow[''"].*sleep|sleep\s*\('
 retrieval:
   aliases:

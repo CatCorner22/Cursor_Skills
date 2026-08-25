@@ -17,8 +17,8 @@ Run through this checklist before merging CI/CD workflow changes.
 
 ## Secrets Configuration
 
-- [ ] All 14 secrets configured for Stage workspace (`*_STAGE` suffix)
-- [ ] All 14 secrets configured for Production workspace (`*_PROD` suffix) if production deploy is set up
+- [ ] All required secrets configured for Stage workspace (`*_STAGE` suffix) — verify the count against the current workflow/manifest, do not assume a fixed number
+- [ ] All required secrets configured for Production workspace (`*_PROD` suffix) if production deploy is set up
 - [ ] Secrets are stored as **repository** secrets (NOT environment secrets)
 - [ ] `I/O Management API` is added to each workspace in Developer Console
 - [ ] OAuth S2S credential exists in each workspace

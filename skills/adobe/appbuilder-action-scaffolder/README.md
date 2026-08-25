@@ -79,13 +79,13 @@ The skill follows a 6-step workflow (detailed in `references/playbook.md`):
 ### Validate manifest before deploy
 
 ```bash
-python3 skills/_shared/scripts/validate_manifest_structure.py path/to/app.config.yaml
+python3 skills/adobe/_shared/scripts/validate_manifest_structure.py path/to/app.config.yaml
 ```
 
 ### Generate an execution plan
 
 ```bash
-python3 skills/appbuilder-action-scaffolder/scripts/accelerator.py \
+python3 skills/adobe/appbuilder-action-scaffolder/scripts/accelerator.py \
   --ticket JIRA-123 --workspace Stage --action my-action --project my-project
 ```
 

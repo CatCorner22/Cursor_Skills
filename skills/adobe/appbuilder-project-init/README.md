@@ -56,13 +56,13 @@ aio console workspace api add \
 ### Initialize the local app with a template
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh init "@adobe/generator-app-excshell" ./my-project
+skills/adobe/appbuilder-project-init/scripts/init.sh init "@adobe/generator-app-excshell" ./my-project
 ```
 
 To wire init directly to a Console org/project (so `aio app deploy` lands in the right namespace without a follow-up `aio app use`):
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh init \
+skills/adobe/appbuilder-project-init/scripts/init.sh init \
   "@adobe/generator-app-excshell" ./my-project \
   --org <orgId> --project my-project
 ```
@@ -72,20 +72,20 @@ skills/appbuilder-project-init/scripts/init.sh init \
 ### Initialize a bare project
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh init-bare ./my-project
+skills/adobe/appbuilder-project-init/scripts/init.sh init-bare ./my-project
 ```
 
 ### Add an action to an existing project
 
 ```bash
 cd ./my-project
-skills/appbuilder-project-init/scripts/init.sh add-action "my-action"
+skills/adobe/appbuilder-project-init/scripts/init.sh add-action "my-action"
 ```
 
 ### Add web assets to an existing project
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh add-web-assets
+skills/adobe/appbuilder-project-init/scripts/init.sh add-web-assets
 ```
 
 All `init.sh` commands output a single JSON line with `success`, `path`, and `output` (or `error`) fields. Always check `success` before proceeding.

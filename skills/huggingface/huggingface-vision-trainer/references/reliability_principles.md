@@ -13,6 +13,8 @@
 
 These principles are derived from real production failures and successful fixes. Following them prevents common failure modes and ensures reliable job execution.
 
+> **Note:** `hf_jobs()`, `dataset_search()`, and `hub_repo_details()` below refer to MCP tools that are not available in this snapshot (see `SKILL.md`) — do not invent or import them. Use the CLI/Python-API equivalents shown alongside each example instead: `hf jobs uv run` (or `HfApi().run_uv_job()`) for job submission, `hf datasets list --search ...` / `HfApi().list_datasets(search=...)` for search, and `HfApi().dataset_info(...)` / `HfApi().model_info(...)` for repo details.
+
 ## Principle 1: Always Verify Before Use
 
 **Rule:** Never assume repos, datasets, or resources exist. Verify with tools first.
@@ -29,31 +31,33 @@ These principles are derived from real production failures and successful fixes.
 **Before submitting ANY job:**
 
 ```python
+from huggingface_hub import HfApi
+api = HfApi()
+
 # Verify dataset exists
-dataset_search({"query": "dataset-name", "author": "author-name", "limit": 5})
-hub_repo_details(["author/dataset-name"], repo_type="dataset")
+list(api.list_datasets(search="dataset-name", author="author-name", limit=5))
+api.dataset_info("author/dataset-name")
 
 # Verify model exists
-hub_repo_details(["org/model-name"], repo_type="model")
+api.model_info("org/model-name")
 
 # Check script/file paths (for URL-based scripts)
 # Verify before using: https://github.com/user/repo/blob/main/script.py
 ```
 
+Equivalent from the CLI: `hf datasets list --search "dataset-name" --author "author-name"` and `hf models list --search "model-name"`.
+
 **Examples that would have caught errors:**
 
 ```python
 # ❌ WRONG: Assumed dataset exists
-hf_jobs("uv", {
-    "script": """...""",
-    "env": {"DATASET": "trl-lib/argilla-dpo-mix-7k"}  # Doesn't exist!
-})
+# hf jobs uv run --flavor a10g-large --env DATASET=trl-lib/argilla-dpo-mix-7k "script.py"  # Doesn't exist!
 
 # ✅ CORRECT: Verify first
-dataset_search({"query": "argilla dpo", "author": "trl-lib"})
+list(api.list_datasets(search="argilla dpo", author="trl-lib"))
 # Would show: "trl-lib/ultrafeedback_binarized" is the correct name
 
-hub_repo_details(["trl-lib/ultrafeedback_binarized"], repo_type="dataset")
+api.dataset_info("trl-lib/ultrafeedback_binarized")
 # Confirms it exists before using
 ```
 
@@ -264,7 +268,7 @@ except Exception as e:
 Before submitting ANY job:
 
 ### Pre-Flight Checks
-- [ ] **Verified** all repos/datasets exist (hub_repo_details)
+- [ ] **Verified** all repos/datasets exist (`HfApi().dataset_info()` / `HfApi().model_info()`, or `hf datasets list` / `hf models list`)
 - [ ] **Tested** with known-good inputs if new code
 - [ ] **Using** proven hardware/configuration
 - [ ] **Included** all dependencies in PEP 723 header

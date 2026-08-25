@@ -98,7 +98,7 @@ async function createPost(formData: FormData) {
     const post = await db.post.create({ ... })
     redirect(`/posts/${post.id}`)
   } catch (error) {
-    if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
+    if (error instanceof Error && error.digest?.startsWith('NEXT_REDIRECT')) {
       throw error  // Re-throw navigation errors
     }
     return { error: 'Failed to create post' }

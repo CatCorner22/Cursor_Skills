@@ -55,7 +55,7 @@ aio rt activation get <activation-id>
 
 ## Action times out (504 Gateway Timeout)
 
-Default timeout is 60 seconds. Web actions cap at 600,000 ms (10 min); non-web actions cap at 3,600,000 ms (60 min).
+Default timeout is 60 seconds (60,000 ms). Maximum configurable timeout via `limits.timeout` is 300,000 ms (300 seconds / 5 min), regardless of action type.
 
 **Common causes:**
 - Action waits on an unresponsive external API without a timeout on the fetch/axios call.

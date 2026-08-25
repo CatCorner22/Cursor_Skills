@@ -95,12 +95,12 @@ List its actual runtime deps (`dora-search einops julius lameenc openunmix pyyam
 ### `_pickle.UnpicklingError: Weights only load failed`
 
 **Cause**: `torch.load` weights-only default flipped to `True` in torch 2.6. Old checkpoints pickling numpy/object globals fail.
-**Fix**: For trusted upstream checkpoints, monkey-patch before the package import:
+**Fix**: Pass `weights_only=False` directly at the specific `torch.load(...)` call site that needs it:
 ```python
 import torch
-_orig = torch.load
-torch.load = lambda *a, **k: _orig(*a, **{**k, "weights_only": k.get("weights_only", False)})
+state = torch.load(checkpoint_path, weights_only=False)
 ```
+Only do this for a single trusted checkpoint you are loading directly — never monkey-patch `torch.load` globally, as that silently disables PyTorch's anti-RCE deserialization check for the entire process, including any other model loads.
 
 ### Stuck at `ZeroGPU init – 10.0%` then 60 s timeout
 

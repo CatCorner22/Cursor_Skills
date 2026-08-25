@@ -1,5 +1,7 @@
 # TRL Training Methods Overview
 
+> **Note on `hf_jobs(...)` examples below:** `hf_jobs()` is an optional MCP tool that may not be available in your environment (see `SKILL.md`). The `hf jobs uv run ...` CLI is the reliable default — translate the `hf_jobs("uv", {...})` call below to its CLI equivalent when the MCP tool isn't present.
+
 TRL (Transformer Reinforcement Learning) provides multiple training methods for fine-tuning and aligning language models. This reference provides a brief overview of each method.
 
 ## Supervised Fine-Tuning (SFT)
@@ -138,7 +140,7 @@ hf_doc_fetch("https://huggingface.co/docs/trl/dataset_formats")
 
 Or validate your dataset:
 ```bash
-uv run https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py \
+uv run https://huggingface.co/datasets/evalstate/trl-helpers/raw/main/dataset_inspector.py \
   --dataset your/dataset --split train
 ```
 
@@ -147,4 +149,4 @@ uv run https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspect
 - `references/training_patterns.md` - Common training patterns and examples
 - `scripts/train_sft_example.py` - Complete SFT template
 - `scripts/train_dpo_example.py` - Complete DPO template
-- [Dataset Inspector](https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py) - Dataset format validation tool
+- [Dataset Inspector](https://huggingface.co/datasets/evalstate/trl-helpers/raw/main/dataset_inspector.py) - Dataset format validation tool

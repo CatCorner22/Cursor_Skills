@@ -64,7 +64,7 @@ def build_document(
 
     lines.extend(["", "## Command Scaffolds", "```bash"])
     lines.extend(render_commands(workspace))
-    lines.append("python3 skills/_shared/scripts/validate_manifest_structure.py path/to/app.config.yaml")
+    lines.append("python3 skills/adobe/_shared/scripts/validate_manifest_structure.py path/to/app.config.yaml")
     lines.extend(["```", "", "## Validation Gates"])
 
     for item in CONFIG["validation"]:

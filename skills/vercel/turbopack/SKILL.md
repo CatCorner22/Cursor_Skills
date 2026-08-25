@@ -215,12 +215,11 @@ const nextConfig: NextConfig = {
 
 ### When migration isn't possible
 
-If a webpack loader has no Turbopack equivalent and no workaround, fall back to webpack:
+If a webpack loader has no Turbopack equivalent and no workaround, fall back to webpack via the CLI flag (there is no `next.config.js` key for this — `next build`/`next dev` ignore webpack config under Turbopack):
 
-```js
-const nextConfig: NextConfig = {
-  bundler: 'webpack',
-}
+```bash
+next dev --webpack
+next build --webpack
 ```
 
 File an issue at [github.com/vercel/next.js](https://github.com/vercel/next.js) — the Turbopack team tracks loader parity requests.
@@ -314,12 +313,10 @@ Turbopack's Rust core manages its own memory. If builds OOM:
 - Complex webpack plugin configurations (e.g., `ModuleFederationPlugin`)
 - Specific webpack features not yet in Turbopack (e.g., custom `externals` functions)
 
-To use webpack instead:
-```js
-// next.config.ts
-const nextConfig: NextConfig = {
-  bundler: 'webpack', // Opt out of Turbopack
-}
+To use webpack instead, pass the `--webpack` CLI flag (there is no `bundler` key in `next.config.js` — see [Comparing webpack vs Turbopack output](#comparing-webpack-vs-turbopack-output) above):
+```bash
+next dev --webpack
+next build --webpack
 ```
 
 ## Development vs Production

@@ -9,11 +9,17 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Hugging Face | `skills/huggingface/` | https://github.com/huggingface/skills | `d7223848c3895fbd447faf2aec73e0a6cdd7fdcd` | `b2b203ceadbed932379b52d14298da23` |
 | Hugging Face MCP router | `skills/huggingface/hf-mcp/` | Same plugin, `hf-mcp/skills/hf-mcp/` | same | same |
 | Adobe App Builder | `skills/adobe/` | https://github.com/adobe/skills (`plugins/app-builder`) | `253f56901e058800ccb97ffd5bf1e3329d5f2e00` | `310a33933970fc5f1e1bc6abc0037542` |
+| Supabase | `skills/supabase/` | https://github.com/supabase/agent-skills (via `supabase-community/cursor-plugin`) | `e5f7a7cfd697765848ffd6a4505f3c02e1ee17ee` | n/a |
+| Cursor Team Kit (curated) | `skills/cursor-team-kit/` | https://github.com/cursor/plugins (`cursor-team-kit/skills/`) | `bdf7aa355337897f167153e05069aca505dae17c` | n/a |
+
+Added 2026-08-25 after a gap analysis against the official Cursor Marketplace: `vercel-storage` documents Vercel Postgres/KV as sunset with no replacement guidance, and the pack had no error-tracking, database, or general PR/git-workflow skill at all. Supabase was picked over Neon per user request (their actual DB provider). Cursor Team Kit is curated, not vendored whole — see "What was excluded" below for the 10 skills left out of its 18.
 
 ## What was excluded
 
 - Vercel `upstream/` vendored copies (byte-level duplicates of the live skill + references).
 - Vercel plugin-author `.claude/skills/` (benchmark/release internals, not user-facing).
+- Removed 2026-08-25: `skills/vercel/vercel-agent/` — pure product/pricing reference with no procedural content (no CLI, no code, no workflow steps); its one useful fact ("Vercel Agent: AI code reviews and production investigations. Public beta.") already lived in `knowledge-update/SKILL.md`, so nothing was lost.
+- From `cursor-team-kit`'s 18 skills, only 8 directly on-topic for "GitHub PR/workflow" were vendored (`new-branch-and-pr`, `make-pr-easy-to-review`, `get-pr-comments`, `pr-review-canvas`, `fix-merge-conflicts`, `fix-ci`, `loop-on-ci`, `review-and-ship`). Left out as out-of-scope general team-productivity skills, not because of any quality issue: `control-cli`, `control-ui`, `verify-this`, `weekly-review`, `what-did-i-get-done`, `deslop`, `thermo-nuclear-code-quality-review`, `workflow-from-chats`, `run-smoke-tests`, `check-compiler-errors`. Also excluded: the `agents/` (ci-watcher, thermo-nuclear-code-quality-review subagents) and `rules/` components of the source plugin — this repo's convention (per the exclusions above) is to snapshot `skills/` only.
 
 ## Layout
 

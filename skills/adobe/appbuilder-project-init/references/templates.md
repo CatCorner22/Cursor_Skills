@@ -71,7 +71,7 @@ runtimeManifest:
 
 ### Post-init customization
 
-1. **Add custom actions.** The template creates a single `generic` action. Add more via:`.augment/skills/appbuilder-project-init/scripts/init.sh add-action "<name>"`Register each in `ext.config.yaml` under `runtimeManifest.packages.dx-excshell-1.actions`.
+1. **Add custom actions.** The template creates a single `generic` action. Add more via:`.augment/skills/adobe/appbuilder-project-init/scripts/init.sh add-action "<name>"`Register each in `ext.config.yaml` under `runtimeManifest.packages.dx-excshell-1.actions`.
 2. **Configure action inputs.** In `ext.config.yaml`, add environment-specific inputs:`inputs: LOG_LEVEL: debug API_KEY: $API_KEY BACKEND_URL: $BACKEND_URL annotations: require-adobe-auth: true final: true`Set corresponding values in `.env`.
 3. **Headless variant (no frontend).** If the user only wants Runtime actions, remove the generated UI after init:`rm -rf src/dx-excshell-1/web-src/`Then remove `web: web-src` and any `operations.view` / `impl: index.html` entries from `src/dx-excshell-1/ext.config.yaml`. A headless project should not keep frontend files or stale web manifest references.
 4. **Update the React UI.** Edit components under `web-src/src/components/`:
@@ -98,7 +98,7 @@ runtimeManifest:
 ### Post-init customization
 
 1. **Define extension points.** Edit `ext.config.yaml` to register action bar buttons, header menu items, or custom panels.
-2. **Add backend actions.** AEM extensions often need actions to call AEM APIs:`.augment/skills/appbuilder-project-init/scripts/init.sh add-action "<name>"`Implement actions that accept the IMS token from `params.__ow_headers.authorization` and call AEM endpoints with proper `x-api-key` and `x-gw-ims-org-id` headers.
+2. **Add backend actions.** AEM extensions often need actions to call AEM APIs:`.augment/skills/adobe/appbuilder-project-init/scripts/init.sh add-action "<name>"`Implement actions that accept the IMS token from `params.__ow_headers.authorization` and call AEM endpoints with proper `x-api-key` and `x-gw-ims-org-id` headers.
 3. **Configure AEM host.** Add `AEM_HOST` to `.env` and reference it in action inputs:`inputs: AEM_HOST: $AEM_HOST`
 4. **Test locally.** Run `aio app dev` and load the extension URL in the AEM Extension Tester.
 
@@ -171,7 +171,7 @@ runtimeManifest:
 ### Post-init customization
 
 1. **Define MCP tools.** Edit the MCP server action to register tools with names, descriptions, and input schemas.
-2. **Implement tool handlers.** Add handler actions via:`.augment/skills/appbuilder-project-init/scripts/init.sh add-action "<name>"`
+2. **Implement tool handlers.** Add handler actions via:`.augment/skills/adobe/appbuilder-project-init/scripts/init.sh add-action "<name>"`
 3. **Configure authentication.** Set up API keys or IMS tokens for any Adobe APIs the tools call.
 4. **Test MCP integration.** Configure an MCP client (Cursor, Claude Desktop, etc.) to connect to the deployed server URL.
 
@@ -191,8 +191,8 @@ runtimeManifest:
 - No `src/`, `web-src/`, or `actions/` directories
 
 1. **Clean up auto-generated directories if needed.** If `init-bare` still creates `actions/`, `src/`, or `web-src/`, remove them before doing any custom setup so the project matches the user's requested minimal starting point.For a headless/backend-only result, also remove any `web` / `operations.view` references from `app.config.yaml` before building.
-2. **Add actions only when the user asks for them:**`.augment/skills/appbuilder-project-init/scripts/init.sh add-action "my-action"`
-3. **Add web assets only if the user later decides they need a UI:**`.augment/skills/appbuilder-project-init/scripts/init.sh add-web-assets`
+2. **Add actions only when the user asks for them:**`.augment/skills/adobe/appbuilder-project-init/scripts/init.sh add-action "my-action"`
+3. **Add web assets only if the user later decides they need a UI:**`.augment/skills/adobe/appbuilder-project-init/scripts/init.sh add-web-assets`
 4. **Configure manifest.** For a bare project, start with an empty or minimal manifest in `app.config.yaml`, then add packages/actions only after you intentionally create them:`application: runtimeManifest: packages: {}`
 
 ## Quick Selection Guide

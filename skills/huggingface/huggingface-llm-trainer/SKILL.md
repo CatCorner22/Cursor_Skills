@@ -52,7 +52,7 @@ See `references/unsloth.md` for complete Unsloth documentation and `scripts/unsl
 
 When assisting with training jobs:
 
-1. **ALWAYS use `hf_jobs()` MCP tool** - Submit jobs using `hf_jobs("uv", {...})`, NOT bash `trl-jobs` commands. The `script` parameter accepts Python code directly. Do NOT save to local files unless the user explicitly requests it. Pass the script content as a string to `hf_jobs()`. If user asks to "train a model", "fine-tune", or similar requests, you MUST create the training script AND submit the job immediately using `hf_jobs()`.
+1. **ALWAYS use the `hf jobs uv run` CLI as the default** - Submit jobs using `hf jobs uv run --flavor ... --timeout ... "script.py"` (see Approach 3 below), NOT bash `trl-jobs` commands. If your environment has the `hf_jobs()` MCP tool available (uncommon in this snapshot — check first), you can use `hf_jobs("uv", {...})` instead; either way the script content can be passed directly (inline code or a URL), and you should NOT save to local files unless the user explicitly requests it. If user asks to "train a model", "fine-tune", or similar requests, you MUST create the training script AND submit the job immediately.
 
 2. **Always include Trackio** - Every training script should include Trackio for real-time monitoring. Use example scripts in `scripts/` as templates.
 
@@ -155,9 +155,9 @@ SFTConfig(max_seq_length=512)  # TypeError!
 
 **Usually you don't need to set this parameter at all** - the examples below use the sensible default.
 
-### Approach 1: UV Scripts (Recommended—Default Choice)
+### Approach 1: UV Scripts via `hf_jobs()` MCP tool (if available)
 
-UV scripts use PEP 723 inline dependencies for clean, self-contained training. **This is the primary approach for Claude Code.**
+UV scripts use PEP 723 inline dependencies for clean, self-contained training. **If your environment has the `hf_jobs()` MCP tool available (uncommon in this snapshot — check first), this is a convenient way to submit UV scripts.** Otherwise, the default and always-available path is the CLI — see Approach 3 (HF Jobs CLI) below, which submits the same kind of UV script via `hf jobs uv run`.
 
 ```python
 hf_jobs("uv", {
@@ -204,7 +204,7 @@ trainer.push_to_hub()
 ```
 
 **Benefits:** Direct MCP tool usage, clean code, dependencies declared inline (PEP 723), no file saving required, full control
-**When to use:** Default choice for all training tasks in Claude Code, custom training logic, any scenario requiring `hf_jobs()`
+**When to use:** Only when the `hf_jobs()` MCP tool is available in your environment; otherwise use Approach 3 (HF Jobs CLI) as the default choice for all training tasks
 
 #### Working with Scripts
 
@@ -342,7 +342,7 @@ uvx trl-jobs sft \
 **When to use:** User working in terminal directly (not Claude Code context), quick local experimentation
 **Repository:** https://github.com/huggingface/trl-jobs
 
-⚠️ **In Claude Code context, prefer using `hf_jobs()` MCP tool (Approach 1) when available.**
+⚠️ **Default to the CLI (Approach 3) — it's always available. Use the `hf_jobs()` MCP tool (Approach 1) instead only if your environment happens to have it.**
 
 ## Hardware Selection
 
@@ -354,7 +354,7 @@ uvx trl-jobs sft \
 | 7-13B params | `a10g-large`, `a100-large` | ~$5-10 | Large models (use LoRA) |
 | 13B+ params | `a100-large`, `a10g-largex2` | ~$10-20 | Very large (use LoRA) |
 
-**GPU Flavors:** cpu-basic/upgrade/performance/xl, t4-small/medium, l4x1/x4, a10g-small/large/largex2/largex4, a100-large, h100/h100x8, and current `hf jobs` flavors such as `h200` — run `hf jobs flavors` / see `hf-cli` rather than memorizing this list.
+**GPU Flavors:** cpu-basic/upgrade/performance/xl, t4-small/medium, l4x1/x4, a10g-small/large/largex2/largex4, a100-large, h200/h200x2/h200x4/h200x8 — run `hf jobs flavors` / see `hf-cli` rather than memorizing this list.
 
 **Guidelines:**
 - Use **LoRA/PEFT** for models >7B to reduce memory
@@ -536,7 +536,7 @@ hf_jobs("logs", {"job_id": "your-job-id"})
 
 ```python
 hf_jobs("uv", {
-    "script": "https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py",
+    "script": "https://huggingface.co/datasets/evalstate/trl-helpers/raw/main/dataset_inspector.py",
     "script_args": ["--dataset", "username/dataset-name", "--split", "train"]
 })
 ```
@@ -558,7 +558,7 @@ When mapping is needed, the output includes a **"MAPPING CODE"** section with co
 ```python
 # 1. Inspect dataset (costs ~$0.01, <1 min on CPU)
 hf_jobs("uv", {
-    "script": "https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py",
+    "script": "https://huggingface.co/datasets/evalstate/trl-helpers/raw/main/dataset_inspector.py",
     "script_args": ["--dataset", "argilla/distilabel-math-preference-dpo", "--split", "train"]
 })
 
@@ -646,7 +646,7 @@ See `references/training_patterns.md` for detailed examples including:
 **Fix:**
 1. Validate first with dataset inspector:
    ```bash
-   uv run https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py \
+   uv run https://huggingface.co/datasets/evalstate/trl-helpers/raw/main/dataset_inspector.py \
      --dataset name --split train
    ```
 2. Check output for compatibility markers (✓ READY, ✗ NEEDS MAPPING, ✗ INCOMPATIBLE)
@@ -715,7 +715,7 @@ Add to PEP 723 header:
 - `scripts/hf_benchmarks.py` - Search for benchmark results and leaderboards by task, alias or free text.
 
 ### External Scripts
-- [Dataset Inspector](https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py) - Validate dataset format before training (use via `uv run` or `hf_jobs`)
+- [Dataset Inspector](https://huggingface.co/datasets/evalstate/trl-helpers/raw/main/dataset_inspector.py) - Validate dataset format before training (use via `uv run` or `hf_jobs`)
 
 ### External Links
 - [TRL Documentation](https://huggingface.co/docs/trl)

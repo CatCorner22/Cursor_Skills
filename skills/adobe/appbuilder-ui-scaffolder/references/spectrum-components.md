@@ -148,6 +148,24 @@ import { Button } from '@adobe/react-spectrum';
 **Required props:** `variant`. **Common:** `onPress`, `isDisabled`, `isPending` (shows spinner).
 **Accessibility:** Use descriptive text. Avoid icon-only buttons without `aria-label`.
 
+### ActionButton
+Secondary/toolbar action.
+```jsx
+import { ActionButton } from '@adobe/react-spectrum';
+<ActionButton onPress={handleEdit} aria-label="Edit item">
+  <EditIcon />
+</ActionButton>
+```
+
+### ButtonGroup
+Group related buttons.
+```jsx
+import { ButtonGroup, Button } from '@adobe/react-spectrum';
+<ButtonGroup>
+  <Button variant="secondary" onPress={handleCancel}>Cancel</Button>
+  <Button variant="accent" onPress={handleSave}>Save</Button>
+</ButtonGroup>
+```
 
 ## Collection Components
 
@@ -332,21 +350,3 @@ import { InlineAlert, Heading, Content } from '@adobe/react-spectrum';
 | Label loading spinners | Use `aria-label` on `ProgressCircle` |
 | Announce errors | Use `errorMessage` prop on form fields |
 | Don't rely on color alone | Pair colors with icons or text |
-### ActionButton
-Secondary/toolbar action.
-```jsx
-import { ActionButton } from '@adobe/react-spectrum';
-<ActionButton onPress={handleEdit} aria-label="Edit item">
-  <EditIcon />
-</ActionButton>
-```
-
-### ButtonGroup
-Group related buttons.
-```jsx
-import { ButtonGroup, Button } from '@adobe/react-spectrum';
-<ButtonGroup>
-  <Button variant="secondary" onPress={handleCancel}>Cancel</Button>
-  <Button variant="accent" onPress={handleSave}>Save</Button>
-</ButtonGroup>
-```
