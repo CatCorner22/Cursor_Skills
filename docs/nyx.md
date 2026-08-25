@@ -177,6 +177,18 @@ Nyx back view character sheet, gray studio background, symmetrical blackwork mot
 
 ![Nyx — back tattoo reference](../assets/nyx-tattoo-back-view.png)
 
+### Front + back tattoo turnaround
+Combined studio sheet — front three-quarter and back three-quarter, same outfit (black sports bra + shorts). Shows full ink map in one view.
+
+**Front visible:** serpent/rose right sleeve · phase moons left forearm · dagger heart sternum · rib script  
+**Back visible:** moth between shoulders · sunburst left shoulder cap · sleeve wrap · peony/thigh · hip coordinates
+
+```
+Nyx tattoo turnaround sheet, front and back full body views side by side, gray studio background, black sports bra and shorts, warm olive skin, dark ponytail, neo-trad serpent rose right sleeve, phase moons left forearm, dagger heart sternum, script left ribs, blackwork moth upper back, sunburst left shoulder, peony right thigh, hip coordinates, photorealistic character design reference
+```
+
+![Nyx — front and back tattoo turnaround](../assets/nyx-tattoo-turnaround-front-back.png)
+
 ---
 
 ## Quick reference (one line)
@@ -191,6 +203,7 @@ Nyx: dark-haired athletic-alt woman; smoky makeup; CrossFit/UFC build; large per
 |---|---|
 | 2026-08-25 | Initial bible: appearance, physique, tattoo map, personality, voice, prompts |
 | 2026-08-25 | Scene variants (gym, EDC, casual, pool/bikini), back tattoo sheet, transparent bikini wardrobe |
+| 2026-08-25 | Front + back tattoo turnaround sheet |
 
 ## Reference images
 
