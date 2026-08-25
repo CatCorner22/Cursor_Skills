@@ -14,12 +14,12 @@ Use the `cursor-subscriptions` MCP tools to be woken when an external event happ
 | CI on a branch you pushed | `cursor-subscriptions-subscribe_github_ci` |
 | Review comments or activity on a PR | `cursor-subscriptions-subscribe_github_pr` (scope `pr`) |
 | Any PR activity in a repo, or PRs by one author | `cursor-subscriptions-subscribe_github_pr` (scope `repo` / `author`) |
-| A human reply in a Slack thread | `cursor-subscriptions-subscribe_slack_thread` |
-| Messages in a Slack channel | `cursor-subscriptions-subscribe_slack_channel` |
-| New public Slack channels | `cursor-subscriptions-subscribe_slack_new_channels` |
-| Linear issues created or changing state | `cursor-subscriptions-subscribe_linear_issue` |
-| New comments on Linear issues | `cursor-subscriptions-subscribe_linear_comment` |
-| A point in time (reminder, recurring check) | `cursor-subscriptions-subscribe_timer` — see `/loop` for recurring loops |
+| A human reply in a Slack thread | `cursor-subscriptions-subscribe_slack_thread` **if that tool is in the catalog** |
+| Messages in a Slack channel | `cursor-subscriptions-subscribe_slack_channel` **if in catalog** |
+| New public Slack channels | `cursor-subscriptions-subscribe_slack_new_channels` **if in catalog** |
+| Linear issues created or changing state | `cursor-subscriptions-subscribe_linear_issue` **if in catalog** |
+| New comments on Linear issues | `cursor-subscriptions-subscribe_linear_comment` **if in catalog** |
+| A point in time (reminder, recurring check) | `cursor-subscriptions-subscribe_timer` (recipe below) |
 
 Do not busy-wait with sleep loops or repeated status checks when one of these tools covers the event. If none covers it, bounded polling is fine.
 
@@ -36,10 +36,10 @@ Do not busy-wait with sleep loops or repeated status checks when one of these to
 
 - `cursor-subscriptions-subscribe_github_ci`: waits until every check on a commit of the branch is terminal, then delivers one commit-wide result — success, or failure with the failed check names. Fork PRs and branchless status events are not covered; fall back to polling for those.
 - `cursor-subscriptions-subscribe_github_pr`: delivers PR lifecycle changes, PR comments, reviews, and review comments. Scope `pr` takes a PR URL or repo + number; `author` also requires a repo.
-- `cursor-subscriptions-subscribe_slack_thread` / `cursor-subscriptions-subscribe_slack_channel`: take a channel ID (like `C0123ABCDEF`), not a channel name, and the thread's root message `ts`. Subscribing may post a visible "Cursor is now listening" notice in the channel or thread, so subscribe deliberately. `topLevelOnly` on channel subscriptions ignores thread replies.
-- `cursor-subscriptions-subscribe_linear_issue`: delivers only issue creation and workflow-state changes — edits to title, description, assignee, labels, and the rest are deliberately not delivered. Project scope matches only issues that already carry the project. Scope ids are Linear UUIDs.
-- `cursor-subscriptions-subscribe_linear_comment`: one delivery per new comment, with that comment's text only; read the issue if you need the thread. Comment edits and reactions are not delivered.
-- `cursor-subscriptions-subscribe_timer`: fires a prompt as a follow-up on a schedule (`cron` or `delaySeconds`; `once: true` for a one-shot reminder). Timers dedupe by `name` and a dedupe hit silently keeps the old configuration — to change a live timer, `cursor-subscriptions-unsubscribe` first. For recurring work loops, follow `/loop`.
+- Slack / Linear tools: only call them when they appear in this session's MCP catalog. Many Cloud Agent catalogs expose GitHub CI/PR + timer only. Slack tools take a channel ID (like `C0123ABCDEF`), not a channel name, and the thread's root message `ts`. Subscribing may post a visible "Cursor is now listening" notice. Linear issue subscriptions deliver creation and workflow-state changes only; comment subscriptions deliver new comments, not edits.
+- `cursor-subscriptions-subscribe_timer`: fires a prompt as a follow-up on a schedule (`cron` or `delaySeconds`; `once: true` for a one-shot reminder). Timers dedupe by `name` — to change a live timer, `unsubscribe` first, then subscribe again.
+
+**Timer recipe (no `/loop` skill in this snapshot):** subscribe a timer whose prompt restates the exact next action, then end the turn. On wake, do the work, then either unsubscribe or subscribe the next interval. Example: `{ "name": "recheck-ci", "delaySeconds": 300, "once": true, "prompt": "Re-read CI on branch X and continue if still failing." }` For a recurring loop, use `cron` and keep the prompt self-contained so a later wake can resume without this chat.
 
 ## Recipes
 

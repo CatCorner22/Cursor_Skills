@@ -107,7 +107,7 @@ Two equivalent ways to point a fresh `aio app init` at the project/workspace you
 1. **Pass them as flags to `init` itself** (cleanest):
 
    ```bash
-   skills/appbuilder-project-init/scripts/init.sh init \
+   skills/adobe/appbuilder-project-init/scripts/init.sh init \
      "@adobe/generator-app-excshell" ./my-project \
      --org <orgId> --project my-project
    ```
@@ -156,18 +156,18 @@ For a headless/backend-only request, prefer `init-bare` when possible. If the us
 
 The `aio app *` wrappers go through a single script: `scripts/init.sh`. (Console bootstrap commands are called directly — see the **Bootstrap** section above for the rationale.)
 
-> **Note:** The path to this skill's scripts may be `skills/`, `.augment/skills/`, or `.github/skills/` depending on your platform and repository layout. Adjust the prefix in the commands below accordingly.
+> **Note:** In this snapshot the scripts live at `skills/adobe/appbuilder-project-init/scripts/`. Other installs may use `.cursor/plugins/…`, `.augment/skills/`, or `.github/skills/` — adjust the prefix, but keep the `adobe/` segment.
 
 **With a template:**
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh init "@adobe/generator-app-excshell" ./my-project
+skills/adobe/appbuilder-project-init/scripts/init.sh init "@adobe/generator-app-excshell" ./my-project
 ```
 
 **With a template, fully wired to a specific Console org/project (no post-init `aio app use` needed):**
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh init \
+skills/adobe/appbuilder-project-init/scripts/init.sh init \
   "@adobe/generator-app-excshell" ./my-project \
   --org <orgId> --project my-project
 ```
@@ -177,7 +177,7 @@ skills/appbuilder-project-init/scripts/init.sh init \
 **Bare project (no template):**
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh init-bare ./my-project
+skills/adobe/appbuilder-project-init/scripts/init.sh init-bare ./my-project
 ```
 
 Use `init-bare` only when the user explicitly wants to configure everything from scratch. In that case, "bare" means the generated project should stay minimal:
@@ -225,8 +225,8 @@ Consult [references/templates.md](references/templates.md) for template-specific
 2. **For API Mesh projects, verify **`mesh.json`** is at the project root** — After `aio app init` with `@adobe/generator-app-api-mesh`, confirm `./mesh.json` exists before treating the scaffold as ready. If the file only exists at `node_modules/@adobe/generator-app-api-mesh/templates/mesh.json`, copy it into place with `cp node_modules/@adobe/generator-app-api-mesh/templates/mesh.json ./mesh.json`. The file under `node_modules/` is the generator's template source, not the project's active API Mesh configuration. Then customize the root `mesh.json` with the user's real source handlers; for multi-backend scenarios, configure at least two handlers.
 3. **Clean up bare-project scaffolding if needed** — After `init-bare`, inspect the generated project. If the initializer created `actions/`, `src/`, or `web-src/`, remove those directories before continuing. A bare project should not keep auto-generated action code or web assets.
 4. **Headless cleanup after template init** — If the user wants a headless project with **no frontend**, delete any generated UI directory after `aio app init`: `rm -rf web-src/` or the template-specific path such as `rm -rf src/<extension>/web-src/`. Then remove matching `web-src` config from `app.config.yaml` or `ext.config.yaml` if present, especially `web: web-src` and `operations.view` / `impl: index.html` entries. This avoids unnecessary frontend build artifacts and stale manifest wiring in a backend-only project.
-5. **Add actions** — If the user later wants custom actions, run `cd ./my-project && skills/appbuilder-project-init/scripts/init.sh add-action "my-action"`.
-6. **Add web assets** — Only if the user later decides the bare project needs a UI, run `skills/appbuilder-project-init/scripts/init.sh add-web-assets`.
+5. **Add actions** — If the user later wants custom actions, run `cd ./my-project && skills/adobe/appbuilder-project-init/scripts/init.sh add-action "my-action"`.
+6. **Add web assets** — Only if the user later decides the bare project needs a UI, run `skills/adobe/appbuilder-project-init/scripts/init.sh add-web-assets`.
 7. **Edit ext.config.yaml directly** — Customize action definitions:
 
 - Set `runtime: nodejs:22` for production. Stage workspaces also accept `runtime: nodejs:24`.
@@ -241,12 +241,12 @@ Consult [references/templates.md](references/templates.md) for template-specific
 
 Verify the project structure by checking these items directly:
 
-1. `app.config.yaml`** exists** and contains valid YAML
-2. **All **`$include`** paths resolve** to real files
+1. **`app.config.yaml` exists** and contains valid YAML
+2. **All `$include` paths resolve** to real files
 3. `ext.config.yaml` (if present) has `runtimeManifest.packages` with at least one action
 4. **Action JS files exist** at all declared `function:` paths
-5. `package.json`** exists** with `name`, `version`, and an Adobe SDK dependency (`@adobe/aio-sdk` or `@adobe/aio-lib-core-logging`)
-6. **No root-level **`runtimeManifest` in `app.config.yaml` (see Manifest guardrail below)
+5. **`package.json` exists** with `name`, `version`, and an Adobe SDK dependency (`@adobe/aio-sdk` or `@adobe/aio-lib-core-logging`)
+6. **No root-level `runtimeManifest`** in `app.config.yaml` (see Manifest guardrail below)
 
 Read the relevant files and verify each check. Fix any issues before proceeding.
 
@@ -271,11 +271,11 @@ Do not place a root-level `runtimeManifest` directly in `app.config.yaml`: the C
 
 ## Troubleshooting & Edge Cases
 
-- `aio`** CLI not installed:** If `aio --version` returns `command not found` or fails, stop before initialization. Ask the user to install Adobe I/O CLI, complete `aio auth login`, and retry only after the CLI is available.
-- `npm install`** fails after init:** The scaffold can still be created because init runs with `--no-install`, but builds/tests will fail until dependencies install cleanly. Capture the first package error, confirm the Node/npm version is compatible, rerun `npm install` from the project root, and only continue once it succeeds.
+- **`aio` CLI not installed:** If `aio --version` returns `command not found` or fails, stop before initialization. Ask the user to install Adobe I/O CLI, complete `aio auth login`, and retry only after the CLI is available.
+- **`npm install` fails after init:** The scaffold can still be created because init runs with `--no-install`, but builds/tests will fail until dependencies install cleanly. Capture the first package error, confirm the Node/npm version is compatible, rerun `npm install` from the project root, and only continue once it succeeds.
 - **Template choice is ambiguous:** If the request could map to multiple templates, ask one clarifying question about UI vs headless, extension point, or target Adobe product. If the user has no preference, default to `@adobe/generator-app-excshell` and state that assumption explicitly.
 - **Project directory already exists or is not empty:** Do not overwrite it silently. Ask whether to use a different directory, clear the existing folder, or initialize into a new path.
-- `aio console …`** subcommand or flag not recognised:** Almost always means the CLI bundle is stale. Run `npm install -g @adobe/aio-cli` and retry — that's the supported way to refresh every plugin (console, app, runtime, ims-oauth, telemetry). Only dig deeper if the same command still fails after a clean reinstall.
+- **`aio console …` subcommand or flag not recognised:** Almost always means the CLI bundle is stale. Run `npm install -g @adobe/aio-cli` and retry — that's the supported way to refresh every plugin (console, app, runtime, ims-oauth, telemetry). Only dig deeper if the same command still fails after a clean reinstall.
 - **Workspace API add fails with "product profile required":** The service code needs a product profile. Re-run `aio console api list --json` to confirm, ask the user (or org admin) for the profile name, and retry with `--license-config CODE=PROFILE`.
 - **No org selected:** Console bootstrap commands will fail with an org-selection error. Run `aio console org list` then `aio console org select <orgId>` (or pass `--orgId` to every command) before retrying.
 - **Validation errors from a freshly scaffolded but partially edited project:** Recent `aio app *` versions validate `app.config.yaml` by default against an OpenWhisk-aligned schema. The validation runs on every `aio app *` command that reads or writes the manifest — concretely: `aio app init`, `aio app add (action|web-assets|extension|event|service)`, `aio app delete (action|web-assets|extension|event|service)`, `aio app build`, `aio app deploy`, `aio app undeploy`, `aio app run`, `aio app dev`, `aio app use`, and `aio app info`. The escape hatch flag is the same on all of them: `--no-config-validation`. Use it on the single command you need to unblock (e.g. `aio app build --no-config-validation` while you're still mid-refactor), then drop it as soon as the manifest is whole. Don't bake it into scripts — silent drift between local config and the deployed shape is exactly what the validator was added to catch.

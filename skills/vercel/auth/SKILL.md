@@ -1,10 +1,11 @@
 ---
 name: auth
-description: Authentication integration guidance — Clerk (native Vercel Marketplace), Descope, and Auth0 setup for Next.js applications. Covers middleware auth patterns, sign-in/sign-up flows, and Marketplace provisioning. Use when implementing user authentication.
+description: Authentication integration guidance — Clerk (native Vercel Marketplace, recommended for greenfield), Descope, Auth0, and Auth.js (NextAuth v5) for Next.js. Covers middleware/proxy auth patterns, sign-in flows, and Marketplace provisioning.
 metadata:
   priority: 6
   docs:
-    - "https://authjs.dev/getting-started"
+    - "https://clerk.com/docs/quickstarts/nextjs"
+    - "https://authjs.dev/getting-started/installation?framework=Next.js"
     - "https://nextjs.org/docs/app/building-your-application/authentication"
   sitemap: "https://authjs.dev/sitemap.xml"
   pathPatterns:
@@ -35,6 +36,10 @@ metadata:
     - '\bpnpm\s+(install|i|add)\s+[^\n]*@auth0/nextjs-auth0\b'
     - '\bbun\s+(install|i|add)\s+[^\n]*@auth0/nextjs-auth0\b'
     - '\byarn\s+add\s+[^\n]*@auth0/nextjs-auth0\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*next-auth\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*next-auth\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*next-auth\b'
+    - '\byarn\s+add\s+[^\n]*next-auth\b'
 validate:
   -
     pattern: 'VERCEL_CLIENT_(ID|SECRET)|vercel\.com/oauth/(authorize|access_token|token)'
@@ -368,11 +373,37 @@ export default async function Page() {
 }
 ```
 
+## Auth.js (NextAuth v5)
+
+Prefer Clerk Marketplace for **new** apps. Use this section for existing Auth.js / `next-auth` projects.
+
+```bash
+npm install next-auth@beta
+```
+
+```ts
+// auth.ts
+import NextAuth from "next-auth"
+
+export const { auth, handlers, signIn, signOut } = NextAuth({
+  providers: [/* … */],
+})
+```
+
+```ts
+// app/api/auth/[...nextauth]/route.ts
+import { handlers } from "@/auth"
+export const { GET, POST } = handlers
+```
+
+Migrate v4 `getServerSession(authOptions)` → `await auth()`. Generate `AUTH_SECRET` in the bootstrap flow (`openssl rand -base64 32`). See https://authjs.dev/getting-started/installation?framework=Next.js
+
 ## Decision Matrix
 
 | Need | Recommended | Why |
 |------|------------|-----|
 | Fastest setup on Vercel | Clerk | Native Marketplace, auto-provisioned env vars |
+| Existing next-auth / Auth.js app | Auth.js v5 | `auth()` helper; do not rewrite to Clerk unless asked |
 | Passwordless / social login flows | Descope | Visual flow builder, Marketplace native |
 | Enterprise SSO / SAML / multi-tenant | Auth0 | Deep enterprise identity support |
 | Pre-built UI components | Clerk | Drop-in `<SignIn />`, `<UserButton />` |

@@ -10,8 +10,8 @@ Train object detection, image classification, and SAM/SAM2 segmentation models o
 ## When to Use This Skill
 
 Use this skill when users want to:
-- Fine-tune object detection models (D-FINE, RT-DETR v2, DETR, YOLOS) on cloud GPUs or local
-- Fine-tune image classification models (timm: MobileNetV3, MobileViT, ResNet, ViT/DINOv3, or any Transformers classifier) on cloud GPUs or local
+- Fine-tune object detection models (D-FINE, RT-DETR v2, DETR, YOLOS) on Hugging Face Jobs
+- Fine-tune image classification models (timm: MobileNetV3, MobileViT, ResNet, ViT/DINOv3, or any Transformers classifier) on Hugging Face Jobs
 - Fine-tune SAM or SAM2 models for segmentation / image matting using bbox or point prompts
 - Train bounding-box detectors on custom datasets
 - Train image classifiers on custom datasets
@@ -21,8 +21,8 @@ Use this skill when users want to:
 
 ## Related Skills
 
-- **`hugging-face-jobs`** — General HF Jobs infrastructure: token authentication, hardware flavors, timeout management, cost estimation, secrets, environment variables, scheduled jobs, and result persistence. **Refer to the Jobs skill for any non-training-specific Jobs questions** (e.g., "how do secrets work?", "what hardware is available?", "how do I pass tokens?").
-- **`hugging-face-model-trainer`** — TRL-based language model training (SFT, DPO, GRPO). Use that skill for text/language model fine-tuning.
+- **`hf-cli`** — Jobs infrastructure: token authentication, hardware flavors, timeout, secrets, scheduled jobs. There is no `hugging-face-jobs` skill in this snapshot.
+- **`huggingface-llm-trainer` / `trl-training`** — TRL language-model training (SFT, DPO, GRPO, KTO). Use those for text/language fine-tuning, not this vision skill.
 
 ## Local Script Execution
 
@@ -137,7 +137,7 @@ Run the dataset inspector BEFORE spending GPU time. See "Dataset Validation" sec
 
 **Step 3: Ask user preferences**
 
-ALWAYS use the AskUserQuestion tool with option-style format:
+Ask the user these preference questions (use `AskUserQuestion` only if that tool exists in this session; otherwise ask in chat):
 
 ```python
 AskUserQuestion({
@@ -192,7 +192,9 @@ These rules prevent common failures. Follow them exactly.
 
 ### 1. Job submission: `hf_jobs` MCP tool vs Python API
 
-**`hf_jobs()` is an MCP tool, NOT a Python function.** Do NOT try to import it from `huggingface_hub`. Call it as a tool:
+**This snapshot has no `hf_jobs` MCP tool.** Do not invent one. Prefer `hf jobs uv run` via `hf-cli`, or `HfApi().run_uv_job()`. Examples that say `hf_jobs("uv", …)` are the old Claude Code MCP shape — translate them to the CLI.
+
+**`hf_jobs()` was an MCP tool, NOT a Python function.** Do NOT try to import it from `huggingface_hub`. If a future catalog actually exposes it, call it as a tool:
 
 ```
 hf_jobs("uv", {"script": training_script_content, "flavor": "a10g-large", "timeout": "4h", "secrets": {"HF_TOKEN": "$HF_TOKEN"}})
@@ -243,7 +245,7 @@ If you write a custom script, you MUST include this token injection before the `
 
 - Do NOT call `login()` in custom scripts unless replicating the full pattern from `scripts/object_detection_training.py`
 - Do NOT rely on implicit token resolution (`hub_token=None`) — unreliable in Jobs
-- See the `hugging-face-jobs` skill → *Token Usage Guide* for full details
+- See `hf-cli` for Jobs token/secrets (`-s HF_TOKEN=$HF_TOKEN`)
 
 ### 3. JobInfo attribute
 
@@ -360,7 +362,7 @@ Start with `facebook/sam2.1-hiera-small` for fast iteration. SAM2 models are gen
 
 All recommended OD and IC models are under 100M params — **`t4-small` (16 GB VRAM, $0.40/hr) is sufficient for all of them.** Image classification models are generally smaller and faster than object detection models — `t4-small` handles even ViT-Base comfortably. For SAM2 models up to `hiera-base-plus`, `t4-small` is sufficient since only the mask decoder is trained. For `sam2.1-hiera-large` or SAM v1 models, use `l4x1` or `a10g-large`. Only upgrade if you hit OOM from large batch sizes — reduce batch size first before switching hardware. Common upgrade path: `t4-small` → `l4x1` ($0.80/hr, 24 GB) → `a10g-large` ($1.50/hr, 24 GB).
 
-For full hardware flavor list: refer to the `hugging-face-jobs` skill. For cost estimation: run `scripts/estimate_cost.py`.
+For the full hardware flavor list, use `hf jobs flavors` / `hf-cli`. For cost estimation: run `scripts/estimate_cost.py`.
 
 ## Quick start — Object Detection
 

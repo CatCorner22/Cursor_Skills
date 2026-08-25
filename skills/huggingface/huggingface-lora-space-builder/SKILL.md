@@ -222,7 +222,7 @@ These four come pre-installed in the ZeroGPU container. Listing them anyway is t
 
 ### `README.md`
 
-Spaces are configured by the YAML frontmatter at the top of `README.md`. This frontmatter is what selects ZeroGPU.
+Spaces are configured by the YAML frontmatter at the top of `README.md`. Frontmatter does **not** select hardware — `hardware:` in YAML is silently ignored (see `huggingface-spaces`). Set ZeroGPU with `--flavor zero-a10g` at create time or `hf spaces settings <id> --hardware zero-a10g` afterwards.
 
 ```
 ---
@@ -234,7 +234,6 @@ sdk: gradio
 sdk_version: <current Gradio version>
 app_file: app.py
 pinned: false
-hardware: zero-a10g
 short_description: <one short line for the Space tile, ~60 chars max>
 models:
   - <base model repo>
@@ -250,7 +249,7 @@ Key fields:
 
 - `sdk: gradio` — required for ZeroGPU.
 - `sdk_version` — match the Gradio version you wrote against. Look up the current version (`pip index versions gradio`, or check https://www.gradio.app) rather than guessing.
-- `hardware: zero-a10g` — the legacy string for ZeroGPU. The actual hardware is NVIDIA RTX Pro 6000 Blackwell, but the identifier is `zero-a10g`. ZeroGPU is available to PRO, Team, and Enterprise accounts; if the user isn't subscribed, the Space will fall back to CPU. Mention this if you suspect they aren't on PRO.
+- Hardware is **not** a YAML field. Use `--flavor zero-a10g` / `SpaceHardware` / `hf spaces settings <id> --hardware zero-a10g`. The identifier `zero-a10g` is the legacy ZeroGPU name (backing GPU changes). ZeroGPU is available to PRO, Team, and Enterprise accounts; otherwise the Space stays on CPU.
 - `models:` — list base and LoRA repos. This enables Hub caching and discovery.
 - `short_description` — appears on the Space tile. **Keep it short (~60 characters or less).** The Hub's YAML validator rejects long values with a 400 from `https://huggingface.co/api/validate-yaml`, which surfaces as an `HfHubHTTPError` during `create_repo` or `upload_file`. The exact server-side limit isn't documented and may change, so target the visible-tile-length range rather than pushing right up to a cap. If you do hit the 400, the fix is almost always to shorten this field. One sentence describing what the Space does is plenty — the README body below the YAML is where you put longer prose.
 

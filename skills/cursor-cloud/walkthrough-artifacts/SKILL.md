@@ -10,7 +10,7 @@ When your changes are complete, and you have completed testing / validation, you
 
 If the user explicitly requested specific manual testing, you MUST also demonstrate that you fulfilled their request.
 
-Do this with **walkthrough artifacts**. Follow this rubric, then include HTML-tag references to the artifacts inline in your final response to the user.
+Do this with **walkthrough artifacts**. Follow this rubric, then embed artifacts in your final response with HTML tags, for example `<img alt="Settings after save" src="/opt/cursor/artifacts/screenshots/settings_after_save.png" />` or `<video src="/opt/cursor/artifacts/demo.mp4"></video>`.
 
 ## When to Use
 
@@ -55,7 +55,7 @@ Examples of bad sets of artifacts to upload (DO NOT UPLOAD ARTIFACTS LIKE THIS):
 
 ### Screenshot artifacts
 
-When you are using the `computerUse` subagent, it will return screenshots showing key application states. Remember these screenshot paths for future use. You should review all available artifacts at the end of your tests and decide which ones best demonstrate the correctness of your code. Show these top artifacts to the user.
+When a `computerUse` subagent is in the catalog, it returns screenshots of key application states — remember those paths. If it is not available, take screenshots with the browser or desktop tools you do have and copy the keepers into the artifacts directory. Review all available images at the end and show only the ones that prove the change works.
 
 ### Video artifacts
 
@@ -63,12 +63,12 @@ Video walkthroughs of working features are often the most effective way to demon
 
 How to create a video artifact:
 
-1. Setup the manual test environment. This means using the `computerUse` subagent to make sure the UI is open, and navigated to the correct page or feature to demonstrate the working change(s).
+1. Set up the manual test environment (open the UI and navigate to the feature). Use a `computerUse` subagent when it is in the catalog; otherwise drive the browser/desktop tools you have.
 2. Begin a recording using the `RecordScreen` tool with mode set to `START_RECORDING`.
-3. Perform the manual test that demonstrates the working change(s) using the `computerUse` subagent. Provide detailed instructions for the subagent to follow.
-4. Immediately after the `computerUse` subagent responds, end the video recording. If the walkthrough was successful: save the recording to your artifacts directory by using the `RecordScreen` tool with mode set to `SAVE_RECORDING` (this will also stop the recording). If the walkthrough was unsuccessful: discard the recording by using the `RecordScreen` tool with mode set to `DISCARD_RECORDING`. Debug why the walkthrough attempt did not succeed, fix the issue, and retry.
+3. Perform the manual test that demonstrates the working change(s).
+4. Immediately after the test, end the video. If it succeeded: `RecordScreen` with `SAVE_RECORDING`. If it failed: `DISCARD_RECORDING`, fix, and retry.
 
-Correct process for creating a video artifact: start recording, start `computerUse` subagent with detailed instructions, end recording.
+Portable path: `RecordScreen` start → exercise the UI → `RecordScreen` save. `computerUse` is optional assistance, not a requirement.
 
 **Critical Rules:**
 
@@ -76,11 +76,11 @@ Correct process for creating a video artifact: start recording, start `computerU
 
 ## Saving an artifact
 
-To save a screenshot, copy the screenshot to your artifacts directory (the absolute path given in the system prompt under "Creating & Uploading Walkthrough Artifacts"). It is probably advantageous to review and select the most relevant screenshots at the end of your testing.
+To save a screenshot, copy it into the walkthrough artifacts directory from this run's context (commonly `/opt/cursor/artifacts/` or the path named under "Creating & Uploading Walkthrough Artifacts"). Review and keep only the most relevant screenshots.
 
 Screen recordings are auto-saved to that same artifacts directory when RecordScreen is called with mode=SAVE_RECORDING. Only use mode=SAVE_RECORDING when you want the recording to be a user-facing artifact.
 
-Before referencing video artifacts in your response, use the `videoReview` subagent to verify your understanding of what the video shows.
+Before referencing video artifacts, verify what the video shows. Use a `videoReview` subagent when it is in the catalog; otherwise watch the saved file yourself and describe only what you confirmed.
 
 All files placed in that folder will be automatically uploaded when you finish your work and will be visible by the user in the Cursor web app.
 

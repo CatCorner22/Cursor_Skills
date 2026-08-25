@@ -1,6 +1,6 @@
 ---
 name: trl-training
-description: Train and fine-tune transformer language models using TRL (Transformers Reinforcement Learning). Supports SFT, DPO, GRPO, KTO, RLOO and Reward Model training via CLI commands.
+description: Train and fine-tune transformer language models locally with the TRL CLI (SFT, DPO, GRPO, KTO, RLOO, Reward Model). For managed Hugging Face Jobs, use huggingface-llm-trainer and hf-cli instead.
 license: Apache-2.0
 metadata:
   version: "1.0.0"
@@ -38,7 +38,10 @@ TRL provides CLI commands for post-training foundation models using state-of-the
 - **DPO** (Direct Preference Optimization): Align models using preference data
 - **GRPO** (Group Relative Policy Optimization): Train models by ranking multiple sampled outputs relative to each other and optimizing based on their comparative rewards.
 - **RLOO** (Reinforce Leave One Out): Online RL training with generation-based rewards
+- **KTO** (Kahneman-Tversky Optimization): Align from binary desirable/undesirable signals without paired preferences
 - **Reward Model Training**: Train reward models for RLHF
+
+This skill is the **local TRL CLI**. For cloud GPUs, hand off to `huggingface-llm-trainer` + `hf-cli` (`hf jobs …`) rather than inventing an MCP `hf_jobs` tool.
 
 TRL is built on top of Hugging Face Transformers and Accelerate, providing seamless integration with the Hugging Face ecosystem.
 
@@ -127,6 +130,24 @@ trl dpo \
   --lora_r 32 \
   --lora_alpha 16
 ```
+
+### trl kto - Kahneman-Tversky Optimization
+
+Align from unpaired binary feedback (desirable vs undesirable) when you do not have chosen/rejected pairs.
+
+```bash
+trl kto \
+  --model_name_or_path Qwen/Qwen2-0.5B-Instruct \
+  --dataset_name trl-lib/kto-mix-14k \
+  --learning_rate 5.0e-7 \
+  --num_train_epochs 1 \
+  --per_device_train_batch_size 2 \
+  --gradient_accumulation_steps 8 \
+  --output_dir Qwen2-0.5B-KTO \
+  --push_to_hub
+```
+
+Dataset rows need a prompt/completion (or messages) plus a boolean `label`. See https://huggingface.co/docs/trl/en/kto_trainer.
 
 ### trl grpo - Group Relative Policy Optimization
 

@@ -10,18 +10,20 @@ Plugin owners must apply most fixes. This repo is a stable copy, not a live over
 
 ## Highest-priority bugs (agent will do the wrong thing)
 
-1. **`skills/vercel/nextjs/SKILL.md`** — all 18 body links are `./file.md`; files live in `./references/`. Broken.
-2. **`skills/vercel/vercel-sandbox/SKILL.md`** — description says untrusted Firecracker VMs; body is 100% Chromium/`agent-browser`.
-3. **`skills/huggingface/huggingface-paper-publisher/SKILL.md`** — documents `claim`, `search`, `convert`, `validate`, and a real index API; `scripts/paper_manager.py` does not implement them (`search` prints “coming soon”; `index` only GETs a URL).
-4. **`skills/huggingface/huggingface-best/SKILL.md:133`** — “use the curated fallback table above” — the table does not exist.
-5. **`skills/cursor-cloud/canvas/SKILL.md:3`** — empty `description:`; progressive disclosure cannot auto-trigger.
-6. **`skills/adobe/appbuilder-action-scaffolder/SKILL.md:47` vs `:112-113`** — extension apps belong in `ext.config.yaml`; the guardrail section says `application.runtimeManifest` only.
-7. **`skills/cursor-cloud/env-setup/references/migrate-to-builds.md:5` vs `:84-85`** — L5 forbids Save; the copied blocker template tells the agent to propose and Save.
-8. **`skills/huggingface/hf-mcp/SKILL.md`** — tool names (`model_search`, `hf_jobs`, `gr1_flux1_schnell_infer`) do not match the live MCP namespace.
-9. **`skills/vercel/react-best-practices/SKILL.md:3`** — claims accessibility review; `rules/` has zero a11y rules (64 performance rules).
-10. **`skills/vercel/workflow/SKILL.md`** — `pathPatterns: '*workflow*'`, `minScore: 4`, `anyOf` includes `pipeline`/`phase`/`retry`. Over-triggers.
-11. **`skills/huggingface/hf-cli/SKILL.md:3`** — “anything related to AI and ML in general” steals work from every specialized HF skill.
-12. **`skills/vercel/auth/SKILL.md`** — frontmatter, retrieval, and `chainTo` promise Auth.js; the body is Clerk/Descope/Auth0 only.
+**Patched in this repo (2026-08-25 follow-up).** Live plugin caches may still have the old text until those packs update.
+
+1. **`skills/vercel/nextjs/SKILL.md`** — **FIXED:** 18 body links now point at `./references/…`.
+2. **`skills/vercel/vercel-sandbox/SKILL.md`** — **FIXED:** description is Chromium/`agent-browser`; `minScore` raised; `child_process` chains to this skill.
+3. **`skills/huggingface/huggingface-paper-publisher/SKILL.md`** — **FIXED:** documents only `index`/`check`/`link`/`create`/`info`/`citation`; `search` is stubbed; claim/POST-index go to `huggingface-papers`.
+4. **`skills/huggingface/huggingface-best/SKILL.md:133`** — **FIXED:** fallback table added; Q4 math is ×2; token via `HF_TOKEN`.
+5. **`skills/cursor-cloud/canvas/SKILL.md:3`** — **FIXED:** description filled; SDK path relative to the skill + `~/.cursor/…` fallback.
+6. **`skills/adobe/appbuilder-action-scaffolder/SKILL.md`** — **FIXED:** guardrail matches `_shared` (extension → `ext.config.yaml`; standalone → `application.runtimeManifest`).
+7. **`skills/cursor-cloud/env-setup/references/migrate-to-builds.md`** — **FIXED:** canonical file no longer asks to Save; env-setup copy is a pointer.
+8. **`skills/huggingface/hf-mcp/SKILL.md`** — **FIXED:** live tools (`hub_repo_search`, `hub_repo_details`, `gr1_z_image_turbo_generate`, `hf_fs`); jobs/docs fall back to `hf-cli`.
+9. **`skills/vercel/react-best-practices/SKILL.md:3`** — **FIXED:** performance-only description; no a11y claim.
+10. **`skills/vercel/workflow/SKILL.md`** — **FIXED:** dropped `*workflow*` globs; narrower `anyOf`; `minScore` 8; `setTimeout` stays in workflow.
+11. **`skills/huggingface/hf-cli/SKILL.md:3`** — **FIXED:** narrowed description; `--format` is `auto|human|agent|json|quiet`.
+12. **`skills/vercel/auth/SKILL.md`** — **FIXED:** Auth.js v5 section added; marketplace priority raised to 9.
 
 ---
 
@@ -248,6 +250,12 @@ L28–31 repeats the wrong standalone-only rule and the wrong validator path `sk
 
 No skill in this snapshot should be deleted from git. The value is in the procedures and scripts. Length is not a delete reason; `workflow` and `huggingface-llm-trainer` need split/lazy-load, not removal.
 
-## What this review did not change
+## Fixes applied in this repo (2026-08-25)
 
-No skill files were edited in this pass. The snapshot is the source of truth for what the agent actually loaded. Overlay patches belong in a follow-up if you want this repo to *fix* the bugs rather than only record them.
+Snapshot files under `skills/` were patched. Plugin caches under `~/.cursor/plugins/` were **not** edited.
+
+**P0:** all 12 items in the list above.
+
+**P1 (high-value leftovers):** walkthrough `computerUse`/`videoReview` optional + embed example; subscribe Slack/Linear “if in catalog” and no `/loop`; env-setup `cursor-cloud-*` name table; Adobe merged lists / `adobe/` script paths / broken bold; HF dead `hugging-face-jobs` refs → `hf-cli`; lora-space-builder YAML `hardware:` removed; spaces `secrets add`; zerogpu nvcc description; llm-trainer typo + raw TRL URL + no-`hf_jobs`-MCP banner; trl-training KTO + Jobs handoff; community-evals `--batch-size` scope; OIDC TTL unified to ~12h; Gateway slugs use dots; chat-sdk docs/aliases; deployments-cicd no Edge-first / no fake `/deploy` slash commands; Functions streaming example without `setTimeout`; verification no longer triggers on every `next dev`; `revalidateTag('posts', 'max')`; `next build --webpack`.
+
+Do not copy this tree into `.cursor/skills/` unless you want a second load next to live plugins.

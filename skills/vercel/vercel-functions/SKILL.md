@@ -304,10 +304,9 @@ Zero-config streaming on **both runtimes**, including Server-Sent Events (SSE). 
 export async function POST(req: Request) {
   const encoder = new TextEncoder()
   const stream = new ReadableStream({
-    async start(controller) {
+    start(controller) {
       for (const chunk of data) {
         controller.enqueue(encoder.encode(chunk))
-        await new Promise(r => setTimeout(r, 100))
       }
       controller.close()
     },
@@ -318,6 +317,8 @@ export async function POST(req: Request) {
   })
 }
 ```
+
+Do not add `setTimeout` / polling delays inside the handler — that trips the Functions `setTimeout` validate rule. For paced or long-running work, use Workflow `sleep()` instead.
 
 For AI streaming, use the AI SDK's `toUIMessageStreamResponse()` (for chat UIs with `useChat`) which handles SSE formatting automatically.
 

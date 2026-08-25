@@ -82,7 +82,9 @@ runtimeManifest:
 Run the manifest structure validator from the project root before deploying:
 
 ```bash
-python3 skills/_shared/scripts/validate_manifest_structure.py app.config.yaml
+python3 skills/adobe/_shared/scripts/validate_manifest_structure.py app.config.yaml
+# When this pack is installed without the adobe/ prefix:
+# python3 skills/_shared/scripts/validate_manifest_structure.py app.config.yaml
 ```
 
 The script exits with code 0 for valid structures and code 1 for violations.

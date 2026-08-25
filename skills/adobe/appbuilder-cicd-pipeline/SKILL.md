@@ -50,7 +50,7 @@ If user specifies Azure DevOps, GitLab CI, or Jenkins → use `references/generi
 - **Official actions:** `adobe/aio-cli-setup-action@3` (CLI install) + `adobe/aio-apps-action@3.3.0` (build/test/deploy)
 - **Auth model:** OAuth Server-to-Server (S2S) with IMS — the `auth` command in `aio-apps-action` is **DEPRECATED** (JWT). Do not use it.
 - **Secrets scope:** Repository secrets only. App Builder does **NOT** support GitHub environment secrets.
-- **Secrets per workspace:** 14 secrets with workspace suffix (`_STAGE`, `_PROD`)
+- **Secrets per workspace:** one repository secret per credential, suffixed `_STAGE` / `_PROD`. Count them from `assets/fetch-secrets.sh` / the generated workflow — do not assume a fixed "14".
 - **Prerequisite:** Add "I/O Management API" to each workspace in Developer Console before extracting secrets
 - **Workspace config:** Run `aio app use <workspace.json>` to configure `.aio` and `.env` files
 
@@ -59,7 +59,13 @@ If user specifies Azure DevOps, GitLab CI, or Jenkins → use `references/generi
 1. **Check existing setup:** Look for `.github/workflows/` (from `aio app add ci` or manual). Check if workflows already exist.
 2. **Determine CI/CD platform:** GitHub Actions is default. Ask if user needs Azure DevOps, GitLab CI, or Jenkins.
 3. **Generate workflow files:** Copy templates from `assets/` to `.github/workflows/`. Customize triggers, branch names, and environment suffixes as needed.
-4. **Guide secrets setup:**a. Ensure "I/O Management API" is added to the workspace in Developer Consoleb. Download `workspace.json` from Developer Consolec. Run `aio app use <workspace.json>` to configure local `.aio` and `.env`d. Run `assets/fetch-secrets.sh` to extract credential valuese. Guide user to add each secret to GitHub **repository** secrets (NOT environment secrets)f. Add `_STAGE` or `_PROD` suffix to each secret name
+4. **Guide secrets setup:**
+   a. Ensure "I/O Management API" is added to the workspace in Developer Console
+   b. Download `workspace.json` from Developer Console
+   c. Run `aio app use <workspace.json>` to configure local `.aio` and `.env`
+   d. Run `assets/fetch-secrets.sh` to extract credential values
+   e. Add each secret to GitHub **repository** secrets (NOT environment secrets)
+   f. Add `_STAGE` or `_PROD` suffix to each secret name
 5. **Add custom secrets:** If the app uses custom env vars, add them under the `env` key in the Deploy step
 6. **Validate:** Run through `references/checklist.md` before merge
 7. **Troubleshoot:** If deploy fails, consult `references/debugging.md` for common scenarios

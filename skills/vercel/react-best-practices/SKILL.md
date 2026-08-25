@@ -1,6 +1,6 @@
 ---
 name: react-best-practices
-description: React best-practices reviewer for TSX files. Triggers after editing multiple TSX components to run a condensed quality checklist covering component structure, hooks usage, accessibility, performance, and TypeScript patterns.
+description: React performance best-practices for TSX files — 64 Vercel rules across 8 impact tiers (waterfalls, bundle size, server/client fetching, re-renders). Use when optimizing React/Next.js components. This is not an accessibility linter.
 metadata:
   priority: 4
   docs:
@@ -36,14 +36,14 @@ retrieval:
   intents:
     - review react code
     - improve component quality
-    - check accessibility
     - optimize react
+    - fix waterfalls
   entities:
     - hooks
-    - accessibility
     - React
     - TSX
     - component
+    - performance
 chainTo:
   -
     pattern: 'from\s+[''\"](styled-components|@emotion/styled|@emotion/react|@mui/material|@chakra-ui/react)[''"]|styled\.'
@@ -100,7 +100,7 @@ Reference these guidelines when:
 
 - `server-auth-actions` - Authenticate server actions like API routes
 - `server-cache-react` - Use React.cache() for per-request deduplication
-- `server-cache-lru` - Use LRU cache for cross-request caching
+- `server-cache-lru` - Use LRU cache for cross-request caching (prefer Vercel Runtime Cache in serverless — see the runtime-cache skill)
 - `server-dedup-props` - Avoid duplicate serialization in RSC props
 - `server-hoist-static-io` - Hoist static I/O (fonts, logos) to module level
 - `server-serialization` - Minimize data passed to client components

@@ -4,8 +4,8 @@ description: Vercel Chat SDK expert guidance. Use when building multi-platform c
 metadata:
   priority: 8
   docs:
-    - "https://sdk.vercel.ai/docs/ai-sdk-ui/chatbot"
-    - "https://github.com/vercel/ai-chatbot"
+    - "https://github.com/vercel/chat"
+    - "https://sdk.vercel.ai/docs"
   sitemap: "https://sdk.vercel.ai/sitemap.xml"
   pathPatterns:
     - "app/api/chat/**"
@@ -92,25 +92,22 @@ metadata:
     minScore: 6
 retrieval:
   aliases:
-    - chat ui
-    - chatbot
-    - conversation interface
-    - messaging component
+    - multi-platform bot
+    - slack adapter
+    - chat sdk
   intents:
-    - build chatbot
-    - add chat interface
-    - create messaging ui
-    - implement chat feature
+    - build slack bot
+    - add telegram bot
+    - create cross-platform webhook bot
   entities:
-    - useChat
-    - Message
-    - ChatUI
-    - StreamingMessage
+    - Chat
+    - onNewMention
+    - @chat-adapter
     - chat-sdk
   examples:
-    - build a chatbot interface
-    - add chat to my app
-    - create a messaging component
+    - build a Slack bot with Chat SDK
+    - add a Telegram adapter
+    - create a multi-platform webhook bot
 chainTo:
   -
     pattern: 'from\s+[''""]openai[''""]'
@@ -238,7 +235,7 @@ Pass any `AsyncIterable<string>` to `thread.post()` or `thread.stream()`. For AI
 ```typescript
 import { ToolLoopAgent } from "ai";
 
-const agent = new ToolLoopAgent({ model: "anthropic/claude-4.5-sonnet" });
+const agent = new ToolLoopAgent({ model: "anthropic/claude-sonnet-4.6" });
 
 bot.onNewMention(async (thread, message) => {
   const result = await agent.stream({ prompt: message.text });

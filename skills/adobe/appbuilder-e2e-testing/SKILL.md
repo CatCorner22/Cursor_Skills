@@ -88,7 +88,7 @@ When the user says "add E2E tests" or "write Playwright tests" and intent is cle
 - All tests have `await expect()` assertions — no assertion-free tests
 - Action responses are stubbed with `page.route()` for deterministic results
 - No hardcoded `page.waitForTimeout()` — use `waitForSelector`, `waitForResponse`, or Playwright auto-waiting
-- Tests run in < 60s on local machine
+- The local suite should finish in under 60s. Individual AEM Extension Tester waits may use 10s+ timeouts for iframe/extension load — that is per-step, not a 10s suite budget.
 
 ## References
 

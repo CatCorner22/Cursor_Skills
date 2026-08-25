@@ -82,7 +82,7 @@ hf repos create <namespace>/<name> --type space --space-sdk <gradio|docker|stati
 - `--space-sdk` is required.
 - `--flavor` selects hardware. `zero-a10g` is the (legacy) identifier for ZeroGPU. Omit for `cpu-basic`. Run `hf spaces hardware` for the full paid list and pricing.
 - Visibility: `--public` (anyone can view), `--private` (only you), `--protected` (app is reachable but git repo / Files tab is private).
-- `--secrets KEY=val` becomes an environment variable inside the Space and is **not** visible to visitors. Use for API keys, gated-repo tokens (`HF_TOKEN=hf_…`), etc. Can also be set later via `hf spaces secrets set <id> KEY=val`.
+- `--secrets KEY=val` becomes an environment variable inside the Space and is **not** visible to visitors. Use for API keys, gated-repo tokens (`HF_TOKEN=hf_…`), etc. Can also be set later via `hf spaces secrets add <id> KEY=val`.
 - `--env KEY=val` is **visible to visitors** — use only for non-sensitive config (`GRADIO_SSR_MODE=false`, `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`, etc.).
 
 > Note: `hardware:` in the README YAML is silently ignored — hardware is only set via `--flavor` at creation, or later via `hf spaces settings <id> --hardware <name>`.

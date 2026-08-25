@@ -109,10 +109,11 @@ If there is any ambiguity — multiple patterns could fit, constraints are uncle
 
 ## Common Manifest Guardrail
 
-- Keep App Builder action definitions under `application.runtimeManifest` in `app.config.yaml`.
-- Do not use root-level `runtimeManifest`; App Builder CLI ignores it for action configuration.
-- Validate manifest structure before deploy: `python3 ../_shared/scripts/validate_manifest_structure.py <path-to-app.config.yaml>`.
-- Use `../_shared/references/appbuilder-manifest-guardrail.md` for valid and invalid examples.
+- Extension apps: register actions under `runtimeManifest` in `src/<extension-dir>/ext.config.yaml` (referenced via `$include` from `app.config.yaml`).
+- Standalone apps: register actions under `application.runtimeManifest` in `app.config.yaml`.
+- Never use a root-level `runtimeManifest` in `app.config.yaml`; the CLI silently ignores it.
+- Validate before deploy: `python3 ../_shared/scripts/validate_manifest_structure.py <path-to-app.config.yaml>`.
+- See `../_shared/references/appbuilder-manifest-guardrail.md` for valid and invalid examples.
 
 ## Common Issues
 

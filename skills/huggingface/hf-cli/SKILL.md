@@ -1,6 +1,6 @@
 ---
 name: hf-cli
-description: "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when: handling authentication; managing local cache; managing Hugging Face Buckets; running or scheduling jobs on Hugging Face infrastructure; managing Hugging Face repos; discussions and pull requests; browsing models, datasets and spaces; reading, searching, or browsing academic papers; managing collections; querying datasets; configuring spaces; setting up webhooks; or deploying and managing HF Inference Endpoints. Make sure to use this skill whenever the user mentions 'hf', 'huggingface', 'Hugging Face', 'huggingface-cli', or 'hugging face cli', or wants to do anything related to the Hugging Face ecosystem and to AI and ML in general. Also use for cloud storage needs like training checkpoints, data pipelines, or agent traces. Use even if the user doesn't explicitly ask for a CLI command. Replaces the deprecated `huggingface-cli`."
+description: "Hugging Face Hub CLI (`hf`) for auth, repos, models, datasets, spaces, papers, jobs, buckets, cache, and endpoints. Use when the user needs a terminal/CLI workflow on the Hub (`hf`, `huggingface-cli`). Prefer specialized skills (huggingface-spaces, huggingface-llm-trainer, huggingface-papers, huggingface-best) for task-specific guidance. Do not use this skill for generic AI/ML questions that are not Hub CLI operations."
 ---
 
 Install: `curl -LsSf https://hf.co/cli/install.sh | bash -s`.
@@ -194,7 +194,7 @@ Generated with `huggingface_hub v1.18.0`. Run `hf skills add --force` to regener
 
 ## Common options
 
-- `--format` — Output format: `--format json` (or `--json`) or `--format table` (default).
+- `--format` — Output format: `auto` (default), `human`, `agent`, `json`, or `quiet` (`-q`).
 - `-q / --quiet` — Quiet output (one ID per line).
 - `--revision` — Git revision id which can be a branch name, a tag, or a commit hash.
 - `--token` — Use a User Access Token. Prefer setting `HF_TOKEN` env var instead of passing `--token`.

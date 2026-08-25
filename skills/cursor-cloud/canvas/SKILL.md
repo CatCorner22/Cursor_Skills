@@ -1,6 +1,6 @@
 ---
 name: canvas
-description: 
+description: "Author standalone .canvas.tsx analytical artifacts (charts, tables, audits, metrics) using the cursor/canvas SDK. Use when the deliverable IS structured visual output — not code fixes, PRs, or external dashboards. Skip for short answers and intermediate MCP queries."
 metadata:
   surfaces:
     - ide
@@ -54,7 +54,7 @@ For a new canvas, always use the write file tool to create the `.canvas.tsx` fil
 - A **legend** when more than one series is shown, with the exact series names from the source data.
 - The **source and time range** in a small caption (e.g. "Source: Datadog · last 7 days"). If a value is a transformation (mean, p95, normalized, smoothed), say so in the label.
 
-**Component discovery:** prefer built-in `cursor/canvas` components over hand-rolled markup. The full public surface (components, hooks, prop types, tokens) is declared in `~/.cursor/skills-cursor/canvas/sdk/index.d.ts` and its sibling `.d.ts` files — read them when you need exact exports, prop shapes, or hook signatures rather than guessing. Referencing an export that does not exist is the most common runtime error.
+**Component discovery:** prefer built-in `cursor/canvas` components over hand-rolled markup. The full public surface (components, hooks, prop types, tokens) is declared in this skill's `sdk/index.d.ts` and its sibling `.d.ts` files (resolve relative to this SKILL.md). Prefer `~/.cursor/skills-cursor/canvas/sdk/` when that install is present. Read those files when you need exact exports, prop shapes, or hook signatures rather than guessing. Referencing an export that does not exist is the most common runtime error.
 
 Apply the Design guidance below as you write, and complete its Pre-delivery self-check before returning the canvas.
 

@@ -1,6 +1,6 @@
 ---
 name: hf-mcp
-description: Use Hugging Face Hub via MCP server tools. Search models, datasets, Spaces, papers. Get repo details, fetch documentation, run compute jobs, and use Gradio Spaces as AI tools. Available when connected to the HF MCP server.
+description: Use Hugging Face Hub via MCP server tools when the Huggingface-skills (or equivalent) MCP namespace is connected. Search models, datasets, Spaces, and papers; inspect repos; invoke Gradio Spaces. If MCP is disconnected, use the hf-cli skill instead.
 ---
 
 # Hugging Face MCP Server
@@ -14,7 +14,7 @@ Connect AI assistants to the Hugging Face Hub. Setup: https://huggingface.co/set
 ```
 User: "Find the best model for code generation"
 
-1. model_search(task="text-generation", query="code", sort="trendingScore", limit=10)
+1. hub_repo_search(repo_type="model", query="code", sort="trendingScore", limit=10)
 2. hub_repo_details(repo_ids=["top-result-id"], include_readme=true)
 ```
 
@@ -23,8 +23,8 @@ User: "Find the best model for code generation"
 ```
 User: "Compare Llama vs Qwen for text generation"
 
-1. model_search(author="meta-llama", task="text-generation", sort="downloads", limit=5)
-2. model_search(author="Qwen", task="text-generation", sort="downloads", limit=5)
+1. hub_repo_search(repo_type="model", query="meta-llama", sort="downloads", limit=5)
+2. hub_repo_search(repo_type="model", query="Qwen", sort="downloads", limit=5)
 3. hub_repo_details(repo_ids=["meta-llama/Llama-3.2-1B", "Qwen/Qwen3-8B"], include_readme=true)
 ```
 
@@ -33,7 +33,7 @@ User: "Compare Llama vs Qwen for text generation"
 ```
 User: "Find datasets for sentiment analysis in English"
 
-1. dataset_search(query="sentiment", tags=["language:en", "task_categories:text-classification"], sort="downloads")
+1. hub_repo_search(repo_type="dataset", query="sentiment", sort="downloads")
 2. hub_repo_details(repo_ids=["top-dataset-id"], repo_type="dataset", include_readme=true)
 ```
 
@@ -42,7 +42,7 @@ User: "Find datasets for sentiment analysis in English"
 ```
 User: "Find a tool that can remove image backgrounds"
 
-1. space_search(query="background removal", mcp=true)
+1. hub_repo_search(repo_type="space", query="background removal") or dynamic_space(operation="discover")
 2. dynamic_space(operation="view_parameters", space_name="result-space-id")
 3. dynamic_space(operation="invoke", space_name="result-space-id", parameters="{...}")
 ```
@@ -53,7 +53,7 @@ User: "Find a tool that can remove image backgrounds"
 User: "Create an image of a robot reading a book"
 
 1. dynamic_space(operation="discover")  # See available tasks
-2. gr1_flux1_schnell_infer(prompt="a robot sitting in a library reading a book, warm lighting, detailed")
+2. gr1_z_image_turbo_generate(prompt="a robot sitting in a library reading a book, warm lighting, detailed")
 ```
 
 ### Research a Topic
@@ -61,7 +61,7 @@ User: "Create an image of a robot reading a book"
 ```
 User: "What are the latest papers on RLHF?"
 
-1. paper_search(query="reinforcement learning from human feedback", results_limit=10)
+1. hub_repo_search(query="reinforcement learning from human feedback") or hf papers search via hf-cli
 2. hub_repo_details(repo_ids=["paper-linked-model"], include_readme=true)  # If paper links to models
 ```
 
@@ -70,8 +70,8 @@ User: "What are the latest papers on RLHF?"
 ```
 User: "How do I fine-tune with LoRA using PEFT?"
 
-1. hf_doc_search(query="LoRA fine-tuning", product="peft")
-2. hf_doc_fetch(doc_url="https://huggingface.co/docs/peft/...")
+1. Fetch docs with curl/WebFetch on https://huggingface.co/docs/peft (hf_doc_search / hf_doc_fetch are not in the live MCP catalog)
+2. Or use hf-cli / the huggingface-llm-trainer skill for Jobs training
 ```
 
 ### Run a Quick GPU Job
@@ -79,10 +79,8 @@ User: "How do I fine-tune with LoRA using PEFT?"
 ```
 User: "Run this Python script on a GPU"
 
-hf_jobs(operation="uv", args={
-  "script": "# /// script\n# dependencies = [\"torch\"]\n# ///\nimport torch\nprint(torch.cuda.is_available())",
-  "flavor": "t4-small"
-})
+# hf_jobs is not in the live MCP catalog — use hf-cli:
+hf jobs uv run --flavor t4-small -s HF_TOKEN=$HF_TOKEN python -c "import torch; print(torch.cuda.is_available())"
 ```
 
 ### Train a Model on Cloud GPU
@@ -90,12 +88,8 @@ hf_jobs(operation="uv", args={
 ```
 User: "Run my training script on an A10G"
 
-hf_jobs(operation="run", args={
-  "image": "pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime",
-  "command": ["/bin/sh", "-lc", "pip install transformers trl && python train.py"],
-  "flavor": "a10g-small",
-  "secrets": {"HF_TOKEN": "$HF_TOKEN"}
-})
+# Use hf-cli / huggingface-llm-trainer, not a nonexistent hf_jobs MCP tool:
+hf jobs uv run --flavor a10g-small -s HF_TOKEN=$HF_TOKEN python train.py
 ```
 
 ### Check Job Status
@@ -103,8 +97,10 @@ hf_jobs(operation="run", args={
 ```
 User: "What's happening with my training job?"
 
-1. hf_jobs(operation="ps")
-2. hf_jobs(operation="logs", args={"job_id": "job-xxxxx"})
+# hf_jobs is not in the live MCP catalog — use hf-cli:
+hf jobs ps
+hf jobs inspect <job-id>
+hf jobs logs <job-id>
 ```
 
 ### Explore What's Trending
@@ -112,7 +108,7 @@ User: "What's happening with my training job?"
 ```
 User: "What models are trending right now?"
 
-model_search(sort="trendingScore", limit=20)
+hub_repo_search(repo_type="model", query="*", sort="trendingScore", limit=20)
 ```
 
 ### Get Model Card Details
@@ -128,7 +124,7 @@ hub_repo_details(repo_ids=["mistralai/Mistral-7B-v0.1"], include_readme=true)
 ```
 User: "Find GGUF versions of Llama 3"
 
-model_search(query="Llama 3 GGUF", sort="downloads", limit=10)
+hub_repo_search(repo_type="model", query="Llama 3 GGUF", sort="downloads", limit=10)
 ```
 
 ### Use a Gradio Space as a Tool
@@ -136,7 +132,7 @@ model_search(query="Llama 3 GGUF", sort="downloads", limit=10)
 ```
 User: "Transcribe this audio file"
 
-1. space_search(query="speech to text transcription", mcp=true)
+1. hub_repo_search(repo_type="space", query="speech to text transcription") or dynamic_space(operation="discover")
 2. dynamic_space(operation="view_parameters", space_name="openai/whisper")
 3. dynamic_space(operation="invoke", space_name="openai/whisper", parameters="{\"audio\": \"...\"}")
 ```
@@ -146,33 +142,30 @@ User: "Transcribe this audio file"
 ```
 User: "Run this data sync every day at midnight"
 
-hf_jobs(operation="scheduled uv", args={
-  "script": "...",
-  "cron": "0 0 * * *",
-  "flavor": "cpu-basic"
-})
+# Not an MCP tool — use hf-cli:
+hf jobs scheduled uv run --flavor cpu-basic --schedule "0 0 * * *" python sync.py
 ```
 
 ## Tool Selection Guide
 
 | Goal | Tool |
 |------|------|
-| Find models | `model_search` |
-| Find datasets | `dataset_search` |
-| Find Spaces/apps | `space_search` |
-| Find papers | `paper_search` |
+| Find models / datasets / Spaces | `hub_repo_search` with `repo_type` |
 | Get repo README/details | `hub_repo_details` |
-| Learn library usage | `hf_doc_search` → `hf_doc_fetch` |
-| Run code on GPU/CPU | `hf_jobs` |
+| Browse Hub files | `hf_fs` |
+| Learn library usage | Fetch official docs (no `hf_doc_*` tools in this catalog) |
+| Run code on GPU/CPU | `hf-cli` (`hf jobs …`) — not MCP |
 | Use Gradio apps as tools | `dynamic_space` |
-| Generate images | `gr1_flux1_schnell_infer` or `dynamic_space` |
+| Generate images | `gr1_z_image_turbo_generate` or `dynamic_space` |
 | Check auth | `hf_whoami` |
+
+If the Huggingface-skills MCP namespace is disconnected or a named tool is missing, use the `hf-cli` skill instead of inventing tool names.
 
 ## Tips
 
 - Use `sort="trendingScore"` to find what's popular now
 - Use `sort="downloads"` to find battle-tested options
-- Set `mcp=true` in `space_search` to find Spaces usable as tools
+- Discover MCP-capable Spaces with `dynamic_space(operation="discover")`, not a `mcp=true` search flag
 - Use `include_readme=true` in `hub_repo_details` for full model/dataset documentation
-- For jobs accessing private repos, always include `secrets: {"HF_TOKEN": "$HF_TOKEN"}`
+- For jobs accessing private repos, pass `-s HF_TOKEN=$HF_TOKEN` on the `hf jobs` CLI
 - Use `dynamic_space(operation="discover")` to see all available Space-based tasks

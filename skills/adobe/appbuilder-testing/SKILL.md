@@ -66,7 +66,7 @@ If there is any ambiguity — multiple test types needed, project structure uncl
 - **Response shape:** All actions return `{ statusCode, body }` — assert both in every test.
 - **Error paths:** Always test 200 (success), 400 (bad input), and 500 (SDK failure) scenarios.
 - **CommonJS:** Action test files use `require()` and `module.exports` (not ES imports).
-- **Component test directory:** `test/web-src/components/<ComponentName>.test.js` (or `test/components/`).
+- **Component test directory:** put tests under `test/web-src/components/` (or `test/components/`). Source components live under `web-src/src/components/`.
 - **Provider wrapper:** Always wrap in `<Provider theme={defaultTheme}>` — Spectrum renders nothing without it.
 - **ARIA selectors:** Use `getByRole()`, not CSS classes — see `references/component-testing-patterns.md` selector table.
 - **Async testing:** Use `findBy*` for data that appears async, `queryBy*` for absence, `waitFor` for state changes.
@@ -76,8 +76,17 @@ If there is any ambiguity — multiple test types needed, project structure uncl
 1. **Scan project structure** — Check for existing `test/` directory, `jest.config.js`, and test scripts in `package.json`. Scan both `src/` for actions AND `web-src/` for UI components.
 2. **Identify targets to test** — Parse `ext.config.yaml` (or `app.config.yaml`) for declared actions and their source paths. Check `web-src/src/components/` for React components.
 3. **Determine test types needed** — Unit tests for logic, integration tests for deployed actions, contract tests for API interactions.
-4. **For each action:**a. Read the action source to identify SDK dependencies (State, Files, Events, Logger, etc.).b. Generate unit test using `assets/unit-test-template.js` as the base.c. Inject appropriate mocks from `references/mock-catalog.md` based on detected dependencies.d. Add error scenario tests (missing params, auth failures, SDK errors).
-5. **For each UI component:**a. Read the component source to identify dependencies (shell context, UIX guest, action calls).b. Generate component test using `assets/component-test-template.js` as the base.c. Wrap all renders in `<Provider theme={defaultTheme}>` — Spectrum renders nothing without it.d. Inject shell mock (`assets/shell-mock-helper.js`) or UIX guest mock (`assets/uix-guest-mock-helper.js`) as needed.e. Add loading, success, and error state tests for async data using `findBy*` and `waitFor`.
+4. **For each action:**
+   a. Read the action source to identify SDK dependencies (State, Files, Events, Logger, etc.).
+   b. Generate a unit test using `assets/unit-test-template.js` as the base.
+   c. Inject appropriate mocks from `references/mock-catalog.md` based on detected dependencies.
+   d. Add error scenario tests (missing params, auth failures, SDK errors).
+5. **For each UI component:**
+   a. Read the component source to identify dependencies (shell context, UIX guest, action calls).
+   b. Generate a component test using `assets/component-test-template.js` as the base.
+   c. Wrap all renders in `<Provider theme={defaultTheme}>` — Spectrum renders nothing without it.
+   d. Inject the shell mock (`assets/shell-mock-helper.js`) or UIX guest mock (`assets/uix-guest-mock-helper.js`) as needed.
+   e. Add loading, success, and error state tests for async data using `findBy*` and `waitFor`.
 6. **Run tests** — Execute `aio app test` or `npx jest --coverage` and report results.
 7. **Validate** — Check against `references/checklist.md` before marking done.
 
@@ -138,7 +147,7 @@ If there is any ambiguity — multiple test types needed, project structure uncl
 - **Mocks not working:** `jest.mock()` calls must appear before `require()` of the module under test. Jest hoists mock declarations but order still matters for manual mocks.
 - **State/Files SDK tests fail:** These SDKs require Runtime environment for real calls. Always mock them in unit tests. Use `aio app run` (not `aio app dev`) for integration tests that need real SDK access.
 - **Coverage too low:** Add tests for error branches — missing params, invalid auth headers, SDK `init()` failures, and timeout scenarios.
-- `aio app test`** vs `npx jest`:** `aio app test` is a thin wrapper around Jest. Use `npx jest --coverage` directly for more control over flags and reporters.
+- **`aio app test` vs `npx jest`:** `aio app test` is a thin wrapper around Jest. Use `npx jest --coverage` directly for more control over flags and reporters.
 - **Spectrum components render blank in tests:** Missing `<Provider theme={defaultTheme}>` wrapper. Use `renderWithSpectrum()` helper from `assets/component-test-template.js`.
 - **ARIA role queries return null:** Spectrum components use ARIA roles, not CSS classes. See `references/component-testing-patterns.md` section g for the role reference table.
 

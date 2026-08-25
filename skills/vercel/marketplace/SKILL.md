@@ -2,7 +2,7 @@
 name: marketplace
 description: Vercel Marketplace expert guidance — discovering, installing, and managing third-party integrations via the `vercel integration` CLI. Use when building any app that needs an external capability without a dedicated skill — commerce (stores, storefronts, selling products), payments (checkout, subscriptions, billing), observability/monitoring, messaging/email, search, or CMS — or when discovering, installing, or managing integrations.
 metadata:
-  priority: 3
+  priority: 9
   docs:
     - "https://vercel.com/docs/integrations"
   sitemap: "https://vercel.com/sitemap/docs.xml"
@@ -12,6 +12,14 @@ metadata:
     - '\bvercel\s+integration\b'
     - '\bvercel\s+integration\s+add\b'
     - '\bvercel\s+integration\s+discover\b'
+  promptSignals:
+    phrases:
+      - "vercel integration"
+      - "marketplace"
+      - "add stripe"
+      - "add shopify"
+      - "provision database"
+    minScore: 4
 retrieval:
   aliases:
     - vercel integrations

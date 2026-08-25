@@ -291,7 +291,7 @@ jobs:
 | Preview for every PR | Default behavior | Auto-creates preview URL per branch |
 | Promote preview to production | CLI promotion | `vercel promote <url>` |
 | Atomic deploys with DB migrations | Two-phase | Run migration → verify → `vercel promote` |
-| Edge-first architecture | Edge Functions | Set `runtime: 'edge'` in route config |
+| Need Edge (geo, middleware-adjacent) | Edge Functions (exceptional) | Set `runtime: 'edge'` only when Node/Fluid cannot do the job — Edge is not the default |
 
 ## Common Build Errors
 
@@ -336,13 +336,13 @@ For production deploys, also include:
 
 Based on the deployment outcome:
 
-- **Success (preview)** → "Visit the preview URL to verify. When ready, run `/deploy prod` to promote to production."
-- **Success (production)** → "Your production site is live. Run `/status` to see the full project overview."
-- **Build error** → "Check the build logs above. Common fixes: verify `build` script in package.json, check for missing env vars with `/env list`, ensure dependencies are installed."
-- **Missing env vars** → "Run `/env pull` to sync environment variables locally, or `/env list` to review what's configured on Vercel."
+- **Success (preview)** → "Visit the preview URL to verify. When ready, promote with `vercel promote <deployment-url>` (or merge to the production branch)."
+- **Success (production)** → "Your production site is live. Inspect with `vercel ls` and `vercel inspect <url>`."
+- **Build error** → "Check the build logs above. Common fixes: verify the `build` script in package.json, list env with `vercel env ls`, ensure dependencies are installed."
+- **Missing env vars** → "Sync locally with `vercel env pull .env.local --yes`, or review with `vercel env ls`."
 - **Monorepo issues** → "Ensure the correct project root is configured in Vercel project settings. Check `vercel.json` for `rootDirectory`."
 - **Post-deploy errors detected** → "Review errors above. Check `vercel logs <url> --level error` for details. If drains are configured, correlate with external monitoring."
-- **No monitoring configured** → "Set up drains or install an error tracking integration before the next production deploy. Run `/status` for a full observability diagnostic."
+- **No monitoring configured** → "Set up drains or install an error tracking integration before the next production deploy."
 
 ## Official Documentation
 

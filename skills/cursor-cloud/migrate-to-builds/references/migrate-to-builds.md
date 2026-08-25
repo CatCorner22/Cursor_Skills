@@ -82,7 +82,7 @@ The order of operations is mandatory:
 2. Continue only independent pre-snapshot setup work. Do not snapshot, trigger a build, verify a build, propose the configuration, or ask the user to Save.
 3. End the turn with a concise explanation of what remains and wait until every required blocker is resolved. If the user declines a required action, report that setup remains incomplete; do not propose or request Save.
 4. After every required blocker is resolved, resume the matching workflow's remaining validation steps, including snapshot, build, and build verification when those capabilities are available.
-5. Only after validation succeeds, propose the configuration and ask the user to Save.
+5. After validation succeeds, resume migration reporting (build + fresh-agent smoke). Do **not** call `propose-environment-json` or ask the user to Save. The user enables builds on the environment page. Only include tested DB-managed script overrides after the Enable-builds link if the user may want to copy those fixes.
 
 Confirm that required secrets are missing or invalid before requesting them. The tool accepts only three action types: `add_secrets`, `add_egress_allowlist_domain`, and `external_action`. Do not use `add_test_login` — put test-login username/password/OTP secret names in one `add_secrets` action instead. Each secret is `{ "name": "SECRET_NAME", "optional": false }` (`optional` is required). External actions are only for work the user must perform outside the repository or VM; use `instructions` (not `description`) on `external_action`. You may call the tool more than once as new blockers appear; successful calls in the completed turn are combined.
 

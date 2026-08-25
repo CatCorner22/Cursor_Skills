@@ -36,14 +36,32 @@ When a device is specified, extract its available memory (unified RAM for Apple 
 
 Examples: 16GB → 8B fp16 / 32B Q4 — 24GB VRAM → 12B fp16 / 48B Q4 — 8GB → 4B fp16 / 16B Q4
 
+### Curated fallback (when no official benchmark matches)
+
+| Task | Fallback benchmark dataset IDs | Notes |
+|------|-------------------------------|-------|
+| General chat / instruction | `open-llm-leaderboard/open_llm_leaderboard` | Broad LLM suite |
+| Code | `bigcode/bigcodebench`, `evalplus/humanevalplus` | Pick closest |
+| Math / reasoning | `open-llm-leaderboard/open_llm_leaderboard` | |
+| Multimodal VLM | `lmms-lab/LMMs-Eval` | |
+| OCR / document | `allenai/olmOCR-bench` | |
+| Speech ASR | `hf-audio/open_asr_leaderboard` | |
+| Image classification | `timm/imagenet-1k-validation` | |
+| Retrieval / RAG | `BeIR/beir`, `sentence-transformers/stsb` | bi-encoder proxies |
+| Agents / tool use | `gaia-benchmark/GAIA` | sparse coverage |
+
+If none match, use `hub_repo_search` (MCP) or `GET /api/models?search=<task>&sort=trendingScore&limit=20` and label results **popularity, not benchmark**.
+
 ---
 
 ## Step 2: Find relevant benchmark datasets
 
+Prefer `HF_TOKEN` (or `hf auth token`) over reading `~/.cache/huggingface/token`.
+
 Fetch the full list of official HF benchmarks:
 
 ```bash
-curl -s -H "Authorization: Bearer $(cat ~/.cache/huggingface/token)" \
+curl -s -H "Authorization: Bearer ${HF_TOKEN}" \
   "https://huggingface.co/api/datasets?filter=benchmark:official&limit=500" | jq '[.[] | {id, tags, description}]'
 ```
 
@@ -56,7 +74,7 @@ Read the returned list and select the datasets most relevant to the user's task 
 For each selected benchmark dataset:
 
 ```bash
-curl -s -H "Authorization: Bearer $(cat ~/.cache/huggingface/token)" \
+curl -s -H "Authorization: Bearer ${HF_TOKEN}" \
   "https://huggingface.co/api/datasets/<namespace>/<repo>/leaderboard" | jq '[.[:15] | .[] | {rank, modelId, value, verified}]'
 ```
 
@@ -70,7 +88,7 @@ For the top 10-15 candidate model IDs, get model infos.
 
 ```bash
 # REST API
-curl -s -H "Authorization: Bearer $(cat ~/.cache/huggingface/token)" \
+curl -s -H "Authorization: Bearer ${HF_TOKEN}" \
   "https://huggingface.co/api/models/org/model1" | jq '{safetensors, tags, cardData}'
 
 # CLI (hf-cli)
@@ -88,7 +106,7 @@ Extract from each response:
 
 **If a device was specified:**
 1. Remove models exceeding the fp16 parameter budget for the device
-2. Flag models that fit only with Q4 quantization (multiply budget by ~4 for Q4 capacity)
+2. Flag models that fit only with Q4 quantization (same as Step 1: Q4 max params ≈ memory GB × 2)
 3. If a highly-ranked model is slightly over budget, keep it with a "needs Q4" note — don't silently drop it
 
 **If no device was mentioned:** skip all size filtering — just rank by benchmark score.
@@ -130,5 +148,5 @@ If they say yes, ask whether they'd prefer to:
 
 - **Leaderboard not found**: skip, note "leaderboard unavailable" in output
 - **Model missing from hub_repo_details**: fall back to parsing size from model name
-- **No benchmarks found for task**: use the curated fallback table above, or try `hub_repo_search` with `filters=["<task>"]` sorted by `trendingScore`
+- **No benchmarks found for task**: use the curated fallback table in Step 1, or try `hub_repo_search` / `GET /api/models?search=<task>&sort=trendingScore`
 - **All leaderboards fail**: fall back to `hub_repo_search` for popular models tagged with the task, note that results are by popularity rather than benchmark score

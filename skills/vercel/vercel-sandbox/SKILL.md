@@ -1,6 +1,6 @@
 ---
 name: vercel-sandbox
-description: Vercel Sandbox guidance — ephemeral Firecracker microVMs for running untrusted code safely. Supports AI agents, code generation, and experimentation. Use when executing user-generated or AI-generated code in isolation.
+description: Vercel Sandbox + agent-browser guidance — run headless Chrome in Firecracker microVMs for screenshots, accessibility snapshots, and browser automation. Use when building agent-browser or scheduled scraping flows on Vercel. For generic untrusted-code isolation, still use @vercel/sandbox APIs documented here after the browser sections.
 metadata:
   priority: 4
   docs:
@@ -63,7 +63,7 @@ metadata:
       - "sandbox attribute"
       - "codesandbox.io"
       - "stackblitz"
-    minScore: 4
+    minScore: 6
 retrieval:
   aliases:
     - code sandbox
@@ -87,8 +87,8 @@ chainTo:
     message: 'vm2 detected — it has known security vulnerabilities. Reloading Vercel Sandbox guidance for Firecracker microVM-based safe execution.'
   -
     pattern: 'child_process.*exec\(|execSync\(|spawn\(.*\{.*shell:\s*true'
-    targetSkill: ai-sdk
-    message: 'Shell exec for code execution detected — loading AI SDK guidance for tool-calling patterns that pair with Vercel Sandbox for safe agent execution.'
+    targetSkill: vercel-sandbox
+    message: 'Shell exec for code execution detected — run untrusted or AI-generated commands inside @vercel/sandbox instead of the agent host.'
 
 ---
 

@@ -257,8 +257,8 @@ Run both bundlers and compare:
 # Turbopack build (default in Next.js 16)
 next build
 
-# Webpack build
-BUNDLER=webpack next build
+# Webpack build (Next.js 16+)
+next build --webpack
 ```
 
 Compare `.next/` output sizes and page-level chunks.

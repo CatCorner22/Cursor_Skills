@@ -68,7 +68,7 @@ Example arguments:
 
 ### Snapshot the working VM
 
-If `cursor-cloud-take-environment-snapshot` is available, take a fresh snapshot after the VM reflects the final install state:
+If `cursor-cloud-take-environment-snapshot` (this skill also says `take-environment-snapshot`) is available, take a fresh snapshot after the VM reflects the final install state:
 
 1. Run the final install command successfully.
 2. Call `cursor-cloud-take-environment-snapshot` and record the returned snapshot ID.

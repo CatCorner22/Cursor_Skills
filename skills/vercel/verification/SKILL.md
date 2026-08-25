@@ -1,6 +1,6 @@
 ---
 name: verification
-description: "Full-story verification — infers what the user is building, then verifies the complete flow end-to-end: browser → API → data → response. Triggers on dev server start and 'why isn't this working' signals."
+description: "Full-story verification — infers what the user is building, then verifies the complete flow end-to-end: browser → API → data → response. Use when the user asks to verify a feature, check end-to-end, or debug 'why isn't this working'. Do not auto-load just because a dev server started."
 summary: "Verify full user story: browser + server + data flow + env"
 metadata:
   priority: 7
@@ -8,15 +8,7 @@ metadata:
     - "https://vercel.com/docs/projects/project-configuration"
   sitemap: "https://vercel.com/sitemap/docs.xml"
   pathPatterns: []
-  bashPatterns:
-    - '\bnext\s+dev\b'
-    - '\bnpm\s+run\s+dev\b'
-    - '\bpnpm\s+dev\b'
-    - '\bbun\s+run\s+dev\b'
-    - '\byarn\s+dev\b'
-    - '\bvite\s*(dev)?\b'
-    - '\bvercel\s+dev\b'
-    - '\bastro\s+dev\b'
+  bashPatterns: []
   importPatterns: []
   promptSignals:
     phrases:
@@ -141,7 +133,7 @@ Trace the feature's data path from trigger to completion:
 1. **UI trigger** — What user action initiates the flow? (button click, page load, form submit)
 2. **Client → Server** — What request is made? Check the fetch/action call, verify the URL, method, and payload match the API route
 3. **API route handler** — Read the route file. Does it handle the method? Does it validate input? Does it call the right service/database?
-4. **External dependencies** — If the route calls a database, third-party API, or Vercel service (KV, Blob, Postgres, AI SDK): verify the client is initialized, credentials are present, and the call shape matches the SDK docs
+4. **External dependencies** — If the route calls a database, third-party API, or Vercel service (Blob, Neon/Marketplace Postgres, Upstash Redis, AI SDK): verify the client is initialized, credentials are present, and the call shape matches the SDK docs. Do not assume legacy `KV` / `@vercel/postgres` packages still exist.
 5. **Response → UI** — Does the response format match what the client expects? Is error handling present on both sides?
 
 At each boundary, check for these common breaks:

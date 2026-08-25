@@ -162,14 +162,14 @@ vercel env pull .env.local     # Provisions VERCEL_OIDC_TOKEN automatically
 
 ### How It Works
 
-1. `vercel env pull` writes a `VERCEL_OIDC_TOKEN` to `.env.local` — a short-lived JWT (~24h)
+1. `vercel env pull` writes a `VERCEL_OIDC_TOKEN` to `.env.local` — a short-lived JWT (~12h)
 2. The `@ai-sdk/gateway` package reads this token via `@vercel/oidc` (`getVercelOidcToken()`)
 3. No `AI_GATEWAY_API_KEY` or provider-specific keys (like `ANTHROPIC_API_KEY`) are needed
 4. On Vercel deployments, OIDC tokens are auto-refreshed — zero maintenance
 
 ### Local Development
 
-For local dev, the OIDC token from `vercel env pull` is valid for ~24 hours. When it expires:
+For local dev, the OIDC token from `vercel env pull` is valid for ~12 hours. When it expires:
 
 ```bash
 vercel env pull .env.local --yes   # Re-pull to get a fresh token

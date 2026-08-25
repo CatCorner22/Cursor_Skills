@@ -26,6 +26,9 @@ Architecture and Runtime: Action design, contracts, orchestration, and runtime c
 - Operational notes for deployment and support teams
 
 ## Manifest Guardrail
-In `app.config.yaml`, define actions under `application.runtimeManifest`.
-Root-level `runtimeManifest` is invalid for App Builder action discovery.
-From the project root, run: `python3 skills/_shared/scripts/validate_manifest_structure.py <path-to-app.config.yaml>`.
+Follow `../../_shared/references/appbuilder-manifest-guardrail.md`:
+- Extension apps: `runtimeManifest` in `src/<extension-dir>/ext.config.yaml`
+- Standalone apps: `application.runtimeManifest` in `app.config.yaml`
+- Never a root-level `runtimeManifest` in `app.config.yaml`
+
+From the project root, run: `python3 skills/adobe/_shared/scripts/validate_manifest_structure.py <path-to-app.config.yaml>` (or `../_shared/scripts/validate_manifest_structure.py` when this skill is installed as a sibling of `_shared`).

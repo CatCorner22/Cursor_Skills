@@ -16,6 +16,19 @@ Use this skill to teach users how Cloud Agent environments work and, when reques
 | Update a DB-managed environment | [Update a DB-managed environment](references/update-db-managed-environment.md) |
 | Migrate an existing environment to builds | [Migrate an environment to builds](references/migrate-to-builds.md) |
 
+## MCP tool names
+
+The `cursor-cloud` namespace prefixes every tool. Short names in this skill map as:
+
+| This skill writes | Live MCP tool |
+| --- | --- |
+| `environment-info` | `cursor-cloud-environment-info` |
+| `trigger-environment-build` | `cursor-cloud-trigger-environment-build` |
+| `propose-environment-json` | `cursor-cloud-propose-environment-json` |
+| `take-environment-snapshot` | `cursor-cloud-take-environment-snapshot` |
+
+Call the live name from the catalog. Do not invent unprefixed aliases.
+
 ## Mental Model
 
 A Cloud Agent starts in an isolated remote machine. Its environment has two layers:

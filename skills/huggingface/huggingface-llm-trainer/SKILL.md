@@ -10,6 +10,8 @@ license: Complete terms in LICENSE.txt
 
 Train language models using TRL (Transformer Reinforcement Learning) on fully managed Hugging Face infrastructure. No local GPU setup required—models train on cloud GPUs and results are automatically saved to the Hugging Face Hub.
 
+> **This snapshot:** there is no `hf_jobs` MCP tool. Prefer `hf jobs uv run` via `hf-cli` (or `HfApi().run_uv_job()`). Examples below that say `hf_jobs("uv", …)` are the old Claude Code MCP shape — translate them to the CLI. Local TRL CLI without Jobs is `trl-training`.
+
 **TRL provides multiple training methods:**
 - **SFT** (Supervised Fine-Tuning) - Standard instruction tuning
 - **DPO** (Direct Preference Optimization) - Alignment from preference data
@@ -187,7 +189,7 @@ trainer = SFTTrainer(
         eval_strategy="steps",
         eval_steps=50,
         report_to="trackio",
-        project="meaningful_prject_name", # project name for the training name (trackio)
+        project="meaningful_project_name", # project name for the training name (trackio)
         run_name="meaningful_run_name",   # descriptive name for the specific training run (trackio)
     )
 )
@@ -250,7 +252,7 @@ TRL provides battle-tested scripts for all methods. Can be run from URLs:
 
 ```python
 hf_jobs("uv", {
-    "script": "https://github.com/huggingface/trl/blob/main/trl/scripts/sft.py",
+    "script": "https://raw.githubusercontent.com/huggingface/trl/main/trl/scripts/sft.py",
     "script_args": [
         "--model_name_or_path", "Qwen/Qwen2.5-0.5B",
         "--dataset_name", "trl-lib/Capybara",
@@ -352,7 +354,7 @@ uvx trl-jobs sft \
 | 7-13B params | `a10g-large`, `a100-large` | ~$5-10 | Large models (use LoRA) |
 | 13B+ params | `a100-large`, `a10g-largex2` | ~$10-20 | Very large (use LoRA) |
 
-**GPU Flavors:** cpu-basic/upgrade/performance/xl, t4-small/medium, l4x1/x4, a10g-small/large/largex2/largex4, a100-large, h100/h100x8
+**GPU Flavors:** cpu-basic/upgrade/performance/xl, t4-small/medium, l4x1/x4, a10g-small/large/largex2/largex4, a100-large, h100/h100x8, and current `hf jobs` flavors such as `h200` — run `hf jobs flavors` / see `hf-cli` rather than memorizing this list.
 
 **Guidelines:**
 - Use **LoRA/PEFT** for models >7B to reduce memory
@@ -665,7 +667,7 @@ See `references/training_patterns.md` for detailed examples including:
 **Fix:**
 1. Add to job: `secrets={"HF_TOKEN": "$HF_TOKEN"}`
 2. Add to config: `push_to_hub=True`, `hub_model_id="username/model-name"`
-3. Verify auth: `mcp__huggingface__hf_whoami()`
+3. Verify auth: MCP `hf_whoami` if the Huggingface-skills namespace is connected; otherwise `hf auth whoami` via `hf-cli`
 4. Check token has write permissions and repo exists (or set `hub_private_repo=True`)
 
 ### Missing Dependencies
@@ -686,7 +688,7 @@ Add to PEP 723 header:
 - Out of Memory (OOM) → Reduce batch size, increase gradient accumulation, enable LoRA, use larger GPU
 - Dataset format error → Validate with dataset inspector (see Dataset Validation section)
 - Import/module errors → Add PEP 723 header with dependencies, verify format
-- Authentication errors → Check `mcp__huggingface__hf_whoami()`, token permissions, secrets parameter
+- Authentication errors → Check `hf_whoami` / `hf auth whoami`, token permissions, secrets parameter
 
 **See:** `references/troubleshooting.md` for complete troubleshooting guide
 

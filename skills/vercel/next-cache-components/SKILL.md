@@ -287,7 +287,7 @@ import { revalidateTag } from 'next/cache'
 
 export async function createPost(data: FormData) {
   await db.posts.create({ data })
-  revalidateTag('posts')  // Background - next request sees fresh data
+  revalidateTag('posts', 'max')  // Background — Next.js 16 requires the cacheLife profile argument
 }
 ```
 
