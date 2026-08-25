@@ -12,6 +12,24 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Supabase | `skills/supabase/` | https://github.com/supabase/agent-skills (via `supabase-community/cursor-plugin`) | `e5f7a7cfd697765848ffd6a4505f3c02e1ee17ee` | n/a |
 | Cursor Team Kit (curated) | `skills/cursor-team-kit/` | https://github.com/cursor/plugins (`cursor-team-kit/skills/`) | `bdf7aa355337897f167153e05069aca505dae17c` | n/a |
 | First-party (authored here) | `skills/first-party/` | **Not vendored** — written in this repo | n/a | n/a |
+| Playwright | `skills/playwright/` | https://github.com/microsoft/playwright (`packages/playwright-core/src/tools/skills/`) | `f46278a` | n/a |
+| Cursor SDK | `skills/cursor-sdk/` | https://github.com/cursor/plugins (`cursor-sdk/skills/`) | `bdf7aa355337897f167153e05069aca505dae17c` | n/a |
+
+### Upstream re-sync, 2026-08-25
+
+Three already-pinned upstreams had shipped new skills since they were snapshotted. Verified by cloning each upstream and diffing against the vendored set, not by trusting a summary:
+
+| Pack | New skills pulled in |
+|---|---|
+| Hugging Face | `hf-mem` (exact memory footprint for Safetensors/GGUF from the Hub) + 6 `hf-cloud-*` SageMaker skills: `sagemaker-deployment-planner`, `aws-context-discovery`, `sagemaker-iam-preflight`, `serving-image-selection`, `sagemaker-production-defaults`, `python-env-setup` |
+| Vercel | `create-a-backend` — routes between Functions, Services, containers, Workflow, Queues, and Marketplace databases |
+| Adobe | `appbuilder-workfront` umbrella + nested `workfront-actions`, `workfront-ui-extension`, `workfront-local-testing` |
+
+The raw Vercel diff also surfaced `*/upstream` duplicate copies and `benchmark-*` / `release` / `plugin-audit` / `vercel-plugin-eval` maintainer internals — both already covered by the exclusions above, so neither was pulled in. `vercel-agent` appears in that diff only because this repo deliberately removed it.
+
+**Playwright** fills a gap earlier review passes wrongly concluded was unfillable at this repo's provenance bar. `microsoft/playwright` ships three user-facing skills inside the package tree (`playwright-cli` 426 lines + 9 references, `playwright-component-testing` 143 lines + 4 references + 4 templates, `playwright-trace` 174 lines). It also carries four skills under `.claude/skills/` (`playwright-dev`, `playwright-devops`, `playwright-triage`, `playwright-test-results`) — those are maintainer dev-workflow internals and were excluded under the same rule already applied to Vercel's plugin-author skills. This is the repo's first general (non-Adobe) automated-testing coverage.
+
+**Cursor SDK** was added because a whole-tree grep for `@cursor/sdk`, `CURSOR_API_KEY`, `Agent.create`, `Agent.resume`, and `/v1/agents` returned zero hits across all prior skills — it closes the loop between the `cursor-cloud` and `cursor-team-kit` packs by driving Cursor agents from code. Same upstream and same pinned commit already used for `cursor-team-kit`.
 
 Added 2026-08-25 after a gap analysis against the official Cursor Marketplace: `vercel-storage` documents Vercel Postgres/KV as sunset with no replacement guidance, and the pack had no error-tracking, database, or general PR/git-workflow skill at all. Supabase was picked over Neon per user request (their actual DB provider). Cursor Team Kit is curated, not vendored whole — see "What was excluded" below for the 10 skills left out of its 18.
 
@@ -34,6 +52,21 @@ Design notes worth preserving if this file is ever edited:
 - The **confirm-first table is deliberately narrow** and paired — each row names both the action needing confirmation and its permitted near-twin (e.g. *deploy to production* vs *preview deploys*; *destructive DB ops* vs *writing and locally applying migrations*). Widening this table is the main way to break the skill: every extra row is a pre-authorized excuse to hand work back to the user, which is exactly what it exists to prevent. The catch-all reversibility test (`git checkout` / `git revert` / delete a file / local rollback ⇒ just do it) is what keeps unlisted cases defaulting to action.
 - Clarifying questions are explicitly *unlimited* — the user's request was to minimize handoffs, not questions. The Legitimate/Illegitimate table encodes that split; do not "tighten" it into a general discouragement of asking.
 - It was drafted three ways (rule-system, anti-pattern catalog, decision-procedure) and scored by three judges — one scoring specifically for whether lines are self-detectable mid-response rather than exhortation, one for whether the safety boundary could be abused as a laziness loophole, one for context density. It is injected into every session, so any future edit should hold the same bar: no line that a model would nominally agree with but not act on.
+
+## Deconfliction applied to the 2026-08-25 re-sync
+
+Newly vendored skills were checked for trigger collision against the existing set *before* landing, rather than after — the failure mode that caused the two defects recorded below. Four needed narrowing:
+
+| Skill | Problem | Fix |
+|---|---|---|
+| `hf-cloud-python-env-setup` | Claimed **all** Python work — "whenever Python code will be executed… when about to run `pip install`… when the user asks to 'set up the environment'". Three existing HF skills (`huggingface-llm-trainer`, `huggingface-community-evals`, `huggingface-vision-trainer`) run Python/uv, so it would have hijacked every training task with AWS-specific advice. | Scoped to AWS/SageMaker only, with an explicit hand-off naming the four HF skills that own their own uv / PEP-723 environments. |
+| `playwright-cli` | Shipped with a bare 12-word description and **no** scoping metadata at all, so it matched on the word "Playwright" — colliding with `appbuilder-e2e-testing` (which explicitly claims "Playwright", "browser test", "headless browser test") and `vercel-sandbox` (headless Chrome automation). | Added a scope boundary: Adobe ExC/AEM E2E → `appbuilder-e2e-testing`; Vercel Sandbox headless Chrome → `vercel-sandbox`; this skill owns local and CI Playwright everywhere else. |
+| `playwright-component-testing` | Milder overlap with `appbuilder-testing` (Jest + React Testing Library) on "test React components in isolation". | Added a one-line boundary pointing Adobe Jest/RTL work at `appbuilder-testing`. |
+| `cursor-sdk` | Its description claimed agent-automation prompts "even if they don't explicitly name the package", which would steal generic "build me an agent" prompts from `build-agents` / `eve`. | Replaced that clause with an explicit boundary: this skill is only for driving Cursor's own coding agent from code. |
+
+**Security note on the vendored `hf-cloud-*` scripts.** All 11 Python scripts were scanned before landing: no `eval`/`exec`, no `shell=True` (every `subprocess.run` uses list-form arguments), no pickle loads, no hardcoded credentials. One upstream design decision worth knowing about rather than discovering later — `hf-cloud-sagemaker-iam-preflight/scripts/create_role.py:33,89` attaches the AWS managed policy `AmazonSageMakerFullAccess` to the execution role it creates. That is a broad grant. It is Hugging Face's upstream default and is left unmodified here (narrowing it would change what the skill actually does), but anyone running it against a production AWS account should scope the role down.
+
+`hf-cloud-aws-context-discovery` is greedy *within AWS* ("before any other AWS work") but was left as-is — the repo has no other AWS content, so there is nothing for it to collide with. `create-a-backend` needed no change: it already ships paired `allOf` signals and `minScore: 6`. `hf-mem` got a non-collision cross-reference clarifying its relationship to `huggingface-best` (which solves the inverse problem: memory budget → which models fit).
 
 ## Cross-pack trigger deconfliction (2026-08-25)
 
