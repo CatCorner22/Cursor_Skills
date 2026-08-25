@@ -215,4 +215,4 @@ An earlier note in the LangChain section attributed the miss to `SK006` self-rou
 
 ## Layout
 
-These files live under `skills/` rather than `.cursor/skills/` so this snapshot does not double-load alongside the installed plugins. To pin a Cloud Agent to this snapshot, copy or symlink a pack into `.cursor/skills/`.
+Canonical copies live under `skills/`. They are activated as project skills via `.cursor/skills/` (one symlink per skill) and as local plugins via `plugins/` + `./scripts/load-all.sh` → `~/.cursor/plugins/local/`. Marketplace plugins already installed for this user still load from `~/.cursor/plugins/cache/`; the local copies are this snapshot.

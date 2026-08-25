@@ -5,7 +5,11 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 - **Snapshot:** [skills/](skills/) — 106 `SKILL.md` files across 12 packs (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
 - **Review:** [REVIEW.md](REVIEW.md) — findings after reading each skill file (original pass). A follow-up independent re-verification against all 63 original skills — confirming most findings, correcting some, and surfacing additional security issues and a router-config drift bug — is summarized in the PR that added Supabase/Cursor Team Kit and applied fixes for both passes.
 
-These copies are for stability and review. They are not installed as project skills unless you copy them into `.cursor/skills/`.
+**Loaded in this repo.** `.cursor/skills/` has one symlink per skill so Cursor / Cloud Agents pick up the snapshot. Plugin wrappers live under `plugins/`. To refresh this machine (project skills, `~/.cursor/skills/`, and `~/.cursor/plugins/local/`):
+
+```bash
+./scripts/load-all.sh
+```
 
 ## Packs
 

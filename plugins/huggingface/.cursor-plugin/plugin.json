@@ -1,0 +1,6 @@
+{
+  "name": "huggingface",
+  "version": "1.0.0-snapshot",
+  "description": "Skill pack huggingface from the Cursor_Skills snapshot",
+  "skills": "skills"
+}
