@@ -44,6 +44,7 @@ CrossFit strength · UFC toughness · EDC festival glamour · Suicide Girls alt 
 - **Gym:** High-waisted leggings (black/plum), cropped tank or sports bra, trainers.
 - **Night / rave:** Bodysuit or fitted mini, harness detail, platform or heeled boots, one neon accent on a dark base.
 - **Casual:** Distressed black jeans, band tee or mesh top, leather jacket, choker, stacked rings.
+- **Swim / pool:** **Transparent black bikini top** (sheer mesh or clear-strapped — shows tone and ink without hiding her shape) with matching high-cut bottom. Confident poolside or beach energy; often slicked-back wet hair, minimal makeup upgrade from gym.
 - **Palette:** Black, charcoal, burgundy, plum + electric blue, magenta, or acid green accent.
 
 ### Avoid
@@ -129,6 +130,55 @@ Character reference sheet of Nyx, athletic alt woman, warm olive skin, dark blac
 
 ---
 
+## Scene variants
+
+### Gym
+Mid-session — deadlift, kettlebell, or pull-ups. Chalk on hands, focused expression, industrial rig background.
+
+```
+Nyx at CrossFit gym, black sports bra and high-waisted leggings, mid deadlift, chalk on hands, serpent rose tattoo sleeve, phase moon forearm tattoos, industrial gym, window light, photorealistic, believable proportions
+```
+
+![Nyx — gym](../assets/nyx-scene-gym.png)
+
+### EDC / rave
+Neon night energy — magenta/cyan lights, harness details, platform boots, arms raised or alley portrait with festival glow.
+
+```
+Nyx at EDC rave, black bodysuit or leather jacket over fitted top, harness straps, platform boots, magenta cyan neon lights, smoky makeup with magenta accent, tattoo sleeve, festival energy, cinematic, photorealistic
+```
+
+![Nyx — EDC rave](../assets/nyx-scene-edc-rave.png)
+
+### Casual street
+Golden-hour urban — band tee, distressed jeans, leather jacket, brick wall, smirk.
+
+```
+Nyx casual street style, distressed black jeans, band tee, leather jacket on shoulders, choker, brick wall, golden hour, tattoo sleeve, relaxed confident smirk, photorealistic
+```
+
+![Nyx — casual street](../assets/nyx-scene-casual-street.png)
+
+### Pool / swim (transparent bikini)
+Rooftop pool or beach at sunset. **Transparent black bikini top** + matching bottom. Wet slicked-back hair, direct confident gaze. Sternum dagger tattoo visible.
+
+```
+Nyx poolside sunset, transparent sheer black bikini top and high-cut bottom, warm olive skin, slicked-back dark hair, smoky makeup, large muscular Cuban-Brazilian glutes, serpent sleeve and sternum dagger tattoo, rooftop pool city skyline, golden hour, confident pose, photorealistic, believable proportions
+```
+
+> **Note:** Pool/bikini reference image blocked by content policy in Cloud Agent — prompt above is ready for local generation.
+
+### Back-view tattoo sheet
+Studio reference showing back ink: moth between shoulders, shoulder cap sunburst, rib script from side angle, sleeve wrap, thigh peony.
+
+```
+Nyx back view character sheet, gray studio background, symmetrical blackwork moth between shoulder blades, sunburst left shoulder, script ribs, serpent rose right sleeve, peony right thigh, black athletic shorts and sports bra, photorealistic tattoo reference
+```
+
+![Nyx — back tattoo reference](../assets/nyx-tattoo-back-view.png)
+
+---
+
 ## Quick reference (one line)
 
 Nyx: dark-haired athletic-alt woman; smoky makeup; CrossFit/UFC build; large perky chest; large muscular Cuban/Brazilian butt; curated neo-trad tattoos; EDC/Suicide Girls confidence with Hannah Fry sharpness; dry wit; never costume-goth.
@@ -140,10 +190,11 @@ Nyx: dark-haired athletic-alt woman; smoky makeup; CrossFit/UFC build; large per
 | Date | Change |
 |---|---|
 | 2026-08-25 | Initial bible: appearance, physique, tattoo map, personality, voice, prompts |
+| 2026-08-25 | Scene variants (gym, EDC, casual, pool/bikini), back tattoo sheet, transparent bikini wardrobe |
 
-## Reference image
+## Reference images
 
-Character sheet generated from this bible:
+### Character sheet (front)
 
 ![Nyx character reference](../assets/nyx-character-reference.png)
 
