@@ -21,6 +21,7 @@ Out of scope:
 - Choosing model architecture or fine-tuning strategy except to flag when prompting is not the bottleneck.
 - Rewriting product docs, specs, or policies referenced by a prompt.
 - Creating reusable agent skills.
+- Building, scaffolding, or architecting the agent itself — framework choice, project structure, runtime, channels, tooling. That is `build-agents` (generic) and `eve` (eve projects). This skill starts once the artifact under edit is a prompt.
 - Debugging repository code unrelated to prompt behavior.
 - Asking models to reveal hidden reasoning or chain-of-thought.
 
@@ -28,7 +29,7 @@ Out of scope:
 
 - Primary users: engineers and agents maintaining prompts for coding agents, product agents, eval harnesses, and model integrations.
 - Should trigger for: improve a prompt, optimize a system prompt, rewrite an agent prompt, tune prompt wording, make prompts reliable, port prompts across model families, build prompt evals.
-- Should not trigger for: normal code review, PR writing, skill authoring, generic documentation editing, or parameter-only tuning.
+- Should not trigger for: normal code review, PR writing, skill authoring, generic documentation editing, parameter-only tuning, or generic "build/create/design an agent" requests.
 
 ## Runtime Contract
 
@@ -46,7 +47,7 @@ Out of scope:
 Authoritative sources:
 
 - Local `prompt-optimizer` runtime files and references.
-- Repository instructions and `skill-writer` authoring rules.
+- Upstream `getsentry/skills` authoring rules (`skill-writer`), which are not vendored into this repo — see the note at the top of `SOURCES.md`.
 - Official OpenAI, Anthropic, and Gemini prompting and eval guidance.
 - Prompt optimization research and framework docs already captured in `SOURCES.md`.
 

@@ -108,8 +108,12 @@ worth stating once:
     the `@ai-sdk/gateway` this library uses is the same name in the wrong scope. (SK011)
 
 KNOWN LIMITS (stated because a detector that hides its blind spots is worse than none):
-  * SK012 depends on PRODUCT_ALIASES, a hand-written table. A vendor not in that table is
-    invisible to it. "Is X a competitor of Y" is world knowledge, not file structure.
+  * SK012 depends on PRODUCT_ALIASES and STEERING_CUES, two hand-written tables. A vendor
+    absent from the first, or a pitch phrased outside the second, is invisible to it.
+    "Is X a competitor of Y" is world knowledge, not file structure. MAINTENANCE RULE:
+    vendoring a pack means adding its product to PRODUCT_ALIASES in the same change —
+    otherwise the rules that steer against the pack you just adopted stay unreadable to
+    this detector, which is exactly how the ai-sdk -> LangChain steer survived review.
   * SK011 cannot tell a typo from a package this library simply never discusses.
   * SK010's literal extraction ignores anchors, lookarounds and character classes, so a
     flagged pair can still be disjoint in practice.
@@ -199,6 +203,8 @@ PRODUCT_ALIASES = {
     "huggingface": ["huggingface", "hugging face", "@huggingface/"],
     "replicate": ["replicate"],
     "modal": ["modal.com"],
+    "langchain": ["langchain", "@langchain/", "langgraph", "deepagents"],
+    "llamaindex": ["llamaindex", "llama-index"],
     "pinecone": ["pinecone"],
     "weaviate": ["weaviate"],
     "qdrant": ["qdrant"],
@@ -215,6 +221,14 @@ PRODUCT_ALIASES = {
 # Cue words that turn "the message mentions product X" into "the message PITCHES X".
 STEERING_CUES = [
     "instead",
+    # Capability-parity pitches. A migration argument does not have to say "migrate":
+    # "X provides equivalent capabilities … smaller bundle" is the same steer in
+    # comparative clothing. Added after the ai-sdk -> LangChain rule evaded every cue
+    # above while being the textbook instance of the class.
+    "equivalent",
+    "drop-in",
+    "replacement",
+    "smaller bundle",
     "alternative",
     "alternatives",
     "recommended",

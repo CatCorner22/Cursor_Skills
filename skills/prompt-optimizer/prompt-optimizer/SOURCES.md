@@ -2,7 +2,7 @@
 
 This file tracks the material synthesized into `prompt-optimizer`.
 
-> **Vendored-snapshot note.** Rows marked `local canonical` / `repo convention` below are paths in the **upstream** `getsentry/skills` repository, not in this one. `skill-writer`, and the root `AGENTS.md` / `README.md` / `CONTRIBUTING.md` they cite, do not exist here. They are retained as provenance for how the skill was built; do not try to open them. The external links and research citations are unaffected.
+> **Vendored-snapshot note.** Rows tagged `upstream-local` are paths in the **upstream** `getsentry/skills` repository, not in this one. `skill-writer`, and the root `AGENTS.md` / `README.md` / `CONTRIBUTING.md` they cite, do not exist here. They are retained as provenance for how the skill was built; do not try to open them. External links and research citations are unaffected.
 
 ## Selected profile
 
@@ -14,11 +14,11 @@ Why: this skill is a repeatable prompt-optimization workflow with explicit preco
 
 | Source | Type | Trust tier | Retrieved | Confidence | Contribution | Usage constraints | Notes |
 |---|---|---|---|---|---|---|---|
-| `skills/skill-writer/SKILL.md` | local canonical | canonical | 2026-04-19 | high | Baseline synthesis, authoring, and registration workflow | local repository authority | Primary workflow source |
-| `skills/skill-writer/references/*.md` | local canonical | canonical | 2026-04-19 | high | Structure, depth gates, transformed example requirements, validation expectations | local repository authority | Includes authoring and workflow patterns |
-| `README.md` | repo convention | canonical | 2026-04-18 | high | Skill template, naming, registration conventions | repository-local policy | Canonical public skill inventory |
-| `CONTRIBUTING.md` | repo convention | canonical | 2026-04-18 | high | Local testing and registration checklist | repository-local policy | Confirms registration steps |
-| `AGENTS.md` | repo convention | canonical | 2026-04-18 | high | Mandatory use of `skill-writer`, registration checklist, portability conventions | repository-local policy | Highest-priority local instruction source |
+| `getsentry/skills: skills/skill-writer/SKILL.md` | upstream-local | canonical | 2026-04-19 | high | Baseline synthesis, authoring, and registration workflow | local repository authority | Primary workflow source |
+| `getsentry/skills: skills/skill-writer/references/*.md` | upstream-local | canonical | 2026-04-19 | high | Structure, depth gates, transformed example requirements, validation expectations | local repository authority | Includes authoring and workflow patterns |
+| `getsentry/skills: README.md` | upstream-local | canonical | 2026-04-18 | high | Skill template, naming, registration conventions | repository-local policy | Canonical public skill inventory |
+| `getsentry/skills: CONTRIBUTING.md` | upstream-local | canonical | 2026-04-18 | high | Local testing and registration checklist | repository-local policy | Confirms registration steps |
+| `getsentry/skills: AGENTS.md` | upstream-local | canonical | 2026-04-18 | high | Mandatory use of `skill-writer`, registration checklist, portability conventions | repository-local policy | Highest-priority local instruction source |
 | `https://agents.md/` | official format guide | canonical | 2026-05-04 | high | AGENTS.md purpose, common sections, nested files, closest-file precedence | public format guidance | Supports exact external file references in repo agent prompts |
 | `https://developers.openai.com/codex/guides/agents-md` | official product docs | canonical | 2026-05-04 | high | Codex AGENTS.md discovery, scope, merge order, size cap, verification | OpenAI-specific behavior | Used for agent prompt and repo instruction layering guidance |
 | `https://platform.openai.com/docs/guides/prompt-optimizer/` | official docs | canonical | 2026-05-04 | high | Dataset-backed prompt optimization, annotations, graders, manual review | verify product surface before dashboard-specific instructions | Confirms eval-first and manual-review loop |
@@ -110,6 +110,7 @@ Why: this skill is a repeatable prompt-optimization workflow with explicit preco
 ### Should not trigger
 
 - "Write a new skill."
+- "Build me an agent." / "Scaffold a multi-agent system." (→ `build-agents` / `eve`)
 - "Review my pull request."
 - "Fix this bug in the repository."
 - "Summarize this document."

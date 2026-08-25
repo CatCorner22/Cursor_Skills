@@ -2,7 +2,7 @@
 
 Versioned snapshot of every skill loaded in the Cloud Agent session that reviewed them, plus a line-by-line review.
 
-- **Snapshot:** [skills/](skills/) — 90 `SKILL.md` files (Cursor Cloud, Vercel, Hugging Face, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, plus two first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
+- **Snapshot:** [skills/](skills/) — 106 `SKILL.md` files across 12 packs (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
 - **Review:** [REVIEW.md](REVIEW.md) — findings after reading each skill file (original pass). A follow-up independent re-verification against all 63 original skills — confirming most findings, correcting some, and surfacing additional security issues and a router-config drift bug — is summarized in the PR that added Supabase/Cursor Team Kit and applied fixes for both passes.
 
 These copies are for stability and review. They are not installed as project skills unless you copy them into `.cursor/skills/`.
@@ -12,13 +12,17 @@ These copies are for stability and review. They are not installed as project ski
 | Pack | Skills | What it covers |
 |---|---|---|
 | [Vercel](skills/vercel/) | 33 | Next.js, deployments, AI SDK/Gateway, auth, storage, sandbox, workflow |
-| [Hugging Face](skills/huggingface/) | 26 | Model/dataset Hub, Spaces, training (LLM/vision/sentence-transformers), Gradio |
-| [Adobe App Builder](skills/adobe/) | 10 | Runtime actions, CI/CD, project scaffolding, UI, E2E testing |
-| [Cursor Cloud Agent](skills/cursor-cloud/) | 5 | Cloud Agent environment setup, canvas artifacts, event subscriptions |
+| [Hugging Face](skills/huggingface/) | 26 | Model/dataset Hub, Spaces, training (LLM/vision/sentence-transformers), Gradio, SageMaker |
+| [LangChain](skills/langchain/) | 12 | LangChain/LangGraph agents, RAG, persistence, human-in-the-loop, LangSmith online evals, Deep Agents |
+| [Adobe App Builder](skills/adobe/) | 10 | Runtime actions, CI/CD, project scaffolding, UI, E2E testing, Workfront |
 | [Cursor Team Kit](skills/cursor-team-kit/) | 8 | GitHub PR/branch workflow: new-branch-and-pr, PR review, CI fixes, merge conflicts |
-| [Supabase](skills/supabase/) | 2 | Postgres best practices, general Supabase (Auth/Storage/Edge Functions/RLS) |
+| [Cursor Cloud Agent](skills/cursor-cloud/) | 5 | Cloud Agent environment setup, canvas artifacts, event subscriptions |
+| [First-party](skills/first-party/) | 4 | `proactive-agency` — always-on execution posture; `skill-library-audit` — audits this library's own routing metadata, ships a runnable analyzer; `smolagents` — Hugging Face's agent framework; `v0` — Vercel's v0 Platform/Model API |
 | [Playwright](skills/playwright/) | 3 | General (non-Adobe) browser automation, component testing, trace inspection |
+| [Supabase](skills/supabase/) | 2 | Postgres best practices, general Supabase (Auth/Storage/Edge Functions/RLS) |
 | [Cursor SDK](skills/cursor-sdk/) | 1 | Driving Cursor agents from code (`@cursor/sdk`) — CI, scripts, backends |
-| [First-party](skills/first-party/) | 2 | `proactive-agency` — always-on execution posture; `skill-library-audit` — audits this library's own routing metadata, ships a runnable analyzer |
+| [Prompt Optimizer](skills/prompt-optimizer/) | 1 | Authoring and optimizing prompt text itself — layering, few-shot, eval slices |
+| [Pydantic AI](skills/pydantic-ai/) | 1 | Python agent framework — typed deps/outputs, tools, streaming |
+| **Total** | **106** | reconciles with `find skills -name SKILL.md \| wc -l` |
 
-`vercel-agent` (pure product/pricing reference, no procedure) was removed from the Vercel pack — see [skills/SOURCE.md](skills/SOURCE.md) for what was cut and why.
+`vercel-agent` (pure product/pricing reference, no procedure) was removed from the Vercel pack. The LangChain pack is 12 of 22 upstream skills, and Cursor Team Kit 8 of 18 — see [skills/SOURCE.md](skills/SOURCE.md) for what was cut and why, and for the cross-pack trigger deconfliction applied to `vercel/ai-sdk` and `vercel/build-agents` so they stop steering off other packs' frameworks.

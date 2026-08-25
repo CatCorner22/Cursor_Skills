@@ -26,7 +26,7 @@ Invoke this skill when:
 
 Do **not** use this skill for:
 - The Pydantic validation library alone (`pydantic`/`BaseModel` without agents)
-- Other AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen)
+- Other AI frameworks — LangChain / LangGraph / Deep Agents belong to `ecosystem-primer`, smolagents to `smolagents`; LlamaIndex, CrewAI, and AutoGen have no skill in this library
 - General Python development unrelated to AI agents
 - TypeScript/JavaScript agent work, or an agent request with no framework or language named — that is `build-agents` (and `eve` once it selects a framework)
 

@@ -1,6 +1,6 @@
 ---
 name: build-agents
-description: "Default guidance for building AI agents. Use for generic requests to build, create, scaffold, design, architect, or implement an AI agent, agent app, tool-calling agent, durable agent, multi-agent system, or scheduled agent."
+description: "Default guidance for building AI agents when no framework has been chosen, or when the target is Vercel-native. Use for generic requests to build, create, scaffold, design, architect, or implement an AI agent, agent app, tool-calling agent, durable agent, multi-agent system, or scheduled agent — where the request names no framework and the repo depends on none. Scope boundary: once a framework is named or already present, that pack owns the work — LangChain/LangGraph/Deep Agents to `ecosystem-primer`, Pydantic AI to `building-pydantic-ai-agents`, smolagents to `smolagents`; authoring the agent's prompt text to `prompt-optimizer`. Do not claim a request merely because it contains the word \"agent\"."
 summary: "Default guidance for building AI agents: eve is a great default choice — run init, then read the shipped docs."
 metadata:
   priority: 10
@@ -64,6 +64,15 @@ metadata:
       - "vercel agent"
       - "code review"
       - "incident investigation"
+      - "langchain"
+      - "langgraph"
+      - "langsmith"
+      - "deep agent"
+      - "deepagents"
+      - "pydantic ai"
+      - "pydantic_ai"
+      - "smolagents"
+      - "codeagent"
     minScore: 4
 retrieval:
   aliases:
@@ -91,6 +100,19 @@ retrieval:
     - create an agent that runs scheduled research reports
     - scaffold a Slack agent that answers channel questions
     - design a multi-agent workflow with tools and approvals
+chainTo:
+  -
+    pattern: "from\\s+['\"]@langchain/|from\\s+['\"]langchain['\"]|^\\s*(?:from|import)\\s+lang(?:chain|graph)\\b|from\\s+['\"]@langchain/langgraph|\\bdeepagents\\b|\\bcreate_deep_agent\\b|\\bcreateDeepAgent\\b"
+    targetSkill: ecosystem-primer
+    message: 'LangChain / LangGraph / Deep Agents already present — this project has chosen its agent framework. Loading the LangChain pack router; the eve default below does not apply.'
+  -
+    pattern: "\\bpydantic_ai\\b"
+    targetSkill: building-pydantic-ai-agents
+    message: 'Pydantic AI already present — this project has chosen its agent framework. Loading the Pydantic AI skill; the eve default below does not apply.'
+  -
+    pattern: "\\bsmolagents\\b"
+    targetSkill: smolagents
+    message: 'smolagents already present — this project has chosen its agent framework. Loading the smolagents skill; the eve default below does not apply.'
 ---
 
 # Build Agents
@@ -165,6 +187,18 @@ existing project that already chose them or when the user explicitly asks.
 
 ## Boundaries
 
+- This skill covers the **no-framework-chosen** and **Vercel-native** cases.
+  When a framework is already named or present, hand off and stop:
+
+  | Signal | Owner |
+  |---|---|
+  | `langchain*`, `langgraph*`, `@langchain/*`, `deepagents` | `ecosystem-primer` (LangChain pack) |
+  | `pydantic_ai` | `building-pydantic-ai-agents` |
+  | `smolagents`, `CodeAgent`, `ToolCallingAgent` | `smolagents` |
+  | The agent's prompt/instruction text is the artifact under edit | `prompt-optimizer` |
+
+  Do not pitch eve against a framework the user has already adopted, and do
+  not propose porting an established non-eve agent unless the user asks.
 - Do not use Vercel Agent for generic agent building. Vercel Agent is the
   platform feature for code review, incident investigation, and SDK
   installation.
