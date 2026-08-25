@@ -101,7 +101,7 @@ retrieval:
   entities:
     - Chat
     - onNewMention
-    - @chat-adapter
+    - "@chat-adapter"
     - chat-sdk
   examples:
     - build a Slack bot with Chat SDK
