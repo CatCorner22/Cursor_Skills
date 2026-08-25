@@ -257,7 +257,7 @@ validate:
     severity: recommended
     upgradeToSkill: ai-gateway
     upgradeWhy: 'Move model calls behind the Vercel AI Gateway for OIDC auth, provider routing, failover, and cost tracking.'
-    skipIfFileContains: 'gateway\(|@vercel/ai-gateway|ai-gateway'
+    skipIfFileContains: 'gateway\(|@ai-sdk/gateway|@vercel/ai-gateway|ai-gateway'
   -
     pattern: 'react-markdown|dangerouslySetInnerHTML|ReactMarkdown'
     message: 'Manual markdown/HTML rendering of AI content detected. Use AI Elements for safe, streaming-aware AI message rendering.'
