@@ -169,6 +169,9 @@ async function withBrowser<T>(
 The `screenshot --json` command saves to a file and returns the path. Read the file back as base64:
 
 ```ts
+// If this is called from a public-facing route, validate/allowlist `url` first —
+// restrict to http(s)://, block internal/private IP ranges and cloud metadata
+// addresses (e.g. 169.254.169.254), or check against an explicit domain allowlist.
 export async function screenshotUrl(url: string) {
   return withBrowser(async (sandbox) => {
     await sandbox.runCommand("agent-browser", ["open", url]);
@@ -195,6 +198,9 @@ export async function screenshotUrl(url: string) {
 ## Accessibility Snapshot
 
 ```ts
+// Same caveat as screenshotUrl above: in a public-facing route, validate/allowlist
+// `url` before passing it to the sandboxed browser to avoid SSRF (block internal/
+// private IP ranges and metadata addresses like 169.254.169.254).
 export async function snapshotUrl(url: string) {
   return withBrowser(async (sandbox) => {
     await sandbox.runCommand("agent-browser", ["open", url]);

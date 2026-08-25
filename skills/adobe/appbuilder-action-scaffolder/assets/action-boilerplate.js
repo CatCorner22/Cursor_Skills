@@ -4,7 +4,7 @@ async function main(params) {
   const logger = Core.Logger('main', { level: params.LOG_LEVEL || 'info' });
 
   try {
-    logger.info('Action invoked with params:', JSON.stringify(params));
+    logger.info('Action invoked', { requiredField: params.requiredField ? 'present' : 'missing' });
 
     // Input validation
     const requiredParams = ['requiredField'];

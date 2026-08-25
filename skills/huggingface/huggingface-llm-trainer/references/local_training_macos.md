@@ -124,7 +124,7 @@ sft_kwargs = dict(
     output_dir=cfg.out_dir, per_device_train_batch_size=1, gradient_accumulation_steps=8,
     learning_rate=2e-4, logging_steps=10, save_steps=200, save_total_limit=2,
     gradient_checkpointing=True, report_to="none", fp16=False, bf16=False,
-    max_seq_length=cfg.max_seq_length, dataset_text_field="text",
+    max_length=cfg.max_seq_length, dataset_text_field="text",
 )
 if cfg.max_steps > 0:
     sft_kwargs["max_steps"] = cfg.max_steps

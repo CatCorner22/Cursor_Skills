@@ -37,21 +37,21 @@ metadata:
       - "cache profile"
     noneOf: []
     minScore: 6
-  validate:
-    -
-      pattern: 'unstable_cache\s*\('
-      message: 'unstable_cache is deprecated in Next.js 16 — use the "use cache" directive with cacheTag() and cacheLife() instead'
-      severity: recommended
-      upgradeToSkill: next-cache-components
-      upgradeWhy: 'Guides migration from unstable_cache to use cache directive with cacheTag and cacheLife.'
-    -
-      pattern: '\bcacheHandler\s*:'
-      message: 'Singular cacheHandler is deprecated in Next.js 16 — use cacheHandlers (plural) with per-type handlers'
-      severity: recommended
-    -
-      pattern: revalidateTag\(\s*['"][^'"]+['"]\s*\)
-      message: 'Single-arg revalidateTag(tag) is deprecated in Next.js 16 — pass a cacheLife profile: revalidateTag(tag, "max")'
-      severity: recommended
+validate:
+  -
+    pattern: 'unstable_cache\s*\('
+    message: 'unstable_cache is deprecated in Next.js 16 — use the "use cache" directive with cacheTag() and cacheLife() instead'
+    severity: recommended
+    upgradeToSkill: next-cache-components
+    upgradeWhy: 'Guides migration from unstable_cache to use cache directive with cacheTag and cacheLife.'
+  -
+    pattern: '\bcacheHandler\s*:'
+    message: 'Singular cacheHandler is deprecated in Next.js 16 — use cacheHandlers (plural) with per-type handlers'
+    severity: recommended
+  -
+    pattern: revalidateTag\(\s*['"][^'"]+['"]\s*\)
+    message: 'Single-arg revalidateTag(tag) is deprecated in Next.js 16 — pass a cacheLife profile: revalidateTag(tag, "max")'
+    severity: recommended
 retrieval:
   aliases:
     - cache components

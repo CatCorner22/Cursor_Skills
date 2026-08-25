@@ -137,7 +137,7 @@ Two equivalent paths:
 **A. Pass the IDs directly to `aio app init`** (cleanest):
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh init \
+skills/adobe/appbuilder-project-init/scripts/init.sh init \
   "@adobe/generator-app-excshell" ./my-project \
   --org <orgId> --project my-project
 ```
@@ -147,7 +147,7 @@ The wrapper passes `--org` / `--project` / `--template-options` straight through
 **B. Init first, then `aio app use` to adopt the selected workspace:**
 
 ```bash
-skills/appbuilder-project-init/scripts/init.sh init \
+skills/adobe/appbuilder-project-init/scripts/init.sh init \
   "@adobe/generator-app-excshell" ./my-project
 cd ./my-project
 aio app use --no-input

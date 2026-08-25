@@ -1,5 +1,7 @@
 # Saving Training Results to Hugging Face Hub
 
+> **Note on `hf_jobs(...)` examples below:** `hf_jobs()` is an optional MCP tool that may not be available in your environment (see `SKILL.md`). The `hf jobs uv run ...` CLI is the reliable default — translate the `hf_jobs("uv", {...})` calls below to their CLI equivalent when the MCP tool isn't present.
+
 **⚠️ CRITICAL:** Training environments are ephemeral. ALL results are lost when a job completes unless pushed to the Hub.
 
 ## Why Hub Push is Required

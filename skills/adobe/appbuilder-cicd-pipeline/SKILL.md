@@ -106,10 +106,10 @@ If user specifies Azure DevOps, GitLab CI, or Jenkins → use `references/generi
 ## Common Issues
 
 - **Workflow not triggering:** Verify workflow files are committed to the default branch and triggers match your branching strategy.
-- **Deploy fails with auth error:** The `auth` command is deprecated. Ensure you are using OAuth S2S credentials, not JWT. Verify all 14 secrets are set correctly with the right workspace suffix.
+- **Deploy fails with auth error:** The `auth` command is deprecated. Ensure you are using OAuth S2S credentials, not JWT. Verify all required secrets (do not assume a fixed count — see above) are set correctly with the right workspace suffix.
 - **"I/O Management API not found":** Add the I/O Management API service to the workspace in Developer Console before extracting secrets.
 - **Environment secrets not working:** App Builder does NOT support GitHub environment secrets. Move all secrets to repository-level secrets.
-- **Missing secrets:** Run `fetch-secrets.sh` and compare output against the 14-secret table in `references/github-actions-guide.md`. Each value must be present and correctly suffixed.
+- **Missing secrets:** Run `fetch-secrets.sh` and compare output against the secrets table in `references/github-actions-guide.md`. Each value must be present and correctly suffixed.
 - **Custom env vars not available in action:** Add custom secrets under the `env` key in the Deploy step of the workflow, not just in GitHub secrets.
 
 ## Chaining

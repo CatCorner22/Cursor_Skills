@@ -192,10 +192,18 @@ cat paper_info.txt
 
 ## Example 9: Search and Discover Papers
 
+`paper_manager.py search` is **not** a working search — it only prints "Search functionality coming soon!" and a Hub search URL. Do not run it expecting results.
+
 ```bash
-# Search for papers (opens browser)
-uv run scripts/paper_manager.py search \
-  --query "transformer attention mechanism"
+# ❌ Not functional yet
+uv run scripts/paper_manager.py search --query "transformer attention mechanism"
+```
+
+Instead, search directly on the Hub, or use the `huggingface-papers` skill for programmatic paper discovery:
+
+```bash
+# ✅ Search on the Hub
+open "https://huggingface.co/papers?search=transformer+attention+mechanism"
 ```
 
 ## Example 10: Working with tfrere's Template

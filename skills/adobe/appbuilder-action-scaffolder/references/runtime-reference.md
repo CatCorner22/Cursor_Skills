@@ -120,11 +120,10 @@ application:
 
 ## Limits and Timeouts
 
-| Action type | Hard timeout limit | Default if unspecified |
-| --- | --- | --- |
-| Web actions (`web: 'yes'` or `web: 'raw'`) | 60,000 ms (1 minute) | 60,000 ms |
-| Blocking (non-web, invoked synchronously) | 60,000 ms (1 minute) | 60,000 ms |
-| Non-blocking (non-web, invoked asynchronously) | 10,800,000 ms (3 hours) | 60,000 ms |
+| Setting | Value |
+| --- | --- |
+| Default execution timeout (unspecified `limits.timeout`) | 60,000 ms (60 seconds) |
+| Maximum configurable timeout | 300,000 ms (300 seconds / 5 minutes) |
 
 Set a custom timeout in `app.config.yaml`:
 
@@ -134,10 +133,10 @@ actions:
     function: actions/long-running-job/index.js
     runtime: nodejs:18
     limits:
-      timeout: 3600000   # 1 hour (in milliseconds)
+      timeout: 300000   # 5 minutes (maximum)
 ```
 
-> Guardrail: Web and blocking actions are always capped at 60 000 ms regardless of the `timeout` value you set. Only non-blocking actions (invoked with the `"blocking": false` flag or via asynchronous trigger) can use timeouts above 60 000 ms, up to the 10 800 000 ms (3-hour) maximum.
+> Guardrail: All actions — web, blocking, or non-blocking — are capped at 300,000 ms (300 seconds) maximum execution time, with 60,000 ms (60 seconds) as the default when `limits.timeout` is unspecified.
 
 ## Using App Builder SDKs
 

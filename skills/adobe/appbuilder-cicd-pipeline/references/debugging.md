@@ -17,7 +17,7 @@ aio auth login --list
 aio login
 
 # For CI/CD, verify OAuth S2S credentials are injected correctly
-# Check that all 14 secrets are set and IMSORGID is correct
+# Check that all required secrets are set and IMSORGID is correct (verify count against the current workflow/manifest, do not assume a fixed number)
 aio app use <workspace.json>
 
 # Verify the active context has a valid token
@@ -26,7 +26,7 @@ aio auth ctx --list
 
 **Prevention:**
 - In CI/CD, use `adobe/aio-cli-setup-action@3` which handles auth setup automatically
-- Ensure all 14 repository secrets are set with correct workspace suffix (`_STAGE` / `_PROD`)
+- Ensure all required repository secrets are set with correct workspace suffix (`_STAGE` / `_PROD`) — verify the count against the current workflow/manifest, do not assume a fixed number
 - Never use the deprecated `auth` command in `aio-apps-action` — it is JWT-based and no longer supported
 
 ---
@@ -95,7 +95,7 @@ aio runtime action get <action-name> --url
 
 **Fix:**
 
-Verify all 14 required secrets (per workspace):
+Verify all required secrets (per workspace) — verify the count against the current workflow/manifest, do not assume a fixed number:
 ```
 CLIENTID_STAGE                    CLIENTSECRET_STAGE
 TECHNICALACCID_STAGE              TECHNICALACCEMAIL_STAGE
@@ -121,7 +121,7 @@ Common mistakes:
 - **Stale credentials:** Re-download `workspace.json` if credentials were rotated
 
 **Prevention:**
-- Use `assets/fetch-secrets.sh` to extract all 14 secrets at once
+- Use `assets/fetch-secrets.sh` to extract all secrets at once
 - Cross-reference against the secrets table in `references/github-actions-guide.md`
 - Add a secrets validation step early in your workflow to fail fast
 

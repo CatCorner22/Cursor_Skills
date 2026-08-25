@@ -4,7 +4,7 @@ description: Vercel Runtime Cache API guidance — ephemeral per-region key-valu
 metadata:
   priority: 6
   docs:
-    - "https://nextjs.org/docs/app/building-your-application/caching"
+    - "https://vercel.com/docs/runtime-cache"
   sitemap: "https://nextjs.org/sitemap.xml"
   pathPatterns: 
     - 'lib/cache/**'

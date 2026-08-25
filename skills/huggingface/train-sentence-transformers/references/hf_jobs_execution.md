@@ -2,6 +2,8 @@
 
 Run training on Hugging Face's managed GPUs without provisioning any local infrastructure. The same training script runs locally and on Jobs — this reference covers only the Jobs-specific concerns.
 
+> **Note:** The `hf_jobs()` MCP tool used in paths 1 and 2 below may not be available in your environment — check first, and do not invent it if it's missing. The `hf` CLI (path 3, `hf jobs uv run ...`) is always available and is the reliable default/fallback.
+
 ## Prerequisites
 
 - Hugging Face account with a **Pro, Team, or Enterprise** plan. Jobs are paid.

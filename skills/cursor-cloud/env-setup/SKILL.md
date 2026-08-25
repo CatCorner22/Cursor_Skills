@@ -26,6 +26,10 @@ The `cursor-cloud` namespace prefixes every tool. Short names in this skill map 
 | `trigger-environment-build` | `cursor-cloud-trigger-environment-build` |
 | `propose-environment-json` | `cursor-cloud-propose-environment-json` |
 | `take-environment-snapshot` | `cursor-cloud-take-environment-snapshot` |
+| `list-environment-builds` | `cursor-cloud-list-environment-builds` |
+| `environment-build-logs` | `cursor-cloud-environment-build-logs` |
+| `request-environment-setup-actions` | `cursor-cloud-request-environment-setup-actions` |
+| `check-environment-snapshot` | `cursor-cloud-check-environment-snapshot` |
 
 Call the live name from the catalog. Do not invent unprefixed aliases.
 

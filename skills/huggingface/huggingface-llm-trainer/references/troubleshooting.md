@@ -122,13 +122,13 @@ SFTConfig(max_seq_length=512)
 
 2. **Validate dataset before training:**
    ```bash
-   uv run https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py \
+   uv run https://huggingface.co/datasets/evalstate/trl-helpers/raw/main/dataset_inspector.py \
      --dataset <dataset-name> --split train
    ```
    Or via hf_jobs:
    ```python
    hf_jobs("uv", {
-       "script": "https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py",
+       "script": "https://huggingface.co/datasets/evalstate/trl-helpers/raw/main/dataset_inspector.py",
        "script_args": ["--dataset", "dataset-name", "--split", "train"]
    })
    ```

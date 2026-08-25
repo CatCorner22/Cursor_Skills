@@ -15,7 +15,7 @@ Use this skill when the user wants to test that the current Cloud Agent environm
 
 ## Choose the workflow
 
-Read [Migrate an environment to builds](references/migrate-to-builds.md) and follow it. Call `environment-info` first when available so the reference can classify repository-managed vs DB-managed configuration.
+Read [Migrate an environment to builds](references/migrate-to-builds.md) and follow it. Call `environment-info` first when available so the reference can classify repository-managed vs DB-managed configuration (see the tool-name table in `../env-setup/SKILL.md` for short-name vs `cursor-cloud-`-prefixed forms).
 
 ## Mental Model
 
