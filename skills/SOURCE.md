@@ -17,4 +17,4 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 
 ## Layout
 
-These files live under `skills/` rather than `.cursor/skills/` so this snapshot does not double-load alongside the installed plugins. To pin a Cloud Agent to this snapshot, copy or symlink a pack into `.cursor/skills/`.
+Canonical copies live under `skills/`. They are also activated as project skills via `.cursor/skills/` (one symlink per skill) and as local plugins via `plugins/` + `./scripts/load-all.sh` → `~/.cursor/plugins/local/`. Marketplace plugins already installed for this user still load from `~/.cursor/plugins/cache/`; the local copies are the patched snapshot.

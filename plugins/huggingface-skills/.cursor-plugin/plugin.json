@@ -1,0 +1,10 @@
+{
+  "name": "huggingface-skills",
+  "version": "1.0.8-snapshot",
+  "description": "Hugging Face Hub skills (patched snapshot from Cursor_Skills).",
+  "author": { "name": "Hugging Face" },
+  "homepage": "https://github.com/huggingface/skills",
+  "repository": "https://github.com/huggingface/skills",
+  "license": "Apache-2.0",
+  "skills": "skills"
+}

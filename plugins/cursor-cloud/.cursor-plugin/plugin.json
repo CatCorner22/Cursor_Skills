@@ -1,0 +1,8 @@
+{
+  "name": "cursor-cloud",
+  "displayName": "Cursor Cloud Agent",
+  "version": "1.0.0",
+  "description": "Cloud Agent environment setup, subscribe, canvas, walkthrough artifacts, and migrate-to-builds.",
+  "author": { "name": "Cursor" },
+  "skills": "skills"
+}

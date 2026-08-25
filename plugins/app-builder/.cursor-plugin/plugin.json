@@ -1,0 +1,11 @@
+{
+  "name": "app-builder",
+  "displayName": "Adobe App Builder",
+  "version": "1.0.0-snapshot",
+  "description": "Adobe App Builder skills (patched snapshot from Cursor_Skills).",
+  "author": { "name": "Adobe" },
+  "homepage": "https://github.com/adobe/skills",
+  "repository": "https://github.com/adobe/skills",
+  "license": "Apache-2.0",
+  "skills": "./skills/"
+}

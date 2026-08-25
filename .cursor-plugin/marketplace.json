@@ -1,0 +1,36 @@
+{
+  "name": "cursor-skills-snapshot",
+  "owner": {
+    "name": "CatCorner22"
+  },
+  "metadata": {
+    "description": "Patched snapshot of Cursor Cloud, Vercel, Hugging Face, and Adobe App Builder skills loaded as project plugins.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "cursor-cloud",
+      "source": "./plugins/cursor-cloud",
+      "skills": "skills",
+      "description": "Cloud Agent environment, subscribe, canvas, walkthrough, and migrate-to-builds skills"
+    },
+    {
+      "name": "vercel",
+      "source": "./plugins/vercel",
+      "skills": "skills",
+      "description": "Vercel / Next.js / AI SDK skill pack (patched snapshot)"
+    },
+    {
+      "name": "huggingface-skills",
+      "source": "./plugins/huggingface-skills",
+      "skills": "skills",
+      "description": "Hugging Face Hub, Jobs, Spaces, and training skills (patched snapshot)"
+    },
+    {
+      "name": "app-builder",
+      "source": "./plugins/app-builder",
+      "skills": "skills",
+      "description": "Adobe App Builder project, action, UI, test, and CI skills (patched snapshot)"
+    }
+  ]
+}
