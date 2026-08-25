@@ -83,8 +83,6 @@ retrieval:
     - useCompletion
     - streamText
     - generateText
-    - generateObject
-    - CoreMessage
     - ToolLoopAgent
     - AI Gateway
   examples:
