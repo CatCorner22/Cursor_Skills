@@ -38,9 +38,13 @@ retrieval:
     - unified billing
 chainTo:
   -
-    pattern: 'NEON_|POSTGRES_|DATABASE_URL|@neondatabase|@vercel/postgres|@upstash/|@vercel/kv|@supabase/|@prisma/client|\bmongodb\b|mongoose|@libsql/|\bconvex\b|@vercel/blob'
+    pattern: '@supabase/|SUPABASE_'
+    targetSkill: supabase
+    message: 'Supabase detected — loading the Supabase skill for client, SSR, RLS, Auth, and migration guidance.'
+  -
+    pattern: 'NEON_|POSTGRES_|DATABASE_URL|@neondatabase|@vercel/postgres|@upstash/|@vercel/kv|@prisma/client|\bmongodb\b|mongoose|@libsql/|\bconvex\b|@vercel/blob'
     targetSkill: vercel-storage
-    message: 'Database/storage integration detected — loading Storage guidance (Neon, Upstash, Supabase, Prisma, Mongo, …), connection pooling, and serverless patterns.'
+    message: 'Database/storage integration detected — loading Storage guidance (Neon, Upstash, Prisma, Mongo, …), connection pooling, and serverless patterns.'
   -
     pattern: 'CLERK_|@clerk/|clerkMiddleware|@auth0/|AUTH0_|@descope/|next-auth|@auth/|getServerSession'
     targetSkill: auth

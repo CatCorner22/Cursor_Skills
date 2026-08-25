@@ -17,9 +17,6 @@ metadata:
     - 'src/lib/blob.*'
     - 'src/lib/storage.*'
     - 'src/lib/edge-config.*'
-    - 'supabase/**'
-    - 'lib/supabase.*'
-    - 'src/lib/supabase.*'
     - 'prisma/schema.prisma'
     - 'prisma/**'
   bashPatterns:
@@ -47,14 +44,6 @@ metadata:
     - '\bpnpm\s+(install|i|add)\s+[^\n]*@vercel/postgres\b'
     - '\bbun\s+(install|i|add)\s+[^\n]*@vercel/postgres\b'
     - '\byarn\s+add\s+[^\n]*@vercel/postgres\b'
-    - '\bnpm\s+(install|i|add)\s+[^\n]*@supabase/supabase-js\b'
-    - '\bpnpm\s+(install|i|add)\s+[^\n]*@supabase/supabase-js\b'
-    - '\bbun\s+(install|i|add)\s+[^\n]*@supabase/supabase-js\b'
-    - '\byarn\s+add\s+[^\n]*@supabase/supabase-js\b'
-    - '\bnpm\s+(install|i|add)\s+[^\n]*@supabase/ssr\b'
-    - '\bpnpm\s+(install|i|add)\s+[^\n]*@supabase/ssr\b'
-    - '\bbun\s+(install|i|add)\s+[^\n]*@supabase/ssr\b'
-    - '\byarn\s+add\s+[^\n]*@supabase/ssr\b'
     - '\bnpm\s+(install|i|add)\s+[^\n]*@prisma/client\b'
     - '\bpnpm\s+(install|i|add)\s+[^\n]*@prisma/client\b'
     - '\bbun\s+(install|i|add)\s+[^\n]*@prisma/client\b'
@@ -78,7 +67,6 @@ metadata:
     - "@upstash/redis"
     - "@vercel/kv"
     - "@vercel/postgres"
-    - "@supabase/supabase-js"
     - "@prisma/client"
 validate:
   -
@@ -117,8 +105,8 @@ chainTo:
     skipIfFileContains: "@neondatabase/serverless|from\\s+['\"]@neondatabase"
   -
     pattern: "from\\s+['\"]@supabase/(supabase-js|ssr)['\"]"
-    targetSkill: vercel-storage
-    message: 'Supabase client detected — loading Vercel Storage guidance for Marketplace-native Neon Postgres + Upstash Redis alternatives with unified billing.'
+    targetSkill: supabase
+    message: 'Supabase client detected — loading the Supabase skill for client, SSR, RLS, and Auth guidance.'
   -
     pattern: "from\\s+['\"](mongodb|mongoose)['\"]"
     targetSkill: vercel-storage
@@ -140,8 +128,8 @@ chainTo:
     skipIfFileContains: "@neondatabase/serverless|@upstash/redis"
   -
     pattern: "from\\s+['\"]@supabase/supabase-js['\"]"
-    targetSkill: auth
-    message: 'Supabase client detected — if using Supabase Auth, loading Auth guidance for Clerk (native Vercel Marketplace) as the recommended managed auth provider.'
+    targetSkill: supabase
+    message: 'Supabase client detected — loading the Supabase skill (Supabase Auth, RLS, and session handling are covered there).'
     skipIfFileContains: "@clerk/|@auth0/|@descope/"
 retrieval:
   aliases:
@@ -379,6 +367,8 @@ const { data, error } = await supabase.from('users').select('*')
 ```
 
 Install via Vercel Marketplace: `vercel integration add supabase`
+
+This section covers **provisioning Supabase on Vercel** only. For Supabase development itself — RLS policies, Supabase Auth and session handling, Edge Functions, migrations, `@supabase/ssr` cookie patterns — use the `supabase` skill, which is the canonical source for that work. Do not propose migrating an existing Supabase project to Neon/Upstash unless the user asks for alternatives.
 
 ### Prisma ORM (Marketplace Native)
 
