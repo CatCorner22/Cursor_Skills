@@ -35,7 +35,7 @@ Run full routing audit: `python3 skills/first-party/skill-library-audit/scripts/
 
 | Check | Result |
 |---|---|
-| Skills / packs | 114 / 13 |
+| Skills / packs | 115 / 13 |
 | Duplicate names | 0 |
 | YAML parse errors | 0 |
 | Routing findings | 17 (2 HIGH, 6 MEDIUM, 9 LOW) |
@@ -56,7 +56,7 @@ Compact index: [skills-quick-reference.md](skills-quick-reference.md)
 | `ui-engineering` | Modern UI implementation: component composition, design tokens, Tailwind/shadcn/Radix stacks, responsive layout, and accessible markup foundations. Use when bui... | Auto — prompt match | Run `./scripts/load-all.sh` (or enable **coding**/**vercel**/etc. plugin). Ask using words from the skill description. |
 | `ux-engineering` | User experience engineering: task flows, Nielsen heuristics, loading/empty/error patterns, accessibility (WCAG-oriented), microcopy, and feedback loops. Use whe... | Auto — prompt match | Run `./scripts/load-all.sh` (or enable **coding**/**vercel**/etc. plugin). Ask using words from the skill description. |
 
-## first-party (5 skills)
+## first-party (6 skills)
 
 | Skill | When to use | Activation | How to activate |
 |---|---|---|---|
@@ -65,8 +65,9 @@ Compact index: [skills-quick-reference.md](skills-quick-reference.md)
 | `smolagents` | Hugging Face `smolagents`: choosing CodeAgent vs ToolCallingAgent, the model backends (InferenceClientModel, LiteLLMModel, TransformersModel, OpenAIModel), defi... | Auto — prompt match | Run `./scripts/load-all.sh` (or enable **coding**/**vercel**/etc. plugin). Ask using words from the skill description. |
 | `v0` | Vercel's v0 app builder — taking v0 output into a production repo, and driving the v0 Platform API (v2, api.v0.dev/v2) from code with the `v0` npm SDK. Use when... | Auto — prompt match | Run `./scripts/load-all.sh` (or enable **coding**/**vercel**/etc. plugin). Ask using words from the skill description. |
 
-| `statistical-literacy` | Decode statistical claims: absolute vs relative risk, base rates, Bayes, CIs, p-values | Auto — prompt match | Run `./scripts/load-all.sh`. Ask about relative vs absolute risk, NNT, base rates, what statistics mean |
-## cursor-cloud (5 skills)
+| `statistical-literacy` |
+| `pioneer-llm` | Interactive scoping to design a bespoke Pioneer LLM — activate, answer questions, receive full spec | Auto — prompt match | Say *activate pioneer LLM* or *create a bespoke LLM for…* after `./scripts/load-all.sh` | Decode statistical claims: absolute vs relative risk, base rates, Bayes, CIs, p-values | Auto — prompt match | Run `./scripts/load-all.sh`. Ask about relative vs absolute risk, NNT, base rates, what statistics mean |
+## cursor-cloud (6 skills)
 
 | Skill | When to use | Activation | How to activate |
 |---|---|---|---|

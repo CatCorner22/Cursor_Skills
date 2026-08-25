@@ -38,7 +38,8 @@
 | first-party | `skill-library-audit` | Audit a multi-vendor agent-skill library for routing pathology — the d | Auto |
 | first-party | `smolagents` | Hugging Face `smolagents`: choosing CodeAgent vs ToolCallingAgent, the | Auto |
 | first-party | `v0` |
-| first-party | `statistical-literacy` | relative vs absolute risk, what do these statistics mean | Auto | | Vercel's v0 app builder — taking v0 output into a production repo, and | Auto |
+| first-party | `statistical-literacy` |
+| first-party | `pioneer-llm` | activate pioneer LLM, bespoke custom model for a purpose | Auto | | relative vs absolute risk, what do these statistics mean | Auto | | Vercel's v0 app builder — taking v0 output into a production repo, and | Auto |
 | huggingface | `hf-cli` | Hugging Face Hub CLI (`hf`) for auth, repos, models, datasets, spaces, | Auto |
 | huggingface | `hf-cloud-aws-context-discovery` | Discover the user's local AWS context (active profile, region, account | Auto |
 | huggingface | `hf-cloud-python-env-setup` | Set up an isolated Python environment for SageMaker / AWS work, with t | Auto |

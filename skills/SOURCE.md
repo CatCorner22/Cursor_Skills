@@ -11,7 +11,7 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Adobe App Builder | `skills/adobe/` | https://github.com/adobe/skills (`plugins/app-builder`) | `253f56901e058800ccb97ffd5bf1e3329d5f2e00` | `310a33933970fc5f1e1bc6abc0037542` |
 | Supabase | `skills/supabase/` | https://github.com/supabase/agent-skills (via `supabase-community/cursor-plugin`) | `e5f7a7cfd697765848ffd6a4505f3c02e1ee17ee` | n/a |
 | Cursor Team Kit (curated) | `skills/cursor-team-kit/` | https://github.com/cursor/plugins (`cursor-team-kit/skills/`) | `bdf7aa355337897f167153e05069aca505dae17c` | n/a |
-| First-party (authored here, 5) | `skills/first-party/` | **Not vendored** — `proactive-agency`, `skill-library-audit`, `smolagents`, `v0`, `statistical-literacy` | n/a | n/a |
+| First-party (authored here, 6) | `skills/first-party/` | **Not vendored** — `proactive-agency`, `skill-library-audit`, `smolagents`, `v0`, `statistical-literacy`, `pioneer-llm` | n/a | n/a |
 | Playwright | `skills/playwright/` | https://github.com/microsoft/playwright (`packages/playwright-core/src/tools/skills/`) | `f46278a` | n/a |
 | Cursor SDK | `skills/cursor-sdk/` | https://github.com/cursor/plugins (`cursor-sdk/skills/`) | `bdf7aa355337897f167153e05069aca505dae17c` | n/a |
 | Prompt Optimizer | `skills/prompt-optimizer/` | https://github.com/getsentry/skills (`skills/prompt-optimizer/`) | `c2f99a5b04b4cd992ec3022d7c2c3e23e938d241` | n/a |
@@ -19,7 +19,7 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | LangChain (curated 12 of 22) | `skills/langchain/` | https://github.com/langchain-ai/langchain-skills (`config/skills/`) | `7f00812b2b8b3022f766a223db579dd381a23813` | n/a |
 | Coding (authored here, 7) | `skills/coding/` | **Not vendored** — deliverable-first engineering craft pack | n/a | n/a |
 
-**Inventory as of 2026-08-25:** 113 `SKILL.md` across 13 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, cursor-cloud 5, first-party 4, coding 7, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1.
+**Inventory as of 2026-08-25:** 115 `SKILL.md` across 13 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, cursor-cloud 5, first-party 6, coding 7, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1.
 
 ### LangChain pack, 2026-08-25
 
