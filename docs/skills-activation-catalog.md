@@ -31,6 +31,19 @@ Optional: Cursor → **Settings → Plugins** → enable packs from `.cursor-plu
 
 Run full routing audit: `python3 skills/first-party/skill-library-audit/scripts/audit_skill_library.py skills/`
 
+### Audit results (debug pass)
+
+| Check | Result |
+|---|---|
+| Skills / packs | 113 / 13 |
+| Duplicate names | 0 |
+| YAML parse errors | 0 |
+| Routing findings | 17 (2 HIGH, 6 MEDIUM, 9 LOW) |
+
+Findings are routing-quality heuristics (greedy descriptions, chainTo cycles in Vercel pack, vendor steering rules) — **no skill failed to load**.
+
+Compact index: [skills-quick-reference.md](skills-quick-reference.md)
+
 ## coding (7 skills)
 
 | Skill | When to use | Activation | How to activate |

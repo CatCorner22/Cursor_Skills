@@ -21,9 +21,9 @@
 | coding | `ui-engineering` | Modern UI implementation: component composition, design tokens, Tailwi | Auto |
 | coding | `ux-engineering` | User experience engineering: task flows, Nielsen heuristics, loading/e | Auto |
 | cursor-cloud | `canvas` | Author standalone  | Auto |
-| cursor-cloud | `env-setup` | configure Cloud Agent environment.json | Cloud |
-| cursor-cloud | `migrate-to-builds` | Test that a Cloud Agent environment will work with prebuilt environmen | Cloud |
-| cursor-cloud | `subscribe` | wait for GitHub CI to finish on this branch | Cloud |
+| cursor-cloud | `env-setup` | configure Cloud Agent environment.json | Cloud+MCP |
+| cursor-cloud | `migrate-to-builds` | Test that a Cloud Agent environment will work with prebuilt environmen | Cloud+MCP |
+| cursor-cloud | `subscribe` | wait for GitHub CI to finish on this branch | Cloud+MCP |
 | cursor-cloud | `walkthrough-artifacts` | Create walkthrough artifacts (screenshots and screen recordings) that  | Cloud |
 | cursor-sdk | `cursor-sdk` | Guide users building apps, scripts, CI pipelines, or automations on to | Auto |
 | cursor-team-kit | `fix-ci` | Find failing PR checks, inspect logs or external check links, and appl | Auto |
