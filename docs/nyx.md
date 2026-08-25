@@ -215,6 +215,21 @@ Individual macro reference shots for every piece in the tattoo map. Use for ink 
 
 ![Nyx — tattoo contact sheet](../assets/nyx-tattoo-contact-sheet-all-8.png)
 
+### Ultra macro — one per tattoo
+
+Tightest framing; ink detail only.
+
+| Tattoo | Macro |
+|---|---|
+| Right sleeve — serpent + roses | ![Serpent sleeve macro](../assets/nyx-tattoo-macro-serpent-sleeve.png) |
+| Left forearm — phase moons | ![Phase moons macro](../assets/nyx-tattoo-macro-phase-moons.png) |
+| Left shoulder — sunburst | ![Sunburst macro](../assets/nyx-tattoo-macro-shoulder-sunburst.png) |
+| Left ribs — script mantra | ![Rib script macro](../assets/nyx-tattoo-macro-rib-script.png) |
+| Sternum — dagger heart | ![Sternum dagger macro](../assets/nyx-tattoo-macro-sternum-dagger.png) |
+| Upper back — moth | ![Moth macro](../assets/nyx-tattoo-macro-back-moth.png) |
+| Right thigh — peony + serpent tail | ![Thigh peony macro](../assets/nyx-tattoo-macro-thigh-peony.png) |
+| Left hip — coordinates | ![Hip coordinates macro](../assets/nyx-tattoo-macro-hip-coordinates.png) |
+
 ### Right full sleeve — serpent + roses
 
 ![Nyx — serpent sleeve close-up](../assets/nyx-tattoo-closeup-serpent-sleeve.png)
@@ -262,6 +277,7 @@ Nyx: dark-haired athletic-alt woman; smoky makeup; CrossFit/UFC build; large per
 | 2026-08-25 | Initial bible: appearance, physique, tattoo map, personality, voice, prompts |
 | 2026-08-25 | Scene variants (gym, EDC, casual, pool/bikini), back tattoo sheet, transparent bikini wardrobe |
 | 2026-08-25 | Tattoo close-up gallery (all 8 pieces + contact sheet), portrait close-up, rooftop night, pool sunset, gym kettlebell |
+| 2026-08-25 | Ultra macro tattoo shots (all 8, tight ink-only framing) |
 | 2026-08-25 | Front + back tattoo turnaround sheet |
 
 ## Reference images
