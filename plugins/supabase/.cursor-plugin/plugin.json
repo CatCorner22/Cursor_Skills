@@ -1,0 +1,6 @@
+{
+  "name": "supabase",
+  "version": "1.0.0-snapshot",
+  "description": "Skill pack supabase from the Cursor_Skills snapshot",
+  "skills": "skills"
+}

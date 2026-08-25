@@ -1,0 +1,93 @@
+{
+  "name": "cursor-skills-snapshot",
+  "owner": { "name": "CatCorner22" },
+  "metadata": {
+    "description": "All vendored skill packs from this repo, loaded as Cursor plugins.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "adobe",
+      "source": "./plugins/adobe",
+      "skills": "skills",
+      "description": "Skill pack adobe from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "cursor-cloud",
+      "source": "./plugins/cursor-cloud",
+      "skills": "skills",
+      "description": "Skill pack cursor-cloud from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "cursor-sdk",
+      "source": "./plugins/cursor-sdk",
+      "skills": "skills",
+      "description": "Skill pack cursor-sdk from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "cursor-team-kit",
+      "source": "./plugins/cursor-team-kit",
+      "skills": "skills",
+      "description": "Skill pack cursor-team-kit from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "first-party",
+      "source": "./plugins/first-party",
+      "skills": "skills",
+      "description": "Skill pack first-party from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "huggingface",
+      "source": "./plugins/huggingface",
+      "skills": "skills",
+      "description": "Skill pack huggingface from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "langchain",
+      "source": "./plugins/langchain",
+      "skills": "skills",
+      "description": "Skill pack langchain from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "playwright",
+      "source": "./plugins/playwright",
+      "skills": "skills",
+      "description": "Skill pack playwright from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "prompt-optimizer",
+      "source": "./plugins/prompt-optimizer",
+      "skills": "skills",
+      "description": "Skill pack prompt-optimizer from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "pydantic-ai",
+      "source": "./plugins/pydantic-ai",
+      "skills": "skills",
+      "description": "Skill pack pydantic-ai from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "supabase",
+      "source": "./plugins/supabase",
+      "skills": "skills",
+      "description": "Skill pack supabase from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "vercel",
+      "source": "./plugins/vercel",
+      "skills": "skills",
+      "description": "Skill pack vercel from the Cursor_Skills snapshot"
+    }
+  ]
+}

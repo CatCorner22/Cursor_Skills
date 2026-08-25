@@ -1,0 +1,6 @@
+{
+  "name": "pydantic-ai",
+  "version": "1.0.0-snapshot",
+  "description": "Skill pack pydantic-ai from the Cursor_Skills snapshot",
+  "skills": "skills"
+}
