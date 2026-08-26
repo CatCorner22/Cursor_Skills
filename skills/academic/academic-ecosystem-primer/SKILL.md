@@ -1,0 +1,77 @@
+---
+name: academic-ecosystem-primer
+description: "Router for college and academic work in this library: writing, citations, statistics interpretation, study planning, research synthesis, problem sets, lab reports, coursework data analysis, presentations, and academic integrity. Use when the user is a student, mentions college/school/coursework, or asks how to approach an assignment, paper, exam prep, or lab. Scope boundary: CS/software implementation → `coding-ecosystem-primer`; AI/ML engineering → huggingface/langchain packs; GitHub PR workflow for group code projects → `cursor-team-kit`; general execution posture → `proactive-agency`."
+metadata:
+  priority: 8
+  promptSignals:
+    phrases:
+      - "college"
+      - "coursework"
+      - "assignment"
+      - "homework"
+      - "syllabus"
+      - "study for"
+      - "write my essay"
+      - "research paper"
+      - "lab report"
+      - "problem set"
+      - "cite this"
+      - "going back to school"
+    allOf:
+      - [college, assignment]
+      - [school, essay]
+      - [course, study]
+      - [research, paper]
+    anyOf:
+      - "back to college"
+      - "back to school"
+      - "academic writing"
+      - "literature review"
+    minScore: 6
+---
+
+# Academic ecosystem primer
+
+Pick the **smallest set of skills** for the assignment type. This pack is **discipline-agnostic** — it governs *how to succeed in coursework*, not which major you chose.
+
+## Decision table
+
+| User intent | Load next |
+|---|---|
+| Essay, argument, revision, thesis statement | **`academic-writing`** |
+| APA/MLA/Chicago, bibliography, in-text citations | **`citation-literacy`** |
+| "What do these stats mean?", p-values, risk, polls, study results | **`statistical-literacy`** |
+| Syllabus → schedule, exam prep, note-taking, spaced repetition | **`study-system`** |
+| Find sources, evaluate credibility, literature review | **`research-synthesis`** |
+| Math/science problem sets, show-your-work, LaTeX | **`problem-set-workflow`** |
+| Science lab IMRaD report, methods/results | **`lab-report`** |
+| Intro stats/data homework (pandas, R, interpreting output) | **`data-for-coursework`** |
+| Slides, poster, oral presentation | **`presentation-craft`** |
+| AI use policy, plagiarism, attribution, when to ask professor | **`academic-integrity`** |
+| Build an app for class (CS) | **`coding-ecosystem-primer`** → then domain skills |
+| Word / Excel / PowerPoint / Teams / Outlook | **`m365-ecosystem-primer`** |
+| Summarize an AI/CS arXiv paper | **`huggingface-papers`** |
+| Group project git/PR workflow | **`cursor-team-kit`** |
+
+## Default workflow (most written assignments)
+
+```
+1. academic-integrity  → confirm what help is allowed for this assignment
+2. research-synthesis  → sources and outline (if research required)
+3. academic-writing    → draft with thesis and structure
+4. citation-literacy   → format references and in-text cites
+5. study-system        → if exam or multi-week project, map deadlines first
+```
+
+## Returning-student note
+
+Pair **`study-system`** with **`proactive-agency`**: the syllabus is the contract; the agent executes slices without waiting for permission on reversible steps (outlines, flashcards, draft sections) while **`academic-integrity`** governs what must stay yours.
+
+## Boundaries
+
+| Topic | Owner |
+|---|---|
+| Software feature implementation | `coding-ecosystem-primer` |
+| Next.js / deployment | `vercel` pack |
+| ML model training | `huggingface` pack |
+| Character reference (Nyx) | `nyx` (projects) |
