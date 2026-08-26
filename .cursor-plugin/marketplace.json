@@ -7,6 +7,13 @@
   },
   "plugins": [
     {
+      "name": "academic",
+      "source": "./plugins/academic",
+      "skills": "skills",
+      "description": "Skill pack academic from the Cursor_Skills snapshot"
+    }
+,
+    {
       "name": "adobe",
       "source": "./plugins/adobe",
       "skills": "skills",
@@ -18,6 +25,13 @@
       "source": "./plugins/coding",
       "skills": "skills",
       "description": "Skill pack coding from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "craft",
+      "source": "./plugins/craft",
+      "skills": "skills",
+      "description": "Skill pack craft from the Cursor_Skills snapshot"
     }
 ,
     {
@@ -60,6 +74,20 @@
       "source": "./plugins/langchain",
       "skills": "skills",
       "description": "Skill pack langchain from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "microsoft365",
+      "source": "./plugins/microsoft365",
+      "skills": "skills",
+      "description": "Skill pack microsoft365 from the Cursor_Skills snapshot"
+    }
+,
+    {
+      "name": "plaud",
+      "source": "./plugins/plaud",
+      "skills": "skills",
+      "description": "Skill pack plaud from the Cursor_Skills snapshot"
     }
 ,
     {
