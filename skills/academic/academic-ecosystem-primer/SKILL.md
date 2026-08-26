@@ -84,3 +84,4 @@ Pair **`study-system`** with **`proactive-agency`**: the syllabus is the contrac
 | Next.js / deployment | `vercel` pack |
 | ML model training | `huggingface` pack |
 | Character reference (Nyx) | `nyx` (projects) |
+| AI pipeline quality / cross-domain techniques | **`ai-transfer-ecosystem-primer`** |
