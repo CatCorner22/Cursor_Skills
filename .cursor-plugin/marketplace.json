@@ -77,6 +77,13 @@
     }
 ,
     {
+      "name": "plaud",
+      "source": "./plugins/plaud",
+      "skills": "skills",
+      "description": "Skill pack plaud from the Cursor_Skills snapshot"
+    }
+,
+    {
       "name": "playwright",
       "source": "./plugins/playwright",
       "skills": "skills",

@@ -50,6 +50,7 @@ Pick the **smallest set of skills** for the assignment type. This pack is **disc
 | AI use policy, plagiarism, attribution, when to ask professor | **`academic-integrity`** |
 | Build an app for class (CS) | **`coding-ecosystem-primer`** → then domain skills |
 | Word / Excel / PowerPoint / Teams / Outlook | **`m365-ecosystem-primer`** |
+| Lecture recording → study notes (Plaud) | **`plaud-ecosystem-primer`** |
 | Summarize an AI/CS arXiv paper | **`huggingface-papers`** |
 | Group project git/PR workflow | **`cursor-team-kit`** |
 

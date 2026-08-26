@@ -21,8 +21,9 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Projects (authored here, 1) | `skills/projects/` | **Not vendored** — project reference material, not capability skills. `nyx` is a character bible carried here so it loads and backs up with the library. | n/a | n/a |
 | Academic (authored here, 3+) | `skills/academic/` | **Not vendored** — college coursework pack: writing, citations, study, stats literacy (expanding) | n/a | n/a |
 | Microsoft 365 (authored here, 7) | `skills/microsoft365/` | **Not vendored** — Word, Excel, PowerPoint, Outlook, Teams, OneDrive; compatible with M365 Copilot custom skills format | n/a | n/a |
+| Plaud (authored here, 8) | `skills/plaud/` | **Not vendored** — Plaud Note recorder workflows: capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export | n/a | n/a |
 
-**Inventory as of 2026-08-26:** 124 `SKILL.md` across 16 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, coding 7, microsoft365 7, cursor-cloud 5, first-party 4, academic 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
+**Inventory as of 2026-08-26:** 132 `SKILL.md` across 17 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, coding 7, microsoft365 7, plaud 8, cursor-cloud 5, first-party 4, academic 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
 
 ### SK017 added to the analyzer, 2026-08-25
 
