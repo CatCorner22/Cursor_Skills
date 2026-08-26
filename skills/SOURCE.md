@@ -17,8 +17,32 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Prompt Optimizer | `skills/prompt-optimizer/` | https://github.com/getsentry/skills (`skills/prompt-optimizer/`) | `c2f99a5b04b4cd992ec3022d7c2c3e23e938d241` | n/a |
 | Pydantic AI | `skills/pydantic-ai/` | https://github.com/pydantic/pydantic-ai — shipped inside the `pydantic_ai_slim` PyPI wheel at `pydantic_ai/.agents/skills/` | `bfa8e9187b86aad7ec583665ab2743fadea458b1` (tag `v2.34.0`) | wheel sha256 `933acdd8139674df53e8453c1ccc39b08d6b1a80bf238d212bd6fed1d023c95d` |
 | LangChain (curated 12 of 22) | `skills/langchain/` | https://github.com/langchain-ai/langchain-skills (`config/skills/`) | `7f00812b2b8b3022f766a223db579dd381a23813` | n/a |
+| Coding (authored here, 7) | `skills/coding/` | **Not vendored** — deliverable-first engineering craft pack | n/a | n/a |
+| Projects (authored here, 1) | `skills/projects/` | **Not vendored** — project reference material, not capability skills. `nyx` is a character bible carried here so it loads and backs up with the library. | n/a | n/a |
 
-**Inventory as of 2026-08-25:** 106 `SKILL.md` across 12 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, cursor-cloud 5, first-party 4, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1. All 106 `name:` values are unique; all 11 `overlay.yaml` files (every one of them inside `vercel/`) parse and are object-equal to their `SKILL.md` frontmatter. Every pinned commit above was re-resolved against its upstream with `git ls-remote` on 2026-08-25.
+**Inventory as of 2026-08-25:** 114 `SKILL.md` across 14 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, coding 7, cursor-cloud 5, first-party 4, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
+
+### SK017 added to the analyzer, 2026-08-25
+
+The `coding` pack landed with `ui-engineering` claiming `**/*.tsx` and `**/*.jsx` — the only bare project-wide path claims in the library. Its nearest neighbour `react-best-practices` scopes carefully (`components/**/*.tsx`, `src/components/**/*.tsx`, `src/ui/**/*.tsx`, …), so `ui-engineering` claimed a strict superset of that skill's entire territory and would have fired on every `.tsx` in a Next.js repo — API routes, lib files and tests included.
+
+**The analyzer did not catch it, and that was a genuine gap rather than a tuning question.** `SK009` flags a path pattern naming *another pack's* token; `SK010` flags one *rule regex* containing another. A pattern that is simply maximally broad names nobody and is not a rule, so neither detector had anything to test. The skill already taught subsumption as a concept — it just never inspected the field where it shows up structurally.
+
+`SK017` closes that. A pattern is flagged only when all three hold: it has **zero literal path segments**, it targets a file extension, and **another skill claims that same extension with literal segments**. That third condition is what keeps it quiet on legitimate breadth — `skill-library-audit` itself claims `**/SKILL.md` because auditing every skill file is precisely its job, and since no other skill scopes `.md`, it is correctly not reported. Verified both directions: SK017 fired on both `ui-engineering` patterns before the fix and stayed silent on `skill-library-audit` in the same run.
+
+`ui-engineering` was rescoped to `**/components/**`, `**/ui/**/*.{tsx,jsx}`, `**/app/**/*.{tsx,jsx}` — preserving its intent (component and page UI) while no longer claiming every React file in the tree. Findings returned to 17 with SK017 at zero.
+
+Worth stating plainly, since it is the second time it has happened: **the description-level scope boundary was already correct.** `ui-engineering` explicitly handed React perf to `react-best-practices`, shadcn CLI to `shadcn`, and RSC to `nextjs`. Path patterns are structural and outrank prose — a boundary in the description does not constrain a glob that contradicts it.
+
+### Projects pack — `nyx`, 2026-08-25
+
+`skills/projects/` holds **project reference material rather than capability skills** — content the library carries so it loads and backs up alongside everything else, without pretending to teach a transferable skill. `nyx` is a character bible (appearance, physique, tattoo map, personality, voice, wardrobe, scene variants, image-generation prompt templates) for a recurring original character.
+
+Moved from `docs/nyx.md` + `assets/nyx-*.png`. Three things made that the right shape:
+
+- **Self-contained.** `scripts/load-all.sh` copies each skill directory wholesale (`tar -C "$skill_dir"`), so the five reference PNGs had to live *inside* the skill dir to travel into `~/.cursor/skills/nyx/`. They moved to `skills/projects/nyx/assets/` and the body's links were rewritten from `../assets/` to `assets/`; all five verified to resolve. Note this adds ~12 MB that `load-all.sh` now copies on every run.
+- **One canonical copy.** `docs/nyx.md` was replaced with a pointer rather than left as a second copy. Two copies of the same content is the config-drift class this file documents four separate instances of — edits land in one, the other goes silently stale.
+- **Deliberately tight trigger.** A character bible with a loose description would inject itself into unrelated sessions. It carries `minScore: 7`, `allOf` pairs that all require the literal `nyx` (`[nyx, character]`, `[nyx, scene]`, `[nyx, prompt]`, `[nyx, tattoo]`), a `pathPatterns` claim limited to its own directory, and an explicit scope boundary stating it is project reference material that must not fire on unrelated character, art, or UI work. Verified: the analyzer reports **17 findings, unchanged from before the pack, with zero mentioning `nyx`.**
 
 ### LangChain pack, 2026-08-25
 

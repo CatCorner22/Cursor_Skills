@@ -2,7 +2,8 @@
 
 Versioned snapshot of every skill loaded in the Cloud Agent session that reviewed them, plus a line-by-line review.
 
-- **Snapshot:** [skills/](skills/) — 106 `SKILL.md` files across 12 packs (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
+- **Snapshot:** [skills/](skills/) — 114 `SKILL.md` files across 14 packs (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, **Coding**, **Projects**, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
+- **Coding pack gap analysis:** [docs/CODING-PACK-GAP-ANALYSIS.md](docs/CODING-PACK-GAP-ANALYSIS.md)
 - **Review:** [REVIEW.md](REVIEW.md) — findings after reading each skill file (original pass). A follow-up independent re-verification against all 63 original skills — confirming most findings, correcting some, and surfacing additional security issues and a router-config drift bug — is summarized in the PR that added Supabase/Cursor Team Kit and applied fixes for both passes.
 
 **Loaded in this repo.** `.cursor/skills/` has one symlink per skill so Cursor / Cloud Agents pick up the snapshot. Plugin wrappers live under `plugins/`. To refresh this machine (project skills, `~/.cursor/skills/`, and `~/.cursor/plugins/local/`):
@@ -27,6 +28,8 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 | [Cursor SDK](skills/cursor-sdk/) | 1 | Driving Cursor agents from code (`@cursor/sdk`) — CI, scripts, backends |
 | [Prompt Optimizer](skills/prompt-optimizer/) | 1 | Authoring and optimizing prompt text itself — layering, few-shot, eval slices |
 | [Pydantic AI](skills/pydantic-ai/) | 1 | Python agent framework — typed deps/outputs, tools, streaming |
-| **Total** | **106** | reconciles with `find skills -name SKILL.md \| wc -l` |
+| [Coding](skills/coding/) | 7 | Deliverable-first, clean minimal code, stable architecture, real-time testing, UI/UX engineering |
+| [Projects](skills/projects/) | 1 | Project reference material, not capability skills — `nyx` character bible with reference sheets |
+| **Total** | **114** | reconciles with `find skills -name SKILL.md \| wc -l` |
 
 `vercel-agent` (pure product/pricing reference, no procedure) was removed from the Vercel pack. The LangChain pack is 12 of 22 upstream skills, and Cursor Team Kit 8 of 18 — see [skills/SOURCE.md](skills/SOURCE.md) for what was cut and why, and for the cross-pack trigger deconfliction applied to `vercel/ai-sdk` and `vercel/build-agents` so they stop steering off other packs' frameworks.

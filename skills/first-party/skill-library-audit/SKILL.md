@@ -85,6 +85,7 @@ Calibration: a tuned run over this repo (89 skills, 9 packs, 11 overlays, 187 ro
 | SK014 | Dangling prose skill reference | **heuristic** | skill name in body prose with no definition; negation tested per **clause**, not per line | "there is no `X` skill" |
 | SK015 | Unscoped skill | **heuristic** | ≤12-word description, no scoping metadata, **and** a cross-pack rival sharing the anchor conjunction | absence of metadata alone |
 | SK016 | Priority inversion | **heuristic** | prose says "load `X` first" while `X` ranks below the library median priority | topological priority ordering along edges |
+| SK017 | Path-pattern shadowing | **heuristic** | a `pathPatterns` glob with **zero literal segments** (`**/*.tsx`) while another skill claims the same extension *with* literal segments | repo-wide claims with no scoped rival — breadth alone is not a defect |
 
 Two denominators are easy to get wrong. **SK003 is sibling-scoped**: in this repo `validate:` appears in 14 files and routing metadata in 34 of 89 skills (33 of them in `vercel/`), so a library-wide majority schema is `name + description` and would flag all 33 Vercel skills. Compare per-pack, over the population that uses the key. **SK006 measures an idiom**: 56 `upgradeToSkill: <own name>` sites across 9 skills is "load me in full", not 56 bugs. Prevalence test — ≥3 skills and ≥15% of routed rules ⇒ one aggregate low finding. The genuine defect is narrower: a routing edge to self whose *pattern describes a foreign framework*.
 
