@@ -28,6 +28,13 @@
     }
 ,
     {
+      "name": "craft",
+      "source": "./plugins/craft",
+      "skills": "skills",
+      "description": "Skill pack craft from the Cursor_Skills snapshot"
+    }
+,
+    {
       "name": "cursor-cloud",
       "source": "./plugins/cursor-cloud",
       "skills": "skills",

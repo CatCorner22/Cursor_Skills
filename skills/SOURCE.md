@@ -19,11 +19,24 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | LangChain (curated 12 of 22) | `skills/langchain/` | https://github.com/langchain-ai/langchain-skills (`config/skills/`) | `7f00812b2b8b3022f766a223db579dd381a23813` | n/a |
 | Coding (authored here, 7) | `skills/coding/` | **Not vendored** — deliverable-first engineering craft pack | n/a | n/a |
 | Projects (authored here, 1) | `skills/projects/` | **Not vendored** — project reference material, not capability skills. `nyx` is a character bible carried here so it loads and backs up with the library. | n/a | n/a |
-| Academic (authored here, 3+) | `skills/academic/` | **Not vendored** — college coursework pack: writing, citations, study, stats literacy (expanding) | n/a | n/a |
+| Academic (authored here, 4+) | `skills/academic/` | **Not vendored** — college coursework pack: writing, citations, study system (expanding) | n/a | n/a |
+| Craft (authored here, 3) | `skills/craft/` | **Not vendored** — OODA×lean, mise en place, operational craft meta-layer | n/a | n/a |
 | Microsoft 365 (authored here, 7) | `skills/microsoft365/` | **Not vendored** — Word, Excel, PowerPoint, Outlook, Teams, OneDrive; compatible with M365 Copilot custom skills format | n/a | n/a |
 | Plaud (authored here, 8) | `skills/plaud/` | **Not vendored** — Plaud Note recorder workflows: capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export | n/a | n/a |
 
-**Inventory as of 2026-08-26:** 132 `SKILL.md` across 17 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, coding 7, microsoft365 7, plaud 8, cursor-cloud 5, first-party 4, academic 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
+**Inventory as of 2026-08-26:** 136 `SKILL.md` across 18 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, coding 7, microsoft365 7, plaud 8, cursor-cloud 5, first-party 4, academic 4, craft 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
+
+### Craft pack — OODA × lean × mise en place, 2026-08-26
+
+`skills/craft/` is a **meta-layer** — it names operational frameworks and routes into domain packs without duplicating coding or academic content.
+
+| Skill | Role |
+|---|---|
+| `craft-systems-primer` | Router: mise → OODA×lean fused loop → domain primers |
+| `workspace-mise-en-place` | Prep station before "heat" (files, env, tools, done definition) |
+| `ooda-lean-loop` | Observe → orient → decide one batch → act → andon → kaizen |
+
+Cross-links added to `coding-ecosystem-primer`, `academic-ecosystem-primer`, `onedrive-organization`, and `plaud-lecture-notes`. Also added `study-system` to `academic/` to resolve primer references.
 
 ### SK017 added to the analyzer, 2026-08-25
 

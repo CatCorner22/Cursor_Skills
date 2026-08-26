@@ -2,7 +2,7 @@
 
 Versioned snapshot of every skill loaded in the Cloud Agent session that reviewed them, plus a line-by-line review.
 
-- **Snapshot:** [skills/](skills/) — 132 `SKILL.md` files across 17 packs (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, **Coding**, **Academic**, **Microsoft 365**, **Plaud**, **Projects**, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
+- **Snapshot:** [skills/](skills/) — 136 `SKILL.md` files across 18 packs (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, **Coding**, **Academic**, **Microsoft 365**, **Plaud**, **Projects**, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
 - **Coding pack gap analysis:** [docs/CODING-PACK-GAP-ANALYSIS.md](docs/CODING-PACK-GAP-ANALYSIS.md)
 - **Review:** [REVIEW.md](REVIEW.md) — findings after reading each skill file (original pass). A follow-up independent re-verification against all 63 original skills — confirming most findings, correcting some, and surfacing additional security issues and a router-config drift bug — is summarized in the PR that added Supabase/Cursor Team Kit and applied fixes for both passes.
 
@@ -29,10 +29,11 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 | [Prompt Optimizer](skills/prompt-optimizer/) | 1 | Authoring and optimizing prompt text itself — layering, few-shot, eval slices |
 | [Pydantic AI](skills/pydantic-ai/) | 1 | Python agent framework — typed deps/outputs, tools, streaming |
 | [Coding](skills/coding/) | 7 | Deliverable-first, clean minimal code, stable architecture, real-time testing, UI/UX engineering |
-| [Academic](skills/academic/) | 3 | College coursework router, academic writing, citation literacy (pack expanding) |
+| [Academic](skills/academic/) | 4 | College coursework router, writing, citations, study system |
+| [Craft](skills/craft/) | 3 | OODA×lean loops, mise en place, operational craft router |
 | [Microsoft 365](skills/microsoft365/) | 7 | Word, Excel, PowerPoint, Outlook, Teams, OneDrive — Copilot-compatible SKILL.md format |
 | [Plaud](skills/plaud/) | 8 | AI voice recorder: capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export |
 | [Projects](skills/projects/) | 1 | Project reference material, not capability skills — `nyx` character bible with reference sheets |
-| **Total** | **132** | reconciles with `find skills -name SKILL.md \| wc -l` |
+| **Total** | **136** | reconciles with `find skills -name SKILL.md \| wc -l` |
 
 `vercel-agent` (pure product/pricing reference, no procedure) was removed from the Vercel pack. The LangChain pack is 12 of 22 upstream skills, and Cursor Team Kit 8 of 18 — see [skills/SOURCE.md](skills/SOURCE.md) for what was cut and why, and for the cross-pack trigger deconfliction applied to `vercel/ai-sdk` and `vercel/build-agents` so they stop steering off other packs' frameworks.

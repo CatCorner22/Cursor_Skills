@@ -53,6 +53,14 @@ Pick the **smallest set of skills** for the assignment type. This pack is **disc
 | Lecture recording → study notes (Plaud) | **`plaud-ecosystem-primer`** |
 | Summarize an AI/CS arXiv paper | **`huggingface-papers`** |
 | Group project git/PR workflow | **`cursor-team-kit`** |
+| Stuck, prioritizing, weekly planning | **`craft-systems-primer`** → `ooda-lean-loop` |
+| Prep before starting (files, week setup) | **`workspace-mise-en-place`** |
+
+## Systems combinations
+
+**Sunday mise (student):** `workspace-mise-en-place` → `outlook-email-calendar` → `onedrive-organization` → `study-system` weekly OODA.
+
+**Assignment OODA:** `ooda-lean-loop` → `academic-integrity` (decide) → domain skill (act) → `citation-literacy` (andon if missing sources).
 
 ## Default workflow (most written assignments)
 

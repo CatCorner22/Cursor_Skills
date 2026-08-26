@@ -1,6 +1,6 @@
 ---
 name: plaud-lecture-notes
-description: "Turn Plaud lecture recordings into study materials: capture setup, summary templates for classes, Cornell-style refinement, exam prep loops, and pairing with spaced repetition. Use when a student records classes with Plaud for coursework. Scope boundary: general Plaud routing → `plaud-ecosystem-primer`; study scheduling → `study-system` when added; essay writing → `academic-writing`."
+description: "Turn Plaud lecture recordings into study materials: capture setup, summary templates for classes, Cornell-style refinement, exam prep loops, and pairing with spaced repetition. Use when a student records classes with Plaud for coursework. Scope boundary: general Plaud routing → `plaud-ecosystem-primer`; study scheduling → `study-system`; prep → `workspace-mise-en-place`; essay writing → `academic-writing`."
 metadata:
   priority: 8
   promptSignals:
@@ -24,6 +24,17 @@ metadata:
 
 **Rule:** Plaud produces **raw intelligence** — you produce **learning**. Every session ends with a human edit pass.
 
+## Mise en place (before class)
+
+Run **`workspace-mise-en-place`** lecture station:
+
+```
+[ ] Recording policy confirmed
+[ ] Device charged; mode set (plaud-recording-capture)
+[ ] Course folder exists in OneDrive (onedrive-organization)
+[ ] Calendar block for post-class 30-min review (study-system)
+```
+
 ## Before class
 
 1. Confirm **recording policy** (syllabus / ask instructor)
@@ -43,7 +54,8 @@ metadata:
 2. plaud-transcription      → fix names/terms; add custom vocabulary for next time
 3. plaud-summary-templates  → run Lecture-study + Assignment-extract summaries
 4. Manual add: slide gaps, board photos, textbook page refs
-5. study-system (when added) → schedule review slot within 24h
+5. study-system             → schedule review slot within 24h
+6. ooda-lean-loop           → one kaizen line: what prep/highlight would help next time?
 ```
 
 ## Cornell refinement (from summary)

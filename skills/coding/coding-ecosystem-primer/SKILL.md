@@ -21,6 +21,16 @@ Pick the **smallest set of skills** that covers the task. This pack is **stack-a
 | Flows, usability, a11y, empty/error/loading states | **`ux-engineering`** |
 | React/Next **performance** only (waterfalls, bundle size) | **`react-best-practices`** (not this pack) |
 | Full user-story check in browser after implementation | **`verification`** (after `real-time-testing` passes) |
+| Stuck, thrashing, too much WIP | **`ooda-lean-loop`** |
+| Session prep (env, tests, branch) | **`workspace-mise-en-place`** |
+
+## Systems combinations (OODA × lean × mise)
+
+**Developer mise:** `workspace-mise-en-place` → branch, env, test command ready.
+
+**Coding loop:** `deliverable-first` (orient/decide) → `real-time-testing` (act + **andon** on red) → `clean-minimal-code` (kaizen) → `loop-on-ci`.
+
+TPS mapping: small batches = vertical slices; andon = failing test/CI; kaizen = refactor pass.
 
 ## Default workflow (always)
 

@@ -23,6 +23,8 @@ metadata:
 
 **Rule:** **One source of truth** per file. No `essay_final_FINAL2.docx` — use version history instead.
 
+**Mise en place:** This skill is the **file-station** half of prep — run **`workspace-mise-en-place`** before creating new work; use this skill to define *where* things live.
+
 ## Semester folder template
 
 ```
