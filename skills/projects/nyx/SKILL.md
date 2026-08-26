@@ -182,14 +182,30 @@ Nyx casual street style, distressed black jeans, band tee, leather jacket on sho
 
 ![Nyx — casual street](assets/nyx-scene-casual-street.png)
 
-### Pool / swim (transparent bikini)
-Rooftop pool or beach at sunset. **Transparent black bikini top** + matching bottom. Wet slicked-back hair, direct confident gaze. Sternum dagger tattoo visible.
+### Pool / swim
+Rooftop pool or beach at sunset. Wet slicked-back hair, direct confident gaze. Sternum dagger and sleeve ink visible. (Transparent black bikini variant documented below for local generation.)
+
+```
+Nyx poolside sunset, warm olive skin, slicked-back dark hair, smoky makeup, serpent sleeve and sternum dagger tattoo, rooftop pool city skyline, golden hour, confident pose, photorealistic, believable proportions
+```
+
+![Nyx — pool sunset](assets/nyx-scene-pool-sunset.png)
+
+**Transparent bikini variant** (local generation only — blocked in Cloud Agent):
 
 ```
 Nyx poolside sunset, transparent sheer black bikini top and high-cut bottom, warm olive skin, slicked-back dark hair, smoky makeup, large muscular Cuban-Brazilian glutes, serpent sleeve and sternum dagger tattoo, rooftop pool city skyline, golden hour, confident pose, photorealistic, believable proportions
 ```
 
-> **Note:** Pool/bikini reference image blocked by content policy in Cloud Agent — prompt above is ready for local generation.
+### Rooftop night
+Blue-hour city portrait — leather jacket, band tee, sleeve visible, smirk and direct gaze.
+
+![Nyx — rooftop night](assets/nyx-scene-rooftop-night.png)
+
+### Gym — kettlebell
+Action variant: mid kettlebell swing, chalk, industrial window light.
+
+![Nyx — gym kettlebell](assets/nyx-scene-gym-kettlebell.png)
 
 ### Back-view tattoo sheet
 Studio reference showing back ink: moth between shoulders, shoulder cap sunburst, rib script from side angle, sleeve wrap, thigh peony.
@@ -199,6 +215,75 @@ Nyx back view character sheet, gray studio background, symmetrical blackwork mot
 ```
 
 ![Nyx — back tattoo reference](assets/nyx-tattoo-back-view.png)
+
+### Front + back tattoo turnaround
+Combined studio sheet — front three-quarter and back three-quarter, same outfit (black sports bra + shorts). Shows full ink map in one view.
+
+**Front visible:** serpent/rose right sleeve · phase moons left forearm · dagger heart sternum · rib script  
+**Back visible:** moth between shoulders · sunburst left shoulder cap · sleeve wrap · peony/thigh · hip coordinates
+
+```
+Nyx tattoo turnaround sheet, front and back full body views side by side, gray studio background, black sports bra and shorts, warm olive skin, dark ponytail, neo-trad serpent rose right sleeve, phase moons left forearm, dagger heart sternum, script left ribs, blackwork moth upper back, sunburst left shoulder, peony right thigh, hip coordinates, photorealistic character design reference
+```
+
+![Nyx — front and back tattoo turnaround](assets/nyx-tattoo-turnaround-front-back.png)
+
+---
+
+## Tattoo close-up gallery
+
+Individual macro reference shots for every piece in the tattoo map. Use for ink consistency across scenes.
+
+### Contact sheet (all 8)
+
+![Nyx — tattoo contact sheet](assets/nyx-tattoo-contact-sheet-all-8.png)
+
+### Ultra macro — one per tattoo
+
+Tightest framing; ink detail only.
+
+| Tattoo | Macro |
+|---|---|
+| Right sleeve — serpent + roses | ![Serpent sleeve macro](assets/nyx-tattoo-macro-serpent-sleeve.png) |
+| Left forearm — phase moons | ![Phase moons macro](assets/nyx-tattoo-macro-phase-moons.png) |
+| Left shoulder — sunburst | ![Sunburst macro](assets/nyx-tattoo-macro-shoulder-sunburst.png) |
+| Left ribs — script mantra | ![Rib script macro](assets/nyx-tattoo-macro-rib-script.png) |
+| Sternum — dagger heart | ![Sternum dagger macro](assets/nyx-tattoo-macro-sternum-dagger.png) |
+| Upper back — moth | ![Moth macro](assets/nyx-tattoo-macro-back-moth.png) |
+| Right thigh — peony + serpent tail | ![Thigh peony macro](assets/nyx-tattoo-macro-thigh-peony.png) |
+| Left hip — coordinates | ![Hip coordinates macro](assets/nyx-tattoo-macro-hip-coordinates.png) |
+
+### Right full sleeve — serpent + roses
+
+![Nyx — serpent sleeve close-up](assets/nyx-tattoo-closeup-serpent-sleeve.png)
+
+### Left forearm — phase moons
+
+![Nyx — phase moons close-up](assets/nyx-tattoo-closeup-phase-moons.png)
+
+### Left shoulder cap — sunburst
+
+![Nyx — sunburst close-up](assets/nyx-tattoo-closeup-shoulder-sunburst.png)
+
+### Left rib cage — script mantra
+
+![Nyx — rib script close-up](assets/nyx-tattoo-closeup-rib-script.png)
+
+### Sternum — dagger heart
+
+![Nyx — sternum dagger close-up](assets/nyx-tattoo-closeup-sternum-dagger.png)
+
+### Upper back — moth
+
+![Nyx — moth close-up](assets/nyx-tattoo-closeup-back-moth.png)
+
+### Right thigh — peony + serpent tail
+
+![Nyx — thigh peony close-up](assets/nyx-tattoo-closeup-thigh-peony.png)
+
+### Left hip — coordinates
+
+![Nyx — hip coordinates close-up](assets/nyx-tattoo-closeup-hip-coordinates.png)
 
 ---
 
@@ -214,10 +299,21 @@ Nyx: dark-haired athletic-alt woman; smoky makeup; CrossFit/UFC build; large per
 |---|---|
 | 2026-08-25 | Initial bible: appearance, physique, tattoo map, personality, voice, prompts |
 | 2026-08-25 | Scene variants (gym, EDC, casual, pool/bikini), back tattoo sheet, transparent bikini wardrobe |
+| 2026-08-25 | Tattoo close-up gallery (all 8 pieces + contact sheet), portrait close-up, rooftop night, pool sunset, gym kettlebell |
+| 2026-08-25 | Ultra macro tattoo shots (all 8, tight ink-only framing) |
+| 2026-08-25 | Front + back tattoo turnaround sheet |
 
 ## Reference images
 
 ### Character sheet (front)
 
 ![Nyx character reference](assets/nyx-character-reference.png)
+
+### Portrait close-up
+
+![Nyx portrait close-up](assets/nyx-portrait-closeup.png)
+
+### Turnaround (front / back)
+
+![Nyx turnaround](assets/nyx-tattoo-turnaround-front-back.png)
 
