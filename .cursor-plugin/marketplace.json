@@ -21,6 +21,13 @@
     }
 ,
     {
+      "name": "ai-transfer",
+      "source": "./plugins/ai-transfer",
+      "skills": "skills",
+      "description": "Skill pack ai-transfer from the Cursor_Skills snapshot"
+    }
+,
+    {
       "name": "coding",
       "source": "./plugins/coding",
       "skills": "skills",

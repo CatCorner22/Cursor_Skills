@@ -1,0 +1,38 @@
+---
+name: progressive-resistance-critique
+description: "Escalating self-critique passes: warm-up consistency, moderate alignment, working robustness, max falsifiability. Use instead of single shallow 'review your answer'. Scope boundary: post-delivery debrief → `after-action-review`; proof DAG → `proof-trees-reasoning`."
+metadata:
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "self critique"
+      - "progressive review"
+      - "escalating critique"
+    minScore: 6
+---
+
+# Progressive resistance self-critique
+
+**#3** · **Domain:** Strength coaching · **Category:** quality-control · **Difficulty:** 🟡 Medium
+
+## Core principle
+
+Ramp critique intensity — never one-rep-max review cold.
+
+## AI problem addressed
+
+Single-pass self-review misses distinct failure modes.
+
+## Implementation
+
+| Phase | Target | Prompt |
+| Warm-up | Internal consistency | Contradictions? |
+| Moderate | Question alignment | Unstated assumptions? |
+| Working | Core robustness | Strongest objection? |
+| Max | Falsifiability | If wrong, what would we observe? |
+
+## Boundaries
+
+- Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
+- Category router: **`ai-transfer-quality-control`**
+- Catalog: **`ai-transfer-ecosystem-primer`**

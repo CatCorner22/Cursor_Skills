@@ -23,10 +23,13 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Craft (authored here, 3) | `skills/craft/` | **Not vendored** — OODA×lean, mise en place, operational craft meta-layer | n/a | n/a |
 | Microsoft 365 (authored here, 7) | `skills/microsoft365/` | **Not vendored** — Word, Excel, PowerPoint, Outlook, Teams, OneDrive; compatible with M365 Copilot custom skills format | n/a | n/a |
 | Plaud (authored here, 8) | `skills/plaud/` | **Not vendored** — Plaud Note recorder workflows: capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export | n/a | n/a |
+| AI Transfer (authored here, 36) | `skills/ai-transfer/` | **Not vendored** — 30 cross-domain discipline techniques for AI pipeline quality; see `docs/AI-TRANSFER-SKILLS.md`; generator `scripts/generate-ai-transfer-skills.py` | n/a | n/a |
 
-**Inventory as of 2026-08-26:** 136 `SKILL.md` across 18 packs — vercel 33, huggingface 26, langchain 12, adobe 10, cursor-team-kit 8, coding 7, microsoft365 7, plaud 8, cursor-cloud 5, first-party 4, academic 4, craft 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
+**Inventory as of 2026-08-26:** 172 `SKILL.md` across 19 packs — vercel 33, huggingface 26, langchain 12, adobe 10, ai-transfer 36, cursor-team-kit 8, coding 7, microsoft365 7, plaud 8, cursor-cloud 5, first-party 4, academic 4, craft 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
 
-### Craft pack — OODA × lean × mise en place, 2026-08-26
+### AI Transfer pack — 30 cross-domain techniques, 2026-08-26
+
+`skills/ai-transfer/` ports discipline constraints (accounting, aviation, journalism, chess, etc.) into AI workflow gates and pipeline stages. **36 skills:** `ai-transfer-ecosystem-primer`, five category routers, and 30 technique skills. Reference: `docs/AI-TRANSFER-SKILLS.md`. Overlaps documented with `craft/` (human OODA/mise) and `pipeline-preflight` ↔ `workspace-mise-en-place`.
 
 `skills/craft/` is a **meta-layer** — it names operational frameworks and routes into domain packs without duplicating coding or academic content.
 

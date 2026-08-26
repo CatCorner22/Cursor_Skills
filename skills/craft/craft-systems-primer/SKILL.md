@@ -78,6 +78,7 @@ Mise is the **philosophy**; file organization is the **implementation**.
 | Code | `coding-ecosystem-primer` |
 | Office | `m365-ecosystem-primer` |
 | Lectures | `plaud-ecosystem-primer` |
+| AI pipeline hardening | `ai-transfer-ecosystem-primer` |
 
 ## Boundaries
 
