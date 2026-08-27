@@ -33,3 +33,6 @@ Lookup FIRST; invoke reasoning only on cache miss with parameter match.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-memory`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `tablebase_cache`
+- Also implements: `opening_theory`
+- Merge notes: Also absorbs `opening_theory`: opening-book templates before a tablebase miss.

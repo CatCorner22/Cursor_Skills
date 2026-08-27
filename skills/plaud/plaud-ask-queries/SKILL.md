@@ -1,6 +1,6 @@
 ---
 name: plaud-ask-queries
-description: "Query Plaud recordings with Ask Plaud: cross-file search, cited answers linked to audio timestamps, and follow-up questions. Use when the user wants to find what was said across lectures or meetings in Plaud. Scope boundary: writing new prose from answers → `academic-writing`; statistical claims in recordings → `statistical-literacy` when added."
+description: "Query Plaud recordings with Ask Plaud: cross-file search, cited answers linked to audio timestamps, and follow-up questions. Use when the user wants to find what was said across lectures or meetings in Plaud. Scope boundary: writing new prose from answers → `academic-writing`; naming sources in those answers → `citation-literacy`."
 metadata:
   priority: 7
   promptSignals:

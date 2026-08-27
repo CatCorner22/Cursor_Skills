@@ -35,3 +35,6 @@ Flat embedding loses temporal depth and context shifts.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-memory`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `stratigraphy`
+- Also implements: `paleontology`
+- Merge notes: Also absorbs `paleontology`: fossil snapshots of retired configs.

@@ -34,3 +34,6 @@ Self-check: weakest premise? Downstream auto-flag if premise fails.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-architecture`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `proof_trees`
+- Also implements: `scientific_method`
+- Merge notes: Scientific-method plugin is this DAG, not a separate skill.

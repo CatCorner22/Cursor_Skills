@@ -67,4 +67,4 @@ metadata:
 ## Boundaries
 
 - Git/code collaboration for CS projects → **`cursor-team-kit`** + repo, not Teams files as source of truth
-- Breaking academic integrity in group work → **`academic-integrity`**
+- Group-work honesty and citation rules → **`citation-literacy`** plus the course AI-use policy

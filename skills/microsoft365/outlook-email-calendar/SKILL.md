@@ -89,4 +89,4 @@ No inspirational quotes for academic mail.
 ## Boundaries
 
 - Does not send email without user review
-- Institutional policies on AI-generated mail → **`academic-integrity`**
+- Institutional policies on AI-generated mail → follow the course or workplace AI-use policy

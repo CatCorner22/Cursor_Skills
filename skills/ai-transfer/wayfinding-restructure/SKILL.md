@@ -33,3 +33,4 @@ Feed patterns into next output architecture.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-adaptive`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `urban_wayfinding`

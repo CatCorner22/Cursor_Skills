@@ -34,3 +34,4 @@ Fix during generation for target locale profile.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-refinement`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `localization_qa`

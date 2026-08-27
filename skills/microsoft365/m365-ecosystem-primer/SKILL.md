@@ -1,6 +1,6 @@
 ---
 name: m365-ecosystem-primer
-description: "Router for Microsoft 365 work in this library: Word documents, Excel workbooks, PowerPoint decks, Outlook email/calendar, Teams collaboration, and OneDrive organization. Use when the user mentions Microsoft 365, Office, Word, Excel, PowerPoint, Outlook, Teams, OneDrive, SharePoint, or Copilot in Office apps. Scope boundary: Google Workspace → not covered; general academic writing craft → `academic-writing`; slide narrative without Office → `presentation-craft`; coding assignments → `coding-ecosystem-primer`."
+description: "Router for Microsoft 365 work in this library: Word documents, Excel workbooks, PowerPoint decks, Outlook email/calendar, Teams collaboration, and OneDrive organization. Use when the user mentions Microsoft 365, Office, Word, Excel, PowerPoint, Outlook, Teams, OneDrive, SharePoint, or Copilot in Office apps. Scope boundary: Google Workspace → not covered; general academic writing craft → `academic-writing`; slide narrative without Office still uses `powerpoint-decks` for structure; coding assignments → `coding-ecosystem-primer`."
 metadata:
   priority: 8
   promptSignals:
@@ -62,12 +62,12 @@ onedrive-organization → word-documents → citation-literacy (if references)
 
 **Data assignment in Excel:**
 ```
-excel-workbooks → statistical-literacy (interpret results)
+excel-workbooks → academic-writing (interpret results in prose) + citation-literacy
 ```
 
 **Group presentation:**
 ```
-teams-collaboration → powerpoint-decks → presentation-craft (narrative)
+teams-collaboration → powerpoint-decks
 ```
 
 ## Boundaries
@@ -75,5 +75,5 @@ teams-collaboration → powerpoint-decks → presentation-craft (narrative)
 | Topic | Owner |
 |---|---|
 | Google Docs/Sheets/Slides | Not this pack |
-| LaTeX problem sets | `problem-set-workflow` |
-| Python/R data analysis code | `data-for-coursework` |
+| LaTeX / show-your-work problem sets | `study-system` + `academic-writing` |
+| Python/R data analysis code | `coding-ecosystem-primer` |

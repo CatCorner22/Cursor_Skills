@@ -36,3 +36,6 @@ Single-pass self-review misses distinct failure modes.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `progressive_critique`
+- Also implements: `self_evaluation`, `confidence_calibrator`, `blind_spot_detector`, `metacognitive_monitor`
+- Merge notes: Meta-cognition plugins (94–97) are critique passes, not separate skills.

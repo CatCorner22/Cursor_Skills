@@ -37,3 +37,6 @@ Aggregate logs → recurring failure patterns.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-adaptive`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `aar_debrief`
+- Also implements: `self_evaluation`, `metacognitive_monitor`
+- Merge notes: Post-delivery debrief owns the same loop the meta-cognition plugins sketched.

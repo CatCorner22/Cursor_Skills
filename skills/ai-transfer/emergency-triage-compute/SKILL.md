@@ -37,3 +37,6 @@ Formatting and research questions get same budget.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-adaptive`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `start_triage`
+- Also implements: `quality_cost_tradeoff`
+- Merge notes: Also absorbs `quality_cost_tradeoff` — ROI/budget tier is START classing.

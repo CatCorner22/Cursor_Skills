@@ -81,7 +81,7 @@ Run **`workspace-mise-en-place`** lecture station:
 ## Academic integrity
 
 - Recording policy ≠ permission to upload transcripts to public sites
-- AI summary ≠ submitted work — see **`academic-integrity`** (when added)
+- AI summary ≠ submitted work — keep the course AI-use policy in view
 - Cite lecture ideas appropriately in papers → **`citation-literacy`**
 
 ## Boundaries

@@ -62,4 +62,4 @@ TPS mapping: small batches = vertical slices; andon = failing test/CI; kaizen = 
 | E2E browser verification narrative | `verification`, `playwright-cli` |
 | Adobe / HF / LangChain / Supabase stacks | respective packs |
 | Agent prompt text optimization | `prompt-optimizer` |
-| AI-transferable discipline techniques (30) | `ai-transfer-ecosystem-primer` |
+| AI-transferable discipline techniques (catalog #1–50) | `ai-transfer-ecosystem-primer` |

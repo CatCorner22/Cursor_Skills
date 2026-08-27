@@ -33,3 +33,4 @@ Generate interleaved; auto-check warp completeness; adapt weft to audience.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-architecture`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `textile_weaving`

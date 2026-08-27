@@ -36,3 +36,4 @@ Detect from urgency, format hints, or prior context.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-architecture`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `cartographic_zoom`

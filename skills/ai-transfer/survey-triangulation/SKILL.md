@@ -36,3 +36,6 @@ Use different queries, source types, and time snapshots.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `triangulation_validator`
+- Also implements: `fact_check_deep`
+- Merge notes: Deep fact-check is this skill plus `double-entry-claims`, not a third skill.

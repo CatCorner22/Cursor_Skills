@@ -1,6 +1,6 @@
 ---
 name: academic-writing
-description: "Structure and revise academic prose: thesis statements, outlines, paragraphs, introductions/conclusions, argument flow, and tone by assignment type (analytic, argumentative, reflective, compare-contrast). Use when writing or editing essays, discussion posts, reading responses, or when the user asks for help organizing an paper. Scope boundary: citation formatting → `citation-literacy`; finding/evaluating sources → `research-synthesis`; statistics in the paper → `statistical-literacy`; integrity and AI-use rules → `academic-integrity`."
+description: "Structure and revise academic prose: thesis statements, outlines, paragraphs, introductions/conclusions, argument flow, and tone by assignment type (analytic, argumentative, reflective, compare-contrast, lab IMRaD). Use when writing or editing essays, discussion posts, reading responses, or when the user asks for help organizing a paper. Scope boundary: citation formatting → `citation-literacy`; named sources and attribution → `journalistic-attribution`; lecture-to-notes → `plaud-lecture-notes`; slides → `powerpoint-decks`."
 metadata:
   priority: 8
   promptSignals:
@@ -87,4 +87,4 @@ T — Trim: cut throat-clearing, passive filler, and duplicate points
 | Teach argument craft | Replace reading the assigned texts |
 | Suggest where evidence is needed | Fabricate citations — use `citation-literacy` + real sources |
 
-Always confirm **`academic-integrity`** expectations before generating long draft text.
+Always confirm the course AI-use rules and pair **`citation-literacy`** before generating long draft text. Do not fabricate sources.

@@ -37,3 +37,4 @@ Example: missing file → orchestration passes text not metadata → add inter-s
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `root_cause_drill`

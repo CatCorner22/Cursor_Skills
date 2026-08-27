@@ -39,3 +39,4 @@ HALT and report gaps if any fail.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `mise_en_place`

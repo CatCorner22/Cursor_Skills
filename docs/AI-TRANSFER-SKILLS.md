@@ -1,6 +1,8 @@
-# 30 AI-Transferable Skills — Cross-Domain Techniques for AI Model Improvement
+# AI-Transferable Skills — Cross-Domain Techniques for AI Model Improvement
 
-Canonical **skill implementations** live in [`skills/ai-transfer/`](../skills/ai-transfer/). Each technique is a loadable `SKILL.md` plus five category routers and `ai-transfer-ecosystem-primer`.
+Canonical **skill implementations** live in [`skills/ai-transfer/`](../skills/ai-transfer/). Each technique is a loadable `SKILL.md` plus seven category routers and `ai-transfer-ecosystem-primer`.
+
+The cleaned Python runtime is [`scripts/ai_plugin_bundle.py`](../scripts/ai_plugin_bundle.py) (100 plugins, default `balanced` tier). Tests: [`scripts/test_ai_plugin_bundle.py`](../scripts/test_ai_plugin_bundle.py).
 
 > Cross-domain discipline constraints ported into AI workflows produce quality gains unavailable through conventional ML optimization alone — without new ML research.
 
@@ -25,10 +27,12 @@ The bottleneck is **translation**, not models.
 | Adaptive & dynamic processing | `ai-transfer-adaptive` | #17–21 |
 | Retrieval, memory & context | `ai-transfer-memory` | #22–25 |
 | Refinement, fusion & polish | `ai-transfer-refinement` | #26–30 |
+| Extension pack | `ai-transfer-extension` | #31–40 (minus merges) |
+| Advanced pack | `ai-transfer-advanced` | #41–50 (minus merges) |
 
 Start at **`ai-transfer-ecosystem-primer`** for routing.
 
-## Complete quick-reference
+## Complete quick-reference (catalog #1–50)
 
 | # | Skill | Domain | Category | Difficulty |
 |---|-------|--------|----------|------------|
@@ -62,6 +66,26 @@ Start at **`ai-transfer-ecosystem-primer`** for routing.
 | 28 | `wine-blending-fusion` | Wine blending | Refinement | 🔴 |
 | 29 | `gemstone-faceting-refinement` | Gemstone faceting | Refinement | 🟡 |
 | 30 | `localization-qa-filter` | Localization QA | Refinement | 🟡 |
+| 31 | `just-intonation-calibration` | Just intonation | Extension | 🟡 |
+| 32 | `load-bearing-structure` | Structural engineering | Extension | 🟡 |
+| 33 | `orchard-graft-transfer` | Horticulture | Extension | 🟡 |
+| 34 | `differential-diagnosis-intent` | Clinical reasoning (method) | Extension | 🟡 |
+| 35 | `stress-test-robustness` | Stress testing | Extension | 🟡 |
+| 36 | → `library-taxonomy-retrieval` | Memory palace (merged) | Memory | merged |
+| 37 | `tidal-pacing-rhythm` | Tidal pacing | Extension | 🟢 |
+| 38 | `underwriting-risk-gate` | Insurance underwriting | Extension | 🟡 |
+| 39 | → `endgame-tablebase-cache` | Opening theory (merged) | Memory | merged |
+| 40 | `metamorphosis-stages` | Metamorphosis | Extension | 🟡 |
+| 41 | → `chain-of-custody-provenance` | Black box (merged) | Quality control | merged |
+| 42 | → `fermentation-feedback` | Levain culture (merged) | Adaptive | merged |
+| 43 | `seismic-flexibility` | Earthquake engineering | Advanced | 🟡 |
+| 44 | `sidechain-priority` | Sidechain compression | Advanced | 🟡 |
+| 45 | `cross-pollination-structure` | Cross-pollination | Advanced | 🔴 |
+| 46 | `containment-safety-layers` | Biosafety layers | Advanced | 🔴 |
+| 47 | `sail-trim-tuning` | Sail trim | Advanced | 🟢 |
+| 48 | `interaction-table` | Interaction table | Advanced | 🟡 |
+| 49 | → `stratigraphy-memory` | Paleontology (merged) | Memory | merged |
+| 50 | `parallax-depth` | Parallax | Advanced | 🟡 |
 
 ## Recommended starting points
 
@@ -79,6 +103,19 @@ Start at **`ai-transfer-ecosystem-primer`** for routing.
 | OODA (#11) | `ooda-lean-loop` (human), `ooda-adaptive-context` (AI pipeline) |
 | 5 Whys (#6) | `ooda-lean-loop` kaizen, `five-whys-failure-recovery` (system log) |
 | Attribution (#7) | `citation-literacy`, `journalistic-attribution` |
+| Token cutting | `prompt-optimizer` (absorbs runtime `token_optimizer`) |
+| Pedagogy | `study-system` (absorbs runtime `pedagogical_sequence`) |
+
+## Runtime
+
+```bash
+python3 scripts/ai_plugin_bundle.py --list-plugins
+python3 scripts/ai_plugin_bundle.py --test --tier balanced
+python3 scripts/ai_plugin_bundle.py --profile --query "What is quantum computing?"
+python3 scripts/test_ai_plugin_bundle.py
+```
+
+Plugins 51–100 (security scanners, creative/communication helpers, analytics, legal/medical stubs, extra personalization) stay **runtime-only** and default off. Similarity in the bundle is word-overlap, not a production NLP stack.
 
 ## Implementation guide
 
@@ -92,4 +129,4 @@ Regenerate skill files: `python3 scripts/generate-ai-transfer-skills.py`
 
 ---
 
-*Document version 1.0 — skills pack added 2026-08-26*
+*Document version 2.0 — pack expanded 2026-08-27 from the 100-plugin bundle*

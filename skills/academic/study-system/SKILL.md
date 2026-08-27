@@ -78,4 +78,5 @@ Pair **`plaud-ask-queries`**: "All exam hints in [Course] recordings."
 ## Boundaries
 
 - Does not replace attending class or doing assigned reading
-- Pair **`academic-integrity`** for AI-assisted study limits
+- Pair **`citation-literacy`** and the course AI-use policy for assisted-study limits
+- Runtime plugin `pedagogical_sequence` maps here — do not add a second pedagogy skill

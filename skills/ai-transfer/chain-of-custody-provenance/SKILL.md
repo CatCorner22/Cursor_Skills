@@ -39,3 +39,6 @@ Trace backward from disputed segment to breaking link.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `chain_of_custody`
+- Also implements: `black_box`
+- Merge notes: Also absorbs `black_box`: immutable session recorder on the same chain.

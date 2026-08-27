@@ -33,3 +33,6 @@ Adjust: pivot, accelerate, or abort mid-stream.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-adaptive`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `fermentation_loop`
+- Also implements: `levain_culture`, `user_model_builder`
+- Merge notes: Also absorbs `levain_culture` (persistent style culture) and personalization culture-state.

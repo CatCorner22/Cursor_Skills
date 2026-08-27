@@ -35,3 +35,4 @@ Synthesis: final score + which dimension drove decision and why
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-refinement`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `debate_judging`

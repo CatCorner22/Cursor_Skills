@@ -34,3 +34,4 @@ Each conversation is an island despite conceptual overlap.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-memory`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `corridor_bridge`

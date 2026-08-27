@@ -86,5 +86,5 @@ Update before print: right-click TOC → Update Field
 
 ## Boundaries
 
-- Does not write graded content end-to-end → pair with **`academic-integrity`**
+- Does not write graded content end-to-end → pair with **`academic-writing`** and the course AI-use policy
 - Complex macros/VBA → out of scope unless user explicitly requests

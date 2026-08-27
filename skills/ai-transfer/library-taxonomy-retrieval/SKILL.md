@@ -34,3 +34,6 @@ Merge results; dedupe; rank by task relevance.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-memory`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `catalog_retrieval`
+- Also implements: `memory_palace`
+- Merge notes: Also absorbs `memory_palace`: spatial room-walk as one retrieval mode.

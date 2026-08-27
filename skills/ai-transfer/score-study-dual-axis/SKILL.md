@@ -36,3 +36,4 @@ Linear prose is organized OR thorough, rarely both.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-architecture`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `score_study`

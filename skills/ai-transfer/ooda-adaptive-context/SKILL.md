@@ -36,3 +36,4 @@ Debug 'ignored file' → read orient log.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-architecture`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `ooda_loop`

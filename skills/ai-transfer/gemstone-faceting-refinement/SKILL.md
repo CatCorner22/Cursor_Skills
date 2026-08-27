@@ -36,3 +36,4 @@ Rotate output between passes.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-refinement`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `gemstone_faceting`

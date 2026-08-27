@@ -82,5 +82,5 @@ Each view is additive — original transcript and prior summaries stay intact. U
 
 ## Boundaries
 
-- Summary ≠ submitted essay — run through **`academic-integrity`** and your voice
+- Summary ≠ submitted essay — run through **`academic-writing`** in your own voice and the course AI-use policy
 - Templates can't invent content not in audio — flag gaps explicitly

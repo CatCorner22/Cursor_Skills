@@ -1,6 +1,6 @@
 ---
 name: citation-literacy
-description: "Format and check academic citations: APA 7, MLA 9, and Chicago (notes-bibliography), in-text vs bibliography, common mistakes, and when to use which style. Use when the user asks how to cite a source, format references, or fix bibliography entries. Scope boundary: finding sources → `research-synthesis`; writing the paper body → `academic-writing`; DOI/URL lookup mechanics only when tied to a citation question."
+description: "Format and check academic citations: APA 7, MLA 9, and Chicago (notes-bibliography), in-text vs bibliography, common mistakes, and when to use which style. Use when the user asks how to cite a source, format references, or fix bibliography entries. Scope boundary: writing the paper body → `academic-writing`; claim-level attribution → `journalistic-attribution`; DOI/URL lookup mechanics only when tied to a citation question."
 metadata:
   priority: 8
   promptSignals:
@@ -103,5 +103,5 @@ When asked to cite, return:
 
 ## Boundaries
 
-- Verify against current manual for edge cases (legal, social media, AI-generated sources — many institutions ban citing ChatGPT as a source; use **`academic-integrity`**)
-- This skill formats; **`research-synthesis`** finds credible sources
+- Verify against the current style manual for edge cases (legal, social media, AI-generated sources — many institutions ban citing a chatbot as a source)
+- This skill formats; **`journalistic-attribution`** and **`huggingface-papers`** help find and name real sources

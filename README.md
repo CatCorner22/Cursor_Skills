@@ -2,8 +2,8 @@
 
 Versioned snapshot of every skill loaded in the Cloud Agent session that reviewed them, plus a line-by-line review.
 
-- **Snapshot:** [skills/](skills/) — 172 `SKILL.md` files across 19 packs
-- **AI-transfer reference:** [docs/AI-TRANSFER-SKILLS.md](docs/AI-TRANSFER-SKILLS.md) — 30 cross-domain techniques for AI pipeline quality (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, **Coding**, **Academic**, **Microsoft 365**, **Plaud**, **Projects**, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
+- **Snapshot:** [skills/](skills/) — 189 `SKILL.md` files across 19 packs
+- **AI-transfer reference:** [docs/AI-TRANSFER-SKILLS.md](docs/AI-TRANSFER-SKILLS.md) — 45 loadable cross-domain techniques (catalog #1–50) plus a 100-plugin runtime at `scripts/ai_plugin_bundle.py` (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, **Coding**, **Academic**, **Microsoft 365**, **Plaud**, **Projects**, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
 - **Coding pack gap analysis:** [docs/CODING-PACK-GAP-ANALYSIS.md](docs/CODING-PACK-GAP-ANALYSIS.md)
 - **Review:** [REVIEW.md](REVIEW.md) — findings after reading each skill file (original pass). A follow-up independent re-verification against all 63 original skills — confirming most findings, correcting some, and surfacing additional security issues and a router-config drift bug — is summarized in the PR that added Supabase/Cursor Team Kit and applied fixes for both passes.
 
@@ -34,8 +34,8 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 | [Craft](skills/craft/) | 3 | OODA×lean loops, mise en place, operational craft router |
 | [Microsoft 365](skills/microsoft365/) | 7 | Word, Excel, PowerPoint, Outlook, Teams, OneDrive — Copilot-compatible SKILL.md format |
 | [Plaud](skills/plaud/) | 8 | AI voice recorder: capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export |
-| [AI Transfer](skills/ai-transfer/) | 36 | 30 cross-domain AI techniques + 5 category routers + ecosystem primer |
+| [AI Transfer](skills/ai-transfer/) | 53 | 45 loadable techniques + 7 category routers + ecosystem primer; runtime `scripts/ai_plugin_bundle.py` |
 | [Projects](skills/projects/) | 1 | Project reference material, not capability skills — `nyx` character bible with reference sheets |
-| **Total** | **172** | reconciles with `find skills -name SKILL.md \| wc -l` |
+| **Total** | **189** | reconciles with `find skills -name SKILL.md \| wc -l` |
 
 `vercel-agent` (pure product/pricing reference, no procedure) was removed from the Vercel pack. The LangChain pack is 12 of 22 upstream skills, and Cursor Team Kit 8 of 18 — see [skills/SOURCE.md](skills/SOURCE.md) for what was cut and why, and for the cross-pack trigger deconfliction applied to `vercel/ai-sdk` and `vercel/build-agents` so they stop steering off other packs' frameworks.

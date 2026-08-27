@@ -40,3 +40,6 @@ Do not deliver until ledger closes (all claims balanced or explicitly marked unk
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `ledger_gate`
+- Also implements: `fact_check_deep`, `financial_audit`
+- Merge notes: Also absorbs `fact_check_deep` and `financial_audit` — same claim/evidence gate.

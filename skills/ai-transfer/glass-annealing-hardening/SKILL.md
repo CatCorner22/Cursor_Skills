@@ -36,3 +36,4 @@ Hot delivery commits to flawed structure early.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-adaptive`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `glass_anneal`
