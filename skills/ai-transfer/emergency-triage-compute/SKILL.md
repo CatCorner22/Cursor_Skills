@@ -12,6 +12,7 @@ metadata:
       - "task classify"
     minScore: 6
 ---
+
 # Emergency triage compute budgeting
 
 **#17** · **Domain:** Emergency medicine (START) · **Category:** adaptive · **Difficulty:** 🟢 Low
@@ -27,6 +28,7 @@ Formatting and research questions get same budget.
 ## Implementation
 
 | Class | Examples | Budget |
+|---|---|---|
 | Immediate | Safety, legal, medical | Max |
 | Delayed | Research, planning | Standard |
 | Minor | Format, rewrite | Minimal |

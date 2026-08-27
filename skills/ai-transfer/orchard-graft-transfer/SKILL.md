@@ -11,6 +11,7 @@ metadata:
       - "capability transfer"
     minScore: 6
 ---
+
 # Orchard graft capability transfer
 
 **#33** · **Domain:** Horticulture · **Category:** extension · **Difficulty:** 🟡 Medium

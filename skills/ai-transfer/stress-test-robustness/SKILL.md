@@ -11,6 +11,7 @@ metadata:
       - "edge case draft"
     minScore: 6
 ---
+
 # Stress-test output robustness
 
 **#35** · **Domain:** Structural engineering · **Category:** extension · **Difficulty:** 🟡 Medium
@@ -26,6 +27,7 @@ Happy-path review never sees the edge that will fail in production.
 ## Implementation
 
 | Test | Fail if |
+|---|---|
 | Contradiction | yes+no or always+never in a short span |
 | Edge | empty, zero, max, unicode, missing field unhandled |
 | Adversarial | instruction-like text in the output changes policy |

@@ -11,6 +11,7 @@ metadata:
       - "spatial emphasis"
     minScore: 6
 ---
+
 # Stage blocking information layout
 
 **#15** · **Domain:** Theater direction · **Category:** architecture · **Difficulty:** 🟡 Medium

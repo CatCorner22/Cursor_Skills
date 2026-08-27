@@ -12,6 +12,7 @@ metadata:
       - "lock structure"
     minScore: 6
 ---
+
 # Glass annealing output hardening
 
 **#21** · **Domain:** Glassblowing · **Category:** adaptive · **Difficulty:** 🟡 Medium
@@ -27,6 +28,7 @@ Hot delivery commits to flawed structure early.
 ## Implementation
 
 | Temp | Locked | Flexible |
+|---|---|---|
 | High | Nothing | Structure, content |
 | Medium | Major structure | Wording, examples |
 | Cool | All content | Typos, format only |

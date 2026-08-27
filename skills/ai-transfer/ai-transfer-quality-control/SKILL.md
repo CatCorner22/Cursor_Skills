@@ -5,6 +5,7 @@ description: "Router for quality-control AI-transfer techniques: claim/evidence 
 metadata:
   priority: 7
 ---
+
 # AI transfer — quality control
 
 Router for category: **quality control**.

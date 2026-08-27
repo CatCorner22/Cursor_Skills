@@ -136,7 +136,7 @@
       "name": "vercel",
       "source": "./plugins/vercel",
       "skills": "skills",
-      "description": "Vercel and Next.js platform skills. Manual except they do not include proactive-agency."
+      "description": "Vercel and Next.js platform skills. Skills are manual."
     }
   ]
 }

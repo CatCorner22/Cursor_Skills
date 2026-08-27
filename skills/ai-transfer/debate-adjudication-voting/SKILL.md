@@ -11,6 +11,7 @@ metadata:
       - "rubric voting"
     minScore: 6
 ---
+
 # Debate adjudication multi-agent voting
 
 **#27** · **Domain:** Competitive debate · **Category:** refinement · **Difficulty:** 🔴 High

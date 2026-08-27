@@ -5,6 +5,7 @@ description: "Router for architectural AI-transfer techniques: dual-axis reasoni
 metadata:
   priority: 7
 ---
+
 # AI transfer — architectural restructuring
 
 Router for category: **architecture**.

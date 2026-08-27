@@ -12,6 +12,7 @@ metadata:
       - "what went wrong"
     minScore: 6
 ---
+
 # After-action review (AAR)
 
 **#18** · **Domain:** Military · **Category:** adaptive · **Difficulty:** 🟡 Medium

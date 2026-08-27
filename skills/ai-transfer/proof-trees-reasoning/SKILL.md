@@ -11,6 +11,7 @@ metadata:
       - "dependency graph"
     minScore: 6
 ---
+
 # Proof trees (reasoning DAG)
 
 **#12** · **Domain:** Mathematics · **Category:** architecture · **Difficulty:** 🔴 High

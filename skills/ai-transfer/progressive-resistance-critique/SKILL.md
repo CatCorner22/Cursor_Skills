@@ -11,6 +11,7 @@ metadata:
       - "escalating critique"
     minScore: 6
 ---
+
 # Progressive resistance self-critique
 
 **#3** · **Domain:** Strength coaching · **Category:** quality-control · **Difficulty:** 🟡 Medium
@@ -26,6 +27,7 @@ Single-pass self-review misses distinct failure modes.
 ## Implementation
 
 | Phase | Target | Prompt |
+|---|---|---|
 | Warm-up | Internal consistency | Contradictions? |
 | Moderate | Question alignment | Unstated assumptions? |
 | Working | Core robustness | Strongest objection? |

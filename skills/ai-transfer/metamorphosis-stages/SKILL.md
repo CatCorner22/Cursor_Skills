@@ -11,6 +11,7 @@ metadata:
       - "staged draft evolution"
     minScore: 6
 ---
+
 # Metamorphosis staged drafts
 
 **#40** · **Domain:** Developmental biology · **Category:** extension · **Difficulty:** 🟡 Medium

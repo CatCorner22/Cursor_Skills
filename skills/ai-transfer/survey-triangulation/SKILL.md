@@ -11,6 +11,7 @@ metadata:
       - "three sources"
     minScore: 6
 ---
+
 # Survey triangulation validation
 
 **#8** · **Domain:** Land surveying · **Category:** quality-control · **Difficulty:** 🟡 Medium
@@ -26,6 +27,7 @@ Top-ranked single source and echo chambers create false confidence.
 ## Implementation
 
 | Agreement | Action |
+|---|---|
 | 3/3 | Include, cite all three |
 | 2/3 | Include with caveat, flag outlier |
 | Contested | Label disputed explicitly |

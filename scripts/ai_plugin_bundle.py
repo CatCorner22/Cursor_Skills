@@ -3559,9 +3559,13 @@ class QualityCostTradeoffPlugin(BasePlugin):
 # SECTION 19: PIPELINE ORCHESTRATOR
 # ============================================================================
 
+# Ordered so that list index i corresponds to catalog number i+1 (see
+# generate-ai-transfer-skills.py CATALOG): #4 chain-of-custody, #5 sterile-cockpit,
+# #6 five-whys (root_cause_drill). Enablement is set-based, but tests assert this
+# ordering so the catalog stays navigable by index.
 TECHNIQUE_PLUGIN_IDS = [
-    "ledger_gate", "mise_en_place", "progressive_critique", "root_cause_drill",
-    "chain_of_custody", "sterile_cockpit", "attribution_standard",
+    "ledger_gate", "mise_en_place", "progressive_critique", "chain_of_custody",
+    "sterile_cockpit", "root_cause_drill", "attribution_standard",
     "triangulation_validator", "proof_marks", "score_study", "ooda_loop",
     "proof_trees", "counterpoint", "cartographic_zoom", "spatial_layout",
     "textile_weaving", "start_triage", "aar_debrief", "fermentation_loop",

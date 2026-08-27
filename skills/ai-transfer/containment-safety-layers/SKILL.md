@@ -11,6 +11,7 @@ metadata:
       - "BSL layers"
     minScore: 6
 ---
+
 # Containment safety layers
 
 **#46** · **Domain:** Biosafety (BSL) · **Category:** advanced · **Difficulty:** 🔴 High

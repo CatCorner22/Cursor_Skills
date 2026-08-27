@@ -11,6 +11,7 @@ metadata:
       - "ensemble compose"
     minScore: 6
 ---
+
 # Wine blending multi-model fusion
 
 **#28** · **Domain:** Enology · **Category:** refinement · **Difficulty:** 🔴 High

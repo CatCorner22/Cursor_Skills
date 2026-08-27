@@ -12,6 +12,7 @@ metadata:
       - "cultural mismatch"
     minScore: 6
 ---
+
 # Localization QA filter
 
 **#30** · **Domain:** Software localization · **Category:** refinement · **Difficulty:** 🟡 Medium

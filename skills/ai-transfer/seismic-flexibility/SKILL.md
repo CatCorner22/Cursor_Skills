@@ -11,6 +11,7 @@ metadata:
       - "edit without collapse"
     minScore: 6
 ---
+
 # Seismic flexibility joints
 
 **#43** · **Domain:** Earthquake engineering · **Category:** advanced · **Difficulty:** 🟡 Medium

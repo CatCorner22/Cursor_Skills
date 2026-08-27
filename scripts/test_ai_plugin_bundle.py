@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Tests for the cleaned AI plugin bundle runtime."""
+import hashlib
+import importlib.util
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -9,6 +12,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+REPO = ROOT.parent
 sys.path.insert(0, str(ROOT))
 
 from ai_plugin_bundle import (  # noqa: E402
@@ -17,6 +21,15 @@ from ai_plugin_bundle import (  # noqa: E402
     PipelineOrchestrator,
     TECHNIQUE_PLUGIN_IDS,
 )
+
+
+def _load_generator():
+    spec = importlib.util.spec_from_file_location(
+        "generate_ai_transfer_skills", ROOT / "generate-ai-transfer-skills.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
 
 class RegistryTests(unittest.TestCase):
@@ -168,6 +181,64 @@ class CatalogTests(unittest.TestCase):
         pipeline = PipelineOrchestrator()
         for pid in DEFAULT_CANDIDATE_IDS:
             self.assertIn(pid, pipeline.registry)
+
+    def test_technique_ids_follow_catalog_order(self):
+        """TECHNIQUE_PLUGIN_IDS[i] is catalog #i+1's runtime id (or absorbed id)."""
+        gen = _load_generator()
+        name_to_rid = dict(gen.RUNTIME_IDS)
+        for tech in gen.TECHNIQUES:
+            rid = tech.get("runtime_id")
+            if rid:
+                name_to_rid[tech["name"]] = rid
+        expected = []
+        for _num, name, *_rest in gen.CATALOG:
+            if name.startswith("`"):
+                absorbed = re.search(r"absorbs (\w+)", name)
+                self.assertIsNotNone(absorbed, name)
+                expected.append(absorbed.group(1))
+            else:
+                self.assertIn(name, name_to_rid, name)
+                expected.append(name_to_rid[name])
+        self.assertEqual(list(TECHNIQUE_PLUGIN_IDS), expected)
+
+    def test_balanced_tier_keeps_subset_and_orchestrators(self):
+        pipeline = PipelineOrchestrator({"tier": "balanced"})
+        context = {}
+        pipeline._apply_enablement(context)
+        enabled = set(context["active_plugins"])
+        techniques_on = enabled & set(TECHNIQUE_PLUGIN_IDS)
+        self.assertLess(len(techniques_on), 50, techniques_on)
+        self.assertGreaterEqual(len(techniques_on), 20)
+        for pid in ORCHESTRATOR_PLUGIN_IDS:
+            self.assertIn(pid, enabled)
+
+    def test_regeneration_is_idempotent(self):
+        gen_script = ROOT / "generate-ai-transfer-skills.py"
+        pack = REPO / "skills" / "ai-transfer"
+
+        def hashes():
+            out = {}
+            for path in sorted(pack.glob("*/SKILL.md")):
+                out[path.relative_to(pack).as_posix()] = hashlib.sha256(
+                    path.read_bytes()
+                ).hexdigest()
+            return out
+
+        first = hashes()
+        subprocess.run(
+            [sys.executable, str(gen_script)], check=True, cwd=str(REPO),
+            stdout=subprocess.DEVNULL,
+        )
+        self.assertEqual(first, hashes())
+
+
+class GeneratorUnitTests(unittest.TestCase):
+    def test_fix_tables_inserts_separator(self):
+        gen = _load_generator()
+        src = "| Zoom | Format |\n| Country | 1–2 sentences |\nDetect from urgency."
+        fixed = gen.fix_tables(src)
+        self.assertIn("|---|---|", fixed)
+        self.assertEqual(fixed, gen.fix_tables(fixed))
 
 
 if __name__ == "__main__":

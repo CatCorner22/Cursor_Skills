@@ -115,7 +115,7 @@ python3 scripts/ai_plugin_bundle.py --profile --query "What is quantum computing
 python3 scripts/test_ai_plugin_bundle.py
 ```
 
-Plugins 51–100 (security scanners, creative/communication helpers, analytics, legal/medical stubs, extra personalization) stay **runtime-only** and default off. Similarity in the bundle is word-overlap, not a production NLP stack.
+Plugins 51–100 stay **runtime-only**. The 8 orchestrator utilities among them (`task_decomposition` through `quality_cost_tradeoff`) are unconditionally default-on; security scanners, creative/communication helpers, analytics, legal/medical stubs, and extra personalization stay off unless you pass `--enable-all` or `enabled_plugins`. The default `balanced` tier considers catalog #1–50 plus those orchestrators and keeps roughly 30 of the 50 techniques under its 5000 ms latency budget. Similarity in the bundle is word-overlap, not a production NLP stack.
 
 ## Implementation guide
 

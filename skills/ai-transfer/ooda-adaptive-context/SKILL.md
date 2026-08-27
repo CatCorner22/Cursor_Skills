@@ -11,6 +11,7 @@ metadata:
       - "context filter AI"
     minScore: 6
 ---
+
 # OODA adaptive context (AI pipeline)
 
 **#11** · **Domain:** Combat aviation (Boyd) · **Category:** architecture · **Difficulty:** 🔴 High

@@ -408,6 +408,13 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
 
 
 def main(argv: list[str]) -> int:
+    if "--help" in argv or "-h" in argv:
+        print(
+            "Usage: apply-activation-policy.py [--catalog-only]\n"
+            "  (default)  mark every skill except proactive-agency as manual, then rewrite the catalog\n"
+            "  --catalog-only  rewrite docs/SKILL-PLUGIN-CATALOG.md only; do not edit SKILL.md files"
+        )
+        return 0
     catalog_only = "--catalog-only" in argv
     changed = 0
     if not catalog_only:

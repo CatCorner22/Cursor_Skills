@@ -11,6 +11,7 @@ metadata:
       - "streaming adjust"
     minScore: 6
 ---
+
 # Fermentation environmental feedback
 
 **#19** · **Domain:** Biochemistry / food science · **Category:** adaptive · **Difficulty:** 🔴 High

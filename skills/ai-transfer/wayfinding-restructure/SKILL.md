@@ -11,6 +11,7 @@ metadata:
       - "scroll back restructure"
     minScore: 6
 ---
+
 # Urban wayfinding restructure
 
 **#20** · **Domain:** Urban design · **Category:** adaptive · **Difficulty:** 🔴 High

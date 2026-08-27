@@ -12,11 +12,12 @@ metadata:
       - "pipeline stage"
     minScore: 6
 ---
+
 # AI-transferable skills ecosystem
 
 **Meta-pattern:** `[Discipline constraints] → port into [AI fuzzy workflows] → novel quality gains without new ML research.`
 
-Forty-five loadable techniques (catalog #1–50, five merged into existing skills) plus seven category routers. Runtime: `scripts/ai_plugin_bundle.py` (100 plugins; default tier enables #1–50 plus orchestrator utilities).
+Forty-five loadable techniques (catalog #1–50, five merged into existing skills) plus seven category routers. Runtime: `scripts/ai_plugin_bundle.py` (100 plugins; the default `balanced` tier considers catalog #1–50 plus orchestrator utilities, and its latency budget keeps roughly 30 of the 50 — pass `--enable-all` or `enabled_plugins` for the rest).
 
 ## Category routers
 

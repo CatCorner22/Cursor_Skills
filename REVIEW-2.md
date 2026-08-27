@@ -2,14 +2,43 @@
 
 Full pass over the current tree: 189 `SKILL.md` files across 19 packs, the plugin wrappers under `plugins/`, `.cursor-plugin/marketplace.json`, `scripts/`, and the docs. The original [REVIEW.md](REVIEW.md) covered the 63-skill snapshot (vercel, huggingface, adobe, cursor-cloud); this pass re-verifies the mechanical claims and reviews every pack added since: coding, academic, craft, microsoft365, plaud, ai-transfer, projects, langchain, playwright, cursor-sdk, pydantic-ai, prompt-optimizer, supabase, cursor-team-kit, first-party, and the hf-cloud-* / hf-mem Hugging Face additions.
 
+## Applied on this branch (same day)
+
+The follow-up pass that produced this document also applied the in-repo fixes. Post-fix verification:
+
+- Analyzer (`audit_skill_library.py skills --min-severity medium`): **0 findings**. Full run: 10 low-severity house-idiom notes only (self-routing convention, vendor-promotion class, shadow heuristics).
+- `scripts/test_ai_plugin_bundle.py`: **21/21 pass** (was 17; added catalog-order, balanced-tier, regeneration-idempotence, and `fix_tables` unit tests).
+- `apply-activation-policy.py --catalog-only`: 189 / 1 / 188 / 100, 0 files needing change. `--help` now prints usage instead of running the tool.
+- Zero `AGENTS.md` files remain under `skills/`. The 94 KB guide lives at `skills/vercel/react-best-practices/references/full-guide.md`.
+- All 189 frontmatter blocks parse. Skill count unchanged.
+
+| Item | What landed |
+|---|---|
+| P0.1 always-on leak | Renamed `AGENTS.md` → `references/full-guide.md`; `load-all.sh` excludes `AGENTS.md` from copies |
+| P0.3 langchain import | `from langchain_core.vectorstores import InMemoryVectorStore` |
+| P0.4 nyx | Removed the filter-circumvention variant and `"character bible"` trigger |
+| Dead guard | `next-best-practices` → `react-best-practices` in SKILL.md **and** overlay.yaml |
+| 4 live chainTo cycles | Broken at the overlapping literal; overlay counterparts kept in sync |
+| Greedy descriptions | Dropped "even if they don't mention…" from `huggingface-best` and `appbuilder-project-init` |
+| Greedy metadata | Narrowed `ui-engineering`, excel `**/*.csv`, v0 `importPatterns: v0`, craft/m365/plaud trigger phrases |
+| Factual one-liners | Plaud export matrix, APA `(n.p.)`, TEI date, "an architecture smell", `scripts/` prefix, HITL wording |
+| Dangling pack-as-skill | Routes now name `new-branch-and-pr` / `review-and-ship` (cursor-team-kit pack) |
+| skill-library-audit | Recalibrated numbers; dropped `skill-creator`/`code-review`; SK017 in script docstring |
+| M365 | Programmatic-path sections (`python-docx`/`openpyxl`/`python-pptx`); Copilot claim scoped to PowerPoint |
+| Plaud | Export-format claim corrected; agent procedure added to `plaud-export-integrate` |
+| AI-transfer | Generator inserts table separators, matches committed trailing newline; catalog #4–6 order fixed; primer/doc enablement claim corrected; 4 new tests |
+| Loader | Vercel pack description un-garbled in `load-all.sh`, `marketplace.json`, and `plugins/vercel` |
+
+**Left as documented, not applied:** P0.2 (live marketplace plugins still auto-load unpatched copies — a session-config choice, not a file edit); relocating the 63 MB nyx image pack out of the library; shrinking ai-transfer from 53 skills to primer + the executable dozen.
+
 ## What was verified mechanically (all pass)
 
 - 189 `SKILL.md` files; `.cursor/skills/` has exactly one unbroken symlink per skill; `plugins/` has one wrapper per pack; `marketplace.json` parses and lists all 19 packs.
 - Activation policy holds at the frontmatter layer: exactly one skill (`first-party/proactive-agency`) lacks `disable-model-invocation: true`; counts in `README.md` and `docs/SKILL-PLUGIN-CATALOG.md` (189 / 188 / 19 / 100) all reconcile.
 - Zero broken relative links in any `SKILL.md` or in the six root docs. Every referenced `references/` and `scripts/` file across all packs exists on disk. Every router→skill reference resolves (checked programmatically), with two prose-level exceptions noted below.
-- `scripts/test_ai_plugin_bundle.py`: 17/17 pass. `apply-activation-policy.py` reports 0 files needing change.
+- `scripts/test_ai_plugin_bundle.py`: 21/21 pass (was 17 at review time). `apply-activation-policy.py` reports 0 files needing change.
 - The original REVIEW.md "FIXED" items spot-checked (nextjs links, ai-sdk overlay `@ai-sdk/gateway`) are still fixed — no regressions.
-- The library's own analyzer (`skill-library-audit/scripts/audit_skill_library.py skills`): 17 findings — 2 high, 6 medium, 9 low. None in the newly added packs; all in vercel/huggingface routing metadata.
+- The library's own analyzer, **before this branch's fixes**: 17 findings — 2 high, 6 medium, 9 low. **After:** 0 high, 0 medium, 10 low (house idioms).
 
 ## P0 — defeats the library's own design
 

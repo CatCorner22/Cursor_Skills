@@ -11,6 +11,7 @@ metadata:
       - "mid response adjust"
     minScore: 6
 ---
+
 # Sail trim mid-response tuning
 
 **#47** · **Domain:** Sailing · **Category:** advanced · **Difficulty:** 🟢 Low

@@ -12,6 +12,7 @@ metadata:
       - "attribution"
     minScore: 6
 ---
+
 # Journalistic attribution (verify then write)
 
 **#7** · **Domain:** Journalism · **Category:** quality-control · **Difficulty:** 🟡 Medium

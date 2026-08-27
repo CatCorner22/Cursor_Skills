@@ -11,6 +11,7 @@ metadata:
       - "known correct cache"
     minScore: 6
 ---
+
 # Chess endgame tablebase cache
 
 **#23** · **Domain:** Chess computing · **Category:** memory · **Difficulty:** 🟡 Medium

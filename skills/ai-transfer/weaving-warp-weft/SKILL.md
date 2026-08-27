@@ -11,6 +11,7 @@ metadata:
       - "compliance and engaging"
     minScore: 6
 ---
+
 # Weaving warp and weft
 
 **#16** · **Domain:** Textile arts · **Category:** architecture · **Difficulty:** 🟡 Medium

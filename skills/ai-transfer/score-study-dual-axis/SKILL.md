@@ -12,6 +12,7 @@ metadata:
       - "narrative arc"
     minScore: 6
 ---
+
 # Score study dual-axis reasoning
 
 **#10** · **Domain:** Classical conducting · **Category:** architecture · **Difficulty:** 🟡 Medium

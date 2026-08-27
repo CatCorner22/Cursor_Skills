@@ -5,6 +5,7 @@ description: "Router for advanced AI-transfer techniques: seismic joints, sidech
 metadata:
   priority: 7
 ---
+
 # AI transfer — advanced pack
 
 Router for category: **advanced**.

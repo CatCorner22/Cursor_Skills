@@ -11,6 +11,7 @@ metadata:
       - "QUERY DELETE STET"
     minScore: 6
 ---
+
 # Editorial proofreading marks
 
 **#9** · **Domain:** Publishing · **Category:** quality-control · **Difficulty:** 🟢 Low

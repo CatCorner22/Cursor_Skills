@@ -5,6 +5,7 @@ description: "Router for refinement AI-transfer techniques: three-axis grading, 
 metadata:
   priority: 7
 ---
+
 # AI transfer — refinement and polish
 
 Router for category: **refinement**.

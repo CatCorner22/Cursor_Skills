@@ -12,6 +12,7 @@ metadata:
       - "verify claims"
     minScore: 6
 ---
+
 # Double-entry claim reconciliation
 
 **#1** · **Domain:** Accounting · **Category:** quality-control · **Difficulty:** 🟡 Medium

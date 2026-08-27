@@ -11,6 +11,7 @@ metadata:
       - "high tide low tide"
     minScore: 6
 ---
+
 # Tidal pacing of sentence rhythm
 
 **#37** · **Domain:** Oceanography / rhetoric · **Category:** extension · **Difficulty:** 🟢 Low

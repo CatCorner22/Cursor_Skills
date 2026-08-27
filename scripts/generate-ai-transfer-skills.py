@@ -572,7 +572,7 @@ If variance is huge, split long sentences and join fragments — do not rewrite 
         "principle": "Price the risk before you bind the policy.",
         "problem": "High-stakes drafts ship with the same confidence as a rewrite.",
         "workflow": """Scan query+output for medical / legal / financial-advice terms.
-GREEN < one hit, YELLOW one, RED two or more. RED → warn and hold.""",
+GREEN zero hits, YELLOW one, RED two or more. RED → warn and hold.""",
         "phrases": ["underwriting risk", "pre-delivery risk", "RED YELLOW GREEN gate"],
     },
     {
@@ -682,8 +682,12 @@ Log the trim; do not rewrite history.""",
         "description": "Look up known skill/plugin pairs that fight (context strip vs inject, length vs rhythm, duck vs dual-axis, rewrite vs lock) before loading both. Use when composing an ai-transfer stack. Scope boundary — library routing audit → `skill-library-audit`; compute triage → `emergency-triage-compute`.",
         "principle": "Two safe drugs can be unsafe together — check the table, not the labels.",
         "problem": "Stacks enable every matching skill and they undo each other's gates.",
-        "workflow": """Pairs: sterile_cockpit×corridor_bridge, token_optimizer×tidal_pacing,
-sidechain_duck×score_study, progressive_critique×glass_anneal.
+        "workflow": """Known conflicting pairs (skill names; runtime plugin ids in parentheses):
+`sterile-cockpit-context` × `wildlife-corridor-bridging` (sterile_cockpit×corridor_bridge),
+`prompt-optimizer` × `tidal-pacing-rhythm` (token_optimizer×tidal_pacing — token_optimizer has no
+standalone skill; it is absorbed by prompt-optimizer),
+`sidechain-priority` × `score-study-dual-axis` (sidechain_duck×score_study),
+`progressive-resistance-critique` × `glass-annealing-hardening` (progressive_critique×glass_anneal).
 If both would fire, disable one and record why.""",
         "phrases": ["interaction table", "plugin conflict", "skill pair contraindication"],
     },
@@ -920,7 +924,32 @@ CAT_ROUTER = {
 }
 
 
+def fix_tables(text: str) -> str:
+    """Insert the missing |---| separator row after any GFM table header.
+
+    Several workflow strings carry two-plus-row pipe tables without a separator
+    row; GitHub and most renderers will not render those as tables.
+    """
+    lines = text.split("\n")
+    out = []
+    for i, line in enumerate(lines):
+        out.append(line)
+        stripped = line.strip()
+        if not (stripped.startswith("|") and stripped.endswith("|")):
+            continue
+        prev = lines[i - 1].strip() if i > 0 else ""
+        nxt = lines[i + 1].strip() if i + 1 < len(lines) else ""
+        is_header = not (prev.startswith("|") and prev.endswith("|"))
+        next_is_row = nxt.startswith("|") and nxt.endswith("|")
+        next_is_sep = next_is_row and set(nxt) <= set("|-: ")
+        if is_header and next_is_row and not next_is_sep:
+            cols = stripped.count("|") - 1
+            out.append("|" + "---|" * cols)
+    return "\n".join(out)
+
+
 def write_skill(path: Path, name: str, description: str, body: str, phrases=None):
+    body = fix_tables(body)
     phrases = phrases or []
     signals = ""
     if phrases:
@@ -954,7 +983,7 @@ def main():
 
 **Meta-pattern:** `[Discipline constraints] → port into [AI fuzzy workflows] → novel quality gains without new ML research.`
 
-Forty-five loadable techniques (catalog #1–50, five merged into existing skills) plus seven category routers. Runtime: `scripts/ai_plugin_bundle.py` (100 plugins; default tier enables #1–50 plus orchestrator utilities).
+Forty-five loadable techniques (catalog #1–50, five merged into existing skills) plus seven category routers. Runtime: `scripts/ai_plugin_bundle.py` (100 plugins; the default `balanced` tier considers catalog #1–50 plus orchestrator utilities, and its latency budget keeps roughly 30 of the 50 — pass `--enable-all` or `enabled_plugins` for the rest).
 
 ## Category routers
 

@@ -11,6 +11,7 @@ metadata:
       - "structural sentences"
     minScore: 6
 ---
+
 # Load-bearing claim protection
 
 **#32** · **Domain:** Architecture / structural engineering · **Category:** extension · **Difficulty:** 🟡 Medium

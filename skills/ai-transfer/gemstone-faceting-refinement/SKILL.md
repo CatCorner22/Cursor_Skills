@@ -11,6 +11,7 @@ metadata:
       - "rotate refinement"
     minScore: 6
 ---
+
 # Gemstone faceting multi-angle refinement
 
 **#29** · **Domain:** Gemology · **Category:** refinement · **Difficulty:** 🟡 Medium

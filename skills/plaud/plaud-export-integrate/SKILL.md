@@ -75,6 +75,15 @@ No native Plaud API documented here — use official export/share buttons.
 - Plaud cloud storage marketed as unlimited — still **export critical finals** locally each term
 - End-of-semester: zip `School/2026-Fall/` including Plaud exports
 
+## Programmatic path (Cursor agents)
+
+A Cursor agent cannot press Plaud's Share menu. Once the user drops an exported file into the workspace:
+
+1. Identify the artifact: transcript (TXT/SRT/DOCX), summary (MD/DOCX/PDF), mind map (PNG/MD), or audio (MP3/WAV).
+2. Convert as needed: `pandoc notes.docx -t markdown -o notes.md` or the reverse for Word (`word-documents`); `libreoffice --headless --convert-to pdf` for submission.
+3. File into the semester folder from `onedrive-organization` / `workspace-mise-en-place` (`School/<term>/<course>/Plaud/`).
+4. For lecture exports, hand off to `plaud-lecture-notes` (Cornell refinement) then `study-system`.
+
 ## Boundaries
 
 - Respect export restrictions on others' voices

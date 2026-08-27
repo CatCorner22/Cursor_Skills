@@ -11,6 +11,7 @@ metadata:
       - "tone clarity framing"
     minScore: 6
 ---
+
 # Color grading three-axis refinement
 
 **#26** · **Domain:** Film post-production · **Category:** refinement · **Difficulty:** 🟡 Medium
@@ -26,6 +27,7 @@ Fuzzy single-judgment 'sounds good' reviews.
 ## Implementation
 
 | Axis | Check |
+|---|---|
 | Luminance / density | Key sections clear; rest appropriately summarized? |
 | Chroma / intensity | Energy matched to audience? |
 | Hue / stance | Worldview framing consistent? |

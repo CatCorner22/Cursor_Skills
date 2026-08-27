@@ -12,6 +12,7 @@ metadata:
       - "lineage"
     minScore: 6
 ---
+
 # Chain of custody provenance
 
 **#4** · **Domain:** Law enforcement / forensics · **Category:** quality-control · **Difficulty:** 🔴 High

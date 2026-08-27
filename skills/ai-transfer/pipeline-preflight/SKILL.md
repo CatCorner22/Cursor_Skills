@@ -12,6 +12,7 @@ metadata:
       - "input audit"
     minScore: 6
 ---
+
 # AI pipeline pre-flight (mise en place)
 
 **#2** · **Domain:** Culinary arts · **Category:** quality-control · **Difficulty:** 🟢 Low

@@ -12,6 +12,7 @@ metadata:
       - "why did this fail"
     minScore: 6
 ---
+
 # Five Whys failure recovery
 
 **#6** · **Domain:** Toyota Production System · **Category:** quality-control · **Difficulty:** 🟡 Medium

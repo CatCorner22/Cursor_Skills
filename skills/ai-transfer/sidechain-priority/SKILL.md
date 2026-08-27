@@ -11,6 +11,7 @@ metadata:
       - "duck the intro"
     minScore: 6
 ---
+
 # Sidechain priority ducking
 
 **#44** · **Domain:** Audio engineering · **Category:** advanced · **Difficulty:** 🟡 Medium

@@ -11,6 +11,7 @@ metadata:
       - "transplant outline"
     minScore: 6
 ---
+
 # Cross-pollination of genre structure
 
 **#45** · **Domain:** Plant breeding / rhetoric · **Category:** advanced · **Difficulty:** 🔴 High

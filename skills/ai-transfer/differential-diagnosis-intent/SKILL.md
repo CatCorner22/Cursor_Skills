@@ -11,6 +11,7 @@ metadata:
       - "ambiguous ask"
     minScore: 6
 ---
+
 # Differential diagnosis of query intent
 
 **#34** · **Domain:** Clinical reasoning (method only) · **Category:** extension · **Difficulty:** 🟡 Medium

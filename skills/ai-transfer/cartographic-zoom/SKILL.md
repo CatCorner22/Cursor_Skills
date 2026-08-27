@@ -11,6 +11,7 @@ metadata:
       - "summary vs deep dive"
     minScore: 6
 ---
+
 # Cartographic zoom levels
 
 **#14** · **Domain:** Cartography · **Category:** architecture · **Difficulty:** 🟡 Medium
@@ -26,6 +27,7 @@ Single-zoom outputs guess wrong depth.
 ## Implementation
 
 | Zoom | Format | When |
+|---|---|---|
 | Country | 1–2 sentences | Urgent / glance |
 | City | 1–2 paragraphs | Standard |
 | Street | Full analysis | Follow-up / deep |

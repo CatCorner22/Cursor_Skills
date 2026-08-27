@@ -11,6 +11,7 @@ metadata:
       - "dual retrieval"
     minScore: 6
 ---
+
 # Library taxonomy retrieval
 
 **#24** · **Domain:** Library science · **Category:** memory · **Difficulty:** 🟡 Medium

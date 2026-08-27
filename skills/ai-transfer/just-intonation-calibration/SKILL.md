@@ -11,6 +11,7 @@ metadata:
       - "temperature by task"
     minScore: 6
 ---
+
 # Just intonation parameter calibration
 
 **#31** · **Domain:** Music theory (tuning) · **Category:** extension · **Difficulty:** 🟡 Medium
@@ -26,6 +27,7 @@ One temperature/top-p for every task type produces mush or rigidity.
 ## Implementation
 
 | Task | Temp | top_p | Cap |
+|---|---|---|---|
 | Factual | 0.3 | 0.85 | short |
 | Code | 0.2 | 0.9 | medium |
 | Creative | 0.8 | 0.95 | long |

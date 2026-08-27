@@ -11,6 +11,7 @@ metadata:
       - "reasoning budget depth"
     minScore: 6
 ---
+
 # Parallax depth of query vs history
 
 **#50** · **Domain:** Photography / surveying · **Category:** advanced · **Difficulty:** 🟡 Medium

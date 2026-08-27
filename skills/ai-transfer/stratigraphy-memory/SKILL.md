@@ -11,6 +11,7 @@ metadata:
       - "session strata"
     minScore: 6
 ---
+
 # Archaeological stratigraphy memory
 
 **#22** · **Domain:** Archaeology · **Category:** memory · **Difficulty:** 🔴 High

@@ -11,6 +11,7 @@ metadata:
       - "RED YELLOW GREEN gate"
     minScore: 6
 ---
+
 # Underwriting pre-delivery risk gate
 
 **#38** · **Domain:** Insurance underwriting · **Category:** extension · **Difficulty:** 🟡 Medium
@@ -26,7 +27,7 @@ High-stakes drafts ship with the same confidence as a rewrite.
 ## Implementation
 
 Scan query+output for medical / legal / financial-advice terms.
-GREEN < one hit, YELLOW one, RED two or more. RED → warn and hold.
+GREEN zero hits, YELLOW one, RED two or more. RED → warn and hold.
 
 ## Boundaries
 

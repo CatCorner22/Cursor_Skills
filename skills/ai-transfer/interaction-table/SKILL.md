@@ -11,6 +11,7 @@ metadata:
       - "skill pair contraindication"
     minScore: 6
 ---
+
 # Interaction table for skill conflicts
 
 **#48** · **Domain:** Pharmacology / chemistry · **Category:** advanced · **Difficulty:** 🟡 Medium
@@ -25,8 +26,12 @@ Stacks enable every matching skill and they undo each other's gates.
 
 ## Implementation
 
-Pairs: sterile_cockpit×corridor_bridge, token_optimizer×tidal_pacing,
-sidechain_duck×score_study, progressive_critique×glass_anneal.
+Known conflicting pairs (skill names; runtime plugin ids in parentheses):
+`sterile-cockpit-context` × `wildlife-corridor-bridging` (sterile_cockpit×corridor_bridge),
+`prompt-optimizer` × `tidal-pacing-rhythm` (token_optimizer×tidal_pacing — token_optimizer has no
+standalone skill; it is absorbed by prompt-optimizer),
+`sidechain-priority` × `score-study-dual-axis` (sidechain_duck×score_study),
+`progressive-resistance-critique` × `glass-annealing-hardening` (progressive_critique×glass_anneal).
 If both would fire, disable one and record why.
 
 ## Boundaries

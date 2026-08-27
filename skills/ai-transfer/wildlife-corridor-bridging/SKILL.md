@@ -11,6 +11,7 @@ metadata:
       - "conceptual corridor"
     minScore: 6
 ---
+
 # Wildlife corridor memory bridging
 
 **#25** · **Domain:** Conservation biology · **Category:** memory · **Difficulty:** 🔴 High

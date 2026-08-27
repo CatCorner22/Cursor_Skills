@@ -11,6 +11,7 @@ metadata:
       - "phase context"
     minScore: 6
 ---
+
 # Sterile cockpit context gating
 
 **#5** · **Domain:** Aviation · **Category:** quality-control · **Difficulty:** 🟡 Medium
@@ -26,6 +27,7 @@ Irrelevant context dilutes focus during parse/validate phases.
 ## Implementation
 
 | Phase | Active context |
+|---|---|
 | Takeoff (parse) | Input variables + explicit constraints only |
 | Cruise (generate) | Accumulated history allowed |
 | Landing (validate) | Validation rules + quality checks only |

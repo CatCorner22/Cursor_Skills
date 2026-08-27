@@ -5,6 +5,7 @@ description: "Router for adaptive AI-transfer techniques: compute triage, AAR de
 metadata:
   priority: 7
 ---
+
 # AI transfer — adaptive processing
 
 Router for category: **adaptive**.

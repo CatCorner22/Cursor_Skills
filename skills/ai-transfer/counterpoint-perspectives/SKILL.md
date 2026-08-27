@@ -11,6 +11,7 @@ metadata:
       - "interwoven arguments"
     minScore: 6
 ---
+
 # Musical counterpoint perspectives
 
 **#13** · **Domain:** Music theory · **Category:** architecture · **Difficulty:** 🔴 High
