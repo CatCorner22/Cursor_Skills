@@ -184,4 +184,4 @@ Each rule file contains:
 
 ## Full Compiled Document
 
-For the complete guide with all rules expanded: `AGENTS.md`
+For the complete guide with all rules expanded: `references/full-guide.md` (formerly `AGENTS.md`; renamed because Cursor auto-applies any `AGENTS.md` under `.cursor/skills/` as an always-on rule, which violated this library's manual-only activation policy)

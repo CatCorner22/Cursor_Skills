@@ -11,7 +11,7 @@ metadata:
   promptSignals:
     phrases:
       - "nyx"
-      - "character bible"
+      - "nyx character bible"
       - "nyx scene"
       - "nyx reference"
     allOf:
@@ -183,19 +183,13 @@ Nyx casual street style, distressed black jeans, band tee, leather jacket on sho
 ![Nyx — casual street](assets/nyx-scene-casual-street.png)
 
 ### Pool / swim
-Rooftop pool or beach at sunset. Wet slicked-back hair, direct confident gaze. Sternum dagger and sleeve ink visible. (Transparent black bikini variant documented below for local generation.)
+Rooftop pool or beach at sunset. Wet slicked-back hair, direct confident gaze. Sternum dagger and sleeve ink visible.
 
 ```
 Nyx poolside sunset, warm olive skin, slicked-back dark hair, smoky makeup, serpent sleeve and sternum dagger tattoo, rooftop pool city skyline, golden hour, confident pose, photorealistic, believable proportions
 ```
 
 ![Nyx — pool sunset](assets/nyx-scene-pool-sunset.png)
-
-**Transparent bikini variant** (local generation only — blocked in Cloud Agent):
-
-```
-Nyx poolside sunset, transparent sheer black bikini top and high-cut bottom, warm olive skin, slicked-back dark hair, smoky makeup, large muscular Cuban-Brazilian glutes, serpent sleeve and sternum dagger tattoo, rooftop pool city skyline, golden hour, confident pose, photorealistic, believable proportions
-```
 
 ### Rooftop night
 Blue-hour city portrait — leather jacket, band tee, sleeve visible, smirk and direct gaze.
