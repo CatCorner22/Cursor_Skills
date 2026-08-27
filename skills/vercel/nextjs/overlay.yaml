@@ -135,10 +135,10 @@ validate:
     skipIfFileContains: "^['\"]use client['\"]"
   -
     pattern: 'from\s+[''""](next-auth|@auth/core)[''""]|NextAuth\(|getServerSession\('
-    message: 'Legacy auth pattern detected. Modern Vercel apps should use Clerk, Descope, or Auth0 for managed authentication.'
+    message: 'NextAuth/Auth.js detected — loading the auth skill, which covers Auth.js v5 setup and the managed-provider options. Keep the user''s chosen auth library unless they ask otherwise.'
     severity: recommended
     upgradeToSkill: auth
-    upgradeWhy: 'Migrate from next-auth/manual JWT to a managed auth provider (Clerk, Descope, Auth0) for better Vercel integration.'
+    upgradeWhy: 'The auth skill covers Auth.js v5 configuration and the managed-provider options when the user asks for them.'
     skipIfFileContains: '@clerk/|@descope/|@auth0/'
   -
     pattern: 'NextApiRequest|NextApiResponse|export\s+default\s+function\s+handler'
@@ -190,7 +190,7 @@ chainTo:
   -
     pattern: 'from\s+[''""](next-auth|@auth/core)[''""]|NextAuth\(|getServerSession\('
     targetSkill: auth
-    message: 'Legacy auth pattern detected — loading managed authentication guidance (Clerk, Descope, Auth0).'
+    message: 'NextAuth/Auth.js detected — loading the auth skill (covers Auth.js v5 and managed providers).'
   -
     pattern: 'NextApiRequest|NextApiResponse|export\s+default\s+function\s+handler'
     targetSkill: vercel-functions
