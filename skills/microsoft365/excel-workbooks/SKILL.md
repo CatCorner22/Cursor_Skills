@@ -91,6 +91,16 @@ Refresh after data changes: PivotTable Analyze → Refresh
 - "Write an XLOOKUP to match student ID to grade from the roster sheet"
 - "Suggest a chart type for this time-series temperature data"
 
+## Programmatic path (Cursor agents)
+
+A Cursor agent has no Excel UI. Everything above maps onto **`openpyxl`** (`pip install openpyxl`):
+
+- Write the same formulas as strings: `ws["D2"] = "=XLOOKUP($A2,Sheet2!$A:$A,Sheet2!$B:$B)"` — absolute/relative reference rules above apply unchanged.
+- Tables: `openpyxl.worksheet.table.Table(displayName="Data", ref="A1:D100")`; charts via `openpyxl.chart`; conditional formatting via `ws.conditional_formatting.add(...)`; validation via `DataValidation`.
+- Pivot tables are the one gap — `openpyxl` preserves but cannot create them; build the aggregation in `pandas` (`df.pivot_table(...)`) and write the result to a sheet instead.
+- CSV in, workbook out: `pandas.read_csv(...)` then `df.to_excel(..., engine="openpyxl")`; heavy analysis belongs in Python (`coding-ecosystem-primer`), the workbook is the deliverable.
+- Verify by reloading: `openpyxl.load_workbook(path)["Sheet1"]["D2"].value`.
+
 ## Boundaries
 
 - Power Query / DAX / Power Pivot → advanced; mention only if user asks

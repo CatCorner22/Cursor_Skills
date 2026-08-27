@@ -45,7 +45,7 @@ Pick the **smallest skill** for the app the user is actually in. M365 skills ass
 
 ## Copilot in Office (2026+)
 
-Microsoft 365 Copilot supports **custom skills** via `SKILL.md` in OneDrive (Word, Excel, PowerPoint). Skills in this pack are **Cursor-compatible** and follow the same frontmatter + body format Copilot expects:
+Microsoft 365 Copilot supports **custom skills** via `SKILL.md` folders in OneDrive — verified for **PowerPoint** (Manage skills UI, GA mid-2026); other Office apps are rolling out and unverified. Skills in this pack are **Cursor-compatible** and follow the same frontmatter + body format Copilot expects:
 
 - Folder name **must match** `name` in frontmatter
 - `description` drives when Copilot/Cursor activates the skill

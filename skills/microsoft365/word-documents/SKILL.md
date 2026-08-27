@@ -84,6 +84,16 @@ Update before print: right-click TOC → Update Field
 - "Turn on track changes and suggest edits for clarity in the introduction"
 - "Format the reference list with hanging indent per APA 7"
 
+## Programmatic path (Cursor agents)
+
+A Cursor agent has no Word UI. To act on this guidance on a Linux VM, generate or edit the `.docx` directly:
+
+- **`python-docx`** (`pip install python-docx`): styles (`doc.styles['Heading 1']`), page setup (`section.top_margin`), headers/footers with page numbers, tables. Apply named styles rather than direct formatting — same rule as the UI path above.
+- **TOC**: insert the field code `TOC \o "1-3" \h \z \u` in a paragraph run (`fldChar` elements); Word populates it on open (user presses update, or export via LibreOffice `--convert-to pdf` which resolves fields).
+- **Markdown → .docx**: `pandoc notes.md -o paper.docx --reference-doc=template.docx` maps `#`/`##` onto Heading 1/2 so the TOC and navigation pane work.
+- **PDF export**: `libreoffice --headless --convert-to pdf paper.docx`.
+- Verify output by round-tripping: `pandoc paper.docx -t markdown | head` or unzip and inspect `word/document.xml`.
+
 ## Boundaries
 
 - Does not write graded content end-to-end → pair with **`academic-writing`** and the course AI-use policy

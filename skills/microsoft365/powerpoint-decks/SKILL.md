@@ -1,7 +1,7 @@
 ---
 name: powerpoint-decks
 disable-model-invocation: true
-description: "Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and export. Use when building .pptx decks for class, work, or conferences. Scope boundary: argument craft for speaker notes → `academic-writing`; Word handouts → `word-documents`; Copilot custom skill upload format → compatible with this SKILL.md structure."
+description: "Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and export. Use when building .pptx decks for class, work, or conferences. Scope boundary: argument craft for speaker notes → `academic-writing`; Word handouts → `word-documents`. This SKILL.md also follows the Copilot custom-skill upload format — see the Copilot section."
 metadata:
   priority: 7
   pathPatterns:
@@ -96,6 +96,17 @@ Example Copilot prompts:
 - Review → Check Accessibility
 - Alt text on every image (right-click → Edit Alt Text)
 - Don't rely on color alone for meaning
+
+## Programmatic path (Cursor agents)
+
+A Cursor agent has no PowerPoint UI. The deck-architecture and layout rules above map onto **`python-pptx`** (`pip install python-pptx`):
+
+- Layouts: pick from the template's masters — `prs.slide_layouts[1]` is title+content; the layout table above tells you which to use per slide job.
+- Slide Master edits = edit the template `.pptx` once, then generate every deck from it (`Presentation("template.pptx")`) — same "never format slide-by-slide" rule.
+- Speaker notes: `slide.notes_slide.notes_text_frame.text = ...`.
+- Charts: build in `openpyxl`/`matplotlib`, insert as picture, or use `python-pptx` native `add_chart`.
+- PDF export: `libreoffice --headless --convert-to pdf deck.pptx`.
+- Verify: reopen with `python-pptx` and assert slide count, titles, and note text.
 
 ## Boundaries
 

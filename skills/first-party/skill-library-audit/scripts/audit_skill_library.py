@@ -76,6 +76,8 @@ evidence that produced it:
   SK014  dangling prose reference to a skill that does not exist
   SK015  unscoped skill (short description, no scoping metadata at all)
   SK016  priority inversion across a chainTo edge
+  SK017  path-pattern shadowing: a zero-literal-segment glob (e.g. **/*.tsx) while
+         another skill claims the same extension with literal segments
 
 PRECISION: WHAT A RED-TEAM PASS CHANGED
 =======================================
