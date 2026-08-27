@@ -273,9 +273,9 @@ chainTo:
     message: 'Direct provider API key detected — loading AI Gateway guidance for OIDC auth, routing, and failover. (Stale model IDs like gpt-4o are handled by ai-gateway''s own validate rules.)'
     skipIfFileContains: 'gateway\(|@ai-sdk/gateway|VERCEL_OIDC'
   -
-    pattern: 'use workflow|use step|from\s+[''"]workflow[''"]'
+    pattern: 'use workflow|use step'
     targetSkill: workflow
-    message: 'Workflow SDK pattern detected in AI code — loading Workflow SDK guidance for durable agent execution, step isolation, and crash-safe orchestration. (DurableAgent/@workflow/ai alone is handled by the workflow skill''s own edge to avoid a routing loop.)'
+    message: 'Workflow SDK directive detected in AI code — loading Workflow SDK guidance for durable agent execution, step isolation, and crash-safe orchestration. (DurableAgent/@workflow/ai imports are handled by the workflow skill''s own edge to avoid a routing loop.)'
     skipIfFileContains: 'createWorkflow|withWorkflow'
   -
     pattern: "from\\s+['\"]langchain['\"]|from\\s+['\"]@langchain/"

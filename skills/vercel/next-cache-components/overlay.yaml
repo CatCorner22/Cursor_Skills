@@ -74,5 +74,5 @@ chainTo:
     pattern: 'use cache'
     targetSkill: nextjs
     message: 'Cache component detected — loading Next.js best practices for RSC boundaries and data patterns alongside caching.'
-    skipIfFileContains: 'next-best-practices'
+    skipIfFileContains: 'react-best-practices'
 
