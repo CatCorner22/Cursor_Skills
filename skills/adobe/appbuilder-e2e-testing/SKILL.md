@@ -1,5 +1,6 @@
 ---
 name: appbuilder-e2e-testing
+disable-model-invocation: true
 description: >-
   Use this skill whenever the user wants browser-based end-to-end tests for an Adobe App Builder
   application. Covers Playwright E2E testing for ExC Shell SPAs, AEM extension UIs, and full-stack

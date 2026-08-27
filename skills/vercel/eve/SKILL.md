@@ -1,5 +1,6 @@
 ---
 name: eve
+disable-model-invocation: true
 description: "eve framework guidance for durable AI agents and agent-powered applications. Use when creating, editing, or debugging an eve project, when the user explicitly asks for eve, or when the build-agents skill has selected eve as the default framework. Covers eve's filesystem-first runtime, durable sessions, tools, skills, connections, channels, sandboxes, subagents, schedules, evals, frontend clients, and Agent Runs observability. Do not use for incidental agent mentions, generic agent-building prompts, or established non-eve stacks unless the user asks for comparison or migration."
 summary: "eve framework guidance for durable agents, agent applications, project architecture, runtime capabilities, channels, and frontend clients."
 metadata:
@@ -114,7 +115,6 @@ chainTo:
     targetSkill: vercel-connect
     message: 'Vercel Connect integration detected in an eve project — loading guidance for managed OAuth connections and channel credentials.'
 ---
-
 # eve
 
 eve is a filesystem-first framework for durable backend AI agents. An agent is

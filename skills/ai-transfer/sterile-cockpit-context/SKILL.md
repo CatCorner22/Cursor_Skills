@@ -1,5 +1,6 @@
 ---
 name: sterile-cockpit-context
+disable-model-invocation: true
 description: "Phase-gated context: takeoff (parse inputs only), cruise (full history), landing (validation rules only). Strip distraction during critical phases. Use for high-stakes generation steps. Scope boundary: human prioritization → `ooda-lean-loop`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "phase context"
     minScore: 6
 ---
-
 # Sterile cockpit context gating
 
 **#5** · **Domain:** Aviation · **Category:** quality-control · **Difficulty:** 🟡 Medium
@@ -36,3 +36,4 @@ Restore full context between phases as needed.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `sterile_cockpit`

@@ -1,12 +1,12 @@
 ---
 name: canvas
+disable-model-invocation: true
 description: "Author standalone .canvas.tsx analytical artifacts (charts, tables, audits, metrics) using the cursor/canvas SDK. Use when the deliverable IS structured visual output — not code fixes, PRs, or external dashboards. Skip for short answers and intermediate MCP queries."
 metadata:
   surfaces:
     - ide
     - cloud
 ---
-
 A canvas is a single `.canvas.tsx` file. Follow the workflow below in order.
 
 After you write the canvas: on `web`, link `{Current agent's store}/artifacts/canvases/<name>.canvas.bundle.gz` using the **Current agent's store** path from your context — that is the default preview. On `desktop` (Cursor desktop / Glass), link the `.canvas.tsx`; the local canvas server opens it. On `cli` or `sand`, call `cursor-cloud-publish-shared-canvas` and give them `shareUrl`. Presence of `cursor-cloud-publish-shared-canvas` does **not** mean you should publish. Call it only for an explicit user ask, or when this run's `cursor-cloud-run-info` `source` is `cli` or `sand`. Do not publish just in case for `web` or `desktop`.

@@ -1,5 +1,6 @@
 ---
 name: deployments-cicd
+disable-model-invocation: true
 description: Vercel deployment and CI/CD expert guidance. Use when deploying, promoting, rolling back, inspecting deployments, building with --prebuilt, or configuring CI workflow files for Vercel.
 metadata:
   priority: 6
@@ -47,7 +48,6 @@ retrieval:
     - promote
     - CI workflow
 ---
-
 # Vercel Deployments & CI/CD
 
 You are an expert in Vercel deployment workflows — `vercel deploy`, `vercel promote`, `vercel rollback`, `vercel inspect`, `vercel build`, and CI/CD pipeline integration with GitHub Actions, GitLab CI, and Bitbucket Pipelines.

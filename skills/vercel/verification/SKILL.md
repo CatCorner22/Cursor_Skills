@@ -1,5 +1,6 @@
 ---
 name: verification
+disable-model-invocation: true
 description: "Full-story verification — infers what the user is building, then verifies the complete flow end-to-end: browser → API → data → response. Use when the user asks to verify a feature, check end-to-end, or debug 'why isn't this working'. Do not auto-load just because a dev server started."
 summary: "Verify full user story: browser + server + data flow + env"
 metadata:
@@ -83,9 +84,7 @@ chainTo:
     targetSkill: ai-sdk
     message: 'AI SDK calls detected during verification — loading AI SDK v6 guidance for streaming, transport, and error handling patterns.'
     skipIfFileContains: 'toUIMessageStreamResponse|DefaultChatTransport'
-
 ---
-
 # Full-Story Verification
 
 You are a verification orchestrator. Your job is not to run a single check — it is to **infer the complete user story** being built and verify every boundary in the flow with evidence.

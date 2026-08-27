@@ -1,5 +1,6 @@
 ---
 name: access-protected-vercel-deployment
+disable-model-invocation: true
 description: Access and test Vercel deployments protected by Vercel Authentication, SSO, or Deployment Protection. Use when curl, agent-browser, Playwright, or another automated request reaches a Vercel login or protection page; when a protected preview or production URL returns 401 or 403; when TRUSTED_SOURCES_ENVIRONMENT_MISMATCH appears; or when choosing between `vercel curl` and the `x-vercel-trusted-oidc-idp-token` header.
 summary: Access protected Vercel URLs with vercel curl or a short-lived OIDC token
 metadata:
@@ -74,7 +75,6 @@ retrieval:
     - access a protected Vercel deployment through a custom domain
     - open the protected production URL in agent-browser
 ---
-
 # Access Protected Vercel Deployments
 
 Use the caller's existing Vercel authentication. Do not disable Deployment Protection or ask for a long-lived bypass secret as the first solution.

@@ -1,5 +1,6 @@
 ---
 name: survey-triangulation
+disable-model-invocation: true
 description: "Require three independent retrieval paths per factual claim; score agreement 3/3, 2/3, or contested. Use when single-source RAG is insufficient. Scope boundary: double-entry gate → `double-entry-claims`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "three sources"
     minScore: 6
 ---
-
 # Survey triangulation validation
 
 **#8** · **Domain:** Land surveying · **Category:** quality-control · **Difficulty:** 🟡 Medium
@@ -36,3 +36,6 @@ Use different queries, source types, and time snapshots.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `triangulation_validator`
+- Also implements: `fact_check_deep`
+- Merge notes: Deep fact-check is this skill plus `double-entry-claims`, not a third skill.

@@ -1,5 +1,6 @@
 ---
 name: appbuilder-ui-scaffolder
+disable-model-invocation: true
 description: >-
   Generate React Spectrum UI components for Adobe Experience Cloud Shell SPAs and AEM UI Extensions.
   Provides patterns for pages, forms, data tables, dialogs, and navigation using @adobe/react-spectrum.

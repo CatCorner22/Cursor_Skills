@@ -1,6 +1,6 @@
 {
   "name": "cursor-sdk",
   "version": "1.0.0-snapshot",
-  "description": "Skill pack cursor-sdk from the Cursor_Skills snapshot",
+  "description": "Drive Cursor agents from code via @cursor/sdk. Skill is manual.",
   "skills": "skills"
 }

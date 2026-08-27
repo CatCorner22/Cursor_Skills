@@ -1,6 +1,6 @@
 {
   "name": "supabase",
   "version": "1.0.0-snapshot",
-  "description": "Skill pack supabase from the Cursor_Skills snapshot",
+  "description": "Supabase Auth, Storage, Edge Functions, Postgres. Skills are manual.",
   "skills": "skills"
 }

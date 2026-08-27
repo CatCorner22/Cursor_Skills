@@ -1,8 +1,8 @@
 ---
 name: huggingface-gradio
+disable-model-invocation: true
 description: Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots.
 ---
-
 # Gradio
 
 Gradio is a Python library for building interactive web UIs and ML demos. This skill covers the core API, patterns, and examples.

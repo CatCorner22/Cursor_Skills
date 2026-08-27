@@ -1,5 +1,6 @@
 ---
 name: chat-sdk
+disable-model-invocation: true
 description: Vercel Chat SDK expert guidance. Use when building multi-platform chat bots — Slack, Telegram, Microsoft Teams, Discord, Google Chat, GitHub, Linear — with a single codebase. Covers the Chat class, adapters, threads, messages, cards, modals, streaming, state management, and webhook setup.
 metadata:
   priority: 8
@@ -132,7 +133,6 @@ chainTo:
     message: 'Direct provider API key in chat bot — loading AI Gateway guidance for OIDC auth and model routing.'
     skipIfFileContains: 'gateway\(|@ai-sdk/gateway'
 ---
-
 # Chat SDK
 
 Unified TypeScript SDK for building chat bots across Slack, Teams, Google Chat, Discord, Telegram, GitHub, Linear, and WhatsApp. Write bot logic once, deploy everywhere.

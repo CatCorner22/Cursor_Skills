@@ -1,6 +1,6 @@
 {
   "name": "ai-transfer",
   "version": "1.0.0-snapshot",
-  "description": "Skill pack ai-transfer from the Cursor_Skills snapshot",
+  "description": "Cross-domain AI quality gates. Skills are manual; mention a technique by name.",
   "skills": "skills"
 }

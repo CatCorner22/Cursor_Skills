@@ -1,5 +1,6 @@
 ---
 name: study-system
+disable-model-invocation: true
 description: "Plan and execute studying: syllabus to weekly schedule, active recall, spaced repetition prompts, exam prep cadence, and WIP limits on courses. Use when mapping a semester, preparing for exams, or building a study routine. Scope boundary: calendar mechanics → `outlook-email-calendar`; lecture capture → `plaud-lecture-notes`; prioritization loops → `ooda-lean-loop`; week prep → `workspace-mise-en-place`."
 metadata:
   priority: 8
@@ -19,7 +20,6 @@ metadata:
       - "study schedule"
     minScore: 6
 ---
-
 # Study system
 
 **Rule:** The **syllabus is the contract**. Calendar blocks are how you pay it — not motivation, not vibes.
@@ -78,4 +78,5 @@ Pair **`plaud-ask-queries`**: "All exam hints in [Course] recordings."
 ## Boundaries
 
 - Does not replace attending class or doing assigned reading
-- Pair **`academic-integrity`** for AI-assisted study limits
+- Pair **`citation-literacy`** and the course AI-use policy for assisted-study limits
+- Runtime plugin `pedagogical_sequence` maps here — do not add a second pedagogy skill

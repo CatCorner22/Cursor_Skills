@@ -1,5 +1,6 @@
 ---
 name: plaud-summary-templates
+disable-model-invocation: true
 description: "Generate Plaud AI summaries: built-in templates, custom templates, multidimensional summaries, action items, and meeting vs lecture formats. Use when summarizing a Plaud transcript or designing a reusable template. Scope boundary: cross-file Q&A → `plaud-ask-queries`; turning summary into essay → `academic-writing`."
 metadata:
   priority: 7
@@ -18,7 +19,6 @@ metadata:
       - "Auto Generation"
     minScore: 6
 ---
-
 # Plaud summary templates
 
 **Rule:** **Template = job to be done.** Pick (or design) the output shape before generating — one recording can hold **multiple summaries** without replacing the original.
@@ -82,5 +82,5 @@ Each view is additive — original transcript and prior summaries stay intact. U
 
 ## Boundaries
 
-- Summary ≠ submitted essay — run through **`academic-integrity`** and your voice
+- Summary ≠ submitted essay — run through **`academic-writing`** in your own voice and the course AI-use policy
 - Templates can't invent content not in audio — flag gaps explicitly

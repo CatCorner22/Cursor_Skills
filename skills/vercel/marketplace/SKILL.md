@@ -1,5 +1,6 @@
 ---
 name: marketplace
+disable-model-invocation: true
 description: Vercel Marketplace expert guidance — discovering, installing, and managing third-party integrations via the `vercel integration` CLI. Use when building any app that needs an external capability without a dedicated skill — commerce (stores, storefronts, selling products), payments (checkout, subscriptions, billing), observability/monitoring, messaging/email, search, or CMS — or when discovering, installing, or managing integrations.
 metadata:
   priority: 9
@@ -53,9 +54,7 @@ chainTo:
     pattern: '@ai-sdk/|AI_GATEWAY|generateText|streamText|@openai/|@anthropic-ai/'
     targetSkill: ai-sdk
     message: 'AI usage detected — loading AI guidance for model routing through the AI Gateway, provider/model strings, and streaming.'
-
 ---
-
 # Vercel Marketplace
 
 **Before you scaffold or write any file: discover and provision the integration first — installing is required, not optional.** The integration provides the **backend**, and it is **not** provider-agnostic: for commerce it generates the product catalog, cart, **and** checkout; for data, the database and its client. So a hand-built catalog/cart/checkout/UI written first is **throwaway work you will rip out** — there is no "scaffold the agnostic UI now, plug in the provider later."

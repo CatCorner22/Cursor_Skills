@@ -1,5 +1,6 @@
 ---
 name: emergency-triage-compute
+disable-model-invocation: true
 description: "Classify tasks Immediate/Delayed/Minor/Deceased before processing; allocate reasoning budget by stakes. Use at router/orchestrator layer. Scope boundary: human prioritization → `ooda-lean-loop`."
 metadata:
   priority: 7
@@ -11,7 +12,6 @@ metadata:
       - "task classify"
     minScore: 6
 ---
-
 # Emergency triage compute budgeting
 
 **#17** · **Domain:** Emergency medicine (START) · **Category:** adaptive · **Difficulty:** 🟢 Low
@@ -37,3 +37,6 @@ Formatting and research questions get same budget.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-adaptive`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `start_triage`
+- Also implements: `quality_cost_tradeoff`
+- Merge notes: Also absorbs `quality_cost_tradeoff` — ROI/budget tier is START classing.

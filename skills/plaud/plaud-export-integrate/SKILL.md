@@ -1,5 +1,6 @@
 ---
 name: plaud-export-integrate
+disable-model-invocation: true
 description: "Export Plaud transcripts and summaries to Word, PDF, mind maps, and integrate with OneDrive, Teams, Notion, or email workflows. Use when moving Plaud output into school or work tools. Scope boundary: Word formatting → `word-documents`; OneDrive structure → `onedrive-organization`; Teams sharing → `teams-collaboration`."
 metadata:
   priority: 6
@@ -17,7 +18,6 @@ metadata:
       - "27 formats"
     minScore: 6
 ---
-
 # Plaud export & integrate
 
 **Rule:** Export **edited** artifacts — transcript + your summary pass + highlights — not raw first drafts for submission.

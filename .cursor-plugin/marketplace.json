@@ -10,133 +10,133 @@
       "name": "academic",
       "source": "./plugins/academic",
       "skills": "skills",
-      "description": "Skill pack academic from the Cursor_Skills snapshot"
+      "description": "College coursework: writing, citations, study system. Skills are manual."
     }
 ,
     {
       "name": "adobe",
       "source": "./plugins/adobe",
       "skills": "skills",
-      "description": "Skill pack adobe from the Cursor_Skills snapshot"
+      "description": "Adobe App Builder and Workfront: actions, UI, CI/CD, testing. Skills are manual."
     }
 ,
     {
       "name": "ai-transfer",
       "source": "./plugins/ai-transfer",
       "skills": "skills",
-      "description": "Skill pack ai-transfer from the Cursor_Skills snapshot"
+      "description": "Cross-domain AI quality gates. Skills are manual; mention a technique by name."
     }
 ,
     {
       "name": "coding",
       "source": "./plugins/coding",
       "skills": "skills",
-      "description": "Skill pack coding from the Cursor_Skills snapshot"
+      "description": "Software craft: deliverable-first, architecture, UI/UX, test-while-coding. Skills are manual."
     }
 ,
     {
       "name": "craft",
       "source": "./plugins/craft",
       "skills": "skills",
-      "description": "Skill pack craft from the Cursor_Skills snapshot"
+      "description": "Operational craft: mise en place and OODA×lean. Skills are manual."
     }
 ,
     {
       "name": "cursor-cloud",
       "source": "./plugins/cursor-cloud",
       "skills": "skills",
-      "description": "Skill pack cursor-cloud from the Cursor_Skills snapshot"
+      "description": "Cursor Cloud Agent environment, snapshots, subscriptions, canvases. Skills are manual."
     }
 ,
     {
       "name": "cursor-sdk",
       "source": "./plugins/cursor-sdk",
       "skills": "skills",
-      "description": "Skill pack cursor-sdk from the Cursor_Skills snapshot"
+      "description": "Drive Cursor agents from code via @cursor/sdk. Skill is manual."
     }
 ,
     {
       "name": "cursor-team-kit",
       "source": "./plugins/cursor-team-kit",
       "skills": "skills",
-      "description": "Skill pack cursor-team-kit from the Cursor_Skills snapshot"
+      "description": "GitHub PR workflow: branches, reviews, CI, conflicts, shipping. Skills are manual."
     }
 ,
     {
       "name": "first-party",
       "source": "./plugins/first-party",
       "skills": "skills",
-      "description": "Skill pack first-party from the Cursor_Skills snapshot"
+      "description": "proactive-agency is always on. skill-library-audit, smolagents, and v0 are manual."
     }
 ,
     {
       "name": "huggingface",
       "source": "./plugins/huggingface",
       "skills": "skills",
-      "description": "Skill pack huggingface from the Cursor_Skills snapshot"
+      "description": "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker. Skills are manual."
     }
 ,
     {
       "name": "langchain",
       "source": "./plugins/langchain",
       "skills": "skills",
-      "description": "Skill pack langchain from the Cursor_Skills snapshot"
+      "description": "LangChain/LangGraph agents, RAG, persistence, Deep Agents. Skills are manual."
     }
 ,
     {
       "name": "microsoft365",
       "source": "./plugins/microsoft365",
       "skills": "skills",
-      "description": "Skill pack microsoft365 from the Cursor_Skills snapshot"
+      "description": "Microsoft 365: Word, Excel, PowerPoint, Outlook, Teams, OneDrive. Skills are manual."
     }
 ,
     {
       "name": "plaud",
       "source": "./plugins/plaud",
       "skills": "skills",
-      "description": "Skill pack plaud from the Cursor_Skills snapshot"
+      "description": "Plaud recorder: capture, transcription, summaries, AutoFlow, export. Skills are manual."
     }
 ,
     {
       "name": "playwright",
       "source": "./plugins/playwright",
       "skills": "skills",
-      "description": "Skill pack playwright from the Cursor_Skills snapshot"
+      "description": "Playwright browser automation, component tests, traces (non-Adobe). Skills are manual."
     }
 ,
     {
       "name": "projects",
       "source": "./plugins/projects",
       "skills": "skills",
-      "description": "Skill pack projects from the Cursor_Skills snapshot"
+      "description": "Project reference material (nyx). Skill is manual."
     }
 ,
     {
       "name": "prompt-optimizer",
       "source": "./plugins/prompt-optimizer",
       "skills": "skills",
-      "description": "Skill pack prompt-optimizer from the Cursor_Skills snapshot"
+      "description": "Author and optimize prompt text. Skill is manual."
     }
 ,
     {
       "name": "pydantic-ai",
       "source": "./plugins/pydantic-ai",
       "skills": "skills",
-      "description": "Skill pack pydantic-ai from the Cursor_Skills snapshot"
+      "description": "Pydantic AI typed Python agents. Skill is manual."
     }
 ,
     {
       "name": "supabase",
       "source": "./plugins/supabase",
       "skills": "skills",
-      "description": "Skill pack supabase from the Cursor_Skills snapshot"
+      "description": "Supabase Auth, Storage, Edge Functions, Postgres. Skills are manual."
     }
 ,
     {
       "name": "vercel",
       "source": "./plugins/vercel",
       "skills": "skills",
-      "description": "Skill pack vercel from the Cursor_Skills snapshot"
+      "description": "Vercel and Next.js platform skills. Manual except they do not include proactive-agency."
     }
   ]
 }

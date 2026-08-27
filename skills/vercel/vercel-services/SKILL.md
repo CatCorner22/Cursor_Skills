@@ -1,5 +1,6 @@
 ---
 name: vercel-services
+disable-model-invocation: true
 description: Configure and troubleshoot Vercel Services for multiple frontends and backends in one project. Use when composing a polyglot or multi-service application on one Vercel deployment; defining the `services` key, service-targeted rewrites, or service bindings in `vercel.json`; or running all services with `vercel dev`.
 summary: Compose multiple frontends and backends in one Vercel project
 metadata:
@@ -68,7 +69,6 @@ retrieval:
     - the backend returns 404 for every /api route
     - point api.example.com at the backend
 ---
-
 # Vercel Services
 
 Use the `services` model whenever one application is made of multiple tightly coupled components, such as a frontend plus a backend, that should deploy to one Vercel project.

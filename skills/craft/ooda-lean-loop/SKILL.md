@@ -1,5 +1,6 @@
 ---
 name: ooda-lean-loop
+disable-model-invocation: true
 description: "Run fused OODA and lean loops: observe raw signal, orient with current-state map, decide one small batch, act with standard work, andon on failure, kaizen one improvement. Use when stuck, prioritizing, fighting thrash, or reducing rework. Scope boundary: prep before loop → `workspace-mise-en-place`; coding batches → `deliverable-first` + `real-time-testing`; meta routing → `craft-systems-primer`."
 metadata:
   priority: 8
@@ -22,7 +23,6 @@ metadata:
       - "andon"
     minScore: 6
 ---
-
 # OODA × lean loop
 
 **Rule:** **Tempo beats perfection.** One complete small batch beats a perfect plan you never start.

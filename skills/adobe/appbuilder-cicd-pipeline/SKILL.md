@@ -1,5 +1,6 @@
 ---
 name: appbuilder-cicd-pipeline
+disable-model-invocation: true
 description: >-
   Set up CI/CD pipelines for Adobe App Builder projects. Generates GitHub Actions workflows using
   adobe/aio-cli-setup-action@3 and adobe/aio-apps-action@3.3.0, plus patterns for Azure DevOps

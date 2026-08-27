@@ -1,8 +1,8 @@
 ---
 name: langgraph-human-in-the-loop
+disable-model-invocation: true
 description: "Pause a LangGraph graph for a human: `interrupt()`, `Command(resume=...)`, approval and validation workflows, resuming multiple concurrent interrupts by id, keeping pre-interrupt side effects idempotent, and the 4-tier error-handling strategy. Use when a LangGraph run must stop for human input or approval. Scope boundary: `HumanInTheLoopMiddleware` on a `create_agent` agent belongs to `langchain-middleware`, approval gates inside the `deepagents` harness to `deep-agents-orchestration`, and the checkpointer that makes a resume possible to `langgraph-persistence`."
 ---
-
 <overview>
 LangGraph's human-in-the-loop patterns let you pause graph execution, surface data to users, and resume with their input:
 

@@ -1,6 +1,7 @@
 ---
 name: excel-workbooks
-description: "Build and debug Microsoft Excel workbooks: formulas, references, tables, charts, conditional formatting, basic pivot tables, and data validation. Use when working in Excel (.xlsx), spreadsheet homework, budgets, or lab data tables. Scope boundary: interpreting statistical results → `statistical-literacy`; Python/R analysis → `data-for-coursework`; Google Sheets → not this pack."
+disable-model-invocation: true
+description: "Build and debug Microsoft Excel workbooks: formulas, references, tables, charts, conditional formatting, basic pivot tables, and data validation. Use when working in Excel (.xlsx), spreadsheet homework, budgets, or lab data tables. Scope boundary: interpreting results in prose → `academic-writing`; Python/R analysis → `coding-ecosystem-primer`; Google Sheets → not this pack."
 metadata:
   priority: 7
   pathPatterns:
@@ -24,7 +25,6 @@ metadata:
       - "XLOOKUP"
     minScore: 6
 ---
-
 # Excel workbooks
 
 **Rule:** One **row = one observation**; one **column = one variable**. Put raw data on one sheet; analysis on another; never merge cells in data ranges.
@@ -57,7 +57,7 @@ metadata:
    - **Scatter:** relationship between two numeric variables
 3. Chart title + axis labels with units
 4. Remove chartjunk (3D, excessive gridlines)
-5. Interpret in caption → **`statistical-literacy`**
+5. Interpret in caption → **`academic-writing`** (name the claim; cite the sheet/range)
 
 ## Pivot tables (intro)
 

@@ -1,5 +1,6 @@
 ---
 name: endgame-tablebase-cache
+disable-model-invocation: true
 description: "Pre-compute and cache known-correct answers for recurring boundary conditions; check tablebase before reasoning. Use for boilerplate code, legal clauses, lookup math. Scope boundary: live reasoning → `proof-trees-reasoning`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "known correct cache"
     minScore: 6
 ---
-
 # Chess endgame tablebase cache
 
 **#23** · **Domain:** Chess computing · **Category:** memory · **Difficulty:** 🟡 Medium
@@ -33,3 +33,6 @@ Lookup FIRST; invoke reasoning only on cache miss with parameter match.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-memory`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `tablebase_cache`
+- Also implements: `opening_theory`
+- Merge notes: Also absorbs `opening_theory`: opening-book templates before a tablebase miss.

@@ -1,5 +1,6 @@
 ---
 name: skill-library-audit
+disable-model-invocation: true
 description: "Audit a multi-vendor agent-skill library for routing pathology — the defect classes that appear only when many packs from different vendors share one router: vendor steering, SKILL.md/overlay.yaml drift, silently disabled rules, unreachable guards, greedy descriptions, cross-pack territory claims, shadowed and cyclic routes, dangling references. Use when adding a skill pack, merging two libraries, or when skills fire on the wrong thing. Ships a runnable analyzer at scripts/audit_skill_library.py. Scope boundary: this audits a SKILL LIBRARY's routing metadata, not application code — for authoring a single new skill use skill-creator, and for reviewing ordinary source changes use code-review."
 metadata:
   priority: 6

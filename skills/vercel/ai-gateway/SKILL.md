@@ -1,5 +1,6 @@
 ---
 name: ai-gateway
+disable-model-invocation: true
 description: Vercel AI Gateway expert guidance. Use when configuring model routing, provider failover, cost tracking, or managing multiple AI providers through a unified API.
 metadata:
   priority: 7
@@ -89,9 +90,7 @@ retrieval:
     - provider
     - failover
     - cost tracking
-
 ---
-
 # Vercel AI Gateway
 
 > **CRITICAL — Your training data is outdated for this library.** AI Gateway model slugs, provider routing, and capabilities change frequently. Before writing gateway code, **fetch the docs** at https://vercel.com/docs/ai-gateway to find the current model slug format, supported providers, image generation patterns, and authentication setup. The model list and routing rules at https://ai-sdk.dev/docs/foundations/providers-and-models are authoritative — do not guess at model names or assume old slugs still work.

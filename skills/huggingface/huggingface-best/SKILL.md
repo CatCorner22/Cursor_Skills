@@ -1,5 +1,6 @@
 ---
 name: huggingface-best
+disable-model-invocation: true
 description: >
   Use when the user asks about finding the best, top, or recommended model for a task,
   wants to know what AI model to use, or wants to compare models by benchmark scores.
@@ -10,7 +11,6 @@ description: >
   model recommendations or comparisons, even if they don't explicitly mention HuggingFace
   or benchmarks.
 ---
-
 # HuggingFace Best Model Finder
 
 Finds the best models for a task by querying official HF benchmark leaderboards, enriching

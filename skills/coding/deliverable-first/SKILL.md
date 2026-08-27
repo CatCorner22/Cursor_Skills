@@ -1,10 +1,10 @@
 ---
 name: deliverable-first
+disable-model-invocation: true
 description: "Plan and implement features by defining the final deliverable first, then reverse-engineering the smallest code path to it. Use when starting a feature, API, UI screen, or refactor; when the user says begin with the end in mind, work backwards, or what should this look like when done. Produces acceptance criteria, contracts, and UI state maps before bulk coding. Scope boundary: after the deliverable is defined, continuous test execution belongs to `real-time-testing`; structural boundaries belong to `stable-architecture`."
 metadata:
   priority: 8
 ---
-
 # Deliverable-first engineering
 
 **Rule:** Do not write production code until you can describe the **finished artifact** a user, API client, or reviewer would see. Then derive the implementation backward from that artifact.

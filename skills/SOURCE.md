@@ -23,13 +23,13 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Craft (authored here, 3) | `skills/craft/` | **Not vendored** — OODA×lean, mise en place, operational craft meta-layer | n/a | n/a |
 | Microsoft 365 (authored here, 7) | `skills/microsoft365/` | **Not vendored** — Word, Excel, PowerPoint, Outlook, Teams, OneDrive; compatible with M365 Copilot custom skills format | n/a | n/a |
 | Plaud (authored here, 8) | `skills/plaud/` | **Not vendored** — Plaud Note recorder workflows: capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export | n/a | n/a |
-| AI Transfer (authored here, 36) | `skills/ai-transfer/` | **Not vendored** — 30 cross-domain discipline techniques for AI pipeline quality; see `docs/AI-TRANSFER-SKILLS.md`; generator `scripts/generate-ai-transfer-skills.py` | n/a | n/a |
+| AI Transfer (authored here, 53) | `skills/ai-transfer/` | **Not vendored** — 45 loadable techniques (catalog #1–50, five merges) + 7 routers + primer; runtime `scripts/ai_plugin_bundle.py` (100 plugins). See `docs/AI-TRANSFER-SKILLS.md`; generator `scripts/generate-ai-transfer-skills.py` | n/a | n/a |
 
-**Inventory as of 2026-08-26:** 172 `SKILL.md` across 19 packs — vercel 33, huggingface 26, langchain 12, adobe 10, ai-transfer 36, cursor-team-kit 8, coding 7, microsoft365 7, plaud 8, cursor-cloud 5, first-party 4, academic 4, craft 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
+**Inventory as of 2026-08-27:** 189 `SKILL.md` across 19 packs — vercel 33, huggingface 26, langchain 12, adobe 10, ai-transfer 53, cursor-team-kit 8, coding 7, microsoft365 7, plaud 8, cursor-cloud 5, first-party 4, academic 4, craft 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
 
-### AI Transfer pack — 30 cross-domain techniques, 2026-08-26
+### AI Transfer pack — catalog #1–50, 2026-08-27
 
-`skills/ai-transfer/` ports discipline constraints (accounting, aviation, journalism, chess, etc.) into AI workflow gates and pipeline stages. **36 skills:** `ai-transfer-ecosystem-primer`, five category routers, and 30 technique skills. Reference: `docs/AI-TRANSFER-SKILLS.md`. Overlaps documented with `craft/` (human OODA/mise) and `pipeline-preflight` ↔ `workspace-mise-en-place`.
+`skills/ai-transfer/` ports discipline constraints (accounting, aviation, journalism, chess, etc.) into AI workflow gates and pipeline stages. **53 skills:** `ai-transfer-ecosystem-primer`, seven category routers, and 45 technique skills. Five catalog slots (#36, #39, #41, #42, #49) merge into existing skills. The Python bundle at `scripts/ai_plugin_bundle.py` registers all 100 plugins; default tier enables #1–50 plus orchestrator utilities. Reference: `docs/AI-TRANSFER-SKILLS.md`. Overlaps documented with `craft/` (human OODA/mise) and `pipeline-preflight` ↔ `workspace-mise-en-place`.
 
 `skills/craft/` is a **meta-layer** — it names operational frameworks and routes into domain packs without duplicating coding or academic content.
 
@@ -135,7 +135,9 @@ Added 2026-08-25 after a gap analysis against the official Cursor Marketplace: `
 
 Unlike every other pack, this one has no upstream and no pinned commit — it is authored in this repo, so it carries no vendor-drift risk and no obligation to stay byte-identical to anything.
 
-**`proactive-agency`** — an always-on execution posture: do the work rather than describe it. It is delivered via `metadata.sessionStart: true` + `priority: 10`, the same mechanism `vercel/knowledge-update` uses, which means it is *injected* rather than trigger-matched. That choice is deliberate: this repo's documented dominant defect class is over-triggering and cross-pack trigger collision, and a session-start skill adds **zero** trigger surface. Its `pathPatterns`/`bashPatterns`/`importPatterns` are explicitly empty for the same reason.
+**Activation policy (library-wide).** Only `proactive-agency` is always on. Every other `SKILL.md` — including `vercel/knowledge-update` — carries `disable-model-invocation: true` so the model will not auto-invoke it. `knowledge-update` previously used `metadata.sessionStart: true`; that flag was removed so it is no longer a second always-on inject. Mention a manual skill by name, attach it, or ask for the job it covers. Catalog: `docs/SKILL-PLUGIN-CATALOG.md`. Re-apply with `python3 scripts/apply-activation-policy.py`.
+
+**`proactive-agency`** — an always-on execution posture: do the work rather than describe it. It is delivered via `metadata.sessionStart: true` + `priority: 10`, which means it is *injected* rather than trigger-matched. That choice is deliberate: this repo's documented dominant defect class is over-triggering and cross-pack trigger collision, and a session-start skill adds **zero** trigger surface. Its `pathPatterns`/`bashPatterns`/`importPatterns` are explicitly empty for the same reason. It is the only skill that must stay without `disable-model-invocation`.
 
 **`skill-library-audit`** — audits a multi-vendor skill library for routing pathology, and ships a runnable 2,991-line analyzer at `scripts/audit_skill_library.py` (stdlib + PyYAML, no network).
 

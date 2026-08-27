@@ -1,8 +1,8 @@
 ---
 name: langchain-fundamentals
+disable-model-invocation: true
 description: "Create LangChain agents with `create_agent` / `createAgent`: model and tool wiring, the agent loop, and where middleware attaches. Use when the code imports `langchain`, `langchain.agents`, or `@langchain/core`, or the user names LangChain agents or `create_agent`. Scope boundary: writing the middleware itself and structured output belong to `langchain-middleware`; hand-written graphs to `langgraph-fundamentals`; an agent request that has not chosen a framework to `build-agents`/`eve`."
 ---
-
 <oneliner>
 Build LangChain agents using `create_agent()`, middleware patterns, and the `@tool` decorator / `tool()` function. Within LangChain, `create_agent()` is the current API — the older LangChain agent constructors (`initialize_agent`, `AgentExecutor`, `LLMChain`) are superseded. This says nothing about non-LangChain agent frameworks; picking a framework in the first place is `ecosystem-primer`'s job, and a project that has not chosen LangChain is not this skill's.
 </oneliner>

@@ -1,8 +1,8 @@
 ---
 name: loop-on-ci
+disable-model-invocation: true
 description: Monitor PR checks and fix failures until green. Uses gh pr checks as the source of truth for PR-attached checks.
 ---
-
 # Loop on CI
 
 ## Trigger

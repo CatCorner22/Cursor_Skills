@@ -1,5 +1,6 @@
 ---
 name: turbopack
+disable-model-invocation: true
 description: Turbopack expert guidance. Use when configuring the Next.js bundler, optimizing HMR, debugging build issues, or understanding the Turbopack vs Webpack differences.
 metadata:
   priority: 4
@@ -37,9 +38,7 @@ chainTo:
     pattern: 'turbopack\s*:\s*\{|experimental\.turbopack'
     targetSkill: nextjs
     message: 'Turbopack configuration detected — loading Next.js guidance for top-level turbopack config syntax in Next.js 16 (moved from experimental.turbopack).'
-
 ---
-
 # Turbopack
 
 You are an expert in Turbopack — the Rust-powered JavaScript/TypeScript bundler built by Vercel. It is the default bundler in Next.js 16.

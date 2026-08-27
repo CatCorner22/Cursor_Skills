@@ -1,8 +1,8 @@
 ---
 name: get-pr-comments
+disable-model-invocation: true
 description: Fetch and summarize review comments from the active pull request
 ---
-
 # Get PR comments
 
 ## Trigger

@@ -1,6 +1,6 @@
 {
   "name": "adobe",
   "version": "1.0.0-snapshot",
-  "description": "Skill pack adobe from the Cursor_Skills snapshot",
+  "description": "Adobe App Builder and Workfront: actions, UI, CI/CD, testing. Skills are manual.",
   "skills": "skills"
 }

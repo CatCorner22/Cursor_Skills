@@ -1,5 +1,6 @@
 ---
 name: plaud-ecosystem-primer
+disable-model-invocation: true
 description: "Router for Plaud AI voice recorder workflows: device capture, transcription, summary templates, Ask Plaud queries, AutoFlow automation, and export. Use when the user mentions Plaud, Plaud Note, Plaud NotePin, voice recorder transcripts, or turning lectures/meetings into notes. Scope boundary: writing essays from scratch → `academic-writing`; Word/Outlook delivery → `m365-ecosystem-primer`; live Teams recording → `teams-collaboration`."
 metadata:
   priority: 8
@@ -21,7 +22,6 @@ metadata:
       - "AutoFlow"
     minScore: 6
 ---
-
 # Plaud ecosystem primer
 
 **Plaud** = hardware recorder (Note, NotePin, Note Pro) + **Plaud App / Web / Desktop** + **Plaud Intelligence** (transcription, summaries, Ask Plaud).

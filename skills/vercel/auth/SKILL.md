@@ -1,5 +1,6 @@
 ---
 name: auth
+disable-model-invocation: true
 description: Authentication integration guidance — Clerk (native Vercel Marketplace, recommended for greenfield), Descope, Auth0, and Auth.js (NextAuth v5) for Next.js. Covers middleware/proxy auth patterns, sign-in flows, and Marketplace provisioning.
 metadata:
   priority: 6
@@ -94,7 +95,6 @@ chainTo:
     message: 'Manual password hashing detected (bcrypt/argon2) — use Clerk or Auth0 for managed authentication with built-in password hashing, rate limiting, and breach detection.'
     skipIfFileContains: "@clerk|@auth0"
 ---
-
 # Authentication Integrations
 
 You are an expert in authentication for Vercel-deployed applications — covering Clerk (native Vercel Marketplace integration), Descope, and Auth0.

@@ -1,5 +1,6 @@
 ---
 name: stratigraphy-memory
+disable-model-invocation: true
 description: "Layer memory by session strata plus disturbance markers; retrieve with integrity confidence. Use for long-horizon agents. Scope boundary: flat RAG → `library-taxonomy-retrieval`; cross-session bridges → `wildlife-corridor-bridging`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "session strata"
     minScore: 6
 ---
-
 # Archaeological stratigraphy memory
 
 **#22** · **Domain:** Archaeology · **Category:** memory · **Difficulty:** 🔴 High
@@ -35,3 +35,6 @@ Flat embedding loses temporal depth and context shifts.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-memory`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `stratigraphy`
+- Also implements: `paleontology`
+- Merge notes: Also absorbs `paleontology`: fossil snapshots of retired configs.

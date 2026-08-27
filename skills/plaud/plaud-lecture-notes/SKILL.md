@@ -1,5 +1,6 @@
 ---
 name: plaud-lecture-notes
+disable-model-invocation: true
 description: "Turn Plaud lecture recordings into study materials: capture setup, summary templates for classes, Cornell-style refinement, exam prep loops, and pairing with spaced repetition. Use when a student records classes with Plaud for coursework. Scope boundary: general Plaud routing → `plaud-ecosystem-primer`; study scheduling → `study-system`; prep → `workspace-mise-en-place`; essay writing → `academic-writing`."
 metadata:
   priority: 8
@@ -19,7 +20,6 @@ metadata:
       - "professor lecture"
     minScore: 6
 ---
-
 # Plaud lecture notes (student workflow)
 
 **Rule:** Plaud produces **raw intelligence** — you produce **learning**. Every session ends with a human edit pass.
@@ -81,7 +81,7 @@ Run **`workspace-mise-en-place`** lecture station:
 ## Academic integrity
 
 - Recording policy ≠ permission to upload transcripts to public sites
-- AI summary ≠ submitted work — see **`academic-integrity`** (when added)
+- AI summary ≠ submitted work — keep the course AI-use policy in view
 - Cite lecture ideas appropriately in papers → **`citation-literacy`**
 
 ## Boundaries

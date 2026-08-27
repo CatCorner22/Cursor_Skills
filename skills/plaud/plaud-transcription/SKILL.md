@@ -1,5 +1,6 @@
 ---
 name: plaud-transcription
+disable-model-invocation: true
 description: "Improve Plaud transcripts: language selection, speaker diarization, custom vocabulary, formatting, and fixing common ASR errors before summarizing. Use after a Plaud recording syncs or when transcript accuracy is poor. Scope boundary: summary templates → `plaud-summary-templates`; querying transcripts → `plaud-ask-queries`."
 metadata:
   priority: 7
@@ -18,7 +19,6 @@ metadata:
       - "112 languages"
     minScore: 6
 ---
-
 # Plaud transcription
 
 **Rule:** **Fix the transcript before the summary** — garbage in propagates to every template and Ask Plaud answer.

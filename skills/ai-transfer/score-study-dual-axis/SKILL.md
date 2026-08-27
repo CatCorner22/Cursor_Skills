@@ -1,5 +1,6 @@
 ---
 name: score-study-dual-axis
+disable-model-invocation: true
 description: "Horizontal pass (narrative arc) plus vertical pass (parallel considerations at each step). Synthesize output satisfying both. Use for complex analysis and long-form reasoning. Scope boundary: dependency DAG → `proof-trees-reasoning`."
 metadata:
   priority: 7
@@ -11,7 +12,6 @@ metadata:
       - "narrative arc"
     minScore: 6
 ---
-
 # Score study dual-axis reasoning
 
 **#10** · **Domain:** Classical conducting · **Category:** architecture · **Difficulty:** 🟡 Medium
@@ -36,3 +36,4 @@ Linear prose is organized OR thorough, rarely both.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-architecture`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `score_study`

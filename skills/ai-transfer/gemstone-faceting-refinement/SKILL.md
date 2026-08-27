@@ -1,5 +1,6 @@
 ---
 name: gemstone-faceting-refinement
+disable-model-invocation: true
 description: "Rotate refinement through clarity, precision, resonance, durability passes — flaws visible from new angles. Use instead of linear draft→revise→done. Scope boundary: annealing phases → `glass-annealing-hardening`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "rotate refinement"
     minScore: 6
 ---
-
 # Gemstone faceting multi-angle refinement
 
 **#29** · **Domain:** Gemology · **Category:** refinement · **Difficulty:** 🟡 Medium
@@ -36,3 +36,4 @@ Rotate output between passes.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-refinement`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `gemstone_faceting`

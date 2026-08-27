@@ -1,5 +1,6 @@
 ---
 name: progressive-resistance-critique
+disable-model-invocation: true
 description: "Escalating self-critique passes: warm-up consistency, moderate alignment, working robustness, max falsifiability. Use instead of single shallow 'review your answer'. Scope boundary: post-delivery debrief → `after-action-review`; proof DAG → `proof-trees-reasoning`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "escalating critique"
     minScore: 6
 ---
-
 # Progressive resistance self-critique
 
 **#3** · **Domain:** Strength coaching · **Category:** quality-control · **Difficulty:** 🟡 Medium
@@ -36,3 +36,6 @@ Single-pass self-review misses distinct failure modes.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-quality-control`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `progressive_critique`
+- Also implements: `self_evaluation`, `confidence_calibrator`, `blind_spot_detector`, `metacognitive_monitor`
+- Merge notes: Meta-cognition plugins (94–97) are critique passes, not separate skills.

@@ -1,6 +1,7 @@
 ---
 name: powerpoint-decks
-description: "Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and export. Use when building .pptx decks for class, work, or conferences. Scope boundary: story arc and Q&A → `presentation-craft`; Word handouts → `word-documents`; Copilot custom skill upload format → compatible with this SKILL.md structure."
+disable-model-invocation: true
+description: "Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and export. Use when building .pptx decks for class, work, or conferences. Scope boundary: argument craft for speaker notes → `academic-writing`; Word handouts → `word-documents`; Copilot custom skill upload format → compatible with this SKILL.md structure."
 metadata:
   priority: 7
   pathPatterns:
@@ -21,7 +22,6 @@ metadata:
       - ".pptx"
     minScore: 6
 ---
-
 # PowerPoint decks
 
 **Rule:** **One idea per slide.** If the slide needs a paragraph, split it or move detail to speaker notes.
@@ -37,7 +37,7 @@ metadata:
 6. Q&A or references
 ```
 
-Narrative depth → **`presentation-craft`**. This skill covers **PowerPoint mechanics**.
+Narrative depth → **`academic-writing`**. This skill covers **PowerPoint mechanics**.
 
 ## Design defaults (class-friendly)
 

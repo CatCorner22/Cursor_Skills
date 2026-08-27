@@ -55,6 +55,31 @@ pick_src() {
   return 1
 }
 
+pack_description() {
+  case "$1" in
+    academic) printf '%s' "College coursework: writing, citations, study system. Skills are manual." ;;
+    adobe) printf '%s' "Adobe App Builder and Workfront: actions, UI, CI/CD, testing. Skills are manual." ;;
+    ai-transfer) printf '%s' "Cross-domain AI quality gates. Skills are manual; mention a technique by name." ;;
+    coding) printf '%s' "Software craft: deliverable-first, architecture, UI/UX, test-while-coding. Skills are manual." ;;
+    craft) printf '%s' "Operational craft: mise en place and OODA×lean. Skills are manual." ;;
+    cursor-cloud) printf '%s' "Cursor Cloud Agent environment, snapshots, subscriptions, canvases. Skills are manual." ;;
+    cursor-sdk) printf '%s' "Drive Cursor agents from code via @cursor/sdk. Skill is manual." ;;
+    cursor-team-kit) printf '%s' "GitHub PR workflow: branches, reviews, CI, conflicts, shipping. Skills are manual." ;;
+    first-party) printf '%s' "proactive-agency is always on. skill-library-audit, smolagents, and v0 are manual." ;;
+    huggingface) printf '%s' "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker. Skills are manual." ;;
+    langchain) printf '%s' "LangChain/LangGraph agents, RAG, persistence, Deep Agents. Skills are manual." ;;
+    microsoft365) printf '%s' "Microsoft 365: Word, Excel, PowerPoint, Outlook, Teams, OneDrive. Skills are manual." ;;
+    plaud) printf '%s' "Plaud recorder: capture, transcription, summaries, AutoFlow, export. Skills are manual." ;;
+    playwright) printf '%s' "Playwright browser automation, component tests, traces (non-Adobe). Skills are manual." ;;
+    projects) printf '%s' "Project reference material (nyx). Skill is manual." ;;
+    prompt-optimizer) printf '%s' "Author and optimize prompt text. Skill is manual." ;;
+    pydantic-ai) printf '%s' "Pydantic AI typed Python agents. Skill is manual." ;;
+    supabase) printf '%s' "Supabase Auth, Storage, Edge Functions, Postgres. Skills are manual." ;;
+    vercel) printf '%s' "Vercel and Next.js platform skills. Manual except they do not include proactive-agency." ;;
+    *) printf '%s' "Skill pack ${1}. Skills are manual unless named proactive-agency." ;;
+  esac
+}
+
 write_plugin_manifest() {
   local name="$1" dest="$2" description="$3"
   mkdir -p "${dest}/.cursor-plugin"
@@ -104,9 +129,10 @@ for pack_dir in "${ROOT}/skills"/*/; do
   pack="$(basename "$pack_dir")"
   [[ "$pack" == .* ]] && continue
   wrapper="${ROOT}/plugins/${pack}"
+  desc="$(pack_description "$pack")"
   mkdir -p "${wrapper}/.cursor-plugin"
   ln -sfn "$(realpath --relative-to="$wrapper" "$pack_dir")" "${wrapper}/skills"
-  write_plugin_manifest "$pack" "$wrapper" "Skill pack ${pack} from the Cursor_Skills snapshot"
+  write_plugin_manifest "$pack" "$wrapper" "$desc"
   if [[ "$first" -eq 1 ]]; then
     first=0
   else
@@ -117,7 +143,7 @@ for pack_dir in "${ROOT}/skills"/*/; do
       "name": "${pack}",
       "source": "./plugins/${pack}",
       "skills": "skills",
-      "description": "Skill pack ${pack} from the Cursor_Skills snapshot"
+      "description": "${desc}"
     }
 EOF
 done
@@ -155,7 +181,7 @@ fi
 for pack_dir in "${ROOT}/skills"/*/; do
   pack="$(basename "$pack_dir")"
   dest="${LOCAL}/${pack}"
-  write_plugin_manifest "$pack" "$dest" "Skill pack ${pack} from the Cursor_Skills snapshot"
+  write_plugin_manifest "$pack" "$dest" "$(pack_description "$pack")"
   copy_tree "$pack_dir" "${dest}/skills"
 done
 

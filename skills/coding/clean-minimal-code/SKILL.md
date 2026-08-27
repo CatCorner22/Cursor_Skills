@@ -1,10 +1,10 @@
 ---
 name: clean-minimal-code
+disable-model-invocation: true
 description: "Write clear, minimal code: fewer lines with the same behavior, established naming, SOLID and YAGNI, no premature abstraction. Use when implementing or reviewing functions, modules, or refactors; when the user wants clean code, less boilerplate, simplify, or remove unnecessary complexity. Scope boundary: system-wide boundaries and coupling → `stable-architecture`; test loop while editing → `real-time-testing`; React-specific perf → `react-best-practices`."
 metadata:
   priority: 7
 ---
-
 # Clean minimal code
 
 **Goal:** The reader understands intent in one pass. Every line earns its place.

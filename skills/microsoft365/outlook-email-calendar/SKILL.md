@@ -1,5 +1,6 @@
 ---
 name: outlook-email-calendar
+disable-model-invocation: true
 description: "Professional email and calendar in Microsoft Outlook: syllabus-to-calendar blocking, meeting invites, inbox triage, signatures, and student-professor communication tone. Use when managing Outlook mail, scheduling study blocks, or drafting academic/professional emails. Scope boundary: Teams chat/meetings → `teams-collaboration`; task lists in Planner/To Do → mention only; Gmail → not this pack."
 metadata:
   priority: 7
@@ -19,7 +20,6 @@ metadata:
       - "office hours"
     minScore: 6
 ---
-
 # Outlook email & calendar
 
 **Rule:** Email is **async** — subject line + first sentence must carry the ask. Calendar is **commitment** — block study time like classes.
@@ -89,4 +89,4 @@ No inspirational quotes for academic mail.
 ## Boundaries
 
 - Does not send email without user review
-- Institutional policies on AI-generated mail → **`academic-integrity`**
+- Institutional policies on AI-generated mail → follow the course or workplace AI-use policy

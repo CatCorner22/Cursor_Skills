@@ -1,10 +1,10 @@
 ---
 name: stable-architecture
+disable-model-invocation: true
 description: "Design code that avoids houses of cards: clear module boundaries, dependency direction, fail-fast invariants, and replaceable adapters. Use when structuring a feature, splitting services, reviewing coupling, or when changes in one file break unrelated areas. Scope boundary: line-level clarity → `clean-minimal-code`; defining what done looks like → `deliverable-first`; running tests while editing → `real-time-testing`."
 metadata:
   priority: 7
 ---
-
 # Stable architecture
 
 **Goal:** Removing or rewriting one layer does not collapse unrelated features. Dependencies point **toward stability** (domain rules), not toward frameworks.

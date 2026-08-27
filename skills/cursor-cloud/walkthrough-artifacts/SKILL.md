@@ -1,9 +1,9 @@
 ---
 name: walkthrough-artifacts
+disable-model-invocation: true
 description: "Create walkthrough artifacts (screenshots and screen recordings) that prove code changes work. Use when finishing tested changes and uploading demo evidence for the user."
 environments: [cloud]
 ---
-
 # Creating & Uploading Walkthrough Artifacts
 
 When your changes are complete, and you have completed testing / validation, you MUST demonstrate to the user that your changes are working.

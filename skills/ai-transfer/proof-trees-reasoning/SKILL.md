@@ -1,5 +1,6 @@
 ---
 name: proof-trees-reasoning
+disable-model-invocation: true
 description: "Declare reasoning DAG before prose: premises, claims, dependencies. Flag downstream if upstream fails. Use for multi-step arguments and agent plans. Scope boundary: dual-axis → `score-study-dual-axis`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "dependency graph"
     minScore: 6
 ---
-
 # Proof trees (reasoning DAG)
 
 **#12** · **Domain:** Mathematics · **Category:** architecture · **Difficulty:** 🔴 High
@@ -34,3 +34,6 @@ Self-check: weakest premise? Downstream auto-flag if premise fails.
 - Prototype as prompt scaffold (🟢) before full pipeline middleware (🟡/🔴)
 - Category router: **`ai-transfer-architecture`**
 - Catalog: **`ai-transfer-ecosystem-primer`**
+- Runtime plugin id: `proof_trees`
+- Also implements: `scientific_method`
+- Merge notes: Scientific-method plugin is this DAG, not a separate skill.

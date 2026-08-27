@@ -1,5 +1,6 @@
 ---
 name: nyx
+disable-model-invocation: true
 description: "Canonical character bible for Nyx, a recurring original character in this project — appearance, physique, tattoo map, personality, voice, wardrobe, scene variants, and image-generation prompt templates with reference sheets. Use when writing Nyx's dialogue or scenes, generating or reviewing her reference art, keeping a depiction consistent with the bible, or designing UI around her. Scope boundary: this is project reference material, not a capability skill — it carries no general guidance on image tooling, design systems, or coding, and must not fire on unrelated character, art, or UI work. Trigger only when Nyx is named."
 metadata:
   priority: 5
@@ -22,7 +23,6 @@ metadata:
     noneOf: []
     minScore: 7
 ---
-
 Canonical reference for **Nyx**: appearance, personality, voice, tattoos, and image-generation prompts. Use this file when writing scenes, generating assets, or designing UI around the character.
 
 ---

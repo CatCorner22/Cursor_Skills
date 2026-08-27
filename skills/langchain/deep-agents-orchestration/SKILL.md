@@ -1,8 +1,8 @@
 ---
 name: deep-agents-orchestration
+disable-model-invocation: true
 description: "Subagent delegation, task planning, and approval gates inside the `deepagents` harness: SubAgentMiddleware and the `task` tool, TodoListMiddleware and `write_todos`, and HITL interrupts on subagent tool calls. Use when a Deep Agent must delegate to a named subagent, plan multi-step work, or gate a tool call on human approval. Scope boundary: this covers orchestration inside the `deepagents` harness only — harness setup and middleware selection belong to `deep-agents-core`, approval gates on a plain LangChain agent to `langchain-middleware`, `interrupt()` in a hand-written graph to `langgraph-human-in-the-loop`, and a multi-agent request that has not chosen a framework to `build-agents`/`eve`."
 ---
-
 <overview>
 Deep Agents include three orchestration capabilities:
 

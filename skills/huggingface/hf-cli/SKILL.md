@@ -1,8 +1,8 @@
 ---
 name: hf-cli
+disable-model-invocation: true
 description: "Hugging Face Hub CLI (`hf`) for auth, repos, models, datasets, spaces, papers, jobs, buckets, cache, and endpoints. Use when the user needs a terminal/CLI workflow on the Hub (`hf`, `huggingface-cli`). Prefer specialized skills (huggingface-spaces, huggingface-llm-trainer, huggingface-papers, huggingface-best) for task-specific guidance. Do not use this skill for generic AI/ML questions that are not Hub CLI operations."
 ---
-
 Install: `curl -LsSf https://hf.co/cli/install.sh | bash -s`.
 
 The Hugging Face Hub CLI tool `hf` is available. IMPORTANT: The `hf` command replaces the deprecated `huggingface-cli` command.
