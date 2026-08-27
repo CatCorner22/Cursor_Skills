@@ -1,7 +1,7 @@
 ---
 name: skill-library-audit
 disable-model-invocation: true
-description: "Audit a multi-vendor agent-skill library for routing pathology — the defect classes that appear only when many packs from different vendors share one router: vendor steering, SKILL.md/overlay.yaml drift, silently disabled rules, unreachable guards, greedy descriptions, cross-pack territory claims, shadowed and cyclic routes, dangling references. Use when adding a skill pack, merging two libraries, or when skills fire on the wrong thing. Ships a runnable analyzer at scripts/audit_skill_library.py. Scope boundary: this audits a SKILL LIBRARY's routing metadata, not application code — for authoring a single new skill use skill-creator, and for reviewing ordinary source changes use code-review."
+description: "Audit a multi-vendor agent-skill library for routing pathology — the defect classes that appear only when many packs from different vendors share one router: vendor steering, SKILL.md/overlay.yaml drift, silently disabled rules, unreachable guards, greedy descriptions, cross-pack territory claims, shadowed and cyclic routes, dangling references. Use when adding a skill pack, merging two libraries, or when skills fire on the wrong thing. Ships a runnable analyzer at scripts/audit_skill_library.py. Scope boundary: this audits a SKILL LIBRARY's routing metadata, not application code; reviewing ordinary source changes or authoring an individual skill is out of scope."
 metadata:
   priority: 6
   pathPatterns:
@@ -64,7 +64,7 @@ python3 scripts/audit_skill_library.py skills/ --json > audit.json    # also: --
 
 Exit 1 if findings remain above the threshold, 2 if the root is unreadable. A file that fails to parse is finding SK001, not a tooling failure. If the script is absent, the exact checks are still hand-runnable: parse every `SKILL.md` and `overlay.yaml`; build the `name:` index; resolve every `targetSkill`/`upgradeToSkill` against it; deep-diff each `SKILL.md`/`overlay.yaml` pair. The heuristic checks below are not worth hand-running at scale.
 
-Calibration: a tuned run over this repo (89 skills, 9 packs, 11 overlays, 187 routing rules) emits **20 findings — 4 high, 7 medium, 9 low**. A run emitting 150 is measuring house convention, not defects.
+Calibration: a tuned run over this repo (189 skills, 19 packs, 11 overlays, ~190 routing rules, 2026-08-27) emits **a handful of findings** (single digits at medium+ severity after the second-pass fixes; 9 low-severity notes that are house idioms). A run emitting 150 is measuring house convention, not defects. Re-measure after any pack is added.
 
 ## Detector inventory
 
@@ -88,7 +88,7 @@ Calibration: a tuned run over this repo (89 skills, 9 packs, 11 overlays, 187 ro
 | SK016 | Priority inversion | **heuristic** | prose says "load `X` first" while `X` ranks below the library median priority | topological priority ordering along edges |
 | SK017 | Path-pattern shadowing | **heuristic** | a `pathPatterns` glob with **zero literal segments** (`**/*.tsx`) while another skill claims the same extension *with* literal segments | repo-wide claims with no scoped rival — breadth alone is not a defect |
 
-Two denominators are easy to get wrong. **SK003 is sibling-scoped**: in this repo `validate:` appears in 14 files and routing metadata in 34 of 89 skills (33 of them in `vercel/`), so a library-wide majority schema is `name + description` and would flag all 33 Vercel skills. Compare per-pack, over the population that uses the key. **SK006 measures an idiom**: 56 `upgradeToSkill: <own name>` sites across 9 skills is "load me in full", not 56 bugs. Prevalence test — ≥3 skills and ≥15% of routed rules ⇒ one aggregate low finding. The genuine defect is narrower: a routing edge to self whose *pattern describes a foreign framework*.
+Two denominators are easy to get wrong. **SK003 is sibling-scoped**: in this repo `validate:` appears in a minority of files and routing metadata is concentrated in `vercel/` (33 of its 33 skills vs almost none elsewhere), so a library-wide majority schema is `name + description` and would flag all 33 Vercel skills. Compare per-pack, over the population that uses the key. **SK006 measures an idiom**: 56 `upgradeToSkill: <own name>` sites across 9 skills is "load me in full", not 56 bugs. Prevalence test — ≥3 skills and ≥15% of routed rules ⇒ one aggregate low finding. The genuine defect is narrower: a routing edge to self whose *pattern describes a foreign framework*.
 
 ## 1. The prior — why greedy triggers are catastrophic only at scale
 
@@ -114,7 +114,7 @@ Two consequences drive the whole audit:
 
 ## 2. IDF, and the thing IDF does not measure
 
-`df(t)` = number of skills whose description + `promptSignals.phrases` + `retrieval.*` contain *t*; `idf(t) = ln(N / df(t))`. Measured over this repo's 89 descriptions — **use your own corpus's numbers, not these**:
+`df(t)` = number of skills whose description + `promptSignals.phrases` + `retrieval.*` contain *t*; `idf(t) = ln(N / df(t))`. Measured over an earlier 89-description snapshot of this repo — **use your own corpus's numbers, not these**:
 
 | Band | Measured members | Read as | Required gating |
 |---|---|---|---|
@@ -183,7 +183,7 @@ Procedure: enumerate every competitor product name appearing in any `message`, `
 
 ## 5. Drift, and the mirror rule
 
-Where both files exist, `overlay.yaml` is the machine-readable routing config and `SKILL.md` frontmatter is the human-edited copy. A fix applied to one and not the other **is not in force**. Live instance:
+Where both files exist, `overlay.yaml` is the machine-readable routing config and `SKILL.md` frontmatter is the human-edited copy. A fix applied to one and not the other **is not in force**. Historical instance from this repo (since fixed — both files now carry `@ai-sdk/gateway`):
 
 ```
 vercel/ai-sdk/SKILL.md:259   skipIfFileContains: 'gateway\(|@ai-sdk/gateway|@vercel/ai-gateway|ai-gateway'
