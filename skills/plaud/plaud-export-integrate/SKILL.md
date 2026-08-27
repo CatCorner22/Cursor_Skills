@@ -15,22 +15,23 @@ metadata:
       - [plaud, word]
     anyOf:
       - "export transcript"
-      - "27 formats"
     minScore: 6
 ---
 # Plaud export & integrate
 
 **Rule:** Export **edited** artifacts — transcript + your summary pass + highlights — not raw first drafts for submission.
 
-## Export formats (Plaud supports 27+)
+## Export formats
+
+Plaud's documented export matrix: audio as MP3/WAV; transcripts as TXT/SRT/DOCX/PDF; summaries as TXT/Markdown/DOCX/PDF; mind maps as PNG/Markdown only (not editable).
 
 | Format | Best for |
 |---|---|
 | **PDF** | Archive, print, submit where formatting fixed |
 | **Word (.docx)** | Further editing → **`word-documents`** |
 | **TXT / Markdown** | Git notes, Obsidian, dev workflows |
-| **Mind map** | Concept overview before exam |
-| **Audio clip** | Cite exact moment in presentation |
+| **Mind map (PNG/Markdown)** | Concept overview before exam |
+| **Audio clip (MP3/WAV)** | Cite exact moment in presentation |
 
 Pick format in app **Share / Export** menu (wording varies by platform).
 

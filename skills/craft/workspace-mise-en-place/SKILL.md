@@ -56,7 +56,7 @@ metadata:
 
 | Item | Skill / action |
 |---|---|
-| Branch checked out | `cursor-team-kit` |
+| Branch checked out | `new-branch-and-pr` (cursor-team-kit pack) |
 | `.env.local` / deps present | `bootstrap`, `env-vars` |
 | Test/lint command known | `real-time-testing` |
 | Acceptance checklist from issue | `deliverable-first` |

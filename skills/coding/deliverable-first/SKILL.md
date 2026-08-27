@@ -65,7 +65,7 @@ Lock interfaces before bodies:
 | UI | Props/types + state enum + Storybook story or static mock |
 | Module | Function signature + doc comment with pre/post conditions |
 
-Changing a contract after two adapters depend on it is a architecture smell — get contracts stable early (`stable-architecture`).
+Changing a contract after two adapters depend on it is an architecture smell — get contracts stable early (`stable-architecture`).
 
 ## Step 5 — Slice implementation loop
 

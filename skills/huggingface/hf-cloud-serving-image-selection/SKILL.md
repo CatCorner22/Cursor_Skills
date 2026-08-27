@@ -27,7 +27,7 @@ This page is AWS-maintained and lists every image family with example URIs, tags
 
 The example URLs use `763104351884` as the account ID for most regions. A few regions use different accounts (e.g. `eu-south-1` uses `692866216735`). Check the [Region Availability page](https://aws.github.io/deep-learning-containers/reference/region_availability/) when in doubt.
 
-**Exception: none currently.** Every image family used by this workflow is now on the AWS catalog page (TEI was added in late 2026). If you encounter a new family that isn't there, mirror it via `mirror_image.py` and pass the resulting URI directly.
+**Exception: none currently.** Every image family used by this workflow is now on the AWS catalog page (TEI was added to the catalog in late 2025). If you encounter a new family that isn't there, mirror it via `mirror_image.py` and pass the resulting URI directly.
 
 ## Quick decision
 

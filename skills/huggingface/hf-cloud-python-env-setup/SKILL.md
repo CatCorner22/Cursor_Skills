@@ -37,7 +37,7 @@ python3 scripts/setup_env.py        # macOS / Linux
 python  scripts/setup_env.py        # Windows (PowerShell / cmd)
 ```
 
-This script detects `uv` and uses it if available (faster), falls back to the stdlib `venv` module, creates `.venv/` with Python 3.12 (override: `python3 setup_env.py .venv 3.11`), refuses unsupported Python versions, installs from the bundled `requirements.txt`, and is idempotent. It also prints the correct interpreter path for the host OS (see below).
+This script detects `uv` and uses it if available (faster), falls back to the stdlib `venv` module, creates `.venv/` with Python 3.12 (override: `python3 scripts/setup_env.py .venv 3.11`), refuses unsupported Python versions, installs from the bundled `requirements.txt`, and is idempotent. It also prints the correct interpreter path for the host OS (see below).
 
 Manual equivalent:
 
@@ -75,7 +75,7 @@ Default `requirements.txt` covers SageMaker orchestration. Some deployments need
 ## Common pitfalls
 
 **Mysterious `pip install` resolution errors**
-Almost always Python 3.13+ trying to install packages without wheels yet, or installing into a polluted system Python. Recreate at 3.12: delete `.venv` and re-run `python3 setup_env.py .venv 3.12` (the script recreates the env when the version doesn't match, so you can also just re-run it).
+Almost always Python 3.13+ trying to install packages without wheels yet, or installing into a polluted system Python. Recreate at 3.12: delete `.venv` and re-run `python3 scripts/setup_env.py .venv 3.12` (the script recreates the env when the version doesn't match, so you can also just re-run it).
 
 **`pip install` succeeded but the script says "module not found"**
 You installed into a different interpreter than the one running the script. Always invoke Python explicitly: `.venv/bin/python -m pip install ...` and `.venv/bin/python deploy.py`.

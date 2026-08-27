@@ -357,7 +357,7 @@ const result = await graph.invoke(new Command({ resume: resumeMap }), config);
 </typescript>
 </ex-multiple-interrupts>
 
-User-fixable errors use `interrupt()` to pause and collect missing data — that's the pattern covered by this skill. For the full 4-tier error handling strategy (RetryPolicy, Command error loops, etc.), see the **fundamentals** skill.
+User-fixable errors use `interrupt()` to pause and collect missing data — that's the pattern covered by this skill. For the full 4-tier error handling strategy (transient/LLM-recoverable/user-fixable/unexpected, including RetryPolicy), see the **fundamentals** skill.
 
 ---
 

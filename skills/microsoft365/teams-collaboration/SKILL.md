@@ -66,5 +66,5 @@ metadata:
 
 ## Boundaries
 
-- Git/code collaboration for CS projects → **`cursor-team-kit`** + repo, not Teams files as source of truth
+- Git/code collaboration for CS projects → **`new-branch-and-pr`** (cursor-team-kit pack) + repo, not Teams files as source of truth
 - Group-work honesty and citation rules → **`citation-literacy`** plus the course AI-use policy

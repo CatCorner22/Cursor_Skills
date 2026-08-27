@@ -1,7 +1,7 @@
 ---
 name: academic-ecosystem-primer
 disable-model-invocation: true
-description: "Router for college and academic work in this library: writing, citations, study planning, source attribution, lecture notes, and presentations. Use when the user is a student, mentions college/school/coursework, or asks how to approach an assignment, paper, exam prep, or lab. Scope boundary: CS/software implementation → `coding-ecosystem-primer`; AI/ML engineering → huggingface/langchain packs; GitHub PR workflow for group code projects → `cursor-team-kit`; general execution posture → `proactive-agency`."
+description: "Router for college and academic work in this library: writing, citations, study planning, source attribution, lecture notes, and presentations. Use when the user is a student, mentions college/school/coursework, or asks how to approach an assignment, paper, exam prep, or lab. Scope boundary: CS/software implementation → `coding-ecosystem-primer`; AI/ML engineering → huggingface/langchain packs; GitHub PR workflow for group code projects → `new-branch-and-pr` and the rest of the cursor-team-kit pack; general execution posture → `proactive-agency`."
 metadata:
   priority: 8
   promptSignals:
@@ -49,7 +49,7 @@ Pick the **smallest set of skills** for the assignment type. This pack is **disc
 | Word / Excel / PowerPoint / Teams / Outlook | **`m365-ecosystem-primer`** |
 | Lecture recording → study notes (Plaud) | **`plaud-ecosystem-primer`** |
 | Summarize an AI/CS arXiv paper | **`huggingface-papers`** |
-| Group project git/PR workflow | **`cursor-team-kit`** |
+| Group project git/PR workflow | **`new-branch-and-pr`** (cursor-team-kit pack) |
 | Stuck, prioritizing, weekly planning | **`craft-systems-primer`** → `ooda-lean-loop` |
 | Prep before starting (files, week setup) | **`workspace-mise-en-place`** |
 

@@ -92,7 +92,7 @@ First footnote: full cite. Later notes: shortened. Bibliography: full entries al
 
 ## Missing metadata workflow
 
-If author/date/page unknown, say so and use style-specific placeholder (e.g., APA: `(n.d.)`, `(n.p.)`) — **never guess** a year or page.
+If author/date/page unknown, say so and use style-specific placeholder (APA: `(n.d.)` for no date, `para. 4` or a section name for no page; MLA: `(n.p.)` for no publisher) — **never guess** a year or page.
 
 ## Output format
 
