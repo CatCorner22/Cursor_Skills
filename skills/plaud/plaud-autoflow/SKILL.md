@@ -7,8 +7,7 @@ metadata:
   promptSignals:
     phrases:
       - "plaud autoflow"
-      - "automatic transcription"
-      - "auto summarize"
+      - "plaud autoflow"
       - "email summary plaud"
     allOf:
       - [plaud, auto]

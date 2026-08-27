@@ -6,18 +6,16 @@ metadata:
   priority: 8
   promptSignals:
     phrases:
-      - "lecture notes"
-      - "record class"
+      - "plaud lecture notes"
       - "study from recording"
       - "plaud lecture"
       - "exam prep from lecture"
     allOf:
       - [lecture, plaud]
-      - [lecture, recording]
-      - [class, transcript]
+      - [plaud, lecture]
+      - [plaud, class]
     anyOf:
-      - "record lecture"
-      - "professor lecture"
+      - "plaud lecture"
     minScore: 6
 ---
 # Plaud lecture notes (student workflow)

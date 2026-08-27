@@ -8,7 +8,7 @@ metadata:
     phrases:
       - "start plaud recording"
       - "plaud note"
-      - "record lecture"
+      - "record lecture with plaud"
       - "phone call recording"
       - "press to highlight"
     allOf:

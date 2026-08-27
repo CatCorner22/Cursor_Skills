@@ -12,7 +12,7 @@ metadata:
       - "word document"
       - "microsoft word"
       - "format my essay"
-      - "table of contents"
+      - "word table of contents"
       - "track changes"
       - "word styles"
     allOf:

@@ -7,11 +7,10 @@ metadata:
   pathPatterns:
     - '**/*.xlsx'
     - '**/*.xls'
-    - '**/*.csv'
   promptSignals:
     phrases:
       - "excel formula"
-      - "spreadsheet"
+      - "excel spreadsheet"
       - "pivot table"
       - "excel chart"
       - "vlookup"

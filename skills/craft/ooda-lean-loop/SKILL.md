@@ -8,9 +8,6 @@ metadata:
     phrases:
       - "OODA"
       - "OODA loop"
-      - "what should I do next"
-      - "prioritize"
-      - "kaizen"
       - "small batch"
       - "stop the line"
       - "too much WIP"

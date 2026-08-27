@@ -15,7 +15,7 @@ metadata:
       - [plaud, transcribe]
       - [transcript, speaker]
     anyOf:
-      - "diarization"
+      - "plaud diarization"
       - "112 languages"
     minScore: 6
 ---

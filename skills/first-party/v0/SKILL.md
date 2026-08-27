@@ -16,7 +16,6 @@ metadata:
     - '\b(?:npm|pnpm|bun|yarn)\s+(?:install|i|add)\s+[^\n]*@v0-sdk/'
     - '\bV0_API_KEY\b'
   importPatterns:
-    - 'v0'
     - 'v0-sdk'
     - '@v0-sdk/react'
     - '@v0-sdk/ai-tools'

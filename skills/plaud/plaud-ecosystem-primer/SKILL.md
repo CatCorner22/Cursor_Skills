@@ -15,7 +15,7 @@ metadata:
     allOf:
       - [plaud, transcript]
       - [plaud, summary]
-      - [lecture, recording]
+      - [plaud, lecture]
     anyOf:
       - "Plaud Note"
       - "Plaud NotePin"
@@ -61,7 +61,7 @@ Track monthly minutes before long exam-week recording blocks.
 |---|---|
 | Polish essay from transcript | `academic-writing` |
 | Format references | `citation-literacy` |
-| Flashcards / exam schedule | `study-system` (when added) |
+| Flashcards / exam schedule | `study-system` |
 | Final doc in Word | `word-documents` |
 | Share with group | `teams-collaboration` + `onedrive-organization` |
 

@@ -8,7 +8,7 @@ metadata:
     phrases:
       - "outlook email"
       - "outlook calendar"
-      - "schedule meeting"
+      - "outlook meeting"
       - "email professor"
       - "microsoft outlook"
     allOf:
@@ -17,7 +17,6 @@ metadata:
       - [email, professor]
     anyOf:
       - "Microsoft Outlook"
-      - "office hours"
     minScore: 6
 ---
 # Outlook email & calendar

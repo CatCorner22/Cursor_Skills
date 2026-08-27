@@ -8,7 +8,7 @@ metadata:
     phrases:
       - "plaud summary"
       - "summary template"
-      - "action items"
+      - "plaud action items"
       - "multidimensional summary"
       - "meeting minutes plaud"
     allOf:
