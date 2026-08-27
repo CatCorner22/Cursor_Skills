@@ -91,10 +91,6 @@ retrieval:
     - add Snowflake credentials to my project
 chainTo:
   -
-    pattern: "from\\s+['\"]@vercel/connect/eve['\"]"
-    targetSkill: eve
-    message: 'eve + Vercel Connect import detected — loading eve framework guidance alongside the connect() helper and channel credential patterns.'
-  -
     pattern: 'SLACK_(BOT|SIGNING)_(TOKEN|SECRET)|SLACK_WEBHOOK_URL|GITHUB_(APP_PRIVATE_KEY|APP_ID|INSTALLATION_ID|WEBHOOK_SECRET)|LINEAR_(API_KEY|WEBHOOK_SECRET)'
     targetSkill: vercel-connect
     message: 'Hand-managed Slack/GitHub/Linear secrets detected — use Vercel Connect + connectSlackCredentials() / connectGitHubCredentials() / connectLinearCredentials() to remove the need for these env vars.'

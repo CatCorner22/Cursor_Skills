@@ -270,14 +270,14 @@ validate:
     skipIfFileContains: 'message\.parts|part\.type'
 chainTo:
   -
-    pattern: 'process\.env\.(OPENAI_API_KEY|ANTHROPIC_API_KEY)|openai\([''"]|anthropic\([''"]|\bgpt-4o\b'
+    pattern: 'process\.env\.(OPENAI_API_KEY|ANTHROPIC_API_KEY)|openai\([''"]|anthropic\([''"]'
     targetSkill: ai-gateway
-    message: 'Direct provider API key or stale model detected — loading AI Gateway guidance for OIDC auth, routing, and failover.'
+    message: 'Direct provider API key detected — loading AI Gateway guidance for OIDC auth, routing, and failover. (Stale model IDs like gpt-4o are handled by ai-gateway''s own validate rules.)'
     skipIfFileContains: 'gateway\(|@ai-sdk/gateway|VERCEL_OIDC'
   -
-    pattern: 'DurableAgent|use workflow|use step|from\s+[''"]workflow[''"]|@workflow/'
+    pattern: 'use workflow|use step|from\s+[''"]workflow[''"]'
     targetSkill: workflow
-    message: 'Workflow SDK pattern detected in AI code — loading Workflow SDK guidance for durable agent execution, step isolation, and crash-safe orchestration.'
+    message: 'Workflow SDK pattern detected in AI code — loading Workflow SDK guidance for durable agent execution, step isolation, and crash-safe orchestration. (DurableAgent/@workflow/ai alone is handled by the workflow skill''s own edge to avoid a routing loop.)'
     skipIfFileContains: 'createWorkflow|withWorkflow'
   -
     pattern: "from\\s+['\"]langchain['\"]|from\\s+['\"]@langchain/"

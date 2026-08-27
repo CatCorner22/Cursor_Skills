@@ -92,8 +92,8 @@ chainTo:
     skipIfFileContains: "@neondatabase/serverless|from\\s+['\"]@neondatabase"
   -
     pattern: "from\\s+['\"]@vercel/kv['\"]"
-    targetSkill: nextjs
-    message: '@vercel/kv is sunset — loading Next.js guidance for integrating @upstash/redis with App Router.'
+    targetSkill: vercel-storage
+    message: '@vercel/kv is sunset — stay in Vercel Storage guidance for the @upstash/redis migration path.'
   -
     pattern: "createPool\\s*\\(|from\\s+['\"]@vercel/postgres/pool['\"]"
     targetSkill: vercel-storage

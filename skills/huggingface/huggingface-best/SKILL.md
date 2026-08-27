@@ -6,10 +6,9 @@ description: >
   wants to know what AI model to use, or wants to compare models by benchmark scores.
   Triggers on: "best model for X", "what model should I use for", "top models for [task]",
   "which model runs on my laptop/machine/device", "recommend a model for", "what LLM should
-  I use for", "compare models for", "what's state of the art for", or any question about
-  choosing an AI model for a specific use case. Always use this skill when the user wants
-  model recommendations or comparisons, even if they don't explicitly mention HuggingFace
-  or benchmarks.
+  I use for", "compare models for", "what's state of the art for". Scope boundary: for
+  choosing a Vercel AI SDK provider slug use ai-sdk; for SageMaker serving images use
+  hf-cloud-serving-image-selection; for VRAM estimation use hf-mem.
 ---
 # HuggingFace Best Model Finder
 
