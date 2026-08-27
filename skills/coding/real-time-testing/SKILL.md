@@ -1,5 +1,6 @@
 ---
 name: real-time-testing
+disable-model-invocation: true
 description: "Test code continuously while writing it: red-green-refactor, watch mode, typecheck and lint after every slice, and never report done without fresh command output. Use when implementing features, fixing bugs, or when the user asks for TDD, test as you go, verify while coding, or real-time testing. Scope boundary: full browser/product verification after the feature works → `verification`; Playwright CLI mechanics → `playwright-cli`; Adobe Jest patterns → `appbuilder-testing`; CI loop on a PR → `loop-on-ci`/`fix-ci`."
 metadata:
   priority: 9
@@ -17,7 +18,6 @@ metadata:
       - [test, while]
       - [verify, while]
 ---
-
 # Real-time testing
 
 **Rule:** Code is not written in bulk and tested at the end. Every meaningful edit is followed by the **narrowest command that proves the edit**, before the next edit.

@@ -1,5 +1,6 @@
 ---
 name: orchard-graft-transfer
+disable-model-invocation: true
 description: "Graft a specialist scion onto a safe rootstock output: keep the trusted base, attach expert additions at a marked join. Use when mixing a general answer with a domain specialist pass. Scope boundary — multi-model fusion → `wine-blending-fusion`; foreign genre skeleton → `cross-pollination-structure`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "capability transfer"
     minScore: 6
 ---
-
 # Orchard graft capability transfer
 
 **#33** · **Domain:** Horticulture · **Category:** extension · **Difficulty:** 🟡 Medium

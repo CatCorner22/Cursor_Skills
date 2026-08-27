@@ -932,6 +932,7 @@ def write_skill(path: Path, name: str, description: str, body: str, phrases=None
     minScore: 6"""
     front = f"""---
 name: {name}
+disable-model-invocation: true
 description: "{description.replace('"', '\\"')}"
 metadata:
   priority: 7{signals}

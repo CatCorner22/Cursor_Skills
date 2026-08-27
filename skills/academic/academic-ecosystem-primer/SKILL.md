@@ -1,5 +1,6 @@
 ---
 name: academic-ecosystem-primer
+disable-model-invocation: true
 description: "Router for college and academic work in this library: writing, citations, study planning, source attribution, lecture notes, and presentations. Use when the user is a student, mentions college/school/coursework, or asks how to approach an assignment, paper, exam prep, or lab. Scope boundary: CS/software implementation → `coding-ecosystem-primer`; AI/ML engineering → huggingface/langchain packs; GitHub PR workflow for group code projects → `cursor-team-kit`; general execution posture → `proactive-agency`."
 metadata:
   priority: 8
@@ -29,7 +30,6 @@ metadata:
       - "literature review"
     minScore: 6
 ---
-
 # Academic ecosystem primer
 
 Pick the **smallest set of skills** for the assignment type. This pack is **discipline-agnostic** — it governs *how to succeed in coursework*, not which major you chose.

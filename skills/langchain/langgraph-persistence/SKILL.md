@@ -1,8 +1,8 @@
 ---
 name: langgraph-persistence
+disable-model-invocation: true
 description: "Persist LangGraph state: checkpointers, `thread_id`, time travel over checkpoint history, the cross-thread `Store`, and subgraph checkpointer scoping. Use when a LangGraph graph must survive a restart, remember a conversation across turns, replay or fork history, or share memory between threads. Scope boundary: graph construction belongs to `langgraph-fundamentals`, pausing and resuming for a human to `langgraph-human-in-the-loop`, and application database or session storage that is not a LangGraph checkpointer to that provider's own skill (`supabase`, `vercel-storage`)."
 ---
-
 <overview>
 LangGraph's persistence layer enables durable execution by checkpointing graph state:
 

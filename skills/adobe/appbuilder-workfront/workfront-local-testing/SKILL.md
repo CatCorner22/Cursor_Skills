@@ -1,9 +1,9 @@
 ---
 name: workfront-local-testing
+disable-model-invocation: true
 description: "Use when making Workfront load your locally running App Builder extension, or when a local extension that worked before has stopped appearing. Reach for this whenever the user is: trying to preview their local build inside Workfront before deploying; setting `extensionOverride` in localStorage but Workfront still shows the published version; seeing buttons, widgets, or left-panel items not appear in Workfront even though `aio app dev` is running; hitting a cert warning on localhost that blocks Workfront from loading the extension; seeing a local extension silently break after a Chrome update (Chrome 142+ blocks localhost connections); asking what value to set `extensionOverride` to and exactly where to set it in the browser; asking whether a custom-form widget should appear in the field picker; or wondering if Workfront admin rights are needed to see locally-loaded extension points. Separate from `appbuilder-workfront` (the umbrella) and `appbuilder-project-init` (scaffolding / dev server)."
 license: Apache-2.0
 ---
-
 # Test a local extension inside Workfront
 
 After `aio app dev` (command catalog in `appbuilder-workfront` → `references/commands.md`) you have a localhost URL. This makes Workfront load your **local** app instead of (or alongside) published ones — no deploy required.

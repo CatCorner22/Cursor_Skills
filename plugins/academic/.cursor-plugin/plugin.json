@@ -1,6 +1,6 @@
 {
   "name": "academic",
   "version": "1.0.0-snapshot",
-  "description": "Skill pack academic from the Cursor_Skills snapshot",
+  "description": "College coursework: writing, citations, study system. Skills are manual.",
   "skills": "skills"
 }

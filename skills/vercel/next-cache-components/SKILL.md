@@ -1,5 +1,6 @@
 ---
 name: next-cache-components
+disable-model-invocation: true
 description: Next.js 16 Cache Components guidance — PPR, use cache directive, cacheLife, cacheTag, updateTag, and migration from unstable_cache. Use when implementing partial prerendering, caching strategies, or migrating from older Next.js cache patterns.
 metadata:
   priority: 6
@@ -76,9 +77,7 @@ chainTo:
     targetSkill: nextjs
     message: 'Cache component detected — loading Next.js best practices for RSC boundaries and data patterns alongside caching.'
     skipIfFileContains: 'next-best-practices'
-
 ---
-
 # Cache Components (Next.js 16+)
 
 Cache Components enable Partial Prerendering (PPR) - mix static, cached, and dynamic content in a single route.

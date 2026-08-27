@@ -1,5 +1,6 @@
 ---
 name: vercel-connect
+disable-model-invocation: true
 description: Vercel Connect expert guidance — securely obtain scoped OAuth tokens for third-party services (Slack, GitHub, MCP servers, OAuth, Snowflake) on behalf of apps or users via Vercel OIDC. Use when wiring up third-party API access, connecting to MCP servers, sending Slack messages, accessing GitHub APIs, receiving webhook events from Slack/Linear/GitHub and forwarding them to your agents and apps, or building eve agent connections.
 metadata:
   priority: 5
@@ -99,7 +100,6 @@ chainTo:
     message: 'Hand-managed Slack/GitHub/Linear secrets detected — use Vercel Connect + connectSlackCredentials() / connectGitHubCredentials() / connectLinearCredentials() to remove the need for these env vars.'
     skipIfFileContains: 'connectSlackCredentials|connectGitHubCredentials|connectLinearCredentials|@vercel/connect'
 ---
-
 # Vercel Connect Skill
 
 ## Overview

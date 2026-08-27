@@ -1,5 +1,6 @@
 ---
 name: migrate-to-builds
+disable-model-invocation: true
 description: Test that a Cloud Agent environment will work with prebuilt environment builds and recommend any required changes. Use when the user wants to migrate to builds, test build compatibility, or follow the Builds page setup-agent flow.
 environments: [cloud]
 ---

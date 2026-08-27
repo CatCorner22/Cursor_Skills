@@ -13,6 +13,8 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 ./scripts/load-all.sh
 ```
 
+**Activation:** only [`proactive-agency`](skills/first-party/proactive-agency/SKILL.md) is always on (`metadata.sessionStart: true`). Every other skill has `disable-model-invocation: true` — mention it by name or attach it. Full inventory: [docs/SKILL-PLUGIN-CATALOG.md](docs/SKILL-PLUGIN-CATALOG.md).
+
 ## Packs
 
 | Pack | Skills | What it covers |

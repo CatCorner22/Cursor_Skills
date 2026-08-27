@@ -1,5 +1,6 @@
 ---
 name: onedrive-organization
+disable-model-invocation: true
 description: "Organize files in Microsoft OneDrive and SharePoint: folder structure for semesters, sharing links, permissions, version history, and sync. Use when storing coursework, sharing group files, or recovering previous document versions. Scope boundary: in-app editing → word/excel/powerpoint skills; Google Drive → not this pack."
 metadata:
   priority: 6
@@ -18,7 +19,6 @@ metadata:
       - "SharePoint"
     minScore: 6
 ---
-
 # OneDrive organization
 
 **Rule:** **One source of truth** per file. No `essay_final_FINAL2.docx` — use version history instead.

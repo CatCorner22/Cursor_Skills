@@ -1,9 +1,9 @@
 ---
 name: workfront-ui-extension
+disable-model-invocation: true
 description: "Use when building or editing the React/Spectrum front-end SPA of a Workfront App Builder extension. Reach for this whenever the user is: registering or changing extension points in `ExtensionRegistration` — a Main Menu button, a left-panel (`secondaryNav`) item for a specific Workfront object type (Project, Task, Issue, Portfolio, Program), or a custom-form widget with specific height and width; adding a new route in `App.js` to match an extension point URL; reading the Workfront shared context to get the current user, `objCode`, `objID`, or `hostname`; calling a Runtime action from the SPA via `actionWebInvoke`; or debugging a widget or route that renders blank after being registered. Never call Workfront or Adobe APIs directly from the SPA — all API calls belong in a Runtime action (see `workfront-actions`)."
 license: Apache-2.0
 ---
-
 # Workfront UI extension (front end)
 
 Part of the `appbuilder-workfront` family. This is the **front end** — the app screens the user sees (the "SPA"). It registers **extension points** (the spots where the app appears in Workfront) and calls **Runtime actions** (the cloud back end) for all data.

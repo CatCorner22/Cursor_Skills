@@ -1,5 +1,6 @@
 ---
 name: cross-pollination-structure
+disable-model-invocation: true
 description: "Borrow a foreign genre skeleton (contract, tech spec) and plant the current content into it. Use when the native outline is weak. Scope boundary — graft a specialist passage → `orchard-graft-transfer`; multi-model blend → `wine-blending-fusion`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "transplant outline"
     minScore: 6
 ---
-
 # Cross-pollination of genre structure
 
 **#45** · **Domain:** Plant breeding / rhetoric · **Category:** advanced · **Difficulty:** 🔴 High

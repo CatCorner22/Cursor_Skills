@@ -1,5 +1,6 @@
 ---
 name: workflow
+disable-model-invocation: true
 description: Vercel Workflow SDK expert guidance. Use when building durable workflows, long-running tasks, API routes or agents that need pause/resume, retries, step-based execution, or crash-safe orchestration with Vercel Workflow.
 metadata:
   priority: 9
@@ -405,7 +406,6 @@ retrieval:
     - pause/resume
     - durable
 ---
-
 ## *CRITICAL*: Always Use Correct `workflow` Documentation
 
 Your knowledge of `workflow` is outdated.

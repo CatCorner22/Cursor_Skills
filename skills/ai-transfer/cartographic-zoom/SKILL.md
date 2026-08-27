@@ -1,5 +1,6 @@
 ---
 name: cartographic-zoom
+disable-model-invocation: true
 description: "Generate country/city/street zoom levels: 1–2 sentences, 1–2 paragraphs, full deep-dive. Detect from query or offer zoom-in. Use when verbosity mismatch hurts UX. Scope boundary: stage layout → `stage-blocking-layout`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "summary vs deep dive"
     minScore: 6
 ---
-
 # Cartographic zoom levels
 
 **#14** · **Domain:** Cartography · **Category:** architecture · **Difficulty:** 🟡 Medium

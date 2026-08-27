@@ -1,5 +1,6 @@
 ---
 name: env-vars
+disable-model-invocation: true
 description: Vercel environment variable expert guidance. Use when working with .env files, vercel env commands, OIDC tokens, or managing environment-specific configuration.
 metadata:
   priority: 7
@@ -43,9 +44,7 @@ retrieval:
     - vercel env
     - OIDC
     - environment variable
-
 ---
-
 # Vercel Environment Variables
 
 You are an expert in Vercel environment variable management — `.env` file conventions, the `vercel env` CLI, OIDC token lifecycle, and environment-specific configuration.

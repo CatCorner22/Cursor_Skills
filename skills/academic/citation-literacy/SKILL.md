@@ -1,5 +1,6 @@
 ---
 name: citation-literacy
+disable-model-invocation: true
 description: "Format and check academic citations: APA 7, MLA 9, and Chicago (notes-bibliography), in-text vs bibliography, common mistakes, and when to use which style. Use when the user asks how to cite a source, format references, or fix bibliography entries. Scope boundary: writing the paper body → `academic-writing`; claim-level attribution → `journalistic-attribution`; DOI/URL lookup mechanics only when tied to a citation question."
 metadata:
   priority: 8
@@ -21,7 +22,6 @@ metadata:
       - "how do I cite"
     minScore: 6
 ---
-
 # Citation literacy
 
 **Rule:** Cite to **credit**, **locate**, and **support** — not to decorate. Every in-text cite must appear in the reference list and vice versa.

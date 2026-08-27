@@ -1,6 +1,6 @@
 {
   "name": "cursor-cloud",
   "version": "1.0.0-snapshot",
-  "description": "Skill pack cursor-cloud from the Cursor_Skills snapshot",
+  "description": "Cursor Cloud Agent environment, snapshots, subscriptions, canvases. Skills are manual.",
   "skills": "skills"
 }

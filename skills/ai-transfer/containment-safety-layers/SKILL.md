@@ -1,5 +1,6 @@
 ---
 name: containment-safety-layers
+disable-model-invocation: true
 description: "Require independent safety layers (pattern, keyword, policy) that can each fail closed. Use for high-stakes generation, not everyday chat. Scope boundary — this is layered containment, not a jailbreak keyword skill; phase gating → `sterile-cockpit-context`; risk color → `underwriting-risk-gate`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "BSL layers"
     minScore: 6
 ---
-
 # Containment safety layers
 
 **#46** · **Domain:** Biosafety (BSL) · **Category:** advanced · **Difficulty:** 🔴 High

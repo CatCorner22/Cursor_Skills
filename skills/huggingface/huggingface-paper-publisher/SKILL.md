@@ -1,8 +1,8 @@
 ---
 name: huggingface-paper-publisher
+disable-model-invocation: true
 description: Publish and manage research papers on Hugging Face Hub. Use to create markdown research-article drafts, check or GET-index a paper page, link arXiv IDs into model/dataset/Space READMEs, and generate citations. Claim authorship, POST-index, and paper search belong in the huggingface-papers skill.
 ---
-
 # Overview
 
 Tools for linking research papers to Hugging Face artifacts and drafting markdown articles. Indexing, authorship claims, and Hub paper search are implemented by Hub APIs documented in `huggingface-papers` — not by extra `paper_manager.py` subcommands.

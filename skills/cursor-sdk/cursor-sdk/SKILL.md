@@ -1,8 +1,8 @@
 ---
 name: cursor-sdk
+disable-model-invocation: true
 description: Guide users building apps, scripts, CI pipelines, or automations on top of the Cursor TypeScript SDK (`@cursor/sdk`). Use this skill whenever the user mentions integrating, installing, or writing code against the Cursor SDK; whenever they say `Agent.create`, `Agent.prompt`, `Agent.resume`, `agent.send`, `run.stream`, `CursorAgentError`, or `@cursor/sdk`; whenever they ask to run Cursor agents programmatically from a script, CI/CD pipeline, GitHub Action, backend service, or any other code that isn't the Cursor IDE itself; and whenever they want to pick between local and cloud runtime, configure MCP servers for an SDK agent, or handle streaming, cancellation, or errors from an SDK agent. Also trigger when a user is wiring Cursor into an automation, writing a bot that runs Cursor, or porting REST `/v1/agents` calls to the SDK. Scope boundary — this skill is ONLY for driving Cursor's own coding agent from code (`@cursor/sdk`). For building a user-facing AI agent application, use `build-agents` / `eve` instead; do not claim generic "build me an agent" prompts that never mention Cursor or `@cursor/sdk`. Use this eagerly rather than answering from memory; the SDK surface evolves and this skill plus its references are the source of truth for the external package.
 ---
-
 # Cursor SDK
 
 The Cursor TypeScript SDK (`@cursor/sdk`) runs Cursor agents programmatically. The same interfaces drives the local runtime (agent runs on your machine against your files) and the cloud runtime (agent runs on Cursor-hosted or self-hosted infrastructure against a cloned repo and opens PRs).

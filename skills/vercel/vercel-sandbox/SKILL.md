@@ -1,5 +1,6 @@
 ---
 name: vercel-sandbox
+disable-model-invocation: true
 description: Vercel Sandbox + agent-browser guidance — run headless Chrome in Firecracker microVMs for screenshots, accessibility snapshots, and browser automation. Use when building agent-browser or scheduled scraping flows on Vercel. For generic untrusted-code isolation, still use @vercel/sandbox APIs documented here after the browser sections.
 metadata:
   priority: 4
@@ -89,9 +90,7 @@ chainTo:
     pattern: 'child_process.*exec\(|execSync\(|spawn\(.*\{.*shell:\s*true'
     targetSkill: vercel-sandbox
     message: 'Shell exec for code execution detected — run untrusted or AI-generated commands inside @vercel/sandbox instead of the agent host.'
-
 ---
-
 # Browser Automation with Vercel Sandbox
 
 Run agent-browser + headless Chrome inside ephemeral Vercel Sandbox microVMs. A Linux VM spins up on demand, executes browser commands, and shuts down. Works with any Vercel-deployed framework (Next.js, SvelteKit, Nuxt, Remix, Astro, etc.).

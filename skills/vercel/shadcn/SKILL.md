@@ -1,5 +1,6 @@
 ---
 name: shadcn
+disable-model-invocation: true
 description: shadcn/ui expert guidance — CLI, component installation, composition patterns, custom registries, theming, Tailwind CSS integration, and high-quality interface design. Use when initializing shadcn, adding components, composing product UI, building custom registries, configuring themes, or troubleshooting component issues.
 metadata:
   priority: 6
@@ -43,9 +44,7 @@ retrieval:
     - registry
     - theme
     - components.json
-
 ---
-
 # shadcn/ui
 
 You are an expert in shadcn/ui — a collection of beautifully designed, accessible, and customizable React components built on Radix UI primitives and Tailwind CSS. Components are added directly to your codebase as source code, not installed as a dependency.

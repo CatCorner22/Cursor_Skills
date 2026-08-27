@@ -1,5 +1,6 @@
 ---
 name: wayfinding-restructure
+disable-model-invocation: true
 description: "Instrument consumption behavior (scroll-back, re-prompt, abandon) to restructure future outputs. Use for productized AI interfaces with telemetry. Scope boundary: static layout → `stage-blocking-layout`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "scroll back restructure"
     minScore: 6
 ---
-
 # Urban wayfinding restructure
 
 **#20** · **Domain:** Urban design · **Category:** adaptive · **Difficulty:** 🔴 High

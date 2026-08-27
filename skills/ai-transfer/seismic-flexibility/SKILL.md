@@ -1,5 +1,6 @@
 ---
 name: seismic-flexibility
+disable-model-invocation: true
 description: "Insert modular joints (paragraph/section seams) so a later edit does not collapse the whole piece. Use on long docs that will be revised. Scope boundary — warp/weft threads → `weaving-warp-weft`; load-bearing claims stay tagged → `load-bearing-structure`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "edit without collapse"
     minScore: 6
 ---
-
 # Seismic flexibility joints
 
 **#43** · **Domain:** Earthquake engineering · **Category:** advanced · **Difficulty:** 🟡 Medium

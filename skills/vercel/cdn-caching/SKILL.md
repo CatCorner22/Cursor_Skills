@@ -1,5 +1,6 @@
 ---
 name: cdn-caching
+disable-model-invocation: true
 description: Debug Vercel CDN caching — cache hit rate, stale content, revalidation behavior, ISR + PPR, per-request cache reasons (cacheReason) and PPR state (ppr_state), and costs.
 metadata:
   priority: 6
@@ -71,7 +72,6 @@ chainTo:
     targetSkill: next-cache-components
     message: 'Next.js cache directives detected — loading Cache Components guidance for revalidate/tag tuning.'
 ---
-
 # Vercel Caching
 
 You are an expert in understanding Vercel's caching infrastructure, and how the CDN Cache, ISR, and PPR work.

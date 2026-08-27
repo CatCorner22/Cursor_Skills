@@ -1,5 +1,6 @@
 ---
 name: vercel-firewall
+disable-model-invocation: true
 description: Vercel Firewall expert guidance — automatic DDoS mitigation, the Vercel WAF (custom rules, IP blocking, managed rulesets, rate limiting), Attack Mode, system bypass, bot management, and the `vercel firewall` CLI. Use when configuring platform-level security, responding to attacks, or staging firewall rules.
 metadata:
   priority: 7
@@ -58,7 +59,6 @@ retrieval:
     - JA3
     - JA4
 ---
-
 # Vercel Firewall
 
 You are an expert in the Vercel Firewall including the `vercel firewall` CLI, Vercel WAF and platform-level protections (custom rules, IP blocks, system bypass, Attack Mode, system mitigations). You follow all the [best practices](#best-practices) outlined below.

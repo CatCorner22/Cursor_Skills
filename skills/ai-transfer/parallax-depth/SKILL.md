@@ -1,5 +1,6 @@
 ---
 name: parallax-depth
+disable-model-invocation: true
 description: "Estimate reasoning depth from the shift between the current query and recent history (deep/medium/shallow). Use to set budget before a long answer. Scope boundary — START classes → `emergency-triage-compute`; zoom level → `cartographic-zoom`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "reasoning budget depth"
     minScore: 6
 ---
-
 # Parallax depth of query vs history
 
 **#50** · **Domain:** Photography / surveying · **Category:** advanced · **Difficulty:** 🟡 Medium

@@ -1,5 +1,6 @@
 ---
 name: fermentation-feedback
+disable-model-invocation: true
 description: "Mid-generation monitoring: user activity, corrections typing, deadlines, confidence — adjust or abort mid-stream. Use for long agent runs and streaming workflows. Scope boundary: post-hoc AAR → `after-action-review`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "streaming adjust"
     minScore: 6
 ---
-
 # Fermentation environmental feedback
 
 **#19** · **Domain:** Biochemistry / food science · **Category:** adaptive · **Difficulty:** 🔴 High

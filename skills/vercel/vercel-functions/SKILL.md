@@ -1,5 +1,6 @@
 ---
 name: vercel-functions
+disable-model-invocation: true
 description: Vercel Functions expert guidance — Serverless Functions, Edge Functions, Fluid Compute, streaming, Cron Jobs, and runtime configuration. Use when configuring, debugging, or optimizing server-side code running on Vercel.
 metadata:
   priority: 8
@@ -166,9 +167,7 @@ chainTo:
     targetSkill: workflow
     message: 'Manual retry logic in serverless handler — loading Workflow SDK guidance for automatic retries with durable execution.'
     skipIfFileContains: 'use workflow|use step|@vercel/workflow|from\s+[''""](workflow)[''""]'
-
 ---
-
 # Vercel Functions
 
 You are an expert in Vercel Functions — the compute layer of the Vercel platform.

@@ -1,5 +1,6 @@
 ---
 name: nextjs
+disable-model-invocation: true
 description: Next.js App Router expert guidance. Use when building, debugging, or architecting Next.js applications — routing, Server Components, Server Actions, Cache Components, layouts, middleware/proxy, data fetching, rendering strategies, and deployment on Vercel.
 metadata:
   priority: 5
@@ -282,9 +283,7 @@ retrieval:
     - set up middleware for auth redirects
     - configure caching for this data fetch
     - set up server rendering for my pages
-
 ---
-
 # Next.js Best Practices
 
 Apply these rules when writing or reviewing Next.js code.

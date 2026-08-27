@@ -1,8 +1,8 @@
 ---
 name: langgraph-cli
+disable-model-invocation: true
 description: "The `langgraph` / `langgraphjs` CLI: `new`, `dev`, `build`, `up`, `deploy`, `dockerfile`, deployment logs, and the `langgraph.json` config schema. Use when running a `langgraph` command, editing `langgraph.json`, or shipping a graph to LangGraph Platform (LangSmith Deployments). Scope boundary: deploying a Next.js app or any non-LangGraph service to Vercel belongs to `vercel-cli`/`deployments-cicd`."
 ---
-
 <overview>
 The `langgraph` CLI manages the full lifecycle of LangGraph applications — from scaffolding a new project to deploying it to LangGraph Platform (LangSmith Deployments).
 

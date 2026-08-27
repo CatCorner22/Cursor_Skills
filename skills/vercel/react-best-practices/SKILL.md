@@ -1,5 +1,6 @@
 ---
 name: react-best-practices
+disable-model-invocation: true
 description: React performance best-practices for TSX files — 64 Vercel rules across 8 impact tiers (waterfalls, bundle size, server/client fetching, re-renders). Use when optimizing React/Next.js components. This is not an accessibility linter.
 metadata:
   priority: 4
@@ -49,9 +50,7 @@ chainTo:
     pattern: 'from\s+[''\"](styled-components|@emotion/styled|@emotion/react|@mui/material|@chakra-ui/react)[''"]|styled\.'
     targetSkill: shadcn
     message: 'Legacy CSS-in-JS or component library detected — loading shadcn/ui guidance for modern Vercel-native UI.'
-
 ---
-
 # Vercel React Best Practices
 
 Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 64 rules across 8 categories, prioritized by impact to guide automated refactoring and code generation.

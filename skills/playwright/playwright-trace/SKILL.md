@@ -1,9 +1,9 @@
 ---
 name: playwright-trace
+disable-model-invocation: true
 description: Inspect Playwright trace files from the command line — list actions, view requests, console, errors, snapshots and screenshots.
 allowed-tools: Bash(npx:*)
 ---
-
 # Playwright Trace CLI
 
 Inspect `.zip` trace files produced by Playwright tests without opening a browser.

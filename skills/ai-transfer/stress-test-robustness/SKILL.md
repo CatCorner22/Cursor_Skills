@@ -1,5 +1,6 @@
 ---
 name: stress-test-robustness
+disable-model-invocation: true
 description: "Run contradiction, edge-case, adversarial, and scope tests on a draft before delivery. Use after generation and before polish. Scope boundary — escalating critique questions → `progressive-resistance-critique`; load-bearing tags → `load-bearing-structure`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "edge case draft"
     minScore: 6
 ---
-
 # Stress-test output robustness
 
 **#35** · **Domain:** Structural engineering · **Category:** extension · **Difficulty:** 🟡 Medium

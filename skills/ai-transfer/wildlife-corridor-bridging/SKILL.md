@@ -1,5 +1,6 @@
 ---
 name: wildlife-corridor-bridging
+disable-model-invocation: true
 description: "Detect topic overlap across sessions; inject bridge summaries connecting isolated context islands. Use for long-term personal agents. Scope boundary: strata layers → `stratigraphy-memory`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "conceptual corridor"
     minScore: 6
 ---
-
 # Wildlife corridor memory bridging
 
 **#25** · **Domain:** Conservation biology · **Category:** memory · **Difficulty:** 🔴 High

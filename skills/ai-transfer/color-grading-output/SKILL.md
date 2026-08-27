@@ -1,5 +1,6 @@
 ---
 name: color-grading-output
+disable-model-invocation: true
 description: "Grade pass on luminance (information density), chroma (emotional intensity), hue (stance consistency). Use for tone/ clarity review of drafts. Scope boundary: faceting passes → `gemstone-faceting-refinement`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "tone clarity framing"
     minScore: 6
 ---
-
 # Color grading three-axis refinement
 
 **#26** · **Domain:** Film post-production · **Category:** refinement · **Difficulty:** 🟡 Medium

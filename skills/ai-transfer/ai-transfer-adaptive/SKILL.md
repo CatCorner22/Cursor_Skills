@@ -1,10 +1,10 @@
 ---
 name: ai-transfer-adaptive
+disable-model-invocation: true
 description: "Router for adaptive AI-transfer techniques: compute triage, AAR debriefs, mid-flight feedback, wayfinding telemetry, annealing phases. Use when tuning dynamic agent behavior. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
   priority: 7
 ---
-
 # AI transfer — adaptive processing
 
 Router for category: **adaptive**.

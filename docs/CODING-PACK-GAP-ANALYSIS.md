@@ -47,6 +47,6 @@ Review of the **Cursor_Skills** library before adding the **`coding`** pack (7 s
 
 ## Activation
 
-Same as other packs: `./scripts/load-all.sh` → `.cursor/skills/` symlinks + local plugin. All skills **auto-trigger** on description match except none use `sessionStart` (craft skills are intentional, not injected every session — `proactive-agency` already covers execution posture).
+Same as other packs: `./scripts/load-all.sh` → `.cursor/skills/` symlinks + local plugin. Coding skills are **manual** (`disable-model-invocation: true`). Only `proactive-agency` is session-injected.
 
 `real-time-testing` has elevated `priority: 9` so it wins over generic review skills when the user asks to test while coding.

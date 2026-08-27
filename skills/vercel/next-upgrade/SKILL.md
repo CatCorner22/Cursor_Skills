@@ -1,5 +1,6 @@
 ---
 name: next-upgrade
+disable-model-invocation: true
 description: Upgrade Next.js to the latest version following official migration guides and codemods. Use when upgrading Next.js versions, running codemods, or migrating between major releases.
 metadata:
   priority: 6
@@ -54,9 +55,7 @@ chainTo:
     pattern: 'getServerSideProps|getStaticProps|next/router|next/head|next/document'
     targetSkill: nextjs
     message: 'Pages Router patterns detected during upgrade — loading Next.js best practices for App Router migration.'
-
 ---
-
 # Upgrade Next.js
 
 Upgrade the current project to the latest Next.js version following official migration guides.

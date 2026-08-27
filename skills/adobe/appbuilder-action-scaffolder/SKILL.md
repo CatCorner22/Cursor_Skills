@@ -1,5 +1,6 @@
 ---
 name: appbuilder-action-scaffolder
+disable-model-invocation: true
 description: Create, implement, deploy, and debug Adobe Runtime actions with consistent layout, validation, and error handling. Use this skill whenever the user needs to add actions to an App Builder project, understand action structure (params, response format, web/raw actions), configure actions in the manifest, use App Builder SDKs (State, Files, Events, database), deploy and invoke actions via CLI, debug action issues, or implement patterns such as webhook receivers, custom event providers, journaling consumers, large payload redirects, action sequence pipelines, and Asset Compute workers. Also trigger when users mention serverless functions in Adobe context, action logging, IMS authentication for actions, or cron-style scheduled actions.
 metadata:
   category: action-lifecycle

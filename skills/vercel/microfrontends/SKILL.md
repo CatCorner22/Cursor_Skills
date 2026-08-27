@@ -1,5 +1,6 @@
 ---
 name: microfrontends
+disable-model-invocation: true
 description: Guide for building, configuring, and deploying microfrontends on Vercel. Use this skill when the user mentions microfrontends, multi-zones, splitting an app across teams, independent deployments, cross-app routing, incremental migration, composing multiple frontends under one domain, microfrontends.json, @vercel/microfrontends, the microfrontends local proxy, or path-based routing between Vercel projects. Also use when the user asks about shared layouts across projects, navigation between microfrontends, fallback environments, asset prefixes, or feature flag controlled routing.
 metadata:
   priority: 7
@@ -45,9 +46,7 @@ chainTo:
     pattern: 'runMicrofrontendsMiddleware|flag.*microfrontend|microfrontend.*flag'
     targetSkill: routing-middleware
     message: 'Flag-controlled microfrontend routing requires middleware in the default app — loading Routing Middleware guidance.'
-
 ---
-
 # Vercel Microfrontends
 Split a large application into independently deployable units that render as one cohesive app. Vercel handles routing on its global network using `microfrontends.json`.
 

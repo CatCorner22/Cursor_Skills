@@ -1,5 +1,6 @@
 ---
 name: craft-systems-primer
+disable-model-invocation: true
 description: "Router for operational craft frameworks in this library: OODA decision tempo, Toyota-style lean loops (small batches, andon, kaizen), and mise en place workspace prep. Use when prioritizing work, eliminating waste, preparing before execution, or when the user mentions OODA, lean, kaizen, kanban, mise en place, or getting organized before starting. Scope boundary: domain execution → academic/coding/m365/plaud packs; raw execution posture → `proactive-agency`."
 metadata:
   priority: 8
@@ -22,7 +23,6 @@ metadata:
       - "stop the line"
     minScore: 6
 ---
-
 # Craft systems primer
 
 Meta-layer for **how to work**, not **what to build**. Three frameworks in this pack compose with every domain pack:

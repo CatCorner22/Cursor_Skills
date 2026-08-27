@@ -1,5 +1,6 @@
 ---
 name: metamorphosis-stages
+disable-model-invocation: true
 description: "Force larva (brainstorm) → pupa (structure) → adult (polish) as separate artifacts. Use instead of polishing a first dump. Scope boundary — annealing lock temperatures → `glass-annealing-hardening`; faceting angles → `gemstone-faceting-refinement`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "staged draft evolution"
     minScore: 6
 ---
-
 # Metamorphosis staged drafts
 
 **#40** · **Domain:** Developmental biology · **Category:** extension · **Difficulty:** 🟡 Medium

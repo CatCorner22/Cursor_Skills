@@ -1,5 +1,6 @@
 ---
 name: five-whys-failure-recovery
+disable-model-invocation: true
 description: "On pipeline failure, drill five whys to root cause and log permanent system fixes — not prompt whack-a-mole. Use after hallucinations, format errors, or constraint misses. Scope boundary: human kaizen line → `ooda-lean-loop`; routing audit → `skill-library-audit`."
 metadata:
   priority: 7
@@ -11,7 +12,6 @@ metadata:
       - "why did this fail"
     minScore: 6
 ---
-
 # Five Whys failure recovery
 
 **#6** · **Domain:** Toyota Production System · **Category:** quality-control · **Difficulty:** 🟡 Medium

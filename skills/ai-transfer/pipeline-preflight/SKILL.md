@@ -1,5 +1,6 @@
 ---
 name: pipeline-preflight
+disable-model-invocation: true
 description: "Pre-execution audit before AI generation: required inputs, files, constraints, tools, and prior outputs present. Halt instead of running cold. Use before agent runs, RAG pipelines, or multi-step chains. Scope boundary: human/study prep → `workspace-mise-en-place`; craft routing → `craft-systems-primer`."
 metadata:
   priority: 7
@@ -11,7 +12,6 @@ metadata:
       - "input audit"
     minScore: 6
 ---
-
 # AI pipeline pre-flight (mise en place)
 
 **#2** · **Domain:** Culinary arts · **Category:** quality-control · **Difficulty:** 🟢 Low

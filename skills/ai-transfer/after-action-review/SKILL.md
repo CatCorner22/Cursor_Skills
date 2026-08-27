@@ -1,5 +1,6 @@
 ---
 name: after-action-review
+disable-model-invocation: true
 description: "Post-generation debrief: intended vs actual vs gap vs prescription. Log for recurring pattern fixes. Use after agent tasks complete. Scope boundary: five whys on hard failures → `five-whys-failure-recovery`."
 metadata:
   priority: 7
@@ -11,7 +12,6 @@ metadata:
       - "what went wrong"
     minScore: 6
 ---
-
 # After-action review (AAR)
 
 **#18** · **Domain:** Military · **Category:** adaptive · **Difficulty:** 🟡 Medium

@@ -1,5 +1,6 @@
 ---
 name: routing-middleware
+disable-model-invocation: true
 description: Vercel Routing Middleware guidance — request interception before cache, rewrites, redirects, personalization. Works with any framework. Supports Edge, Node.js, and Bun runtimes. Use when intercepting requests at the platform level.
 metadata:
   priority: 6
@@ -70,9 +71,7 @@ chainTo:
     targetSkill: auth
     message: 'Manual JWT verification in middleware — loading Auth guidance for managed auth middleware patterns (Clerk, Descope).'
     skipIfFileContains: 'clerkMiddleware|@clerk/|@auth0/'
-
 ---
-
 # Vercel Routing Middleware
 
 You are an expert in Vercel Routing Middleware — the platform-level request interception layer.

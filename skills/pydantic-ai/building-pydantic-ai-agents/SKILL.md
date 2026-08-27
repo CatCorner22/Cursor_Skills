@@ -1,5 +1,6 @@
 ---
 name: building-pydantic-ai-agents
+disable-model-invocation: true
 description: "Build agents in Python with Pydantic AI — tools, capabilities (including on-demand loading), structured output, streaming, testing, and multi-agent patterns. Use when the user names Pydantic AI, when code imports `pydantic_ai` or uses its `Agent`/`RunContext`/`Tool` classes, or when a Python AI agent needs tools/capabilities, deferred capability loading, streamed output, YAML-defined agents, or agent tests. Scope boundary: this skill covers Pydantic AI in Python only — TypeScript/JavaScript agent work and framework-unspecified agent-building requests belong to `build-agents`/`eve`, and the `pydantic` validation library on its own is out of scope."
 license: MIT
 compatibility: Requires Python 3.10+
@@ -7,7 +8,6 @@ metadata:
   version: "1.1.1"
   author: pydantic
 ---
-
 # Building AI Agents with Pydantic AI
 
 Pydantic AI is a Python agent framework for building production-grade Generative AI applications.

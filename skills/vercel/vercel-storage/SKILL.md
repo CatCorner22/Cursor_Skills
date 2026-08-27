@@ -1,5 +1,6 @@
 ---
 name: vercel-storage
+disable-model-invocation: true
 description: Vercel storage expert guidance — Blob, Edge Config, and Marketplace storage (Neon Postgres, Upstash Redis). Use when choosing, configuring, or using data storage with Vercel applications.
 metadata:
   priority: 7
@@ -148,9 +149,7 @@ retrieval:
     - Neon Postgres
     - Upstash Redis
     - Vercel Storage
-
 ---
-
 # Vercel Storage
 
 You are an expert in Vercel's storage options. Know which products are active, which are sunset, and when to use each.

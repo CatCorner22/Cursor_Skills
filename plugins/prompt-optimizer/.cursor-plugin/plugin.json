@@ -1,6 +1,6 @@
 {
   "name": "prompt-optimizer",
   "version": "1.0.0-snapshot",
-  "description": "Skill pack prompt-optimizer from the Cursor_Skills snapshot",
+  "description": "Author and optimize prompt text. Skill is manual.",
   "skills": "skills"
 }

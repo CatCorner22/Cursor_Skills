@@ -1,8 +1,8 @@
 ---
 name: langchain-middleware
+disable-model-invocation: true
 description: "Middleware on a LangChain `create_agent` / `createAgent` agent: `HumanInTheLoopMiddleware` to approve dangerous tool calls, writing custom middleware hooks, `Command` resume patterns, and structured output with Pydantic/Zod. Use when the agent being extended is a LangChain agent. Scope boundary: structured output on the Vercel AI SDK (`Output.object`) belongs to `ai-sdk`; interrupts in a hand-written LangGraph graph belong to `langgraph-human-in-the-loop`."
 ---
-
 <overview>
 Middleware patterns for production LangChain agents:
 

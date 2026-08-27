@@ -1,9 +1,9 @@
 ---
 name: subscribe
+disable-model-invocation: true
 description: "Wait for external events (GitHub CI results, PR activity, Slack messages, Linear issues) by subscribing with the cursor-subscriptions MCP tools instead of polling."
 environments: [cloud]
 ---
-
 # Subscribe to External Events
 
 Use the `cursor-subscriptions` MCP tools to be woken when an external event happens, instead of polling in a loop. Subscribe, state what you are waiting for, and end the turn; the event arrives later as a follow-up notification in this conversation.

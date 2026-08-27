@@ -1,5 +1,6 @@
 ---
 name: sail-trim-tuning
+disable-model-invocation: true
 description: "Read user confusion/satisfaction signals and trim the next beat (more examples vs hold course). Use on multi-turn work. Scope boundary — mid-stream environment loop → `fermentation-feedback`; human OODA → `ooda-lean-loop`."
 metadata:
   priority: 7
@@ -10,7 +11,6 @@ metadata:
       - "mid response adjust"
     minScore: 6
 ---
-
 # Sail trim mid-response tuning
 
 **#47** · **Domain:** Sailing · **Category:** advanced · **Difficulty:** 🟢 Low

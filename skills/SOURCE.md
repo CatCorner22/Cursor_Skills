@@ -135,7 +135,9 @@ Added 2026-08-25 after a gap analysis against the official Cursor Marketplace: `
 
 Unlike every other pack, this one has no upstream and no pinned commit — it is authored in this repo, so it carries no vendor-drift risk and no obligation to stay byte-identical to anything.
 
-**`proactive-agency`** — an always-on execution posture: do the work rather than describe it. It is delivered via `metadata.sessionStart: true` + `priority: 10`, the same mechanism `vercel/knowledge-update` uses, which means it is *injected* rather than trigger-matched. That choice is deliberate: this repo's documented dominant defect class is over-triggering and cross-pack trigger collision, and a session-start skill adds **zero** trigger surface. Its `pathPatterns`/`bashPatterns`/`importPatterns` are explicitly empty for the same reason.
+**Activation policy (library-wide).** Only `proactive-agency` is always on. Every other `SKILL.md` — including `vercel/knowledge-update` — carries `disable-model-invocation: true` so the model will not auto-invoke it. `knowledge-update` previously used `metadata.sessionStart: true`; that flag was removed so it is no longer a second always-on inject. Mention a manual skill by name, attach it, or ask for the job it covers. Catalog: `docs/SKILL-PLUGIN-CATALOG.md`. Re-apply with `python3 scripts/apply-activation-policy.py`.
+
+**`proactive-agency`** — an always-on execution posture: do the work rather than describe it. It is delivered via `metadata.sessionStart: true` + `priority: 10`, which means it is *injected* rather than trigger-matched. That choice is deliberate: this repo's documented dominant defect class is over-triggering and cross-pack trigger collision, and a session-start skill adds **zero** trigger surface. Its `pathPatterns`/`bashPatterns`/`importPatterns` are explicitly empty for the same reason. It is the only skill that must stay without `disable-model-invocation`.
 
 **`skill-library-audit`** — audits a multi-vendor skill library for routing pathology, and ships a runnable 2,991-line analyzer at `scripts/audit_skill_library.py` (stdlib + PyYAML, no network).
 
