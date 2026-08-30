@@ -1,0 +1,14 @@
+{
+  "name": "prompt-optimizer",
+  "version": "1.0.0",
+  "description": "Author and optimize prompt text.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "prompt-optimizer",
+    "grok",
+    "skills"
+  ]
+}

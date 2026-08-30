@@ -1,0 +1,14 @@
+{
+  "name": "pydantic-ai",
+  "version": "1.0.0",
+  "description": "Pydantic AI typed Python agents.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "pydantic-ai",
+    "grok",
+    "skills"
+  ]
+}

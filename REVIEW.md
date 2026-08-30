@@ -1,3 +1,5 @@
+> Port note: this review was written against the Cursor_Skills snapshot. Host-specific Cursor Cloud / SDK skills were rewritten for Grok Build. See `docs/GROK-PORT.md`.
+
 # Line-by-line skill review
 
 Reviewed every `SKILL.md` in [skills/](skills/) after the 2026-08-25 snapshot (63 skills). Line numbers refer to this repo, not the live plugin cache. Supporting files were read when a skill tells the agent to follow them, or when a claim had to be checked against a script.

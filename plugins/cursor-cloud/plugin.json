@@ -1,0 +1,14 @@
+{
+  "name": "cursor-cloud",
+  "version": "1.0.0",
+  "description": "Grok host: skill load paths, slash commands, artifacts, scheduled waits, marketplaces.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "cursor-cloud",
+    "grok",
+    "skills"
+  ]
+}

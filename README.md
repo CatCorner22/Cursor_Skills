@@ -1,43 +1,59 @@
-# Cursor_Skills
+# Grok_Skill_Pack
 
-Versioned snapshot of every skill loaded in the Cloud Agent session that reviewed them, plus a line-by-line review.
+Intended GitHub repo: **[CatCorner22/Grok_Skill_Pack](https://github.com/CatCorner22/Grok_Skill_Pack)**.
+
+Grok Build port of [CatCorner22/Cursor_Skills](https://github.com/CatCorner22/Cursor_Skills). Same 189 skill folders, rewritten for [Grok skills, plugins, and marketplaces](https://docs.x.ai/build/features/skills-plugins-marketplaces).
 
 - **Snapshot:** [skills/](skills/) — 189 `SKILL.md` files across 19 packs
-- **AI-transfer reference:** [docs/AI-TRANSFER-SKILLS.md](docs/AI-TRANSFER-SKILLS.md) — 45 loadable cross-domain techniques (catalog #1–50) plus a 100-plugin runtime at `scripts/ai_plugin_bundle.py` (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, **Coding**, **Academic**, **Microsoft 365**, **Plaud**, **Projects**, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
-- **Coding pack gap analysis:** [docs/CODING-PACK-GAP-ANALYSIS.md](docs/CODING-PACK-GAP-ANALYSIS.md)
-- **Review:** [REVIEW.md](REVIEW.md) — findings after reading each skill file (original pass). A follow-up independent re-verification against all 63 original skills — confirming most findings, correcting some, and surfacing additional security issues and a router-config drift bug — is summarized in the PR that added Supabase/Cursor Team Kit and applied fixes for both passes. [REVIEW-2.md](REVIEW-2.md) is the 2026-08-27 second full pass: it re-verifies the mechanical claims, reviews every pack added since (coding, academic, craft, microsoft365, plaud, ai-transfer, projects, langchain, playwright, singles, hf-cloud-*), and flags the always-on `AGENTS.md` context leak.
+- **AI-transfer reference:** [docs/AI-TRANSFER-SKILLS.md](docs/AI-TRANSFER-SKILLS.md)
+- **What changed from Cursor:** [docs/GROK-PORT.md](docs/GROK-PORT.md)
+- **Catalog:** [docs/SKILL-PLUGIN-CATALOG.md](docs/SKILL-PLUGIN-CATALOG.md)
 
-**Loaded in this repo.** `.cursor/skills/` has one symlink per skill so Cursor / Cloud Agents pick up the snapshot. Plugin wrappers live under `plugins/`. To refresh this machine (project skills, `~/.cursor/skills/`, and `~/.cursor/plugins/local/`):
+**Loaded in this repo.** `.grok/skills/` has one symlink per skill. Plugin wrappers live under `plugins/` with `plugin.json`. The marketplace index is `.grok-plugin/marketplace.json`. To refresh this machine:
 
 ```bash
 ./scripts/load-all.sh
 ```
 
-**Activation:** only [`proactive-agency`](skills/first-party/proactive-agency/SKILL.md) is always on (`metadata.sessionStart: true`). Every other skill has `disable-model-invocation: true` — mention it by name or attach it. Full inventory: [docs/SKILL-PLUGIN-CATALOG.md](docs/SKILL-PLUGIN-CATALOG.md).
+Then start a new Grok session (or press `r` in `/plugins`). Add the marketplace if needed:
+
+```bash
+grok plugin marketplace add CatCorner22/Grok_Skill_Pack
+grok plugin install first-party --trust
+grok inspect
+```
+
+**Activation:** only [`proactive-agency`](skills/first-party/proactive-agency/SKILL.md) may be invoked implicitly. Every other skill sets `disable-model-invocation: true` — run `/name`. House execution posture is also in [AGENTS.md](AGENTS.md) (Grok reads the AGENTS.md family).
 
 ## Packs
 
 | Pack | Skills | What it covers |
 |---|---|---|
 | [Vercel](skills/vercel/) | 33 | Next.js, deployments, AI SDK/Gateway, auth, storage, sandbox, workflow |
-| [Hugging Face](skills/huggingface/) | 26 | Model/dataset Hub, Spaces, training (LLM/vision/sentence-transformers), Gradio, SageMaker |
-| [LangChain](skills/langchain/) | 12 | LangChain/LangGraph agents, RAG, persistence, human-in-the-loop, LangSmith online evals, Deep Agents |
-| [Adobe App Builder](skills/adobe/) | 10 | Runtime actions, CI/CD, project scaffolding, UI, E2E testing, Workfront |
-| [Cursor Team Kit](skills/cursor-team-kit/) | 8 | GitHub PR/branch workflow: new-branch-and-pr, PR review, CI fixes, merge conflicts |
-| [Cursor Cloud Agent](skills/cursor-cloud/) | 5 | Cloud Agent environment setup, canvas artifacts, event subscriptions |
-| [First-party](skills/first-party/) | 4 | `proactive-agency` — always-on execution posture; `skill-library-audit` — audits this library's own routing metadata, ships a runnable analyzer; `smolagents` — Hugging Face's agent framework; `v0` — Vercel's v0 Platform/Model API |
-| [Playwright](skills/playwright/) | 3 | General (non-Adobe) browser automation, component testing, trace inspection |
-| [Supabase](skills/supabase/) | 2 | Postgres best practices, general Supabase (Auth/Storage/Edge Functions/RLS) |
-| [Cursor SDK](skills/cursor-sdk/) | 1 | Driving Cursor agents from code (`@cursor/sdk`) — CI, scripts, backends |
-| [Prompt Optimizer](skills/prompt-optimizer/) | 1 | Authoring and optimizing prompt text itself — layering, few-shot, eval slices |
-| [Pydantic AI](skills/pydantic-ai/) | 1 | Python agent framework — typed deps/outputs, tools, streaming |
-| [Coding](skills/coding/) | 7 | Deliverable-first, clean minimal code, stable architecture, real-time testing, UI/UX engineering |
-| [Academic](skills/academic/) | 4 | College coursework router, writing, citations, study system |
-| [Craft](skills/craft/) | 3 | OODA×lean loops, mise en place, operational craft router |
-| [Microsoft 365](skills/microsoft365/) | 7 | Word, Excel, PowerPoint, Outlook, Teams, OneDrive — Copilot-compatible SKILL.md format |
-| [Plaud](skills/plaud/) | 8 | AI voice recorder: capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export |
-| [AI Transfer](skills/ai-transfer/) | 53 | 45 loadable techniques + 7 category routers + ecosystem primer; runtime `scripts/ai_plugin_bundle.py` |
-| [Projects](skills/projects/) | 1 | Project reference material, not capability skills — `nyx` character bible with reference sheets |
-| **Total** | **189** | reconciles with `find skills -name SKILL.md \| wc -l` |
+| [Hugging Face](skills/huggingface/) | 26 | Hub, Spaces, training, Gradio, SageMaker |
+| [LangChain](skills/langchain/) | 12 | LangChain/LangGraph, RAG, Deep Agents, LangSmith |
+| [Adobe App Builder](skills/adobe/) | 10 | Runtime actions, CI/CD, UI, Workfront |
+| [GitHub PR kit](skills/cursor-team-kit/) | 8 | Branches, reviews, CI, merge conflicts |
+| [Grok host](skills/cursor-cloud/) | 5 | Load paths, artifacts, scheduled waits, marketplaces |
+| [First-party](skills/first-party/) | 4 | `proactive-agency`, `skill-library-audit`, `smolagents`, `v0` |
+| [Playwright](skills/playwright/) | 3 | Browser automation outside Adobe |
+| [Supabase](skills/supabase/) | 2 | Auth, Storage, Edge Functions, Postgres |
+| [Programmatic agents](skills/cursor-sdk/) | 1 | xAI / Grok API from code; `@cursor/sdk` only if named |
+| [Prompt Optimizer](skills/prompt-optimizer/) | 1 | Prompt text |
+| [Pydantic AI](skills/pydantic-ai/) | 1 | Typed Python agents |
+| [Coding](skills/coding/) | 7 | Deliverable-first engineering craft |
+| [Academic](skills/academic/) | 4 | Coursework, writing, citations, study |
+| [Craft](skills/craft/) | 3 | OODA×lean, mise en place |
+| [Microsoft 365](skills/microsoft365/) | 7 | Word, Excel, PowerPoint, Outlook, Teams, OneDrive |
+| [Plaud](skills/plaud/) | 8 | Recorder workflows |
+| [AI Transfer](skills/ai-transfer/) | 53 | Cross-domain techniques + routers |
+| [Projects](skills/projects/) | 1 | `nyx` character bible |
+| **Total** | **189** | `find skills -name SKILL.md \| wc -l` |
 
-`vercel-agent` (pure product/pricing reference, no procedure) was removed from the Vercel pack. The LangChain pack is 12 of 22 upstream skills, and Cursor Team Kit 8 of 18 — see [skills/SOURCE.md](skills/SOURCE.md) for what was cut and why, and for the cross-pack trigger deconfliction applied to `vercel/ai-sdk` and `vercel/build-agents` so they stop steering off other packs' frameworks.
+## Invoke
+
+In Grok Build: `/nextjs` `/proactive-agency`. On name collision: `/vercel:nextjs`.
+
+## Provenance
+
+Ported 2026-08-30 from [CatCorner22/Cursor_Skills](https://github.com/CatCorner22/Cursor_Skills) (`main`). See [skills/SOURCE.md](skills/SOURCE.md). Sibling ports: [ChatGPT_Skills](https://github.com/CatCorner22/Cursor_Skills/tree/cursor/chatgpt-skills-a08b), [Claude_Skills_2](https://github.com/CatCorner22/Claude_Skills_2).

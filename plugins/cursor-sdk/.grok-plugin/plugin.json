@@ -1,0 +1,14 @@
+{
+  "name": "cursor-sdk",
+  "version": "1.0.0",
+  "description": "Drive the xAI / Grok API from code.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "cursor-sdk",
+    "grok",
+    "skills"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "plaud",
+  "version": "1.0.0",
+  "description": "Plaud recorder: capture, transcription, summaries, AutoFlow, export.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "plaud",
+    "grok",
+    "skills"
+  ]
+}

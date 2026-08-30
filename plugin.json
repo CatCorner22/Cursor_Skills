@@ -1,0 +1,14 @@
+{
+  "name": "grok-skill-pack",
+  "version": "1.0.0",
+  "description": "All vendored skill packs from this repo, loaded as Grok Build plugins.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "grok-skill-pack",
+    "grok",
+    "skills"
+  ]
+}

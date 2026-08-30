@@ -1,0 +1,894 @@
+{
+  "version": 1,
+  "plugins": {
+    "academic": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "academic-ecosystem-primer",
+            "description": "Router for college and academic work in this library: writing, citations, study planning, source attribution, lecture notes, and\u2026"
+          },
+          {
+            "name": "academic-writing",
+            "description": "Structure and revise academic prose: thesis statements, outlines, paragraphs, introductions/conclusions, argument flow, and tone by\u2026"
+          },
+          {
+            "name": "citation-literacy",
+            "description": "Format and check academic citations: APA 7, MLA 9, and Chicago (notes-bibliography), in-text vs bibliography, common mistakes, and when to\u2026"
+          },
+          {
+            "name": "study-system",
+            "description": "Plan and execute studying: syllabus to weekly schedule, active recall, spaced repetition prompts, exam prep cadence, and WIP limits on\u2026"
+          }
+        ]
+      }
+    },
+    "adobe": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "appbuilder-action-scaffolder",
+            "description": "Create, implement, deploy, and debug Adobe Runtime actions with consistent layout, validation, and error handling"
+          },
+          {
+            "name": "appbuilder-cicd-pipeline",
+            "description": "Set up CI/CD pipelines for Adobe App Builder projects"
+          },
+          {
+            "name": "appbuilder-e2e-testing",
+            "description": "Use this skill whenever the user wants browser-based end-to-end tests for an Adobe App Builder application"
+          },
+          {
+            "name": "appbuilder-project-init",
+            "description": "Initialize an Adobe App Builder project end-to-end without Developer Console UI clicks"
+          },
+          {
+            "name": "appbuilder-testing",
+            "description": "Generate and run tests for Adobe App Builder actions and UI components"
+          },
+          {
+            "name": "appbuilder-ui-scaffolder",
+            "description": "Generate React Spectrum UI components for Adobe Experience Cloud Shell SPAs and AEM UI Extensions"
+          },
+          {
+            "name": "appbuilder-workfront",
+            "description": "Use when orienting, onboarding, or planning before a concrete task \u2014 the entry point for building a customized Workfront UI on Adobe App\u2026"
+          },
+          {
+            "name": "workfront-actions",
+            "description": "Use when writing or fixing the server-side code of a Workfront App Builder extension \u2014 the Adobe I/O Runtime action the React SPA calls to\u2026"
+          },
+          {
+            "name": "workfront-local-testing",
+            "description": "Use when making Workfront load your locally running App Builder extension, or when a local extension that worked before has stopped\u2026"
+          },
+          {
+            "name": "workfront-ui-extension",
+            "description": "Use when building or editing the React/Spectrum front-end SPA of a Workfront App Builder extension"
+          }
+        ]
+      }
+    },
+    "ai-transfer": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "after-action-review",
+            "description": "Post-generation debrief: intended vs actual vs gap vs prescription"
+          },
+          {
+            "name": "ai-transfer-adaptive",
+            "description": "Router for adaptive AI-transfer techniques: compute triage, AAR debriefs, mid-flight feedback, wayfinding telemetry, annealing phases"
+          },
+          {
+            "name": "ai-transfer-advanced",
+            "description": "Router for advanced AI-transfer techniques: seismic joints, sidechain ducking, genre cross-pollination, containment layers, sail trim,\u2026"
+          },
+          {
+            "name": "ai-transfer-architecture",
+            "description": "Router for architectural AI-transfer techniques: dual-axis reasoning, OODA context pipelines, proof DAGs, counterpoint, zoom levels, stage\u2026"
+          },
+          {
+            "name": "ai-transfer-ecosystem-primer",
+            "description": "Router for the AI-transfer catalog (45 techniques, #1\u201350 with five merges) \u2014 gates, scaffolds, and pipeline stages"
+          },
+          {
+            "name": "ai-transfer-extension",
+            "description": "Router for extension AI-transfer techniques: just-intonation parameter ratios, load-bearing claim locks, orchard grafts, differential\u2026"
+          },
+          {
+            "name": "ai-transfer-memory",
+            "description": "Router for memory AI-transfer techniques: stratified sessions, tablebase cache, taxonomy retrieval, cross-session bridges"
+          },
+          {
+            "name": "ai-transfer-quality-control",
+            "description": "Router for quality-control AI-transfer techniques: claim/evidence gates, preflight, critique loops, provenance, context gating, root\u2026"
+          },
+          {
+            "name": "ai-transfer-refinement",
+            "description": "Router for refinement AI-transfer techniques: three-axis grading, debate voting, model blending, faceting passes, localization QA"
+          },
+          {
+            "name": "cartographic-zoom",
+            "description": "Generate country/city/street zoom levels: 1\u20132 sentences, 1\u20132 paragraphs, full deep-dive"
+          },
+          {
+            "name": "chain-of-custody-provenance",
+            "description": "Token- or block-level provenance: which inputs, tools, prompt sections, and turns produced each output segment"
+          },
+          {
+            "name": "color-grading-output",
+            "description": "Grade pass on luminance (information density), chroma (emotional intensity), hue (stance consistency)"
+          },
+          {
+            "name": "containment-safety-layers",
+            "description": "Require independent safety layers (pattern, keyword, policy) that can each fail closed"
+          },
+          {
+            "name": "counterpoint-perspectives",
+            "description": "Generate 2\u20133 independent analytical voices with own logic, then harmonize into interwoven output \u2014 not pros/cons list"
+          },
+          {
+            "name": "cross-pollination-structure",
+            "description": "Borrow a foreign genre skeleton (contract, tech spec) and plant the current content into it"
+          },
+          {
+            "name": "debate-adjudication-voting",
+            "description": "Independent agents score rubric dimensions with written ballots; synthesis agent explains weighting"
+          },
+          {
+            "name": "differential-diagnosis-intent",
+            "description": "Rank 2\u20133 interpretations of the user query (literal, examples, comparison) with probabilities before answering"
+          },
+          {
+            "name": "double-entry-claims",
+            "description": "Hallucination suppression via structural claim/evidence pairing: every factual claim must balance with a supporting source before output\u2026"
+          },
+          {
+            "name": "emergency-triage-compute",
+            "description": "Classify tasks Immediate/Delayed/Minor/Deceased before processing; allocate reasoning budget by stakes"
+          },
+          {
+            "name": "endgame-tablebase-cache",
+            "description": "Pre-compute and cache known-correct answers for recurring boundary conditions; check tablebase before reasoning"
+          },
+          {
+            "name": "fermentation-feedback",
+            "description": "Mid-generation monitoring: user activity, corrections typing, deadlines, confidence \u2014 adjust or abort mid-stream"
+          },
+          {
+            "name": "five-whys-failure-recovery",
+            "description": "On pipeline failure, drill five whys to root cause and log permanent system fixes \u2014 not prompt whack-a-mole"
+          },
+          {
+            "name": "gemstone-faceting-refinement",
+            "description": "Rotate refinement through clarity, precision, resonance, durability passes \u2014 flaws visible from new angles"
+          },
+          {
+            "name": "glass-annealing-hardening",
+            "description": "Staged delivery: high temp (everything flexible) \u2192 medium (structure locked) \u2192 cool (typos only)"
+          },
+          {
+            "name": "interaction-table",
+            "description": "Look up known skill/plugin pairs that fight (context strip vs inject, length vs rhythm, duck vs dual-axis, rewrite vs lock) before loading\u2026"
+          },
+          {
+            "name": "journalistic-attribution",
+            "description": "Source-first generation: retrieve evidence per claim before prose, inline attribution, strip unattributable claims"
+          },
+          {
+            "name": "just-intonation-calibration",
+            "description": "Calibrate generation parameters as just-intonation ratios by task type (factual, creative, code) instead of one global temperature"
+          },
+          {
+            "name": "library-taxonomy-retrieval",
+            "description": "Dual retrieval: embedding similarity PLUS taxonomic adjacency in task ontology"
+          },
+          {
+            "name": "load-bearing-structure",
+            "description": "Mark load-bearing claims (therefore/must/key/critical) and forbid polish passes from deleting or softening them"
+          },
+          {
+            "name": "localization-qa-filter",
+            "description": "Pre-delivery scan for region mismatch: dates, currency, idioms, units, regulatory refs, cultural examples"
+          },
+          {
+            "name": "metamorphosis-stages",
+            "description": "Force larva (brainstorm) \u2192 pupa (structure) \u2192 adult (polish) as separate artifacts"
+          },
+          {
+            "name": "ooda-adaptive-context",
+            "description": "Four-phase AI pipeline with logged Orient step: observe raw context, orient (filter/prioritize with inspectable log), decide approach, act"
+          },
+          {
+            "name": "orchard-graft-transfer",
+            "description": "Graft a specialist scion onto a safe rootstock output: keep the trusted base, attach expert additions at a marked join"
+          },
+          {
+            "name": "parallax-depth",
+            "description": "Estimate reasoning depth from the shift between the current query and recent history (deep/medium/shallow)"
+          },
+          {
+            "name": "pipeline-preflight",
+            "description": "Pre-execution audit before AI generation: required inputs, files, constraints, tools, and prior outputs present"
+          },
+          {
+            "name": "progressive-resistance-critique",
+            "description": "Escalating self-critique passes: warm-up consistency, moderate alignment, working robustness, max falsifiability"
+          },
+          {
+            "name": "proof-trees-reasoning",
+            "description": "Declare reasoning DAG before prose: premises, claims, dependencies"
+          },
+          {
+            "name": "proofreading-marks",
+            "description": "Granular annotation layer between draft and delivery: QUERY, DELETE, STET, TRANSPOSE, INSERT \u2014 not wholesale rewrite"
+          },
+          {
+            "name": "sail-trim-tuning",
+            "description": "Read user confusion/satisfaction signals and trim the next beat (more examples vs hold course)"
+          },
+          {
+            "name": "score-study-dual-axis",
+            "description": "Horizontal pass (narrative arc) plus vertical pass (parallel considerations at each step)"
+          },
+          {
+            "name": "seismic-flexibility",
+            "description": "Insert modular joints (paragraph/section seams) so a later edit does not collapse the whole piece"
+          },
+          {
+            "name": "sidechain-priority",
+            "description": "When the answer/solution/result arrives, duck the supporting intro so the signal sits on top"
+          },
+          {
+            "name": "stage-blocking-layout",
+            "description": "Spatial emphasis: center stage = core message; flanks = evidence; opposing entrances = dialectic; center curtain = synthesis"
+          },
+          {
+            "name": "sterile-cockpit-context",
+            "description": "Phase-gated context: takeoff (parse inputs only), cruise (full history), landing (validation rules only)"
+          },
+          {
+            "name": "stratigraphy-memory",
+            "description": "Layer memory by session strata plus disturbance markers; retrieve with integrity confidence"
+          },
+          {
+            "name": "stress-test-robustness",
+            "description": "Run contradiction, edge-case, adversarial, and scope tests on a draft before delivery"
+          },
+          {
+            "name": "survey-triangulation",
+            "description": "Require three independent retrieval paths per factual claim; score agreement 3/3, 2/3, or contested"
+          },
+          {
+            "name": "tidal-pacing-rhythm",
+            "description": "Measure sentence-length tide (high/mid/low) and even the rhythm when variance is extreme"
+          },
+          {
+            "name": "underwriting-risk-gate",
+            "description": "Score GREEN/YELLOW/RED risk before delivery for medical, legal, or financial-advice asks; hold RED for review"
+          },
+          {
+            "name": "wayfinding-restructure",
+            "description": "Instrument consumption behavior (scroll-back, re-prompt, abandon) to restructure future outputs"
+          },
+          {
+            "name": "weaving-warp-weft",
+            "description": "Interleave fixed structural threads (warp: required claims, compliance) with flexible expressive weft (tone, examples)"
+          },
+          {
+            "name": "wildlife-corridor-bridging",
+            "description": "Detect topic overlap across sessions; inject bridge summaries connecting isolated context islands"
+          },
+          {
+            "name": "wine-blending-fusion",
+            "description": "Run prompt on models with different strengths; fusion pass extracts best elements selectively \u2014 not averaging"
+          }
+        ]
+      }
+    },
+    "coding": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "clean-minimal-code",
+            "description": "Write clear, minimal code: fewer lines with the same behavior, established naming, SOLID and YAGNI, no premature abstraction"
+          },
+          {
+            "name": "coding-ecosystem-primer",
+            "description": "Router for general software engineering in this library: deliverable-first planning, clean minimal code, stable architecture, real-time\u2026"
+          },
+          {
+            "name": "deliverable-first",
+            "description": "Plan and implement features by defining the final deliverable first, then reverse-engineering the smallest code path to it"
+          },
+          {
+            "name": "real-time-testing",
+            "description": "Test code continuously while writing it: red-green-refactor, watch mode, typecheck and lint after every slice, and never report done\u2026"
+          },
+          {
+            "name": "stable-architecture",
+            "description": "Design code that avoids houses of cards: clear module boundaries, dependency direction, fail-fast invariants, and replaceable adapters"
+          },
+          {
+            "name": "ui-engineering",
+            "description": "Modern UI implementation: component composition, design tokens, Tailwind/shadcn/Radix stacks, responsive layout, and accessible markup\u2026"
+          },
+          {
+            "name": "ux-engineering",
+            "description": "User experience engineering: task flows, Nielsen heuristics, loading/empty/error patterns, accessibility (WCAG-oriented), microcopy, and\u2026"
+          }
+        ]
+      }
+    },
+    "craft": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "craft-systems-primer",
+            "description": "Router for operational craft frameworks in this library: OODA decision tempo, Toyota-style lean loops (small batches, andon, kaizen), and\u2026"
+          },
+          {
+            "name": "ooda-lean-loop",
+            "description": "Run fused OODA and lean loops: observe raw signal, orient with current-state map, decide one small batch, act with standard work, andon on\u2026"
+          },
+          {
+            "name": "workspace-mise-en-place",
+            "description": "Prepare the workspace before execution: files, folders, env, tools, references, and templates in place so work never stops for a missing\u2026"
+          }
+        ]
+      }
+    },
+    "cursor-cloud": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "canvas",
+            "description": "Author standalone Grok artifacts (charts, tables, audits, metrics)"
+          },
+          {
+            "name": "env-setup",
+            "description": "Explain, inspect, configure, and troubleshoot Grok Build skill environments \u2014 where skills load, how plugins and marketplaces are\u2026"
+          },
+          {
+            "name": "migrate-to-builds",
+            "description": "Migrate an ad-hoc Grok skill install into a checked-in .grok layout plus a .grok-plugin marketplace"
+          },
+          {
+            "name": "subscribe",
+            "description": "Wait for external events (GitHub CI, PR activity, Slack, Linear, or a timer) without polling"
+          },
+          {
+            "name": "walkthrough-artifacts",
+            "description": "Create walkthrough artifacts (screenshots, recordings, and file proofs) that show code changes work"
+          }
+        ]
+      }
+    },
+    "cursor-sdk": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "cursor-sdk",
+            "description": "Guide users building apps, scripts, CI pipelines, or automations that drive Grok or the xAI API from code"
+          }
+        ]
+      }
+    },
+    "cursor-team-kit": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "fix-ci",
+            "description": "Find failing PR checks, inspect logs or external check links, and apply focused fixes"
+          },
+          {
+            "name": "fix-merge-conflicts",
+            "description": "Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution"
+          },
+          {
+            "name": "get-pr-comments",
+            "description": "Fetch and summarize review comments from the active pull request"
+          },
+          {
+            "name": "loop-on-ci",
+            "description": "Monitor PR checks and fix failures until green"
+          },
+          {
+            "name": "make-pr-easy-to-review",
+            "description": "Prepare PRs for review by cleaning noisy history, improving PR descriptions, and adding reviewer guidance without changing code behavior"
+          },
+          {
+            "name": "new-branch-and-pr",
+            "description": "Create a fresh branch, complete work, and open a pull request"
+          },
+          {
+            "name": "pr-review-canvas",
+            "description": "Generate an interactive PR review walkthrough as an HTML page"
+          },
+          {
+            "name": "review-and-ship",
+            "description": "Review the current branch for bugs, intent fit, and test coverage; run or write tests; commit focused work; open or update a PR"
+          }
+        ]
+      }
+    },
+    "first-party": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "proactive-agency",
+            "description": "Always-on execution posture: do the work instead of describing it"
+          },
+          {
+            "name": "skill-library-audit",
+            "description": "Audit a multi-vendor agent-skill library for routing pathology \u2014 the defect classes that appear only when many packs from different\u2026"
+          },
+          {
+            "name": "smolagents",
+            "description": "Hugging Face `smolagents`: choosing CodeAgent vs ToolCallingAgent, the model backends (InferenceClientModel, LiteLLMModel,\u2026"
+          },
+          {
+            "name": "v0",
+            "description": "Vercel's v0 app builder \u2014 taking v0 output into a production repo, and driving the v0 Platform API (v2, api.v0.dev/v2) from code with the\u2026"
+          }
+        ]
+      }
+    },
+    "huggingface": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "hf-cli",
+            "description": "Hugging Face Hub CLI (`hf`) for auth, repos, models, datasets, spaces, papers, jobs, buckets, cache, and endpoints"
+          },
+          {
+            "name": "hf-cloud-aws-context-discovery",
+            "description": "Discover the user's local AWS context (active profile, region, account ID, caller identity) at the start of any AWS task"
+          },
+          {
+            "name": "hf-cloud-python-env-setup",
+            "description": "Set up an isolated Python environment for SageMaker / AWS work, with the right Python version and current boto3"
+          },
+          {
+            "name": "hf-cloud-sagemaker-deployment-planner",
+            "description": "Plan and coordinate the deployment of a model to Amazon SageMaker AI"
+          },
+          {
+            "name": "hf-cloud-sagemaker-iam-preflight",
+            "description": "Ensure a usable SageMaker execution role exists before deploying or training"
+          },
+          {
+            "name": "hf-cloud-sagemaker-production-defaults",
+            "description": "Create a SageMaker endpoint (real-time, real-time scale-to-zero, or async) with autoscaling, CloudWatch alarms, and tagging enabled by\u2026"
+          },
+          {
+            "name": "hf-cloud-serving-image-selection",
+            "description": "Pick the right serving container for a SageMaker model deployment and find its current image URI"
+          },
+          {
+            "name": "hf-mcp",
+            "description": "Use Hugging Face Hub via MCP server tools when the Huggingface-skills (or equivalent) MCP namespace is connected"
+          },
+          {
+            "name": "hf-mem",
+            "description": "Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub"
+          },
+          {
+            "name": "huggingface-best",
+            "description": "Use when the user asks about finding the best, top, or recommended model for a task, wants to know what AI model to use, or wants to\u2026"
+          },
+          {
+            "name": "huggingface-community-evals",
+            "description": "Run evaluations for Hugging Face Hub models using inspect-ai and lighteval on local hardware"
+          },
+          {
+            "name": "huggingface-datasets",
+            "description": "Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters,\u2026"
+          },
+          {
+            "name": "huggingface-gradio",
+            "description": "Build Gradio web UIs and demos in Python"
+          },
+          {
+            "name": "huggingface-llm-trainer",
+            "description": "Train or fine-tune language and vision models using TRL (Transformer Reinforcement Learning) or Unsloth with Hugging Face Jobs\u2026"
+          },
+          {
+            "name": "huggingface-local-models",
+            "description": "Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm"
+          },
+          {
+            "name": "huggingface-lora-space-builder",
+            "description": "Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA"
+          },
+          {
+            "name": "huggingface-paper-publisher",
+            "description": "Publish and manage research papers on Hugging Face Hub"
+          },
+          {
+            "name": "huggingface-papers",
+            "description": "Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked\u2026"
+          },
+          {
+            "name": "huggingface-spaces",
+            "description": "Build, deploy, and maintain applications on Hugging Face Spaces \u2014 Gradio / Docker / Static SDKs, ZeroGPU and dedicated hardware, model\u2026"
+          },
+          {
+            "name": "huggingface-tool-builder",
+            "description": "Use this skill when the user wants to build tool/scripts or achieve a task where using data from the Hugging Face API would help"
+          },
+          {
+            "name": "huggingface-trackio",
+            "description": "Track and visualize ML training experiments with Trackio"
+          },
+          {
+            "name": "huggingface-vision-trainer",
+            "description": "Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models \u2014\u2026"
+          },
+          {
+            "name": "huggingface-zerogpu",
+            "description": "AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU"
+          },
+          {
+            "name": "train-sentence-transformers",
+            "description": "Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder; dense or static embedding model; for retrieval,\u2026"
+          },
+          {
+            "name": "transformers-js",
+            "description": "Use Transformers.js to run state-of-the-art machine learning models directly in JavaScript/TypeScript"
+          },
+          {
+            "name": "trl-training",
+            "description": "Train and fine-tune transformer language models locally with the TRL CLI (SFT, DPO, GRPO, KTO, RLOO, Reward Model)"
+          }
+        ]
+      }
+    },
+    "langchain": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "deep-agents-core",
+            "description": "Configure the `deepagents` harness: `create_deep_agent()` / `createDeepAgent()`, middleware selection, built-in filesystem and planning\u2026"
+          },
+          {
+            "name": "deep-agents-orchestration",
+            "description": "Subagent delegation, task planning, and approval gates inside the `deepagents` harness: SubAgentMiddleware and the `task` tool,\u2026"
+          },
+          {
+            "name": "ecosystem-primer",
+            "description": "Router for the LangChain ecosystem: choose between LangChain, LangGraph, and Deep Agents, set the LANGSMITH_* env vars, find the right\u2026"
+          },
+          {
+            "name": "langchain-dependencies",
+            "description": "Package versions, installs, and dependency management for the LangChain stack in Python and TypeScript: required packages, minimum\u2026"
+          },
+          {
+            "name": "langchain-fundamentals",
+            "description": "Create LangChain agents with `create_agent` / `createAgent`: model and tool wiring, the agent loop, and where middleware attaches"
+          },
+          {
+            "name": "langchain-middleware",
+            "description": "Middleware on a LangChain `create_agent` / `createAgent` agent: `HumanInTheLoopMiddleware` to approve dangerous tool calls, writing custom\u2026"
+          },
+          {
+            "name": "langchain-rag",
+            "description": "Build a retrieval pipeline with LangChain: document loaders, RecursiveCharacterTextSplitter, embeddings, and the LangChain vector store\u2026"
+          },
+          {
+            "name": "langgraph-cli",
+            "description": "The `langgraph` / `langgraphjs` CLI: `new`, `dev`, `build`, `up`, `deploy`, `dockerfile`, deployment logs, and the `langgraph.json` config\u2026"
+          },
+          {
+            "name": "langgraph-fundamentals",
+            "description": "Write LangGraph graphs in Python or TypeScript: StateGraph, state schemas and reducers, nodes, normal and conditional edges, Command, Send\u2026"
+          },
+          {
+            "name": "langgraph-human-in-the-loop",
+            "description": "Pause a LangGraph graph for a human: `interrupt()`, `Command(resume=...)`, approval and validation workflows, resuming multiple concurrent\u2026"
+          },
+          {
+            "name": "langgraph-persistence",
+            "description": "Persist LangGraph state: checkpointers, `thread_id`, time travel over checkpoint history, the cross-thread `Store`, and subgraph\u2026"
+          },
+          {
+            "name": "langsmith-online-eval-engineering",
+            "description": "Create LangSmith online evaluators one at a time: inspect recent traces in a tracing project, interview the user, propose grounded\u2026"
+          }
+        ]
+      }
+    },
+    "microsoft365": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "excel-workbooks",
+            "description": "Build and debug Microsoft Excel workbooks: formulas, references, tables, charts, conditional formatting, basic pivot tables, and data\u2026"
+          },
+          {
+            "name": "m365-ecosystem-primer",
+            "description": "Router for Microsoft 365 work in this library: Word documents, Excel workbooks, PowerPoint decks, Outlook email/calendar, Teams\u2026"
+          },
+          {
+            "name": "onedrive-organization",
+            "description": "Organize files in Microsoft OneDrive and SharePoint: folder structure for semesters, sharing links, permissions, version history, and sync"
+          },
+          {
+            "name": "outlook-email-calendar",
+            "description": "Professional email and calendar in Microsoft Outlook: syllabus-to-calendar blocking, meeting invites, inbox triage, signatures, and\u2026"
+          },
+          {
+            "name": "powerpoint-decks",
+            "description": "Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and\u2026"
+          },
+          {
+            "name": "teams-collaboration",
+            "description": "Collaborate in Microsoft Teams for school and work: channels, chat threads, meetings, screen share, file tabs, and group project norms"
+          },
+          {
+            "name": "word-documents",
+            "description": "Create and format Microsoft Word documents: styles, headings, page layout, tables of contents, track changes, comments, mail merge basics,\u2026"
+          }
+        ]
+      }
+    },
+    "plaud": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "plaud-ask-queries",
+            "description": "Query Plaud recordings with Ask Plaud: cross-file search, cited answers linked to audio timestamps, and follow-up questions"
+          },
+          {
+            "name": "plaud-autoflow",
+            "description": "Configure Plaud AutoFlow: automatic device-to-app transfer, auto-transcription, auto-summary with chosen template and LLM, and email\u2026"
+          },
+          {
+            "name": "plaud-ecosystem-primer",
+            "description": "Router for Plaud AI voice recorder workflows: device capture, transcription, summary templates, Ask Plaud queries, AutoFlow automation,\u2026"
+          },
+          {
+            "name": "plaud-export-integrate",
+            "description": "Export Plaud transcripts and summaries to Word, PDF, mind maps, and integrate with OneDrive, Teams, Notion, or email workflows"
+          },
+          {
+            "name": "plaud-lecture-notes",
+            "description": "Turn Plaud lecture recordings into study materials: capture setup, summary templates for classes, Cornell-style refinement, exam prep\u2026"
+          },
+          {
+            "name": "plaud-recording-capture",
+            "description": "Capture audio with Plaud devices and app: in-person vs phone-call mode, press-to-highlight, placement, battery, consent, and recording\u2026"
+          },
+          {
+            "name": "plaud-summary-templates",
+            "description": "Generate Plaud AI summaries: built-in templates, custom templates, multidimensional summaries, action items, and meeting vs lecture formats"
+          },
+          {
+            "name": "plaud-transcription",
+            "description": "Improve Plaud transcripts: language selection, speaker diarization, custom vocabulary, formatting, and fixing common ASR errors before\u2026"
+          }
+        ]
+      }
+    },
+    "playwright": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "playwright-cli",
+            "description": "Automate browser interactions, test web pages and work with Playwright tests \u2014 the general-purpose Playwright skill for this repo (web\u2026"
+          },
+          {
+            "name": "playwright-component-testing",
+            "description": "Set up component testing with Playwright using a story gallery \u2014 scaffold stories and a gallery dev page driven by the built-in mount\u2026"
+          },
+          {
+            "name": "playwright-trace",
+            "description": "Inspect Playwright trace files from the command line \u2014 list actions, view requests, console, errors, snapshots and screenshots"
+          }
+        ]
+      }
+    },
+    "projects": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "nyx",
+            "description": "Canonical character bible for Nyx, a recurring original character in this project \u2014 appearance, physique, tattoo map, personality, voice,\u2026"
+          }
+        ]
+      }
+    },
+    "prompt-optimizer": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "prompt-optimizer",
+            "description": "Creates, optimizes, and iteratively refines agent prompts, system prompts, developer prompts, and reusable prompt templates"
+          }
+        ]
+      }
+    },
+    "pydantic-ai": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "building-pydantic-ai-agents",
+            "description": "Build agents in Python with Pydantic AI \u2014 tools, capabilities (including on-demand loading), structured output, streaming, testing, and\u2026"
+          }
+        ]
+      }
+    },
+    "supabase": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "supabase",
+            "description": "Canonical source for Supabase development work"
+          },
+          {
+            "name": "supabase-postgres-best-practices",
+            "description": "Postgres performance optimization and best practices from Supabase"
+          }
+        ]
+      }
+    },
+    "vercel": {
+      "version": "1.0.0",
+      "components": {
+        "skills": [
+          {
+            "name": "access-protected-vercel-deployment",
+            "description": "Access and test Vercel deployments protected by Vercel Authentication, SSO, or Deployment Protection"
+          },
+          {
+            "name": "ai-gateway",
+            "description": "Vercel AI Gateway expert guidance"
+          },
+          {
+            "name": "ai-sdk",
+            "description": "Vercel AI SDK expert guidance"
+          },
+          {
+            "name": "auth",
+            "description": "Authentication integration guidance \u2014 Clerk (native Vercel Marketplace, recommended for greenfield), Descope, Auth0, and Auth.js (NextAuth\u2026"
+          },
+          {
+            "name": "bootstrap",
+            "description": "Project bootstrapping orchestrator for repos that depend on Vercel-linked resources (databases, auth, and managed integrations)"
+          },
+          {
+            "name": "build-agents",
+            "description": "Default guidance for building AI agents when no framework has been chosen, or when the target is Vercel-native"
+          },
+          {
+            "name": "cdn-caching",
+            "description": "Debug Vercel CDN caching \u2014 cache hit rate, stale content, revalidation behavior, ISR + PPR, per-request cache reasons (cacheReason) and\u2026"
+          },
+          {
+            "name": "chat-sdk",
+            "description": "Vercel Chat SDK expert guidance"
+          },
+          {
+            "name": "create-a-backend",
+            "description": "Backend architecture guidance"
+          },
+          {
+            "name": "deployments-cicd",
+            "description": "Vercel deployment and CI/CD expert guidance"
+          },
+          {
+            "name": "env-vars",
+            "description": "Vercel environment variable expert guidance"
+          },
+          {
+            "name": "eve",
+            "description": "eve framework guidance for durable AI agents and agent-powered applications"
+          },
+          {
+            "name": "knowledge-update",
+            "description": "Corrects outdated LLM knowledge about the Vercel platform and introduces new products"
+          },
+          {
+            "name": "marketplace",
+            "description": "Vercel Marketplace expert guidance \u2014 discovering, installing, and managing third-party integrations via the `vercel integration` CLI"
+          },
+          {
+            "name": "microfrontends",
+            "description": "Guide for building, configuring, and deploying microfrontends on Vercel"
+          },
+          {
+            "name": "next-cache-components",
+            "description": "Next.js 16 Cache Components guidance \u2014 PPR, use cache directive, cacheLife, cacheTag, updateTag, and migration from unstable_cache"
+          },
+          {
+            "name": "next-forge",
+            "description": "next-forge expert guidance \u2014 production-grade Turborepo monorepo SaaS starter by Vercel"
+          },
+          {
+            "name": "next-upgrade",
+            "description": "Upgrade Next.js to the latest version following official migration guides and codemods"
+          },
+          {
+            "name": "nextjs",
+            "description": "Next.js App Router expert guidance"
+          },
+          {
+            "name": "react-best-practices",
+            "description": "React performance best-practices for TSX files \u2014 64 Vercel rules across 8 impact tiers (waterfalls, bundle size, server/client fetching,\u2026"
+          },
+          {
+            "name": "routing-middleware",
+            "description": "Vercel Routing Middleware guidance \u2014 request interception before cache, rewrites, redirects, personalization"
+          },
+          {
+            "name": "runtime-cache",
+            "description": "Vercel Runtime Cache API guidance \u2014 ephemeral per-region key-value cache with tag-based invalidation"
+          },
+          {
+            "name": "shadcn",
+            "description": "shadcn/ui expert guidance \u2014 CLI, component installation, composition patterns, custom registries, theming, Tailwind CSS integration, and\u2026"
+          },
+          {
+            "name": "turbopack",
+            "description": "Turbopack expert guidance"
+          },
+          {
+            "name": "vercel-cli",
+            "description": "Vercel CLI expert guidance"
+          },
+          {
+            "name": "vercel-connect",
+            "description": "Vercel Connect expert guidance \u2014 securely obtain scoped OAuth tokens for third-party services (Slack, GitHub, MCP servers, OAuth,\u2026"
+          },
+          {
+            "name": "vercel-firewall",
+            "description": "Vercel Firewall expert guidance \u2014 automatic DDoS mitigation, the Vercel WAF (custom rules, IP blocking, managed rulesets, rate limiting),\u2026"
+          },
+          {
+            "name": "vercel-functions",
+            "description": "Vercel Functions expert guidance \u2014 Serverless Functions, Edge Functions, Fluid Compute, streaming, Cron Jobs, and runtime configuration"
+          },
+          {
+            "name": "vercel-sandbox",
+            "description": "Vercel Sandbox + agent-browser guidance \u2014 run headless Chrome in Firecracker microVMs for screenshots, accessibility snapshots, and\u2026"
+          },
+          {
+            "name": "vercel-services",
+            "description": "Configure and troubleshoot Vercel Services for multiple frontends and backends in one project"
+          },
+          {
+            "name": "vercel-storage",
+            "description": "Vercel storage expert guidance \u2014 Blob, Edge Config, and Marketplace storage (Neon Postgres, Upstash Redis)"
+          },
+          {
+            "name": "verification",
+            "description": "Full-story verification \u2014 infers what the user is building, then verifies the complete flow end-to-end: browser \u2192 API \u2192 data \u2192 response"
+          },
+          {
+            "name": "workflow",
+            "description": "Vercel Workflow SDK expert guidance"
+          }
+        ]
+      }
+    }
+  }
+}

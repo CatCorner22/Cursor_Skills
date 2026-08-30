@@ -1,0 +1,14 @@
+{
+  "name": "langchain",
+  "version": "1.0.0",
+  "description": "LangChain/LangGraph agents, RAG, persistence, Deep Agents.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "langchain",
+    "grok",
+    "skills"
+  ]
+}

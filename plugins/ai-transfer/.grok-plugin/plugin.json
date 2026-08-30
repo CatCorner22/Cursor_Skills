@@ -1,0 +1,14 @@
+{
+  "name": "ai-transfer",
+  "version": "1.0.0",
+  "description": "Cross-domain AI quality gates. Mention a technique by name or /router.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "ai-transfer",
+    "grok",
+    "skills"
+  ]
+}

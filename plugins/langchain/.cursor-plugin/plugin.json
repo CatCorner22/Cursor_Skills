@@ -1,6 +1,0 @@
-{
-  "name": "langchain",
-  "version": "1.0.0-snapshot",
-  "description": "LangChain/LangGraph agents, RAG, persistence, Deep Agents. Skills are manual.",
-  "skills": "skills"
-}

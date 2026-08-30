@@ -1,0 +1,14 @@
+{
+  "name": "academic",
+  "version": "1.0.0",
+  "description": "College coursework: writing, citations, study system.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "academic",
+    "grok",
+    "skills"
+  ]
+}

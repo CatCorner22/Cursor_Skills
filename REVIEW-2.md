@@ -1,3 +1,5 @@
+> Port note: this review was written against the Cursor_Skills snapshot. Host-specific Cursor Cloud / SDK skills were rewritten for Grok Build. See `docs/GROK-PORT.md`.
+
 # Second-pass review — skills and plugins (2026-08-27)
 
 Full pass over the current tree: 189 `SKILL.md` files across 19 packs, the plugin wrappers under `plugins/`, `.cursor-plugin/marketplace.json`, `scripts/`, and the docs. The original [REVIEW.md](REVIEW.md) covered the 63-skill snapshot (vercel, huggingface, adobe, cursor-cloud); this pass re-verifies the mechanical claims and reviews every pack added since: coding, academic, craft, microsoft365, plaud, ai-transfer, projects, langchain, playwright, cursor-sdk, pydantic-ai, prompt-optimizer, supabase, cursor-team-kit, first-party, and the hf-cloud-* / hf-mem Hugging Face additions.

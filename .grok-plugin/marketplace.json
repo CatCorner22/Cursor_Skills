@@ -1,0 +1,275 @@
+{
+  "name": "grok-skill-pack",
+  "description": "Grok Build port of Cursor_Skills \u2014 189 skills across 19 packs.",
+  "owner": {
+    "name": "CatCorner22"
+  },
+  "plugins": [
+    {
+      "name": "academic",
+      "description": "College coursework: writing, citations, study system.",
+      "category": "education",
+      "source": {
+        "type": "local",
+        "path": "./plugins/academic"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "academic",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "adobe",
+      "description": "Adobe App Builder and Workfront: actions, UI, CI/CD, testing.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/adobe"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "adobe",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "ai-transfer",
+      "description": "Cross-domain AI quality gates. Mention a technique by name or /router.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/ai-transfer"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "ai-transfer",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "coding",
+      "description": "Software craft: deliverable-first, architecture, UI/UX, test-while-coding.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/coding"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "coding",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "craft",
+      "description": "Operational craft: mise en place and OODA\u00d7lean.",
+      "category": "productivity",
+      "source": {
+        "type": "local",
+        "path": "./plugins/craft"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "craft",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "cursor-cloud",
+      "description": "Grok host: skill load paths, slash commands, artifacts, scheduled waits, marketplaces.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/cursor-cloud"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "cursor-cloud",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "cursor-sdk",
+      "description": "Drive the xAI / Grok API from code.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/cursor-sdk"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "cursor-sdk",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "cursor-team-kit",
+      "description": "GitHub PR workflow: branches, reviews, CI, conflicts, shipping.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/cursor-team-kit"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "cursor-team-kit",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "first-party",
+      "description": "proactive-agency may invoke implicitly. skill-library-audit, smolagents, and v0 are slash-only.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/first-party"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "first-party",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "huggingface",
+      "description": "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/huggingface"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "huggingface",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "langchain",
+      "description": "LangChain/LangGraph agents, RAG, persistence, Deep Agents.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/langchain"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "langchain",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "microsoft365",
+      "description": "Microsoft 365: Word, Excel, PowerPoint, Outlook, Teams, OneDrive.",
+      "category": "productivity",
+      "source": {
+        "type": "local",
+        "path": "./plugins/microsoft365"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "microsoft365",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "plaud",
+      "description": "Plaud recorder: capture, transcription, summaries, AutoFlow, export.",
+      "category": "productivity",
+      "source": {
+        "type": "local",
+        "path": "./plugins/plaud"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "plaud",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "playwright",
+      "description": "Playwright browser automation, component tests, traces (non-Adobe).",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/playwright"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "playwright",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "projects",
+      "description": "Project reference material (nyx).",
+      "category": "productivity",
+      "source": {
+        "type": "local",
+        "path": "./plugins/projects"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "projects",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "prompt-optimizer",
+      "description": "Author and optimize prompt text.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/prompt-optimizer"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "prompt-optimizer",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "pydantic-ai",
+      "description": "Pydantic AI typed Python agents.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/pydantic-ai"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "pydantic-ai",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "supabase",
+      "description": "Supabase Auth, Storage, Edge Functions, Postgres.",
+      "category": "database",
+      "source": {
+        "type": "local",
+        "path": "./plugins/supabase"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "supabase",
+        "grok-skill-pack"
+      ]
+    },
+    {
+      "name": "vercel",
+      "description": "Vercel and Next.js platform skills.",
+      "category": "deployment",
+      "source": {
+        "type": "local",
+        "path": "./plugins/vercel"
+      },
+      "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+      "keywords": [
+        "vercel",
+        "grok-skill-pack"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "microsoft365",
+  "version": "1.0.0",
+  "description": "Microsoft 365: Word, Excel, PowerPoint, Outlook, Teams, OneDrive.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "microsoft365",
+    "grok",
+    "skills"
+  ]
+}

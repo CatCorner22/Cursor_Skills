@@ -1,6 +1,6 @@
 # Coding pack — gap analysis (2026-08-25)
 
-Review of the **Cursor_Skills** library before adding the **`coding`** pack (7 skills).
+Review of the **Cursor_Skills** library (now ported as **Grok_Skill_Pack**) before adding the **`coding`** pack (7 skills).
 
 ## What the library already covered
 

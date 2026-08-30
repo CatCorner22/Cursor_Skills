@@ -1,0 +1,14 @@
+{
+  "name": "cursor-team-kit",
+  "version": "1.0.0",
+  "description": "GitHub PR workflow: branches, reviews, CI, conflicts, shipping.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "cursor-team-kit",
+    "grok",
+    "skills"
+  ]
+}

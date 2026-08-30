@@ -1,0 +1,14 @@
+{
+  "name": "adobe",
+  "version": "1.0.0",
+  "description": "Adobe App Builder and Workfront: actions, UI, CI/CD, testing.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "homepage": "https://github.com/CatCorner22/Grok_Skill_Pack",
+  "keywords": [
+    "adobe",
+    "grok",
+    "skills"
+  ]
+}
