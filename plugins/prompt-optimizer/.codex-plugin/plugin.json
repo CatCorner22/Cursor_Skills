@@ -1,9 +1,0 @@
-{
-  "name": "prompt-optimizer",
-  "version": "1.0.0",
-  "description": "Author and optimize prompt text. Skill is explicit-invoke.",
-  "author": {
-    "name": "CatCorner22"
-  },
-  "skills": "./skills/"
-}

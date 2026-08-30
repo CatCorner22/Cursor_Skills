@@ -1,9 +1,0 @@
-interface:
-  display_name: Proactive agency
-  short_description: 'Always-on execution posture: do the work instead of describing it'
-  default_prompt: Use $proactive-agency for this task.
-policy:
-  allow_implicit_invocation: true
-  products:
-  - CHAT
-  - CODEX

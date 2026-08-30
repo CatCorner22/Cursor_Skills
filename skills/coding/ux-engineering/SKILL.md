@@ -1,10 +1,9 @@
 ---
 name: ux-engineering
-description: 'User experience engineering: task flows, Nielsen heuristics, loading/empty/error patterns, accessibility (WCAG-oriented), microcopy, and feedback loops. Use when designing or reviewing screens, forms, onboarding, or when the user mentions UX, usability, a11y, accessibility, or user flow. Scope boundary: component implementation and Tailwind/shadcn structure → `ui-engineering`; React render performance → `react-best-practices`; full browser E2E proof → `verification`/`playwright-cli`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "User experience engineering: task flows, Nielsen heuristics, loading/empty/error patterns, accessibility (WCAG-oriented), microcopy, and feedback loops. Use when designing or reviewing screens, forms, onboarding, or when the user mentions UX, usability, a11y, accessibility, or user flow. Scope boundary: component implementation and Tailwind/shadcn structure → `ui-engineering`; React render performance → `react-best-practices`; full browser E2E proof → `verification`/`playwright-cli`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 6
 ---
 # UX engineering
 

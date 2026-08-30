@@ -1,9 +1,0 @@
-interface:
-  display_name: Ai Transfer Adaptive
-  short_description: 'Router for adaptive AI-transfer techniques: compute triage, AAR debriefs, mid-flight feedback, wayfinding telemetry, annealing phases'
-  default_prompt: Use $ai-transfer-adaptive for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,9 +1,0 @@
-interface:
-  display_name: Playwright Trace
-  short_description: Inspect Playwright trace files from the command line — list actions, view requests, console, errors, snapshots and screenshots
-  default_prompt: Use $playwright-trace for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,10 +1,9 @@
 ---
 name: ai-transfer-memory
-description: 'Router for memory AI-transfer techniques: stratified sessions, tablebase cache, taxonomy retrieval, cross-session bridges. Use for long-horizon context and RAG design. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for memory AI-transfer techniques: stratified sessions, tablebase cache, taxonomy retrieval, cross-session bridges. Use for long-horizon context and RAG design. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
 ---
 # AI transfer — memory and context
 

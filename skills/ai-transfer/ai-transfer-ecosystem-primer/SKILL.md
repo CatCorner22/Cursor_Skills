@@ -1,10 +1,16 @@
 ---
 name: ai-transfer-ecosystem-primer
-description: 'Router for the AI-transfer catalog (45 techniques, #1–50 with five merges) — gates, scaffolds, and pipeline stages. Use when hardening agents, RAG, multi-step chains, or when the user mentions transferable skills, discipline patterns, or AI quality plugins. Scope boundary: domain apps (college, M365) → those primers; human craft loops → `craft-systems-primer`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for the AI-transfer catalog (45 techniques, #1–50 with five merges) — gates, scaffolds, and pipeline stages. Use when hardening agents, RAG, multi-step chains, or when the user mentions transferable skills, discipline patterns, or AI quality plugins. Scope boundary: domain apps (college, M365) → those primers; human craft loops → `craft-systems-primer`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "AI transferable skills"
+      - "cross domain AI"
+      - "hallucination gate"
+      - "pipeline stage"
+    minScore: 6
 ---
 # AI-transferable skills ecosystem
 

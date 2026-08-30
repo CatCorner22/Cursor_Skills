@@ -1,9 +1,0 @@
-interface:
-  display_name: Ai Transfer Quality Control
-  short_description: 'Router for quality-control AI-transfer techniques: claim/evidence gates, preflight, critique loops, provenance, context gating, root…'
-  default_prompt: Use $ai-transfer-quality-control for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

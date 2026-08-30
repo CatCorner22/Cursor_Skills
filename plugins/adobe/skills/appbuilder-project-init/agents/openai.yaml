@@ -1,9 +1,0 @@
-interface:
-  display_name: Appbuilder Project Init
-  short_description: Initialize an Adobe App Builder project end-to-end without Developer Console UI clicks
-  default_prompt: Use $appbuilder-project-init for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

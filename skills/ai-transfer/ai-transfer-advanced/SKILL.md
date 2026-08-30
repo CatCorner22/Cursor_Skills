@@ -1,10 +1,9 @@
 ---
 name: ai-transfer-advanced
-description: 'Router for advanced AI-transfer techniques: seismic joints, sidechain ducking, genre cross-pollination, containment layers, sail trim, interaction tables, parallax depth. Use when composing stacks or tuning long-running outputs. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for advanced AI-transfer techniques: seismic joints, sidechain ducking, genre cross-pollination, containment layers, sail trim, interaction tables, parallax depth. Use when composing stacks or tuning long-running outputs. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
 ---
 # AI transfer — advanced pack
 

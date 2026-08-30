@@ -1,10 +1,7 @@
 ---
 name: langsmith-online-eval-engineering
-description: 'Create LangSmith online evaluators one at a time: inspect recent traces in a tracing project, interview the user, propose grounded criteria, then build, test, attach via a run rule, and verify a single LLM-as-judge or code evaluator per pass. Use for evaluation attached to live LangSmith traces. Scope boundary: offline model benchmarking and leaderboards belong to `huggingface-community-evals`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Create LangSmith online evaluators one at a time: inspect recent traces in a tracing project, interview the user, propose grounded criteria, then build, test, attach via a run rule, and verify a single LLM-as-judge or code evaluator per pass. Use for evaluation attached to live LangSmith traces. Scope boundary: offline model benchmarking and leaderboards belong to `huggingface-community-evals`."
 ---
 # Online Eval Engineering
 

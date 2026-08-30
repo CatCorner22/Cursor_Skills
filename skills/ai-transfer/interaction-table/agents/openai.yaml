@@ -1,9 +1,0 @@
-interface:
-  display_name: Interaction Table
-  short_description: Look up known skill/plugin pairs that fight (context strip vs inject, length vs rhythm, duck vs dual-axis, rewrite vs lock) before loading…
-  default_prompt: Use $interaction-table for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

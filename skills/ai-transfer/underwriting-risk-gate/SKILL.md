@@ -1,10 +1,15 @@
 ---
 name: underwriting-risk-gate
-description: Score GREEN/YELLOW/RED risk before delivery for medical, legal, or financial-advice asks; hold RED for review. Use as a pre-delivery gate, not as advice. Scope boundary — does not give legal/medical advice; claim support → `double-entry-claims`; independent safety layers → `containment-safety-layers`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Score GREEN/YELLOW/RED risk before delivery for medical, legal, or financial-advice asks; hold RED for review. Use as a pre-delivery gate, not as advice. Scope boundary — does not give legal/medical advice; claim support → `double-entry-claims`; independent safety layers → `containment-safety-layers`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "underwriting risk"
+      - "pre-delivery risk"
+      - "RED YELLOW GREEN gate"
+    minScore: 6
 ---
 # Underwriting pre-delivery risk gate
 

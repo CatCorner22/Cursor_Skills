@@ -1,10 +1,9 @@
 ---
 name: ai-transfer-refinement
-description: 'Router for refinement AI-transfer techniques: three-axis grading, debate voting, model blending, faceting passes, localization QA. Use for final polish and multi-model fusion. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for refinement AI-transfer techniques: three-axis grading, debate voting, model blending, faceting passes, localization QA. Use for final polish and multi-model fusion. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
 ---
 # AI transfer — refinement and polish
 

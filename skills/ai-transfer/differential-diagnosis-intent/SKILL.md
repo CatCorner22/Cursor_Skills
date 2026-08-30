@@ -1,10 +1,15 @@
 ---
 name: differential-diagnosis-intent
-description: Rank 2–3 interpretations of the user query (literal, examples, comparison) with probabilities before answering. Use when the ask is ambiguous. Scope boundary — this is query triage, not medical advice (high-stakes domains → `underwriting-risk-gate`); OODA orient log → `ooda-adaptive-context`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Rank 2–3 interpretations of the user query (literal, examples, comparison) with probabilities before answering. Use when the ask is ambiguous. Scope boundary — this is query triage, not medical advice (high-stakes domains → `underwriting-risk-gate`); OODA orient log → `ooda-adaptive-context`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "differential diagnosis intent"
+      - "query hypotheses"
+      - "ambiguous ask"
+    minScore: 6
 ---
 # Differential diagnosis of query intent
 

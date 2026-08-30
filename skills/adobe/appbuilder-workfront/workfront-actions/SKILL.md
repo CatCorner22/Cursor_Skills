@@ -1,11 +1,8 @@
 ---
 name: workfront-actions
-description: 'Use when writing or fixing the server-side code of a Workfront App Builder extension — the Adobe I/O Runtime action the React SPA calls to do work the browser can''t. Reach for this whenever the user is: structuring or editing action code; deciding what shape an action returns so the frontend can tell success from failure (the {data,error} body); passing the IMS token through and calling an external API from the backend so credentials never reach the browser; calling Workfront''s own Public API v21 (search/count, bulk PUT with the updates param, custom DE: field filters); calling Workfront Planning or another Adobe service; or troubleshooting why a deployed action can''t read secrets (process.env is empty once deployed — inputs flow .env → config inputs → params). Also covers CommonJS-only structure, require-adobe-auth, and registering actions in app.config.yaml / ext.config.yaml. For generic non-Workfront action templates and SDKs see appbuilder-action-scaffolder.'
+disable-model-invocation: true
+description: "Use when writing or fixing the server-side code of a Workfront App Builder extension — the Adobe I/O Runtime action the React SPA calls to do work the browser can't. Reach for this whenever the user is: structuring or editing action code; deciding what shape an action returns so the frontend can tell success from failure (the {data,error} body); passing the IMS token through and calling an external API from the backend so credentials never reach the browser; calling Workfront's own Public API v21 (search/count, bulk PUT with the updates param, custom DE: field filters); calling Workfront Planning or another Adobe service; or troubleshooting why a deployed action can't read secrets (process.env is empty once deployed — inputs flow .env → config inputs → params). Also covers CommonJS-only structure, require-adobe-auth, and registering actions in app.config.yaml / ext.config.yaml. For generic non-Workfront action templates and SDKs see appbuilder-action-scaffolder."
 license: Apache-2.0
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # Workfront Runtime actions
 

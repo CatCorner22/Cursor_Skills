@@ -1,11 +1,49 @@
 ---
 name: shadcn
+disable-model-invocation: true
 description: shadcn/ui expert guidance — CLI, component installation, composition patterns, custom registries, theming, Tailwind CSS integration, and high-quality interface design. Use when initializing shadcn, adding components, composing product UI, building custom registries, configuring themes, or troubleshooting component issues.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://ui.shadcn.com/docs, https://ui.shadcn.com/docs/components
+  priority: 6
+  docs:
+    - "https://ui.shadcn.com/docs"
+    - "https://ui.shadcn.com/docs/components"
+  pathPatterns:
+    - 'components.json'
+    - 'components/ui/**'
+    - 'src/components/ui/**'
+    - 'apps/*/components/ui/**'
+    - 'apps/*/src/components/ui/**'
+    - 'packages/*/components/ui/**'
+    - 'packages/*/src/components/ui/**'
+  bashPatterns:
+    - '\bnpx\s+shadcn\b'
+    - '\bnpx\s+shadcn@latest\s+(init|add|build|search|list|migrate|info|docs|view)\b'
+    - '\bnpx\s+create-next-app\b'
+    - '\bbunx\s+create-next-app\b'
+    - '\bpnpm\s+create\s+next-app\b'
+    - '\bnpm\s+create\s+next-app\b'
+validate:
+  -
+    pattern: '"base"\s*:\s*"base-ui"'
+    message: 'AI Elements components use Radix-specific APIs (asChild, openDelay) and have type errors with Base UI. If this project uses AI Elements, reinitialize with: npx shadcn@latest init -d --base radix -f'
+    severity: warn
+retrieval:
+  aliases:
+    - shadcn ui
+    - component library
+    - ui components
+    - tailwind components
+  intents:
+    - add shadcn component
+    - set up shadcn
+    - customize theme
+    - build ui
+  entities:
+    - shadcn/ui
+    - Tailwind CSS
+    - registry
+    - theme
+    - components.json
 ---
 # shadcn/ui
 

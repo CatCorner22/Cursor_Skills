@@ -1,9 +1,0 @@
-{
-  "name": "projects",
-  "version": "1.0.0",
-  "description": "Project reference material (nyx). Skill is explicit-invoke.",
-  "author": {
-    "name": "CatCorner22"
-  },
-  "skills": "./skills/"
-}

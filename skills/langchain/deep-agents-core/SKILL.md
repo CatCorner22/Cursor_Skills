@@ -1,10 +1,7 @@
 ---
 name: deep-agents-core
-description: 'Configure the `deepagents` harness: `create_deep_agent()` / `createDeepAgent()`, middleware selection, built-in filesystem and planning tools, the agent SKILL.md format it loads, and what the harness will and will not let you configure. Use when the user names Deep Agents or the code imports `deepagents`. Scope boundary: an agent-building request with no framework chosen belongs to `build-agents`/`eve`; raw graph code belongs to `langgraph-fundamentals`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Configure the `deepagents` harness: `create_deep_agent()` / `createDeepAgent()`, middleware selection, built-in filesystem and planning tools, the agent SKILL.md format it loads, and what the harness will and will not let you configure. Use when the user names Deep Agents or the code imports `deepagents`. Scope boundary: an agent-building request with no framework chosen belongs to `build-agents`/`eve`; raw graph code belongs to `langgraph-fundamentals`."
 ---
 <overview>
 Deep Agents are an opinionated agent framework built on LangChain/LangGraph with built-in middleware:

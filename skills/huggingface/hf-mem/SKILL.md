@@ -1,10 +1,7 @@
 ---
 name: hf-mem
-description: Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub. Use when you have a specific model and need its exact memory footprint. Complements `huggingface-best`, which works the other direction — given a device's memory budget, it narrows which models fit — and `huggingface-local-models` for local GGUF quantization choice.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub. Use when you have a specific model and need its exact memory footprint. Complements `huggingface-best`, which works the other direction — given a device's memory budget, it narrows which models fit — and `huggingface-local-models` for local GGUF quantization choice."
 ---
 `hf_mem` estimates the required memory for inference, including model weights and an optional KV cache, for Safetensors and GGUF for models on the Hugging Face Hub using HTTP Range requests i.e., without downloading or loading any weights locally.
 

@@ -1,12 +1,95 @@
 ---
 name: vercel-sandbox
+disable-model-invocation: true
 description: Vercel Sandbox + agent-browser guidance — run headless Chrome in Firecracker microVMs for screenshots, accessibility snapshots, and browser automation. Use when building agent-browser or scheduled scraping flows on Vercel. For generic untrusted-code isolation, still use @vercel/sandbox APIs documented here after the browser sections.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs/sandbox
-  sitemap: https://vercel.com/sitemap/docs.xml
+  priority: 4
+  docs:
+    - "https://vercel.com/docs/sandbox"
+  sitemap: "https://vercel.com/sitemap/docs.xml"
+  pathPatterns: []
+  importPatterns:
+    - '@vercel/sandbox'
+  bashPatterns:
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@vercel/sandbox\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@vercel/sandbox\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@vercel/sandbox\b'
+    - '\byarn\s+add\s+[^\n]*@vercel/sandbox\b'
+  promptSignals:
+    phrases:
+      - "@vercel/sandbox"
+      - "sandbox"
+      - "code sandbox"
+      - "vercel sandbox"
+      - "isolated environment"
+      - "sandboxed execution"
+    allOf:
+      - [sandbox, code]
+      - [sandbox, execute]
+      - [sandbox, run]
+      - [sandbox, isolated]
+      - [sandbox, safe]
+      - [sandbox, environment]
+      - [isolated, execute]
+      - [isolated, code]
+      - [isolated, environment]
+      - [isolated, run]
+      - [safe, execute]
+      - [safe, code]
+      - [untrusted, code]
+      - [untrusted, execute]
+      - [code, runner]
+      - [code, playground]
+      - [execute, safely]
+      - [run, safely]
+      - [run, isolation]
+      - [execute, isolation]
+      - [ffmpeg, process]
+      - [ffmpeg, convert]
+      - [ffmpeg, compress]
+      - [student, code]
+      - [student, execute]
+      - [student, run]
+    anyOf:
+      - "sandbox"
+      - "isolated"
+      - "isolation"
+      - "untrusted"
+      - "safely"
+      - "microvm"
+      - "ffmpeg"
+      - "playground"
+    noneOf:
+      - "iframe sandbox"
+      - "sandbox attribute"
+      - "codesandbox.io"
+      - "stackblitz"
+    minScore: 6
+retrieval:
+  aliases:
+    - code sandbox
+    - microvm
+    - isolated execution
+    - safe code runner
+  intents:
+    - run untrusted code
+    - execute code safely
+    - create sandbox
+    - isolate code execution
+  entities:
+    - Vercel Sandbox
+    - Firecracker
+    - microVM
+    - isolated execution
+chainTo:
+  -
+    pattern: 'from\s+[''""]vm2[''""]|require\s*\(\s*[''""]vm2[''""\)]|new\s+VM\('
+    targetSkill: vercel-sandbox
+    message: 'vm2 detected — it has known security vulnerabilities. Reloading Vercel Sandbox guidance for Firecracker microVM-based safe execution.'
+  -
+    pattern: 'child_process.*exec\(|execSync\(|spawn\(.*\{.*shell:\s*true'
+    targetSkill: vercel-sandbox
+    message: 'Shell exec for code execution detected — run untrusted or AI-generated commands inside @vercel/sandbox instead of the agent host.'
 ---
 # Browser Automation with Vercel Sandbox
 

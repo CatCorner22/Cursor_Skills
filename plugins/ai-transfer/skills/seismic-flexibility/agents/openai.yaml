@@ -1,9 +1,0 @@
-interface:
-  display_name: Seismic Flexibility
-  short_description: Insert modular joints (paragraph/section seams) so a later edit does not collapse the whole piece
-  default_prompt: Use $seismic-flexibility for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,9 +1,0 @@
-interface:
-  display_name: Ui Engineering
-  short_description: 'Modern UI implementation: component composition, design tokens, Tailwind/shadcn/Radix stacks, responsive layout, and accessible markup…'
-  default_prompt: Use $ui-engineering for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,9 +1,0 @@
-{
-  "name": "ai-transfer",
-  "version": "1.0.0",
-  "description": "Cross-domain AI quality gates. Skills are explicit-invoke; mention a technique by name.",
-  "author": {
-    "name": "CatCorner22"
-  },
-  "skills": "./skills/"
-}

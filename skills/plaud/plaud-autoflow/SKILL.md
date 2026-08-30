@@ -1,10 +1,22 @@
 ---
 name: plaud-autoflow
-description: 'Configure Plaud AutoFlow: automatic device-to-app transfer, auto-transcription, auto-summary with chosen template and LLM, and email delivery. Use when automating repetitive Plaud pipelines for lectures or recurring meetings. Scope boundary: one-off summary edits → `plaud-summary-templates`; export destinations → `plaud-export-integrate`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Configure Plaud AutoFlow: automatic device-to-app transfer, auto-transcription, auto-summary with chosen template and LLM, and email delivery. Use when automating repetitive Plaud pipelines for lectures or recurring meetings. Scope boundary: one-off summary edits → `plaud-summary-templates`; export destinations → `plaud-export-integrate`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 6
+  promptSignals:
+    phrases:
+      - "plaud autoflow"
+      - "automatic transcription"
+      - "auto summarize"
+      - "email summary plaud"
+    allOf:
+      - [plaud, auto]
+      - [autoflow, plaud]
+    anyOf:
+      - "AutoFlow"
+      - "auto generation"
+    minScore: 6
 ---
 # Plaud AutoFlow
 

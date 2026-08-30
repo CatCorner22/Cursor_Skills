@@ -1,9 +1,0 @@
-interface:
-  display_name: Huggingface Datasets
-  short_description: Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters,…
-  default_prompt: Use $huggingface-datasets for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

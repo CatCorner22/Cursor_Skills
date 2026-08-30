@@ -1,9 +1,0 @@
-interface:
-  display_name: Ai Transfer Ecosystem Primer
-  short_description: 'Router for the AI-transfer catalog (45 techniques, #1–50 with five merges) — gates, scaffolds, and pipeline stages'
-  default_prompt: Use $ai-transfer-ecosystem-primer for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,9 +1,0 @@
-interface:
-  display_name: Huggingface Vision Trainer
-  short_description: Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models —…
-  default_prompt: Use $huggingface-vision-trainer for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,10 +1,23 @@
 ---
 name: plaud-recording-capture
-description: 'Capture audio with Plaud devices and app: in-person vs phone-call mode, press-to-highlight, placement, battery, consent, and recording hygiene. Use when starting a Plaud recording, choosing Note vs NotePin, or improving capture quality. Scope boundary: post-capture transcription → `plaud-transcription`; legal advice → remind user of local consent laws only.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Capture audio with Plaud devices and app: in-person vs phone-call mode, press-to-highlight, placement, battery, consent, and recording hygiene. Use when starting a Plaud recording, choosing Note vs NotePin, or improving capture quality. Scope boundary: post-capture transcription → `plaud-transcription`; legal advice → remind user of local consent laws only."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    phrases:
+      - "start plaud recording"
+      - "plaud note"
+      - "record lecture"
+      - "phone call recording"
+      - "press to highlight"
+    allOf:
+      - [plaud, record]
+      - [highlight, plaud]
+    anyOf:
+      - "Plaud NotePin"
+      - "dual mode"
+    minScore: 6
 ---
 # Plaud recording & capture
 

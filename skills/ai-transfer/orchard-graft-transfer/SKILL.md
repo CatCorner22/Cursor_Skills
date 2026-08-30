@@ -1,10 +1,15 @@
 ---
 name: orchard-graft-transfer
-description: 'Graft a specialist scion onto a safe rootstock output: keep the trusted base, attach expert additions at a marked join. Use when mixing a general answer with a domain specialist pass. Scope boundary — multi-model fusion → `wine-blending-fusion`; foreign genre skeleton → `cross-pollination-structure`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Graft a specialist scion onto a safe rootstock output: keep the trusted base, attach expert additions at a marked join. Use when mixing a general answer with a domain specialist pass. Scope boundary — multi-model fusion → `wine-blending-fusion`; foreign genre skeleton → `cross-pollination-structure`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "orchard graft"
+      - "rootstock scion"
+      - "capability transfer"
+    minScore: 6
 ---
 # Orchard graft capability transfer
 

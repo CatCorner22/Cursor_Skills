@@ -1,7 +1,5 @@
 # Skill snapshot provenance
 
-This ChatGPT/Codex port was generated 2026-08-30 from [CatCorner22/Cursor_Skills](https://github.com/CatCorner22/Cursor_Skills). The table below is the **upstream** Cursor snapshot provenance, unchanged.
-
 Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates cannot silently change the reviewed text.
 
 | Pack | Path in this repo | Upstream | Resolved commit | Artifact digest |

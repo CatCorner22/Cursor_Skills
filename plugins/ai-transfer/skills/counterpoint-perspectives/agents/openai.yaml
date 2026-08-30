@@ -1,9 +1,0 @@
-interface:
-  display_name: Counterpoint Perspectives
-  short_description: Generate 2–3 independent analytical voices with own logic, then harmonize into interwoven output — not pros/cons list
-  default_prompt: Use $counterpoint-perspectives for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

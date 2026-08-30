@@ -1,10 +1,9 @@
 ---
 name: ai-transfer-architecture
-description: 'Router for architectural AI-transfer techniques: dual-axis reasoning, OODA context pipelines, proof DAGs, counterpoint, zoom levels, stage layout, warp/weft. Use when restructuring how AI reasons or formats output. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for architectural AI-transfer techniques: dual-axis reasoning, OODA context pipelines, proof DAGs, counterpoint, zoom levels, stage layout, warp/weft. Use when restructuring how AI reasons or formats output. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
 ---
 # AI transfer — architectural restructuring
 

@@ -1,9 +1,0 @@
-interface:
-  display_name: Appbuilder Cicd Pipeline
-  short_description: Set up CI/CD pipelines for Adobe App Builder projects
-  default_prompt: Use $appbuilder-cicd-pipeline for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

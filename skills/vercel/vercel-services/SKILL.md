@@ -1,12 +1,73 @@
 ---
 name: vercel-services
+disable-model-invocation: true
 description: Configure and troubleshoot Vercel Services for multiple frontends and backends in one project. Use when composing a polyglot or multi-service application on one Vercel deployment; defining the `services` key, service-targeted rewrites, or service bindings in `vercel.json`; or running all services with `vercel dev`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+summary: Compose multiple frontends and backends in one Vercel project
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs/services, https://vercel.com/docs/services/routing, https://vercel.com/docs/services/bindings, https://vercel.com/docs/services/config-reference
-  sitemap: https://vercel.com/sitemap/docs.xml
+  priority: 7
+  docs:
+    - "https://vercel.com/docs/services"
+    - "https://vercel.com/docs/services/routing"
+    - "https://vercel.com/docs/services/bindings"
+    - "https://vercel.com/docs/services/config-reference"
+  sitemap: "https://vercel.com/sitemap/docs.xml"
+  pathPatterns:
+    - 'vercel.json'
+    - 'apps/*/vercel.json'
+  bashPatterns:
+    - '\b(?:vercel|vc)\s+dev\b[^\n]*(?:--local|-L)(?:\s|$)'
+  importPatterns: []
+  promptSignals:
+    phrases:
+      - "vercel services"
+      - "vercel service binding"
+      - "vercel service bindings"
+      - "multi-service vercel"
+      - "multiple services on vercel"
+      - "frontend and backend on vercel"
+    allOf:
+      - [backend, vercel]
+      - [polyglot, vercel]
+      - [multiple, services, vercel]
+      - [services, vercel.json]
+      - [vercel, service, binding]
+    anyOf:
+      - "backend"
+      - "monorepo"
+      - "polyglot"
+      - "service"
+      - "binding"
+      - "vercel"
+    noneOf: []
+    minScore: 6
+retrieval:
+  aliases:
+    - Vercel Services
+    - multi-service project
+    - polyglot project
+    - service binding
+    - service rewrite
+  intents:
+    - deploy frontend and backend together in one project
+    - configure the services key in vercel.json
+    - configure service rewrites
+    - call the backend privately with a service binding
+    - keep a service private with no public route
+    - serve a service on a subdomain
+    - strip a route prefix before it reaches the backend service
+    - run all services locally
+  entities:
+    - services
+    - bindings
+    - destination.service
+    - root
+  examples:
+    - put a Next.js frontend and a FastAPI backend in one project
+    - deploy a Vite SPA with an Express API behind /api
+    - add a Go service to an existing Next.js project
+    - my frontend cannot reach the backend service
+    - the backend returns 404 for every /api route
+    - point api.example.com at the backend
 ---
 # Vercel Services
 

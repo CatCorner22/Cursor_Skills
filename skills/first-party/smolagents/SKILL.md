@@ -1,11 +1,20 @@
 ---
 name: smolagents
-description: 'Hugging Face `smolagents`: choosing CodeAgent vs ToolCallingAgent, the model backends (InferenceClientModel, LiteLLMModel, TransformersModel, OpenAIModel), defining tools with `@tool` or a `Tool` subclass, the sandbox choice for the Python that CodeAgent executes, managed-agent hierarchies, and memory/step surgery. Use when the user names smolagents, CodeAgent, ToolCallingAgent, or InferenceClientModel, when code contains `from smolagents`, or when running the `smolagent` CLI. Scope boundary: this covers the smolagents library only — an agent-building request with no framework chosen belongs to `build-agents`/`eve`, Pydantic AI to `building-pydantic-ai-agents`, LangChain/LangGraph to that pack, and Hub API scripting to `huggingface-tool-builder`/`hf-cli`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Hugging Face `smolagents`: choosing CodeAgent vs ToolCallingAgent, the model backends (InferenceClientModel, LiteLLMModel, TransformersModel, OpenAIModel), defining tools with `@tool` or a `Tool` subclass, the sandbox choice for the Python that CodeAgent executes, managed-agent hierarchies, and memory/step surgery. Use when the user names smolagents, CodeAgent, ToolCallingAgent, or InferenceClientModel, when code contains `from smolagents`, or when running the `smolagent` CLI. Scope boundary: this covers the smolagents library only — an agent-building request with no framework chosen belongs to `build-agents`/`eve`, Pydantic AI to `building-pydantic-ai-agents`, LangChain/LangGraph to that pack, and Hub API scripting to `huggingface-tool-builder`/`hf-cli`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://huggingface.co/docs/smolagents/index, https://huggingface.co/docs/smolagents/guided_tour, https://huggingface.co/docs/smolagents/tutorials/secure_code_execution
+  priority: 7
+  pathPatterns: []
+  bashPatterns:
+    - '\bsmolagent\b'
+    - '\bpip install\b.*\bsmolagents\b'
+  importPatterns:
+    - 'from smolagents'
+    - 'import smolagents'
+  docs:
+    - "https://huggingface.co/docs/smolagents/index"
+    - "https://huggingface.co/docs/smolagents/guided_tour"
+    - "https://huggingface.co/docs/smolagents/tutorials/secure_code_execution"
 ---
 # smolagents
 

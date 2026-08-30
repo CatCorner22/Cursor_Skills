@@ -1,11 +1,25 @@
 ---
 name: knowledge-update
+disable-model-invocation: true
 description: Corrects outdated LLM knowledge about the Vercel platform and introduces new products. Invoke manually when working on Vercel products, Fluid Compute, vercel.ts, or when platform facts may be stale.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs
+  priority: 10
+  docs:
+    - "https://vercel.com/docs"
+  pathPatterns:
+    - 'vercel.ts'
+  bashPatterns: []
+  importPatterns: []
+  promptSignals:
+    phrases:
+      - "knowledge update"
+      - "outdated knowledge"
+      - "fluid compute"
+      - "vercel.ts"
+    allOf: []
+    anyOf: []
+    noneOf: []
+    minScore: 6
 ---
 # Vercel Knowledge Updates (2026-06-29)
 

@@ -1,10 +1,9 @@
 ---
 name: coding-ecosystem-primer
-description: 'Router for general software engineering in this library: deliverable-first planning, clean minimal code, stable architecture, real-time testing, and UI/UX engineering. Use when building or refactoring application code with no framework-specific pack already chosen, or when the user asks for coding standards, clean code, TDD, architecture, or how to implement a feature well. Scope boundary: framework-specific work routes out — Next.js/React UI details → `nextjs`/`shadcn`/`react-best-practices`; end-to-end product verification after a feature ships → `verification`; Playwright/browser automation → `playwright-cli`; PR/CI workflow → `cursor-team-kit`; LangChain/Python agents → those packs.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for general software engineering in this library: deliverable-first planning, clean minimal code, stable architecture, real-time testing, and UI/UX engineering. Use when building or refactoring application code with no framework-specific pack already chosen, or when the user asks for coding standards, clean code, TDD, architecture, or how to implement a feature well. Scope boundary: framework-specific work routes out — Next.js/React UI details → `nextjs`/`shadcn`/`react-best-practices`; end-to-end product verification after a feature ships → `verification`; Playwright/browser automation → `playwright-cli`; PR/CI workflow → `cursor-team-kit`; LangChain/Python agents → those packs."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 8
 ---
 # Coding ecosystem primer
 

@@ -1,9 +1,0 @@
-interface:
-  display_name: Smolagents
-  short_description: 'Hugging Face `smolagents`: choosing CodeAgent vs ToolCallingAgent, the model backends (InferenceClientModel, LiteLLMModel,…'
-  default_prompt: Use $smolagents for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,10 +1,24 @@
 ---
 name: plaud-lecture-notes
-description: 'Turn Plaud lecture recordings into study materials: capture setup, summary templates for classes, Cornell-style refinement, exam prep loops, and pairing with spaced repetition. Use when a student records classes with Plaud for coursework. Scope boundary: general Plaud routing → `plaud-ecosystem-primer`; study scheduling → `study-system`; prep → `workspace-mise-en-place`; essay writing → `academic-writing`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Turn Plaud lecture recordings into study materials: capture setup, summary templates for classes, Cornell-style refinement, exam prep loops, and pairing with spaced repetition. Use when a student records classes with Plaud for coursework. Scope boundary: general Plaud routing → `plaud-ecosystem-primer`; study scheduling → `study-system`; prep → `workspace-mise-en-place`; essay writing → `academic-writing`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 8
+  promptSignals:
+    phrases:
+      - "lecture notes"
+      - "record class"
+      - "study from recording"
+      - "plaud lecture"
+      - "exam prep from lecture"
+    allOf:
+      - [lecture, plaud]
+      - [lecture, recording]
+      - [class, transcript]
+    anyOf:
+      - "record lecture"
+      - "professor lecture"
+    minScore: 6
 ---
 # Plaud lecture notes (student workflow)
 

@@ -1,10 +1,15 @@
 ---
 name: tidal-pacing-rhythm
-description: Measure sentence-length tide (high/mid/low) and even the rhythm when variance is extreme. Use on long prose that feels rushed or swampy. Scope boundary — token budget cuts → `prompt-optimizer`; zoom depth → `cartographic-zoom`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Measure sentence-length tide (high/mid/low) and even the rhythm when variance is extreme. Use on long prose that feels rushed or swampy. Scope boundary — token budget cuts → `prompt-optimizer`; zoom depth → `cartographic-zoom`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "tidal pacing"
+      - "sentence rhythm"
+      - "high tide low tide"
+    minScore: 6
 ---
 # Tidal pacing of sentence rhythm
 

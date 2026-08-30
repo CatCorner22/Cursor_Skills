@@ -1,9 +1,0 @@
-interface:
-  display_name: Five Whys Failure Recovery
-  short_description: On pipeline failure, drill five whys to root cause and log permanent system fixes — not prompt whack-a-mole
-  default_prompt: Use $five-whys-failure-recovery for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

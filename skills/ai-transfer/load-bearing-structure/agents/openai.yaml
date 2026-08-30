@@ -1,9 +1,0 @@
-interface:
-  display_name: Load Bearing Structure
-  short_description: Mark load-bearing claims (therefore/must/key/critical) and forbid polish passes from deleting or softening them
-  default_prompt: Use $load-bearing-structure for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

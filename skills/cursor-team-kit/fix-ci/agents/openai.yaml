@@ -1,9 +1,0 @@
-interface:
-  display_name: Fix Ci
-  short_description: Find failing PR checks, inspect logs or external check links, and apply focused fixes
-  default_prompt: Use $fix-ci for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

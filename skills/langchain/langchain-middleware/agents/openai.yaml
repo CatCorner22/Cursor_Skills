@@ -1,9 +1,0 @@
-interface:
-  display_name: Langchain Middleware
-  short_description: 'Middleware on a LangChain `create_agent` / `createAgent` agent: `HumanInTheLoopMiddleware` to approve dangerous tool calls, writing custom…'
-  default_prompt: Use $langchain-middleware for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

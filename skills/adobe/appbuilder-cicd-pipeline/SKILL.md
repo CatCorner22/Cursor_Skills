@@ -1,12 +1,21 @@
 ---
 name: appbuilder-cicd-pipeline
-description: Set up CI/CD pipelines for Adobe App Builder projects. Generates GitHub Actions workflows using adobe/aio-cli-setup-action@3 and adobe/aio-apps-action@3.3.0, plus patterns for Azure DevOps and GitLab CI. Handles OAuth S2S secrets injection, multi-workspace promotion (stage → prod), deploy gating with manifest validation. Use this skill whenever the user mentions CI/CD for App Builder, GitHub Actions for aio deploy, automated deployment pipelines, continuous integration, continuous delivery, deploy automation, multi-environment promotion, aio app add ci, or wants to automate their App Builder build and release process. Also trigger when users mention deploy workflows, release pipelines, or GitHub secrets for App Builder.
+disable-model-invocation: true
+description: >-
+  Set up CI/CD pipelines for Adobe App Builder projects. Generates GitHub Actions workflows using
+  adobe/aio-cli-setup-action@3 and adobe/aio-apps-action@3.3.0, plus patterns for Azure DevOps
+  and GitLab CI. Handles OAuth S2S secrets injection, multi-workspace promotion (stage → prod),
+  deploy gating with manifest validation. Use this skill whenever the
+  user mentions CI/CD for App Builder, GitHub Actions for aio deploy, automated deployment
+  pipelines, continuous integration, continuous delivery, deploy automation, multi-environment
+  promotion, aio app add ci, or wants to automate their App Builder build and release process.
+  Also trigger when users mention deploy workflows, release pipelines, or GitHub secrets for
+  App Builder.
+metadata:
+  category: deployment-automation
 license: Apache-2.0
 compatibility: Requires aio CLI, Node.js 18+, and a CI/CD platform (GitHub Actions, Azure DevOps, or GitLab CI)
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  category: deployment-automation
+allowed-tools: Bash(aio:*) Bash(npm:*) Bash(git:*) Read Write Edit
 ---
 # App Builder CI/CD Pipeline
 

@@ -1,10 +1,23 @@
 ---
 name: plaud-transcription
-description: 'Improve Plaud transcripts: language selection, speaker diarization, custom vocabulary, formatting, and fixing common ASR errors before summarizing. Use after a Plaud recording syncs or when transcript accuracy is poor. Scope boundary: summary templates → `plaud-summary-templates`; querying transcripts → `plaud-ask-queries`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Improve Plaud transcripts: language selection, speaker diarization, custom vocabulary, formatting, and fixing common ASR errors before summarizing. Use after a Plaud recording syncs or when transcript accuracy is poor. Scope boundary: summary templates → `plaud-summary-templates`; querying transcripts → `plaud-ask-queries`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    phrases:
+      - "plaud transcript"
+      - "transcription accuracy"
+      - "speaker labels"
+      - "custom vocabulary"
+      - "fix transcript"
+    allOf:
+      - [plaud, transcribe]
+      - [transcript, speaker]
+    anyOf:
+      - "diarization"
+      - "112 languages"
+    minScore: 6
 ---
 # Plaud transcription
 

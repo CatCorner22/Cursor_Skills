@@ -1,9 +1,0 @@
-interface:
-  display_name: Appbuilder E2E Testing
-  short_description: Use this skill whenever the user wants browser-based end-to-end tests for an Adobe App Builder application
-  default_prompt: Use $appbuilder-e2e-testing for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

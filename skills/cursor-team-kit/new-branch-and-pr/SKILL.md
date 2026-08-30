@@ -1,10 +1,7 @@
 ---
 name: new-branch-and-pr
+disable-model-invocation: true
 description: Create a fresh branch, complete work, and open a pull request
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # New branch and PR
 

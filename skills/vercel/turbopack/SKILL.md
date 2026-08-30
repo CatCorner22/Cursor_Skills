@@ -1,12 +1,43 @@
 ---
 name: turbopack
+disable-model-invocation: true
 description: Turbopack expert guidance. Use when configuring the Next.js bundler, optimizing HMR, debugging build issues, or understanding the Turbopack vs Webpack differences.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://turbo.build/pack/docs, https://nextjs.org/docs/architecture/turbopack
-  sitemap: https://turbo.build/sitemap.xml
+  priority: 4
+  docs:
+    - "https://turbo.build/pack/docs"
+    - "https://nextjs.org/docs/architecture/turbopack"
+  sitemap: "https://turbo.build/sitemap.xml"
+  pathPatterns: 
+    - 'next.config.*'
+  bashPatterns: 
+    - '\bnext\s+dev\s+--turbo\b'
+    - '\bnext\s+dev\s+--turbopack\b'
+retrieval:
+  aliases:
+    - next bundler
+    - turbopack
+    - fast bundler
+    - hmr
+  intents:
+    - enable turbopack
+    - fix build issue
+    - speed up dev server
+    - configure bundler
+  entities:
+    - Turbopack
+    - HMR
+    - bundler
+    - next dev --turbopack
+chainTo:
+  -
+    pattern: 'webpack\s*:\s*\(|webpack\s*\(config'
+    targetSkill: nextjs
+    message: 'Webpack config detected — loading Next.js guidance for migrating webpack customizations to Turbopack top-level config in Next.js 16.'
+  -
+    pattern: 'turbopack\s*:\s*\{|experimental\.turbopack'
+    targetSkill: nextjs
+    message: 'Turbopack configuration detected — loading Next.js guidance for top-level turbopack config syntax in Next.js 16 (moved from experimental.turbopack).'
 ---
 # Turbopack
 

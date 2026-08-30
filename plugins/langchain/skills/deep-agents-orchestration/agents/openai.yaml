@@ -1,9 +1,0 @@
-interface:
-  display_name: Deep Agents Orchestration
-  short_description: 'Subagent delegation, task planning, and approval gates inside the `deepagents` harness: SubAgentMiddleware and the `task` tool,…'
-  default_prompt: Use $deep-agents-orchestration for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,10 +1,29 @@
 ---
 name: excel-workbooks
-description: 'Build and debug Microsoft Excel workbooks: formulas, references, tables, charts, conditional formatting, basic pivot tables, and data validation. Use when working in Excel (.xlsx), spreadsheet homework, budgets, or lab data tables. Scope boundary: interpreting results in prose → `academic-writing`; Python/R analysis → `coding-ecosystem-primer`; Google Sheets → not this pack.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Build and debug Microsoft Excel workbooks: formulas, references, tables, charts, conditional formatting, basic pivot tables, and data validation. Use when working in Excel (.xlsx), spreadsheet homework, budgets, or lab data tables. Scope boundary: interpreting results in prose → `academic-writing`; Python/R analysis → `coding-ecosystem-primer`; Google Sheets → not this pack."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  pathPatterns:
+    - '**/*.xlsx'
+    - '**/*.xls'
+    - '**/*.csv'
+  promptSignals:
+    phrases:
+      - "excel formula"
+      - "spreadsheet"
+      - "pivot table"
+      - "excel chart"
+      - "vlookup"
+      - "microsoft excel"
+    allOf:
+      - [excel, formula]
+      - [spreadsheet, chart]
+    anyOf:
+      - "Microsoft Excel"
+      - ".xlsx"
+      - "XLOOKUP"
+    minScore: 6
 ---
 # Excel workbooks
 

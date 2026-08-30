@@ -1,10 +1,23 @@
 ---
 name: workspace-mise-en-place
-description: 'Prepare the workspace before execution: files, folders, env, tools, references, and templates in place so work never stops for a missing ingredient. Culinary mise en place applied to repos, OneDrive, and study sessions. Use before starting an assignment, coding session, lecture day, or deploy. Scope boundary: during-task loops → `ooda-lean-loop`; folder taxonomy → `onedrive-organization`; defining done → `deliverable-first`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Prepare the workspace before execution: files, folders, env, tools, references, and templates in place so work never stops for a missing ingredient. Culinary mise en place applied to repos, OneDrive, and study sessions. Use before starting an assignment, coding session, lecture day, or deploy. Scope boundary: during-task loops → `ooda-lean-loop`; folder taxonomy → `onedrive-organization`; defining done → `deliverable-first`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 8
+  promptSignals:
+    phrases:
+      - "mise en place"
+      - "prep before starting"
+      - "get organized first"
+      - "set up workspace"
+      - "before I begin"
+    allOf:
+      - [prep, workspace]
+      - [before, start]
+    anyOf:
+      - "mise en place"
+      - "everything in place"
+    minScore: 6
 ---
 # Workspace mise en place
 

@@ -1,10 +1,7 @@
 ---
 name: fix-ci
+disable-model-invocation: true
 description: Find failing PR checks, inspect logs or external check links, and apply focused fixes
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # Fix CI
 

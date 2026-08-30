@@ -1,9 +1,0 @@
-interface:
-  display_name: Clean Minimal Code
-  short_description: 'Write clear, minimal code: fewer lines with the same behavior, established naming, SOLID and YAGNI, no premature abstraction'
-  default_prompt: Use $clean-minimal-code for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

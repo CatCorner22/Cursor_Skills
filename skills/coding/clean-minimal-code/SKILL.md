@@ -1,10 +1,9 @@
 ---
 name: clean-minimal-code
-description: 'Write clear, minimal code: fewer lines with the same behavior, established naming, SOLID and YAGNI, no premature abstraction. Use when implementing or reviewing functions, modules, or refactors; when the user wants clean code, less boilerplate, simplify, or remove unnecessary complexity. Scope boundary: system-wide boundaries and coupling → `stable-architecture`; test loop while editing → `real-time-testing`; React-specific perf → `react-best-practices`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Write clear, minimal code: fewer lines with the same behavior, established naming, SOLID and YAGNI, no premature abstraction. Use when implementing or reviewing functions, modules, or refactors; when the user wants clean code, less boilerplate, simplify, or remove unnecessary complexity. Scope boundary: system-wide boundaries and coupling → `stable-architecture`; test loop while editing → `real-time-testing`; React-specific perf → `react-best-practices`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
 ---
 # Clean minimal code
 

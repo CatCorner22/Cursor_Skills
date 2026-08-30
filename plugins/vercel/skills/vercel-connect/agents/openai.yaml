@@ -1,9 +1,0 @@
-interface:
-  display_name: Vercel Connect
-  short_description: Vercel Connect expert guidance — securely obtain scoped OAuth tokens for third-party services (Slack, GitHub, MCP servers, OAuth,…
-  default_prompt: Use $vercel-connect for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

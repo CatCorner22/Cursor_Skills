@@ -1,12 +1,154 @@
 ---
 name: vercel-storage
+disable-model-invocation: true
 description: Vercel storage expert guidance — Blob, Edge Config, and Marketplace storage (Neon Postgres, Upstash Redis). Use when choosing, configuring, or using data storage with Vercel applications.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs/storage
-  sitemap: https://vercel.com/sitemap/docs.xml
+  priority: 7
+  docs:
+    - "https://vercel.com/docs/storage"
+  sitemap: "https://vercel.com/sitemap/docs.xml"
+  pathPatterns:
+    - 'lib/blob/**'
+    - 'lib/storage/**'
+    - 'src/lib/blob/**'
+    - 'src/lib/storage/**'
+    - 'lib/blob.*'
+    - 'lib/storage.*'
+    - 'lib/edge-config.*'
+    - 'src/lib/blob.*'
+    - 'src/lib/storage.*'
+    - 'src/lib/edge-config.*'
+    - 'prisma/schema.prisma'
+    - 'prisma/**'
+  bashPatterns:
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@vercel/blob\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@vercel/blob\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@vercel/blob\b'
+    - '\byarn\s+add\s+[^\n]*@vercel/blob\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@vercel/edge-config\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@vercel/edge-config\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@vercel/edge-config\b'
+    - '\byarn\s+add\s+[^\n]*@vercel/edge-config\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@neondatabase/serverless\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@neondatabase/serverless\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@neondatabase/serverless\b'
+    - '\byarn\s+add\s+[^\n]*@neondatabase/serverless\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@upstash/redis\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@upstash/redis\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@upstash/redis\b'
+    - '\byarn\s+add\s+[^\n]*@upstash/redis\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@vercel/kv\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@vercel/kv\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@vercel/kv\b'
+    - '\byarn\s+add\s+[^\n]*@vercel/kv\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@vercel/postgres\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@vercel/postgres\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@vercel/postgres\b'
+    - '\byarn\s+add\s+[^\n]*@vercel/postgres\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@prisma/client\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@prisma/client\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@prisma/client\b'
+    - '\byarn\s+add\s+[^\n]*@prisma/client\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*\bmongodb\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*\bmongodb\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*\bmongodb\b'
+    - '\byarn\s+add\s+[^\n]*\bmongodb\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*\bconvex\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*\bconvex\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*\bconvex\b'
+    - '\byarn\s+add\s+[^\n]*\bconvex\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@libsql/client\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@libsql/client\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@libsql/client\b'
+    - '\byarn\s+add\s+[^\n]*@libsql/client\b'
+  importPatterns:
+    - "@vercel/blob"
+    - "@vercel/edge-config"
+    - "@neondatabase/serverless"
+    - "@upstash/redis"
+    - "@vercel/kv"
+    - "@vercel/postgres"
+    - "@prisma/client"
+validate:
+  -
+    pattern: from\s+['"]@vercel/kv['"]
+    message: '@vercel/kv is deprecated — migrate to @upstash/redis (Redis.fromEnv()) instead. Run `vercel integration add upstash` for one-click setup.'
+    severity: error
+    upgradeToSkill: vercel-storage
+    upgradeWhy: 'Reload storage guidance for @vercel/kv → @upstash/redis migration steps, Marketplace provisioning, and API differences.'
+    skipIfFileContains: '@upstash/redis'
+  -
+    pattern: from\s+['"]@vercel/postgres['"]
+    message: '@vercel/postgres is deprecated — use @neondatabase/serverless with drizzle-orm instead. Run `vercel integration add neon` for one-click setup.'
+    severity: error
+    upgradeToSkill: vercel-storage
+    upgradeWhy: 'Reload storage guidance for @vercel/postgres → @neondatabase/serverless migration steps, Marketplace provisioning, and drizzle-orm setup.'
+    skipIfFileContains: '@neondatabase/serverless'
+chainTo:
+  -
+    pattern: "@vercel/postgres"
+    targetSkill: vercel-storage
+    message: '@vercel/postgres is sunset — migrate to @neondatabase/serverless. Run `vercel integration add neon` for one-click Marketplace provisioning with unified billing.'
+    skipIfFileContains: "@neondatabase/serverless|from\\s+['\"]@neondatabase"
+  -
+    pattern: "from\\s+['\"]@vercel/kv['\"]"
+    targetSkill: nextjs
+    message: '@vercel/kv is sunset — loading Next.js guidance for integrating @upstash/redis with App Router.'
+  -
+    pattern: "createPool\\s*\\(|from\\s+['\"]@vercel/postgres/pool['\"]"
+    targetSkill: vercel-storage
+    message: 'createPool from @vercel/postgres detected — this package is sunset. Use @neondatabase/serverless with neon() or Pool for connection pooling.'
+    skipIfFileContains: "@neondatabase/serverless|from\\s+['\"]@neondatabase"
+  -
+    pattern: "sql\\s*`|from\\s+['\"]@vercel/postgres['\"].*sql"
+    targetSkill: vercel-storage
+    message: 'sql template literal from @vercel/postgres detected — this API is sunset. Use @neondatabase/serverless with neon() for tagged template queries.'
+    skipIfFileContains: "@neondatabase/serverless|from\\s+['\"]@neondatabase"
+  -
+    pattern: "from\\s+['\"]@supabase/(supabase-js|ssr)['\"]"
+    targetSkill: supabase
+    message: 'Supabase client detected — loading the Supabase skill for client, SSR, RLS, and Auth guidance.'
+  -
+    pattern: "from\\s+['\"](mongodb|mongoose)['\"]"
+    targetSkill: vercel-storage
+    message: 'MongoDB/Mongoose import detected — loading Vercel Storage guidance for Marketplace-native database options (Neon Postgres, Upstash Redis) with auto-provisioned env vars.'
+  -
+    pattern: "from\\s+['\"]@prisma/client['\"]|from\\s+['\"]prisma['\"]"
+    targetSkill: vercel-storage
+    message: 'Prisma ORM detected — loading Vercel Storage guidance for Neon Postgres integration with Prisma, connection pooling, and Marketplace provisioning.'
+    skipIfFileContains: "@neondatabase/serverless|POSTGRES_PRISMA_URL"
+  -
+    pattern: "from\\s+['\"]@libsql/client['\"]"
+    targetSkill: vercel-storage
+    message: 'libSQL/Turso client detected — loading Vercel Storage guidance for Marketplace-native alternatives (Neon Postgres, Upstash Redis) with unified billing and auto-provisioned env vars.'
+    skipIfFileContains: "@neondatabase/serverless|@upstash/redis"
+  -
+    pattern: "from\\s+['\"]convex['\"]|from\\s+['\"]convex/['\"]"
+    targetSkill: vercel-storage
+    message: 'Convex import detected — loading Vercel Storage guidance for Marketplace-native database options (Neon Postgres, Upstash Redis) with auto-provisioned env vars and unified billing.'
+    skipIfFileContains: "@neondatabase/serverless|@upstash/redis"
+  -
+    pattern: "from\\s+['\"]@supabase/supabase-js['\"]"
+    targetSkill: supabase
+    message: 'Supabase client detected — loading the Supabase skill (Supabase Auth, RLS, and session handling are covered there).'
+    skipIfFileContains: "@clerk/|@auth0/|@descope/"
+retrieval:
+  aliases:
+    - database
+    - blob storage
+    - redis
+    - postgres
+  intents:
+    - add storage
+    - set up database
+    - configure blob storage
+    - use edge config
+  entities:
+    - Blob
+    - Edge Config
+    - Neon Postgres
+    - Upstash Redis
+    - Vercel Storage
 ---
 # Vercel Storage
 

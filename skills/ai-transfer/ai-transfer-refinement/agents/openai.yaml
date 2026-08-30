@@ -1,9 +1,0 @@
-interface:
-  display_name: Ai Transfer Refinement
-  short_description: 'Router for refinement AI-transfer techniques: three-axis grading, debate voting, model blending, faceting passes, localization QA'
-  default_prompt: Use $ai-transfer-refinement for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

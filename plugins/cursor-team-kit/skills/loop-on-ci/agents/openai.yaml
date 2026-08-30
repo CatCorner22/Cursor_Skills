@@ -1,9 +1,0 @@
-interface:
-  display_name: Loop On Ci
-  short_description: Monitor PR checks and fix failures until green
-  default_prompt: Use $loop-on-ci for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

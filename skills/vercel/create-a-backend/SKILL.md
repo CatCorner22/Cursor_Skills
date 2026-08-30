@@ -1,12 +1,59 @@
 ---
 name: create-a-backend
+disable-model-invocation: true
 description: Backend architecture guidance. Use when planning, building, or migrating an API or backend; choosing between Functions, Services, containers, Workflow, Queues, and Marketplace databases; or selecting a supported backend framework or runtime.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+summary: Match backend workloads to the right architecture
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs/frameworks/backend, https://vercel.com/docs/functions, https://vercel.com/docs/services, https://vercel.com/docs/queues, https://vercel.com/docs/workflow, https://vercel.com/docs/storage
-  sitemap: https://vercel.com/sitemap/docs.xml
+  priority: 7
+  docs:
+    - "https://vercel.com/docs/frameworks/backend"
+    - "https://vercel.com/docs/functions"
+    - "https://vercel.com/docs/services"
+    - "https://vercel.com/docs/queues"
+    - "https://vercel.com/docs/workflow"
+    - "https://vercel.com/docs/storage"
+  sitemap: "https://vercel.com/sitemap/docs.xml"
+  pathPatterns:
+    - 'Dockerfile.vercel'
+    - 'Containerfile.vercel'
+  promptSignals:
+    phrases:
+      - "backend on vercel"
+      - "vercel backend"
+      - "build a backend"
+      - "create a backend"
+      - "deploy my backend"
+      - "backend architecture"
+    allOf:
+      - [backend, vercel]
+      - [backend, docker]
+      - [backend, node]
+      - [backend, python]
+      - [backend, queue]
+    anyOf:
+      - "api"
+      - "database"
+      - "service"
+      - "workflow"
+    noneOf: []
+    minScore: 6
+retrieval:
+  aliases:
+    - Vercel backend
+    - backend architecture
+    - backend framework
+  intents:
+    - build a backend
+    - choose backend products
+    - deploy an existing API or server
+    - select a Node.js or Python backend framework
+  entities:
+    - Vercel Functions
+    - Vercel Services
+    - Vercel Queues
+    - Vercel Workflow
+    - Vercel Marketplace
+    - container images
 ---
 # Create a Backend
 

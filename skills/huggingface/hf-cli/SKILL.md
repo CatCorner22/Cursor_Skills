@@ -1,10 +1,7 @@
 ---
 name: hf-cli
-description: Hugging Face Hub CLI (`hf`) for auth, repos, models, datasets, spaces, papers, jobs, buckets, cache, and endpoints. Use when the user needs a terminal/CLI workflow on the Hub (`hf`, `huggingface-cli`). Prefer specialized skills (huggingface-spaces, huggingface-llm-trainer, huggingface-papers, huggingface-best) for task-specific guidance. Do not use this skill for generic AI/ML questions that are not Hub CLI operations.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Hugging Face Hub CLI (`hf`) for auth, repos, models, datasets, spaces, papers, jobs, buckets, cache, and endpoints. Use when the user needs a terminal/CLI workflow on the Hub (`hf`, `huggingface-cli`). Prefer specialized skills (huggingface-spaces, huggingface-llm-trainer, huggingface-papers, huggingface-best) for task-specific guidance. Do not use this skill for generic AI/ML questions that are not Hub CLI operations."
 ---
 Install: `curl -LsSf https://hf.co/cli/install.sh | bash -s`.
 

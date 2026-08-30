@@ -1,10 +1,26 @@
 ---
 name: plaud-ecosystem-primer
-description: 'Router for Plaud AI voice recorder workflows: device capture, transcription, summary templates, Ask Plaud queries, AutoFlow automation, and export. Use when the user mentions Plaud, Plaud Note, Plaud NotePin, voice recorder transcripts, or turning lectures/meetings into notes. Scope boundary: writing essays from scratch → `academic-writing`; Word/Outlook delivery → `m365-ecosystem-primer`; live Teams recording → `teams-collaboration`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for Plaud AI voice recorder workflows: device capture, transcription, summary templates, Ask Plaud queries, AutoFlow automation, and export. Use when the user mentions Plaud, Plaud Note, Plaud NotePin, voice recorder transcripts, or turning lectures/meetings into notes. Scope boundary: writing essays from scratch → `academic-writing`; Word/Outlook delivery → `m365-ecosystem-primer`; live Teams recording → `teams-collaboration`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 8
+  promptSignals:
+    phrases:
+      - "plaud"
+      - "plaud note"
+      - "voice recorder transcript"
+      - "lecture recording"
+      - "ask plaud"
+      - "plaud summary"
+    allOf:
+      - [plaud, transcript]
+      - [plaud, summary]
+      - [lecture, recording]
+    anyOf:
+      - "Plaud Note"
+      - "Plaud NotePin"
+      - "AutoFlow"
+    minScore: 6
 ---
 # Plaud ecosystem primer
 

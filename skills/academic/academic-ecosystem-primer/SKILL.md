@@ -1,10 +1,34 @@
 ---
 name: academic-ecosystem-primer
-description: 'Router for college and academic work in this library: writing, citations, study planning, source attribution, lecture notes, and presentations. Use when the user is a student, mentions college/school/coursework, or asks how to approach an assignment, paper, exam prep, or lab. Scope boundary: CS/software implementation → `coding-ecosystem-primer`; AI/ML engineering → huggingface/langchain packs; GitHub PR workflow for group code projects → `cursor-team-kit`; general execution posture → `proactive-agency`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for college and academic work in this library: writing, citations, study planning, source attribution, lecture notes, and presentations. Use when the user is a student, mentions college/school/coursework, or asks how to approach an assignment, paper, exam prep, or lab. Scope boundary: CS/software implementation → `coding-ecosystem-primer`; AI/ML engineering → huggingface/langchain packs; GitHub PR workflow for group code projects → `cursor-team-kit`; general execution posture → `proactive-agency`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 8
+  promptSignals:
+    phrases:
+      - "college"
+      - "coursework"
+      - "assignment"
+      - "homework"
+      - "syllabus"
+      - "study for"
+      - "write my essay"
+      - "research paper"
+      - "lab report"
+      - "problem set"
+      - "cite this"
+      - "going back to school"
+    allOf:
+      - [college, assignment]
+      - [school, essay]
+      - [course, study]
+      - [research, paper]
+    anyOf:
+      - "back to college"
+      - "back to school"
+      - "academic writing"
+      - "literature review"
+    minScore: 6
 ---
 # Academic ecosystem primer
 

@@ -1,10 +1,7 @@
 ---
 name: langgraph-fundamentals
-description: 'Write LangGraph graphs in Python or TypeScript: StateGraph, state schemas and reducers, nodes, normal and conditional edges, Command, Send fan-out, invoke/stream modes, and error handling. Use when the code imports `langgraph` / `@langchain/langgraph`, or the user names LangGraph, StateGraph, or graph nodes and edges. Scope boundary: checkpointers and durable state belong to `langgraph-persistence`, `interrupt()` and approval flows to `langgraph-human-in-the-loop`, the prebuilt `create_agent` constructor to `langchain-fundamentals`, and running or shipping a graph to `langgraph-cli`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Write LangGraph graphs in Python or TypeScript: StateGraph, state schemas and reducers, nodes, normal and conditional edges, Command, Send fan-out, invoke/stream modes, and error handling. Use when the code imports `langgraph` / `@langchain/langgraph`, or the user names LangGraph, StateGraph, or graph nodes and edges. Scope boundary: checkpointers and durable state belong to `langgraph-persistence`, `interrupt()` and approval flows to `langgraph-human-in-the-loop`, the prebuilt `create_agent` constructor to `langchain-fundamentals`, and running or shipping a graph to `langgraph-cli`."
 ---
 <overview>
 LangGraph models agent workflows as **directed graphs**:

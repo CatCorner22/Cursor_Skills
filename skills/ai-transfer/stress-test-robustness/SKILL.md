@@ -1,10 +1,15 @@
 ---
 name: stress-test-robustness
-description: Run contradiction, edge-case, adversarial, and scope tests on a draft before delivery. Use after generation and before polish. Scope boundary — escalating critique questions → `progressive-resistance-critique`; load-bearing tags → `load-bearing-structure`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Run contradiction, edge-case, adversarial, and scope tests on a draft before delivery. Use after generation and before polish. Scope boundary — escalating critique questions → `progressive-resistance-critique`; load-bearing tags → `load-bearing-structure`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "stress test output"
+      - "robustness validation"
+      - "edge case draft"
+    minScore: 6
 ---
 # Stress-test output robustness
 

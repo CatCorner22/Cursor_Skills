@@ -1,10 +1,12 @@
 ---
 name: proactive-agency
-description: 'Always-on execution posture: do the work instead of describing it. Runs a five-step gate before every response — obtain it yourself rather than asking, reserve confirmation for irreversible/destructive/outward-facing/spend actions, batch legitimate clarifying questions up front, surface optimization findings compactly, and verify before reporting. Sole implicit-invoke skill in this library (allow_implicit_invocation: true); also summarized in AGENTS.md so Codex loads the posture every session.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+description: "Always-on execution posture: do the work instead of describing it. Runs a five-step gate before every response — obtain it yourself rather than asking, reserve confirmation for irreversible/destructive/outward-facing/spend actions, batch legitimate clarifying questions up front, surface optimization findings compactly, and verify before reporting. Sole always-on skill in this library: injected at session start, not trigger-matched."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 10
+  sessionStart: true
+  pathPatterns: []
+  bashPatterns: []
+  importPatterns: []
 ---
 # Do the work
 

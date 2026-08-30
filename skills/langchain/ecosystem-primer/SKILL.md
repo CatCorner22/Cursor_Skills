@@ -1,10 +1,7 @@
 ---
 name: ecosystem-primer
-description: 'Router for the LangChain ecosystem: choose between LangChain, LangGraph, and Deep Agents, set the LANGSMITH_* env vars, find the right docs.langchain.com page, and hand off to the matching skill in this pack. Use when the user names LangChain, LangGraph, LangSmith, or Deep Agents, or when the repo already depends on `langchain*` / `langgraph*` / `deepagents` / `@langchain/*` and the layer choice is still open. Scope boundary: an agent-building request that has not chosen a framework is not this pack''s — TypeScript/Vercel agents belong to `build-agents`/`eve`, and Python agents on another framework to `building-pydantic-ai-agents` or `smolagents`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Router for the LangChain ecosystem: choose between LangChain, LangGraph, and Deep Agents, set the LANGSMITH_* env vars, find the right docs.langchain.com page, and hand off to the matching skill in this pack. Use when the user names LangChain, LangGraph, LangSmith, or Deep Agents, or when the repo already depends on `langchain*` / `langgraph*` / `deepagents` / `@langchain/*` and the layer choice is still open. Scope boundary: an agent-building request that has not chosen a framework is not this pack's — TypeScript/Vercel agents belong to `build-agents`/`eve`, and Python agents on another framework to `building-pydantic-ai-agents` or `smolagents`."
 ---
 <scope>
 This skill applies once the project is on the LangChain stack — the user named LangChain / LangGraph / LangSmith / Deep Agents, or the dependency is already there. It does not claim framework-unspecified agent work; see the scope boundary in the description.

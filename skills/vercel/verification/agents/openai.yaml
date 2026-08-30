@@ -1,9 +1,0 @@
-interface:
-  display_name: Verification
-  short_description: 'Full-story verification — infers what the user is building, then verifies the complete flow end-to-end: browser → API → data → response'
-  default_prompt: Use $verification for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

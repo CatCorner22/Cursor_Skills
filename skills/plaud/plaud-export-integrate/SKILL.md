@@ -1,10 +1,22 @@
 ---
 name: plaud-export-integrate
-description: 'Export Plaud transcripts and summaries to Word, PDF, mind maps, and integrate with OneDrive, Teams, Notion, or email workflows. Use when moving Plaud output into school or work tools. Scope boundary: Word formatting → `word-documents`; OneDrive structure → `onedrive-organization`; Teams sharing → `teams-collaboration`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Export Plaud transcripts and summaries to Word, PDF, mind maps, and integrate with OneDrive, Teams, Notion, or email workflows. Use when moving Plaud output into school or work tools. Scope boundary: Word formatting → `word-documents`; OneDrive structure → `onedrive-organization`; Teams sharing → `teams-collaboration`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 6
+  promptSignals:
+    phrases:
+      - "export plaud"
+      - "plaud to word"
+      - "mind map plaud"
+      - "download transcript"
+    allOf:
+      - [plaud, export]
+      - [plaud, word]
+    anyOf:
+      - "export transcript"
+      - "27 formats"
+    minScore: 6
 ---
 # Plaud export & integrate
 

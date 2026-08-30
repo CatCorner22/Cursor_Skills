@@ -1,9 +1,0 @@
-interface:
-  display_name: AI Gateway
-  short_description: Vercel AI Gateway expert guidance
-  default_prompt: Use $ai-gateway for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

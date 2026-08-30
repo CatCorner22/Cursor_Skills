@@ -1,9 +1,0 @@
-interface:
-  display_name: Vercel Functions
-  short_description: Vercel Functions expert guidance — Serverless Functions, Edge Functions, Fluid Compute, streaming, Cron Jobs, and runtime configuration
-  default_prompt: Use $vercel-functions for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

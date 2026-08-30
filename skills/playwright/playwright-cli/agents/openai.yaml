@@ -1,9 +1,0 @@
-interface:
-  display_name: Playwright Cli
-  short_description: Automate browser interactions, test web pages and work with Playwright tests — the general-purpose Playwright skill for this repo (web…
-  default_prompt: Use $playwright-cli for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

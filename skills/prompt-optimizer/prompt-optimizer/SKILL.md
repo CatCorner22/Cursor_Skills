@@ -1,10 +1,7 @@
 ---
 name: prompt-optimizer
-description: 'Creates, optimizes, and iteratively refines agent prompts, system prompts, developer prompts, and reusable prompt templates. Use when asked to improve a prompt, optimize a system prompt, rewrite an agent prompt, tune prompt wording, make a prompt more reliable, port prompts between OpenAI, Claude, or Gemini, or build prompt evals. Scope boundary — this skill owns agent PROMPT authoring and optimization: the instruction text itself, its layering, its examples, and the evals that score it. Agent ARCHITECTURE and scaffolding belong elsewhere: generic "build/create/design/scaffold an agent" requests go to `build-agents`, and eve project structure, runtime, channels, and tooling go to `eve`. Do not claim a request just because it mentions an agent; claim it when the artifact under edit is a prompt.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Creates, optimizes, and iteratively refines agent prompts, system prompts, developer prompts, and reusable prompt templates. Use when asked to improve a prompt, optimize a system prompt, rewrite an agent prompt, tune prompt wording, make a prompt more reliable, port prompts between OpenAI, Claude, or Gemini, or build prompt evals. Scope boundary — this skill owns agent PROMPT authoring and optimization: the instruction text itself, its layering, its examples, and the evals that score it. Agent ARCHITECTURE and scaffolding belong elsewhere: generic \"build/create/design/scaffold an agent\" requests go to `build-agents`, and eve project structure, runtime, channels, and tooling go to `eve`. Do not claim a request just because it mentions an agent; claim it when the artifact under edit is a prompt."
 ---
 # Prompt Optimizer
 

@@ -1,12 +1,104 @@
 ---
 name: vercel-connect
+disable-model-invocation: true
 description: Vercel Connect expert guidance — securely obtain scoped OAuth tokens for third-party services (Slack, GitHub, MCP servers, OAuth, Snowflake) on behalf of apps or users via Vercel OIDC. Use when wiring up third-party API access, connecting to MCP servers, sending Slack messages, accessing GitHub APIs, receiving webhook events from Slack/Linear/GitHub and forwarding them to your agents and apps, or building eve agent connections.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs/connect
-  sitemap: https://vercel.com/sitemap/docs.xml
+  priority: 5
+  docs:
+    - "https://vercel.com/docs/connect"
+  sitemap: "https://vercel.com/sitemap/docs.xml"
+  pathPatterns:
+    - 'agent/connections/**'
+    - 'agent/channels/**'
+  importPatterns:
+    - '@vercel/connect'
+    - '@vercel/connect/eve'
+    - '@vercel/connect/authjs'
+    - '@vercel/connect/betterauth'
+  bashPatterns:
+    - '\bvercel\s+connect\b'
+    - '\bvc\s+connect\b'
+    - '\bnpm\s+(install|i|add)\s+[^\n]*@vercel/connect\b'
+    - '\bpnpm\s+(install|i|add)\s+[^\n]*@vercel/connect\b'
+    - '\bbun\s+(install|i|add)\s+[^\n]*@vercel/connect\b'
+    - '\byarn\s+add\s+[^\n]*@vercel/connect\b'
+  promptSignals:
+    phrases:
+      - "vercel connect"
+      - "slack token"
+      - "slack bot token"
+      - "post to slack"
+      - "send slack message"
+      - "github oauth token"
+      - "linear oauth"
+      - "oauth token for"
+      - "third-party token"
+      - "connect to slack"
+      - "connect to github"
+      - "connect to mcp"
+      - "mcp connection"
+      - "mcp server"
+      - "snowflake connection"
+    allOf:
+      - [slack, token]
+      - [github, token]
+      - [oauth, token]
+      - [mcp, connect]
+      - [mcp, server]
+    anyOf:
+      - "vercel connect"
+      - "@vercel/connect"
+      - "oauth"
+      - "mcp"
+    noneOf:
+      - "supabase auth"
+      - "clerk"
+      - "auth0"
+    minScore: 6
+retrieval:
+  aliases:
+    - vercel connect
+    - oauth helper
+    - third-party tokens
+    - connect sdk
+    - mcp connector
+  intents:
+    - get slack token
+    - get github oauth token
+    - wire up third-party oauth
+    - add slack channel to agent
+    - connect to oauth provider
+    - obtain api credentials
+    - connect to mcp server
+    - set up mcp connection
+    - add snowflake connection
+  entities:
+    - Vercel Connect
+    - getToken
+    - "@vercel/connect"
+    - OAuth
+    - Slack
+    - GitHub
+    - MCP
+    - Snowflake
+    - eve
+    - connector
+  examples:
+    - send a slack message from my app
+    - get a github oauth token
+    - wire up Linear in my eve agent
+    - connect my agent to a MCP server
+    - add Snowflake credentials to my project
+chainTo:
+  -
+    pattern: "from\\s+['\"]@vercel/connect/eve['\"]"
+    targetSkill: eve
+    message: 'eve + Vercel Connect import detected — loading eve framework guidance alongside the connect() helper and channel credential patterns.'
+  -
+    pattern: 'SLACK_(BOT|SIGNING)_(TOKEN|SECRET)|SLACK_WEBHOOK_URL|GITHUB_(APP_PRIVATE_KEY|APP_ID|INSTALLATION_ID|WEBHOOK_SECRET)|LINEAR_(API_KEY|WEBHOOK_SECRET)'
+    targetSkill: vercel-connect
+    message: 'Hand-managed Slack/GitHub/Linear secrets detected — use Vercel Connect + connectSlackCredentials() / connectGitHubCredentials() / connectLinearCredentials() to remove the need for these env vars.'
+    skipIfFileContains: 'connectSlackCredentials|connectGitHubCredentials|connectLinearCredentials|@vercel/connect'
 ---
 # Vercel Connect Skill
 

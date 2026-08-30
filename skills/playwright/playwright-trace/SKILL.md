@@ -1,10 +1,8 @@
 ---
 name: playwright-trace
+disable-model-invocation: true
 description: Inspect Playwright trace files from the command line — list actions, view requests, console, errors, snapshots and screenshots.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+allowed-tools: Bash(npx:*)
 ---
 # Playwright Trace CLI
 

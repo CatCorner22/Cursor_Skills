@@ -1,9 +1,0 @@
-interface:
-  display_name: Nyx character bible
-  short_description: Canonical character bible for Nyx, a recurring original character in this project — appearance, physique, tattoo map, personality, voice,…
-  default_prompt: Use $nyx for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

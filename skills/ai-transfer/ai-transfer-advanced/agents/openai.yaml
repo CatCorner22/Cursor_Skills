@@ -1,9 +1,0 @@
-interface:
-  display_name: Ai Transfer Advanced
-  short_description: 'Router for advanced AI-transfer techniques: seismic joints, sidechain ducking, genre cross-pollination, containment layers, sail trim,…'
-  default_prompt: Use $ai-transfer-advanced for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

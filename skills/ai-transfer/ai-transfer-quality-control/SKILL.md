@@ -1,10 +1,9 @@
 ---
 name: ai-transfer-quality-control
-description: 'Router for quality-control AI-transfer techniques: claim/evidence gates, preflight, critique loops, provenance, context gating, root cause, attribution, triangulation, proofreading marks. Use when verifying or hardening AI outputs. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for quality-control AI-transfer techniques: claim/evidence gates, preflight, critique loops, provenance, context gating, root cause, attribution, triangulation, proofreading marks. Use when verifying or hardening AI outputs. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
 ---
 # AI transfer — quality control
 
