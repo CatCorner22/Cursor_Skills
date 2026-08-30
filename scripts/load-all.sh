@@ -25,6 +25,7 @@ copy_tree() {
     --exclude '.claude' \
     --exclude '.claude-plugin' \
     --exclude '.kimi-plugin' \
+    --exclude 'AGENTS.md' \
     -cf - . | tar -C "$dest" -xf -
 }
 
@@ -106,7 +107,7 @@ while IFS= read -r skill_md; do
   ln -sfn "$rel" "${PROJECT_SKILLS}/${name}"
   rm -rf "${USER_SKILLS}/${name}"
   mkdir -p "${USER_SKILLS}/${name}"
-  tar -C "${skill_dir}" -cf - . | tar -C "${USER_SKILLS}/${name}" -xf -
+  tar -C "${skill_dir}" --exclude 'AGENTS.md' -cf - . | tar -C "${USER_SKILLS}/${name}" -xf -
   skill_count=$((skill_count + 1))
 done < <(find "${ROOT}/skills" -name SKILL.md | sort)
 log "Flattened ${skill_count} skills into ${PROJECT_SKILLS} and ${USER_SKILLS}"
