@@ -1,9 +1,0 @@
-interface:
-  display_name: Coding Ecosystem Primer
-  short_description: 'Router for general software engineering in this library: deliverable-first planning, clean minimal code, stable architecture, real-time…'
-  default_prompt: Use $coding-ecosystem-primer for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,10 +1,23 @@
 ---
 name: onedrive-organization
-description: 'Organize files in Microsoft OneDrive and SharePoint: folder structure for semesters, sharing links, permissions, version history, and sync. Use when storing coursework, sharing group files, or recovering previous document versions. Scope boundary: in-app editing → word/excel/powerpoint skills; Google Drive → not this pack.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Organize files in Microsoft OneDrive and SharePoint: folder structure for semesters, sharing links, permissions, version history, and sync. Use when storing coursework, sharing group files, or recovering previous document versions. Scope boundary: in-app editing → word/excel/powerpoint skills; Google Drive → not this pack."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 6
+  promptSignals:
+    phrases:
+      - "onedrive"
+      - "sharepoint"
+      - "share link"
+      - "version history"
+      - "sync files"
+    allOf:
+      - [onedrive, share]
+      - [onedrive, folder]
+    anyOf:
+      - "OneDrive"
+      - "SharePoint"
+    minScore: 6
 ---
 # OneDrive organization
 

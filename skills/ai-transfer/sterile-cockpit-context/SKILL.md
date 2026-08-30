@@ -1,10 +1,15 @@
 ---
 name: sterile-cockpit-context
-description: 'Phase-gated context: takeoff (parse inputs only), cruise (full history), landing (validation rules only). Strip distraction during critical phases. Use for high-stakes generation steps. Scope boundary: human prioritization → `ooda-lean-loop`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Phase-gated context: takeoff (parse inputs only), cruise (full history), landing (validation rules only). Strip distraction during critical phases. Use for high-stakes generation steps. Scope boundary: human prioritization → `ooda-lean-loop`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "sterile cockpit"
+      - "context gating"
+      - "phase context"
+    minScore: 6
 ---
 # Sterile cockpit context gating
 

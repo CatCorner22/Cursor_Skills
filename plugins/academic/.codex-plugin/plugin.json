@@ -1,9 +1,0 @@
-{
-  "name": "academic",
-  "version": "1.0.0",
-  "description": "College coursework: writing, citations, study system. Skills are explicit-invoke unless mentioned.",
-  "author": {
-    "name": "CatCorner22"
-  },
-  "skills": "./skills/"
-}

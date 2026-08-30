@@ -1,9 +1,0 @@
-{
-  "name": "huggingface",
-  "version": "1.0.0",
-  "description": "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker. Skills are explicit-invoke.",
-  "author": {
-    "name": "CatCorner22"
-  },
-  "skills": "./skills/"
-}

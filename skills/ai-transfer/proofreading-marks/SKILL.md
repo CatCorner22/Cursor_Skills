@@ -1,10 +1,15 @@
 ---
 name: proofreading-marks
-description: 'Granular annotation layer between draft and delivery: QUERY, DELETE, STET, TRANSPOSE, INSERT — not wholesale rewrite. Use for AI self-review and human-in-the-loop edit. Scope boundary: full rewrite → domain writing skills.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Granular annotation layer between draft and delivery: QUERY, DELETE, STET, TRANSPOSE, INSERT — not wholesale rewrite. Use for AI self-review and human-in-the-loop edit. Scope boundary: full rewrite → domain writing skills."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "proofreading marks"
+      - "annotation layer"
+      - "QUERY DELETE STET"
+    minScore: 6
 ---
 # Editorial proofreading marks
 

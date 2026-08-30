@@ -1,9 +1,0 @@
-interface:
-  display_name: Prompt Optimizer
-  short_description: Creates, optimizes, and iteratively refines agent prompts, system prompts, developer prompts, and reusable prompt templates
-  default_prompt: Use $prompt-optimizer for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,10 +1,22 @@
 ---
 name: plaud-ask-queries
-description: 'Query Plaud recordings with Ask Plaud: cross-file search, cited answers linked to audio timestamps, and follow-up questions. Use when the user wants to find what was said across lectures or meetings in Plaud. Scope boundary: writing new prose from answers → `academic-writing`; naming sources in those answers → `citation-literacy`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Query Plaud recordings with Ask Plaud: cross-file search, cited answers linked to audio timestamps, and follow-up questions. Use when the user wants to find what was said across lectures or meetings in Plaud. Scope boundary: writing new prose from answers → `academic-writing`; naming sources in those answers → `citation-literacy`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    phrases:
+      - "ask plaud"
+      - "what did they say about"
+      - "find in my recordings"
+      - "plaud query"
+    allOf:
+      - [plaud, ask]
+      - [recording, said]
+    anyOf:
+      - "Ask Plaud"
+      - "across recordings"
+    minScore: 6
 ---
 # Ask Plaud queries
 

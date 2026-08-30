@@ -1,11 +1,76 @@
 ---
 name: cdn-caching
+disable-model-invocation: true
 description: Debug Vercel CDN caching — cache hit rate, stale content, revalidation behavior, ISR + PPR, per-request cache reasons (cacheReason) and PPR state (ppr_state), and costs.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs/caching, https://vercel.com/docs/caching/cdn-cache, https://vercel.com/docs/incremental-static-regeneration, https://vercel.com/docs/cli/metrics
+  priority: 6
+  docs:
+    - 'https://vercel.com/docs/caching'
+    - 'https://vercel.com/docs/caching/cdn-cache'
+    - 'https://vercel.com/docs/incremental-static-regeneration'
+    - 'https://vercel.com/docs/cli/metrics'
+  bashPatterns:
+    - '\bvercel\s+cache\s+(purge|invalidate|dangerously-delete)\b'
+  promptSignals:
+    phrases:
+      - 'cache hit rate'
+      - 'isr cost'
+      - 'isr read units'
+      - 'isr write units'
+      - 'stale content'
+      - 'x-vercel-cache'
+      - 'cache reason'
+      - 'cacheReason'
+      - 'x-vercel-cache-reason'
+      - 'ppr state'
+      - 'ppr_state'
+      - 'x-vercel-ppr-state'
+      - 'stale_time'
+      - 'stale_tag'
+      - 'stale_error'
+      - 'draft_mode'
+      - 'prerender_bypass'
+    allOf:
+      - [cache, debug]
+      - [stale, cache]
+      - [revalidation, count]
+      - [cache, reason]
+      - [why, stale]
+      - [why, bypass]
+      - [cache, miss]
+    anyOf:
+      - 'revalidate'
+      - 'prerender'
+      - 'invalidate'
+      - 'draft mode'
+      - 'crawler'
+      - 'cold cache'
+      - 'request collapsed'
+    minScore: 6
+retrieval:
+  aliases:
+    - cache reason
+    - ppr state
+    - cache hit rate
+    - stale content
+  intents:
+    - why is my page stale
+    - why is this request a bypass
+    - why was this a cache miss
+  entities:
+    - cacheReason
+    - ppr_state
+    - collapsed
+    - draft_mode
+    - prerender_bypass
+    - stale_time
+    - stale_tag
+    - stale_error
+chainTo:
+  -
+    pattern: 'use cache|cacheLife|cacheTag'
+    targetSkill: next-cache-components
+    message: 'Next.js cache directives detected — loading Cache Components guidance for revalidate/tag tuning.'
 ---
 # Vercel Caching
 

@@ -1,10 +1,7 @@
 ---
 name: hf-cloud-python-env-setup
+disable-model-invocation: true
 description: 'Set up an isolated Python environment for SageMaker / AWS work, with the right Python version and current boto3. Use this skill whenever Python code will be executed for a SageMaker deployment, training job, or other AWS automation — including when about to run `pip install` or invoke `boto3` for AWS work, when creating or activating a virtualenv for it, or when the user asks to "set up the environment" for a SageMaker/AWS task. Never use system Python and never `pip install` into it. Always isolate. This skill prevents the most common failure modes: wrong Python version, dependency conflicts, and stale SDKs. Scope boundary — AWS/SageMaker work ONLY. Do not claim general Python work: Hugging Face Jobs, TRL, evaluation and vision-training environments are managed by `huggingface-llm-trainer`, `trl-training`, `huggingface-community-evals`, and `huggingface-vision-trainer`, which use their own uv / PEP-723 inline-dependency conventions.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # Python Environment Setup for SageMaker
 

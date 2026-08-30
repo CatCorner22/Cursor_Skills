@@ -1,9 +1,0 @@
-interface:
-  display_name: Deep Agents Core
-  short_description: 'Configure the `deepagents` harness: `create_deep_agent()` / `createDeepAgent()`, middleware selection, built-in filesystem and planning…'
-  default_prompt: Use $deep-agents-core for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,10 +1,19 @@
 ---
 name: ui-engineering
-description: 'Modern UI implementation: component composition, design tokens, Tailwind/shadcn/Radix stacks, responsive layout, and accessible markup foundations. Use when building or refactoring UI components, pages, design systems, or styling. Scope boundary: React/Next render performance → `react-best-practices`; shadcn CLI install and registries → `shadcn`; App Router data fetching and RSC → `nextjs`; UX flows and copy → `ux-engineering`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Modern UI implementation: component composition, design tokens, Tailwind/shadcn/Radix stacks, responsive layout, and accessible markup foundations. Use when building or refactoring UI components, pages, design systems, or styling. Scope boundary: React/Next render performance → `react-best-practices`; shadcn CLI install and registries → `shadcn`; App Router data fetching and RSC → `nextjs`; UX flows and copy → `ux-engineering`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 6
+  pathPatterns:
+    - '**/components/**'
+    - '**/ui/**/*.tsx'
+    - '**/ui/**/*.jsx'
+    - '**/app/**/*.tsx'
+    - '**/app/**/*.jsx'
+  importPatterns:
+    - 'react'
+    - '@radix-ui/'
+    - 'tailwindcss'
 ---
 # UI engineering
 

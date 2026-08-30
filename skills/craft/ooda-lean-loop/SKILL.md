@@ -1,10 +1,27 @@
 ---
 name: ooda-lean-loop
-description: 'Run fused OODA and lean loops: observe raw signal, orient with current-state map, decide one small batch, act with standard work, andon on failure, kaizen one improvement. Use when stuck, prioritizing, fighting thrash, or reducing rework. Scope boundary: prep before loop → `workspace-mise-en-place`; coding batches → `deliverable-first` + `real-time-testing`; meta routing → `craft-systems-primer`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Run fused OODA and lean loops: observe raw signal, orient with current-state map, decide one small batch, act with standard work, andon on failure, kaizen one improvement. Use when stuck, prioritizing, fighting thrash, or reducing rework. Scope boundary: prep before loop → `workspace-mise-en-place`; coding batches → `deliverable-first` + `real-time-testing`; meta routing → `craft-systems-primer`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 8
+  promptSignals:
+    phrases:
+      - "OODA"
+      - "OODA loop"
+      - "what should I do next"
+      - "prioritize"
+      - "kaizen"
+      - "small batch"
+      - "stop the line"
+      - "too much WIP"
+    allOf:
+      - [prioritize, work]
+      - [stuck, next]
+    anyOf:
+      - "OODA loop"
+      - "lean loop"
+      - "andon"
+    minScore: 6
 ---
 # OODA × lean loop
 

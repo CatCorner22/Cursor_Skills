@@ -1,0 +1,6 @@
+{
+  "name": "plaud",
+  "version": "1.0.0-snapshot",
+  "description": "Plaud recorder: capture, transcription, summaries, AutoFlow, export. Skills are manual.",
+  "skills": "skills"
+}

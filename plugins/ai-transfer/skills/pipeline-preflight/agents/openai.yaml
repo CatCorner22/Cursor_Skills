@@ -1,9 +1,0 @@
-interface:
-  display_name: Pipeline Preflight
-  short_description: 'Pre-execution audit before AI generation: required inputs, files, constraints, tools, and prior outputs present'
-  default_prompt: Use $pipeline-preflight for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,12 +1,21 @@
 ---
 name: appbuilder-ui-scaffolder
-description: 'Generate React Spectrum UI components for Adobe Experience Cloud Shell SPAs and AEM UI Extensions. Provides patterns for pages, forms, data tables, dialogs, and navigation using @adobe/react-spectrum. Guides ExC Shell integration with @adobe/exc-app including runtime.done(), IMS token passthrough, and shell theming. Guides AEM UI Extension development with @adobe/uix-guest for Content Fragment Console, CF Editor, Universal Editor, and Assets View surfaces. Trigger on: building App Builder UI, React Spectrum components, ExC Shell pages, forms, data tables, dialogs, modals, navigation, theming, web-src, Spectrum design system, @adobe/exc-app, AEM extension, AEM UI extension, Content Fragment Console, Universal Editor extension, uix-guest, @adobe/uix-guest, extension points for AEM, customizing AEM surfaces.'
+disable-model-invocation: true
+description: >-
+  Generate React Spectrum UI components for Adobe Experience Cloud Shell SPAs and AEM UI Extensions.
+  Provides patterns for pages, forms, data tables, dialogs, and navigation using @adobe/react-spectrum.
+  Guides ExC Shell integration with @adobe/exc-app including runtime.done(), IMS token passthrough,
+  and shell theming. Guides AEM UI Extension development with @adobe/uix-guest for Content Fragment
+  Console, CF Editor, Universal Editor, and Assets View surfaces. Trigger on: building App Builder UI,
+  React Spectrum components, ExC Shell pages, forms, data tables, dialogs, modals, navigation, theming,
+  web-src, Spectrum design system, @adobe/exc-app, AEM extension, AEM UI extension, Content Fragment
+  Console, Universal Editor extension, uix-guest, @adobe/uix-guest, extension points for AEM,
+  customizing AEM surfaces.
+metadata:
+  category: frontend
 license: Apache-2.0
 compatibility: Requires Node.js 18+, npm, and @adobe/react-spectrum
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  category: frontend
+allowed-tools: Bash(npm:*) Bash(node:*) Bash(npx:*) Read Write Edit
 ---
 # App Builder UI Scaffolder
 

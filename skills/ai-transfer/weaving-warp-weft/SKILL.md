@@ -1,10 +1,15 @@
 ---
 name: weaving-warp-weft
-description: 'Interleave fixed structural threads (warp: required claims, compliance) with flexible expressive weft (tone, examples). Enforce both — compliant AND engaging. Use for regulated or rubric-bound outputs. Scope boundary: proofreading marks for weft edits → `proofreading-marks`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Interleave fixed structural threads (warp: required claims, compliance) with flexible expressive weft (tone, examples). Enforce both — compliant AND engaging. Use for regulated or rubric-bound outputs. Scope boundary: proofreading marks for weft edits → `proofreading-marks`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "warp weft"
+      - "structure and tone"
+      - "compliance and engaging"
+    minScore: 6
 ---
 # Weaving warp and weft
 

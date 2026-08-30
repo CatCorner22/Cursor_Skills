@@ -1,10 +1,16 @@
 ---
 name: emergency-triage-compute
-description: 'Classify tasks Immediate/Delayed/Minor/Deceased before processing; allocate reasoning budget by stakes. Use at router/orchestrator layer. Scope boundary: human prioritization → `ooda-lean-loop`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Classify tasks Immediate/Delayed/Minor/Deceased before processing; allocate reasoning budget by stakes. Use at router/orchestrator layer. Scope boundary: human prioritization → `ooda-lean-loop`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "triage"
+      - "compute budget"
+      - "reasoning budget"
+      - "task classify"
+    minScore: 6
 ---
 # Emergency triage compute budgeting
 

@@ -1,0 +1,6 @@
+{
+  "name": "pydantic-ai",
+  "version": "1.0.0-snapshot",
+  "description": "Pydantic AI typed Python agents. Skill is manual.",
+  "skills": "skills"
+}

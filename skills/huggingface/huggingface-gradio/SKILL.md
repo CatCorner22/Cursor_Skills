@@ -1,10 +1,7 @@
 ---
 name: huggingface-gradio
+disable-model-invocation: true
 description: Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # Gradio
 

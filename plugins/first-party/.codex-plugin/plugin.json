@@ -1,9 +1,0 @@
-{
-  "name": "first-party",
-  "version": "1.0.0",
-  "description": "proactive-agency may invoke implicitly. skill-library-audit, smolagents, and v0 are explicit-invoke.",
-  "author": {
-    "name": "CatCorner22"
-  },
-  "skills": "./skills/"
-}

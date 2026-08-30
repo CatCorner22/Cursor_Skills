@@ -1,10 +1,15 @@
 ---
 name: metamorphosis-stages
-description: Force larva (brainstorm) → pupa (structure) → adult (polish) as separate artifacts. Use instead of polishing a first dump. Scope boundary — annealing lock temperatures → `glass-annealing-hardening`; faceting angles → `gemstone-faceting-refinement`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Force larva (brainstorm) → pupa (structure) → adult (polish) as separate artifacts. Use instead of polishing a first dump. Scope boundary — annealing lock temperatures → `glass-annealing-hardening`; faceting angles → `gemstone-faceting-refinement`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "metamorphosis stages"
+      - "larva pupa adult"
+      - "staged draft evolution"
+    minScore: 6
 ---
 # Metamorphosis staged drafts
 

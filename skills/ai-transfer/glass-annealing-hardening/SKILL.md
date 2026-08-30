@@ -1,10 +1,16 @@
 ---
 name: glass-annealing-hardening
-description: 'Staged delivery: high temp (everything flexible) → medium (structure locked) → cool (typos only). Use for long documents and multi-pass review. Scope boundary: faceting angles → `gemstone-faceting-refinement`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Staged delivery: high temp (everything flexible) → medium (structure locked) → cool (typos only). Use for long documents and multi-pass review. Scope boundary: faceting angles → `gemstone-faceting-refinement`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "annealing"
+      - "staged delivery"
+      - "cooling phases"
+      - "lock structure"
+    minScore: 6
 ---
 # Glass annealing output hardening
 

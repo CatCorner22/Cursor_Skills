@@ -1,10 +1,16 @@
 ---
 name: double-entry-claims
-description: 'Hallucination suppression via structural claim/evidence pairing: every factual claim must balance with a supporting source before output delivers. Use when verifying AI outputs, building RAG gates, or when the user asks for claim checking, evidence balance, or hallucination suppression. Scope boundary: human workspace prep → `workspace-mise-en-place`; source citation style → `citation-literacy`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Hallucination suppression via structural claim/evidence pairing: every factual claim must balance with a supporting source before output delivers. Use when verifying AI outputs, building RAG gates, or when the user asks for claim checking, evidence balance, or hallucination suppression. Scope boundary: human workspace prep → `workspace-mise-en-place`; source citation style → `citation-literacy`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "double entry"
+      - "claim evidence"
+      - "hallucination suppression"
+      - "verify claims"
+    minScore: 6
 ---
 # Double-entry claim reconciliation
 

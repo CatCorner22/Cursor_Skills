@@ -1,10 +1,15 @@
 ---
 name: proof-trees-reasoning
-description: 'Declare reasoning DAG before prose: premises, claims, dependencies. Flag downstream if upstream fails. Use for multi-step arguments and agent plans. Scope boundary: dual-axis → `score-study-dual-axis`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Declare reasoning DAG before prose: premises, claims, dependencies. Flag downstream if upstream fails. Use for multi-step arguments and agent plans. Scope boundary: dual-axis → `score-study-dual-axis`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "proof tree"
+      - "reasoning DAG"
+      - "dependency graph"
+    minScore: 6
 ---
 # Proof trees (reasoning DAG)
 

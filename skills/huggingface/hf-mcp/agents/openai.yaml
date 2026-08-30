@@ -1,9 +1,0 @@
-interface:
-  display_name: HF MCP
-  short_description: Use Hugging Face Hub via MCP server tools when the Huggingface-skills (or equivalent) MCP namespace is connected
-  default_prompt: Use $hf-mcp for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,9 +1,0 @@
-interface:
-  display_name: Get Pr Comments
-  short_description: Fetch and summarize review comments from the active pull request
-  default_prompt: Use $get-pr-comments for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

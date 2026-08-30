@@ -1,10 +1,15 @@
 ---
 name: progressive-resistance-critique
-description: 'Escalating self-critique passes: warm-up consistency, moderate alignment, working robustness, max falsifiability. Use instead of single shallow ''review your answer''. Scope boundary: post-delivery debrief → `after-action-review`; proof DAG → `proof-trees-reasoning`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Escalating self-critique passes: warm-up consistency, moderate alignment, working robustness, max falsifiability. Use instead of single shallow 'review your answer'. Scope boundary: post-delivery debrief → `after-action-review`; proof DAG → `proof-trees-reasoning`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "self critique"
+      - "progressive review"
+      - "escalating critique"
+    minScore: 6
 ---
 # Progressive resistance self-critique
 

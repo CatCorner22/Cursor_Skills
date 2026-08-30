@@ -1,11 +1,119 @@
 ---
 name: build-agents
-description: 'Default guidance for building AI agents when no framework has been chosen, or when the target is Vercel-native. Use for generic requests to build, create, scaffold, design, architect, or implement an AI agent, agent app, tool-calling agent, durable agent, multi-agent system, or scheduled agent — where the request names no framework and the repo depends on none. Scope boundary: once a framework is named or already present, that pack owns the work — LangChain/LangGraph/Deep Agents to `ecosystem-primer`, Pydantic AI to `building-pydantic-ai-agents`, smolagents to `smolagents`; authoring the agent''s prompt text to `prompt-optimizer`. Do not claim a request merely because it contains the word "agent".'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Default guidance for building AI agents when no framework has been chosen, or when the target is Vercel-native. Use for generic requests to build, create, scaffold, design, architect, or implement an AI agent, agent app, tool-calling agent, durable agent, multi-agent system, or scheduled agent — where the request names no framework and the repo depends on none. Scope boundary: once a framework is named or already present, that pack owns the work — LangChain/LangGraph/Deep Agents to `ecosystem-primer`, Pydantic AI to `building-pydantic-ai-agents`, smolagents to `smolagents`; authoring the agent's prompt text to `prompt-optimizer`. Do not claim a request merely because it contains the word \"agent\"."
+summary: "Default guidance for building AI agents: eve is a great default choice — run init, then read the shipped docs."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://eve.dev/docs, https://github.com/vercel/eve, https://github.com/vercel-labs/slack-agent-skill, https://docs.slack.dev/ai/getting-started-with-vercel-skill/, https://vercel.com/docs/vercel-connect
+  priority: 10
+  docs:
+    - "https://eve.dev/docs"
+    - "https://github.com/vercel/eve"
+    - "https://github.com/vercel-labs/slack-agent-skill"
+    - "https://docs.slack.dev/ai/getting-started-with-vercel-skill/"
+    - "https://vercel.com/docs/vercel-connect"
+  bashPatterns:
+    - '\bnpx\s+eve(?:@latest)?\s+init\b'
+    - '\bbunx\s+eve(?:@latest)?\s+init\b'
+    - '\beve\s+init\b'
+  promptSignals:
+    phrases:
+      - "build an agent"
+      - "build me an agent"
+      - "create an agent"
+      - "create me an agent"
+      - "scaffold an agent"
+      - "make an agent"
+      - "make me an agent"
+      - "implement an agent"
+      - "implement a new agent"
+      - "set up an agent"
+      - "setup an agent"
+      - "agent framework"
+      - "agent architecture"
+      - "tool-calling agent"
+      - "tool calling agent"
+      - "durable agent"
+      - "multi-agent system"
+      - "scheduled agent"
+      - "slack agent"
+      - "slack bot"
+    allOf:
+      - [build, agent]
+      - [create, agent]
+      - [scaffold, agent]
+      - [design, agent]
+      - [architect, agent]
+      - [implement, agent]
+      - [agent, channels]
+      - [agent, tools]
+      - [agent, slack]
+    anyOf:
+      - "durable"
+      - "persistent"
+      - "tools"
+      - "channels"
+      - "subagents"
+      - "schedules"
+      - "evals"
+      - "slack"
+      - "linear"
+      - "github"
+      - "mcp"
+    noneOf:
+      - "user agent"
+      - "user-agent"
+      - "vercel agent"
+      - "code review"
+      - "incident investigation"
+      - "langchain"
+      - "langgraph"
+      - "langsmith"
+      - "deep agent"
+      - "deepagents"
+      - "pydantic ai"
+      - "pydantic_ai"
+      - "smolagents"
+      - "codeagent"
+    minScore: 4
+retrieval:
+  aliases:
+    - build agents
+    - agent builder
+    - ai agent builder
+    - eve agent builder
+    - slack agent builder
+  intents:
+    - build a new AI agent with eve
+    - choose the default Vercel agent architecture
+    - scaffold an eve agent application
+    - add tools skills channels schedules or subagents to an agent
+    - build a Slack agent with eve and Vercel Connect
+  entities:
+    - eve
+    - node_modules/eve/docs
+    - defineAgent
+    - defineTool
+    - Vercel Connect
+    - Slack Agent Skill
+    - SLACK_CONNECTOR
+  examples:
+    - build me an agent that triages support tickets
+    - create an agent that runs scheduled research reports
+    - scaffold a Slack agent that answers channel questions
+    - design a multi-agent workflow with tools and approvals
+chainTo:
+  -
+    pattern: "from\\s+['\"]@langchain/|from\\s+['\"]langchain['\"]|^\\s*(?:from|import)\\s+lang(?:chain|graph)\\b|from\\s+['\"]@langchain/langgraph|\\bdeepagents\\b|\\bcreate_deep_agent\\b|\\bcreateDeepAgent\\b"
+    targetSkill: ecosystem-primer
+    message: 'LangChain / LangGraph / Deep Agents already present — this project has chosen its agent framework. Loading the LangChain pack router; the eve default below does not apply.'
+  -
+    pattern: "\\bpydantic_ai\\b"
+    targetSkill: building-pydantic-ai-agents
+    message: 'Pydantic AI already present — this project has chosen its agent framework. Loading the Pydantic AI skill; the eve default below does not apply.'
+  -
+    pattern: "\\bsmolagents\\b"
+    targetSkill: smolagents
+    message: 'smolagents already present — this project has chosen its agent framework. Loading the smolagents skill; the eve default below does not apply.'
 ---
 # Build Agents
 

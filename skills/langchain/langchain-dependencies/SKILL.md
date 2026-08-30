@@ -1,10 +1,7 @@
 ---
 name: langchain-dependencies
-description: 'Package versions, installs, and dependency management for the LangChain stack in Python and TypeScript: required packages, minimum versions, environment requirements, versioning practice, and common community tool packages. Use when installing, pinning, or debugging versions of `langchain*`, `langgraph*`, `langsmith`, `deepagents`, or `@langchain/*`. Scope boundary: project scaffolding that is not LangChain-specific belongs to that framework''s own bootstrap skill.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Package versions, installs, and dependency management for the LangChain stack in Python and TypeScript: required packages, minimum versions, environment requirements, versioning practice, and common community tool packages. Use when installing, pinning, or debugging versions of `langchain*`, `langgraph*`, `langsmith`, `deepagents`, or `@langchain/*`. Scope boundary: project scaffolding that is not LangChain-specific belongs to that framework's own bootstrap skill."
 ---
 <overview>
 The LangChain ecosystem is split into focused, independently-versioned packages. Understanding which packages you need — and their version constraints — prevents incompatibilities and keeps upgrades predictable.

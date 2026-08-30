@@ -1,10 +1,15 @@
 ---
 name: cross-pollination-structure
-description: Borrow a foreign genre skeleton (contract, tech spec) and plant the current content into it. Use when the native outline is weak. Scope boundary — graft a specialist passage → `orchard-graft-transfer`; multi-model blend → `wine-blending-fusion`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Borrow a foreign genre skeleton (contract, tech spec) and plant the current content into it. Use when the native outline is weak. Scope boundary — graft a specialist passage → `orchard-graft-transfer`; multi-model blend → `wine-blending-fusion`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "cross pollination"
+      - "borrow genre structure"
+      - "transplant outline"
+    minScore: 6
 ---
 # Cross-pollination of genre structure
 

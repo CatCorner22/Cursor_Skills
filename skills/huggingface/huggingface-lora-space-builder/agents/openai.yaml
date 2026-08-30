@@ -1,9 +1,0 @@
-interface:
-  display_name: Huggingface Lora Space Builder
-  short_description: Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA
-  default_prompt: Use $huggingface-lora-space-builder for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

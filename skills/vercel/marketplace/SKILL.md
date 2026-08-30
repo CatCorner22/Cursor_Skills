@@ -1,12 +1,59 @@
 ---
 name: marketplace
+disable-model-invocation: true
 description: Vercel Marketplace expert guidance — discovering, installing, and managing third-party integrations via the `vercel integration` CLI. Use when building any app that needs an external capability without a dedicated skill — commerce (stores, storefronts, selling products), payments (checkout, subscriptions, billing), observability/monitoring, messaging/email, search, or CMS — or when discovering, installing, or managing integrations.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs/integrations
-  sitemap: https://vercel.com/sitemap/docs.xml
+  priority: 9
+  docs:
+    - "https://vercel.com/docs/integrations"
+  sitemap: "https://vercel.com/sitemap/docs.xml"
+  pathPatterns:
+    - "integration.json"
+  bashPatterns:
+    - '\bvercel\s+integration\b'
+    - '\bvercel\s+integration\s+add\b'
+    - '\bvercel\s+integration\s+discover\b'
+  promptSignals:
+    phrases:
+      - "vercel integration"
+      - "marketplace"
+      - "add stripe"
+      - "add shopify"
+      - "provision database"
+    minScore: 4
+retrieval:
+  aliases:
+    - vercel integrations
+    - marketplace
+    - third party services
+    - add ons
+  intents:
+    - install integration
+    - manage marketplace
+    - add third party service
+    - discover integrations
+  entities:
+    - Vercel Marketplace
+    - integration
+    - vercel integration
+    - unified billing
+chainTo:
+  -
+    pattern: '@supabase/|SUPABASE_'
+    targetSkill: supabase
+    message: 'Supabase detected — loading the Supabase skill for client, SSR, RLS, Auth, and migration guidance.'
+  -
+    pattern: 'NEON_|POSTGRES_|DATABASE_URL|@neondatabase|@vercel/postgres|@upstash/|@vercel/kv|@prisma/client|\bmongodb\b|mongoose|@libsql/|\bconvex\b|@vercel/blob'
+    targetSkill: vercel-storage
+    message: 'Database/storage integration detected — loading Storage guidance (Neon, Upstash, Prisma, Mongo, …), connection pooling, and serverless patterns.'
+  -
+    pattern: 'CLERK_|@clerk/|clerkMiddleware|@auth0/|AUTH0_|@descope/|next-auth|@auth/|getServerSession'
+    targetSkill: auth
+    message: 'Auth provider detected — loading Auth guidance (Clerk, Auth0, Descope, Auth.js), middleware setup, and route protection.'
+  -
+    pattern: '@ai-sdk/|AI_GATEWAY|generateText|streamText|@openai/|@anthropic-ai/'
+    targetSkill: ai-sdk
+    message: 'AI usage detected — loading AI guidance for model routing through the AI Gateway, provider/model strings, and streaming.'
 ---
 # Vercel Marketplace
 

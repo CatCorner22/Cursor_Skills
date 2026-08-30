@@ -1,10 +1,24 @@
 ---
 name: outlook-email-calendar
-description: 'Professional email and calendar in Microsoft Outlook: syllabus-to-calendar blocking, meeting invites, inbox triage, signatures, and student-professor communication tone. Use when managing Outlook mail, scheduling study blocks, or drafting academic/professional emails. Scope boundary: Teams chat/meetings → `teams-collaboration`; task lists in Planner/To Do → mention only; Gmail → not this pack.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Professional email and calendar in Microsoft Outlook: syllabus-to-calendar blocking, meeting invites, inbox triage, signatures, and student-professor communication tone. Use when managing Outlook mail, scheduling study blocks, or drafting academic/professional emails. Scope boundary: Teams chat/meetings → `teams-collaboration`; task lists in Planner/To Do → mention only; Gmail → not this pack."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    phrases:
+      - "outlook email"
+      - "outlook calendar"
+      - "schedule meeting"
+      - "email professor"
+      - "microsoft outlook"
+    allOf:
+      - [outlook, email]
+      - [outlook, calendar]
+      - [email, professor]
+    anyOf:
+      - "Microsoft Outlook"
+      - "office hours"
+    minScore: 6
 ---
 # Outlook email & calendar
 

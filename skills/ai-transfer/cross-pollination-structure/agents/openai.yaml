@@ -1,9 +1,0 @@
-interface:
-  display_name: Cross Pollination Structure
-  short_description: Borrow a foreign genre skeleton (contract, tech spec) and plant the current content into it
-  default_prompt: Use $cross-pollination-structure for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

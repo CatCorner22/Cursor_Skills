@@ -1,11 +1,63 @@
 ---
 name: vercel-firewall
+disable-model-invocation: true
 description: Vercel Firewall expert guidance — automatic DDoS mitigation, the Vercel WAF (custom rules, IP blocking, managed rulesets, rate limiting), Attack Mode, system bypass, bot management, and the `vercel firewall` CLI. Use when configuring platform-level security, responding to attacks, or staging firewall rules.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  docs: https://vercel.com/docs/vercel-firewall, https://vercel.com/docs/cli/firewall
+  priority: 7
+  docs:
+    - 'https://vercel.com/docs/vercel-firewall'
+    - 'https://vercel.com/docs/cli/firewall'
+  bashPatterns:
+    - '\bvercel\s+firewall\b'
+  promptSignals:
+    phrases:
+      - 'vercel firewall'
+      - 'vercel waf'
+      - 'attack mode'
+      - 'ddos protection'
+      - 'ip block'
+      - 'managed ruleset'
+      - 'bot protection'
+      - 'system bypass'
+      - 'rate limit rule'
+    allOf:
+      - [firewall, vercel]
+      - [waf, vercel]
+      - [ddos, vercel]
+      - [challenge, vercel]
+      - ['rate limit', vercel]
+      - ['system bypass', vercel]
+      - ['ip block', vercel]
+    noneOf: []
+    minScore: 6
+retrieval:
+  aliases:
+    - ddos protection
+    - waf rules
+    - bot protection
+    - rate limiting
+    - attack mode
+    - ip allowlist
+    - traffic filtering
+    - verified bots
+  intents:
+    - protect from ddos
+    - block malicious traffic
+    - configure firewall
+    - rate limit api
+    - allow bot through firewall
+    - enable attack mode
+    - publish firewall rule
+  entities:
+    - Vercel Firewall
+    - Vercel WAF
+    - DDoS
+    - Attack Mode
+    - Bot Protection
+    - Managed Rulesets
+    - System Bypass
+    - JA3
+    - JA4
 ---
 # Vercel Firewall
 

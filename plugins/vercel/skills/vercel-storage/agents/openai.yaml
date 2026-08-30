@@ -1,9 +1,0 @@
-interface:
-  display_name: Vercel Storage
-  short_description: Vercel storage expert guidance — Blob, Edge Config, and Marketplace storage (Neon Postgres, Upstash Redis)
-  default_prompt: Use $vercel-storage for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,10 +1,15 @@
 ---
 name: interaction-table
-description: Look up known skill/plugin pairs that fight (context strip vs inject, length vs rhythm, duck vs dual-axis, rewrite vs lock) before loading both. Use when composing an ai-transfer stack. Scope boundary — library routing audit → `skill-library-audit`; compute triage → `emergency-triage-compute`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Look up known skill/plugin pairs that fight (context strip vs inject, length vs rhythm, duck vs dual-axis, rewrite vs lock) before loading both. Use when composing an ai-transfer stack. Scope boundary — library routing audit → `skill-library-audit`; compute triage → `emergency-triage-compute`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "interaction table"
+      - "plugin conflict"
+      - "skill pair contraindication"
+    minScore: 6
 ---
 # Interaction table for skill conflicts
 

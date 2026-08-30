@@ -1,9 +1,0 @@
-{
-  "name": "cursor-cloud",
-  "version": "1.0.0",
-  "description": "ChatGPT/Codex host: skill load paths, Canvas, artifacts, scheduled waits, plugin marketplaces.",
-  "author": {
-    "name": "CatCorner22"
-  },
-  "skills": "./skills/"
-}

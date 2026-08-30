@@ -1,13 +1,29 @@
 ---
 name: trl-training
+disable-model-invocation: true
 description: Train and fine-tune transformer language models locally with the TRL CLI (SFT, DPO, GRPO, KTO, RLOO, Reward Model). For managed Hugging Face Jobs, use huggingface-llm-trainer and hf-cli instead.
 license: Apache-2.0
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
-  version: 1.0.0
+  version: "1.0.0"
   author: huggingface
+  commands:
+    - trl sft
+    - trl dpo
+    - trl grpo
+    - trl kto
+    - trl rloo
+    - trl reward
+  categories:
+    - machine-learning
+    - llm-training
+    - reinforcement-learning
+  tags:
+    - rlhf
+    - supervised-fine-tuning
+    - dpo
+    - grpo
+    - huggingface
+    - transformers
   documentation: https://huggingface.co/docs/trl/en/clis
 ---
 # TRL Training Skill

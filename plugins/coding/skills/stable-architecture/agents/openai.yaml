@@ -1,9 +1,0 @@
-interface:
-  display_name: Stable Architecture
-  short_description: 'Design code that avoids houses of cards: clear module boundaries, dependency direction, fail-fast invariants, and replaceable adapters'
-  default_prompt: Use $stable-architecture for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

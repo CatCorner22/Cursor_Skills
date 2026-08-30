@@ -1,10 +1,23 @@
 ---
 name: plaud-summary-templates
-description: 'Generate Plaud AI summaries: built-in templates, custom templates, multidimensional summaries, action items, and meeting vs lecture formats. Use when summarizing a Plaud transcript or designing a reusable template. Scope boundary: cross-file Q&A → `plaud-ask-queries`; turning summary into essay → `academic-writing`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Generate Plaud AI summaries: built-in templates, custom templates, multidimensional summaries, action items, and meeting vs lecture formats. Use when summarizing a Plaud transcript or designing a reusable template. Scope boundary: cross-file Q&A → `plaud-ask-queries`; turning summary into essay → `academic-writing`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    phrases:
+      - "plaud summary"
+      - "summary template"
+      - "action items"
+      - "multidimensional summary"
+      - "meeting minutes plaud"
+    allOf:
+      - [plaud, summary]
+      - [template, summary]
+    anyOf:
+      - "360 view"
+      - "Auto Generation"
+    minScore: 6
 ---
 # Plaud summary templates
 

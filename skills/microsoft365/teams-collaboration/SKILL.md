@@ -1,10 +1,22 @@
 ---
 name: teams-collaboration
-description: 'Collaborate in Microsoft Teams for school and work: channels, chat threads, meetings, screen share, file tabs, and group project norms. Use when setting up Teams for a group project, running class meetings, or coordinating async work. Scope boundary: email → `outlook-email-calendar`; file storage policy → `onedrive-organization`; Slack/Discord → not this pack.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Collaborate in Microsoft Teams for school and work: channels, chat threads, meetings, screen share, file tabs, and group project norms. Use when setting up Teams for a group project, running class meetings, or coordinating async work. Scope boundary: email → `outlook-email-calendar`; file storage policy → `onedrive-organization`; Slack/Discord → not this pack."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    phrases:
+      - "microsoft teams"
+      - "teams meeting"
+      - "teams channel"
+      - "group project teams"
+    allOf:
+      - [teams, meeting]
+      - [teams, channel]
+    anyOf:
+      - "Microsoft Teams"
+      - "Teams chat"
+    minScore: 6
 ---
 # Teams collaboration
 

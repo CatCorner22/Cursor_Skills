@@ -1,10 +1,8 @@
 ---
 name: playwright-cli
-description: 'Automate browser interactions, test web pages and work with Playwright tests — the general-purpose Playwright skill for this repo (web apps, Next.js, any non-Adobe project). Scope boundary: for browser-based E2E tests of an Adobe App Builder ExC Shell SPA or AEM extension use `appbuilder-e2e-testing`; for running headless Chrome inside Vercel Sandbox microVMs (agent-browser, scheduled scraping) use `vercel-sandbox`. This skill owns local and CI Playwright usage everywhere else.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+disable-model-invocation: true
+description: "Automate browser interactions, test web pages and work with Playwright tests — the general-purpose Playwright skill for this repo (web apps, Next.js, any non-Adobe project). Scope boundary: for browser-based E2E tests of an Adobe App Builder ExC Shell SPA or AEM extension use `appbuilder-e2e-testing`; for running headless Chrome inside Vercel Sandbox microVMs (agent-browser, scheduled scraping) use `vercel-sandbox`. This skill owns local and CI Playwright usage everywhere else."
+allowed-tools: Bash(playwright-cli:*) Bash(npx:*) Bash(npm:*) Bash(pytest:*) Bash(python:*) Bash(python3:*)
 ---
 # Browser Automation with playwright-cli
 

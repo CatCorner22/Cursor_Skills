@@ -1,9 +1,0 @@
-interface:
-  display_name: HF memory
-  short_description: Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub
-  default_prompt: Use $hf-mem for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

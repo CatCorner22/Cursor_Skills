@@ -1,9 +1,0 @@
-interface:
-  display_name: Skill Library Audit
-  short_description: Audit a multi-vendor agent-skill library for routing pathology — the defect classes that appear only when many packs from different…
-  default_prompt: Use $skill-library-audit for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

@@ -1,9 +1,0 @@
-interface:
-  display_name: Plaud Autoflow
-  short_description: 'Configure Plaud AutoFlow: automatic device-to-app transfer, auto-transcription, auto-summary with chosen template and LLM, and email…'
-  default_prompt: Use $plaud-autoflow for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

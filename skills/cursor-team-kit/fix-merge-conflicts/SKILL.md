@@ -1,10 +1,7 @@
 ---
 name: fix-merge-conflicts
+disable-model-invocation: true
 description: Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # Fix merge conflicts
 

@@ -1,10 +1,15 @@
 ---
 name: just-intonation-calibration
-description: Calibrate generation parameters as just-intonation ratios by task type (factual, creative, code) instead of one global temperature. Use when the same model is too loose on facts or too stiff on drafts. Scope boundary — prompt wording itself → `prompt-optimizer`; compute budget class → `emergency-triage-compute`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Calibrate generation parameters as just-intonation ratios by task type (factual, creative, code) instead of one global temperature. Use when the same model is too loose on facts or too stiff on drafts. Scope boundary — prompt wording itself → `prompt-optimizer`; compute budget class → `emergency-triage-compute`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "just intonation"
+      - "generation parameter ratios"
+      - "temperature by task"
+    minScore: 6
 ---
 # Just intonation parameter calibration
 

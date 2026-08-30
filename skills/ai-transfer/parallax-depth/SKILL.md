@@ -1,10 +1,15 @@
 ---
 name: parallax-depth
-description: Estimate reasoning depth from the shift between the current query and recent history (deep/medium/shallow). Use to set budget before a long answer. Scope boundary — START classes → `emergency-triage-compute`; zoom level → `cartographic-zoom`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Estimate reasoning depth from the shift between the current query and recent history (deep/medium/shallow). Use to set budget before a long answer. Scope boundary — START classes → `emergency-triage-compute`; zoom level → `cartographic-zoom`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "parallax depth"
+      - "query history shift"
+      - "reasoning budget depth"
+    minScore: 6
 ---
 # Parallax depth of query vs history
 

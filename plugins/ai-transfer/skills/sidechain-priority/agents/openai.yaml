@@ -1,9 +1,0 @@
-interface:
-  display_name: Sidechain Priority
-  short_description: When the answer/solution/result arrives, duck the supporting intro so the signal sits on top
-  default_prompt: Use $sidechain-priority for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

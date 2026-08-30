@@ -1,10 +1,9 @@
 ---
 name: ai-transfer-extension
-description: 'Router for extension AI-transfer techniques: just-intonation parameter ratios, load-bearing claim locks, orchard grafts, differential query intent, stress tests, tidal pacing, underwriting gates, metamorphosis stages. Use when calibrating or staging generation beyond the original 30. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Router for extension AI-transfer techniques: just-intonation parameter ratios, load-bearing claim locks, orchard grafts, differential query intent, stress tests, tidal pacing, underwriting gates, metamorphosis stages. Use when calibrating or staging generation beyond the original 30. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
 ---
 # AI transfer — extension pack
 

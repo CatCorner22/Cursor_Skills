@@ -1,9 +1,0 @@
-{
-  "name": "coding",
-  "version": "1.0.0",
-  "description": "Software craft: deliverable-first, architecture, UI/UX, test-while-coding. Skills are explicit-invoke.",
-  "author": {
-    "name": "CatCorner22"
-  },
-  "skills": "./skills/"
-}

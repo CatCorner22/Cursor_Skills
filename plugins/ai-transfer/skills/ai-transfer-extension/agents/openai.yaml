@@ -1,9 +1,0 @@
-interface:
-  display_name: Ai Transfer Extension
-  short_description: 'Router for extension AI-transfer techniques: just-intonation parameter ratios, load-bearing claim locks, orchard grafts, differential…'
-  default_prompt: Use $ai-transfer-extension for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

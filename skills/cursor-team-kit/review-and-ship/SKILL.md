@@ -1,10 +1,7 @@
 ---
 name: review-and-ship
+disable-model-invocation: true
 description: Review the current branch for bugs, intent fit, and test coverage; run or write tests; commit focused work; open or update a PR.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # Review and ship
 

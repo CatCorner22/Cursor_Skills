@@ -1,9 +1,0 @@
-interface:
-  display_name: Differential Diagnosis Intent
-  short_description: Rank 2–3 interpretations of the user query (literal, examples, comparison) with probabilities before answering
-  default_prompt: Use $differential-diagnosis-intent for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

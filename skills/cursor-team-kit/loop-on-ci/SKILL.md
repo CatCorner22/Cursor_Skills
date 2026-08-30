@@ -1,10 +1,7 @@
 ---
 name: loop-on-ci
+disable-model-invocation: true
 description: Monitor PR checks and fix failures until green. Uses gh pr checks as the source of truth for PR-attached checks.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # Loop on CI
 

@@ -1,10 +1,15 @@
 ---
 name: load-bearing-structure
-description: Mark load-bearing claims (therefore/must/key/critical) and forbid polish passes from deleting or softening them. Use before color-grading or faceting. Scope boundary — claim/evidence balance → `double-entry-claims`; robustness tests → `stress-test-robustness`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Mark load-bearing claims (therefore/must/key/critical) and forbid polish passes from deleting or softening them. Use before color-grading or faceting. Scope boundary — claim/evidence balance → `double-entry-claims`; robustness tests → `stress-test-robustness`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "load bearing"
+      - "protected claims"
+      - "structural sentences"
+    minScore: 6
 ---
 # Load-bearing claim protection
 

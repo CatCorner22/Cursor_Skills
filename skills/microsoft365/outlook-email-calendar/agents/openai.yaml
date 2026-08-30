@@ -1,9 +1,0 @@
-interface:
-  display_name: Outlook Email Calendar
-  short_description: 'Professional email and calendar in Microsoft Outlook: syllabus-to-calendar blocking, meeting invites, inbox triage, signatures, and…'
-  default_prompt: Use $outlook-email-calendar for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

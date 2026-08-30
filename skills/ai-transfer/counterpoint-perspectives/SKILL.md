@@ -1,10 +1,15 @@
 ---
 name: counterpoint-perspectives
-description: 'Generate 2–3 independent analytical voices with own logic, then harmonize into interwoven output — not pros/cons list. Use for multi-stakeholder or multi-framework analysis. Scope boundary: debate scoring → `debate-adjudication-voting`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Generate 2–3 independent analytical voices with own logic, then harmonize into interwoven output — not pros/cons list. Use for multi-stakeholder or multi-framework analysis. Scope boundary: debate scoring → `debate-adjudication-voting`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "counterpoint"
+      - "multiple perspectives"
+      - "interwoven arguments"
+    minScore: 6
 ---
 # Musical counterpoint perspectives
 

@@ -1,10 +1,15 @@
 ---
 name: sidechain-priority
-description: When the answer/solution/result arrives, duck the supporting intro so the signal sits on top. Use when preambles bury the payload. Scope boundary — zoom compression → `cartographic-zoom`; dual-axis completeness → `score-study-dual-axis`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "When the answer/solution/result arrives, duck the supporting intro so the signal sits on top. Use when preambles bury the payload. Scope boundary — zoom compression → `cartographic-zoom`; dual-axis completeness → `score-study-dual-axis`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "sidechain duck"
+      - "sidechain priority"
+      - "duck the intro"
+    minScore: 6
 ---
 # Sidechain priority ducking
 

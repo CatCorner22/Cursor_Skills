@@ -1,10 +1,15 @@
 ---
 name: cartographic-zoom
-description: 'Generate country/city/street zoom levels: 1–2 sentences, 1–2 paragraphs, full deep-dive. Detect from query or offer zoom-in. Use when verbosity mismatch hurts UX. Scope boundary: stage layout → `stage-blocking-layout`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Generate country/city/street zoom levels: 1–2 sentences, 1–2 paragraphs, full deep-dive. Detect from query or offer zoom-in. Use when verbosity mismatch hurts UX. Scope boundary: stage layout → `stage-blocking-layout`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "zoom level"
+      - "TLDR depth"
+      - "summary vs deep dive"
+    minScore: 6
 ---
 # Cartographic zoom levels
 

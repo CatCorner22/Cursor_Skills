@@ -1,9 +1,0 @@
-interface:
-  display_name: Chain Of Custody Provenance
-  short_description: 'Token- or block-level provenance: which inputs, tools, prompt sections, and turns produced each output segment'
-  default_prompt: Use $chain-of-custody-provenance for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

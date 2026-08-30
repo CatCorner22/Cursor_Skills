@@ -1,10 +1,37 @@
 ---
 name: skill-library-audit
-description: 'Audit a multi-vendor agent-skill library for routing pathology — greedy descriptions, cross-pack territory claims, SKILL.md vs agents/openai.yaml drift, silently disabled invocation policy, dangling references. Use when adding a skill pack, merging two libraries, or when skills fire on the wrong thing. Ships a runnable analyzer at scripts/audit_skill_library.py. Scope boundary: this audits a SKILL LIBRARY, not application code — for authoring a single new skill use skill-creator.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Audit a multi-vendor agent-skill library for routing pathology — the defect classes that appear only when many packs from different vendors share one router: vendor steering, SKILL.md/overlay.yaml drift, silently disabled rules, unreachable guards, greedy descriptions, cross-pack territory claims, shadowed and cyclic routes, dangling references. Use when adding a skill pack, merging two libraries, or when skills fire on the wrong thing. Ships a runnable analyzer at scripts/audit_skill_library.py. Scope boundary: this audits a SKILL LIBRARY's routing metadata, not application code — for authoring a single new skill use skill-creator, and for reviewing ordinary source changes use code-review."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 6
+  pathPatterns:
+    - '**/SKILL.md'
+    - '**/overlay.yaml'
+    - '.cursor/skills/**'
+    - '.claude/skills/**'
+  bashPatterns:
+    - '\baudit_skill_library\.py\b'
+  importPatterns: []
+  promptSignals:
+    phrases:
+      - "audit the skill library"
+      - "skill routing"
+      - "trigger collision"
+      - "vendor steering"
+      - "skills fire on the wrong"
+      - "overlay drift"
+      - "why did that skill trigger"
+    allOf:
+      - [skill, trigger]
+      - [skill, routing]
+      - [skill, collision]
+    anyOf:
+      - "overlay.yaml"
+      - "chainTo"
+      - "promptSignals"
+      - "skipIfFileContains"
+    noneOf: []
+    minScore: 6
 ---
 # Audit a skill library for routing pathology
 

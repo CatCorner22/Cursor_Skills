@@ -1,10 +1,24 @@
 ---
 name: study-system
-description: 'Plan and execute studying: syllabus to weekly schedule, active recall, spaced repetition prompts, exam prep cadence, and WIP limits on courses. Use when mapping a semester, preparing for exams, or building a study routine. Scope boundary: calendar mechanics → `outlook-email-calendar`; lecture capture → `plaud-lecture-notes`; prioritization loops → `ooda-lean-loop`; week prep → `workspace-mise-en-place`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Plan and execute studying: syllabus to weekly schedule, active recall, spaced repetition prompts, exam prep cadence, and WIP limits on courses. Use when mapping a semester, preparing for exams, or building a study routine. Scope boundary: calendar mechanics → `outlook-email-calendar`; lecture capture → `plaud-lecture-notes`; prioritization loops → `ooda-lean-loop`; week prep → `workspace-mise-en-place`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 8
+  promptSignals:
+    phrases:
+      - "study plan"
+      - "exam prep"
+      - "syllabus schedule"
+      - "spaced repetition"
+      - "how to study"
+      - "weekly plan"
+    allOf:
+      - [study, exam]
+      - [syllabus, schedule]
+    anyOf:
+      - "study system"
+      - "study schedule"
+    minScore: 6
 ---
 # Study system
 

@@ -1,9 +1,0 @@
-interface:
-  display_name: Academic Writing
-  short_description: 'Structure and revise academic prose: thesis statements, outlines, paragraphs, introductions/conclusions, argument flow, and tone by…'
-  default_prompt: Use $academic-writing for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

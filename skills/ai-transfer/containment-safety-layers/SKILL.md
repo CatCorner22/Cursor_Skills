@@ -1,10 +1,15 @@
 ---
 name: containment-safety-layers
-description: Require independent safety layers (pattern, keyword, policy) that can each fail closed. Use for high-stakes generation, not everyday chat. Scope boundary — this is layered containment, not a jailbreak keyword skill; phase gating → `sterile-cockpit-context`; risk color → `underwriting-risk-gate`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Require independent safety layers (pattern, keyword, policy) that can each fail closed. Use for high-stakes generation, not everyday chat. Scope boundary — this is layered containment, not a jailbreak keyword skill; phase gating → `sterile-cockpit-context`; risk color → `underwriting-risk-gate`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "containment safety"
+      - "independent safety layers"
+      - "BSL layers"
+    minScore: 6
 ---
 # Containment safety layers
 

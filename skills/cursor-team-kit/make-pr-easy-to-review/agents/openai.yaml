@@ -1,9 +1,0 @@
-interface:
-  display_name: Make Pr Easy To Review
-  short_description: Prepare PRs for review by cleaning noisy history, improving PR descriptions, and adding reviewer guidance without changing code behavior
-  default_prompt: Use $make-pr-easy-to-review for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

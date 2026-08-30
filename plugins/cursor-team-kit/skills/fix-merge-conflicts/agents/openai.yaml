@@ -1,9 +1,0 @@
-interface:
-  display_name: Fix Merge Conflicts
-  short_description: Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution
-  default_prompt: Use $fix-merge-conflicts for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX

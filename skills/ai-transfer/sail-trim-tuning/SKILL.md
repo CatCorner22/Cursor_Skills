@@ -1,10 +1,15 @@
 ---
 name: sail-trim-tuning
-description: Read user confusion/satisfaction signals and trim the next beat (more examples vs hold course). Use on multi-turn work. Scope boundary — mid-stream environment loop → `fermentation-feedback`; human OODA → `ooda-lean-loop`.
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Read user confusion/satisfaction signals and trim the next beat (more examples vs hold course). Use on multi-turn work. Scope boundary — mid-stream environment loop → `fermentation-feedback`; human OODA → `ooda-lean-loop`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "sail trim"
+      - "telltales"
+      - "mid response adjust"
+    minScore: 6
 ---
 # Sail trim mid-response tuning
 

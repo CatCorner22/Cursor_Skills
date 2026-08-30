@@ -1,11 +1,8 @@
 ---
 name: appbuilder-workfront
-description: 'Use when orienting, onboarding, or planning before a concrete task — the entry point for building a customized Workfront UI on Adobe App Builder. Reach for this whenever the user is: brand new to Workfront UI extensions and asking where to start or what the process looks like; describing a Workfront customization idea and asking how to build it; asking for the end-to-end roadmap (set up → scaffold → build → test → deploy → publish); or asking how the React/Spectrum SPA, the serverless Runtime actions, and the Workfront extension points fit together. This umbrella routes each stage to its skill: workfront-ui-extension (front-end SPA + extension points), workfront-actions (Runtime actions + Workfront Public API v21), workfront-local-testing (previewing a build inside Workfront); machine setup and aio app init live in appbuilder-project-init. Skip it and go straight to the matching sub-skill when the user already has one specific task.'
+disable-model-invocation: true
+description: "Use when orienting, onboarding, or planning before a concrete task — the entry point for building a customized Workfront UI on Adobe App Builder. Reach for this whenever the user is: brand new to Workfront UI extensions and asking where to start or what the process looks like; describing a Workfront customization idea and asking how to build it; asking for the end-to-end roadmap (set up → scaffold → build → test → deploy → publish); or asking how the React/Spectrum SPA, the serverless Runtime actions, and the Workfront extension points fit together. This umbrella routes each stage to its skill: workfront-ui-extension (front-end SPA + extension points), workfront-actions (Runtime actions + Workfront Public API v21), workfront-local-testing (previewing a build inside Workfront); machine setup and aio app init live in appbuilder-project-init. Skip it and go straight to the matching sub-skill when the user already has one specific task."
 license: Apache-2.0
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
-metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
 ---
 # Workfront UI extensions on App Builder
 

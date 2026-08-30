@@ -1,10 +1,26 @@
 ---
 name: citation-literacy
-description: 'Format and check academic citations: APA 7, MLA 9, and Chicago (notes-bibliography), in-text vs bibliography, common mistakes, and when to use which style. Use when the user asks how to cite a source, format references, or fix bibliography entries. Scope boundary: writing the paper body → `academic-writing`; claim-level attribution → `journalistic-attribution`; DOI/URL lookup mechanics only when tied to a citation question.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Format and check academic citations: APA 7, MLA 9, and Chicago (notes-bibliography), in-text vs bibliography, common mistakes, and when to use which style. Use when the user asks how to cite a source, format references, or fix bibliography entries. Scope boundary: writing the paper body → `academic-writing`; claim-level attribution → `journalistic-attribution`; DOI/URL lookup mechanics only when tied to a citation question."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 8
+  promptSignals:
+    phrases:
+      - "cite this"
+      - "APA format"
+      - "MLA citation"
+      - "bibliography"
+      - "works cited"
+      - "reference list"
+      - "in-text citation"
+    allOf:
+      - [cite, apa]
+      - [cite, mla]
+      - [reference, list]
+    anyOf:
+      - "Chicago style"
+      - "how do I cite"
+    minScore: 6
 ---
 # Citation literacy
 

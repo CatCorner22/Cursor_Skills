@@ -1,10 +1,15 @@
 ---
 name: stratigraphy-memory
-description: 'Layer memory by session strata plus disturbance markers; retrieve with integrity confidence. Use for long-horizon agents. Scope boundary: flat RAG → `library-taxonomy-retrieval`; cross-session bridges → `wildlife-corridor-bridging`.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Layer memory by session strata plus disturbance markers; retrieve with integrity confidence. Use for long-horizon agents. Scope boundary: flat RAG → `library-taxonomy-retrieval`; cross-session bridges → `wildlife-corridor-bridging`."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  promptSignals:
+    anyOf:
+      - "stratigraphy memory"
+      - "temporal layers"
+      - "session strata"
+    minScore: 6
 ---
 # Archaeological stratigraphy memory
 

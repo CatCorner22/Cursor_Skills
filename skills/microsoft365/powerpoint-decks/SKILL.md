@@ -1,10 +1,26 @@
 ---
 name: powerpoint-decks
-description: 'Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and export. Use when building .pptx decks for class, work, or conferences. Scope boundary: argument craft for speaker notes → `academic-writing`; Word handouts → `word-documents`; Copilot custom skill upload format → compatible with this SKILL.md structure.'
-compatibility: ChatGPT (web, desktop, mobile via plugins) and Codex (desktop, CLI, IDE).
+disable-model-invocation: true
+description: "Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and export. Use when building .pptx decks for class, work, or conferences. Scope boundary: argument craft for speaker notes → `academic-writing`; Word handouts → `word-documents`; Copilot custom skill upload format → compatible with this SKILL.md structure."
 metadata:
-  host: chatgpt-codex
-  ported_from: Cursor_Skills
+  priority: 7
+  pathPatterns:
+    - '**/*.pptx'
+    - '**/*.ppt'
+  promptSignals:
+    phrases:
+      - "powerpoint"
+      - "slide deck"
+      - "presentation slides"
+      - "speaker notes"
+      - "pptx"
+    allOf:
+      - [powerpoint, slide]
+      - [presentation, deck]
+    anyOf:
+      - "Microsoft PowerPoint"
+      - ".pptx"
+    minScore: 6
 ---
 # PowerPoint decks
 

@@ -170,5 +170,23 @@ class CatalogTests(unittest.TestCase):
             self.assertIn(pid, pipeline.registry)
 
 
+class DiscoveryLeakTests(unittest.TestCase):
+    """AGENTS.md under a skill root is injected as an always-on workspace rule."""
+
+    def test_no_agents_md_at_skill_roots(self):
+        repo = ROOT.parent
+        leaked = []
+        for skill_md in repo.joinpath("skills").rglob("SKILL.md"):
+            agents = skill_md.parent / "AGENTS.md"
+            if agents.is_file() or agents.is_symlink():
+                leaked.append(str(agents.relative_to(repo)))
+        self.assertEqual(
+            leaked,
+            [],
+            "Rename skill-root AGENTS.md (e.g. references/agents-reference.md); "
+            "Cursor loads .cursor/skills/<name>/AGENTS.md on every session",
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,9 +1,0 @@
-interface:
-  display_name: Huggingface Community Evals
-  short_description: Run evaluations for Hugging Face Hub models using inspect-ai and lighteval on local hardware
-  default_prompt: Use $huggingface-community-evals for this task.
-policy:
-  allow_implicit_invocation: false
-  products:
-  - CHAT
-  - CODEX
