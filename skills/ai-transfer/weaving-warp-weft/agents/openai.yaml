@@ -1,0 +1,9 @@
+interface:
+  display_name: Weaving Warp Weft
+  short_description: 'Interleave fixed structural threads (warp: required claims, compliance) with flexible expressive weft (tone, examples)'
+  default_prompt: Use $weaving-warp-weft for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+interface:
+  display_name: Huggingface Trackio
+  short_description: Track and visualize ML training experiments with Trackio
+  default_prompt: Use $huggingface-trackio for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

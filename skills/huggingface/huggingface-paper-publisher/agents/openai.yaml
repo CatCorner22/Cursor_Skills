@@ -1,0 +1,9 @@
+interface:
+  display_name: Huggingface Paper Publisher
+  short_description: Publish and manage research papers on Hugging Face Hub
+  default_prompt: Use $huggingface-paper-publisher for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

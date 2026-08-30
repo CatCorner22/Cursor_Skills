@@ -1,0 +1,9 @@
+interface:
+  display_name: Huggingface Spaces
+  short_description: Build, deploy, and maintain applications on Hugging Face Spaces — Gradio / Docker / Static SDKs, ZeroGPU and dedicated hardware, model…
+  default_prompt: Use $huggingface-spaces for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

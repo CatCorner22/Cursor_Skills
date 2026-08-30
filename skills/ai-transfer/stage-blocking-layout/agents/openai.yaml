@@ -1,0 +1,9 @@
+interface:
+  display_name: Stage Blocking Layout
+  short_description: 'Spatial emphasis: center stage = core message; flanks = evidence; opposing entrances = dialectic; center curtain = synthesis'
+  default_prompt: Use $stage-blocking-layout for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

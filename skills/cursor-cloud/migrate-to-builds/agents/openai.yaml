@@ -1,0 +1,9 @@
+interface:
+  display_name: Migrate To Builds
+  short_description: Test that a Cloud Agent environment will work with prebuilt environment builds and recommend any required changes
+  default_prompt: Use $migrate-to-builds for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

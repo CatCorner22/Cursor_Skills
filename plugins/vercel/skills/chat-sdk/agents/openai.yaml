@@ -1,0 +1,9 @@
+interface:
+  display_name: Chat Sdk
+  short_description: Vercel Chat SDK expert guidance
+  default_prompt: Use $chat-sdk for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

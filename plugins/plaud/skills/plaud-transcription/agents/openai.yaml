@@ -1,0 +1,9 @@
+interface:
+  display_name: Plaud Transcription
+  short_description: 'Improve Plaud transcripts: language selection, speaker diarization, custom vocabulary, formatting, and fixing common ASR errors before…'
+  default_prompt: Use $plaud-transcription for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

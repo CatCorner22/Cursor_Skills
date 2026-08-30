@@ -1,0 +1,9 @@
+interface:
+  display_name: New Branch And Pr
+  short_description: Create a fresh branch, complete work, and open a pull request
+  default_prompt: Use $new-branch-and-pr for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

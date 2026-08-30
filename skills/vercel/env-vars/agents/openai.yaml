@@ -1,0 +1,9 @@
+interface:
+  display_name: Environment variables
+  short_description: Vercel environment variable expert guidance
+  default_prompt: Use $env-vars for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

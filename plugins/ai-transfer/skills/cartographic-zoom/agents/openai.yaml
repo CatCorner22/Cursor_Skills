@@ -1,0 +1,9 @@
+interface:
+  display_name: Cartographic Zoom
+  short_description: 'Generate country/city/street zoom levels: 1–2 sentences, 1–2 paragraphs, full deep-dive'
+  default_prompt: Use $cartographic-zoom for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

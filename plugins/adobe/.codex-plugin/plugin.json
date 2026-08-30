@@ -1,0 +1,9 @@
+{
+  "name": "adobe",
+  "version": "1.0.0",
+  "description": "Adobe App Builder and Workfront: actions, UI, CI/CD, testing. Skills are explicit-invoke.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "./skills/"
+}

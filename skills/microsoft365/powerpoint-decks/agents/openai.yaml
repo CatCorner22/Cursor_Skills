@@ -1,0 +1,9 @@
+interface:
+  display_name: Powerpoint Decks
+  short_description: 'Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and…'
+  default_prompt: Use $powerpoint-decks for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

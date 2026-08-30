@@ -1,0 +1,9 @@
+{
+  "name": "pydantic-ai",
+  "version": "1.0.0",
+  "description": "Pydantic AI typed Python agents. Skill is explicit-invoke.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "./skills/"
+}

@@ -1,0 +1,9 @@
+interface:
+  display_name: Gemstone Faceting Refinement
+  short_description: Rotate refinement through clarity, precision, resonance, durability passes — flaws visible from new angles
+  default_prompt: Use $gemstone-faceting-refinement for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

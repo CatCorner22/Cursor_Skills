@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Make every skill manual except proactive-agency, then write the catalog.
+"""Keep ChatGPT/Codex invocation policy consistent, then write the catalog.
 
-Idempotent. Edits only canonical files under skills/**/SKILL.md.
+Idempotent. Edits only canonical files under skills/**/SKILL.md and
+skills/**/agents/openai.yaml.
 """
 from __future__ import annotations
 
@@ -45,14 +46,14 @@ PACK_BLURBS = {
         "Mention for workspace prep or a decide-act loop — not AI pipeline preflight.",
     ),
     "cursor-cloud": (
-        "Cursor Cloud Agents",
-        "Environment setup, snapshots, subscriptions, canvases, walkthroughs.",
-        "Mention when configuring or debugging a Cloud Agent environment.",
+        "ChatGPT / Codex host",
+        "Skill load paths, Canvas/artifacts, scheduled waits, plugin marketplaces.",
+        "Mention when configuring ChatGPT Skills, Codex, or this library's install paths.",
     ),
     "cursor-sdk": (
-        "Cursor SDK",
-        "Drive Cursor agents from code (CI, scripts, backends).",
-        "Mention when automating Cursor via @cursor/sdk.",
+        "Programmatic agents",
+        "Drive Codex or OpenAI Agents SDK from code (CI, scripts, backends).",
+        "Mention when automating Codex/ChatGPT from a script or service.",
     ),
     "cursor-team-kit": (
         "GitHub PR workflow",
@@ -62,7 +63,7 @@ PACK_BLURBS = {
     "first-party": (
         "First-party library skills",
         "Always-on execution posture plus library audit, smolagents, and v0.",
-        "proactive-agency is always on. Mention the others by name.",
+        "proactive-agency may invoke implicitly. Mention the others by name.",
     ),
     "huggingface": (
         "Hugging Face Hub",
@@ -116,12 +117,6 @@ PACK_BLURBS = {
     ),
 }
 
-KNOWLEDGE_UPDATE_DESCRIPTION = (
-    "Corrects outdated LLM knowledge about the Vercel platform and introduces "
-    "new products. Invoke manually when working on Vercel products, Fluid "
-    "Compute, vercel.ts, or when platform facts may be stale."
-)
-
 USE_SPLIT = re.compile(
     r"(?P<when>Use when|Use whenever|Use before|Use instead|Invoke(?: manually)? when)\s+",
     re.IGNORECASE,
@@ -146,71 +141,80 @@ def split_frontmatter(text: str) -> tuple[str, str]:
     return rest[: match.start()], rest[match.end() :]
 
 
-def skill_name_from_front(front: str) -> str:
-    for line in front.splitlines():
-        if line.startswith("name:"):
-            return line.split(":", 1)[1].strip().strip("\"'")
-    raise ValueError("no name:")
+def dump_yaml(data: dict) -> str:
+    return yaml.safe_dump(
+        data, sort_keys=False, allow_unicode=True, width=1000, default_flow_style=False
+    ).rstrip()
+
+
+def titleize(name: str) -> str:
+    special = {
+        "nextjs": "Next.js",
+        "ai-sdk": "AI SDK",
+        "ai-gateway": "AI Gateway",
+        "v0": "v0",
+        "shadcn": "shadcn/ui",
+        "proactive-agency": "Proactive agency",
+        "cursor-sdk": "Codex and OpenAI Agents SDK",
+        "env-setup": "Codex environment setup",
+    }
+    return special.get(name, name.replace("-", " ").replace("_", " ").strip().title())
+
+
+def first_sentence(text: str, limit: int = 140) -> str:
+    text = " ".join((text or "").split())
+    if not text:
+        return "Skill for ChatGPT and Codex."
+    sentence = re.split(r"(?<=[.!?])\s+", text, maxsplit=1)[0].rstrip(".")
+    if len(sentence) > limit:
+        sentence = sentence[: limit - 1].rsplit(" ", 1)[0] + "…"
+    return sentence
+
+
+def apply_openai_yaml(skill_dir: Path, name: str, description: str) -> bool:
+    agents = skill_dir / "agents"
+    agents.mkdir(exist_ok=True)
+    path = agents / "openai.yaml"
+    implicit = name == ALWAYS_ON
+    payload = {
+        "interface": {
+            "display_name": titleize(name),
+            "short_description": first_sentence(description),
+            "default_prompt": f"Use ${name} for this task.",
+        },
+        "policy": {
+            "allow_implicit_invocation": implicit,
+            "products": ["CHAT", "CODEX"],
+        },
+    }
+    if path.exists():
+        try:
+            old = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        except yaml.YAMLError:
+            old = {}
+        if isinstance(old, dict) and isinstance(old.get("interface"), dict):
+            for key in ("display_name", "short_description", "default_prompt", "brand_color"):
+                if old["interface"].get(key):
+                    payload["interface"][key] = old["interface"][key]
+    rendered = dump_yaml(payload) + "\n"
+    if path.exists() and path.read_text(encoding="utf-8") == rendered:
+        return False
+    path.write_text(rendered, encoding="utf-8")
+    return True
 
 
 def apply_skill(path: Path) -> bool:
     original = path.read_text(encoding="utf-8")
     front, body = split_frontmatter(original)
-    name = skill_name_from_front(front)
-    lines = front.splitlines()
-
-    def without_key(key: str) -> list[str]:
-        return [ln for ln in lines if not re.match(rf"^{re.escape(key)}\s*:", ln)]
-
-    if name == ALWAYS_ON:
-        lines = without_key("disable-model-invocation")
-        if not any(ln.strip() == "sessionStart: true" for ln in lines):
-            # Keep sessionStart under metadata; insert after the metadata: line.
-            out = []
-            inserted = False
-            for ln in lines:
-                out.append(ln)
-                if ln.strip() == "metadata:" and not inserted:
-                    out.append("  sessionStart: true")
-                    inserted = True
-            lines = out
-        # Strengthen the always-on sentence if the older wording is still there.
-        new_lines = []
-        for ln in lines:
-            if ln.startswith("description:") and "Sole always-on skill" not in ln:
-                ln = ln.replace(
-                    "Injected at session start; not trigger-matched.",
-                    "Sole always-on skill in this library: injected at session start, not trigger-matched.",
-                )
-            new_lines.append(ln)
-        lines = new_lines
-    else:
-        if not any(ln.startswith("disable-model-invocation:") for ln in lines):
-            out = []
-            inserted = False
-            for ln in lines:
-                out.append(ln)
-                if ln.startswith("name:") and not inserted:
-                    out.append("disable-model-invocation: true")
-                    inserted = True
-            lines = out
-        # Strip sessionStart so nothing else auto-injects.
-        lines = [ln for ln in lines if ln.strip() != "sessionStart: true"]
-        if name == "knowledge-update":
-            out = []
-            for ln in lines:
-                if ln.startswith("description:"):
-                    out.append(f"description: {KNOWLEDGE_UPDATE_DESCRIPTION}")
-                else:
-                    out.append(ln)
-            lines = out
-
-    new_front = "\n".join(lines)
-    new_text = f"---\n{new_front}\n---\n{body}"
-    if new_text != original:
-        path.write_text(new_text, encoding="utf-8")
-        return True
-    return False
+    data = yaml.safe_load(front) or {}
+    name = data.get("name") or path.parent.name
+    description = data.get("description") or ""
+    if not isinstance(name, str):
+        name = path.parent.name
+    if not isinstance(description, str):
+        description = str(description)
+    changed = apply_openai_yaml(path.parent, name, description)
+    return changed
 
 
 def parse_description(desc: str) -> tuple[str, str]:
@@ -239,17 +243,17 @@ def load_skill_rows() -> list[dict]:
             raise SystemExit(f"bad frontmatter: {path}")
         pack = path.relative_to(SKILLS).parts[0]
         purpose, when = parse_description(desc)
-        meta = data.get("metadata") or {}
-        session = bool(isinstance(meta, dict) and meta.get("sessionStart"))
-        disabled = bool(data.get("disable-model-invocation"))
+        yaml_path = path.parent / "agents" / "openai.yaml"
+        implicit = False
+        if yaml_path.exists():
+            policy = (yaml.safe_load(yaml_path.read_text(encoding="utf-8")) or {}).get("policy") or {}
+            implicit = bool(policy.get("allow_implicit_invocation"))
         if name == ALWAYS_ON:
-            activation = "Always on"
-        elif disabled:
-            activation = "Manual"
+            activation = "Implicit (allow_implicit_invocation: true)"
+        elif implicit:
+            activation = "Implicit (unexpected — should be explicit)"
         else:
-            activation = "Manual (flag missing — treat as manual)"
-        if name == ALWAYS_ON and (disabled or not session):
-            activation = "Always on (check sessionStart)"
+            activation = "Explicit (@ / $)"
         rows.append(
             {
                 "pack": pack,
@@ -265,7 +269,6 @@ def load_skill_rows() -> list[dict]:
 
 def parse_runtime_plugins() -> list[dict]:
     text = BUNDLE.read_text(encoding="utf-8")
-    # Extract DEFAULT_CANDIDATE_IDS membership from the two lists.
     tech = re.search(r"TECHNIQUE_PLUGIN_IDS = \[(.*?)\]", text, re.S)
     orch = re.search(r"ORCHESTRATOR_PLUGIN_IDS = \[(.*?)\]", text, re.S)
     default_ids = set()
@@ -284,14 +287,13 @@ def parse_runtime_plugins() -> list[dict]:
     for match in class_pat.finditer(text):
         cls, doc, pid, category = match.groups()
         doc = " ".join(doc.split())
-        in_default = pid in default_ids
         rows.append(
             {
                 "id": pid,
                 "class": cls,
                 "category": category,
                 "purpose": doc,
-                "default": in_default,
+                "default": pid in default_ids,
             }
         )
     return rows
@@ -306,9 +308,8 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
     for row in skill_rows:
         by_pack[row["pack"]].append(row)
 
-    always = [r for r in skill_rows if r["activation"].startswith("Always on")]
-    manual = [r for r in skill_rows if r["activation"] == "Manual"]
-    other = [r for r in skill_rows if r not in always and r not in manual]
+    implicit = [r for r in skill_rows if r["name"] == ALWAYS_ON]
+    explicit = [r for r in skill_rows if r["name"] != ALWAYS_ON]
 
     lines = [
         "# Skill and plugin catalog",
@@ -318,25 +319,18 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
         "",
         "## Activation policy",
         "",
-        f"- **Always on (1):** `{ALWAYS_ON}` — `metadata.sessionStart: true`. Injected every session so the agent does the work instead of describing it.",
-        f"- **Manual ({len(manual)}):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.",
-        "- **Cursor plugin packs (19):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.",
-        "- **Python runtime plugins (100):** a separate pipeline in `scripts/ai_plugin_bundle.py`. Not Cursor skills. Default tier considers catalog #1–50 plus orchestrator utilities; security scanners and the rest stay off unless you pass `--enable-all` or `enabled_plugins`.",
+        f"- **Implicit (1):** `{ALWAYS_ON}` — `agents/openai.yaml` → `policy.allow_implicit_invocation: true`. Also summarized in `AGENTS.md` so Codex loads the posture in this repo.",
+        f"- **Explicit ({len(explicit)}):** every other ChatGPT/Codex skill. `allow_implicit_invocation: false`. Mention with `@name` in ChatGPT or `$name` in Codex.",
+        f"- **ChatGPT/Codex plugin packs ({len(by_pack)}):** installable wrappers under `plugins/<pack>/`. Enabling a pack only makes its skills *available*.",
+        "- **Python runtime plugins (100):** a separate pipeline in `scripts/ai_plugin_bundle.py`. Not ChatGPT skill folders. Default tier considers catalog #1–50 plus orchestrator utilities.",
         "",
-        "How to invoke a manual skill: say the skill name (`` `nextjs` ``), ask for the job it covers, or attach the `SKILL.md` in Cursor.",
+        "How to invoke an explicit skill: type `` `@nextjs` `` in ChatGPT, `` `$nextjs` `` in Codex, or ask for the job it covers.",
         "",
-        f"**Counts:** {len(skill_rows)} Cursor skills, {len(by_pack)} plugin packs, {len(runtime)} runtime plugins.",
-    ]
-    if other:
-        lines += ["", "### Activation anomalies", ""]
-        for row in other:
-            lines.append(f"- `{row['name']}` in `{row['pack']}`: {row['activation']}")
-
-    lines += [
+        f"**Counts:** {len(skill_rows)} ChatGPT/Codex skills, {len(by_pack)} plugin packs, {len(runtime)} runtime plugins.",
         "",
-        "## Cursor plugin packs",
+        "## ChatGPT/Codex plugin packs",
         "",
-        "Each pack is a Cursor plugin under `plugins/<pack>/` (and `~/.cursor/plugins/local/<pack>/` after `./scripts/load-all.sh`).",
+        "Each pack is a plugin under `plugins/<pack>/` (and `~/.codex/plugins/<pack>/` after `./scripts/load-all.sh`).",
         "",
         "| Pack | What it is for | When to use | Activation |",
         "|---|---|---|---|",
@@ -347,15 +341,15 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
         )
         count = len(by_pack[pack])
         activation = (
-            "Installed wrapper; `proactive-agency` inside is Always on, other skills Manual"
+            "Installed wrapper; `proactive-agency` inside is Implicit, other skills Explicit"
             if pack == "first-party"
-            else "Installed wrapper — skills inside are Manual"
+            else "Installed wrapper — skills inside are Explicit"
         )
         lines.append(
             f"| `{pack}` ({count}) — {md_escape(title)} | {md_escape(purpose)} | {md_escape(when)} | {activation} |"
         )
 
-    lines += ["", "## Cursor skills", ""]
+    lines += ["", "## ChatGPT/Codex skills", ""]
     for pack in sorted(by_pack):
         title, purpose, when = PACK_BLURBS.get(pack, (pack, "", ""))
         lines += [
@@ -377,10 +371,10 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
     lines += [
         "## Python runtime plugins (`scripts/ai_plugin_bundle.py`)",
         "",
-        "These are **not** Cursor skills. They run only when you execute the bundle.",
+        "These are **not** ChatGPT skill folders. They run only when you execute the bundle.",
         "",
-        f"- **Default candidate set ({len(default_rt)}):** catalog techniques #1–50 plus orchestrator utilities. A default `--tier` run may still drop some of these via `quality_cost_tradeoff`.",
-        f"- **Opt-in ({len(opt_rt)}):** security/ethics, creative, conversation, analytics, domain, personalization, metacognition, and extra efficiency plugins. Off unless `--enable-all` or an explicit enable list.",
+        f"- **Default candidate set ({len(default_rt)}):** catalog techniques #1–50 plus orchestrator utilities.",
+        f"- **Opt-in ({len(opt_rt)}):** security/ethics, creative, conversation, analytics, domain, personalization, metacognition, and extra efficiency plugins.",
         "",
         "### Default candidate set",
         "",
@@ -418,20 +412,21 @@ def main(argv: list[str]) -> int:
     rows = load_skill_rows()
     runtime = parse_runtime_plugins()
     write_catalog(rows, runtime)
-    always = [r for r in rows if r["name"] == ALWAYS_ON]
-    manual = [r for r in rows if r["name"] != ALWAYS_ON]
-    missing_flag = [
-        r for r in manual if r["activation"] != "Manual"
+    implicit = [r for r in rows if r["name"] == ALWAYS_ON]
+    unexpected = [
+        r
+        for r in rows
+        if r["name"] != ALWAYS_ON and "unexpected" in r["activation"]
     ]
     print(
-        f"skills={len(rows)} always_on={len(always)} manual={len(manual)} "
+        f"skills={len(rows)} implicit={len(implicit)} explicit={len(rows) - len(implicit)} "
         f"runtime={len(runtime)} files_changed={changed} catalog={CATALOG_PATH.relative_to(ROOT)}"
     )
-    if not always:
+    if not implicit:
         print("ERROR: proactive-agency missing", file=sys.stderr)
         return 1
-    if missing_flag:
-        print("ERROR: skills without manual flag:", missing_flag, file=sys.stderr)
+    if unexpected:
+        print("ERROR: unexpected implicit skills:", unexpected, file=sys.stderr)
         return 1
     return 0
 

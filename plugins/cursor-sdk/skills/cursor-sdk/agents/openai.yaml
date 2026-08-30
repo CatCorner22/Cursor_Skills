@@ -1,0 +1,9 @@
+interface:
+  display_name: Codex and OpenAI Agents SDK
+  short_description: Guide users building apps, scripts, CI pipelines, or automations on top of the Cursor TypeScript SDK (`@cursor/sdk`)
+  default_prompt: Use $cursor-sdk for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

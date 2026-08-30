@@ -1,0 +1,9 @@
+interface:
+  display_name: Plaud Recording Capture
+  short_description: 'Capture audio with Plaud devices and app: in-person vs phone-call mode, press-to-highlight, placement, battery, consent, and recording…'
+  default_prompt: Use $plaud-recording-capture for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

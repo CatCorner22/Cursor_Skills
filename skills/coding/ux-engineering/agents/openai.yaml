@@ -1,0 +1,9 @@
+interface:
+  display_name: Ux Engineering
+  short_description: 'User experience engineering: task flows, Nielsen heuristics, loading/empty/error patterns, accessibility (WCAG-oriented), microcopy, and…'
+  default_prompt: Use $ux-engineering for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

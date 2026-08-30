@@ -1,0 +1,9 @@
+interface:
+  display_name: Transformers Js
+  short_description: Use Transformers.js to run state-of-the-art machine learning models directly in JavaScript/TypeScript
+  default_prompt: Use $transformers-js for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

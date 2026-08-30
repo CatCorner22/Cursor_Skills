@@ -1,0 +1,9 @@
+interface:
+  display_name: Hf Cloud Serving Image Selection
+  short_description: Pick the right serving container for a SageMaker model deployment and find its current image URI
+  default_prompt: Use $hf-cloud-serving-image-selection for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

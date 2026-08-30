@@ -1,0 +1,9 @@
+interface:
+  display_name: Langgraph Fundamentals
+  short_description: 'Write LangGraph graphs in Python or TypeScript: StateGraph, state schemas and reducers, nodes, normal and conditional edges, Command, Send…'
+  default_prompt: Use $langgraph-fundamentals for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

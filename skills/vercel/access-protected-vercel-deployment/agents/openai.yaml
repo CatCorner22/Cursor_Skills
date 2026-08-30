@@ -1,0 +1,9 @@
+interface:
+  display_name: Access Protected Vercel Deployment
+  short_description: Access and test Vercel deployments protected by Vercel Authentication, SSO, or Deployment Protection
+  default_prompt: Use $access-protected-vercel-deployment for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+interface:
+  display_name: Build Agents
+  short_description: Default guidance for building AI agents when no framework has been chosen, or when the target is Vercel-native
+  default_prompt: Use $build-agents for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

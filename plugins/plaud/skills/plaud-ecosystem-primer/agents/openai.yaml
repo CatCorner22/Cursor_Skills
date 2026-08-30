@@ -1,0 +1,9 @@
+interface:
+  display_name: Plaud Ecosystem Primer
+  short_description: 'Router for Plaud AI voice recorder workflows: device capture, transcription, summary templates, Ask Plaud queries, AutoFlow automation,…'
+  default_prompt: Use $plaud-ecosystem-primer for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

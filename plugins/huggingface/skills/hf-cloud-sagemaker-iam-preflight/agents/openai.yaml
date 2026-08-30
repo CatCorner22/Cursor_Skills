@@ -1,0 +1,9 @@
+interface:
+  display_name: Hf Cloud Sagemaker Iam Preflight
+  short_description: Ensure a usable SageMaker execution role exists before deploying or training
+  default_prompt: Use $hf-cloud-sagemaker-iam-preflight for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

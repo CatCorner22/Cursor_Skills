@@ -1,0 +1,9 @@
+{
+  "name": "cursor-sdk",
+  "version": "1.0.0",
+  "description": "Drive Codex or OpenAI Agents SDK from code. Skill is explicit-invoke.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "./skills/"
+}

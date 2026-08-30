@@ -1,0 +1,9 @@
+interface:
+  display_name: Huggingface Papers
+  short_description: Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked…
+  default_prompt: Use $huggingface-papers for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

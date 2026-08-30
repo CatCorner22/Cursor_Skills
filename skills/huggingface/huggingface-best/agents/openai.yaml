@@ -1,0 +1,9 @@
+interface:
+  display_name: Huggingface Best
+  short_description: Use when the user asks about finding the best, top, or recommended model for a task, wants to know what AI model to use, or wants to…
+  default_prompt: Use $huggingface-best for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

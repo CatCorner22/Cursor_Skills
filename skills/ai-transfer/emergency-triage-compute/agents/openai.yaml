@@ -1,0 +1,9 @@
+interface:
+  display_name: Emergency Triage Compute
+  short_description: Classify tasks Immediate/Delayed/Minor/Deceased before processing; allocate reasoning budget by stakes
+  default_prompt: Use $emergency-triage-compute for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

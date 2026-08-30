@@ -1,0 +1,9 @@
+interface:
+  display_name: Routing Middleware
+  short_description: Vercel Routing Middleware guidance — request interception before cache, rewrites, redirects, personalization
+  default_prompt: Use $routing-middleware for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

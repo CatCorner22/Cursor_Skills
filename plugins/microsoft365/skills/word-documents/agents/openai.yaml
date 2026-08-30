@@ -1,0 +1,9 @@
+interface:
+  display_name: Word Documents
+  short_description: 'Create and format Microsoft Word documents: styles, headings, page layout, tables of contents, track changes, comments, mail merge basics,…'
+  default_prompt: Use $word-documents for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

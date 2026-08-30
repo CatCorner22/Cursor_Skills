@@ -1,0 +1,9 @@
+{
+  "name": "vercel",
+  "version": "1.0.0",
+  "description": "Vercel and Next.js platform skills. Explicit-invoke except they do not include proactive-agency.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "./skills/"
+}

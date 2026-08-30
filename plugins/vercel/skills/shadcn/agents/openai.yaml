@@ -1,0 +1,9 @@
+interface:
+  display_name: shadcn/ui
+  short_description: shadcn/ui expert guidance — CLI, component installation, composition patterns, custom registries, theming, Tailwind CSS integration, and…
+  default_prompt: Use $shadcn for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

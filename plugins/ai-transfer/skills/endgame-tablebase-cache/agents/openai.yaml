@@ -1,0 +1,9 @@
+interface:
+  display_name: Endgame Tablebase Cache
+  short_description: Pre-compute and cache known-correct answers for recurring boundary conditions; check tablebase before reasoning
+  default_prompt: Use $endgame-tablebase-cache for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

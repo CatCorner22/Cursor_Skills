@@ -1,0 +1,9 @@
+interface:
+  display_name: Stress Test Robustness
+  short_description: Run contradiction, edge-case, adversarial, and scope tests on a draft before delivery
+  default_prompt: Use $stress-test-robustness for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX
