@@ -1,0 +1,9 @@
+interface:
+  display_name: Sail Trim Tuning
+  short_description: Read user confusion/satisfaction signals and trim the next beat (more examples vs hold course)
+  default_prompt: Use $sail-trim-tuning for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+interface:
+  display_name: Just Intonation Calibration
+  short_description: Calibrate generation parameters as just-intonation ratios by task type (factual, creative, code) instead of one global temperature
+  default_prompt: Use $just-intonation-calibration for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

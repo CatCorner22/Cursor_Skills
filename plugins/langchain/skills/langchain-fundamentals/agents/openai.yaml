@@ -1,0 +1,9 @@
+interface:
+  display_name: Langchain Fundamentals
+  short_description: 'Create LangChain agents with `create_agent` / `createAgent`: model and tool wiring, the agent loop, and where middleware attaches'
+  default_prompt: Use $langchain-fundamentals for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+interface:
+  display_name: Wine Blending Fusion
+  short_description: Run prompt on models with different strengths; fusion pass extracts best elements selectively — not averaging
+  default_prompt: Use $wine-blending-fusion for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

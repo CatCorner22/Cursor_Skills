@@ -1,0 +1,9 @@
+interface:
+  display_name: Containment Safety Layers
+  short_description: Require independent safety layers (pattern, keyword, policy) that can each fail closed
+  default_prompt: Use $containment-safety-layers for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

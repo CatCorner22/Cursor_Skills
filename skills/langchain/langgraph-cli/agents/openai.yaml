@@ -1,0 +1,9 @@
+interface:
+  display_name: Langgraph Cli
+  short_description: 'The `langgraph` / `langgraphjs` CLI: `new`, `dev`, `build`, `up`, `deploy`, `dockerfile`, deployment logs, and the `langgraph.json` config…'
+  default_prompt: Use $langgraph-cli for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

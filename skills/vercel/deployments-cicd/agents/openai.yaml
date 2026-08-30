@@ -1,0 +1,9 @@
+interface:
+  display_name: Deployments Cicd
+  short_description: Vercel deployment and CI/CD expert guidance
+  default_prompt: Use $deployments-cicd for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

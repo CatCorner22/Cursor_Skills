@@ -1,0 +1,9 @@
+interface:
+  display_name: Langsmith Online Eval Engineering
+  short_description: 'Create LangSmith online evaluators one at a time: inspect recent traces in a tracing project, interview the user, propose grounded…'
+  default_prompt: Use $langsmith-online-eval-engineering for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

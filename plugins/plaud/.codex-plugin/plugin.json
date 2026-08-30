@@ -1,0 +1,9 @@
+{
+  "name": "plaud",
+  "version": "1.0.0",
+  "description": "Plaud recorder: capture, transcription, summaries, AutoFlow, export. Skills are explicit-invoke.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "./skills/"
+}

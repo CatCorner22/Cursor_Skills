@@ -1,0 +1,9 @@
+interface:
+  display_name: Langchain Dependencies
+  short_description: 'Package versions, installs, and dependency management for the LangChain stack in Python and TypeScript: required packages, minimum…'
+  default_prompt: Use $langchain-dependencies for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

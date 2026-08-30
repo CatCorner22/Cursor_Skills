@@ -1,0 +1,9 @@
+interface:
+  display_name: Plaud Summary Templates
+  short_description: 'Generate Plaud AI summaries: built-in templates, custom templates, multidimensional summaries, action items, and meeting vs lecture formats'
+  default_prompt: Use $plaud-summary-templates for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

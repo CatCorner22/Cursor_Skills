@@ -1,0 +1,9 @@
+interface:
+  display_name: Deliverable First
+  short_description: Plan and implement features by defining the final deliverable first, then reverse-engineering the smallest code path to it
+  default_prompt: Use $deliverable-first for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

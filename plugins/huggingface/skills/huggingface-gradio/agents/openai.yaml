@@ -1,0 +1,9 @@
+interface:
+  display_name: Huggingface Gradio
+  short_description: Build Gradio web UIs and demos in Python
+  default_prompt: Use $huggingface-gradio for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

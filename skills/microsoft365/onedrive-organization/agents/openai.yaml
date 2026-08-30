@@ -1,0 +1,9 @@
+interface:
+  display_name: Onedrive Organization
+  short_description: 'Organize files in Microsoft OneDrive and SharePoint: folder structure for semesters, sharing links, permissions, version history, and sync'
+  default_prompt: Use $onedrive-organization for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

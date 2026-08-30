@@ -1,0 +1,9 @@
+interface:
+  display_name: Knowledge Update
+  short_description: Corrects outdated LLM knowledge about the Vercel platform and introduces new products
+  default_prompt: Use $knowledge-update for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

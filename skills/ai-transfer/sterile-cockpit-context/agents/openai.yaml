@@ -1,0 +1,9 @@
+interface:
+  display_name: Sterile Cockpit Context
+  short_description: 'Phase-gated context: takeoff (parse inputs only), cruise (full history), landing (validation rules only)'
+  default_prompt: Use $sterile-cockpit-context for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

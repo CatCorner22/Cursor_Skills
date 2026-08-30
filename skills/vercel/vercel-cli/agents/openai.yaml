@@ -1,0 +1,9 @@
+interface:
+  display_name: Vercel Cli
+  short_description: Vercel CLI expert guidance
+  default_prompt: Use $vercel-cli for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

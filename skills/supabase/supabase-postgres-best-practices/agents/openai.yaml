@@ -1,0 +1,9 @@
+interface:
+  display_name: Supabase Postgres Best Practices
+  short_description: Postgres performance optimization and best practices from Supabase
+  default_prompt: Use $supabase-postgres-best-practices for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

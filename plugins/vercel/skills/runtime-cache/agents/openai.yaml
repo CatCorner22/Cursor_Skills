@@ -1,0 +1,9 @@
+interface:
+  display_name: Runtime Cache
+  short_description: Vercel Runtime Cache API guidance — ephemeral per-region key-value cache with tag-based invalidation
+  default_prompt: Use $runtime-cache for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

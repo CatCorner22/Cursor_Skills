@@ -1,0 +1,9 @@
+interface:
+  display_name: HF CLI
+  short_description: Hugging Face Hub CLI (`hf`) for auth, repos, models, datasets, spaces, papers, jobs, buckets, cache, and endpoints
+  default_prompt: Use $hf-cli for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+interface:
+  display_name: Plaud Ask Queries
+  short_description: 'Query Plaud recordings with Ask Plaud: cross-file search, cited answers linked to audio timestamps, and follow-up questions'
+  default_prompt: Use $plaud-ask-queries for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

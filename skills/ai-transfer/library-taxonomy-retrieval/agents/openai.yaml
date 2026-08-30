@@ -1,0 +1,9 @@
+interface:
+  display_name: Library Taxonomy Retrieval
+  short_description: 'Dual retrieval: embedding similarity PLUS taxonomic adjacency in task ontology'
+  default_prompt: Use $library-taxonomy-retrieval for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

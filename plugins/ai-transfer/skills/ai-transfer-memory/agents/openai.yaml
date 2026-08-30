@@ -1,0 +1,9 @@
+interface:
+  display_name: Ai Transfer Memory
+  short_description: 'Router for memory AI-transfer techniques: stratified sessions, tablebase cache, taxonomy retrieval, cross-session bridges'
+  default_prompt: Use $ai-transfer-memory for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

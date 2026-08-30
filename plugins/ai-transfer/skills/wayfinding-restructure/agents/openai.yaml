@@ -1,0 +1,9 @@
+interface:
+  display_name: Wayfinding Restructure
+  short_description: Instrument consumption behavior (scroll-back, re-prompt, abandon) to restructure future outputs
+  default_prompt: Use $wayfinding-restructure for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

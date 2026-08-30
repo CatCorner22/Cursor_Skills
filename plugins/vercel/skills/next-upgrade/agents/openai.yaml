@@ -1,0 +1,9 @@
+interface:
+  display_name: Next Upgrade
+  short_description: Upgrade Next.js to the latest version following official migration guides and codemods
+  default_prompt: Use $next-upgrade for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

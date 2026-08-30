@@ -1,0 +1,9 @@
+interface:
+  display_name: Citation Literacy
+  short_description: 'Format and check academic citations: APA 7, MLA 9, and Chicago (notes-bibliography), in-text vs bibliography, common mistakes, and when to…'
+  default_prompt: Use $citation-literacy for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

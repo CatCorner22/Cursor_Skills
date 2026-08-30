@@ -1,0 +1,9 @@
+interface:
+  display_name: Langgraph Human In The Loop
+  short_description: 'Pause a LangGraph graph for a human: `interrupt()`, `Command(resume=...)`, approval and validation workflows, resuming multiple concurrent…'
+  default_prompt: Use $langgraph-human-in-the-loop for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

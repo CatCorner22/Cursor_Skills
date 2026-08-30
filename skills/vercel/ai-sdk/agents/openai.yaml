@@ -1,0 +1,9 @@
+interface:
+  display_name: AI SDK
+  short_description: Vercel AI SDK expert guidance
+  default_prompt: Use $ai-sdk for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+interface:
+  display_name: Localization Qa Filter
+  short_description: 'Pre-delivery scan for region mismatch: dates, currency, idioms, units, regulatory refs, cultural examples'
+  default_prompt: Use $localization-qa-filter for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

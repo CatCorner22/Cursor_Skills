@@ -1,0 +1,9 @@
+interface:
+  display_name: Hf Cloud Python Env Setup
+  short_description: Set up an isolated Python environment for SageMaker / AWS work, with the right Python version and current boto3
+  default_prompt: Use $hf-cloud-python-env-setup for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

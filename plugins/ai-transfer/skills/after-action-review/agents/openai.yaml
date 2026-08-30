@@ -1,0 +1,9 @@
+interface:
+  display_name: After Action Review
+  short_description: 'Post-generation debrief: intended vs actual vs gap vs prescription'
+  default_prompt: Use $after-action-review for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

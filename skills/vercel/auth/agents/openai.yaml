@@ -1,0 +1,9 @@
+interface:
+  display_name: Auth
+  short_description: Authentication integration guidance — Clerk (native Vercel Marketplace, recommended for greenfield), Descope, Auth0, and Auth.js (NextAuth…
+  default_prompt: Use $auth for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

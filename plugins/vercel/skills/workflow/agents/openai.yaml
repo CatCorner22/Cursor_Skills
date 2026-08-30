@@ -1,0 +1,9 @@
+interface:
+  display_name: Workflow
+  short_description: Vercel Workflow SDK expert guidance
+  default_prompt: Use $workflow for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+{
+  "name": "chatgpt-skills-snapshot",
+  "version": "1.0.0",
+  "description": "All vendored skill packs from this repo, loaded as ChatGPT/Codex plugins.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "./.agents/skills/"
+}

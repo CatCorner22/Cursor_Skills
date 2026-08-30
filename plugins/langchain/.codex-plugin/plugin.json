@@ -1,0 +1,9 @@
+{
+  "name": "langchain",
+  "version": "1.0.0",
+  "description": "LangChain/LangGraph agents, RAG, persistence, Deep Agents. Skills are explicit-invoke.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "./skills/"
+}

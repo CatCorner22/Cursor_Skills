@@ -1,0 +1,9 @@
+interface:
+  display_name: Langchain Rag
+  short_description: 'Build a retrieval pipeline with LangChain: document loaders, RecursiveCharacterTextSplitter, embeddings, and the LangChain vector store…'
+  default_prompt: Use $langchain-rag for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

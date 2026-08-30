@@ -1,0 +1,9 @@
+interface:
+  display_name: Ai Transfer Architecture
+  short_description: 'Router for architectural AI-transfer techniques: dual-axis reasoning, OODA context pipelines, proof DAGs, counterpoint, zoom levels, stage…'
+  default_prompt: Use $ai-transfer-architecture for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

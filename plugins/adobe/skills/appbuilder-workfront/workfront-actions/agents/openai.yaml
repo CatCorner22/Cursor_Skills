@@ -1,0 +1,9 @@
+interface:
+  display_name: Workfront Actions
+  short_description: Use when writing or fixing the server-side code of a Workfront App Builder extension — the Adobe I/O Runtime action the React SPA calls to…
+  default_prompt: Use $workfront-actions for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+interface:
+  display_name: Progressive Resistance Critique
+  short_description: 'Escalating self-critique passes: warm-up consistency, moderate alignment, working robustness, max falsifiability'
+  default_prompt: Use $progressive-resistance-critique for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

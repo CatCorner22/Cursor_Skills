@@ -1,0 +1,9 @@
+interface:
+  display_name: Excel Workbooks
+  short_description: 'Build and debug Microsoft Excel workbooks: formulas, references, tables, charts, conditional formatting, basic pivot tables, and data…'
+  default_prompt: Use $excel-workbooks for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

@@ -1,0 +1,9 @@
+interface:
+  display_name: Huggingface Tool Builder
+  short_description: Use this skill when the user wants to build tool/scripts or achieve a task where using data from the Hugging Face API would help
+  default_prompt: Use $huggingface-tool-builder for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

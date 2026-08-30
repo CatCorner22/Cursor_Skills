@@ -1,0 +1,9 @@
+interface:
+  display_name: Eve
+  short_description: eve framework guidance for durable AI agents and agent-powered applications
+  default_prompt: Use $eve for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

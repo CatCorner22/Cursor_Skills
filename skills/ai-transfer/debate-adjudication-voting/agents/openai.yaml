@@ -1,0 +1,9 @@
+interface:
+  display_name: Debate Adjudication Voting
+  short_description: Independent agents score rubric dimensions with written ballots; synthesis agent explains weighting
+  default_prompt: Use $debate-adjudication-voting for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

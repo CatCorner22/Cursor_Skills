@@ -1,0 +1,9 @@
+interface:
+  display_name: Ooda Adaptive Context
+  short_description: 'Four-phase AI pipeline with logged Orient step: observe raw context, orient (filter/prioritize with inspectable log), decide approach, act'
+  default_prompt: Use $ooda-adaptive-context for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

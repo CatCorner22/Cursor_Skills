@@ -1,0 +1,9 @@
+interface:
+  display_name: Stratigraphy Memory
+  short_description: Layer memory by session strata plus disturbance markers; retrieve with integrity confidence
+  default_prompt: Use $stratigraphy-memory for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

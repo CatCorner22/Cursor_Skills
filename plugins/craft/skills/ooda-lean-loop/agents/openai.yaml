@@ -1,0 +1,9 @@
+interface:
+  display_name: Ooda Lean Loop
+  short_description: 'Run fused OODA and lean loops: observe raw signal, orient with current-state map, decide one small batch, act with standard work, andon on…'
+  default_prompt: Use $ooda-lean-loop for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

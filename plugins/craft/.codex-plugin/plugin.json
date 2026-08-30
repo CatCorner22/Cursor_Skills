@@ -1,0 +1,9 @@
+{
+  "name": "craft",
+  "version": "1.0.0",
+  "description": "Operational craft: mise en place and OODA\u00d7lean. Skills are explicit-invoke.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "./skills/"
+}

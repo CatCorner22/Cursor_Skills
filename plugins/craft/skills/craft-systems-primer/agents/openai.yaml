@@ -1,0 +1,9 @@
+interface:
+  display_name: Craft Systems Primer
+  short_description: 'Router for operational craft frameworks in this library: OODA decision tempo, Toyota-style lean loops (small batches, andon, kaizen), and…'
+  default_prompt: Use $craft-systems-primer for this task.
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX
