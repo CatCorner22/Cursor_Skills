@@ -1,0 +1,55 @@
+name: ChatGPT compatibility source export
+on:
+  push:
+    branches: [chatgpt/compatibility-20260924]
+    paths: [.github/workflows/chatgpt-compatibility-export.yml]
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Export pinned source without executing repository code
+        shell: python
+        run: |
+          import hashlib, io, json, pathlib, stat, urllib.request, zipfile
+          commit = '6f3febcd0490107ad7b300743b385f3db3f1169c'
+          url = f'https://codeload.github.com/CatCorner22/Cursor_Skills/zip/{commit}'
+          with urllib.request.urlopen(url, timeout=60) as response:
+              data = response.read(150 * 1024 * 1024 + 1)
+          if len(data) > 150 * 1024 * 1024:
+              raise RuntimeError('Source archive exceeds size limit')
+          target = pathlib.Path('export')
+          target.mkdir()
+          records = []
+          with zipfile.ZipFile(io.BytesIO(data)) as source:
+              with zipfile.ZipFile(target / 'cursor-skills-source.zip', 'w', zipfile.ZIP_DEFLATED) as dest:
+                  for item in source.infolist():
+                      parts = pathlib.PurePosixPath(item.filename).parts[1:]
+                      if not parts or item.is_dir() or '..' in parts:
+                          continue
+                      relative = pathlib.PurePosixPath(*parts)
+                      if relative.parts[0] not in {'skills', 'docs', 'scripts'} and str(relative) not in {'README.md', 'REVIEW.md', 'REVIEW-2.md'}:
+                          continue
+                      if stat.S_ISLNK(item.external_attr >> 16):
+                          continue
+                      if relative.suffix.lower() in {'.ttf', '.otf', '.woff', '.woff2', '.eot'}:
+                          continue
+                      if item.file_size > 50 * 1024 * 1024:
+                          raise RuntimeError(f'File exceeds size limit: {relative}')
+                      payload = source.read(item)
+                      dest.writestr(str(relative), payload)
+                      records.append({'path': str(relative), 'sha256': hashlib.sha256(payload).hexdigest(), 'bytes': len(payload)})
+          count = sum(r['path'].startswith('skills/') and r['path'].endswith('/SKILL.md') for r in records)
+          if count != 189:
+              raise RuntimeError(f'Expected 189 skills, found {count}')
+          (target / 'source-inventory.json').write_text(json.dumps({'repository': 'CatCorner22/Cursor_Skills', 'commit': commit, 'skills': count, 'files': records}, indent=2))
+          print(f'Exported {count} skills and {len(records)} files. No repository code executed.')
+      - name: Upload source for compatibility review
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: cursor-skills-compatibility-source
+          path: export/
+          retention-days: 3
+          if-no-files-found: error
