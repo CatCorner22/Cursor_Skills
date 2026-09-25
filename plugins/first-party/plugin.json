@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "first-party",
+  "version": "1.0.0",
+  "description": "proactive-agency is always on. Other first-party skills are Agent Decides.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

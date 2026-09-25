@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "huggingface",
+  "version": "1.0.0",
+  "description": "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "craft",
+  "version": "1.0.0",
+  "description": "Operational craft: mise en place and OODA\u00d7lean.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

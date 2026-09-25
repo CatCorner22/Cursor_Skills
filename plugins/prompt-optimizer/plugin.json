@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "prompt-optimizer",
+  "version": "1.0.0",
+  "description": "Author and optimize prompt text.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

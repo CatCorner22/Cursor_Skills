@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pydantic-ai",
+  "version": "1.0.0",
+  "description": "Pydantic AI typed Python agents.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

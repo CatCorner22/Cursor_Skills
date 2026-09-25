@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "Project reference material (nyx).",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

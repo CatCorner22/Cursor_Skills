@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "academic",
+  "version": "1.0.0",
+  "description": "College coursework: writing, citations, study system.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

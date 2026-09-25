@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-transfer",
+  "version": "1.0.0",
+  "description": "Cross-domain AI quality gates.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

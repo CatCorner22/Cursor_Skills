@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "coding",
+  "version": "1.0.0",
+  "description": "Software craft: deliverable-first, architecture, UI/UX, test-while-coding.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

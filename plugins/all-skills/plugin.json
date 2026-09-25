@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "all-skills",
+  "version": "1.0.0",
+  "description": "All 189 Cursor skills from this repository, as one installable plugin.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "plaud",
+  "version": "1.0.0",
+  "description": "Plaud recorder: capture, transcription, summaries, AutoFlow, export.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

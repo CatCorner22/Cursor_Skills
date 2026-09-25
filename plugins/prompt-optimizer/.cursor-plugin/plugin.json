@@ -1,6 +1,9 @@
 {
   "name": "prompt-optimizer",
-  "version": "1.0.0-snapshot",
+  "version": "1.0.0",
   "description": "Author and optimize prompt text.",
+  "author": {
+    "name": "CatCorner22"
+  },
   "skills": "skills"
 }

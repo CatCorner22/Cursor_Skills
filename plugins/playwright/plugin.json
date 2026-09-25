@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "Playwright browser automation, component tests, traces (non-Adobe).",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

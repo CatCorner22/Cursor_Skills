@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "langchain",
+  "version": "1.0.0",
+  "description": "LangChain/LangGraph agents, RAG, persistence, Deep Agents.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

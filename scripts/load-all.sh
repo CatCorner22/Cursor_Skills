@@ -88,72 +88,39 @@ write_plugin_manifest() {
   cat > "${dest}/.cursor-plugin/plugin.json" <<EOF
 {
   "name": "${name}",
-  "version": "1.0.0-snapshot",
+  "version": "1.0.0",
   "description": "${description}",
+  "author": { "name": "CatCorner22" },
+  "skills": "skills"
+}
+EOF
+  cat > "${dest}/plugin.json" <<EOF
+{
+  "\$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "${name}",
+  "version": "1.0.0",
+  "description": "${description}",
+  "author": { "name": "CatCorner22" },
   "skills": "skills"
 }
 EOF
 }
 
-# --- flatten every SKILL.md into project + user skill dirs --------------------
-log "Loading skills from ${ROOT}/skills"
-mkdir -p "$PROJECT_SKILLS" "$AGENTS_SKILLS" "$USER_SKILLS" "${ROOT}/plugins"
-find "$PROJECT_SKILLS" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
-find "$AGENTS_SKILLS" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+# --- materialize real copies (Cursor skips outbound skill-dir symlinks) -------
+log "Materializing skills from ${ROOT}/skills (real copies, not outbound symlinks)"
+python3 "${ROOT}/scripts/materialize-skills.py"
 
+mkdir -p "$USER_SKILLS"
 skill_count=0
 while IFS= read -r skill_md; do
   skill_dir="$(dirname "$skill_md")"
   name="$(basename "$skill_dir")"
-  rel="$(realpath --relative-to="$PROJECT_SKILLS" "$skill_dir")"
-  ln -sfn "$rel" "${PROJECT_SKILLS}/${name}"
-  agents_rel="$(realpath --relative-to="$AGENTS_SKILLS" "$skill_dir")"
-  ln -sfn "$agents_rel" "${AGENTS_SKILLS}/${name}"
   rm -rf "${USER_SKILLS}/${name}"
   mkdir -p "${USER_SKILLS}/${name}"
   tar -C "${skill_dir}" --exclude 'AGENTS.md' -cf - . | tar -C "${USER_SKILLS}/${name}" -xf -
   skill_count=$((skill_count + 1))
 done < <(find "${ROOT}/skills" -name SKILL.md | sort)
-log "Flattened ${skill_count} skills into ${PROJECT_SKILLS}, ${AGENTS_SKILLS}, and ${USER_SKILLS}"
-
-# --- one Cursor plugin wrapper per pack ---------------------------------------
-mkdir -p "${ROOT}/.cursor-plugin"
-{
-  echo '{'
-  echo '  "name": "cursor-skills-snapshot",'
-  echo '  "owner": { "name": "CatCorner22" },'
-  echo '  "metadata": {'
-  echo '    "description": "All vendored skill packs from this repo, loaded as Cursor plugins.",'
-  echo '    "version": "1.0.0"'
-  echo '  },'
-  echo '  "plugins": ['
-} > "${ROOT}/.cursor-plugin/marketplace.json"
-
-first=1
-for pack_dir in "${ROOT}/skills"/*/; do
-  pack="$(basename "$pack_dir")"
-  [[ "$pack" == .* ]] && continue
-  wrapper="${ROOT}/plugins/${pack}"
-  desc="$(pack_description "$pack")"
-  mkdir -p "${wrapper}/.cursor-plugin"
-  ln -sfn "$(realpath --relative-to="$wrapper" "$pack_dir")" "${wrapper}/skills"
-  write_plugin_manifest "$pack" "$wrapper" "$desc"
-  if [[ "$first" -eq 1 ]]; then
-    first=0
-  else
-    echo ',' >> "${ROOT}/.cursor-plugin/marketplace.json"
-  fi
-  cat >> "${ROOT}/.cursor-plugin/marketplace.json" <<EOF
-    {
-      "name": "${pack}",
-      "source": "./plugins/${pack}",
-      "skills": "skills",
-      "description": "${desc}"
-    }
-EOF
-done
-echo '  ]' >> "${ROOT}/.cursor-plugin/marketplace.json"
-echo '}' >> "${ROOT}/.cursor-plugin/marketplace.json"
+log "Copied ${skill_count} skills into ${USER_SKILLS}"
 
 # --- download marketplace plugin sources --------------------------------------
 mkdir -p "$DOWNLOADS" "$LOCAL"
@@ -182,13 +149,15 @@ if adobe_src="$(pick_src "${DOWNLOADS}/adobe-skills/plugins/app-builder" "${CACH
   copy_tree "${ROOT}/skills/adobe" "${LOCAL}/app-builder/skills"
 fi
 
-# Every pack also lands as a local plugin pointing at the snapshot.
+# Every pack also lands as a local plugin (real copies — Cursor skips outbound skill symlinks).
 for pack_dir in "${ROOT}/skills"/*/; do
   pack="$(basename "$pack_dir")"
   dest="${LOCAL}/${pack}"
   write_plugin_manifest "$pack" "$dest" "$(pack_description "$pack")"
   copy_tree "$pack_dir" "${dest}/skills"
 done
+write_plugin_manifest "all-skills" "${LOCAL}/all-skills" "All 189 Cursor skills from this repository, as one installable plugin."
+copy_tree "${ROOT}/plugins/all-skills/skills" "${LOCAL}/all-skills/skills"
 
 log "Project skills: $(find -L "${PROJECT_SKILLS}" -name SKILL.md | wc -l | tr -d ' ')"
 log "User skills:    $(find -L "${USER_SKILLS}" -name SKILL.md | wc -l | tr -d ' ')"

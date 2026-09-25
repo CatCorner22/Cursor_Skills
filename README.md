@@ -13,7 +13,7 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 ./scripts/load-all.sh
 ```
 
-**Activation:** only [`proactive-agency`](skills/first-party/proactive-agency/SKILL.md) is always on (`metadata.sessionStart: true`). The other 188 skills have no `disable-model-invocation` flag, so all 189 appear in Customize → Skills (the pop-out / Agent Decides list). Full inventory: [docs/SKILL-PLUGIN-CATALOG.md](docs/SKILL-PLUGIN-CATALOG.md).
+**Activation:** only [`proactive-agency`](skills/first-party/proactive-agency/SKILL.md) is always on (`metadata.sessionStart: true`). The other 188 skills have no `disable-model-invocation` flag. Discovery copies are **real directories** (not outbound symlinks — Cursor skips those) under `.cursor/skills/`, `.agents/skills/`, `plugins/<pack>/skills/`, and `plugins/all-skills/skills/`. Install the `all-skills` plugin or a pack from Customize to see all 189 in the Skills pop-out. Full inventory: [docs/SKILL-PLUGIN-CATALOG.md](docs/SKILL-PLUGIN-CATALOG.md).
 
 ## Packs
 

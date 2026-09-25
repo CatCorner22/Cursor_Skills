@@ -1,6 +1,9 @@
 {
   "name": "vercel",
-  "version": "1.0.0-snapshot",
+  "version": "1.0.0",
   "description": "Vercel and Next.js platform skills.",
+  "author": {
+    "name": "CatCorner22"
+  },
   "skills": "skills"
 }

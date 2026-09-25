@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vercel",
+  "version": "1.0.0",
+  "description": "Vercel and Next.js platform skills.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

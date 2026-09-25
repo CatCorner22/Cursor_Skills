@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cursor-team-kit",
+  "version": "1.0.0",
+  "description": "GitHub PR workflow: branches, reviews, CI, conflicts, shipping.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "skills": "skills"
+}

@@ -1,6 +1,9 @@
 {
   "name": "cursor-cloud",
-  "version": "1.0.0-snapshot",
+  "version": "1.0.0",
   "description": "Cursor Cloud Agent environment, snapshots, subscriptions, canvases.",
+  "author": {
+    "name": "CatCorner22"
+  },
   "skills": "skills"
 }
