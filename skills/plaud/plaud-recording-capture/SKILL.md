@@ -1,6 +1,5 @@
 ---
 name: plaud-recording-capture
-disable-model-invocation: true
 description: "Capture audio with Plaud devices and app: in-person vs phone-call mode, press-to-highlight, placement, battery, consent, and recording hygiene. Use when starting a Plaud recording, choosing Note vs NotePin, or improving capture quality. Scope boundary: post-capture transcription → `plaud-transcription`; legal advice → remind user of local consent laws only."
 metadata:
   priority: 7

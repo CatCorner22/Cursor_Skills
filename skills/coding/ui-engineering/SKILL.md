@@ -1,6 +1,5 @@
 ---
 name: ui-engineering
-disable-model-invocation: true
 description: "Modern UI implementation: component composition, design tokens, Tailwind/shadcn/Radix stacks, responsive layout, and accessible markup foundations. Use when building or refactoring UI components, pages, design systems, or styling. Scope boundary: React/Next render performance → `react-best-practices`; shadcn CLI install and registries → `shadcn`; App Router data fetching and RSC → `nextjs`; UX flows and copy → `ux-engineering`."
 metadata:
   priority: 6

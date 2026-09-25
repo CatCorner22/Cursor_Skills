@@ -1,6 +1,5 @@
 ---
 name: glass-annealing-hardening
-disable-model-invocation: true
 description: "Staged delivery: high temp (everything flexible) → medium (structure locked) → cool (typos only). Use for long documents and multi-pass review. Scope boundary: faceting angles → `gemstone-faceting-refinement`."
 metadata:
   priority: 7

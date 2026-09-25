@@ -1,6 +1,5 @@
 ---
 name: tidal-pacing-rhythm
-disable-model-invocation: true
 description: "Measure sentence-length tide (high/mid/low) and even the rhythm when variance is extreme. Use on long prose that feels rushed or swampy. Scope boundary — token budget cuts → `prompt-optimizer`; zoom depth → `cartographic-zoom`."
 metadata:
   priority: 7

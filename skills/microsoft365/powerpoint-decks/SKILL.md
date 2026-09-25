@@ -1,6 +1,5 @@
 ---
 name: powerpoint-decks
-disable-model-invocation: true
 description: "Structure and design Microsoft PowerPoint presentations: slide layouts, master slides, visuals, speaker notes, animations restraint, and export. Use when building .pptx decks for class, work, or conferences. Scope boundary: argument craft for speaker notes → `academic-writing`; Word handouts → `word-documents`. This SKILL.md also follows the Copilot custom-skill upload format — see the Copilot section."
 metadata:
   priority: 7

@@ -1,6 +1,5 @@
 ---
 name: hf-mcp
-disable-model-invocation: true
 description: Use Hugging Face Hub via MCP server tools when the Huggingface-skills (or equivalent) MCP namespace is connected. Search models, datasets, Spaces, and papers; inspect repos; invoke Gradio Spaces. If MCP is disconnected, use the hf-cli skill instead.
 ---
 # Hugging Face MCP Server

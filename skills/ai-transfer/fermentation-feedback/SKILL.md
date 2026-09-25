@@ -1,6 +1,5 @@
 ---
 name: fermentation-feedback
-disable-model-invocation: true
 description: "Mid-generation monitoring: user activity, corrections typing, deadlines, confidence — adjust or abort mid-stream. Use for long agent runs and streaming workflows. Scope boundary: post-hoc AAR → `after-action-review`."
 metadata:
   priority: 7

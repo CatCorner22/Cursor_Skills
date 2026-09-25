@@ -1,6 +1,5 @@
 ---
 name: make-pr-easy-to-review
-disable-model-invocation: true
 description: Prepare PRs for review by cleaning noisy history, improving PR descriptions, and adding reviewer guidance without changing code behavior. Use for "make this easy to review", "tidy this PR", "clean up commits", or "annotate the diff".
 ---
 # Make PR Easy to Review

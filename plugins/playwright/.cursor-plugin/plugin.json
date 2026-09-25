@@ -1,6 +1,6 @@
 {
   "name": "playwright",
   "version": "1.0.0-snapshot",
-  "description": "Playwright browser automation, component tests, traces (non-Adobe). Skills are manual.",
+  "description": "Playwright browser automation, component tests, traces (non-Adobe).",
   "skills": "skills"
 }

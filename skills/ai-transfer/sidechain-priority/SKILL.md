@@ -1,6 +1,5 @@
 ---
 name: sidechain-priority
-disable-model-invocation: true
 description: "When the answer/solution/result arrives, duck the supporting intro so the signal sits on top. Use when preambles bury the payload. Scope boundary — zoom compression → `cartographic-zoom`; dual-axis completeness → `score-study-dual-axis`."
 metadata:
   priority: 7

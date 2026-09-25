@@ -1,6 +1,5 @@
 ---
 name: double-entry-claims
-disable-model-invocation: true
 description: "Hallucination suppression via structural claim/evidence pairing: every factual claim must balance with a supporting source before output delivers. Use when verifying AI outputs, building RAG gates, or when the user asks for claim checking, evidence balance, or hallucination suppression. Scope boundary: human workspace prep → `workspace-mise-en-place`; source citation style → `citation-literacy`."
 metadata:
   priority: 7

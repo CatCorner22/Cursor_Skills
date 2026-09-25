@@ -1,6 +1,5 @@
 ---
 name: library-taxonomy-retrieval
-disable-model-invocation: true
 description: "Dual retrieval: embedding similarity PLUS taxonomic adjacency in task ontology. Use when related concepts use different wording. Scope boundary: triangulation for facts → `survey-triangulation`."
 metadata:
   priority: 7

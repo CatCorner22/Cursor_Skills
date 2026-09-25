@@ -1,6 +1,5 @@
 ---
 name: fix-ci
-disable-model-invocation: true
 description: Find failing PR checks, inspect logs or external check links, and apply focused fixes
 ---
 # Fix CI

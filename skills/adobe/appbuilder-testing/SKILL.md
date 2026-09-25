@@ -1,6 +1,5 @@
 ---
 name: appbuilder-testing
-disable-model-invocation: true
 description: >-
   Generate and run tests for Adobe App Builder actions and UI components. Scaffolds Jest unit tests,
   integration tests against deployed actions, contract tests for Adobe API interactions, and React

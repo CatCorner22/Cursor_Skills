@@ -1,6 +1,5 @@
 ---
 name: weaving-warp-weft
-disable-model-invocation: true
 description: "Interleave fixed structural threads (warp: required claims, compliance) with flexible expressive weft (tone, examples). Enforce both — compliant AND engaging. Use for regulated or rubric-bound outputs. Scope boundary: proofreading marks for weft edits → `proofreading-marks`."
 metadata:
   priority: 7

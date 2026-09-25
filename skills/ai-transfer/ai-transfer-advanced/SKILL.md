@@ -1,6 +1,5 @@
 ---
 name: ai-transfer-advanced
-disable-model-invocation: true
 description: "Router for advanced AI-transfer techniques: seismic joints, sidechain ducking, genre cross-pollination, containment layers, sail trim, interaction tables, parallax depth. Use when composing stacks or tuning long-running outputs. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
   priority: 7

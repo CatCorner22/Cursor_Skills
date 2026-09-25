@@ -1,6 +1,5 @@
 ---
 name: playwright-component-testing
-disable-model-invocation: true
 description: Set up component testing with Playwright using a story gallery — scaffold stories and a gallery dev page driven by the built-in mount fixture, no dedicated component-testing runtime. Use when asked to test React or Vue components in isolation with Playwright, or to migrate off @playwright/experimental-ct-react / -vue. Scope boundary — Playwright-based component testing only; for Jest + React Testing Library component tests in an Adobe App Builder project use `appbuilder-testing` instead.
 ---
 # Component Testing with Playwright

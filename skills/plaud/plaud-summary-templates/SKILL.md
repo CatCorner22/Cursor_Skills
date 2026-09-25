@@ -1,6 +1,5 @@
 ---
 name: plaud-summary-templates
-disable-model-invocation: true
 description: "Generate Plaud AI summaries: built-in templates, custom templates, multidimensional summaries, action items, and meeting vs lecture formats. Use when summarizing a Plaud transcript or designing a reusable template. Scope boundary: cross-file Q&A → `plaud-ask-queries`; turning summary into essay → `academic-writing`."
 metadata:
   priority: 7

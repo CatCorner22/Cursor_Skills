@@ -1,6 +1,5 @@
 ---
 name: academic-writing
-disable-model-invocation: true
 description: "Structure and revise academic prose: thesis statements, outlines, paragraphs, introductions/conclusions, argument flow, and tone by assignment type (analytic, argumentative, reflective, compare-contrast, lab IMRaD). Use when writing or editing essays, discussion posts, reading responses, or when the user asks for help organizing a paper. Scope boundary: citation formatting → `citation-literacy`; named sources and attribution → `journalistic-attribution`; lecture-to-notes → `plaud-lecture-notes`; slides → `powerpoint-decks`."
 metadata:
   priority: 8

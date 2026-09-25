@@ -1,6 +1,5 @@
 ---
 name: debate-adjudication-voting
-disable-model-invocation: true
 description: "Independent agents score rubric dimensions with written ballots; synthesis agent explains weighting. Use for high-stakes evaluation. Scope boundary: counterpoint generation → `counterpoint-perspectives`; wine blend → `wine-blending-fusion`."
 metadata:
   priority: 7

@@ -1,6 +1,5 @@
 ---
 name: knowledge-update
-disable-model-invocation: true
 description: Corrects outdated LLM knowledge about the Vercel platform and introduces new products. Invoke manually when working on Vercel products, Fluid Compute, vercel.ts, or when platform facts may be stale.
 metadata:
   priority: 10

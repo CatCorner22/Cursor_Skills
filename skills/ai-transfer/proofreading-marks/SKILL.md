@@ -1,6 +1,5 @@
 ---
 name: proofreading-marks
-disable-model-invocation: true
 description: "Granular annotation layer between draft and delivery: QUERY, DELETE, STET, TRANSPOSE, INSERT — not wholesale rewrite. Use for AI self-review and human-in-the-loop edit. Scope boundary: full rewrite → domain writing skills."
 metadata:
   priority: 7

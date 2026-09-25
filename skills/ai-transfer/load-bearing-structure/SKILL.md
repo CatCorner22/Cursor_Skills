@@ -1,6 +1,5 @@
 ---
 name: load-bearing-structure
-disable-model-invocation: true
 description: "Mark load-bearing claims (therefore/must/key/critical) and forbid polish passes from deleting or softening them. Use before color-grading or faceting. Scope boundary — claim/evidence balance → `double-entry-claims`; robustness tests → `stress-test-robustness`."
 metadata:
   priority: 7

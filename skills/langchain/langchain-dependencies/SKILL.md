@@ -1,6 +1,5 @@
 ---
 name: langchain-dependencies
-disable-model-invocation: true
 description: "Package versions, installs, and dependency management for the LangChain stack in Python and TypeScript: required packages, minimum versions, environment requirements, versioning practice, and common community tool packages. Use when installing, pinning, or debugging versions of `langchain*`, `langgraph*`, `langsmith`, `deepagents`, or `@langchain/*`. Scope boundary: project scaffolding that is not LangChain-specific belongs to that framework's own bootstrap skill."
 ---
 <overview>

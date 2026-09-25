@@ -1,6 +1,5 @@
 ---
 name: ai-transfer-ecosystem-primer
-disable-model-invocation: true
 description: "Router for the AI-transfer catalog (45 techniques, #1–50 with five merges) — gates, scaffolds, and pipeline stages. Use when hardening agents, RAG, multi-step chains, or when the user mentions transferable skills, discipline patterns, or AI quality plugins. Scope boundary: domain apps (college, M365) → those primers; human craft loops → `craft-systems-primer`."
 metadata:
   priority: 7

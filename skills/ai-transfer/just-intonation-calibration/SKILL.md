@@ -1,6 +1,5 @@
 ---
 name: just-intonation-calibration
-disable-model-invocation: true
 description: "Calibrate generation parameters as just-intonation ratios by task type (factual, creative, code) instead of one global temperature. Use when the same model is too loose on facts or too stiff on drafts. Scope boundary — prompt wording itself → `prompt-optimizer`; compute budget class → `emergency-triage-compute`."
 metadata:
   priority: 7

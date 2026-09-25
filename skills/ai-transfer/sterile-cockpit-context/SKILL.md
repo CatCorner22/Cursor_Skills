@@ -1,6 +1,5 @@
 ---
 name: sterile-cockpit-context
-disable-model-invocation: true
 description: "Phase-gated context: takeoff (parse inputs only), cruise (full history), landing (validation rules only). Strip distraction during critical phases. Use for high-stakes generation steps. Scope boundary: human prioritization → `ooda-lean-loop`."
 metadata:
   priority: 7

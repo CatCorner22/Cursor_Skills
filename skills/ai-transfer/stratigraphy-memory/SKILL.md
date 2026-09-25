@@ -1,6 +1,5 @@
 ---
 name: stratigraphy-memory
-disable-model-invocation: true
 description: "Layer memory by session strata plus disturbance markers; retrieve with integrity confidence. Use for long-horizon agents. Scope boundary: flat RAG → `library-taxonomy-retrieval`; cross-session bridges → `wildlife-corridor-bridging`."
 metadata:
   priority: 7

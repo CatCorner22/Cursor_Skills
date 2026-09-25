@@ -1,6 +1,5 @@
 ---
 name: score-study-dual-axis
-disable-model-invocation: true
 description: "Horizontal pass (narrative arc) plus vertical pass (parallel considerations at each step). Synthesize output satisfying both. Use for complex analysis and long-form reasoning. Scope boundary: dependency DAG → `proof-trees-reasoning`."
 metadata:
   priority: 7

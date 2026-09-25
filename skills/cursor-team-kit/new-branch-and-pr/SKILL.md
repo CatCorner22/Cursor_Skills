@@ -1,6 +1,5 @@
 ---
 name: new-branch-and-pr
-disable-model-invocation: true
 description: Create a fresh branch, complete work, and open a pull request
 ---
 # New branch and PR

@@ -1,6 +1,5 @@
 ---
 name: study-system
-disable-model-invocation: true
 description: "Plan and execute studying: syllabus to weekly schedule, active recall, spaced repetition prompts, exam prep cadence, and WIP limits on courses. Use when mapping a semester, preparing for exams, or building a study routine. Scope boundary: calendar mechanics → `outlook-email-calendar`; lecture capture → `plaud-lecture-notes`; prioritization loops → `ooda-lean-loop`; week prep → `workspace-mise-en-place`."
 metadata:
   priority: 8

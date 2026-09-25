@@ -1,6 +1,5 @@
 ---
 name: next-upgrade
-disable-model-invocation: true
 description: Upgrade Next.js to the latest version following official migration guides and codemods. Use when upgrading Next.js versions, running codemods, or migrating between major releases.
 metadata:
   priority: 6

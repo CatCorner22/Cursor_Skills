@@ -1,6 +1,5 @@
 ---
 name: ai-gateway
-disable-model-invocation: true
 description: Vercel AI Gateway expert guidance. Use when configuring model routing, provider failover, cost tracking, or managing multiple AI providers through a unified API.
 metadata:
   priority: 7

@@ -1,6 +1,5 @@
 ---
 name: ai-transfer-memory
-disable-model-invocation: true
 description: "Router for memory AI-transfer techniques: stratified sessions, tablebase cache, taxonomy retrieval, cross-session bridges. Use for long-horizon context and RAG design. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
   priority: 7

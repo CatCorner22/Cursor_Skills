@@ -1,6 +1,5 @@
 ---
 name: plaud-autoflow
-disable-model-invocation: true
 description: "Configure Plaud AutoFlow: automatic device-to-app transfer, auto-transcription, auto-summary with chosen template and LLM, and email delivery. Use when automating repetitive Plaud pipelines for lectures or recurring meetings. Scope boundary: one-off summary edits → `plaud-summary-templates`; export destinations → `plaud-export-integrate`."
 metadata:
   priority: 6

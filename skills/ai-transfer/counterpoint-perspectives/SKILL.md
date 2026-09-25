@@ -1,6 +1,5 @@
 ---
 name: counterpoint-perspectives
-disable-model-invocation: true
 description: "Generate 2–3 independent analytical voices with own logic, then harmonize into interwoven output — not pros/cons list. Use for multi-stakeholder or multi-framework analysis. Scope boundary: debate scoring → `debate-adjudication-voting`."
 metadata:
   priority: 7

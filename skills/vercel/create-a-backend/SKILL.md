@@ -1,6 +1,5 @@
 ---
 name: create-a-backend
-disable-model-invocation: true
 description: Backend architecture guidance. Use when planning, building, or migrating an API or backend; choosing between Functions, Services, containers, Workflow, Queues, and Marketplace databases; or selecting a supported backend framework or runtime.
 summary: Match backend workloads to the right architecture
 metadata:

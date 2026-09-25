@@ -1,6 +1,5 @@
 ---
 name: canvas
-disable-model-invocation: true
 description: "Author standalone .canvas.tsx analytical artifacts (charts, tables, audits, metrics) using the cursor/canvas SDK. Use when the deliverable IS structured visual output — not code fixes, PRs, or external dashboards. Skip for short answers and intermediate MCP queries."
 metadata:
   surfaces:

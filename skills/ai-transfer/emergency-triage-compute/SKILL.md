@@ -1,6 +1,5 @@
 ---
 name: emergency-triage-compute
-disable-model-invocation: true
 description: "Classify tasks Immediate/Delayed/Minor/Deceased before processing; allocate reasoning budget by stakes. Use at router/orchestrator layer. Scope boundary: human prioritization → `ooda-lean-loop`."
 metadata:
   priority: 7

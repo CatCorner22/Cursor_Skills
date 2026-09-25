@@ -1,6 +1,5 @@
 ---
 name: journalistic-attribution
-disable-model-invocation: true
 description: "Source-first generation: retrieve evidence per claim before prose, inline attribution, strip unattributable claims. Use for factual writing and RAG outputs. Scope boundary: bibliography formatting → `citation-literacy`; triple-path check → `survey-triangulation`."
 metadata:
   priority: 7

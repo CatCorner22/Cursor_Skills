@@ -1,6 +1,5 @@
 ---
 name: langchain-rag
-disable-model-invocation: true
 description: "Build a retrieval pipeline with LangChain: document loaders, RecursiveCharacterTextSplitter, embeddings, and the LangChain vector store wrappers (Chroma, FAISS, Pinecone). Use when the retrieval code is LangChain's — the user names LangChain, or the code imports `langchain_community` loaders, `langchain_text_splitters`, or a `langchain_*` vector store. Scope boundary: RAG built on the Vercel AI SDK (`embed`/`embedMany`) belongs to `ai-sdk`; this skill does not claim a retrieval pipeline that is not LangChain's."
 ---
 <overview>

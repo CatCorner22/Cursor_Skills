@@ -1,6 +1,5 @@
 ---
 name: verification
-disable-model-invocation: true
 description: "Full-story verification — infers what the user is building, then verifies the complete flow end-to-end: browser → API → data → response. Use when the user asks to verify a feature, check end-to-end, or debug 'why isn't this working'. Do not auto-load just because a dev server started."
 summary: "Verify full user story: browser + server + data flow + env"
 metadata:

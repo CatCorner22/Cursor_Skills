@@ -1,6 +1,5 @@
 ---
 name: ai-transfer-quality-control
-disable-model-invocation: true
 description: "Router for quality-control AI-transfer techniques: claim/evidence gates, preflight, critique loops, provenance, context gating, root cause, attribution, triangulation, proofreading marks. Use when verifying or hardening AI outputs. Scope boundary: full catalog → `ai-transfer-ecosystem-primer`."
 metadata:
   priority: 7

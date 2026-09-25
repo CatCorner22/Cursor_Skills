@@ -1,6 +1,5 @@
 ---
 name: cdn-caching
-disable-model-invocation: true
 description: Debug Vercel CDN caching — cache hit rate, stale content, revalidation behavior, ISR + PPR, per-request cache reasons (cacheReason) and PPR state (ppr_state), and costs.
 metadata:
   priority: 6

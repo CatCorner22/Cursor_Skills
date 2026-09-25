@@ -1,6 +1,5 @@
 ---
 name: chat-sdk
-disable-model-invocation: true
 description: Vercel Chat SDK expert guidance. Use when building multi-platform chat bots — Slack, Telegram, Microsoft Teams, Discord, Google Chat, GitHub, Linear — with a single codebase. Covers the Chat class, adapters, threads, messages, cards, modals, streaming, state management, and webhook setup.
 metadata:
   priority: 8

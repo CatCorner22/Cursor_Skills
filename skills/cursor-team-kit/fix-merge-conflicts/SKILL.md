@@ -1,6 +1,5 @@
 ---
 name: fix-merge-conflicts
-disable-model-invocation: true
 description: Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution
 ---
 # Fix merge conflicts

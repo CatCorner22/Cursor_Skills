@@ -1,6 +1,5 @@
 ---
 name: vercel-sandbox
-disable-model-invocation: true
 description: Vercel Sandbox + agent-browser guidance — run headless Chrome in Firecracker microVMs for screenshots, accessibility snapshots, and browser automation. Use when building agent-browser or scheduled scraping flows on Vercel. For generic untrusted-code isolation, still use @vercel/sandbox APIs documented here after the browser sections.
 metadata:
   priority: 4

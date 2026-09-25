@@ -1,6 +1,5 @@
 ---
 name: teams-collaboration
-disable-model-invocation: true
 description: "Collaborate in Microsoft Teams for school and work: channels, chat threads, meetings, screen share, file tabs, and group project norms. Use when setting up Teams for a group project, running class meetings, or coordinating async work. Scope boundary: email → `outlook-email-calendar`; file storage policy → `onedrive-organization`; Slack/Discord → not this pack."
 metadata:
   priority: 7

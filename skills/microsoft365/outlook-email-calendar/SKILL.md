@@ -1,6 +1,5 @@
 ---
 name: outlook-email-calendar
-disable-model-invocation: true
 description: "Professional email and calendar in Microsoft Outlook: syllabus-to-calendar blocking, meeting invites, inbox triage, signatures, and student-professor communication tone. Use when managing Outlook mail, scheduling study blocks, or drafting academic/professional emails. Scope boundary: Teams chat/meetings → `teams-collaboration`; task lists in Planner/To Do → mention only; Gmail → not this pack."
 metadata:
   priority: 7

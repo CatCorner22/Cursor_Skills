@@ -1,6 +1,5 @@
 ---
 name: gemstone-faceting-refinement
-disable-model-invocation: true
 description: "Rotate refinement through clarity, precision, resonance, durability passes — flaws visible from new angles. Use instead of linear draft→revise→done. Scope boundary: annealing phases → `glass-annealing-hardening`."
 metadata:
   priority: 7

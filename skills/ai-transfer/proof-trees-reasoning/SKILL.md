@@ -1,6 +1,5 @@
 ---
 name: proof-trees-reasoning
-disable-model-invocation: true
 description: "Declare reasoning DAG before prose: premises, claims, dependencies. Flag downstream if upstream fails. Use for multi-step arguments and agent plans. Scope boundary: dual-axis → `score-study-dual-axis`."
 metadata:
   priority: 7

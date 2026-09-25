@@ -1,6 +1,5 @@
 ---
 name: env-setup
-disable-model-invocation: true
 description: Explain, inspect, configure, and troubleshoot Cloud Agent development environments. Use when the user asks about environment setup, changing/improving the environment, or triggering/testing a build.
 environments: [cloud]
 ---

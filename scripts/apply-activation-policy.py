@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Make every skill manual except proactive-agency, then write the catalog.
+"""Make every skill visible in Customize → Skills (Agent Decides).
 
-Idempotent. Edits only canonical files under skills/**/SKILL.md.
+Only proactive-agency stays session-injected. Idempotent. Edits only
+canonical files under skills/**/SKILL.md.
 """
 from __future__ import annotations
 
@@ -162,8 +163,12 @@ def apply_skill(path: Path) -> bool:
     def without_key(key: str) -> list[str]:
         return [ln for ln in lines if not re.match(rf"^{re.escape(key)}\s*:", ln)]
 
+    # Cursor hides disable-model-invocation skills from Customize → Skills
+    # (the pop-out / Agent Decides list). Every skill in this library must
+    # appear there. Only proactive-agency is session-injected.
+    lines = without_key("disable-model-invocation")
+
     if name == ALWAYS_ON:
-        lines = without_key("disable-model-invocation")
         if not any(ln.strip() == "sessionStart: true" for ln in lines):
             # Keep sessionStart under metadata; insert after the metadata: line.
             out = []
@@ -185,15 +190,6 @@ def apply_skill(path: Path) -> bool:
             new_lines.append(ln)
         lines = new_lines
     else:
-        if not any(ln.startswith("disable-model-invocation:") for ln in lines):
-            out = []
-            inserted = False
-            for ln in lines:
-                out.append(ln)
-                if ln.startswith("name:") and not inserted:
-                    out.append("disable-model-invocation: true")
-                    inserted = True
-            lines = out
         # Strip sessionStart so nothing else auto-injects.
         lines = [ln for ln in lines if ln.strip() != "sessionStart: true"]
         if name == "knowledge-update":
@@ -245,9 +241,9 @@ def load_skill_rows() -> list[dict]:
         if name == ALWAYS_ON:
             activation = "Always on"
         elif disabled:
-            activation = "Manual"
+            activation = "Hidden from menu (disable-model-invocation)"
         else:
-            activation = "Manual (flag missing — treat as manual)"
+            activation = "Agent Decides"
         if name == ALWAYS_ON and (disabled or not session):
             activation = "Always on (check sessionStart)"
         rows.append(
@@ -307,7 +303,7 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
         by_pack[row["pack"]].append(row)
 
     always = [r for r in skill_rows if r["activation"].startswith("Always on")]
-    manual = [r for r in skill_rows if r["activation"] == "Manual"]
+    manual = [r for r in skill_rows if r["activation"] == "Agent Decides"]
     other = [r for r in skill_rows if r not in always and r not in manual]
 
     lines = [
@@ -319,11 +315,11 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
         "## Activation policy",
         "",
         f"- **Always on (1):** `{ALWAYS_ON}` — `metadata.sessionStart: true`. Injected every session so the agent does the work instead of describing it.",
-        f"- **Manual ({len(manual)}):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.",
-        "- **Cursor plugin packs (19):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.",
+        f"- **Agent Decides ({len(manual)}):** every other Cursor skill. No `disable-model-invocation` flag, so all {len(skill_rows)} skills appear in Customize → Skills (the pop-out menu) and the agent can attach them from context.",
+        "- **Cursor plugin packs (19):** installed wrappers. Enabling a pack makes its skills available in the same Skills menu. `proactive-agency` stays Always on.",
         "- **Python runtime plugins (100):** a separate pipeline in `scripts/ai_plugin_bundle.py`. Not Cursor skills. Default tier considers catalog #1–50 plus orchestrator utilities; security scanners and the rest stay off unless you pass `--enable-all` or `enabled_plugins`.",
         "",
-        "How to invoke a manual skill: say the skill name (`` `nextjs` ``), ask for the job it covers, or attach the `SKILL.md` in Cursor.",
+        "How to invoke a skill: open Customize → Skills, type `/` and search the name, say the skill name (`` `nextjs` ``), or ask for the job it covers.",
         "",
         f"**Counts:** {len(skill_rows)} Cursor skills, {len(by_pack)} plugin packs, {len(runtime)} runtime plugins.",
     ]
@@ -347,9 +343,9 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
         )
         count = len(by_pack[pack])
         activation = (
-            "Installed wrapper; `proactive-agency` inside is Always on, other skills Manual"
+            "Installed wrapper; `proactive-agency` inside is Always on, other skills Agent Decides"
             if pack == "first-party"
-            else "Installed wrapper — skills inside are Manual"
+            else "Installed wrapper — skills inside are Agent Decides"
         )
         lines.append(
             f"| `{pack}` ({count}) — {md_escape(title)} | {md_escape(purpose)} | {md_escape(when)} | {activation} |"
@@ -411,7 +407,7 @@ def main(argv: list[str]) -> int:
     if "--help" in argv or "-h" in argv:
         print(
             "Usage: apply-activation-policy.py [--catalog-only]\n"
-            "  (default)  mark every skill except proactive-agency as manual, then rewrite the catalog\n"
+            "  (default)  strip disable-model-invocation so every skill appears in Customize → Skills, then rewrite the catalog\n"
             "  --catalog-only  rewrite docs/SKILL-PLUGIN-CATALOG.md only; do not edit SKILL.md files"
         )
         return 0
@@ -426,19 +422,20 @@ def main(argv: list[str]) -> int:
     runtime = parse_runtime_plugins()
     write_catalog(rows, runtime)
     always = [r for r in rows if r["name"] == ALWAYS_ON]
-    manual = [r for r in rows if r["name"] != ALWAYS_ON]
-    missing_flag = [
-        r for r in manual if r["activation"] != "Manual"
-    ]
+    visible = [r for r in rows if r["activation"] == "Agent Decides"]
+    hidden = [r for r in rows if "disable-model-invocation" in r["activation"]]
     print(
-        f"skills={len(rows)} always_on={len(always)} manual={len(manual)} "
+        f"skills={len(rows)} always_on={len(always)} agent_decides={len(visible)} "
         f"runtime={len(runtime)} files_changed={changed} catalog={CATALOG_PATH.relative_to(ROOT)}"
     )
     if not always:
         print("ERROR: proactive-agency missing", file=sys.stderr)
         return 1
-    if missing_flag:
-        print("ERROR: skills without manual flag:", missing_flag, file=sys.stderr)
+    if hidden:
+        print("ERROR: skills still hidden from the Skills menu:", hidden, file=sys.stderr)
+        return 1
+    if len(always) + len(visible) != len(rows):
+        print("ERROR: unexpected activation labels", file=sys.stderr)
         return 1
     return 0
 

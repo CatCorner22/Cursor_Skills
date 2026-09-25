@@ -1,6 +1,5 @@
 ---
 name: stage-blocking-layout
-disable-model-invocation: true
 description: "Spatial emphasis: center stage = core message; flanks = evidence; opposing entrances = dialectic; center curtain = synthesis. Use for reports, docs, and structured responses. Scope boundary: warp/weft structure → `weaving-warp-weft`."
 metadata:
   priority: 7

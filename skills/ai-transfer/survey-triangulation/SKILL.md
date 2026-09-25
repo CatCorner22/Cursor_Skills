@@ -1,6 +1,5 @@
 ---
 name: survey-triangulation
-disable-model-invocation: true
 description: "Require three independent retrieval paths per factual claim; score agreement 3/3, 2/3, or contested. Use when single-source RAG is insufficient. Scope boundary: double-entry gate → `double-entry-claims`."
 metadata:
   priority: 7

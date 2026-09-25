@@ -1,6 +1,5 @@
 ---
 name: academic-ecosystem-primer
-disable-model-invocation: true
 description: "Router for college and academic work in this library: writing, citations, study planning, source attribution, lecture notes, and presentations. Use when the user is a student, mentions college/school/coursework, or asks how to approach an assignment, paper, exam prep, or lab. Scope boundary: CS/software implementation → `coding-ecosystem-primer`; AI/ML engineering → huggingface/langchain packs; GitHub PR workflow for group code projects → `new-branch-and-pr` and the rest of the cursor-team-kit pack; general execution posture → `proactive-agency`."
 metadata:
   priority: 8

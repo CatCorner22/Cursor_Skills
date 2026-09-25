@@ -1,6 +1,5 @@
 ---
 name: word-documents
-disable-model-invocation: true
 description: "Create and format Microsoft Word documents: styles, headings, page layout, tables of contents, track changes, comments, mail merge basics, and export to PDF. Use when working in Word (.docx), formatting essays/reports, or when the user asks for Word-specific help. Scope boundary: citation style rules → `citation-literacy`; argument structure → `academic-writing`; PowerPoint → `powerpoint-decks`."
 metadata:
   priority: 7

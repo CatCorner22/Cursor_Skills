@@ -1,6 +1,5 @@
 ---
 name: build-agents
-disable-model-invocation: true
 description: "Default guidance for building AI agents when no framework has been chosen, or when the target is Vercel-native. Use for generic requests to build, create, scaffold, design, architect, or implement an AI agent, agent app, tool-calling agent, durable agent, multi-agent system, or scheduled agent — where the request names no framework and the repo depends on none. Scope boundary: once a framework is named or already present, that pack owns the work — LangChain/LangGraph/Deep Agents to `ecosystem-primer`, Pydantic AI to `building-pydantic-ai-agents`, smolagents to `smolagents`; authoring the agent's prompt text to `prompt-optimizer`. Do not claim a request merely because it contains the word \"agent\"."
 summary: "Default guidance for building AI agents: eve is a great default choice — run init, then read the shipped docs."
 metadata:

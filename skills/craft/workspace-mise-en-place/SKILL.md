@@ -1,6 +1,5 @@
 ---
 name: workspace-mise-en-place
-disable-model-invocation: true
 description: "Prepare the workspace before execution: files, folders, env, tools, references, and templates in place so work never stops for a missing ingredient. Culinary mise en place applied to repos, OneDrive, and study sessions. Use before starting an assignment, coding session, lecture day, or deploy. Scope boundary: during-task loops → `ooda-lean-loop`; folder taxonomy → `onedrive-organization`; defining done → `deliverable-first`."
 metadata:
   priority: 8

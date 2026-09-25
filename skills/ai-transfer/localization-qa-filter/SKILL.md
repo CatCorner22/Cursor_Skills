@@ -1,6 +1,5 @@
 ---
 name: localization-qa-filter
-disable-model-invocation: true
 description: "Pre-delivery scan for region mismatch: dates, currency, idioms, units, regulatory refs, cultural examples. Use when audience locale is known. Scope boundary: academic citation locales → `citation-literacy`."
 metadata:
   priority: 7

@@ -1,6 +1,5 @@
 ---
 name: react-best-practices
-disable-model-invocation: true
 description: React performance best-practices for TSX files — 64 Vercel rules across 8 impact tiers (waterfalls, bundle size, server/client fetching, re-renders). Use when optimizing React/Next.js components. This is not an accessibility linter.
 metadata:
   priority: 4

@@ -1,6 +1,5 @@
 ---
 name: trl-training
-disable-model-invocation: true
 description: Train and fine-tune transformer language models locally with the TRL CLI (SFT, DPO, GRPO, KTO, RLOO, Reward Model). For managed Hugging Face Jobs, use huggingface-llm-trainer and hf-cli instead.
 license: Apache-2.0
 metadata:

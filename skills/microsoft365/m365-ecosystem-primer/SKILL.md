@@ -1,6 +1,5 @@
 ---
 name: m365-ecosystem-primer
-disable-model-invocation: true
 description: "Router for Microsoft 365 work in this library: Word documents, Excel workbooks, PowerPoint decks, Outlook email/calendar, Teams collaboration, and OneDrive organization. Use when the user mentions Microsoft 365, Office, Word, Excel, PowerPoint, Outlook, Teams, OneDrive, SharePoint, or Copilot in Office apps. Scope boundary: Google Workspace → not covered; general academic writing craft → `academic-writing`; slide narrative without Office still uses `powerpoint-decks` for structure; coding assignments → `coding-ecosystem-primer`."
 metadata:
   priority: 8

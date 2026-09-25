@@ -1,6 +1,5 @@
 ---
 name: excel-workbooks
-disable-model-invocation: true
 description: "Build and debug Microsoft Excel workbooks: formulas, references, tables, charts, conditional formatting, basic pivot tables, and data validation. Use when working in Excel (.xlsx), spreadsheet homework, budgets, or lab data tables. Scope boundary: interpreting results in prose → `academic-writing`; Python/R analysis → `coding-ecosystem-primer`; Google Sheets → not this pack."
 metadata:
   priority: 7

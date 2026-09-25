@@ -8,6 +8,7 @@ CACHE="${HOME}/.cursor/plugins/cache/cursor-public"
 LOCAL="${HOME}/.cursor/plugins/local"
 USER_SKILLS="${HOME}/.cursor/skills"
 PROJECT_SKILLS="${ROOT}/.cursor/skills"
+AGENTS_SKILLS="${ROOT}/.agents/skills"
 DOWNLOADS="${DOWNLOADS:-/tmp/cursor-skills-plugin-downloads}"
 
 VERCEL_SHA="${VERCEL_SHA:-11c32588786a9d49791372657433b88d49561874}"
@@ -58,26 +59,26 @@ pick_src() {
 
 pack_description() {
   case "$1" in
-    academic) printf '%s' "College coursework: writing, citations, study system. Skills are manual." ;;
-    adobe) printf '%s' "Adobe App Builder and Workfront: actions, UI, CI/CD, testing. Skills are manual." ;;
-    ai-transfer) printf '%s' "Cross-domain AI quality gates. Skills are manual; mention a technique by name." ;;
-    coding) printf '%s' "Software craft: deliverable-first, architecture, UI/UX, test-while-coding. Skills are manual." ;;
-    craft) printf '%s' "Operational craft: mise en place and OODA×lean. Skills are manual." ;;
-    cursor-cloud) printf '%s' "Cursor Cloud Agent environment, snapshots, subscriptions, canvases. Skills are manual." ;;
-    cursor-sdk) printf '%s' "Drive Cursor agents from code via @cursor/sdk. Skill is manual." ;;
-    cursor-team-kit) printf '%s' "GitHub PR workflow: branches, reviews, CI, conflicts, shipping. Skills are manual." ;;
+    academic) printf '%s' "College coursework: writing, citations, study system." ;;
+    adobe) printf '%s' "Adobe App Builder and Workfront: actions, UI, CI/CD, testing." ;;
+    ai-transfer) printf '%s' "Cross-domain AI quality gates. Mention a technique by name." ;;
+    coding) printf '%s' "Software craft: deliverable-first, architecture, UI/UX, test-while-coding." ;;
+    craft) printf '%s' "Operational craft: mise en place and OODA×lean." ;;
+    cursor-cloud) printf '%s' "Cursor Cloud Agent environment, snapshots, subscriptions, canvases." ;;
+    cursor-sdk) printf '%s' "Drive Cursor agents from code via @cursor/sdk." ;;
+    cursor-team-kit) printf '%s' "GitHub PR workflow: branches, reviews, CI, conflicts, shipping." ;;
     first-party) printf '%s' "proactive-agency is always on. skill-library-audit, smolagents, and v0 are manual." ;;
-    huggingface) printf '%s' "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker. Skills are manual." ;;
-    langchain) printf '%s' "LangChain/LangGraph agents, RAG, persistence, Deep Agents. Skills are manual." ;;
-    microsoft365) printf '%s' "Microsoft 365: Word, Excel, PowerPoint, Outlook, Teams, OneDrive. Skills are manual." ;;
-    plaud) printf '%s' "Plaud recorder: capture, transcription, summaries, AutoFlow, export. Skills are manual." ;;
-    playwright) printf '%s' "Playwright browser automation, component tests, traces (non-Adobe). Skills are manual." ;;
-    projects) printf '%s' "Project reference material (nyx). Skill is manual." ;;
-    prompt-optimizer) printf '%s' "Author and optimize prompt text. Skill is manual." ;;
-    pydantic-ai) printf '%s' "Pydantic AI typed Python agents. Skill is manual." ;;
-    supabase) printf '%s' "Supabase Auth, Storage, Edge Functions, Postgres. Skills are manual." ;;
-    vercel) printf '%s' "Vercel and Next.js platform skills. Skills are manual." ;;
-    *) printf '%s' "Skill pack ${1}. Skills are manual unless named proactive-agency." ;;
+    huggingface) printf '%s' "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker." ;;
+    langchain) printf '%s' "LangChain/LangGraph agents, RAG, persistence, Deep Agents." ;;
+    microsoft365) printf '%s' "Microsoft 365: Word, Excel, PowerPoint, Outlook, Teams, OneDrive." ;;
+    plaud) printf '%s' "Plaud recorder: capture, transcription, summaries, AutoFlow, export." ;;
+    playwright) printf '%s' "Playwright browser automation, component tests, traces (non-Adobe)." ;;
+    projects) printf '%s' "Project reference material (nyx)." ;;
+    prompt-optimizer) printf '%s' "Author and optimize prompt text." ;;
+    pydantic-ai) printf '%s' "Pydantic AI typed Python agents." ;;
+    supabase) printf '%s' "Supabase Auth, Storage, Edge Functions, Postgres." ;;
+    vercel) printf '%s' "Vercel and Next.js platform skills." ;;
+    *) printf '%s' "Skill pack ${1}. Skills appear in Customize → Skills unless named proactive-agency (always on)." ;;
   esac
 }
 
@@ -96,8 +97,9 @@ EOF
 
 # --- flatten every SKILL.md into project + user skill dirs --------------------
 log "Loading skills from ${ROOT}/skills"
-mkdir -p "$PROJECT_SKILLS" "$USER_SKILLS" "${ROOT}/plugins"
+mkdir -p "$PROJECT_SKILLS" "$AGENTS_SKILLS" "$USER_SKILLS" "${ROOT}/plugins"
 find "$PROJECT_SKILLS" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+find "$AGENTS_SKILLS" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
 
 skill_count=0
 while IFS= read -r skill_md; do
@@ -105,12 +107,14 @@ while IFS= read -r skill_md; do
   name="$(basename "$skill_dir")"
   rel="$(realpath --relative-to="$PROJECT_SKILLS" "$skill_dir")"
   ln -sfn "$rel" "${PROJECT_SKILLS}/${name}"
+  agents_rel="$(realpath --relative-to="$AGENTS_SKILLS" "$skill_dir")"
+  ln -sfn "$agents_rel" "${AGENTS_SKILLS}/${name}"
   rm -rf "${USER_SKILLS}/${name}"
   mkdir -p "${USER_SKILLS}/${name}"
   tar -C "${skill_dir}" --exclude 'AGENTS.md' -cf - . | tar -C "${USER_SKILLS}/${name}" -xf -
   skill_count=$((skill_count + 1))
 done < <(find "${ROOT}/skills" -name SKILL.md | sort)
-log "Flattened ${skill_count} skills into ${PROJECT_SKILLS} and ${USER_SKILLS}"
+log "Flattened ${skill_count} skills into ${PROJECT_SKILLS}, ${AGENTS_SKILLS}, and ${USER_SKILLS}"
 
 # --- one Cursor plugin wrapper per pack ---------------------------------------
 mkdir -p "${ROOT}/.cursor-plugin"

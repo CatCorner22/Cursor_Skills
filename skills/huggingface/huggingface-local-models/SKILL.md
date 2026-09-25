@@ -1,6 +1,5 @@
 ---
 name: huggingface-local-models
-disable-model-invocation: true
 description: "Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-compatible local serving."
 ---
 # Hugging Face Local Models

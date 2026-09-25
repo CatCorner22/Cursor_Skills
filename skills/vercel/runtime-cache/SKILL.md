@@ -1,6 +1,5 @@
 ---
 name: runtime-cache
-disable-model-invocation: true
 description: Vercel Runtime Cache API guidance — ephemeral per-region key-value cache with tag-based invalidation. Shared across Functions, Routing Middleware, and Builds. Use when implementing caching strategies beyond framework-level caching.
 metadata:
   priority: 6

@@ -1,6 +1,5 @@
 ---
 name: next-cache-components
-disable-model-invocation: true
 description: Next.js 16 Cache Components guidance — PPR, use cache directive, cacheLife, cacheTag, updateTag, and migration from unstable_cache. Use when implementing partial prerendering, caching strategies, or migrating from older Next.js cache patterns.
 metadata:
   priority: 6

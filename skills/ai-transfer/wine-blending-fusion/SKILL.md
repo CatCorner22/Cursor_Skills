@@ -1,6 +1,5 @@
 ---
 name: wine-blending-fusion
-disable-model-invocation: true
 description: "Run prompt on models with different strengths; fusion pass extracts best elements selectively — not averaging. Use when models complement (reasoning + phrasing + facts). Scope boundary: single-model routing → `emergency-triage-compute`."
 metadata:
   priority: 7
