@@ -7,7 +7,9 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 - **Coding pack gap analysis:** [docs/CODING-PACK-GAP-ANALYSIS.md](docs/CODING-PACK-GAP-ANALYSIS.md)
 - **Review:** [REVIEW.md](REVIEW.md) — findings after reading each skill file (original pass). A follow-up independent re-verification against all 63 original skills — confirming most findings, correcting some, and surfacing additional security issues and a router-config drift bug — is summarized in the PR that added Supabase/Cursor Team Kit and applied fixes for both passes. [REVIEW-2.md](REVIEW-2.md) is the 2026-08-27 second full pass (findings plus the in-repo fixes applied the same day: always-on `AGENTS.md` leak, routing cycles, greedy triggers, factual errors, AI-transfer generator sync).
 
-**Loaded in this repo.** `.cursor/skills/` has one symlink per skill so Cursor / Cloud Agents pick up the snapshot. Plugin wrappers live under `plugins/`. To refresh this machine (project skills, `~/.cursor/skills/`, and `~/.cursor/plugins/local/`):
+**Install in Cursor:** `all-skills` is a plugin, not a skill — it will not appear under Customize → Skills. Import this repo as a marketplace, then install **`all-skills`** under Customize → **Plugins**. Step-by-step: [docs/INSTALL-ALL-SKILLS.md](docs/INSTALL-ALL-SKILLS.md).
+
+**Loaded in this repo.** `.cursor/skills/` has one real copy per skill (not outbound symlinks). Plugin wrappers live under `plugins/`. To refresh this machine (project skills, `~/.cursor/skills/`, and `~/.cursor/plugins/local/`):
 
 ```bash
 ./scripts/load-all.sh
