@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: review-nda-findings
+expected_outcome: |
+  report.md lists the planted problems with the MSCD paragraph or house rule for each, explains why each is a problem (the mechanism, not just the fix), and gives replacement wording in Blake's house style. It catches: Neither party shall (use Neither party may, 3.324); should; and/or; best efforts; provided, however; words and digits ("ten (10)") and spelled-out numbers; passive voice that hides the actor; represents and warrants (states); the form of certificate labeled Schedule A, which is an exhibit; attached hereto and "forms a part of"; numbered cross-references and "above"; the day-month-year date; WHEREAS, NOW, THEREFORE and the recital of consideration; material; and undefined capitalized terms.

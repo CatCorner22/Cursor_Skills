@@ -1,0 +1,3 @@
+# References to time, numbers and formulas
+
+House style: digits for every number; U.S. dates (*January 1, 2027*). Key MSCD rules: state whether a point in time is inclusive or exclusive (10.22-10.28); *no later than X days after*, not *within* (10.69-10.71); *midnight at the beginning of*, never *12:00 a.m.* (10.35-10.38); name the time zone (10.51-10.56); *promptly*, not *immediately* (10.118-10.131); state the time component of a reference, *as of the date of this agreement* or *then in effect* (10.152-10.156); never words and digits (14.5-14.11); *the result of* for order of operations (14.26-14.40); state whether tiered rates are stepped or shifting flat (14.69-14.77).

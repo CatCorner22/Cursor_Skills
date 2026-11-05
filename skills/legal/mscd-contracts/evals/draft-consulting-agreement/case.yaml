@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: draft-consulting-agreement
+expected_outcome: |
+  consulting-agreement.docx, drafted to MSCD and Blake's house style: MSCD introductory clause and lead-in; no WHEREAS or recital of consideration; categories of contract language used correctly (shall for duties of the subject, may for discretion, will or present tense for policy, states for facts); active voice; digits for every number; U.S. dates; I., A., 1., (a) enumeration with bold section headings and no only child; no numbered cross-references; the deliverables list as a schedule and the invoice form as an exhibit, schedules before exhibits, capitalized; 12-point Aptos; two spaces between sentences. Open questions are listed rather than invented.

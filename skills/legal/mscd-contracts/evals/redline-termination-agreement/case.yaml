@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: redline-termination-agreement
+expected_outcome: |
+  A redlined .docx with genuine Word tracked changes (w:ins / w:del) authored "Blake's AI Agent", Word comments that explain each change and cite MSCD, and a clean copy. The accepted text removes WITNESSETH, WHEREAS and NOW, THEREFORE and the recital of consideration, uses the MSCD introductory clause and lead-in, uses the active voice, digits, no shall in language of policy or conditional clauses, no provided-that provisos, no here- words, no prior to, and that instead of restrictive which. Deal terms don't change; where a fix needs a business decision, a comment asks.
+context:
+  scaffold_script: place-files.sh
