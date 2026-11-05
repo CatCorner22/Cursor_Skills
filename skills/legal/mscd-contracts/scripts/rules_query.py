@@ -87,7 +87,8 @@ def main():
     else:
         print('\n\n'.join(fmt(r, house, a.brief) for r in shown))
     if len(out) > a.limit:
-        print(f'\n({len(out) - a.limit} more; raise --limit or narrow the search)')
+        # in JSON mode keep stdout pure JSON lines; the notice goes to stderr
+        print(f'\n({len(out) - a.limit} more; raise --limit or narrow the search)', file=sys.stderr if a.json else sys.stdout)
     return 0
 
 

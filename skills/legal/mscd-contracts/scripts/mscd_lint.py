@@ -45,13 +45,19 @@ def read_paragraphs(path):
                            for el in p._p.iter(qn('w:t'), qn('w:tab'), qn('w:br')))  # includes inserted text, skips deleted text
             paras.append({'idx': len(paras), 'text': text, 'where': where,
                           'style': p.style.name if p.style is not None else '', 'fmt': fmt})
-        for p in d.paragraphs:
-            add(p, 'body')
-        for t in d.tables:
-            for row in t.rows:
-                for cell in row.cells:
-                    for p in cell.paragraphs:
-                        add(p, 'table')
+        # Walk every paragraph in document order, including paragraphs that python-docx's
+        # Document.paragraphs skips: those inside content controls (w:sdt), revision wrappers
+        # (w:ins, w:moveTo) and tables. Each paragraph is read once, even in merged table cells.
+        from docx.text.paragraph import Paragraph
+        from docx.oxml.ns import qn as _qn
+        tbl_tag = _qn('w:tbl')
+        for p_el in d.element.body.iter(_qn('w:p')):
+            anc, in_table = p_el.getparent(), False
+            while anc is not None:
+                if anc.tag == tbl_tag:
+                    in_table = True; break
+                anc = anc.getparent()
+            add(Paragraph(p_el, d._body), 'table' if in_table else 'body')
         try:
             st = d.styles['Normal'].font
             paras_meta = {'normal_font': st.name, 'normal_size': st.size.pt if st.size else None}
@@ -384,7 +390,7 @@ def inventory(paras):
     for p in paras:
         for m in INTEG.finditer(p['text']):
             defs.setdefault(m.group(1).strip(), []).append(('integrated', p['idx']))
-        m = AUTON.match(p['text'])
+        m = AUTON.match(TYPED_NUM.sub('', p['text'], count=1))  # allow a typed enumerator before the definition (A. "X" means)
         if m:
             defs.setdefault(m.group(1).strip(), []).append(('autonomous', p['idx']))
     full = '\n'.join(p['text'] for p in paras)
@@ -564,11 +570,41 @@ def self_test():
         got = any(rid in f.get('rule_ids', []) for f in fs)
         if got != expect:
             fails += 1; print(f'FAIL (run): {rid} expected {expect} for: {text}')
+    # A definition after a typed enumerator still enters the inventory.
+    with tempfile.NamedTemporaryFile('w', suffix='.txt', delete=False, encoding='utf-8') as fh:
+        fh.write('A. "Confidential Information" means any technical information.\n\nB. Acme shall protect the Confidential Information.\n'); tmp = fh.name
+    try:
+        rows = run(tmp, True)[4]
+    finally:
+        os.unlink(tmp)
+    if not any(r['term'] == 'Confidential Information' for r in rows):
+        fails += 1; print('FAIL (run): definition after "A." missing from the inventory')
+    # Paragraphs inside a content control or a revision wrapper are read.
+    try:
+        import docx as _docx
+        from docx.oxml import OxmlElement
+        from docx.oxml.ns import qn as _qn
+        dd = _docx.Document(); dd.add_paragraph('Acme shall pay the Price.')
+        p2 = dd.add_paragraph('Widgetco shall deliver the Units.')
+        sdt, content = OxmlElement('w:sdt'), OxmlElement('w:sdtContent'); sdt.append(content); p2._p.addprevious(sdt); content.append(p2._p)
+        p3 = dd.add_paragraph('Lee shall sign the Note.')
+        ins = OxmlElement('w:ins'); ins.set(_qn('w:id'), '9'); ins.set(_qn('w:author'), 'X'); ins.set(_qn('w:date'), '2026-01-01T00:00:00Z')
+        p3._p.addprevious(ins); ins.append(p3._p)
+        with tempfile.NamedTemporaryFile(suffix='.docx', delete=False) as fh:
+            tmp = fh.name
+        dd.save(tmp)
+        texts = [p['text'] for p in read_paragraphs(tmp)[0]]
+        os.unlink(tmp)
+        if texts != ['Acme shall pay the Price.', 'Widgetco shall deliver the Units.', 'Lee shall sign the Note.']:
+            fails += 1; print(f'FAIL: wrapped paragraphs not read in order: {texts}')
+    except ImportError:
+        pass
+    total_extra = 2
     try:
         read_paragraphs('contract.pdf'); fails += 1; print('FAIL: a .pdf was accepted')
     except ValueError:
         pass
-    total = len(cases) + len(doc_cases) + 1
+    total = len(cases) + len(doc_cases) + 1 + total_extra
     print(f'self-test: {total - fails}/{total} passed')
     return 1 if fails else 0
 
