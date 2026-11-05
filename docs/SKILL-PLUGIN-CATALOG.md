@@ -6,13 +6,13 @@ Regenerate with `python3 scripts/apply-activation-policy.py --catalog-only`.
 ## Activation policy
 
 - **Always on (1):** `proactive-agency` — `metadata.sessionStart: true`. Injected every session so the agent does the work instead of describing it.
-- **Manual (188):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.
+- **Manual (189):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.
 - **Cursor plugin packs (19):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.
 - **Python runtime plugins (100):** a separate pipeline in `scripts/ai_plugin_bundle.py`. Not Cursor skills. Default tier considers catalog #1–50 plus orchestrator utilities; security scanners and the rest stay off unless you pass `--enable-all` or `enabled_plugins`.
 
 How to invoke a manual skill: say the skill name (`` `nextjs` ``), ask for the job it covers, or attach the `SKILL.md` in Cursor.
 
-**Counts:** 189 Cursor skills, 19 plugin packs, 100 runtime plugins.
+**Counts:** 190 Cursor skills, 20 plugin packs, 100 runtime plugins.
 
 ## Cursor plugin packs
 
@@ -31,6 +31,7 @@ Each pack is a Cursor plugin under `plugins/<pack>/` (and `~/.cursor/plugins/loc
 | `first-party` (4) — First-party library skills | Always-on execution posture plus library audit, smolagents, and v0. | proactive-agency is always on. Mention the others by name. | Installed wrapper; `proactive-agency` inside is Always on, other skills Manual |
 | `huggingface` (26) — Hugging Face Hub | Models, datasets, Spaces, training, Gradio, SageMaker, Hub CLI. | Mention when working on Hugging Face models, Spaces, or training jobs. | Installed wrapper — skills inside are Manual |
 | `langchain` (12) — LangChain / LangGraph | Agents, RAG, persistence, human-in-the-loop, Deep Agents, LangSmith evals. | Mention when building or debugging LangChain or LangGraph apps. | Installed wrapper — skills inside are Manual |
+| `legal` (1) — Contract drafting (MSCD) | Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style. | Mention when reviewing, marking up, or drafting contract language. | Installed wrapper — skills inside are Manual |
 | `microsoft365` (7) — Microsoft 365 | Word, Excel, PowerPoint, Outlook, Teams, OneDrive. | Mention when producing or organizing Office documents or mail. | Installed wrapper — skills inside are Manual |
 | `plaud` (8) — Plaud recorder | Capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export. | Mention when working with Plaud recordings or notes. | Installed wrapper — skills inside are Manual |
 | `playwright` (3) — Playwright (general) | Browser automation, component testing, and trace inspection outside Adobe. | Mention for Playwright tests that are not Adobe App Builder E2E. | Installed wrapper — skills inside are Manual |
@@ -251,6 +252,14 @@ Agents, RAG, persistence, human-in-the-loop, Deep Agents, LangSmith evals. Menti
 | `langgraph-human-in-the-loop` | Pause a LangGraph graph for a human: `interrupt()`, `Command(resume=...)`, approval and validation workflows, resuming multiple concurrent interrupts by id, keeping pre-interrupt side effects idempotent, and the 4-tier error-handling strategy | Use when a LangGraph run must stop for human input or approval. Scope boundary: `HumanInTheLoopMiddleware` on a `create_agent` agent belongs to `langchain-middleware`, approval gates inside the `deepagents` harness to `deep-agents-orchestration`, and the checkpointer that makes a resume possible to `langgraph-persistence`. | Manual |
 | `langgraph-persistence` | Persist LangGraph state: checkpointers, `thread_id`, time travel over checkpoint history, the cross-thread `Store`, and subgraph checkpointer scoping | Use when a LangGraph graph must survive a restart, remember a conversation across turns, replay or fork history, or share memory between threads. Scope boundary: graph construction belongs to `langgraph-fundamentals`, pausing and resuming for a human to `langgraph-human-in-the-loop`, and application database or session storage that is not a LangGraph checkpointer to that provider's own skill (`supabase`, `vercel-storage`). | Manual |
 | `langsmith-online-eval-engineering` | Create LangSmith online evaluators one at a time: inspect recent traces in a tracing project, interview the user, propose grounded criteria, then build, test, attach via a run rule, and verify a single LLM-as-judge or code evaluator per pass | Use for evaluation attached to live LangSmith traces. Scope boundary: offline model benchmarking and leaderboards belong to `huggingface-community-evals`. | Manual |
+
+### `legal` — Contract drafting (MSCD)
+
+Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style. Mention when reviewing, marking up, or drafting contract language.
+
+| Skill | What it is for | When to use | Activation |
+|---|---|---|---|
+| `mscd-contracts` | Review, redline (real Word tracked changes), comment on, revise, proofread and draft business contracts to Kenneth A | Adams's A Manual of Style for Contract Drafting (MSCD, 5th edition) as updated by his blog, applying Blake Reagan's house style (active voice only, digits for every number, I./A./1./(a)/(i) enumeration, two spaces between sentences, Schedule A and Exhibit 1, cross-references by heading, no article before party names). Use it whenever Blake asks to review, mark up, redline, edit, tighten, fix, comment on or draft any contract, agreement, amendment, NDA, clause, definition or term sheet; whenever he asks about shall, will, may, must, should, active voice, ambiguity, vagueness, defined terms or schedules versus exhibits in contract language; and whenever he pastes contract language and asks what's wrong with it, even without naming MSCD. Not for deal or legal-risk advice on its own, or for writing that isn't contract language. | Manual |
 
 ### `microsoft365` — Microsoft 365
 

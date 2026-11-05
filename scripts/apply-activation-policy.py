@@ -74,6 +74,11 @@ PACK_BLURBS = {
         "Agents, RAG, persistence, human-in-the-loop, Deep Agents, LangSmith evals.",
         "Mention when building or debugging LangChain or LangGraph apps.",
     ),
+    "legal": (
+        "Contract drafting (MSCD)",
+        "Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style.",
+        "Mention when reviewing, marking up, or drafting contract language.",
+    ),
     "microsoft365": (
         "Microsoft 365",
         "Word, Excel, PowerPoint, Outlook, Teams, OneDrive.",
