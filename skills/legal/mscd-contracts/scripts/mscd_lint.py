@@ -239,6 +239,8 @@ def house_checks(p):
     for m in FIRST_COUNT.finditer(t):
         add('ordinal-word', 2, 'First counts something here: write 1st (house rule 2). Keep fixed terms such as right of first refusal.', m, 'medium')
     for m in ORD_RE.finditer(t):
+        if m.group(0)[0].isupper() and re.match(r"\s+[A-Z]", t[m.end():m.end() + 2]):
+            continue  # part of a proper name (500 Third Avenue, Fifth Third Bank)
         add('ordinal-word', 3, 'Ordinal word; if it counts something, write it in digits (2nd, 3rd).', m, 'low')
     for m in WORDS_DIGITS.finditer(t):
         if NUM_RE.search(m.group(0)):
@@ -455,6 +457,12 @@ def run(path, want_inventory):
     for p in paras:
         if p['text'].strip():
             findings += house_checks(p)
+    # the attachment reminder is a per-document check: keep the first one only
+    first_att = next((i for i, f in enumerate(findings) if f['check'] == 'attachment-check'), None)
+    findings = [f for i, f in enumerate(findings) if f['check'] != 'attachment-check' or i == first_att]
+    if first_att is not None:
+        n_att = sum(1 for p in paras if re.search(r"\b(Schedule|Exhibit|schedule|exhibit)s?\b", p['text']))
+        findings[first_att] = dict(findings[first_att], message=f'Attachments mentioned in {n_att} paragraphs: confirm each schedule-versus-exhibit classification, the order (schedules before exhibits) and every reference (attachments.md).')
     comp = load_rules()
     comp_ids = {r['id'] for r, _ in comp}
     rf, broad = rule_checks(paras, comp + [(r, rx) for r, rx in phrase_rules(comp_ids)])
@@ -477,6 +485,8 @@ def self_test():
         ('The Shares will be issued at Closing.', 'passive-voice', True),
         ('Any purported transfer will be void.', 'passive-voice', False),
         ('Acme is liable for the Losses.', 'passive-voice', False),
+        ('Acme has offices at 500 Third Avenue.', 'ordinal-word', False),
+        ('Acme shall pay the third installment.', 'ordinal-word', True),
         ('Acme may sell one or more Units.', 'number-word', True),
         ('No one may enter the Premises.', 'number-word', False),
         ('The parties shall cooperate with one another.', 'number-word', False),
