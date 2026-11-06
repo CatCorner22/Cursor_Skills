@@ -68,6 +68,10 @@ Apply these rules to everything the skill writes: redlines, comments, drafts, an
 
 Supersedes 4.11, 4.17, 4.29-4.30, 4.47-4.49 and 4.58-4.59 (MSCD's numbering scheme). If a short contract has no articles, start at level 2 (A., B., C.) and say so in the intake summary.
 
+**Section line.** The section letter takes a period, and the bold heading runs into the text and also ends with a period, followed by 2 spaces: **A. Purchase and Sale.**  Seller shall sell the Assets to Buyer. (Blake's decision; MSCD 4.59 puts no period after either.)
+
+**Every letter.** Section letters run through the whole alphabet, I and O included (Blake's decision). An article I. and a section I. can share a label; the level tells them apart: an article sits at the margin with its heading in capitals, and a section sits one tab in with a bold heading. The lint reads I. after H. as a section.
+
 **No only child.** Never create a single item at any level (a lone A. under I., a lone 1. under A., a lone (a)). If a parent has only one sub-concept, put that text directly under the parent with no marker. Supersedes 4.20.
 
 **MSCD rules that still apply within the house scheme:** give every section a heading (4.21-4.27); don't use unenumerated paragraphs in a section that has subsections (4.28); always use introductory text before enumerated clauses and put nothing after them (4.37-4.38); don't use bullets (4.53); don't follow a number at one level directly by the first item of the next level down with no text between them (4.54); one set of enumerated clauses per provision (4.55); about 15 lines per block before dividing (4.63).

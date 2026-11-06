@@ -470,6 +470,7 @@ def outline_checks(paras):
     has_roman2 = any(re.match(r"^[\s#>*_]*(?:(?:Article|ARTICLE)\s+)?II\.", x) for x in texts)
     has_small_roman2 = any(re.search(r"\(ii\)", x) for x in texts)
     last = {'upper': 0, 'lower': 0}  # value of the last roman numeral seen at each case
+    last_letter = {'upper': '', 'lower': ''}  # the last letter label seen at each case
 
     def is_roman(core, case):
         v = roman_value(core)
@@ -477,6 +478,8 @@ def outline_checks(paras):
             return False
         if len(core) > 1:
             return True  # II, IV, ix: a letter label is never 2 characters
+        if last_letter[case] and ord(core) == ord(last_letter[case]) + 1:
+            return False  # I. after H., V. after U.: house rule 3 uses every letter, so this is the next section
         if core.lower() == 'i':
             return has_roman2 if case == 'upper' else has_small_roman2
         return last[case] + 1 == v  # V after IV, X after IX; otherwise C, D, L, V, X are letters
@@ -490,15 +493,15 @@ def outline_checks(paras):
         if re.fullmatch(r"\d+(?:\.\d+)+\.?", tok):
             lvl, kind = 9, 'decimal'
         elif re.fullmatch(r"[IVXLC]+\.", tok) and is_roman(core, 'upper'):
-            lvl, kind = 0, 'roman'; last['upper'] = roman_value(core)
+            lvl, kind = 0, 'roman'; last['upper'] = roman_value(core); last_letter['upper'] = ''
         elif re.fullmatch(r"[A-Z]\.", tok):
-            lvl, kind = 1, 'letter'
+            lvl, kind = 1, 'letter'; last_letter['upper'] = core
         elif re.fullmatch(r"\d+\.", tok):
             lvl, kind = 2, 'digit'
         elif re.fullmatch(r"\([ivxlc]+\)", tok) and is_roman(core, 'lower'):
             lvl, kind = 4, 'small-roman'; last['lower'] = roman_value(core)
         elif re.fullmatch(r"\([a-z]{1,2}\)", tok):
-            lvl, kind = 3, 'small-letter'
+            lvl, kind = 3, 'small-letter'; last_letter['lower'] = core
         else:
             lvl, kind = 8, 'other'  # (1) or 1)
         items.append((p['idx'], lvl, kind, tok, m))
@@ -1058,6 +1061,20 @@ def self_test():
             got = any(f['check'] == check and (check != 'front' or 'capitals (' in f['message']) for f in fs)
             if got != want:
                 fails += 1; print(f'FAIL (document): {check} expected {want} for: {body[:60]}')
+    # House rule 3 uses every letter: section I. after H. is a section, not an article.
+    # Section I. has no heading on purpose: the heading check sees it only if the outline reads it as a section.
+    secs9 = ''.join(f'{c}. {h}.  Acme shall do task {n}.\n\n' for n, (c, h) in enumerate(zip('ABCDEFGH', ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel']), 1)) + 'I. Acme shall do task 9.\n\n'
+    body9 = 'I. FIRST ARTICLE\n\n' + secs9 + 'II. SECOND ARTICLE\n\nA. Kilo.  Acme shall pay.\n\nB. Lima.  Acme shall sign.\n'
+    with tempfile.NamedTemporaryFile('w', suffix='.txt', delete=False, encoding='utf-8') as fh:
+        fh.write(body9); tmp = fh.name
+    try:
+        fs9 = run(tmp, False)[2]
+    finally:
+        os.unlink(tmp)
+    outline_extra = 1
+    heads9 = [f for f in fs9 if f['check'] == 'section-headings']
+    if any(f['check'] == 'enumeration' for f in fs9) or not heads9 or not heads9[0]['message'].startswith('1 of 11 sections'):
+        fails += 1; print('FAIL (outline): section I. after H. was not read as a section: ' + '; '.join(f['message'][:80] for f in fs9 if f['check'] in ('enumeration', 'section-headings')))
     # A definition after a typed enumerator still enters the inventory.
     with tempfile.NamedTemporaryFile('w', suffix='.txt', delete=False, encoding='utf-8') as fh:
         fh.write('A. "Confidential Information" means any technical information.\n\nB. Acme shall protect the Confidential Information.\n'); tmp = fh.name
@@ -1092,7 +1109,7 @@ def self_test():
         read_paragraphs('contract.pdf'); fails += 1; print('FAIL: a .pdf was accepted')
     except ValueError:
         pass
-    total = len(cases) + len(sev_cases) + len(doc_cases) + sum(len(w[2]) for w in whole) + 1 + total_extra
+    total = len(cases) + len(sev_cases) + len(doc_cases) + sum(len(w[2]) for w in whole) + 1 + total_extra + outline_extra
     print(f'self-test: {total - fails}/{total} passed')
     return 1 if fails else 0
 
