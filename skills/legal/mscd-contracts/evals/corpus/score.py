@@ -131,7 +131,11 @@ def cmd_lint(root, out_json=None):
             else:
                 sp = span(text, it['anchor'], collapse=False)
                 near = [f for f, s in fspans if overlaps(s, sp, 25)]
-                direct = any(f['source'] != 'rules' for f in near)
+                want = LINT_TYPES.get(t)
+                if want:  # a mapped type counts only when a check that answers it fires near the anchor
+                    direct = any(f['source'] != 'rules' and f['check'] in want for f in near)
+                else:     # an unmapped type counts only when a direct finding overlaps the anchor itself
+                    direct = any(f['source'] != 'rules' and overlaps(s, sp) for f, s in fspans)
                 trig = any(f['source'] == 'rules' for f in near)
             rows.append({'id': k['id'], 'n': it['n'], 'type': t, 'anchor': it['anchor'], 'direct': direct, 'trigger': trig})
             d = per_type.setdefault(t, {'planted': 0, 'direct': 0, 'trigger_only': 0, 'lint_type': t in LINT_TYPES})

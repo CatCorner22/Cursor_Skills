@@ -182,6 +182,7 @@ SIGNATURE = [
     (r"\buse\s+(?:its|their|his|her)\s+(?:reasonable|best)\s+efforts\b", 'efforts', 3, 'Write use reasonable efforts, without the pronoun (MSCD 8.17).', ['R-8.17-use-verb-use']),
     (r"\brepresents?\s+and\s+warrants?\b|\bwarrants?\s+and\s+represents?\b", 'represents-warrants', 2, "represents and warrants: on Blake's draft use states (3.457); on the other side's draft keep it and suggest the remedies-neutral sentence in a comment (3.459-3.463).", ['R-3.457-use-states']),
     (r"\(this\s+[\"“]\*{0,2}[A-Z][a-z]+\*{0,2}[\"”]\)|^[\s*_#]*(?:THIS|This)\s+(?:[\w-]+\s+){0,6}?(?:" + "|".join(N + r"\s+\(the\s+[\"“]\*{0,2}" + n + r"\*{0,2}[\"”]\)" for n in ("Agreement", "Amendment", "Addendum", "Lease", "Sublease", "Note", "Guaranty", "Release", "License") for N in (n, n.upper())) + ")", 'this-agreement-term', 3, 'Don\'t define this agreement as a term; delete the definition and write this agreement (or this amendment, this lease) in lowercase throughout (MSCD 2.123).', ['R-2.123-no-this-agreement-term']),
+    (r"\b[Tt]he\s+same\b(?=\s*(?:[,.;:)]|$)|\s+(?:to|by|in|on|at|for|and|or|within|if|when|from|with|under|until|without)\b)", 'same-pronoun', 3, 'same as a pronoun: write it, them or their, or repeat the noun (MSCD 13.760).', ['R-13.760-same-pronoun']),
     (r"\bWHEREAS\b|\bWITNESSETH\b|\bNOW,?\s+THEREFORE\b|\b[Ww]hereas\b", 'archaic', 3, 'Traditional recitals or lead-in: delete WHEREAS, WITNESSETH and NOW, THEREFORE; put any background in plain sentences (MSCD 2.137; 2.165).', ['R-2.137-no-witnesseth', 'R-1.4-no-archaisms']),
     (r"\bgood\s+and\s+valuable\s+consideration\b|\breceipt\s+and\s+sufficiency\s+of\s+which\b", 'archaic', 3, 'Recital of consideration: delete it (MSCD 2.165; 2.188).', ['R-2.188-good-and-valuable']),
     (r"\bIN\s+WITNESS\s+WHEREOF\b|\b[Ii]n\s+[Ww]itness\s+[Ww]hereof\b", 'archaic', 3, "Traditional concluding clause: use MSCD's concluding clause (5.13-5.17).", ['R-5.17-traditional-concluding-clause']),
@@ -208,7 +209,7 @@ SIGNATURE = [
     (r"\bthird[- ]part(?:y|ies)\b(?![- ]beneficiar)", 'usage', 3, 'third party: write Person, any Person other than a party, or a defined Nonparty (MSCD 13.875).', ['R-13.875-third-party']),
     (r"\b(?:duly\s+)?execut(?:e|es|ed|ing|ion)\b(?!\s+(?:the\s+|its\s+|their\s+|all\s+|any\s+)?(?:work|services?|tasks?|project|duties|obligations|deliverables|plan|protocol|testing)\b)", 'archaic', 3, 'execute for signing: write sign (MSCD 5.7).', ['R-5.7-signing-not-executing']),
     (r"\bshall\s+be\s+entitled\s+to\b|\bshall\s+have\s+the\s+right\s+to\b", 'category-shall', 2, 'shall be entitled to / shall have the right to: write may for discretion, or is entitled to (MSCD 3.206; 3.147).', ['R-3.206-use-may']),
-    (r"\bshall\s+be\s+(?:governed|construed|interpreted)\s+(?:by|in\s+accordance)\b|\bshall\s+(?:be\s+)?deemed\b|\bshall\s+(?:commence|begin|continue|terminate|expire|end)\b|\bshall\s+be\s+(?:effective|valid|binding|void|enforceable|final)\b|\bshall\s+(?:remain|be)\s+in\s+(?:full\s+)?(?:force|effect)\b", 'category-shall', 2, 'shall with no duty on the subject: use language of policy in the present tense (Tennessee law governs this agreement; the Term begins on ...) (MSCD 3.89-3.98; 3.332).', ['R-3.92-has-a-duty-test']),
+    (r"\bshall\s+be\s+(?:governed|construed|interpreted)\s+(?:by|in\s+accordance)\b|\bshall\s+(?:be\s+)?deemed\b|\bshall\s+(?:commence|begin|continue|terminate|expire|end|accrue)\b(?=\s*(?:[,.;:)]|$)|\s+(?:on|at|upon|when|whenever|if|unless|in|until|for|automatically|immediately|with|after|before|no\s+later|as\s+of|and|or|without|by|effective|under|while|once|daily|monthly)\b)|\bshall\s+be\s+(?:effective|valid|binding|void|enforceable|final)\b|\bshall\s+(?:remain|be)\s+in\s+(?:full\s+)?(?:force|effect)\b", 'category-shall', 2, 'shall with no duty on the subject: use language of policy in the present tense (Tennessee law governs this agreement; the Term begins on ...) (MSCD 3.89-3.98; 3.332).', ['R-3.92-has-a-duty-test']),
 ]
 def _rule_sev():
     try:
@@ -231,6 +232,7 @@ EXTRA = [
     (re.compile(r"\b(?:Exhibit|EXHIBIT)\s+[A-Z]\b(?!\.)"), 'attachment-scheme', 2, 'Lettered exhibit. House rule 6: exhibits take numbers (Exhibit 1), schedules take letters (Schedule A); relabel and update every reference (MSCD 5.80-5.83 differs).', []),
     (re.compile(r"\b(?:Schedules?|SCHEDULES?)\s+\d+(?:\.\d+)*\b"), 'attachment-scheme', 2, 'Numbered schedule. House rule 6: schedules take letters (Schedule A), exhibits take numbers (Exhibit 1); relabel and update every reference (MSCD 5.80-5.83 differs).', []),
     (re.compile(r"\b(?:[Tt]he|[Aa]ny|[Ee]ach|[Aa]ll|[Ee]very|[Aa]n?)\s+(?:[A-Z][\w-]*|[a-z]+)\s+(?:[a-z]+ed(?=\s+by\b)|given|paid|made|sent|delivered|received|issued|provided|described|specified|listed|referred|contemplated|required|owned|held|granted|incurred|used|stated|set forth|identified|included|attached|signed|imposed|issued|filed|obtained|collected|charged|purchased|sold|performed)\s+(?:by|under|in|to|on|at|for|from|pursuant|with|as|before|after)\b(?<!made for)"), 'reduced-passive', 3, 'Possible reduced passive (a past participle after a noun, short for "that is given ..."). House rule 1: recast in the active if a clean form exists ("the notice that Acme gives under ..."); otherwise leave it.', ['R-3.15-active-voice']),
+    (re.compile(r"\b(?:for|of|reimburse|pay|repay|bear|all|any|on|to)\s+(?!(?:the|a|an|any|each|all|every|its|their|his|her)\s)[a-z]+\s+[a-z]{3,}s\s+(?:incurred|paid|made|given|sent|received|issued|provided|delivered|imposed|charged|suffered|sustained|caused|owed|held|owned|granted|performed)\s+by\b"), 'reduced-passive', 3, 'Possible reduced passive (a past participle after a noun, short for "that are incurred by ..."). House rule 1: recast in the active if a clean form exists ("the travel expenses that the Consultant incurs"); otherwise leave it.', ['R-3.15-active-voice']),
     # Terms of art used in their everyday sense: an elaboration of MSCD 1.57 (one word, one meaning). Idea suggested by a file Blake supplied; patterns written fresh.
     (re.compile(r"\bexecut(?:e|es|ed|ing)\s+(?:the\s+|its\s+|their\s+|all\s+|any\s+)?(?:work|services?|tasks?|project|duties|obligations|deliverables|plan|protocol|testing)\b", re.I), 'term-of-art', 2, TOA + 'Execute here means perform; write perform. For signing, MSCD uses sign, not execute (5.7).', ['R-1.57-one-word-one-meaning', 'R-5.7-signing-not-executing']),
     (re.compile(r"\b(?:[Ii]f|[Ww]hen|[Oo]nce|[Aa]fter|[Uu]nless|[Uu]ntil)\s+(?:the\s+)?(?:[A-Z][\w-]+|either party|a party|any party|it|they)\s+notices\b"), 'term-of-art', 3, TOA + 'Notices here means observes, but notice is the formal communication under the notices provision. Write discovers or becomes aware of.', ['R-1.57-one-word-one-meaning']),
@@ -984,6 +986,15 @@ def self_test():
         ('Acme shall use good-faith efforts to obtain the consent.', 'efforts', True),
         ('Acme shall use reasonable efforts to obtain the consent.', 'efforts', False),
         ('The payment is due on 2/3/2027.', 'numeric-date', True),
+        ('Acme shall continue providing the Services during the dispute.', 'category-shall', False),
+        ('Acme shall terminate the subcontract if Widgetco fails to pay.', 'category-shall', False),
+        ('Acme shall commence the Work on May 1, 2027.', 'category-shall', False),
+        ('This agreement shall terminate on December 31, 2027.', 'category-shall', True),
+        ('The term shall continue for 2 years.', 'category-shall', True),
+        ('Interest shall accrue on the unpaid principal balance.', 'category-shall', True),
+        ('The Installer shall not assert the same in any later proceeding.', 'same-pronoun', True),
+        ('Acme shall pay the same fee as Widgetco.', 'same-pronoun', False),
+        ('The Client shall reimburse travel expenses incurred by the Consultant.', 'reduced-passive', True),
     ]
     sev_cases = [  # severity policy: house severity for house rules, else the rule record's
         ('Acme shall pay the Price. If Acme shall fail to pay, Widgetco may terminate.', 'shall-in-condition', 3),

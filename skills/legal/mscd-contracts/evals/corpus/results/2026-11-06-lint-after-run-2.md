@@ -1,4 +1,4 @@
-Planted issues: 303; found by a direct lint finding: 249 (82%); lint-detectable types: 184/185
+Planted issues: 303; found by a direct lint finding: 245 (81%); lint-detectable types: 184/185
 Traps flagged by a direct finding (false alarms): 1 of 117
 
 | type | planted | direct | trigger only | lint should catch |
@@ -6,13 +6,13 @@ Traps flagged by a direct finding (false alarms): 1 of 117
 | archaic | 22 | 22 | 0 | no |
 | category-shall | 16 | 11 | 4 | no |
 | number-words | 16 | 16 | 0 | yes |
-| defined-term | 15 | 10 | 5 | no |
+| defined-term | 15 | 9 | 6 | no |
 | formatting | 12 | 12 | 0 | yes |
 | time-ambiguity | 12 | 11 | 1 | no |
-| nonparty-obligation | 12 | 4 | 3 | no |
+| nonparty-obligation | 12 | 3 | 4 | no |
 | doublet | 11 | 11 | 0 | yes |
 | negative-subject-shall | 10 | 10 | 0 | yes |
-| conflict | 10 | 2 | 7 | no |
+| conflict | 10 | 1 | 8 | no |
 | party-article | 9 | 9 | 0 | yes |
 | enumeration | 8 | 8 | 0 | yes |
 | date-format | 8 | 8 | 0 | yes |
@@ -37,7 +37,7 @@ Traps flagged by a direct finding (false alarms): 1 of 117
 | category-must | 4 | 4 | 0 | yes |
 | arising-out-of | 4 | 4 | 0 | yes |
 | ordinal | 4 | 4 | 0 | yes |
-| attachment-classification | 4 | 2 | 0 | no |
+| attachment-classification | 4 | 1 | 1 | no |
 | sole-discretion | 3 | 3 | 0 | yes |
 | represents-warrants | 3 | 3 | 0 | yes |
 | headings-clause | 2 | 2 | 0 | yes |
