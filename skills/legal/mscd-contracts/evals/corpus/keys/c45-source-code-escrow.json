@@ -1,0 +1,82 @@
+{
+  "id": "c45-source-code-escrow",
+  "file": "contracts/c45-source-code-escrow.md",
+  "title": "Source Code Escrow Agreement",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "defined-term",
+      "anchor": "deposits with Escrow Agent as Deposit Materials",
+      "quote": "\"**Deposit Materials**\" means the Source Code and all other materials that Depositor deposits with Escrow Agent as Deposit Materials.",
+      "severity": 2,
+      "why": "Circular definition: Deposit Materials are whatever Depositor deposits as Deposit Materials. Because the deposit duty and Depositor's statement of completeness both turn on this term, the circularity lets Depositor decide what it must deposit.",
+      "fix": "\"Deposit Materials\" means the Source Code, the build instructions and third-party library list for the Software, and each update to any of them that Depositor deposits under this agreement."
+    },
+    {
+      "n": 2,
+      "type": "syntactic-ambiguity",
+      "anchor": "discontinues maintenance of the Software for more than 30 days",
+      "quote": "(b) Depositor fails to correct a Critical Error or discontinues maintenance of the Software for more than 30 days.",
+      "severity": 1,
+      "why": "Release trigger with an ambiguous modifier: \"for more than 30 days\" can attach only to *discontinues maintenance* (so any single failure to correct a Critical Error, however brief, is a Release Event) or to both items (a failure to correct that lasts more than 30 days). The trigger also does not say when the 30 days start. The reading decides when Licensee gets the source code.",
+      "fix": "(b) Depositor fails to correct a Critical Error no later than 30 days after Licensee notifies Depositor of it.  (c) Depositor stops providing maintenance for the Software for more than 30 consecutive days."
+    },
+    {
+      "n": 3,
+      "type": "conflict",
+      "anchor": "no later than 10 Business Days after Escrow Agent receives",
+      "quote": "2. If Escrow Agent does not receive a Contrary Notice no later than 10 Business Days after Escrow Agent receives the Release Request, Escrow Agent shall deliver the Deposit Materials to Licensee.",
+      "severity": 1,
+      "why": "Depositor has 15 Business Days after it receives the Release Request to deliver a Contrary Notice (Release Procedure, subsection 1), but Escrow Agent must release after 10 Business Days. Escrow Agent can be obliged to release the code while Depositor's objection period is still open.",
+      "fix": "Use 1 period measured from 1 event: for example, \"If Escrow Agent does not receive a Contrary Notice no later than 15 Business Days after Depositor receives the Release Request, ...\" (and have Licensee give Escrow Agent proof of the date of delivery)."
+    },
+    {
+      "n": 4,
+      "type": "syntactic-ambiguity",
+      "anchor": "the Deposit Materials and the Documentation",
+      "quote": "2. Except to support and maintain the Software, Licensee shall not copy, modify or distribute the Deposit Materials and the Documentation.",
+      "severity": 1,
+      "why": "*and* in a prohibition with *not*: the sentence can bar acts on either item, or only acts on the 2 items together, so Licensee could argue that it may distribute the Deposit Materials alone. The *or* in *copy, modify or distribute* is fine (*not ... or* bars each act).",
+      "fix": "Except to support and maintain the Software, Licensee shall not copy, modify, or distribute any of the Deposit Materials or any of the Documentation."
+    },
+    {
+      "n": 5,
+      "type": "represents-warrants",
+      "anchor": "Escrow Agent represents and warrants",
+      "quote": "3. Escrow Agent represents and warrants that it maintains fidelity bond coverage of at least $1,000,000.",
+      "severity": 2,
+      "why": "House rule 10: this is Blake's draft, so statements of fact use *states* (as the Depositor statement in the section titled \"Deposits\" already does).",
+      "fix": "Escrow Agent states that it maintains fidelity bond coverage of at least $1,000,000."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Escrow Agent shall hold the Deposit Materials",
+      "quote": "1. Escrow Agent shall hold the Deposit Materials in a secure, climate-controlled vault and shall not release them to any person except as this agreement provides.",
+      "why_correct": "Escrow Agent is a party and signs this agreement, so *shall* imposes a real duty; this is not a nonparty obligation. Escrow Agent is a defined party name, so house rule 11 writes it without *the*."
+    },
+    {
+      "anchor": "Escrow Agent is not required to verify",
+      "quote": "2. Escrow Agent is not required to verify the completeness, accuracy, or functionality of the Deposit Materials.",
+      "why_correct": "*is not required to* is the house exception for negating a duty (MSCD 3.292)."
+    },
+    {
+      "anchor": "Depositor states that",
+      "quote": "3. Depositor states that the Deposit Materials, as of each deposit, include all Source Code that a programmer experienced in the Software's programming languages would need to compile the current version of the Software.",
+      "why_correct": "Blake's draft: *states* is the house verb for statements of fact (house rule 10)."
+    },
+    {
+      "anchor": "Section 365(n) of the Bankruptcy Code",
+      "quote": "1. The parties intend this agreement to be an \"agreement supplementary to\" the License Agreement for purposes of Section 365(n) of the Bankruptcy Code.",
+      "why_correct": "A reference to a statute, not an internal cross-reference (house rule 4); the quoted phrase tracks the statute's wording."
+    },
+    {
+      "anchor": "To request a release, Licensee must deliver",
+      "quote": "2. To request a release, Licensee must deliver to Escrow Agent and Depositor a notice that identifies the Release Event that Licensee claims has occurred (a \"**Release Request**\").",
+      "why_correct": "*must* in a condition (what Licensee has to do to obtain a release), not a duty; MSCD uses *must* here."
+    }
+  ],
+  "notes": "The caller asked for *The Escrow Agent shall* as a trap. Under house rule 11 a defined party name takes no article, so the contract writes *Escrow Agent shall*; the trap is still a *shall* with an escrow-agent subject where the agent is a signing party (compare a nonparty escrow agent, where *must* would be right). Lists in this draft use the serial comma except the planted *copy, modify or distribute*, which is quoted from the caller's spec; the missing serial comma is not a catalog issue and is not keyed. Markdown bold marks each defined term where it is defined; anchors avoid the asterisks."
+}

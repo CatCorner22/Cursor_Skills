@@ -20,10 +20,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SKILL = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(SKILL, 'scripts'))
 import mscd_lint as L  # noqa: E402
+import signal  # noqa: E402
+if hasattr(signal, 'SIGPIPE'):
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)  # piping into head ends quietly
 
 QUOTES = str.maketrans({'“': '"', '”': '"', '‘': "'", '’': "'", ' ': ' '})
 FORMAT_WORDS = {'font': r'font|aptos|times new roman|arial|cambria|calibri', 'size': r'\bsize\b|point|\bpt\b',
-                'justified': r'justif', 'underline': r'underlin'}
+                'justified': r'justif', 'underline': r'underlin', 'numbering': r'numbering|only child|enumerat'}
 # lint checks that answer each catalog type (direct findings only; rule triggers are scored separately)
 LINT_TYPES = {
     'category-should': {'should'}, 'negative-subject-shall': {'negative-subject-shall'}, 'and-or': {'and-or'},
@@ -62,8 +65,33 @@ def load_keys(root):
     return keys
 
 
+def header_footer_paras(path):
+    # Header and footer text, which the lint doesn't read; appended after the body so the lint's paragraph numbers still line up
+    if not path.lower().endswith('.docx'):
+        return []
+    import docx
+    from docx.oxml.ns import qn
+    out, seen = [], set()
+    for sec in docx.Document(path).sections:
+        for part, where in ((sec.header, 'header'), (sec.footer, 'footer'), (sec.first_page_header, 'header'), (sec.first_page_footer, 'footer')):
+            try:
+                el = part._element
+            except Exception:
+                continue
+            if id(el) in seen or part.is_linked_to_previous and out:
+                continue
+            seen.add(id(el))
+            for p_el in el.iter(qn('w:p')):
+                t = ''.join(x.text or '' for x in p_el.iter(qn('w:t')))
+                if t.strip():
+                    out.append({'idx': -1, 'text': t, 'where': where, 'fmt': {}})
+    return out
+
+
 def contract_text(path, collapse=True):
     paras, meta = L.read_paragraphs(path)
+    if not any(p.get('where') in ('header', 'footer') for p in paras):
+        paras = paras + header_footer_paras(path)  # older lint versions don't read them
     starts, pos, chunks = [], 0, []
     for p in paras:
         t = norm(p['text']) if collapse else raw(p['text'])
@@ -179,7 +207,8 @@ def cmd_findings(root, runs, out_json=None):
             q = norm(f.get('quote', ''))
             i = low.find(q.lower()) if len(q) >= 3 else -1
             fsp.append((f, (i, i + len(q)) if i >= 0 else None, q.lower(), norm(str(f.get('fix', ''))).lower()))
-        keep = lambda fx: re.match(r'\s*(keep|no change|leave|none|n/a)\b', fx) is not None
+        # a fix that only keeps the text; "keep only if ..., otherwise X" and "keep or delete (decision needed)" propose a change
+        keep = lambda fx: re.match(r'\s*(keep|no change|leave|none|n/a)\b', fx) is not None and not re.search(r'\botherwise\b|\bor delete\b|\bdecision needed\b', fx)
         c_found = 0
         for it in k.get('issues', []):
             tot += 1
@@ -187,10 +216,14 @@ def cmd_findings(root, runs, out_json=None):
                 pat = '|'.join(v for kk, v in FORMAT_WORDS.items() if re.search(v, it.get('why', ''), re.I)) or 'font'
                 ok = any(re.search(pat, json.dumps(f), re.I) for f in fs)
             else:
-                a = norm(it['anchor']).lower(); sp = span(low, a)
-                located = [(f, fx) for f, s, q, fx in fsp if a in q or overlaps(s, sp)]
+                located = []
+                for anc in [it['anchor']] + it.get('alt_anchors', []):  # a conflict can be flagged at either end
+                    a = norm(anc).lower(); sp = span(low, a)
+                    located += [(f, fx) for f, s, q, fx in fsp if a in q or overlaps(s, sp)]
                 # found: a finding at that spot proposes a change, or flags and keeps where keeping is the answer
                 ok = any(not keep(fx) or it['type'] in ('knowledge-standard',) for f, fx in located)
+                if not ok and it['type'] == 'enumeration':  # a document-wide numbering problem can be reported at any heading
+                    ok = any(re.search(r'enumerat|numbering', str(f.get('type', '')), re.I) and not keep(fx) for f, s, q, fx in fsp)
             found += ok; c_found += ok
             d = per_type.setdefault(it['type'], [0, 0]); d[0] += 1; d[1] += ok
             if not ok:

@@ -8,7 +8,10 @@ Examples:
   python3 scripts/rules_query.py --topic ambiguity --kind ambiguity-cause --brief
   python3 scripts/rules_query.py --key verbs --severity 1 --brief
 """
-import argparse, json, os, re, sys
+import argparse, json, os, re, signal, sys
+
+if hasattr(signal, 'SIGPIPE'):
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)  # piping into head ends quietly
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -56,7 +59,7 @@ def fmt(r, house, brief):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--id', action='append', default=[])
-    ap.add_argument('--word', help='case-insensitive search in trigger words, statement and section')
+    ap.add_argument('--word', help='case-insensitive plain-text search (not a regex) in trigger words, statement and section')
     ap.add_argument('--para', help='MSCD paragraph, e.g. 3.324')
     ap.add_argument('--topic'); ap.add_argument('--key'); ap.add_argument('--kind')
     ap.add_argument('--severity', type=int, help='maximum severity to include (1, 2 or 3)')

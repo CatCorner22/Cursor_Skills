@@ -1,0 +1,190 @@
+{
+  "id": "c28-office-lease",
+  "file": "contracts/c28-office-lease.txt",
+  "title": "Office Lease",
+  "tier": "obvious",
+  "whose_draft": "unknown",
+  "issues": [
+    {
+      "n": 1,
+      "type": "this-agreement-term",
+      "anchor": "(the \"Lease\")",
+      "quote": "THIS LEASE (the \"Lease\") is dated this ___ day of __________, 2027, and is between Castellan Tower Associates LLC, a New York limited liability company (\"Landlord\"), and Pellworth Textile Design, Inc., a Delaware corporation (\"Tenant\").",
+      "severity": 3,
+      "why": "The lease defines itself as \"the Lease.\" MSCD 2.123: don't define the agreement as a term; write \"this lease\" in lowercase.",
+      "fix": "Delete the definition: \"This lease is dated ..., 2027, and is between ...\", and use \"this lease\" throughout."
+    },
+    {
+      "n": 2,
+      "type": "date-format",
+      "anchor": "this ___ day of",
+      "quote": "THIS LEASE (the \"Lease\") is dated this ___ day of __________, 2027, and is between Castellan Tower Associates LLC, a New York limited liability company (\"Landlord\"), and Pellworth Textile Design, Inc., a Delaware corporation (\"Tenant\").",
+      "severity": 2,
+      "why": "House rule 7 bans \"this ___ day of\"; the introductory clause needs a U.S.-style date.",
+      "fix": "This lease is dated [Month Day], 2027, and is between ..."
+    },
+    {
+      "n": 3,
+      "type": "archaic",
+      "anchor": "WHEREAS, Landlord owns",
+      "quote": "WHEREAS, Landlord owns One Liberty Plaza, an office building in New York, New York (the \"Building\"); and",
+      "severity": 3,
+      "why": "WHEREAS recitals (both paragraphs) are archaic.",
+      "fix": "Replace with a plain background section: \"Landlord owns One Liberty Plaza, an office building in New York, New York (the \"Building\").  Tenant wishes to lease office space in the Building.\""
+    },
+    {
+      "n": 4,
+      "type": "archaic",
+      "anchor": "NOW, THEREFORE",
+      "quote": "NOW, THEREFORE, for good and valuable consideration, Landlord and Tenant agree as follows:",
+      "severity": 3,
+      "why": "Archaic lead-in.",
+      "fix": "Landlord and Tenant agree as follows:"
+    },
+    {
+      "n": 5,
+      "type": "archaic",
+      "anchor": "good and valuable consideration",
+      "quote": "NOW, THEREFORE, for good and valuable consideration, Landlord and Tenant agree as follows:",
+      "severity": 3,
+      "why": "Recital of consideration is archaic and adds nothing.",
+      "fix": "Delete it (lead-in becomes \"Landlord and Tenant agree as follows:\")."
+    },
+    {
+      "n": 6,
+      "type": "category-shall",
+      "anchor": "shall commence on March 1",
+      "quote": "The term of this Lease shall commence on March 1, 2027, and shall end on February 29, 2028 (the \"Expiration Date\"), unless Tenant extends the term under the section titled \"Option to Extend.\"",
+      "severity": 2,
+      "why": "No duty is imposed on the term; \"shall commence\" and \"shall end\" are language of policy written as obligation.",
+      "fix": "The term of this lease begins on March 1, 2027, and ends on February 29, 2028 (the \"Expiration Date\"), unless Tenant extends the term under the section titled \"Option to Extend.\""
+    },
+    {
+      "n": 7,
+      "type": "number-words",
+      "anchor": "Twelve Thousand Four Hundred Dollars",
+      "quote": "Tenant shall pay Landlord base rent of Twelve Thousand Four Hundred Dollars ($12,400) per month (\"Base Rent\").",
+      "severity": 2,
+      "why": "House rule 2: digits only, never words with digits (the amounts agree, so this is a style breach, not a conflict).",
+      "fix": "Tenant shall pay Landlord base rent of $12,400 per month (\"Base Rent\")."
+    },
+    {
+      "n": 8,
+      "type": "passive-voice",
+      "anchor": "Base Rent shall be paid",
+      "quote": "Base Rent shall be paid in advance on the first day of each month, without demand, at Landlord's office or at any other place that Landlord designates by notice to Tenant.",
+      "severity": 2,
+      "why": "Passive hides the actor (Tenant).",
+      "fix": "Tenant shall pay Base Rent in advance on the 1st day of each month, ..."
+    },
+    {
+      "n": 9,
+      "type": "ordinal",
+      "anchor": "the first day of each month",
+      "quote": "Base Rent shall be paid in advance on the first day of each month, without demand, at Landlord's office or at any other place that Landlord designates by notice to Tenant.",
+      "severity": 2,
+      "why": "House rule 2: ordinals in digits.",
+      "fix": "the 1st day of each month"
+    },
+    {
+      "n": 10,
+      "type": "money",
+      "anchor": "five percent (5%)",
+      "quote": "If any installment of Base Rent remains unpaid 5 days after its due date, Tenant shall pay Landlord a late charge of five percent (5%) of the unpaid installment.",
+      "severity": 2,
+      "why": "Percentage stated 2 ways (words and digits); house rule 2 calls for digits once.",
+      "fix": "a late charge of 5% of the unpaid installment"
+    },
+    {
+      "n": 11,
+      "type": "time-ambiguity",
+      "anchor": "within 90 days of the Expiration Date",
+      "quote": "Landlord shall return the Security Deposit to Tenant, less any amount that Landlord applies to cure a default by Tenant, within 90 days of the Expiration Date.",
+      "severity": 2,
+      "why": "\"Within 90 days of\" doesn't say whether the window runs before or after the Expiration Date (contrast the clear \"no later than 180 days before the Expiration Date\" in the section titled \"Option to Extend\").",
+      "fix": "no later than 90 days after the Expiration Date"
+    },
+    {
+      "n": 12,
+      "type": "archaic",
+      "anchor": "the same",
+      "quote": "Tenant shall keep the Premises in good repair and, at the end of the term, shall surrender the same to Landlord broom-clean, except for ordinary wear and tear.",
+      "severity": 3,
+      "why": "\"The same\" used as a pronoun for the Premises.",
+      "fix": "shall surrender the Premises to Landlord broom-clean, ..."
+    },
+    {
+      "n": 13,
+      "type": "category-will",
+      "anchor": "Landlord will furnish",
+      "quote": "Landlord will furnish heat, ventilation, and air conditioning to the Premises on each weekday that is not a federal holiday.",
+      "severity": 2,
+      "why": "\"Will\" used to impose a duty on Landlord; the rest of the lease uses \"shall.\"",
+      "fix": "Landlord shall furnish heat, ventilation, and air conditioning ..."
+    },
+    {
+      "n": 14,
+      "type": "shall-in-condition",
+      "anchor": "If Tenant shall fail",
+      "quote": "If Tenant shall fail to pay any installment of Base Rent no later than 10 days after Tenant receives notice of nonpayment from Landlord, Landlord may terminate this Lease by giving Tenant notice, and Tenant shall pay Landlord any and all amounts due hereunder through the termination date.",
+      "severity": 2,
+      "why": "\"Shall\" in a condition; use the present tense.",
+      "fix": "If Tenant fails to pay any installment of Base Rent ..."
+    },
+    {
+      "n": 15,
+      "type": "doublet",
+      "anchor": "any and all",
+      "quote": "If Tenant shall fail to pay any installment of Base Rent no later than 10 days after Tenant receives notice of nonpayment from Landlord, Landlord may terminate this Lease by giving Tenant notice, and Tenant shall pay Landlord any and all amounts due hereunder through the termination date.",
+      "severity": 3,
+      "why": "Doublet; \"all\" suffices.",
+      "fix": "Tenant shall pay Landlord all amounts due under this lease through the termination date."
+    },
+    {
+      "n": 16,
+      "type": "archaic",
+      "anchor": "amounts due hereunder",
+      "quote": "If Tenant shall fail to pay any installment of Base Rent no later than 10 days after Tenant receives notice of nonpayment from Landlord, Landlord may terminate this Lease by giving Tenant notice, and Tenant shall pay Landlord any and all amounts due hereunder through the termination date.",
+      "severity": 3,
+      "why": "Here-word.",
+      "fix": "under this lease"
+    },
+    {
+      "n": 17,
+      "type": "cross-reference-number",
+      "anchor": "described in Section D",
+      "quote": "Landlord may also apply the Security Deposit as described in Section D.",
+      "severity": 2,
+      "why": "House rule 4: refer by heading, not by number or letter.",
+      "fix": "Landlord may also apply the Security Deposit under the section titled \"Security Deposit.\""
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "One Liberty Plaza",
+      "quote": "WHEREAS, Landlord owns One Liberty Plaza, an office building in New York, New York (the \"Building\"); and",
+      "why_correct": "Number word inside a proper name stays (house rule 2)."
+    },
+    {
+      "anchor": "February 29, 2028",
+      "quote": "The term of this Lease shall commence on March 1, 2027, and shall end on February 29, 2028 (the \"Expiration Date\"), unless Tenant extends the term under the section titled \"Option to Extend.\"",
+      "why_correct": "2028 is a leap year, so February 29, 2028 is a real date, and it is in U.S. format."
+    },
+    {
+      "anchor": "no later than 180 days before",
+      "quote": "Tenant may extend the term for 1 additional period of 2 years by giving Landlord notice no later than 180 days before the Expiration Date.",
+      "why_correct": "Clear deadline: \"no later than ... before\" has no before/after ambiguity."
+    },
+    {
+      "anchor": "Tenant is not required to remove",
+      "quote": "Tenant is not required to remove any alteration that Landlord approved in writing.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "I. General.",
+      "quote": "I. General.",
+      "why_correct": "Section I. correctly follows H.; the house scheme uses every letter, I included."
+    }
+  ],
+  "notes": "Parties are defined without articles (\"Landlord\", \"Tenant\"), which is correct; \"the Building\", \"the Premises\", \"the Security Deposit\" are other defined terms and keep \"the\". Enumeration A. to I. is correct house style. Issues 1 and 2 share 1 fix for the introductory clause; issues 4 and 5 share 1 fix for the lead-in. The WHEREAS issue (3) covers both WHEREAS paragraphs. \"Each notice ... must be in writing\" uses \"must\" with a nonparty subject and is correct."
+}

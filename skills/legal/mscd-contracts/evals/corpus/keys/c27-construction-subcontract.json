@@ -1,0 +1,209 @@
+{
+  "id": "c27-construction-subcontract",
+  "file": "contracts/c27-construction-subcontract.docx",
+  "title": "Subcontract Agreement",
+  "tier": "obvious",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "(whole document, including header and footer)",
+      "severity": 3,
+      "why": "Body font is Times New Roman 11 pt (Normal style and document defaults); house rule 9 requires 12-point Aptos.",
+      "fix": "Set the Normal style and document defaults to Aptos 12 pt."
+    },
+    {
+      "n": 2,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "(every body paragraph from the introductory clause through section 5.3)",
+      "severity": 3,
+      "why": "Body paragraphs are justified (Normal style and each body paragraph); house rule 9 bans justified text.",
+      "fix": "Left-align the body text."
+    },
+    {
+      "n": 3,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "1. THE WORK",
+      "severity": 3,
+      "why": "Headings are underlined: the 5 article headings (for example \"1. THE WORK\") and every inline section heading (for example \"Scope of Work.\"). House rule 9 bans underlined headings.",
+      "fix": "Remove the underlining; keep the headings bold."
+    },
+    {
+      "n": 4,
+      "type": "date-format",
+      "anchor": "DRAFT 3/2/2027",
+      "quote": "DRAFT 3/2/2027 – For Discussion Only",
+      "severity": 2,
+      "why": "Numeric date in the page header; house rule 7 requires a U.S. date written out.",
+      "fix": "DRAFT March 2, 2027 – For Discussion Only",
+      "where": "header"
+    },
+    {
+      "n": 5,
+      "type": "enumeration",
+      "anchor": "1.1 Scope of Work.",
+      "quote": "1.1 Scope of Work.",
+      "severity": 2,
+      "why": "MSCD-style 1. / 1.1 numbering throughout (articles 1 to 5, sections 1.1 to 5.3) breaks house rule 3.",
+      "fix": "Use I. to V. for the articles and A., B., C. for the sections within each article."
+    },
+    {
+      "n": 6,
+      "type": "this-agreement-term",
+      "anchor": "(this \"Subcontract\")",
+      "quote": "This subcontract agreement (this \"Subcontract\") is dated March 2, 2027, and is between Harlan & Voss Builders, Inc., an Ohio corporation (the \"Contractor\"), and Fernbrook Mechanical, LLC, an Ohio limited liability company (the \"Subcontractor\").",
+      "severity": 3,
+      "why": "Defines the contract itself as \"this Subcontract\" (MSCD 2.123).",
+      "fix": "Delete the definition; refer to \"this subcontract\" (or \"this agreement\") in lowercase throughout."
+    },
+    {
+      "n": 7,
+      "type": "party-article",
+      "anchor": "(the \"Contractor\")",
+      "quote": "This subcontract agreement (this \"Subcontract\") is dated March 2, 2027, and is between Harlan & Voss Builders, Inc., an Ohio corporation (the \"Contractor\"), and Fernbrook Mechanical, LLC, an Ohio limited liability company (the \"Subcontractor\").",
+      "severity": 2,
+      "why": "House rule 11: no article before a defined party name. Both party definitions use \"the\" ((the \"Contractor\"), (the \"Subcontractor\")), and the text says \"the Contractor\" and \"the Subcontractor\" throughout.",
+      "fix": "Define (\"Contractor\") and (\"Subcontractor\") and drop \"the\" before both names everywhere."
+    },
+    {
+      "n": 8,
+      "type": "archaic",
+      "anchor": "NOW, THEREFORE",
+      "quote": "NOW, THEREFORE, in consideration of the mutual covenants herein, the parties agree as follows:",
+      "severity": 3,
+      "why": "Archaic lead-in with a recital of consideration and the here-word \"herein.\"",
+      "fix": "The parties agree as follows:"
+    },
+    {
+      "n": 9,
+      "type": "category-shall",
+      "anchor": "shall be Four Hundred",
+      "quote": "The price for the Work (the \"Subcontract Sum\") shall be Four Hundred Eighty-Two Thousand Five Hundred Dollars ($428,500), subject to additions and deductions by change order.",
+      "severity": 2,
+      "why": "No duty is imposed on the price; language of policy.",
+      "fix": "The price for the Work (the \"Subcontract Sum\") is $X, subject to additions and deductions by change order."
+    },
+    {
+      "n": 10,
+      "type": "money",
+      "anchor": "Eighty-Two Thousand Five Hundred Dollars ($428,500)",
+      "quote": "The price for the Work (the \"Subcontract Sum\") shall be Four Hundred Eighty-Two Thousand Five Hundred Dollars ($428,500), subject to additions and deductions by change order.",
+      "severity": 1,
+      "why": "Words ($482,500) and digits ($428,500) disagree; the contract price is uncertain.",
+      "fix": "State the amount once in digits after confirming the intended price with the parties ($482,500 or $428,500)."
+    },
+    {
+      "n": 11,
+      "type": "passive-voice",
+      "anchor": "Progress payments shall be made",
+      "quote": "Progress payments shall be made monthly, based on the percentage of the Work that the Subcontractor has completed, less retainage.",
+      "severity": 2,
+      "why": "Passive hides the actor (the Contractor).",
+      "fix": "Contractor shall make progress payments monthly, based on the percentage of the Work that Subcontractor has completed, less retainage."
+    },
+    {
+      "n": 12,
+      "type": "number-words",
+      "anchor": "ten (10) days",
+      "quote": "The Contractor shall pay each progress payment no later than ten (10) days after the Contractor receives payment from Riverbend for the Work that the payment application covers, as Section 4113.61 of the Ohio Revised Code requires.",
+      "severity": 2,
+      "why": "House rule 2: digits only, never words with digits.",
+      "fix": "no later than 10 days after"
+    },
+    {
+      "n": 13,
+      "type": "money",
+      "anchor": "ten percent (10%)",
+      "quote": "The Contractor shall retain ten percent (10%) of each progress payment until the Subcontractor completes the Work.",
+      "severity": 2,
+      "why": "Percentage stated 2 ways (words and digits); house rule 2 calls for digits once.",
+      "fix": "Contractor shall retain 10% of each progress payment ..."
+    },
+    {
+      "n": 14,
+      "type": "category-shall",
+      "anchor": "shall have the right to order",
+      "quote": "The Contractor shall have the right to order changes in the Work by written change order, and the Subcontractor shall perform each change at the unit prices in its bid.",
+      "severity": 2,
+      "why": "\"Shall have the right to\" uses \"shall\" for discretion.",
+      "fix": "Contractor may order changes in the Work by written change order, ..."
+    },
+    {
+      "n": 15,
+      "type": "shall-in-condition",
+      "anchor": "Subcontractor shall fail to supply",
+      "quote": "In the event that the Subcontractor shall fail to supply enough skilled workers or proper materials, the Contractor may, after giving the Subcontractor 3 days' written notice, supply the workers or materials and deduct the cost from the next payment due to the Subcontractor.",
+      "severity": 2,
+      "why": "\"Shall\" in a condition (\"In the event that ... shall fail\"); use the present tense and \"if.\"",
+      "fix": "If Subcontractor fails to supply enough skilled workers or proper materials, ..."
+    },
+    {
+      "n": 16,
+      "type": "cross-reference-number",
+      "anchor": "under Section 3.3",
+      "quote": "If a default under Section 3.3 continues for more than 10 days after the Subcontractor receives the Contractor's notice, the Contractor may terminate this Subcontract by giving the Subcontractor written notice, provided, however, that the Contractor shall pay the Subcontractor for all Work that the Subcontractor performed before the termination date.",
+      "severity": 2,
+      "why": "House rule 4: internal cross-reference by number.",
+      "fix": "If a default under the section titled \"Default\" continues ..."
+    },
+    {
+      "n": 17,
+      "type": "provided-that",
+      "anchor": "provided, however, that",
+      "quote": "If a default under Section 3.3 continues for more than 10 days after the Subcontractor receives the Contractor's notice, the Contractor may terminate this Subcontract by giving the Subcontractor written notice, provided, however, that the Contractor shall pay the Subcontractor for all Work that the Subcontractor performed before the termination date.",
+      "severity": 2,
+      "why": "Proviso used to impose a duty.",
+      "fix": "New sentence: \"If Contractor terminates this subcontract under this section, Contractor shall pay Subcontractor for all Work that Subcontractor performed before the termination date.\""
+    },
+    {
+      "n": 18,
+      "type": "number-words",
+      "anchor": "one (1)",
+      "quote": "The Subcontractor warrants the Work against defects in materials and workmanship for one (1) year after Riverbend accepts the Project.",
+      "severity": 2,
+      "why": "House rule 2: digits only, never words with digits.",
+      "fix": "for 1 year after Riverbend accepts the Project"
+    },
+    {
+      "n": 19,
+      "type": "category-shall",
+      "anchor": "Subcontract shall be governed by",
+      "quote": "This Subcontract shall be governed by the laws of the State of Ohio.",
+      "severity": 2,
+      "why": "No duty; language of policy.",
+      "fix": "Ohio law governs this subcontract."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Fifth Third Bank",
+      "quote": "The Contractor shall hold all retainage in a separate account at Fifth Third Bank and shall release the retainage to the Subcontractor with final payment.",
+      "why_correct": "Number words inside a bank's proper name stay (house rule 2)."
+    },
+    {
+      "anchor": "Section 4113.61 of the Ohio Revised Code",
+      "quote": "The Contractor shall pay each progress payment no later than ten (10) days after the Contractor receives payment from Riverbend for the Work that the payment application covers, as Section 4113.61 of the Ohio Revised Code requires.",
+      "why_correct": "Statute reference, not an internal cross-reference."
+    },
+    {
+      "anchor": "is not required to perform",
+      "quote": "The Subcontractor is not required to perform any fire-protection or electrical work.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "5:00 p.m. Eastern time",
+      "quote": "A notice is effective on the day on which the recipient receives it, except that a notice that the recipient receives after 5:00 p.m. Eastern time is effective on the next day.",
+      "why_correct": "Correct time reference."
+    },
+    {
+      "anchor": "the day on which",
+      "quote": "A notice is effective on the day on which the recipient receives it, except that a notice that the recipient receives after 5:00 p.m. Eastern time is effective on the next day.",
+      "why_correct": "Correct relative construction."
+    }
+  ],
+  "notes": "The 1.1 numbering is typed into the text (not automatic numbering). Issue 7 is document-level: one fix covers every \"the Contractor\" / \"the Subcontractor\". The header issue (4) sits in the page header; the footer is clean. \"Riverbend\" (a nonparty) is defined without \"the\", which is fine. The section 1.1 sentence is long but not ambiguous. The fix for issues 9 and 10 together: \"The price for the Work (the \"Subcontract Sum\") is $[confirmed amount], subject to ...\"."
+}

@@ -1,0 +1,203 @@
+{
+  "id": "c30-sales-agency",
+  "file": "contracts/c30-sales-agency.docx",
+  "title": "Sales Agency Agreement",
+  "tier": "obvious",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "enumeration",
+      "anchor": "[format]",
+      "quote": "(automatic numbering on every section paragraph, from \"Appointment.\" through \"General.\")",
+      "severity": 2,
+      "why": "Word automatic numbering (paragraph styles \"Agency Section\" and \"Agency Subsection\", linked to list numId 77) numbers the 8 sections 1. to 8. and the subsection (a). The numbers are not typed in the text. House rule 3: a contract without articles numbers its sections A., B., C. and subsections 1., 2.",
+      "fix": "Change the list levels to A. (sections) and 1. (subsections), or replace the automatic numbering with the house scheme."
+    },
+    {
+      "n": 2,
+      "type": "enumeration",
+      "anchor": "[format]",
+      "quote": "Chargebacks.  If a customer returns a Product for credit, Manufacturer may deduct the commission that Manufacturer paid on that Product from Agent's next commission payment.",
+      "severity": 2,
+      "why": "Only child in the automatic numbering: the section headed \"Commissions.\" has 1 subsection, \"(a) Chargebacks.\", and no (b). House rule 3 bans a level with 1 item.",
+      "fix": "Fold the chargeback sentence into the \"Commissions\" section text, or split the section into at least 2 subsections."
+    },
+    {
+      "n": 3,
+      "type": "this-agreement-term",
+      "anchor": "(this \"Agreement\")",
+      "quote": "This sales agency agreement (this \"Agreement\") is dated June 7, 2027, and is between Corrigan Fluidics, Inc., a Wisconsin corporation (\"Manufacturer\"), and Delacroix Sales Group LLC, a Louisiana limited liability company (\"Agent\").",
+      "severity": 3,
+      "why": "Defines the contract itself as \"this Agreement\" (MSCD 2.123).",
+      "fix": "Delete the definition and write \"this agreement\" in lowercase throughout."
+    },
+    {
+      "n": 4,
+      "type": "category-shall",
+      "anchor": "shall be for a term of",
+      "quote": "This Agreement shall be for a term of two (2) years beginning on the date of this Agreement.",
+      "severity": 2,
+      "why": "No duty; language of policy.",
+      "fix": "The term of this agreement is 2 years, beginning on the date of this agreement."
+    },
+    {
+      "n": 5,
+      "type": "number-words",
+      "anchor": "two (2) years",
+      "quote": "This Agreement shall be for a term of two (2) years beginning on the date of this Agreement.",
+      "severity": 2,
+      "why": "House rule 2: digits only, never words with digits.",
+      "fix": "2 years"
+    },
+    {
+      "n": 6,
+      "type": "number-words",
+      "anchor": "thirty days' notice",
+      "quote": "Either party may terminate this Agreement for convenience by giving the other party thirty days' notice.",
+      "severity": 2,
+      "why": "House rule 2: number in words.",
+      "fix": "30 days' notice"
+    },
+    {
+      "n": 7,
+      "type": "category-shall",
+      "anchor": "shall have the right to appoint",
+      "quote": "Agent shall have the right to appoint one or more sub-agents in the Territory with Manufacturer's written consent.",
+      "severity": 2,
+      "why": "\"Shall have the right to\" uses \"shall\" for discretion.",
+      "fix": "Agent may appoint 1 or more sub-agents in the Territory with Manufacturer's written consent."
+    },
+    {
+      "n": 8,
+      "type": "number-words",
+      "anchor": "one or more",
+      "quote": "Agent shall have the right to appoint one or more sub-agents in the Territory with Manufacturer's written consent.",
+      "severity": 2,
+      "why": "House rule 2: \"one or more\" counts something, so it takes digits.",
+      "fix": "1 or more sub-agents"
+    },
+    {
+      "n": 9,
+      "type": "nonparty-obligation",
+      "anchor": "Sub-agents shall comply",
+      "quote": "Sub-agents shall comply with Manufacturer's published prices and shall not quote any other price.",
+      "severity": 2,
+      "why": "Sub-agents don't sign this agreement, so \"shall\" can't bind them (MSCD 3.154).",
+      "fix": "Agent shall cause each sub-agent to comply with Manufacturer's published prices and not to quote any other price."
+    },
+    {
+      "n": 10,
+      "type": "agrees-to",
+      "anchor": "Manufacturer agrees to provide",
+      "quote": "Manufacturer agrees to provide Agent with product samples, catalogs, and technical literature at no charge.",
+      "severity": 3,
+      "why": "\"Agrees to\" for an obligation.",
+      "fix": "Manufacturer shall provide Agent with product samples, catalogs, and technical literature at no charge."
+    },
+    {
+      "n": 11,
+      "type": "time-ambiguity",
+      "anchor": "shall promptly notify",
+      "quote": "Manufacturer shall promptly notify Agent of any change in the price list.",
+      "severity": 2,
+      "why": "\"Promptly\" sets no deadline.",
+      "fix": "Manufacturer shall notify Agent of any change in the price list no later than 10 days before the change takes effect."
+    },
+    {
+      "n": 12,
+      "type": "entitled-to-duty",
+      "anchor": "Agent shall be entitled to a commission",
+      "quote": "Agent shall be entitled to a commission of twelve percent (12%) of the invoice price, less freight and taxes, of each Product that Manufacturer ships into the Territory.",
+      "severity": 2,
+      "why": "\"Shall be entitled to\" (a \"shall\" with no duty) hides Manufacturer's duty to pay the commission (MSCD 3.169).",
+      "fix": "Manufacturer shall pay Agent a commission of 12% of the invoice price, less freight and taxes, of each Product that Manufacturer ships into the Territory."
+    },
+    {
+      "n": 13,
+      "type": "money",
+      "anchor": "twelve percent (12%)",
+      "quote": "Agent shall be entitled to a commission of twelve percent (12%) of the invoice price, less freight and taxes, of each Product that Manufacturer ships into the Territory.",
+      "severity": 2,
+      "why": "Percentage stated 2 ways (words and digits); house rule 2 calls for digits once.",
+      "fix": "12%"
+    },
+    {
+      "n": 14,
+      "type": "passive-voice",
+      "anchor": "Commissions shall be paid",
+      "quote": "Commissions shall be paid on the fifteenth day of the month after the month in which Manufacturer receives payment from the customer for that Product.",
+      "severity": 2,
+      "why": "Passive hides the actor (Manufacturer).",
+      "fix": "Manufacturer shall pay each commission on the 15th day of the month after the month in which Manufacturer receives payment from the customer for that Product."
+    },
+    {
+      "n": 15,
+      "type": "ordinal",
+      "anchor": "the fifteenth day",
+      "quote": "Commissions shall be paid on the fifteenth day of the month after the month in which Manufacturer receives payment from the customer for that Product.",
+      "severity": 2,
+      "why": "House rule 2: ordinals in digits.",
+      "fix": "the 15th day"
+    },
+    {
+      "n": 16,
+      "type": "negative-subject-shall",
+      "anchor": "Neither party shall assign",
+      "quote": "Neither party shall assign this Agreement without the prior written consent of the other party.",
+      "severity": 1,
+      "why": "House rule 8: \"shall\" with a negative subject reads as \"neither party has a duty to assign.\"",
+      "fix": "Neither party may assign this agreement without the other party's prior written consent."
+    },
+    {
+      "n": 17,
+      "type": "negative-subject-shall",
+      "anchor": "Neither party shall be liable",
+      "quote": "Neither party shall be liable to the other for any lost profits arising from the termination of this Agreement.",
+      "severity": 1,
+      "why": "House rule 8: \"shall\" with a negative subject; and no duty is meant, so use language of policy.",
+      "fix": "Neither party is liable to the other for any lost profits arising from the termination of this agreement."
+    },
+    {
+      "n": 18,
+      "type": "category-shall",
+      "anchor": "Agreement shall be governed by",
+      "quote": "This Agreement shall be governed by the laws of the State of Wisconsin.",
+      "severity": 2,
+      "why": "No duty; language of policy.",
+      "fix": "Wisconsin law governs this agreement."
+    },
+    {
+      "n": 19,
+      "type": "archaic",
+      "anchor": "All notices hereunder",
+      "quote": "All notices hereunder must be in writing.",
+      "severity": 3,
+      "why": "Here-word.",
+      "fix": "Each notice under this agreement must be in writing."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "is not required to devote",
+      "quote": "Agent is not required to devote full time to selling the Products, and Agent may represent other manufacturers of noncompeting products.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "cooperate with one another",
+      "quote": "The parties shall cooperate with one another in resolving customer complaints.",
+      "why_correct": "\"One another\" is a pronoun, not a count (house rule 2)."
+    },
+    {
+      "anchor": "a one-time fee",
+      "quote": "Agent shall pay Manufacturer a one-time fee of $1,500 for product training.",
+      "why_correct": "\"One-time\" is part of a word, not a count (house rule 2)."
+    },
+    {
+      "anchor": "Chapter 135 of the Wisconsin Statutes",
+      "quote": "This Agreement does not create a dealership under Chapter 135 of the Wisconsin Statutes.",
+      "why_correct": "Statute reference, not an internal cross-reference."
+    }
+  ],
+  "notes": "Section and subsection numbers come from Word automatic numbering (custom paragraph styles linked to a list definition), so they are not in the extracted text; issues 1 and 2 are anchored \"[format]\". The extracted text of each section begins with its bold heading (\"Appointment.\", \"Term.\", ...). Font is Aptos 12, left-aligned: no formatting issue. Parties are defined without articles, which is correct; \"the Territory\" and \"the Products\" are other defined terms and keep \"the\". The definition of \"Products\" sits inside the \"Appointment\" section; that placement is not an issue. \"All notices ... must be in writing\" uses \"must\" with a nonparty subject and is correct apart from \"hereunder.\""
+}

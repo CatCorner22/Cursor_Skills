@@ -111,7 +111,7 @@ Blake reports that Tina Stark has described litigation in which *neither party s
 ## 9. Typography and layout
 
 - 12-point Aptos throughout (supersedes the size guidance at 16.37-16.38).
-- Clean, clear visual lines: ragged-right text, never justified (16.16-16.17); no underlining (16.21); bold only for section headings and for defined terms where they are defined (16.20); capitals only for article headings and party names where MSCD uses them, or where a statute requires (16.19, 16.24-16.31); consistent indents (one tab per level); white space between blocks; native Word numbering, never typed numbers.
+- Clean, clear visual lines: ragged-right text, never justified (16.16-16.17); no underlining (16.21); bold only for section headings and for defined terms where they are defined (16.20; the title and article headings take the format MSCD gives them, 2.2 and 4.10); capitals only where MSCD uses them (the title, 2.2; article headings, 4.10; party names in the introductory clause, 2.51) or where a statute requires (16.19, 16.24-16.31); consistent indents (one tab per level); white space between blocks; native Word numbering, never typed numbers.
 - Render every delivered .docx to images and look at it before delivery.
 
 ## 10. Other settled choices

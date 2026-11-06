@@ -1,0 +1,90 @@
+{
+  "id": "c46-maintenance-services-agreement",
+  "file": "contracts/c46-maintenance-services-agreement.docx",
+  "title": "Maintenance Services Agreement",
+  "tier": "sneaky",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "syntactic-ambiguity",
+      "anchor": "no later than 2 hours and 8 hours, respectively",
+      "quote": "Provider shall respond to Priority 1, Priority 2, and Priority 3 Service Requests no later than 2 hours and 8 hours, respectively, after Customer submits them.",
+      "severity": 1,
+      "why": "*respectively* misused: it pairs 3 priority levels with 2 response times, so no reader can tell which level gets 8 hours and which gets none. The service credits for Priority 2 (the section titled \"Service Credits\") depend on the answer.",
+      "fix": "Provider shall respond to each Priority 1 Service Request no later than 2 hours after Customer submits it, to each Priority 2 Service Request no later than 8 hours after Customer submits it, and to each Priority 3 Service Request no later than [24] hours after Customer submits it.  (Or put the times in a table.)"
+    },
+    {
+      "n": 2,
+      "type": "conflict",
+      "anchor": "including by failing to pay any amount when due",
+      "quote": "Either party may terminate this agreement by notice to the other party if the other party breaches this agreement, including by failing to pay any amount when due, and does not cure the breach no later than 30 days after receiving notice of the breach.",
+      "severity": 1,
+      "why": "2 cure periods for the same breach, far apart: the section titled \"Late Payment\" (article III) lets Provider terminate if Customer does not pay no later than 10 days after receiving Provider's notice, while the section titled \"Termination for Breach\" (article VIII) expressly covers nonpayment and gives 30 days. A grader may accept a flag at either location (the Late Payment anchor is \"no later than 10 days after receiving Provider's\").",
+      "fix": "Reconcile: either delete the termination right from the section titled \"Late Payment\" or change the termination section to \"... breaches this agreement (other than by failing to pay an amount when due, which the section titled \"Late Payment\" governs) ...\".",
+      "alt_anchors": [
+        "no later than 10 days after receiving Provider's"
+      ]
+    },
+    {
+      "n": 3,
+      "type": "scope-ambiguity",
+      "anchor": "apply only to Losses that exceed $15,000",
+      "quote": "The Indemnifying Party's obligations under this article apply only to Losses that exceed $15,000, and then only to the amount of the excess.",
+      "severity": 1,
+      "why": "The deductible can be read per Third-Party Claim (each claim must exceed $15,000, so small claims are never indemnified) or in the aggregate (once total Losses pass $15,000, everything above is indemnified). The difference grows with the number of claims.",
+      "fix": "... apply only to the amount by which the aggregate Losses from all Third-Party Claims exceed $15,000.  (Or: \"... only to the amount by which the Losses from each Third-Party Claim exceed $15,000.\")"
+    },
+    {
+      "n": 4,
+      "type": "scope-ambiguity",
+      "anchor": "for more than $500,000 for claims",
+      "quote": "Except for a party's obligations under the article titled \"Indemnification\" and a party's liability for its gross negligence or willful misconduct, neither party is liable to the other party for more than $500,000 for claims arising out of this agreement.",
+      "severity": 1,
+      "why": "The cap does not say whether $500,000 applies to each claim or to all claims in the aggregate over the term.",
+      "fix": "... neither party's aggregate liability to the other party for all claims arising out of this agreement exceeds $500,000.  (Or state *for each claim*, if that is the deal.)"
+    },
+    {
+      "n": 5,
+      "type": "referential-ambiguity",
+      "anchor": "such insurance must name Customer",
+      "quote": "Provider shall maintain commercial general liability insurance with limits of at least $2,000,000 per occurrence and umbrella liability insurance with limits of at least $5,000,000, and such insurance must name Customer as an additional insured.",
+      "severity": 1,
+      "why": "*such* as a pointing word with 2 possible antecedents: the commercial general liability policy alone, or both that policy and the umbrella policy. Whether Customer is an additional insured on the $5,000,000 umbrella layer turns on it. MSCD 7.16: repeat the noun.",
+      "fix": "..., and Provider shall cause both the commercial general liability policy and the umbrella liability policy to name Customer as an additional insured."
+    },
+    {
+      "n": 6,
+      "type": "usage",
+      "anchor": "\"Third-Party Claim\" means",
+      "quote": "\"Third-Party Claim\" means a claim, suit, or proceeding that a person other than a party brings against a party.",
+      "severity": 3,
+      "why": "MSCD 13.875 says not to use third party, and names the defined term Nonparty instead of Third Party or Third-Party Claims. Moved from traps to issues in the key audit.",
+      "fix": "Define \"Nonparty Claim\" (a claim by a Person other than a party) and use it throughout.",
+      "source": "MSCD 13.875"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Provider is not required to perform",
+      "quote": "Provider is not required to perform any Services on Equipment that anyone other than Provider has modified without Provider's consent.",
+      "why_correct": "*is not required to* is the house exception for negating a duty (MSCD 3.292)."
+    },
+    {
+      "anchor": "IMPLIED WARRANTY OF MERCHANTABILITY",
+      "quote": "EXCEPT AS THIS ARTICLE STATES, PROVIDER DISCLAIMS ALL IMPLIED WARRANTIES FOR THE PARTS THAT IT SUPPLIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY OR OF FITNESS FOR A PARTICULAR PURPOSE.",
+      "why_correct": "Wording a statute requires: the UCC (Minnesota Statutes section 336.2-316) requires a conspicuous disclaimer that mentions merchantability. Settled policy: keep it (a note is acceptable; a rewrite into lowercase or deletion of MERCHANTABILITY is wrong)."
+    },
+    {
+      "anchor": "5:00 p.m. Central time",
+      "quote": "For a Priority 3 Service Request that Customer submits after 5:00 p.m. Central time on a Business Day, the response period begins at 8:00 a.m. Central time on the next Business Day.",
+      "why_correct": "A clock time with a named time zone is the precise form; digits are right."
+    },
+    {
+      "anchor": "(the \"Indemnifying Party\")",
+      "quote": "A party seeking indemnification under this article (the \"Indemnified Party\") shall notify the party from which it seeks indemnification (the \"Indemnifying Party\") of the Third-Party Claim no later than 15 days after the Indemnified Party receives notice of the claim.",
+      "why_correct": "Role labels keep *the* (house rule 11); only party names (Customer, Provider) drop the article."
+    }
+  ],
+  "notes": "Long contract (about 2,000 words, schedules included). Formatting is compliant: Aptos 12, left-aligned, bold article and section headings, no underlining; schedules are lists and price tables in Word tables and are lettered A to C. *Neither party is liable* and *Neither party may assign* are correct (no *shall* with the negative subject). *such insurance must name* is keyed for its referential ambiguity only; *must* with a nonparty subject (insurance) is not a separate issue. Key audit (November 6, 2026): \"Third-Party Claim\" moved from traps to issues under MSCD 13.875. Key audit: issue 2 is a conflict with 2 ends; alt_anchors lists the other end."
+}

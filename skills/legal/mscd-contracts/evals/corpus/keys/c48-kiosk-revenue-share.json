@@ -1,0 +1,82 @@
+{
+  "id": "c48-kiosk-revenue-share",
+  "file": "contracts/c48-kiosk-revenue-share.docx",
+  "title": "Kiosk Revenue-Share Agreement",
+  "tier": "sneaky",
+  "whose_draft": "unknown",
+  "issues": [
+    {
+      "n": 1,
+      "type": "category-must",
+      "anchor": "Operator must keep the Kiosk open",
+      "quote": "1. Operator must keep the Kiosk open and staffed during all hours that the Mall Landlord requires kiosk tenants to be open.",
+      "severity": 2,
+      "why": "*must* used for a duty of a party (Operator), in a contract that otherwise uses *shall* for duties; the mixed usage invites an argument that the 2 verbs mean different things.",
+      "fix": "Operator shall keep the Kiosk open and staffed during all hours that the Mall Landlord requires kiosk tenants to be open."
+    },
+    {
+      "n": 2,
+      "type": "syntactic-ambiguity",
+      "anchor": "Operator may only sell the Products",
+      "quote": "2. Operator may only sell the Products at the Kiosk.",
+      "severity": 1,
+      "why": "Misplaced *only*: the sentence can mean Operator may sell the Products only at the Kiosk (no other locations or online), or Operator may sell only the Products at the Kiosk (no competing teas), or both. Each reading restricts a different thing.",
+      "fix": "Operator shall not sell the Products anywhere other than at the Kiosk.  (Add a separate sentence if Operator is also barred from selling other products at the Kiosk.)"
+    },
+    {
+      "n": 3,
+      "type": "defined-term",
+      "anchor": "Monthly Gross Revenue",
+      "quote": "Monthly Gross Revenue",
+      "severity": 1,
+      "why": "Planted in the header cell of the revenue-share table: the body defines and uses *Net Sales* (after sales tax and refunds), but the table keys the tiers to *Gross Revenue*, an undefined 2nd form. Gross and net amounts differ, so the tier, and the percentage, can change.",
+      "fix": "Change the header cell to \"Monthly Net Sales\"."
+    },
+    {
+      "n": 4,
+      "type": "money",
+      "anchor": "Two Thousand Five Hundred Dollars ($2,050)",
+      "quote": "4. If Supplier's share for any calendar month is less than Two Thousand Five Hundred Dollars ($2,050), Operator shall pay Supplier the difference with that month's payment.",
+      "severity": 1,
+      "why": "The minimum payment is stated in words and digits that disagree ($2,500 in words, $2,050 in digits), and stating it in words at all breaks house rule 2. The parties must decide which amount they meant.",
+      "fix": "Flag for decision; then state the amount once in digits, for example \"is less than $2,500\"."
+    },
+    {
+      "n": 5,
+      "type": "money",
+      "anchor": "one and one-half percent (1.5%)",
+      "quote": "5. Operator shall pay interest on each late payment at the rate of one and one-half percent (1.5%) per month until Operator pays the overdue amount.",
+      "severity": 2,
+      "why": "A percentage stated 2 ways (words and digits); house rule 2 requires digits only.",
+      "fix": "... at the rate of 1.5% per month ..."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Twelve Oaks Mall",
+      "quote": "Operator leases kiosk C-14 at Twelve Oaks Mall in Novi, Michigan (the \"Kiosk\"), from the owner of the mall (the \"Mall Landlord\").",
+      "why_correct": "A number word inside a proper name stays (house rule 2). The real number-word issues are in the revenue-share section (issues 4 and 5)."
+    },
+    {
+      "anchor": "Fifth Third Bank",
+      "quote": "3. No later than the 10th day of each month, Operator shall deliver to Supplier a report of the previous month's Net Sales and pay Supplier's share for that month by ACH transfer to Supplier's account at Fifth Third Bank or to any other account into which Supplier asks Operator to make payments.",
+      "why_correct": "A bank's name; numbers inside proper names stay in words (house rule 2)."
+    },
+    {
+      "anchor": "any other account into which",
+      "quote": "3. No later than the 10th day of each month, Operator shall deliver to Supplier a report of the previous month's Net Sales and pay Supplier's share for that month by ACH transfer to Supplier's account at Fifth Third Bank or to any other account into which Supplier asks Operator to make payments.",
+      "why_correct": "*into which* is an ordinary relative construction, not the archaic *hereinto*/*whereinto* family."
+    },
+    {
+      "anchor": "Operator is not required to accept",
+      "quote": "3. Operator is not required to accept any Product that arrives damaged, and Operator shall notify Supplier of any damaged delivery no later than 2 days after receiving it.",
+      "why_correct": "*is not required to* is the house exception for negating a duty (MSCD 3.292)."
+    },
+    {
+      "anchor": "Supplier is liable for",
+      "quote": "E. Product Liability.  Supplier is liable for, and shall indemnify Operator against, any claim that a Product caused bodily injury, except to the extent that Operator's mishandling of the Product caused the injury.",
+      "why_correct": "*is liable* is an adjective after *is*, a house exception to the active-voice rule."
+    }
+  ],
+  "notes": "Issue 3 sits inside a Word table cell (row 1, column 1 of the only table); the quote and the anchor are both the exact text of that header cell (the other header cells read \"Supplier's Share\" and \"Operator's Share\"). Formatting is compliant: Aptos 12 everywhere, including table cells; left-aligned; no underlining. The table's tiers are drafted without gaps (\"$20,000 or less\" / \"More than $20,000 but not more than $45,000\" / \"More than $45,000\"). Mall Landlord is a nonparty and is never the subject of *shall*."
+}

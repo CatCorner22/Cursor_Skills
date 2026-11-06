@@ -1,0 +1,180 @@
+{
+  "id": "c32-purchase-terms",
+  "file": "contracts/c32-purchase-terms.docx",
+  "title": "Standard Purchase Terms",
+  "tier": "obvious",
+  "whose_draft": "unknown",
+  "issues": [
+    {
+      "n": 1,
+      "type": "doublet",
+      "anchor": "These terms and conditions",
+      "quote": "These terms and conditions (the \"Terms\") govern each purchase order (a \"Purchase Order\") that Saltmarsh Provisions Co., a Virginia corporation (\"Buyer\"), issues to a supplier (\"Seller\").",
+      "severity": 3,
+      "why": "\"Terms and conditions\" is a doublet.",
+      "fix": "These terms (the \"Terms\") govern each purchase order ..."
+    },
+    {
+      "n": 2,
+      "type": "enumeration",
+      "anchor": "1. Acceptance.",
+      "quote": "1. Acceptance.",
+      "severity": 2,
+      "why": "Sections are numbered 1. to 9. (typed); house rule 3 starts a contract without articles at A.",
+      "fix": "Renumber the sections A. to I."
+    },
+    {
+      "n": 3,
+      "type": "attachment-language",
+      "anchor": "attached hereto",
+      "quote": "The prices for the Goods are the prices in the price schedule attached hereto as Exhibit A.",
+      "severity": 2,
+      "why": "House rule 6 bans \"attached hereto.\"",
+      "fix": "the prices in Schedule A"
+    },
+    {
+      "n": 4,
+      "type": "attachment-label",
+      "anchor": "as Exhibit A",
+      "quote": "The prices for the Goods are the prices in the price schedule attached hereto as Exhibit A.",
+      "severity": 2,
+      "why": "Lettered exhibit; house rule 6 gives exhibits numbers and schedules letters.",
+      "fix": "Schedule A (see issue on classification: a price list belongs in a schedule)."
+    },
+    {
+      "n": 5,
+      "type": "attachment-classification",
+      "anchor": "EXHIBIT A – PRICE SCHEDULE",
+      "quote": "EXHIBIT A – PRICE SCHEDULE",
+      "severity": 2,
+      "why": "A price list is information that the body refers to, so it belongs in a schedule, not an exhibit (house rule 6).",
+      "fix": "Retitle it \"SCHEDULE A – PRICES\" and refer to \"Schedule A\" in the section titled \"Prices.\""
+    },
+    {
+      "n": 6,
+      "type": "category-must",
+      "anchor": "Seller must notify Buyer",
+      "quote": "Seller must notify Buyer no later than 2 days after Seller learns of any expected delay.",
+      "severity": 2,
+      "why": "\"Must\" used for a duty on a party; use \"shall.\"",
+      "fix": "Seller shall notify Buyer no later than 2 days after Seller learns of any expected delay."
+    },
+    {
+      "n": 7,
+      "type": "category-shall",
+      "anchor": "Buyer shall have the right to inspect",
+      "quote": "Buyer shall have the right to inspect the Goods and to reject any nonconforming Goods no later than 30 days after delivery.",
+      "severity": 2,
+      "why": "\"Shall have the right to\" uses \"shall\" for discretion.",
+      "fix": "Buyer may inspect the Goods and may reject any nonconforming Goods no later than 30 days after delivery."
+    },
+    {
+      "n": 8,
+      "type": "passive-voice",
+      "anchor": "Payment shall be made",
+      "quote": "Payment shall be made within sixty (60) days of Buyer's receipt of a correct invoice.",
+      "severity": 2,
+      "why": "Passive hides the actor (Buyer).",
+      "fix": "Buyer shall pay each correct invoice no later than 60 days after Buyer receives it."
+    },
+    {
+      "n": 9,
+      "type": "number-words",
+      "anchor": "sixty (60) days",
+      "quote": "Payment shall be made within sixty (60) days of Buyer's receipt of a correct invoice.",
+      "severity": 2,
+      "why": "House rule 2: digits only, never words with digits.",
+      "fix": "60 days"
+    },
+    {
+      "n": 10,
+      "type": "time-ambiguity",
+      "anchor": "days of Buyer's receipt",
+      "quote": "Payment shall be made within sixty (60) days of Buyer's receipt of a correct invoice.",
+      "severity": 2,
+      "why": "\"Within ... days of\" doesn't say whether the period runs before or after receipt.",
+      "fix": "no later than 60 days after Buyer receives a correct invoice"
+    },
+    {
+      "n": 11,
+      "type": "doublet",
+      "anchor": "including but not limited to",
+      "quote": "Seller warrants that the Goods will conform to the specifications in the Purchase Order, will be free from defects in material and workmanship, and will comply with all applicable laws, including but not limited to the Federal Food, Drug, and Cosmetic Act and the food-contact regulations of the U.S. Food and Drug Administration.",
+      "severity": 3,
+      "why": "\"Including but not limited to\" where \"including\" suffices.",
+      "fix": "all applicable laws, including the Federal Food, Drug, and Cosmetic Act ..."
+    },
+    {
+      "n": 12,
+      "type": "cross-reference-number",
+      "anchor": "under Section 6",
+      "quote": "Seller's warranty under Section 6 survives Buyer's inspection, acceptance, and payment.",
+      "severity": 2,
+      "why": "House rule 4: internal cross-reference by number.",
+      "fix": "Seller's warranty under the section titled \"Warranty\" survives ..."
+    },
+    {
+      "n": 13,
+      "type": "category-shall",
+      "anchor": "These Terms shall be governed by",
+      "quote": "These Terms shall be governed by the laws of the Commonwealth of Virginia.",
+      "severity": 2,
+      "why": "No duty; language of policy.",
+      "fix": "Virginia law governs these Terms."
+    },
+    {
+      "n": 14,
+      "type": "archaic",
+      "anchor": "provided herein",
+      "quote": "Except as otherwise provided herein, Seller may not assign any Purchase Order without Buyer's written consent.",
+      "severity": 3,
+      "why": "\"Except as otherwise provided herein\": here-word, and nothing else in the Terms addresses assignment, so the phrase does no work.",
+      "fix": "Delete \"Except as otherwise provided herein,\"."
+    },
+    {
+      "n": 15,
+      "type": "may-not",
+      "anchor": "Seller may not assign",
+      "quote": "Except as otherwise provided herein, Seller may not assign any Purchase Order without Buyer's written consent.",
+      "severity": 3,
+      "why": "\"May not\" with an affirmative party subject for a prohibition; MSCD 3.307 uses \"shall not.\"",
+      "fix": "Seller shall not assign any Purchase Order without Buyer's written consent."
+    },
+    {
+      "n": 16,
+      "type": "date-format",
+      "anchor": "1 June 2027",
+      "quote": "1 June 2027",
+      "severity": 2,
+      "why": "Day-month-year date in the price table (Effective Date cell, item 00417); house rule 7 requires U.S. order. The other rows say \"June 1, 2027\".",
+      "fix": "June 1, 2027"
+    },
+    {
+      "n": 17,
+      "type": "number-words",
+      "anchor": "five hundred (500)",
+      "quote": "Case of five hundred (500)",
+      "severity": 2,
+      "why": "Number in words with digits inside the price table (Unit of Sale cell, item 00532); house rule 2.",
+      "fix": "Case of 500"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Buyer is not required to accept",
+      "quote": "Buyer is not required to accept partial shipments or early deliveries.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "Section 8.2-725 of the Code of Virginia",
+      "quote": "Any action for breach of a Purchase Order is subject to the limitations period in Section 8.2-725 of the Code of Virginia.",
+      "why_correct": "Statute reference (Virginia UCC limitations period), not an internal cross-reference, though \"8.2\" looks like MSCD numbering."
+    },
+    {
+      "anchor": "first-class mail",
+      "quote": "Seller shall send any notice to Buyer by first-class mail to Buyer's distribution center or by email to purchasing@saltmarshprovisions.example.",
+      "why_correct": "Fixed term keeps its word (house rule 2)."
+    }
+  ],
+  "notes": "Issues 16 and 17 sit inside table cells of the price table. Unit prices such as \"$18.75\" have real cents and are correct. Item numbers such as \"00417\" are zero-padded identifiers and are correct as text. Header (\"Saltmarsh Provisions Co. – Purchasing Department\") and footer (\"Form TP-PO-7\") are clean. Font is Aptos 12, left-aligned. Issues 3, 4, and 5 share 1 fix: \"the prices in Schedule A\" plus retitling the attachment \"SCHEDULE A – PRICES\". Issues 8, 9, and 10 share 1 fix sentence."
+}

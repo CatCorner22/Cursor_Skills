@@ -154,7 +154,18 @@
   "lint": {
     "suppress": {
       "R-5.78-no-emphasis-attachment-refs": "(?:Schedule [A-Z]|Exhibit \\d+)\\b",
-      "R-17.29-initial-capitals": "(?:Schedule [A-Z]|Exhibit \\d+)\\b"
+      "R-17.29-initial-capitals": "(?:Schedule [A-Z]|Exhibit \\d+)\\b",
+      "R-10.13-no-numerical-dates": "\\d+(?:\\.\\d+)*-\\d+",
+      "R-14.75-range-gaps-overlaps": "\\d+(?:\\.\\d+)*-\\d+|\\d+\\.\\d+\\s+to\\s+\\d+\\.\\d+",
+      "R-1.65-wholly": "wholly[- ]owned",
+      "R-10.11-no-this-day-of": "the\\s+(?:\\d+(?:st|nd|rd|th)|last|first)\\s+(?:Business\\s+|business\\s+)?day\\s+of\\s+(?:each|every|the|any|a)\\b",
+      "R-7.12-lexical-ambiguity": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
+      "R-7.46-vagueness-def": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
+      "R-9.1-material-usage": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
+      "R-9.3-material-ambiguous": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
+      "R-9.33-location-suggests-meaning": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
+      "R-9.51-omit-material": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
+      "R-10.65-minimum-notice-ambiguity": "at\\s+least\\s+(?:\\$|\\d[\\d,]*(?:\\.\\d+)?\\s*(?:%|percent|hours|years|months|units|feet|square))"
     },
     "broad_only": [
       "R-3.89-shall-duty",

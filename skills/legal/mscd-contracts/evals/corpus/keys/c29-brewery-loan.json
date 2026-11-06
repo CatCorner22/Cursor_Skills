@@ -1,0 +1,176 @@
+{
+  "id": "c29-brewery-loan",
+  "file": "contracts/c29-brewery-loan.md",
+  "title": "Loan and Security Agreement",
+  "tier": "obvious",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "archaic",
+      "anchor": "The parties hereto agree",
+      "quote": "The parties hereto agree as follows:",
+      "severity": 3,
+      "why": "\"Hereto\" is a here-word.",
+      "fix": "The parties agree as follows:"
+    },
+    {
+      "n": 2,
+      "type": "defined-term",
+      "anchor": "shall mean all of Borrower's",
+      "quote": "1. \"**Collateral**\" shall mean all of Borrower's brewing equipment, fermentation tanks, canning line, and replacement parts, and all proceeds of that property.",
+      "severity": 3,
+      "why": "Definition uses \"shall mean\"; the other definitions use \"means.\"",
+      "fix": "\"Collateral\" means all of Borrower's brewing equipment, ..."
+    },
+    {
+      "n": 3,
+      "type": "money",
+      "anchor": "lend Borrower $850,000.00",
+      "quote": "Lender shall lend Borrower $850,000.00 on the date of this agreement.",
+      "severity": 3,
+      "why": "\"$850,000.00\" shows cents when no amount in the agreement has cents (the other amounts are \"$16,933\" and so on).",
+      "fix": "Lender shall lend Borrower $850,000 on the date of this agreement."
+    },
+    {
+      "n": 4,
+      "type": "category-shall",
+      "anchor": "Interest shall accrue",
+      "quote": "Interest shall accrue on the unpaid principal of the Loan at a fixed rate of 7.25% per year.",
+      "severity": 2,
+      "why": "No party has a duty to make interest accrue; language of policy.",
+      "fix": "Interest accrues on the unpaid principal of the Loan at a fixed rate of 7.25% per year."
+    },
+    {
+      "n": 5,
+      "type": "ordinal",
+      "anchor": "the first day of each calendar month",
+      "quote": "Borrower shall pay Lender monthly installments of principal and interest of $16,933 on the first day of each calendar month, starting June 1, 2027, and shall pay all unpaid principal and accrued interest on the Maturity Date.",
+      "severity": 2,
+      "why": "House rule 2: ordinals in digits.",
+      "fix": "on the 1st day of each calendar month"
+    },
+    {
+      "n": 6,
+      "type": "provided-that",
+      "anchor": "provided that Borrower gives",
+      "quote": "Borrower may prepay the Loan in whole or in part at any time, provided that Borrower gives Lender at least 10 days' notice and pays Lender a prepayment fee equal to 2% of the principal that Borrower prepays.",
+      "severity": 2,
+      "why": "Proviso used to state conditions on the right to prepay.",
+      "fix": "Borrower may prepay the Loan in whole or in part at any time if Borrower gives Lender at least 10 days' notice and pays Lender a prepayment fee equal to 2% of the principal that Borrower prepays."
+    },
+    {
+      "n": 7,
+      "type": "passive-voice",
+      "anchor": "The Loan shall be secured by",
+      "quote": "The Loan shall be secured by a security interest in the Collateral.",
+      "severity": 2,
+      "why": "Passive hides the actor: nothing says Borrower grants the security interest, which a security agreement needs (UCC 9-203 attachment).",
+      "fix": "To secure the Loan, Borrower grants Lender a security interest in the Collateral."
+    },
+    {
+      "n": 8,
+      "type": "represents-warrants",
+      "anchor": "Borrower represents and warrants",
+      "quote": "Borrower represents and warrants to Lender that:",
+      "severity": 2,
+      "why": "Blake's own draft: house rule 10 uses \"states\" for statements of fact.",
+      "fix": "Borrower states to Lender that:"
+    },
+    {
+      "n": 9,
+      "type": "and-or",
+      "anchor": "transfer, and/or encumber",
+      "quote": "3. Borrower shall not sell, lease, transfer, and/or encumber any of the Collateral without Lender's written consent.",
+      "severity": 1,
+      "why": "\"And/or\" after a list of 4 verbs in a prohibition: unclear whether the ban reaches each act alone or only combinations.",
+      "fix": "Borrower shall not sell, lease, transfer, or encumber any of the Collateral without Lender's written consent."
+    },
+    {
+      "n": 10,
+      "type": "doublet",
+      "anchor": "null and void",
+      "quote": "Any transfer in violation of this subsection is null and void.",
+      "severity": 3,
+      "why": "Doublet; \"void\" suffices (and \"is void\" is a house-approved adjective after \"is\").",
+      "fix": "Any transfer in violation of this subsection is void."
+    },
+    {
+      "n": 11,
+      "type": "number-words",
+      "anchor": "thirty (30) days",
+      "quote": "1. Any amount under this agreement remains unpaid thirty (30) days after its due date.",
+      "severity": 2,
+      "why": "House rule 2: digits only, never words with digits.",
+      "fix": "30 days"
+    },
+    {
+      "n": 12,
+      "type": "cross-reference-number",
+      "anchor": "covenant in section H",
+      "quote": "2. Borrower breaches any covenant in section H and does not cure the breach no later than 15 days after Borrower receives notice of the breach from Lender.",
+      "severity": 2,
+      "why": "House rule 4: refer by heading, not by letter.",
+      "fix": "Borrower breaches any covenant in the section titled \"Covenants\" ..."
+    },
+    {
+      "n": 13,
+      "type": "provided-that",
+      "anchor": "provided, however, that Lender",
+      "quote": "If an Event of Default occurs, Lender may declare the Loan immediately due and may exercise the rights of a secured party under Article 9 of the Colorado Uniform Commercial Code, provided, however, that Lender shall give Borrower at least 10 days' notice before any sale of the Collateral.",
+      "severity": 2,
+      "why": "Proviso used to impose a duty.",
+      "fix": "New sentence: \"Lender shall give Borrower at least 10 days' notice before any sale of the Collateral.\""
+    },
+    {
+      "n": 14,
+      "type": "sole-discretion",
+      "anchor": "in its sole discretion",
+      "quote": "Lender may, in its sole discretion, waive any Event of Default.",
+      "severity": 3,
+      "why": "\"In its sole discretion\" with \"may\" adds nothing (MSCD 3.249).",
+      "fix": "Lender may waive any Event of Default."
+    },
+    {
+      "n": 15,
+      "type": "category-shall",
+      "anchor": "shall be entitled to recover",
+      "quote": "Lender shall be entitled to recover from Borrower the reasonable attorneys' fees that Lender incurs in enforcing this agreement.",
+      "severity": 2,
+      "why": "\"Shall be entitled to\" uses \"shall\" where no duty falls on Lender, and it hides Borrower's duty to pay.",
+      "fix": "Borrower shall pay Lender the reasonable attorneys' fees that Lender incurs in enforcing this agreement."
+    },
+    {
+      "n": 16,
+      "type": "spacing",
+      "anchor": "sign. Each notice",
+      "quote": "The parties may amend this agreement only by a writing that both parties sign. Each notice under this agreement must be in writing and is effective when the recipient receives it.",
+      "severity": 3,
+      "why": "1 space between sentences; house rule 5 requires 2.",
+      "fix": "sign.  Each notice"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "I. **Events of Default.**",
+      "quote": "I. **Events of Default.**",
+      "why_correct": "Section I. correctly follows H.; the house scheme uses every letter, I included."
+    },
+    {
+      "anchor": "B. **Loan.**  Lender shall lend",
+      "quote": "B. **Loan.**  Lender shall lend Borrower $850,000.00 on the date of this agreement.",
+      "why_correct": "Correct house section line: letter, period, bold heading, period, 2 spaces, text."
+    },
+    {
+      "anchor": "Section 4-9-509 of the Colorado Revised Statutes",
+      "quote": "Borrower authorizes Lender to file financing statements describing the Collateral, as Section 4-9-509 of the Colorado Revised Statutes permits.",
+      "why_correct": "Statute reference, not an internal cross-reference."
+    },
+    {
+      "anchor": "Article 9 of the Colorado Uniform Commercial Code",
+      "quote": "If an Event of Default occurs, Lender may declare the Loan immediately due and may exercise the rights of a secured party under Article 9 of the Colorado Uniform Commercial Code, provided, however, that Lender shall give Borrower at least 10 days' notice before any sale of the Collateral.",
+      "why_correct": "Statute reference (\"Article 9\" of the UCC), not an internal cross-reference."
+    }
+  ],
+  "notes": "Blake's draft, so house rule 10 applies (\"states\"). The 3 numbered definitions and the lists use house enumeration correctly (sections A. to K., subsections 1.). Parties are defined without articles and bolded, which is correct. \"Each notice under this agreement must be in writing\" uses \"must\" with a nonparty subject, which is correct."
+}
