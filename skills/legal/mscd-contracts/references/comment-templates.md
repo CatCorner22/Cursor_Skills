@@ -28,7 +28,7 @@ One or two sentences; no rule labels; no lecture; never "you should." Use the su
 - External: `Suggest "Neither party may assign," so the sentence prohibits assignment rather than stating that neither party has a duty to assign (MSCD 3.324).`
 
 **should (3.360)**
-- Internal: `[Sev 1 · Usage · MSCD 3.360] "If Acme should exercise the Option" — should adds only tentativeness to a condition. Fix: "If Acme exercises the Option". Why: a conditional clause states a future event in the simple present; the modal adds nothing but doubt.`
+- Internal: `[Sev 3 · Usage · MSCD 3.358-3.360] "If Acme should exercise the Option" — should adds only tentativeness to a condition. Fix: "If Acme exercises the Option". Why: a conditional clause states a future event in the simple present; the modal adds nothing but doubt.`
 
 **Passive voice (house rule)**
 - Internal: `[Sev 2 · House rule: active voice; MSCD 3.15] "The Shares will be issued at Closing" — the sentence hides who issues them. Fix: "Acme shall issue the Shares at Closing". Why: in the passive the actor drops out; naming Acme as subject also lets the verb carry the category (shall = Acme has a duty to).`
@@ -43,7 +43,7 @@ One or two sentences; no rule labels; no lecture; never "you should." Use the su
 - External: `To make clear that the choice of verb doesn't limit remedies, suggest adding: "The verb that this agreement uses to introduce a statement of fact does not affect the remedies available for inaccuracy of that statement of fact." (MSCD 3.459-3.463)`
 
 **Repeated change**
-- `[Sev 3 · House rule: digits] Changed 14 spelled-out numbers to digits: sections titled "Term", "Payment", "Notices" ... (1 comment covers all).`
+- `[Sev 2 · House rule: digits] Changed 14 spelled-out numbers to digits: sections titled "Term", "Payment", "Notices" ... (1 comment covers all).`
 
 ## Review report (Review mode)
 

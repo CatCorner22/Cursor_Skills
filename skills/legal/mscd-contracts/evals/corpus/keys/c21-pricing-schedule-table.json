@@ -1,0 +1,122 @@
+{
+  "id": "c21-pricing-schedule-table",
+  "file": "contracts/c21-pricing-schedule-table.docx",
+  "title": "Master Purchase Agreement",
+  "tier": "mixed",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "category-will",
+      "anchor": "Seller will ship",
+      "quote": "Seller will ship each order no later than 10 days after receiving Buyer's purchase order.",
+      "severity": 2,
+      "why": "\"will\" used to impose a duty on a party.",
+      "fix": "Seller shall ship each order ..."
+    },
+    {
+      "n": 2,
+      "type": "time-ambiguity",
+      "anchor": "within 10 days of delivery",
+      "quote": "Buyer may reject nonconforming Products within 10 days of delivery.",
+      "severity": 2,
+      "why": "\"within 10 days of\" can mean before or after.",
+      "fix": "no later than 10 days after delivery"
+    },
+    {
+      "n": 3,
+      "type": "defined-term",
+      "anchor": "any rejected products",
+      "quote": "Seller shall replace any rejected products at Seller's expense no later than 15 days after Buyer rejects them.",
+      "severity": 2,
+      "why": "Lowercase use of the defined term \"Products\".",
+      "fix": "any rejected Products"
+    },
+    {
+      "n": 4,
+      "type": "arising-out-of",
+      "anchor": "arising out of or relating to",
+      "quote": "Seller shall indemnify Buyer against third-party claims arising out of or relating to defects in the Products.",
+      "severity": 2,
+      "why": "\"arising out of or relating to\" (MSCD 13.41-13.54).",
+      "fix": "arising out of defects in the Products"
+    },
+    {
+      "n": 5,
+      "type": "throat-clearing",
+      "anchor": "It is expressly understood",
+      "quote": "It is expressly understood that Seller is not Buyer's exclusive supplier.",
+      "severity": 3,
+      "why": "Throat-clearing.",
+      "fix": "Seller is not Buyer's exclusive supplier."
+    },
+    {
+      "n": 6,
+      "type": "attachment-classification",
+      "anchor": "SCHEDULE B",
+      "quote": "SCHEDULE B",
+      "severity": 2,
+      "why": "A form of certificate is a stand-alone document, so it belongs in an exhibit, not a schedule.",
+      "fix": "Make it Exhibit 2 (Form of Quality Certificate), after Exhibit 1."
+    },
+    {
+      "n": 7,
+      "type": "passive-voice",
+      "anchor": "Price shall be adjusted annually",
+      "quote": "Price shall be adjusted annually under Section 4.3",
+      "severity": 2,
+      "why": "Table cell: passive hides who adjusts the price (and how); also \"shall\" with no duty.",
+      "fix": "Seller may adjust this price once each year by notice to Buyer, by no more than [x]%."
+    },
+    {
+      "n": 8,
+      "type": "cross-reference-number",
+      "anchor": "under Section 4.3",
+      "quote": "Price shall be adjusted annually under Section 4.3",
+      "severity": 1,
+      "why": "Table cell: numbered cross-reference, and it points to nothing (the agreement has no Section 4.3).",
+      "fix": "Refer by heading to a real provision, or state the adjustment rule in the cell."
+    },
+    {
+      "n": 9,
+      "type": "conflict",
+      "anchor": "net 30 days after invoice date",
+      "quote": "Payment due net 30 days after invoice date",
+      "severity": 1,
+      "why": "Table cell: payment due 30 days after the invoice date conflicts with B.2 (\"no later than 45 days after receiving it\").",
+      "fix": "Reconcile: delete the cell term or conform it to B.2."
+    },
+    {
+      "n": 10,
+      "type": "number-words",
+      "anchor": "ten (10) boxes",
+      "quote": "Volume discount of 5% on orders of ten (10) boxes or more",
+      "severity": 3,
+      "why": "Table cell: words with digits.",
+      "fix": "10 boxes or more"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "represents and warrants",
+      "quote": "Seller represents and warrants that the Products will be free from defects in materials and workmanship for 12 months after delivery.",
+      "why_correct": "Other side's draft: house rule 10 says keep \"represents and warrants\". A comment suggesting the remedies-neutral \"states\" is fine; flagging it as an error or rewriting it is a false positive."
+    },
+    {
+      "anchor": "is not required to accept",
+      "quote": "Seller is not required to accept any purchase order for more than 2,000 cases in any calendar month.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "Section 355.2-207 of the Kentucky Revised Statutes",
+      "quote": "If a purchase order conflicts with this Agreement, this Agreement controls, despite Section 355.2-207 of the Kentucky Revised Statutes.",
+      "why_correct": "Statute reference (Kentucky's UCC 2-207); fine."
+    },
+    {
+      "anchor": "in the form of Exhibit 1",
+      "quote": "Buyer shall order Products by submitting a purchase order in the form of Exhibit 1.",
+      "why_correct": "Correct label and classification: a form of purchase order is an exhibit, numbered."
+    }
+  ],
+  "notes": "Other side's draft. 4 issues are inside the Schedule A table cells (passive-voice, cross-reference-number, conflict, number-words). Item numbers 0410, 0415, 0522, 0530 are zero-padded text and correct. Schedule A is correctly a schedule; Schedule B (a form) is the misclassified attachment. Party names have no article."
+}

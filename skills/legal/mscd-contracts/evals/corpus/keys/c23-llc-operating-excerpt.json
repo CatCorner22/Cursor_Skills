@@ -1,0 +1,82 @@
+{
+  "id": "c23-llc-operating-excerpt",
+  "file": "contracts/c23-llc-operating-excerpt.md",
+  "title": "Operating Agreement of Saltmarsh Holdings, LLC (Excerpt)",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "conflict",
+      "anchor": "within 20 days after receiving",
+      "quote": "If neither Company nor any other Member exercises the right of first refusal within 20 days after receiving the Offer Notice, the Offering Member may sell the offered Units to the proposed buyer at a price no lower than the price in the Offer Notice.",
+      "severity": 1,
+      "why": "II.B.3 lets the Offering Member sell if no one exercises within 20 days, but II.B.2 gives the others 30 days to exercise.",
+      "fix": "Use 1 period in both places (for example, 30 days)."
+    },
+    {
+      "n": 2,
+      "type": "nonparty-obligation",
+      "anchor": "Each transferee shall sign",
+      "quote": "Each transferee shall sign a joinder to this agreement before the transfer takes effect.",
+      "severity": 2,
+      "why": "\"shall\" with a nonparty subject; a transferee hasn't signed this agreement.",
+      "fix": "A transfer takes effect only when the transferee signs a joinder to this agreement (or: the transferee must sign a joinder before ...)."
+    },
+    {
+      "n": 3,
+      "type": "vagueness",
+      "anchor": "substantial capital improvements",
+      "quote": "Company may require the Members to make Capital Contributions by giving them a written notice (each, a \"Capital Call\"), but only to fund operating shortfalls or substantial capital improvements, and Capital Calls may not exceed $250,000 in any fiscal year.",
+      "severity": 2,
+      "why": "Undefined \"substantial\" controls when Company may call capital.",
+      "fix": "State a measure, for example capital improvements costing more than $50,000, or define the term."
+    },
+    {
+      "n": 4,
+      "type": "scope-ambiguity",
+      "anchor": "may not exceed $250,000",
+      "quote": "Company may require the Members to make Capital Contributions by giving them a written notice (each, a \"Capital Call\"), but only to fund operating shortfalls or substantial capital improvements, and Capital Calls may not exceed $250,000 in any fiscal year.",
+      "severity": 1,
+      "why": "Unclear whether $250,000 caps each Member's contribution, each Capital Call, or all Capital Calls in the aggregate in a fiscal year.",
+      "fix": "The Capital Calls in any fiscal year may not exceed $250,000 in the aggregate."
+    },
+    {
+      "n": 5,
+      "type": "referential-ambiguity",
+      "anchor": "1 of its Units",
+      "quote": "If a Member fails to contribute the amount that a Capital Call requires of that Member, any other Member may contribute the shortfall, and Company shall then cancel 1 of its Units for each $1,000 of the shortfall and issue 1 Unit to the contributing Member for each $1,000 that the contributing Member contributes.",
+      "severity": 1,
+      "why": "\"its\" can refer to the defaulting Member or to the contributing Member (\"any other Member\" is the nearer antecedent).",
+      "fix": "Company shall then cancel 1 of the defaulting Member's Units for each $1,000 of the shortfall ..."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "a right of first refusal to buy",
+      "quote": "Company and the other Members have a right of first refusal to buy the offered Units at the price in the Offer Notice.",
+      "why_correct": "Fixed term; keep the word \"first\" (house rule 2)."
+    },
+    {
+      "anchor": "notice to the Offering Member",
+      "quote": "Company or any other Member may exercise that right by notice to the Offering Member no later than 30 days after receiving the Offer Notice.",
+      "why_correct": "Role label keeps \"the\" (house rule 11)."
+    },
+    {
+      "anchor": "Section 1.704-1(b)(2)(iv) of the Treasury Regulations",
+      "quote": "Company shall maintain a capital account for each Member under Section 1.704-1(b)(2)(iv) of the Treasury Regulations.",
+      "why_correct": "Regulation reference; fine."
+    },
+    {
+      "anchor": "First Citizens Bank",
+      "quote": "Company shall deposit each Capital Contribution in Company's operating account at First Citizens Bank.",
+      "why_correct": "Real bank name; the number word is part of a proper name."
+    },
+    {
+      "anchor": "is not required to make",
+      "quote": "A Member is not required to make any Capital Contribution except under this article.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    }
+  ],
+  "notes": "Blake's draft, otherwise clean: I./A./1. enumeration with no only children, cross-references by \"this article\", no party articles. \"If neither Company nor any other Member exercises\" is a negative subject without \"shall\" in a present-tense condition, which is correct. The bracketed omission note is editorial."
+}

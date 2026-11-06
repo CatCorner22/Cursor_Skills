@@ -17,6 +17,8 @@ Apply these rules to everything the skill writes: redlines, comments, drafts, an
 10. Other settled choices
 11. Party names: no article
 
+**Severity of a house-rule finding.** Rule 8 (*shall* with a negative subject) and an undefined or 2-form defined term are severity 1. Typography (rules 5 and 9: spacing, font, size, alignment, underlining, bold definitions) and reduced passives (rule 1) are severity 3. Every other house rule is severity 2. A finding under an MSCD rule that the house style doesn't change takes the severity in its rule record.
+
 ## 1. Active voice only
 
 **Rule.** Every sentence and every clause uses the active voice. Supersedes the MSCD allowances for the passive (3.23-3.26, 3.339-3.340, 13.209, 18.12, and the ✓✓ passive examples in Figure 1 and Table 1).
@@ -119,7 +121,7 @@ Blake reports that Tina Stark has described litigation in which *neither party s
 | Articles with party names | No article: *Company*, *Buyer*, *Apple* (section 11) | Differs (2.105; 6.63) |
 | Singular *they* | Use it | Optional under 17.15-17.16 |
 | *knows or should have known* | Flag it every time; don't rewrite it. Changing the words can change the legal knowledge standard. Offer a defined *Knowledge* term (MSCD 13.506: whose knowledge counts, and actual knowledge or knowledge after inquiry) for Blake's decision | Agrees (13.506) |
-| Wording a statute or rule requires | Keep it, even where a house rule would change it, and flag it | Agrees (16.24-16.31) |
+| Wording a statute or rule requires | Keep it, even where a house rule would change it, and flag it. Examples: a UCC disclaimer naming MERCHANTABILITY in capitals; *promises to pay to the order of* in a negotiable note; *work made for hire* | Agrees (16.24-16.31) |
 | The remedies-neutral sentence | In the active: *The verb that this agreement uses to introduce a statement of fact does not affect the remedies available for inaccuracy of that statement of fact.* | Recast of 3.463 (house rule 1) |
 | Tracked-change author | *Blake's AI Agent* | n/a |
 | Adams's floated proposals | Note only | n/a |

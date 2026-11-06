@@ -65,23 +65,23 @@ Then read the whole document before changing anything: the meaning of one provis
 
 Run these passes in order; later passes use what earlier ones learn.
 
-0. **Lint.** Run `python3 scripts/mscd_lint.py <file> --inventory --json findings.json`. It reads .docx, .txt and .md: save pasted text to a .txt file first, and extract a PDF's text to .txt (a .docx with tracked changes is read as if they were accepted, and the report says so). It reports *candidates* in 2 groups: direct findings (house rules, word checks, the defined-term inventory), which are usually right, and rule triggers, which point you at sentences to check in passes 3 to 9 and are often not problems in a clean draft. Broad triggers (every *shall*, every *may*) appear once as counts. Confirm or reject each candidate in context; the script can't read meaning. On a traditional template expect hundreds of candidates, most of them real.
+0. **Lint.** Run `python3 scripts/mscd_lint.py <file> --inventory --json lint.json`, adding `--whose blake` or `--whose other-side` when you know whose draft it is. It reads .docx, .txt and .md: save pasted text to a .txt file first, and extract a PDF's text to .txt (a .docx with tracked changes is read as if they were accepted, and the report says so). It reports *candidates* in 2 groups: direct findings (house rules, MSCD's signature phrases such as *and/or*, *best efforts*, *within 30 days of*, the outline and the defined-term inventory), which are usually right and carry their fix, and rule triggers, which point you at sentences to check in passes 3 to 9 and are often not problems in a clean draft. Broad triggers (every *shall*, every *may*) appear once as counts. Confirm or reject each candidate in context; the script can't read meaning. On a traditional template expect hundreds of candidates, most of them real.
 1. **Structure.** Front of the contract, body, back, attachments; enumeration in the house scheme; headings; cross-references (house rule: avoid them, refer by heading). `structure.md`, `attachments.md`.
-2. **Defined terms.** From the inventory: terms defined twice, unused, undefined, used in two forms, stuffed with obligations, defined with *shall mean*; party names take no article (house rule 11). `defined-terms.md`.
+2. **Defined terms.** From the inventory: terms defined twice, unused, undefined, used in two forms, stuffed with obligations, defined with *shall mean*; *this Agreement* defined as a term (2.123); party names take no article (house rule 11). `defined-terms.md`.
 3. **Categories, sentence by sentence.** Assign every sentence in the body a category of contract language and check its verb (`verbs.md`): the *has a duty* test on every *shall*; *must* only for a duty on someone other than the subject; *may* only for discretion; never *shall* with a negative subject; active voice in every clause.
 4. **Ambiguity.** Check every sentence against every cause in `ambiguity-catalog.md`, including the riders (right-node-raising pivot ambiguity; *each* or *in the aggregate*; the specific versus the general). For each ambiguity, write down each meaning before you propose a fix.
 5. **Vagueness.** Flag each vague standard and classify it: keep on purpose, replace, or ask (`vagueness.md`).
 6. **Words to avoid.** Every hit in `words-to-avoid.md`, judged in context.
 7. **Time, numbers, money.** `time-and-numbers.md`; house rules: digits for every number, January 1, 2027.
 8. **Consistency.** One word for one meaning across the whole document, attachments included (1.57-1.60).
-9. **Standard English and typography.** `standard-english.md`; house rules: two spaces between sentences, one after a colon, 12-point Aptos, ragged right, clean visual lines.
+9. **Standard English and typography.** `standard-english.md`; house rules: two spaces between sentences, one after a colon, 12-point Aptos, ragged right, clean visual lines. The front: title centered in capitals (2.2), party names in capitals in the introductory clause (2.51), the lead-in *The parties agree as follows:* (2.159), defined terms in bold where defined (2.92). A .txt file carries no font, alignment or bold, and a .md file carries only bold (`**...**`): say once in the report which typography wasn't checked, and don't guess. Leave *date* and *day* alone unless one causes confusion (10.16). MSCD lets you omit the concluding clause (5.5), so a contract without one has no problem to report.
 
 Record each finding in this form (it feeds every mode):
 
 | Field | Content |
 |---|---|
 | Location | The section's heading (and number if the document has one) and the quoted words |
-| Kind and severity | 1 must fix (ambiguity, or a category or usage error that can change meaning); 2 should fix (vagueness, dispute risk, house rules); 3 style |
+| Kind and severity | 1 must fix (ambiguity, or a category or usage error that can change meaning); 2 should fix (vagueness, dispute risk); 3 style. A finding under a house rule takes the house severity: 1 for *shall* with a negative subject and for an undefined or 2-form defined term; 3 for typography (spacing, font, size, alignment, underlining, bold definitions) and reduced passives; 2 for every other house rule (house-style.md). Any other finding takes the severity in its rule record (`rules_query.py --id`, which also accepts a paragraph number, such as `--id 3.358`). The lint applies the same policy, so its severities match |
 | Meanings | For an ambiguity, each possible meaning in plain words |
 | Fix | The replacement wording, in house style |
 | Why | The mechanism (grammar, category, or risk) in one or two sentences |
@@ -99,10 +99,10 @@ Write the report in the form in `comment-templates.md`: a short summary, then fi
 3. Make only changes whose meaning is certain. Where a fix needs a choice of meaning or a business term, leave the text, insert a bracketed blank if needed, and add a comment with the options.
 4. Carry each change through: a renamed defined term changes at every use; a moved provision updates every heading reference to it. Keep an old-to-new numbering map when converting to the I., A., 1., (a), (i) scheme, and deliver it with the redline.
 5. Validate: `python <docx-skill>/scripts/office/validate.py out.docx --original in.docx --author "Blake's AI Agent"` must report no untracked changes. Render the result to images and look at it.
-6. Deliver the redline, a clean copy (`<docx-skill>/scripts/accept_changes.py`), and the findings report. Open the clean copy and check it: if the script leaves an empty paragraph or a file that fails validation, build the clean copy by applying the same edits without markup, and confirm its text matches the script's output.
+6. Deliver the redline, a clean copy (`<docx-skill>/scripts/accept_changes.py`), and the findings report. If the file arrived with the other side's tracked changes, the clean copy accepts theirs and yours alike; say so, and list their changes in the report with a recommendation on each. Don't edit inside the other side's insertion when a comment will do; if you must, say in the comment that rejecting their insertion also removes your change. Open the clean copy and check it: if the script leaves an empty paragraph or a file that fails validation, build the clean copy by applying the same edits without markup, and confirm its text matches the script's output.
 
 ### Comment
-Anchor one comment to the exact words of each issue with the docx skill's `scripts/comment.py`, passing `--author "Blake's AI Agent"` (its default author is "Claude"). Use the internal form for Blake and the external form for the other side (`comment-templates.md`). Comments can accompany a redline: put the reason for each tracked change in its comment.
+Anchor one comment to the exact words of each issue with the docx skill's `scripts/comment.py`, passing `--author "Blake's AI Agent"` (its default author is "Claude"). The script writes 1 paragraph per comment; for line breaks inside a comment, pass `--raw` with `<w:br/>` between lines. Use the internal form for Blake and the external form for the other side (`comment-templates.md`). Comments can accompany a redline: put the reason for each tracked change in its comment.
 
 ### Draft
 1. Take in the term sheet, notes or old form. List every deal point you can't find as a question for Blake; never invent a deal term, number, date or party detail.
@@ -122,7 +122,7 @@ Anchor one comment to the exact words of each issue with the docx skill's `scrip
 | The .docx already has tracked changes or comments | Ask whether to accept them first or redline on top. If Blake isn't there, leave them untouched, add your changes on top under your own author name, and say so |
 | A scanned or image-only PDF | Warn that text recognition may misread words; offer a report or a rebuilt .docx, not a redline |
 | A PDF with a text layer, or pasted text, when Blake wants a redline | Rebuild it as a .docx first, say that the redline compares against the rebuilt copy, and keep the original's numbering in the map |
-| A statute or court rule requires specific wording | Keep it; flag it; never remove required capitals or conspicuous text (16.24-16.31) |
+| A statute or court rule requires specific wording | Keep it; flag it; never remove required capitals or conspicuous text (16.24-16.31). Common cases: a UCC disclaimer naming MERCHANTABILITY in capitals; a negotiable note's *promises to pay to the order of* (UCC 3-104); *work made for hire* (17 U.S.C. § 101) |
 | Blake keeps a traditional usage on purpose | Apply MSCD's fallback (for *represents and warrants*, the remedies-neutral sentence, 3.459-3.463) and record the departure |
 | The contract has a headings-for-convenience clause | Always delete or limit it (15.18; house rule 4), with a comment explaining why: under the house rule, references identify provisions by heading |
 | A consumer contract | Confirm with Blake; MSCD covers business contracts only |

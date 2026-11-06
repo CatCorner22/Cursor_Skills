@@ -1,0 +1,82 @@
+{
+  "id": "c24-warranty-disclaimer-sale",
+  "file": "contracts/c24-warranty-disclaimer-sale.docx",
+  "title": "Equipment Purchase Agreement",
+  "tier": "sneaky",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "negative-subject-shall",
+      "anchor": "neither Buyer nor its agents shall",
+      "quote": "Buyer may inspect the Equipment at Seller's plant in Fort Wayne, Indiana, during Seller's business hours, and neither Buyer nor its agents shall disassemble any component of the Equipment without Seller's consent.",
+      "severity": 1,
+      "why": "\"shall\" with a negative subject, hidden mid-sentence; it also tries to bind Buyer's agents, who aren't parties.",
+      "fix": "and Buyer may not disassemble, and shall not permit its agents to disassemble, any component ..."
+    },
+    {
+      "n": 2,
+      "type": "nonparty-obligation",
+      "anchor": "the Rigger shall load",
+      "quote": "Seller shall engage Ironside Rigging, Inc. (the \"Rigger\") to load the Equipment, and the Rigger shall load the Equipment onto Buyer's carrier no later than May 14, 2027.",
+      "severity": 2,
+      "why": "\"shall\" with a nonparty subject; the Rigger doesn't sign.",
+      "fix": "Seller shall engage Ironside Rigging, Inc. (the \"Rigger\") and shall cause the Rigger to load the Equipment onto Buyer's carrier no later than May 14, 2027."
+    },
+    {
+      "n": 3,
+      "type": "vagueness",
+      "anchor": "material damage",
+      "quote": "If the Equipment suffers material damage before the Rigger finishes loading it, Buyer may terminate this agreement by notice to Seller.",
+      "severity": 2,
+      "why": "Undefined \"material\" controls a termination right.",
+      "fix": "State a measure, for example damage that would cost more than $20,000 to repair."
+    },
+    {
+      "n": 4,
+      "type": "syntactic-ambiguity",
+      "anchor": "shows shipping damage within 10 days",
+      "quote": "Buyer may reject the Equipment if the Equipment fails the Acceptance Test or shows shipping damage within 10 days after delivery.",
+      "severity": 1,
+      "why": "\"within 10 days after delivery\" can modify only \"shows shipping damage\" or the whole right to reject (including a failed Acceptance Test).",
+      "fix": "Restructure: Buyer may reject the Equipment by notice to Seller no later than 10 days after delivery if the Equipment fails the Acceptance Test or shows shipping damage."
+    },
+    {
+      "n": 5,
+      "type": "conflict",
+      "anchor": "6-month Spindle Warranty period",
+      "quote": "If the spindle fails during the 6-month Spindle Warranty period, Seller shall repair or replace the spindle at Seller's expense.",
+      "severity": 1,
+      "why": "F.2 refers to a 6-month warranty period; F.1 gives 90 days.",
+      "fix": "Use 1 period in both places."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "IMPLIED WARRANTY OF MERCHANTABILITY",
+      "quote": "EXCEPT FOR THE SPINDLE WARRANTY, SELLER DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE IMPLIED WARRANTY OF MERCHANTABILITY AND THE IMPLIED WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE.",
+      "why_correct": "Statute-required disclaimer wording in conspicuous capitals (UCC 2-316, Indiana Code 26-1-2-316). Settled policy: keep it; a note that it is statute-required is fine, but decapitalizing or rewriting it is wrong."
+    },
+    {
+      "anchor": "Section 26-1-2-316 of the Indiana Code",
+      "quote": "The disclaimer in this section is conspicuous for purposes of Section 26-1-2-316 of the Indiana Code.",
+      "why_correct": "Statute reference; fine."
+    },
+    {
+      "anchor": "The Escrow Agent must release",
+      "quote": "The Escrow Agent must release the deposit to Seller on the Acceptance Date.",
+      "why_correct": "Nonparty subject: \"must\" is correct (MSCD 3.154)."
+    },
+    {
+      "anchor": "9:00 a.m. Eastern time",
+      "quote": "Buyer shall cause its carrier to arrive at Seller's plant no later than 9:00 a.m. Eastern time on May 14, 2027.",
+      "why_correct": "Correct time expression."
+    },
+    {
+      "anchor": "is not required to provide",
+      "quote": "Seller is not required to provide operator training.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    }
+  ],
+  "notes": "Other side's draft. F.1's \"represents and warrants\" is correct to keep under house rule 10 (a comment suggesting \"states\" is acceptable). Otherwise clean: Aptos 12, A./1. enumeration, digits, no party articles, the Escrow Agent and the Rigger keep \"the\" as nonparty labels."
+}

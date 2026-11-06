@@ -1,0 +1,136 @@
+{
+  "id": "c08-commercial-sublease",
+  "file": "contracts/c08-commercial-sublease.docx",
+  "title": "Sublease",
+  "tier": "mixed",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "[format]",
+      "severity": 3,
+      "why": "Body paragraphs are justified (house rule 9). Font and size are compliant (Aptos 12).",
+      "fix": "Left-align every paragraph."
+    },
+    {
+      "n": 2,
+      "type": "attachment-label",
+      "anchor": "Exhibit A is a copy",
+      "quote": "Exhibit A is a copy of the Prime Lease.",
+      "severity": 3,
+      "why": "Lettered exhibit; exhibits take numbers (house rule 6). The exhibit heading \"EXHIBIT A — PRIME LEASE\" has the same problem. Classification is right: the Prime Lease is a stand-alone document.",
+      "fix": "Exhibit 1"
+    },
+    {
+      "n": 3,
+      "type": "defined-term",
+      "anchor": "floor (the \"Premises\")",
+      "quote": "Sublandlord hereby subleases to Subtenant the portion of Suite 1400 that consists of approximately 6,200 rentable square feet on the east side of the floor (the \"Premises\").",
+      "severity": 1,
+      "why": "\"Premises\" is defined twice with different meanings: in the background as all of Suite 1400, and in the section titled \"Sublease and Term\" as the 6,200-square-foot portion.",
+      "fix": "Give the whole suite another name (for example, the \"Prime Premises\") and keep \"Premises\" for the subleased portion."
+    },
+    {
+      "n": 4,
+      "type": "time-ambiguity",
+      "anchor": "runs from March 1, 2027 to",
+      "quote": "The term of this sublease (the \"Sublease Term\") runs from March 1, 2027 to February 28, 2030.",
+      "severity": 2,
+      "why": "\"from ... to\" leaves unclear whether February 28, 2030 is included.",
+      "fix": "begins on March 1, 2027, and ends at the end of February 28, 2030"
+    },
+    {
+      "n": 5,
+      "type": "passive-voice",
+      "anchor": "The Premises will be delivered",
+      "quote": "The Premises will be delivered to Subtenant in broom-clean condition on or before March 1, 2027.",
+      "severity": 1,
+      "why": "Passive hides who must deliver the Premises (and uses \"will\").",
+      "fix": "Sublandlord shall deliver the Premises to Subtenant ..."
+    },
+    {
+      "n": 6,
+      "type": "category-shall",
+      "anchor": "shall have the right to use",
+      "quote": "Subtenant shall have the right to use 12 parking spaces in the building's parking garage.",
+      "severity": 2,
+      "why": "\"shall have the right to\" expresses discretion.",
+      "fix": "Subtenant may use 12 parking spaces ..."
+    },
+    {
+      "n": 7,
+      "type": "cross-reference-number",
+      "anchor": "due under Section B.1",
+      "quote": "Sublandlord may terminate this sublease by notice to Subtenant if Subtenant fails to pay any installment of Base Rent no later than 10 days after it is due under Section B.1.",
+      "severity": 3,
+      "why": "Numbered internal cross-reference (house rule 4).",
+      "fix": "due under the section titled \"Rent\""
+    },
+    {
+      "n": 8,
+      "type": "attachment-language",
+      "anchor": "incorporated herein by reference",
+      "quote": "This sublease is subject to the Prime Lease, which is incorporated herein by reference.",
+      "severity": 3,
+      "why": "\"incorporated herein by reference\" is barred (house rule 6).",
+      "fix": "Delete the clause, or state which Prime Lease provisions bind Subtenant (the next subsection already does)."
+    },
+    {
+      "n": 9,
+      "type": "reduced-passive",
+      "anchor": "obligations imposed on Sublandlord",
+      "quote": "Subtenant shall perform all obligations imposed on Sublandlord by the Prime Lease with respect to the Premises, except the obligation to pay rent to Prime Landlord.",
+      "severity": 3,
+      "why": "Recastable reduced passive.",
+      "fix": "all obligations that the Prime Lease imposes on Sublandlord"
+    },
+    {
+      "n": 10,
+      "type": "efforts",
+      "anchor": "commercially reasonable efforts",
+      "quote": "Sublandlord shall use commercially reasonable efforts to cause Prime Landlord to perform Prime Landlord's obligations under the Prime Lease.",
+      "severity": 2,
+      "why": "Mixed efforts standards: \"commercially reasonable efforts\" here, \"reasonable efforts\" in the section titled \"Use and Alterations\".",
+      "fix": "reasonable efforts, in both places"
+    },
+    {
+      "n": 11,
+      "type": "attachment-classification",
+      "anchor": "in the form of Schedule B",
+      "quote": "No later than 10 days after Sublandlord's request, Subtenant shall sign and deliver to Sublandlord an estoppel certificate in the form of Schedule B.",
+      "severity": 2,
+      "why": "Schedule B holds a form of estoppel certificate, a stand-alone document; forms belong in exhibits.",
+      "fix": "Move the form to an exhibit (Exhibit 1, with the Prime Lease as Exhibit 2), placed after the schedules."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "monthly base rent in Schedule A",
+      "quote": "For each month of the Sublease Term, Subtenant shall pay Sublandlord the monthly base rent in Schedule A (the \"Base Rent\"), in advance, no later than the start of that month.",
+      "why_correct": "Correct schedule: lettered, and it holds a rent table."
+    },
+    {
+      "anchor": "Prime Landlord must deliver",
+      "quote": "Prime Landlord must deliver its written consent to this sublease no later than February 28, 2027.",
+      "why_correct": "Prime Landlord is a nonparty; \"must\" is correct for a nonparty subject (MSCD 3.150)."
+    },
+    {
+      "anchor": "Suite 1400, Two Lattice Plaza",
+      "quote": "Sublandlord leases Suite 1400, Two Lattice Plaza, 1180 Larkspur Avenue NW, Atlanta, Georgia 30309 (the \"Premises\"), from Peachtree Lattice Properties, LP (\"Prime Landlord\") under an office lease dated June 1, 2022 (the \"Prime Lease\").",
+      "why_correct": "A number word inside a proper name stays (house rule 2)."
+    },
+    {
+      "anchor": "right of first refusal",
+      "quote": "Subtenant has a right of first refusal to sublease the remaining portion of Suite 1400 on the terms of any offer that Sublandlord is willing to accept from a third party.",
+      "why_correct": "Fixed term keeps \"first\" (house rule 2)."
+    },
+    {
+      "anchor": "No later than 10 days after Sublandlord's request",
+      "quote": "No later than 10 days after Sublandlord's request, Subtenant shall sign and deliver to Sublandlord an estoppel certificate in the form of Schedule B.",
+      "why_correct": "\"No later than\" opens the sentence but is not a negative subject; the subject is Subtenant, so \"shall\" is correct."
+    }
+  ],
+  "notes": "Other side's draft.  \"Sublandlord hereby subleases\" is correct language of performance (MSCD 3.48-3.50).  Body paragraphs (including the schedule and exhibit text) are justified; headings and signature lines are left-aligned.  The estoppel form inside Schedule B is itself clean (\"certifies\" in a third-party certificate is not a represents-and-warrants problem).  \"third party\" is a fixed term.  Schedules come before the exhibit, so order is correct."
+}

@@ -1,0 +1,82 @@
+{
+  "id": "c10-escrow-agreement",
+  "file": "contracts/c10-escrow-agreement.md",
+  "title": "Escrow Agreement",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "nonparty-obligation",
+      "anchor": "The Escrow Agent shall invest",
+      "quote": "The Escrow Agent shall invest the Escrow Funds only in United States Treasury bills that mature no more than 90 days after purchase.",
+      "severity": 2,
+      "why": "The Escrow Agent is not a party (it only acknowledges receipt); \"shall\" cannot bind it. Every other Escrow Agent provision correctly uses \"must\".",
+      "fix": "The Escrow Agent must invest ..."
+    },
+    {
+      "n": 2,
+      "type": "scope-ambiguity",
+      "anchor": "may not recover more than $40,000",
+      "quote": "Buyer may not recover more than $40,000 from the Escrow Funds for Losses that result from environmental conditions at the clinic.",
+      "severity": 1,
+      "why": "Unclear whether the $40,000 limit applies to each claim or to all environmental claims in the aggregate.",
+      "fix": "Buyer may not recover more than $40,000 in the aggregate from the Escrow Funds for Losses that result from environmental conditions at the clinic."
+    },
+    {
+      "n": 3,
+      "type": "conflict",
+      "anchor": "means the 15 days after",
+      "quote": "\"Objection Period\" means the 15 days after Seller receives a Claim Notice.",
+      "severity": 1,
+      "why": "The Objection Period is 15 days, but Seller may deliver an Objection Notice up to 20 days after receiving the Claim Notice; the Escrow Agent could pay Buyer before Seller's deadline ends.",
+      "fix": "Use 1 period: define the Objection Period as 20 days and have Seller object \"before the Objection Period ends\"."
+    },
+    {
+      "n": 4,
+      "type": "shall-in-condition",
+      "anchor": "unless Seller shall have delivered",
+      "quote": "The Escrow Agent must pay Buyer the amount of each Claim Notice no later than 5 days after the day on which the Objection Period ends, unless Seller shall have delivered an Objection Notice before that day.",
+      "severity": 2,
+      "why": "\"shall\" in a condition.",
+      "fix": "unless Seller has delivered an Objection Notice before that day"
+    },
+    {
+      "n": 5,
+      "type": "referential-ambiguity",
+      "anchor": "because of its failure",
+      "quote": "Seller shall reimburse Buyer for any additional fee that the Escrow Agent charges because of its failure to give a notice that this agreement requires.",
+      "severity": 1,
+      "why": "\"its\" could refer to Seller, Buyer, or the Escrow Agent.",
+      "fix": "because of Seller's failure to give a notice that this agreement requires"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "The Escrow Agent must hold",
+      "quote": "The Escrow Agent must hold the Escrow Funds in a segregated account at First Horizon Bank and must not commingle the Escrow Funds with any other funds.",
+      "why_correct": "The Escrow Agent is a nonparty; \"must\" is correct (MSCD 3.150)."
+    },
+    {
+      "anchor": "First Horizon Bank",
+      "quote": "The Escrow Agent must hold the Escrow Funds in a segregated account at First Horizon Bank and must not commingle the Escrow Funds with any other funds.",
+      "why_correct": "A number word inside a proper name stays (house rule 2)."
+    },
+    {
+      "anchor": "the day on which the Objection Period ends",
+      "quote": "The Escrow Agent must pay Buyer the amount of each Claim Notice no later than 5 days after the day on which the Objection Period ends, unless Seller shall have delivered an Objection Notice before that day.",
+      "why_correct": "\"the day on which\" is correct."
+    },
+    {
+      "anchor": "Escrow Agent is not required to determine",
+      "quote": "The Escrow Agent is not required to determine whether any Claim Notice or Objection Notice is valid.",
+      "why_correct": "House exception to active voice: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "Neither Buyer nor Seller may",
+      "quote": "Neither Buyer nor Seller may instruct the Escrow Agent to release any Escrow Funds except by a joint written instruction or as this agreement provides.",
+      "why_correct": "Negative subject with \"may\" is correct (house rule 8)."
+    }
+  ],
+  "notes": "Blake's draft.  The escrow agent is not a party: it signs only an acknowledgment of receipt, and the background says so.  \"the Escrow Agent\" with \"the\" is a role label, which keeps the article.  The draft uses no statements of fact, so \"states\" does not arise.  Clean otherwise: 2-space sentences, house enumeration, digits, U.S. dates."
+}

@@ -1,0 +1,91 @@
+{
+  "id": "c11-asset-purchase-excerpt",
+  "file": "contracts/c11-asset-purchase-excerpt.docx",
+  "title": "Asset Purchase Agreement (Excerpt)",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "syntactic-ambiguity",
+      "anchor": "the later of May 3, 2027",
+      "quote": "The closing of the purchase and sale of the Purchased Assets (the \"Closing\") must take place by electronic exchange of documents on the later of May 3, 2027, or the 5th day after Seller delivers the Landlord Consent to Buyer.",
+      "severity": 1,
+      "why": "\"the later of X or Y\" (MSCD 13.862).",
+      "fix": "on the later of May 3, 2027, and the 5th day after Seller delivers the Landlord Consent to Buyer"
+    },
+    {
+      "n": 2,
+      "type": "syntactic-ambiguity",
+      "anchor": "has not delivered the Landlord Consent and",
+      "quote": "Buyer is not required to close if Seller has not delivered the Landlord Consent and the Lien Releases to Buyer, or if a Material Adverse Effect has occurred.",
+      "severity": 1,
+      "why": "\"not ... X and Y\": unclear whether Buyer is excused if either document is missing or only if both are.",
+      "fix": "Buyer is not required to close unless Seller has delivered both the Landlord Consent and the Lien Releases to Buyer and no Material Adverse Effect has occurred."
+    },
+    {
+      "n": 3,
+      "type": "vagueness",
+      "anchor": "a Material Adverse Effect has occurred",
+      "quote": "Buyer is not required to close if Seller has not delivered the Landlord Consent and the Lien Releases to Buyer, or if a Material Adverse Effect has occurred.",
+      "severity": 2,
+      "why": "\"Material Adverse Effect\" is capitalized but never defined (the definitions article omits it).",
+      "fix": "Define \"Material Adverse Effect\" in the article titled \"Definitions\"."
+    },
+    {
+      "n": 4,
+      "type": "negative-subject-shall",
+      "anchor": "neither Seller nor Buyer shall issue",
+      "quote": "Until the Closing, Seller shall operate the Business only in the ordinary course, and neither Seller nor Buyer shall issue any public statement about this agreement without the other's consent.",
+      "severity": 1,
+      "why": "Negative subject with \"shall\", hidden mid-sentence after a comma (house rule 8).",
+      "fix": "and neither Seller nor Buyer may issue any public statement ..."
+    },
+    {
+      "n": 5,
+      "type": "scope-ambiguity",
+      "anchor": "more than $450,000 for any inaccuracy",
+      "quote": "Seller is not liable under the section titled \"Indemnification by Seller\" for more than $450,000 for any inaccuracy in Seller's statements.",
+      "severity": 1,
+      "why": "Unclear whether the $450,000 cap applies to each inaccuracy or to all inaccuracies in the aggregate.",
+      "fix": "... for more than $450,000 in the aggregate for all inaccuracies in Seller's statements."
+    },
+    {
+      "n": 6,
+      "type": "conflict",
+      "anchor": "No later than 12 months",
+      "quote": "No later than 12 months after the Closing Date, Buyer shall pay Seller the Holdback Amount, minus any Losses for which Seller owes Buyer indemnification.",
+      "severity": 1,
+      "why": "The section titled \"Purchase Price\" requires Buyer to pay the Holdback Amount no later than 12 months after the Closing Date; the section titled \"Holdback\" allows 18 months.",
+      "fix": "Use 1 period, stated once (in the section titled \"Holdback\")."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "must take place by electronic exchange",
+      "quote": "The closing of the purchase and sale of the Purchased Assets (the \"Closing\") must take place by electronic exchange of documents on the later of May 3, 2027, or the 5th day after Seller delivers the Landlord Consent to Buyer.",
+      "why_correct": "The subject (the Closing) is not a party, so \"must\" is correct and this is not a category-must issue (MSCD 3.149: \"The Closing must take place at Acme's offices\")."
+    },
+    {
+      "anchor": "(the \"Closing\")",
+      "quote": "The closing of the purchase and sale of the Purchased Assets (the \"Closing\") must take place by electronic exchange of documents on the later of May 3, 2027, or the 5th day after Seller delivers the Landlord Consent to Buyer.",
+      "why_correct": "\"Closing\" is a defined term that is not a party name, so it keeps \"the\" (house rule 11)."
+    },
+    {
+      "anchor": "Section 1060 of the Internal Revenue Code",
+      "quote": "Buyer and Seller shall allocate the Purchase Price among the Purchased Assets in accordance with Section 1060 of the Internal Revenue Code.",
+      "why_correct": "Statute reference, not an internal cross-reference (house rule 4)."
+    },
+    {
+      "anchor": "To exercise its right to terminate",
+      "quote": "To exercise its right to terminate under this section, a party must give the other party notice.",
+      "why_correct": "\"must\" in a condition is correct (MSCD 3.386, 3.391)."
+    },
+    {
+      "anchor": "customer contracts of the Business in Schedule A",
+      "quote": "\"Purchased Assets\" means the equipment, inventory, and customer contracts of the Business in Schedule A.",
+      "why_correct": "Correct schedule: lettered, and it holds a list of assets."
+    }
+  ],
+  "notes": "Blake's draft (excerpt).  Formatting is compliant (Aptos 12, left-aligned, bold run-in headings).  References to \"the section titled ...\" are the house cross-reference form.  \"Buyer is not required to close\" and \"Seller is not required to close\" are correct house exceptions; the problem in the Buyer sentence is the \"not ... and\" scope.  \"Seller is not liable\" is correct (no \"shall\")."
+}

@@ -274,7 +274,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Test: Ask whether the provision reaches only one group, either group, or all members of both groups.
   - Fix: Repeat the noun for each adjective (temporary employees or part-time employees).
   - Book example: Tango shall terminate the employment of Acme's temporary or part-time employees. → Tango shall terminate the employment of Acme's temporary employees or part-time employees.
-- **R-11.90-no-and-or** [sev 1] Don't use and/or; say X or Y or both, one or both of X and Y, or one or both of the following: X; and Y. If and/or seems to offer significant economy, restructure. (11.90, 11.91, 11.92...; PDF p. 531)
+- **R-11.90-no-and-or** [sev 2] Don't use and/or; say X or Y or both, one or both of X and Y, or one or both of the following: X; and Y. If and/or seems to offer significant economy, restructure. (11.90, 11.91, 11.92...; PDF p. 531)
   - Book example: Acme shall purchase Widget A and/or Widget B. → Acme shall purchase Widget A or Widget B and may purchase both.
 - **R-11.96-and-or-scope** [sev 1] And-or scope ambiguity: in a string of three elements with and between two and or between the others (Acme shall hire Able and Baker or Charlie; If A and B, or C, then D), the meaning depends on which conjunction has scope over the other. (11.96, 11.97, 11.98...; PDF p. 532)
   - Look for: and and or in the same series of three or more elements

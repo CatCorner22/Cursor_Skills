@@ -2,7 +2,7 @@
 """Look up MSCD rules in data/rules.jsonl, with Blake's house overrides applied.
 
 Examples:
-  python3 scripts/rules_query.py --id R-3.89-shall-duty
+  python3 scripts/rules_query.py --id R-3.89-shall-duty   (or --id 3.89, or --id R-3.89)
   python3 scripts/rules_query.py --word "and/or"
   python3 scripts/rules_query.py --para 3.324
   python3 scripts/rules_query.py --topic ambiguity --kind ambiguity-cause --brief
@@ -67,7 +67,17 @@ def main():
     recs, house = load()
     out = recs
     if a.id:
-        want = set(a.id); out = [r for r in out if r['id'] in want]
+        want = set(a.id); exact = [r for r in out if r['id'] in want]
+        missing = want - {r['id'] for r in exact}
+        # a partial id (R-3.358, 3.358, R-3.358-conditional) finds every rule whose id starts with it or that cites that paragraph
+        loose = []
+        for w in missing:
+            stem = w if w.startswith('R-') else 'R-' + w
+            para = re.match(r"R-(\d+\.\d+)", stem)
+            loose += [r for r in out if r not in exact and r not in loose and (r['id'].startswith(stem) or (para and para.group(1) in r.get('paras', [])))]
+        if loose:
+            print(f"(no exact id for {', '.join(sorted(missing))}; showing rules that start with it or cite that paragraph)", file=sys.stderr)
+        out = exact + loose
     if a.word:
         w = a.word.lower()
         out = [r for r in out if w in ' '.join(r['trigger'].get('words') or []).lower() or w in r['statement'].lower() or w in r['section'].lower()]
