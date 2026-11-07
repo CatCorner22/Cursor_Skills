@@ -34,7 +34,7 @@ LINT_TYPES = {
     'sole-discretion': {'sole-discretion'}, 'time-is-of-the-essence': {'time-is-of-the-essence'}, 'doublet': {'doublet'},
     'arising-out-of': {'arising-out-of'}, 'throat-clearing': {'throat-clearing'}, 'successors-assigns': {'successors-assigns'},
     'survival': {'survival'}, 'usage': {'usage'}, 'category-will': {'category-will'}, 'category-must': {'category-must'},
-    'shall-in-condition': {'shall-in-condition'}, 'passive-voice': {'passive-voice'},
+    'shall-in-condition': {'shall-in-condition'}, 'passive-voice': {'passive-voice', 'passive-hides-actor'},
     'reduced-passive': {'reduced-passive'}, 'number-words': {'number-word', 'words-and-digits'},
     'ordinal': {'ordinal-word'}, 'date-format': {'date-format', 'day-month-year', 'numeric-date', 'this-day'},
     'provided-that': {'provided-that'}, 'cross-reference-number': {'numbered-cross-reference', 'relative-cross-reference'},
@@ -211,13 +211,22 @@ def cmd_findings(root, runs, out_json=None):
         keep = lambda fx: re.match(r'\s*(keep|no change|leave|none|n/a)\b', fx) is not None and not re.search(r'\botherwise\b|\bor delete\b|\bdecision needed\b', fx)
         c_found = 0
         for it in k.get('issues', []):
+            if it.get('optional'):
+                continue  # an MSCD point outside the round's catalog: neither a miss nor a false alarm
             tot += 1
             if it.get('anchor') == '[format]':
                 pat = '|'.join(v for kk, v in FORMAT_WORDS.items() if re.search(v, it.get('why', ''), re.I)) or 'font'
-                ok = any(re.search(pat, json.dumps(f), re.I) for f in fs)
+                loc = norm(it.get('locator', '')).lower()
+                lsp = span(low, loc) if loc else None
+                # a formatting finding counts when it names the same kind of formatting and points at the affected paragraph
+                # (its quote is within about 800 characters of the key's locator), or says the fault runs through the whole document
+                near = lambda s: lsp is not None and s is not None and abs(s[0] - lsp[0]) <= 800
+                ok = any(re.search(pat, json.dumps(f), re.I) and (not loc or lsp is None or loc in q or near(s)
+                                                                  or re.search(r'throughout|every paragraph|all paragraphs|whole document', json.dumps(f), re.I))
+                         for f, s, q, fx in fsp)
             else:
                 located = []
-                for anc in [it['anchor']] + it.get('alt_anchors', []):  # a conflict can be flagged at either end
+                for anc in [it['anchor']] + it.get('alt_anchors', []) + ([it['related_anchor']] if it.get('related_anchor') else []):  # a conflict can be flagged at either end
                     a = norm(anc).lower(); sp = span(low, a)
                     located += [(f, fx) for f, s, q, fx in fsp if a in q or overlaps(s, sp)]
                 # found: a finding at that spot proposes a change, or flags and keeps where keeping is the answer
@@ -231,10 +240,13 @@ def cmd_findings(root, runs, out_json=None):
         for tr in k.get('traps', []):
             traps += 1
             a = norm(tr['anchor']).lower(); sp = span(low, a)
-            # a false alarm is a finding aimed at the trap itself (the trap is at least half of what it quotes)
-            # whose proposed wording drops or changes the trap's words
-            hit = [f for f, s, q, fx in fsp if (a in q or overlaps(s, sp)) and len(a) >= 0.5 * max(len(q), 1)
-                   and not keep(fx) and a not in fx and fx.strip()]
+            # a false alarm is a finding that quotes the trap (or overlaps it) and proposes wording that drops or
+            # changes the trap's exact words, capitals included (a fix that recases WARRANTIES OF MERCHANTABILITY changes it)
+            exact = norm(tr['anchor'])
+            cover = lambda s: 0 if not (s and sp) else max(0, min(s[1], sp[1]) - max(s[0], sp[0]))
+            # the quote must take in at least half of the trap's words: a quote that only touches the trap can't carry its words in the fix
+            hit = [f for f, s, q, fx in fsp if (a in q or cover(s) >= 0.5 * len(a))
+                   and not keep(fx) and fx.strip() and exact not in norm(str(f.get('fix', '')))]
             if hit:
                 trap_bad += 1
                 false_alarms.append({'id': k['id'], 'anchor': tr['anchor'], 'finding': {kk: str(v)[:160] for kk, v in hit[0].items()}})

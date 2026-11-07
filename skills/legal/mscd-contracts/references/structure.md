@@ -7,11 +7,11 @@ Apply house style first: enumeration I., A., 1., (a), (i) with no only child; av
 1. **Title**: the kind of contract, centered, in capitals, no article (2.2-2.12): *CONSULTING AGREEMENT*.
 2. **Introductory clause**: *This consulting agreement is dated January 1, 2027, and is between ACME CORPORATION, a Tennessee corporation ("**Acme**"), and WIDGETCO, LLC, a Delaware limited liability company ("**Widgetco**").* (2.16-2.122; date form per house style; *between*, not *among*, 2.47-2.49).
 3. **Recitals**, only if there's a back story: narrative sentences, no *WHEREAS*, no deal terms, *wants* (2.129-2.158).
-4. **Lead-in**: *The parties therefore agree as follows:* (2.159-2.164). No recital of consideration (2.165-2.217).
+4. **Lead-in**: *The parties agree as follows:*; after recitals, *The parties therefore agree as follows:* (2.159-2.164). No recital of consideration (2.165-2.217).
 5. **Body**: articles (I.) when there are more than about 25 sections (4.7), sections (A.) with bold headings, subsections (1.), enumerated clauses ((a)), subclauses ((i)).
 6. **Definitions**: an autonomous-definitions section for clear terms, on-site definitions for custom terms (6.86-6.98). Not first, and not in an attachment.
-7. **Concluding clause** (optional): *The parties are signing this agreement on the date stated in the introductory clause.* (5.3-5.15).
-8. **Signature blocks**: one per party, entity name in capitals, *By:*, name and title (5.28-5.40).
+7. **Concluding clause** (optional): *The parties are signing this agreement on the date that the introductory clause states.* (5.3-5.15).
+8. **Signature blocks**: 1 per party, entity name in capitals, *By:*, name and title (5.28-5.40).
 9. **Schedules, then exhibits** (`attachments.md`).
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
@@ -187,7 +187,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-4.9-no-clause-for-sections** [sev 3] Don't use the UK term clause for articles or sections; use article and section. Reserve clause for enumerated clauses. (4.9, 4.13; PDF p. 274)
 - **R-4.10-article-heading-caps** [sev 3] Give each article a simple, all-encompassing heading in all capitals. (4.10; PDF p. 275)
 - **R-4.11-article-numerals** [sev 3] Number articles with Arabic digits, not words or Roman numerals, and without multiple numeration: article 1, not article one, article I, or article 1.0. (4.11; PDF p. 275)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.12-no-article-zero** [sev 3] Don't number the first article 0 (zero). (4.12; PDF p. 275)
 - **R-4.14-omnibus-sections** [sev 2] In the boilerplate, combine unrelated provisions in one section only when they are brief enough that giving each its own section would waste space. (4.14; PDF p. 275)
   - Look for: one section addressing two or more unrelated topics
@@ -196,13 +196,13 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-4.15-omnibus-no-subsections** [sev 3] Don't use subsections in a section that combines unrelated provisions; if the provisions merit subsections, make them sections. (4.15; PDF p. 275)
 - **R-4.16-all-text-in-section** [sev 3] Put all text in the body of the contract within a section. (4.16; PDF p. 276)
 - **R-4.17-number-sections-plain** [sev 3] Number each section. Don't put Section before each section number, and don't bold section numbers. (4.17; PDF p. 276)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.17-section-number-format** [sev 3] Without articles, number sections 1, 2, 3 (not 1.0, 2.0). With articles, use multiple numeration 1.1, 1.2 (not 1.01 or 1.1.). (4.17; PDF p. 276)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.18-automatic-numbering** [sev 3] Use the automatic-numbering function in Word, or paragraph-numbering software, for sections, subsections, and tabulated enumerated clauses. (4.18; PDF p. 276)
 - **R-4.19-no-first-second** [sev 3] Don't enumerate sections FIRST:, SECOND:, THIRD:, as some litigator-drafted settlement agreements do. (4.19; PDF p. 276)
 - **R-4.20-enumerate-lone-section** [sev 3] Enumerate a section even if it is the only section in its article. (4.20; PDF p. 276)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.21-section-heading-format** [sev 3] Give each section a heading: a bolded word or short phrase in headline-style capitalization. Don't use underlining, all capitals, or bold plus italics. (4.21, 4.22; PDF p. 277)
 - **R-4.23-heading-not-misleading** [sev 2] Make any heading you create clear and brief; don't use a heading that promises more than the section delivers or is otherwise misleading. (4.23; PDF p. 277)
   - Test: Compare the heading with what the section actually provides.
@@ -216,9 +216,9 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Fix: Enumerate every paragraph as a subsection, or make the unenumerated text its own section.
 - **R-4.28-when-subsections** [sev 3] Divide a section into two or more enumerated subsections if each addresses a different aspect of one topic or the section would otherwise be too long to read comfortably. (4.28; PDF p. 278)
 - **R-4.29-subsection-letters** [sev 3] Use the (a) hierarchy for subsections. If a section has ten or more subsections, consider grouping them into two or more sections rather than shifting to (aa). (4.29; PDF p. 278)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.30-no-multiple-numeration-subsections** [sev 3] Don't use the multiple-numeration system for subsections (4.3.1, 4.3.2). (4.30, 4.31; PDF p. 278)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.32-no-subsection-headings** [sev 3] Don't give subsections headings. (4.32; PDF p. 279)
 - **R-4.33-enumerated-clause-def** [sev 3] "Enumerated clauses" are parts of a sentence in a section or subsection, preceded by introductory text, each designated by a number or letter in parentheses, with the next-to-last followed by and or or. (4.33; PDF p. 279)
 - **R-4.34-use-enumerated-clauses** [sev 3] Use enumerated clauses whenever a list or series is anything other than a short string of brief clauses. (4.34; PDF p. 279)
@@ -238,23 +238,23 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-4.45-keep-short-integrated** [sev 3] Keep integrated any clauses that are not preceded by a full independent clause and a colon and are separated by commas. (4.45; PDF p. 283)
 - **R-4.46-no-dangling-text** [sev 3] Put tabulated enumerated clauses at the end of a sentence, so no "dangling" text starts flush left below the last clause; end the section or subsection after the clauses rather than adding unenumerated sentences. (4.46; PDF p. 283)
 - **R-4.47-clause-hierarchy** [sev 3] Use (1) for enumerated clauses, (A) for subclauses, and (i) for sub-subclauses; reserve (a) for subsections. (4.47; PDF p. 284)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.48-no-commingled-enumeration** [sev 3] Don't use "commingled enumeration": in a section without subsections, don't use (a) for first-level tabulated clauses. (4.48; PDF p. 284)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.49-no-multiple-numeration-clauses** [sev 3] Don't use multiple numeration (1.1.1, 6.15.4.5.3) for tabulated enumerated clauses, and don't adopt the AIA .1 hierarchy. (4.49, 4.50, 4.51...; PDF p. 284)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.53-no-bullets** [sev 3] Don't use bullets for tabulated enumerated clauses. (4.53; PDF p. 285)
 - **R-4.54-no-hierarchy-jump** [sev 3] Don't follow enumeration from one hierarchy immediately, with no intervening text, by enumeration from the next hierarchy down (for example, (2) followed directly by (A)); restructure to fix both this and the missing introductory text. (4.54; PDF p. 285)
 - **R-4.55-one-clause-set-per-subsection** [sev 3] Don't use two sets of tabulated clauses with different hierarchies in one section or subsection; remove enumeration from one set or move one set to its own section or subsection. (4.55; PDF p. 285)
 - **R-4.56-no-clause-headings** [sev 3] Don't give tabulated enumerated clauses headings. (4.56; PDF p. 285)
 - **R-4.57-indent-section-text** [sev 3] Indent all section text, and indent section and subsection text equally; don't move subsections one tab further in. (4.57; PDF p. 286)
 - **R-4.58-subsection-enumeration-indent** [sev 3] Distinguish subsections by indenting the subsection enumeration slightly more than the section number. (4.58; PDF p. 286)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.59-no-period-after-number-heading** [sev 3] Don't put a period after a section number or after a section heading. (4.59, 4.60; PDF p. 286)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.61-clause-indent** [sev 3] Indent tabulated enumerated clauses one tab setting further in than sections and subsections, with the enumeration at the left edge of the text. (4.61; PDF p. 286)
 - **R-4.62-word-styles** [sev 3] Adopt the MSCD scheme by setting up Microsoft Word styles; templates for both versions are at adamsdrafting.com/resources. (4.62; PDF p. 286)
-  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
+  - HOUSE: Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3.
 - **R-4.63-long-blocks** [sev 3] If a section or subsection runs more than about 15 lines, consider dividing it into two or more sections or subsections, or tabulating its enumerated clauses. (4.63, 4.64; PDF p. 287)
 - **R-4.65-over-fragmentation** [sev 3] At the other extreme, consider keeping the shortest components consolidated; gauge balance by the white space on the page. (4.65, 4.66, 4.67; PDF p. 287)
 - **R-4.68-two-column-rarely** [sev 3] Use a two-column format rarely, if at all; minimizing page count ranks below concision, readability, and ease of work. (4.68, 4.69, 4.70...; PDF p. 289)
@@ -377,7 +377,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-15.16-rule-from-to-until** [sev 3] A rule that from means from and including and to and until mean to but excluding is fine as far as it goes but covers only a small part of time-reference ambiguity; a complete rule would be unwieldy, so purge each time reference of ambiguity instead. (15.16; PDF p. 823)
 - **R-15.17-rule-contra-proferentem** [sev 3] A contra proferentem waiver (Because each party was involved in drafting ...) reflects how courts act anyway; courts would likely ignore it if it doesn't reflect how the contract was drafted. (15.17; PDF p. 823)
 - **R-15.18-rule-headings** [sev 3] Don't rely on a rule that headings are for convenience only: where a heading is carelessly mismatched, it does only what a court would do anyway; where a heading arguably reflects intended scope, a court might ignore the rule. It is of questionable use. (15.18; PDF p. 824)
-  - HOUSE: House addition: If the contract refers to provisions by heading, delete or limit a headings-for-convenience clause, which would undercut those references.
+  - HOUSE: partly superseded: House rule 4: always delete a headings-for-convenience clause or limit it ("Headings do not affect the meaning of the provisions they introduce, but references to a provision by its heading identify that provision"), because references identify provisions by heading.
 - **R-15.19-rule-including-without-limitation** [sev 3] Don't rely on a rule that including is to be read as followed by without limitation; it is unhelpful. (15.19; PDF p. 824)
 - **R-15.20-rule-and-or** [sev 2] Don't rely on rules that or is disjunctive and and is conjunctive, or that or is not exclusive; they grossly oversimplify the ambiguity of and and or (chapter 11), and on or the two provisions take opposite approaches. (15.20; PDF p. 824)
   - Fix: Resolve each and/or ambiguity in context (chapter 11).
@@ -396,7 +396,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-18.9-amendment-intro-recitals** [sev 3] In an amendment, don't refer to the amended contract in the introductory clause; refer to it in the recitals and, if feasible, briefly state why the parties are amending. Don't create the defined term this Amendment. (18.9; PDF p. 860)
 - **R-18.10-amendment-lead-in** [sev 3] Use the same lead-in as for any contract; for an amended and restated contract, say The parties therefore amend and restate the [contract] to read in its entirety as follows. (18.10, 18.11; PDF p. 860)
 - **R-18.12-hereby-amended** [sev 3] Amending language is language of performance: prefer is hereby amended over is amended or is amended as of the date hereof; the passive is appropriate because it is clear who is amending. (18.12; PDF p. 860)
-  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('is effective'); amendments as 'The parties hereby amend the section titled ...'. See house-style.md section 1.
+  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'. See house-style.md section 1.
 - **R-18.13-amend-vs-supplement** [sev 3] An amendment changes the original; a supplement adds to it. A second agreement amends only if it says its provisions are added to the original; if its provisions are freestanding, call it a supplement, not the fusty Latinism addendum. (18.13; PDF p. 861)
 - **R-18.14-change-part-provision** [sev 3] For a change to less than a whole section or subsection, either state only the exact change (by replacing '28 February 2019' with '30 April 2019') or restate the entire provision (is hereby amended to read in its entirety as follows); stating the change is concise but lacks context, restating gives context but is longer. (18.14, 18.15, 18.16...; PDF p. 861)
 - **R-18.18-adding-sections** [sev 2] Add a provision with The Agreement is hereby amended by adding after section 10 the following new section 11; if the insertion isn't at the end, follow at once with a renumbering amendment. It is best to insert at the end of the agreement, section, or series, to avoid breaking internal cross-references and references in other contracts. (18.18, 18.19, 18.20; PDF p. 862)

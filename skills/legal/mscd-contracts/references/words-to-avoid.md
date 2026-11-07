@@ -1,10 +1,10 @@
 # Words to avoid and selected usages
 
-Read this file in pass 6 (words to avoid) and whenever `scripts/mscd_lint.py` reports a usage hit. The table holds one verdict per MSCD Chapter 13 entry plus the other usage verdicts; the list after it holds the exceptions and related rules.
+Read this file in pass 6 (words to avoid) and whenever `scripts/mscd_lint.py` reports a usage hit. The table holds 1 verdict per MSCD Chapter 13 entry plus the other usage verdicts; the list after it holds the exceptions and related rules.
 
 ## The usages that matter most
 
-- ***should***: never. In a conditional clause it adds only tentativeness: *If Acme exercises the Option*, not *If Acme should exercise* or *Should Acme exercise* (3.360). In the sense of duty it imposes no obligation; use the verb the category calls for (*shall*, *recommends*).
+- ***should***: never; for *knows or should have known* don't pick a replacement yourself: offer a defined *Knowledge* term with wording for actual knowledge and for knowledge after reasonable inquiry, and ask Blake (MSCD 13.506; house rule 12). In a conditional clause it adds only tentativeness: *If Acme exercises the Option*, not *If Acme should exercise* or *Should Acme exercise* (3.360). In the sense of duty it imposes no obligation; use the verb the category calls for (*shall*, *recommends*).
 - **Obligation verbs other than *shall***: *agrees to*, *covenants to*, *undertakes to*, *is obligated to*, *shall be obligated to* (3.125-3.132).
 - ***represents and warrants***: *states* on Blake's drafts (3.457-3.458); on the other side's drafts, suggest the remedies-neutral sentence in a comment (3.459-3.463).
 - **Here- and there- words, *said*, *same*, pointing *such***: use *this*, *that*, *it*, or name the provision (by heading, house rule); *hereby* survives only in language of performance.
@@ -41,7 +41,7 @@ Judge each hit in context: several words are legitimate in a stated context (*de
 - Chapter 3: Language of Obligation
 - Chapter 3: Language of Discretion
 - Chapter 3: Language of Prohibition
-- Chapter 3: Blog: replacing-once-in-contracts-a-example-of-sweating-the-small-stuff
+- Chapter 3: Blog: Replacing "Once" in Contracts
 - Chapter 3: Language of Declaration
 - Chapter 4: Layout
 - Chapter 5: Back of the Contract
@@ -91,7 +91,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 | BECAUSE | Whenever you use because in a contract (typically in a conditional clause, If X because of Y, then Z), consider being specific about the type of causation required, such as sole cause or but-for cause. | State the causation standard (solely because of; but for). | 2 | 13.101, 13.103; PDF p. 602 | R-13.101-because |
 | BELIEF | Don't state categorically the legal implications of facts as they exist on signing (This agreement complies with section 409A); have the party give its opinion (The parties believe this agreement complies). It would be clearer, though not necessarily convenient, to qualify by belief statements of fact that present legal opinions (formation, enforceability, no violation of law), backed by indemnification or another risk-allocation mechanism. | The parties believe that ...; supplement with indemnification, a termination fee, or another risk-allocation mechanism. | 2 | 13.104, 13.105, 13.106; PDF p. 602 | R-13.104-belief |
 | BETWEEN OR AMONG | Instead of between or among, use just between; there is no basis in English usage for reserving between for two and among for more than two. To avoid any confusion about contracts between the parties, say agreements between two or more of the parties. | between; agreements between two or more of the parties | 3 | 13.107, 13.108; PDF p. 603 | R-13.107-between-or-among |
-| Blog: no-ampersands-in-contracts | Don't use an ampersand except where it appears in the name of a business or law firm; write and. In a heading, use a semicolon (Amendment; Waiver) or make separate sections. | Replace with and; in a heading, use a semicolon or separate sections. | 3 | Introduction; rider | R-rider-ampersand |
+| Blog: No Ampersands in Contracts! | Don't use an ampersand except where it appears in the name of a business or law firm; write and. In a heading, use a semicolon (Amendment; Waiver) or make separate sections. | Replace with and; in a heading, use a semicolon or separate sections. | 3 | Introduction; rider | R-rider-ampersand |
 | BOOKS AND RECORDS | Drop books from books and records; books are an example of records. | records | 3 | 13.109, 13.110, 13.111; PDF p. 603 | R-13.109-books-and-records |
 | BOTH X AND Y, EITHER X OR Y | Generally, don't use both to emphasize the link between two things, or either to emphasize that an or is exclusive; contracts aren't the place for degrees of emphasis. | Delete both / either. | 3 | 13.114, 13.115, 13.117; PDF p. 604 | R-13.114-both-either |
 | BUY, PURCHASE | Use the verb purchase, not buy; buying and bought are more awkward than purchase and purchased, and related verb and noun forms help the reader. | purchase / purchases / purchasing / purchased | 3 | 13.118, 13.119, 13.120; PDF p. 605 | R-13.118-purchase-not-buy |
@@ -271,8 +271,10 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 ### Chapter 1: Contract Language Shouldn't Be Legalistic
 
 - **R-1.8-manage-terms-of-art** [sev 3] Manage legal terms of art: keep those the transaction needs (for example, security interest, perfection), and avoid the flawed kinds. (1.7, 1.8, 1.9...; PDF p. 62)
+  - HOUSE: House addition: A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13).
 - **R-1.12-flawed-terms-of-art** [sev 3] Avoid three kinds of flawed terms of art: unnecessary, improvised, and unduly complex. (1.12; PDF p. 62)
 - **R-1.13-unnecessary-term-of-art** [sev 3] Don't use a doctrinal term of art where simpler terminology does the job. (1.13, 1.14, 1.15...; PDF p. 63)
+  - HOUSE: House addition: A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13).
 - **R-1.18-improvised-terms-of-art** [sev 2] Avoid improvised terms of art: ordinary wording onto which lawyers and judges have grafted doctrinal implications, such as hold harmless and best efforts. (1.18, 1.19; PDF p. 64)
 - **R-1.20-give-effect-every-word** [sev 2] Expect courts to give effect to every word: that principle, applied zealously, gives significance to stray words and variations and to each element of a redundant string. (1.20, 1.41; PDF p. 65)
 - **R-1.21-unduly-complex-terms** [sev 2] Don't use unduly complex terms of art (for example, consequential damages, coupled with an interest, time is of the essence) without fully appreciating their implications; the provision might be unenforceable or have unexpected consequences. (1.21; PDF p. 65)
@@ -415,7 +417,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-3.321-no-cannot-agrees-not** [sev 3] Don't use cannot or agrees not to in language of prohibition. (3.321; PDF p. 206)
 - **R-3.322-no-nothing-gives-right** [sev 3] Don't say the contract doesn't authorize a party to do something; express it as a prohibition. (3.322; PDF p. 206)
 
-### Chapter 3: Blog: replacing-once-in-contracts-a-example-of-sweating-the-small-stuff
+### Chapter 3: Blog: Replacing "Once" in Contracts
 
 - **R-rider-once-if** [sev 2] Don't use once (or when) to introduce a condition; use if. If deleting once leaves an adjective phrase, just delete once. (3.352; rider)
 
@@ -457,6 +459,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Fix: Make clear which antecedent you mean: repeat the noun, use a defined term, or restructure. Replace archaic referring words (said, thereof, such meaning those).
   - Book example: The defendant agrees to pay for one-half the cost of Sarah's college educational expenses ... subject to the limitation that said cost shall not exceed the tuition for a full-time residential student at UCONN-Storrs. → The defendant shall pay half the cost of Sarah's college educational expenses for a four-year degree net of any scholarships and grants, up to an amount equal to half the tuition for a full-time residential student at UCONN-Storrs.
 - **R-7.23-contract-reference-ambiguity** [sev 1] Contract-reference ambiguity: here-words (herein, hereunder, hereof, hereto, hereinbelow) and pointing words (above, below, the foregoing, as aforesaid) leave unclear whether they refer to part of the contract or the whole, or which part; hereunder can also be read as "below" rather than "by operation of." (7.23, 7.24, 7.25...; PDF p. 366)
+  - HOUSE: partly superseded: House rule 4: where a reference is needed, name the provision by its heading, not its number (the section titled "Payment"); better, restructure so no reference is needed.
   - Look for: a here-word or pointing word instead of a reference to a specific section
   - Test: Ask whether the word could mean the whole contract, the current section, or the text immediately before or after; if more than one reading is possible, it is ambiguous.
   - Fix: Refer to the whole contract as this agreement or to a specific section by number (section 4.2); use hereby only in language of performance.
@@ -579,6 +582,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.607-processor-sample** [sev 2] Model provision replacing willful misconduct or gross negligence: liability only to the extent that, as a result of reckless disregard for the consequences of an act or failure to act, or of intentionally causing those consequences, the party causes damages. (13.607; PDF p. 716)
 - **R-13.611-not-less-than** [sev 3] Use not less than, not no less than; no less connotes surprise, while not less is matter-of-fact. (13.611, 13.612; PDF p. 717)
 - **R-13.635-notwithstanding-the-foregoing** [sev 1] Notwithstanding the foregoing is ambiguous: the foregoing might refer to the previous sentence, all preceding text, or something in between. (13.635; PDF p. 722)
+  - HOUSE: partly superseded: House rule 4: where a reference is needed, name the provision by its heading, not its number (the section titled "Payment"); better, restructure so no reference is needed.
   - Test: Can the reader tell exactly which text the foregoing refers to?
   - Fix: Name the provision (subject to section 3.2).
 - **R-13.638-subject-to** [sev 2] Qualify the provision being undercut with subject to section X rather than prefacing the undercutting provision with notwithstanding; don't use both; and generally be specific about which provision does the undercutting. (13.638, 13.641; PDF p. 723)

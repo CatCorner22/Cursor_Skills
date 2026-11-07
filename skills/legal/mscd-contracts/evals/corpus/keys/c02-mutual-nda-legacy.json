@@ -1,203 +1,220 @@
 {
-  "id": "c02-mutual-nda-legacy",
-  "file": "contracts/c02-mutual-nda-legacy.txt",
-  "title": "Mutual Nondisclosure Agreement",
-  "tier": "obvious",
-  "whose_draft": "unknown",
-  "issues": [
-    {
-      "n": 1,
-      "type": "date-format",
-      "anchor": "1 February 2027",
-      "quote": "This mutual nondisclosure agreement is dated 1 February 2027 and is between Quarry Lane Biotech, Inc., a Delaware corporation (\"Quarry Lane\"), and Sallow Creek Instruments LLC, a Massachusetts limited liability company (\"Sallow Creek\").",
-      "severity": 3,
-      "why": "Day-month-year date (house rule 7).",
-      "fix": "February 1, 2027"
-    },
-    {
-      "n": 2,
-      "type": "archaic",
-      "anchor": "WITNESSETH THAT:",
-      "quote": "WITNESSETH THAT:",
-      "severity": 3,
-      "why": "Archaic.",
-      "fix": "Delete."
-    },
-    {
-      "n": 3,
-      "type": "spacing",
-      "anchor": "\"Purpose\"). In connection",
-      "quote": "The parties wish to evaluate a possible joint development of benchtop assay instruments (the \"Purpose\"). In connection with the Purpose, each party may disclose Confidential Information to the other party.",
-      "severity": 3,
-      "why": "The whole document uses 1 space between sentences, including after the run-in section headings (house rule 5 requires 2). Keyed once at the 1st occurrence.",
-      "fix": "Use 2 spaces between sentences throughout."
-    },
-    {
-      "n": 4,
-      "type": "archaic",
-      "anchor": "NOW, THEREFORE",
-      "quote": "NOW, THEREFORE, the parties agree as follows:",
-      "severity": 3,
-      "why": "Archaic lead-in.",
-      "fix": "The parties therefore agree as follows:"
-    },
-    {
-      "n": 5,
-      "type": "enumeration",
-      "anchor": "1. Definitions.",
-      "quote": "1. Definitions.",
-      "severity": 3,
-      "why": "Top-level sections are numbered 1. to 8. and their subdivisions (a), (b), (c). A contract without articles starts at A., and subsections take 1. (house rule 3).",
-      "fix": "Sections A. to H.; subsections 1., 2., 3."
-    },
-    {
-      "n": 6,
-      "type": "defined-term",
-      "anchor": "shall mean all nonpublic",
-      "quote": "\"Confidential Information\" shall mean all nonpublic technical and business information that a party (the \"Disclosing Party\") discloses to the other party (the \"Receiving Party\"), including but not limited to assay designs, reagent formulations, software, and pricing.",
-      "severity": 3,
-      "why": "Definition uses \"shall mean\".",
-      "fix": "\"Confidential Information\" means ..."
-    },
-    {
-      "n": 7,
-      "type": "doublet",
-      "anchor": "including but not limited to",
-      "quote": "\"Confidential Information\" shall mean all nonpublic technical and business information that a party (the \"Disclosing Party\") discloses to the other party (the \"Receiving Party\"), including but not limited to assay designs, reagent formulations, software, and pricing.",
-      "severity": 3,
-      "why": "\"including\" suffices.",
-      "fix": "including"
-    },
-    {
-      "n": 8,
-      "type": "spacing",
-      "anchor": "information that:  (a)",
-      "quote": "Confidential Information does not include information that:  (a) is or becomes public through no fault of the Receiving Party; (b) the Receiving Party lawfully possessed before the Disclosing Party disclosed it; or (c) the Receiving Party develops independently.",
-      "severity": 3,
-      "why": "2 spaces after a colon (house rule 5 requires 1).",
-      "fix": "information that: (a)"
-    },
-    {
-      "n": 9,
-      "type": "and-or",
-      "anchor": "Representatives and/or lenders",
-      "quote": "The Receiving Party may disclose Confidential Information only to those of its Representatives and/or lenders who need to know it for the Purpose.",
-      "severity": 2,
-      "why": "\"and/or\" is ambiguous.",
-      "fix": "its Representatives and lenders"
-    },
-    {
-      "n": 10,
-      "type": "time-ambiguity",
-      "anchor": "Within 10 days of",
-      "quote": "Within 10 days of the Disclosing Party's written request, the Receiving Party shall return or destroy all Proprietary Information of the Disclosing Party.",
-      "severity": 2,
-      "why": "\"within 10 days of\" the request could include days before the request.",
-      "fix": "No later than 10 days after the Disclosing Party's written request, ..."
-    },
-    {
-      "n": 11,
-      "type": "defined-term",
-      "anchor": "all Proprietary Information",
-      "quote": "Within 10 days of the Disclosing Party's written request, the Receiving Party shall return or destroy all Proprietary Information of the Disclosing Party.",
-      "severity": 2,
-      "why": "\"Proprietary Information\" is never defined; the defined term is \"Confidential Information\".",
-      "fix": "all Confidential Information"
-    },
-    {
-      "n": 12,
-      "type": "throat-clearing",
-      "anchor": "It is understood and agreed that",
-      "quote": "It is understood and agreed that this agreement grants the Receiving Party no license under any patent or copyright of the Disclosing Party.",
-      "severity": 3,
-      "why": "Throat-clearing.",
-      "fix": "This agreement grants the Receiving Party no license under any patent or copyright of the Disclosing Party."
-    },
-    {
-      "n": 13,
-      "type": "category-shall",
-      "anchor": "shall continue for",
-      "quote": "The Receiving Party's obligations under this agreement shall continue for two (2) years after the date of this agreement.",
-      "severity": 2,
-      "why": "No duty is imposed; the duration is a matter of policy.",
-      "fix": "The Receiving Party's obligations under this agreement continue for 2 years after the date of this agreement."
-    },
-    {
-      "n": 14,
-      "type": "number-words",
-      "anchor": "two (2) years",
-      "quote": "The Receiving Party's obligations under this agreement shall continue for two (2) years after the date of this agreement.",
-      "severity": 3,
-      "why": "Words with digits (house rule 2).",
-      "fix": "2 years"
-    },
-    {
-      "n": 15,
-      "type": "provided-that",
-      "anchor": "provided, however, that",
-      "quote": "If the Receiving Party breaches this agreement, the Disclosing Party may seek an injunction, provided, however, that the Disclosing Party shall first give the Receiving Party notice of the breach.",
-      "severity": 2,
-      "why": "Proviso; here it states a condition to seeking an injunction.",
-      "fix": "Before seeking an injunction, the Disclosing Party shall give the Receiving Party notice of the breach."
-    },
-    {
-      "n": 16,
-      "type": "negative-subject-shall",
-      "anchor": "Neither party shall assign",
-      "quote": "Neither party shall assign this agreement without the other party's prior written consent.",
-      "severity": 1,
-      "why": "Negative subject with \"shall\" reads as \"neither party has a duty to assign\" (house rule 8).",
-      "fix": "Neither party may assign this agreement without the other party's prior written consent."
-    },
-    {
-      "n": 17,
-      "type": "category-shall",
-      "anchor": "shall be governed by",
-      "quote": "This agreement shall be governed by the laws of the Commonwealth of Massachusetts.",
-      "severity": 2,
-      "why": "No duty; governing law is language of policy.",
-      "fix": "Massachusetts law governs this agreement."
-    },
-    {
-      "n": 18,
-      "type": "archaic",
-      "anchor": "IN WITNESS WHEREOF",
-      "quote": "IN WITNESS WHEREOF, the parties have executed this agreement as of the date first written above.",
-      "severity": 3,
-      "why": "Archaic concluding clause.",
-      "fix": "Each party is signing this agreement on the date in the introductory clause."
-    },
-    {
-      "n": 19,
-      "type": "archaic",
-      "anchor": "have executed this agreement",
-      "quote": "IN WITNESS WHEREOF, the parties have executed this agreement as of the date first written above.",
-      "severity": 3,
-      "why": "\"execute\" for sign.",
-      "fix": "have signed this agreement"
-    }
-  ],
-  "traps": [
-    {
-      "anchor": "(the \"Disclosing Party\")",
-      "quote": "\"Confidential Information\" shall mean all nonpublic technical and business information that a party (the \"Disclosing Party\") discloses to the other party (the \"Receiving Party\"), including but not limited to assay designs, reagent formulations, software, and pricing.",
-      "why_correct": "Role labels keep \"the\" (house rule 11); so does (the \"Receiving Party\")."
-    },
-    {
-      "anchor": "is liable for any breach",
-      "quote": "The Receiving Party is liable for any breach of this agreement by its Representatives.",
-      "why_correct": "Adjective after \"is\" is a house exception to active voice."
-    },
-    {
-      "anchor": "is effective when the recipient receives it",
-      "quote": "A notice is effective when the recipient receives it, except that a notice that the recipient receives after 5:00 p.m. Eastern time is effective on the next day.",
-      "why_correct": "Adjective after \"is\"; also states when notice takes effect, which avoids the given-or-received problem."
-    },
-    {
-      "anchor": "5:00 p.m. Eastern time",
-      "quote": "A notice is effective when the recipient receives it, except that a notice that the recipient receives after 5:00 p.m. Eastern time is effective on the next day.",
-      "why_correct": "Correct time format; the periods in \"p.m.\" are not sentence ends, so 1 space follows."
-    }
-  ],
-  "notes": "whose_draft is unknown, so the represents-and-warrants rule does not arise (the NDA has no statements of fact).  Party names (\"Quarry Lane\", \"Sallow Creek\") correctly have no article.  The 1-space sentence spacing is document-wide and keyed once (issue 3); a flag at any sentence break counts."
+ "id": "c02-mutual-nda-legacy",
+ "file": "contracts/c02-mutual-nda-legacy.txt",
+ "title": "Mutual Nondisclosure Agreement",
+ "tier": "obvious",
+ "whose_draft": "unknown",
+ "issues": [
+  {
+   "n": 1,
+   "type": "date-format",
+   "anchor": "1 February 2027",
+   "quote": "This mutual nondisclosure agreement is dated 1 February 2027 and is between Quarry Lane Biotech, Inc., a Delaware corporation (\"Quarry Lane\"), and Sallow Creek Instruments LLC, a Massachusetts limited liability company (\"Sallow Creek\").",
+   "severity": 3,
+   "why": "Day-month-year date (house rule 7).",
+   "fix": "February 1, 2027"
+  },
+  {
+   "n": 2,
+   "type": "archaic",
+   "anchor": "WITNESSETH THAT:",
+   "quote": "WITNESSETH THAT:",
+   "severity": 3,
+   "why": "Archaic.",
+   "fix": "Delete."
+  },
+  {
+   "n": 3,
+   "type": "spacing",
+   "anchor": "\"Purpose\"). In connection",
+   "quote": "The parties wish to evaluate a possible joint development of benchtop assay instruments (the \"Purpose\"). In connection with the Purpose, each party may disclose Confidential Information to the other party.",
+   "severity": 3,
+   "why": "The whole document uses 1 space between sentences, including after the run-in section headings (house rule 5 requires 2). Keyed once at the 1st occurrence.",
+   "fix": "Use 2 spaces between sentences throughout."
+  },
+  {
+   "n": 4,
+   "type": "archaic",
+   "anchor": "NOW, THEREFORE",
+   "quote": "NOW, THEREFORE, the parties agree as follows:",
+   "severity": 3,
+   "why": "Archaic lead-in.",
+   "fix": "The parties therefore agree as follows:"
+  },
+  {
+   "n": 5,
+   "type": "enumeration",
+   "anchor": "1. Definitions.",
+   "quote": "1. Definitions.",
+   "severity": 3,
+   "why": "Top-level sections are numbered 1. to 8. and their subdivisions (a), (b), (c). A contract without articles starts at A., and subsections take 1. (house rule 3).",
+   "fix": "Sections A. to H.; subsections 1., 2., 3."
+  },
+  {
+   "n": 6,
+   "type": "defined-term",
+   "anchor": "shall mean all nonpublic",
+   "quote": "\"Confidential Information\" shall mean all nonpublic technical and business information that a party (the \"Disclosing Party\") discloses to the other party (the \"Receiving Party\"), including but not limited to assay designs, reagent formulations, software, and pricing.",
+   "severity": 3,
+   "why": "Definition uses \"shall mean\".",
+   "fix": "\"Confidential Information\" means ..."
+  },
+  {
+   "n": 7,
+   "type": "doublet",
+   "anchor": "including but not limited to",
+   "quote": "\"Confidential Information\" shall mean all nonpublic technical and business information that a party (the \"Disclosing Party\") discloses to the other party (the \"Receiving Party\"), including but not limited to assay designs, reagent formulations, software, and pricing.",
+   "severity": 3,
+   "why": "\"including\" suffices.",
+   "fix": "including"
+  },
+  {
+   "n": 8,
+   "type": "spacing",
+   "anchor": "information that:  (a)",
+   "quote": "Confidential Information does not include information that:  (a) is or becomes public through no fault of the Receiving Party; (b) the Receiving Party lawfully possessed before the Disclosing Party disclosed it; or (c) the Receiving Party develops independently.",
+   "severity": 3,
+   "why": "2 spaces after a colon (house rule 5 requires 1).",
+   "fix": "information that: (a)"
+  },
+  {
+   "n": 9,
+   "type": "and-or",
+   "anchor": "Representatives and/or lenders",
+   "quote": "The Receiving Party may disclose Confidential Information only to those of its Representatives and/or lenders who need to know it for the Purpose.",
+   "severity": 2,
+   "why": "\"and/or\" is ambiguous.",
+   "fix": "its Representatives and lenders"
+  },
+  {
+   "n": 10,
+   "type": "time-ambiguity",
+   "anchor": "Within 10 days of",
+   "quote": "Within 10 days of the Disclosing Party's written request, the Receiving Party shall return or destroy all Proprietary Information of the Disclosing Party.",
+   "severity": 2,
+   "why": "\"within 10 days of\" the request could include days before the request.",
+   "fix": "No later than 10 days after the Disclosing Party's written request, ..."
+  },
+  {
+   "n": 11,
+   "type": "defined-term",
+   "anchor": "all Proprietary Information",
+   "quote": "Within 10 days of the Disclosing Party's written request, the Receiving Party shall return or destroy all Proprietary Information of the Disclosing Party.",
+   "severity": 2,
+   "why": "\"Proprietary Information\" is never defined; the defined term is \"Confidential Information\".",
+   "fix": "all Confidential Information"
+  },
+  {
+   "n": 12,
+   "type": "throat-clearing",
+   "anchor": "It is understood and agreed that",
+   "quote": "It is understood and agreed that this agreement grants the Receiving Party no license under any patent or copyright of the Disclosing Party.",
+   "severity": 3,
+   "why": "Throat-clearing.",
+   "fix": "This agreement grants the Receiving Party no license under any patent or copyright of the Disclosing Party."
+  },
+  {
+   "n": 13,
+   "type": "category-shall",
+   "anchor": "shall continue for",
+   "quote": "The Receiving Party's obligations under this agreement shall continue for two (2) years after the date of this agreement.",
+   "severity": 2,
+   "why": "No duty is imposed; the duration is a matter of policy.",
+   "fix": "The Receiving Party's obligations under this agreement continue for 2 years after the date of this agreement."
+  },
+  {
+   "n": 14,
+   "type": "number-words",
+   "anchor": "two (2) years",
+   "quote": "The Receiving Party's obligations under this agreement shall continue for two (2) years after the date of this agreement.",
+   "severity": 3,
+   "why": "Words with digits (house rule 2).",
+   "fix": "2 years"
+  },
+  {
+   "n": 15,
+   "type": "provided-that",
+   "anchor": "provided, however, that",
+   "quote": "If the Receiving Party breaches this agreement, the Disclosing Party may seek an injunction, provided, however, that the Disclosing Party shall first give the Receiving Party notice of the breach.",
+   "severity": 2,
+   "why": "Proviso; here it states a condition to seeking an injunction.",
+   "fix": "Before seeking an injunction, the Disclosing Party shall give the Receiving Party notice of the breach."
+  },
+  {
+   "n": 16,
+   "type": "negative-subject-shall",
+   "anchor": "Neither party shall assign",
+   "quote": "Neither party shall assign this agreement without the other party's prior written consent.",
+   "severity": 1,
+   "why": "Negative subject with \"shall\" reads as \"neither party has a duty to assign\" (house rule 8).",
+   "fix": "Neither party may assign this agreement without the other party's prior written consent."
+  },
+  {
+   "n": 17,
+   "type": "category-shall",
+   "anchor": "shall be governed by",
+   "quote": "This agreement shall be governed by the laws of the Commonwealth of Massachusetts.",
+   "severity": 2,
+   "why": "No duty; governing law is language of policy.",
+   "fix": "Massachusetts law governs this agreement."
+  },
+  {
+   "n": 18,
+   "type": "archaic",
+   "anchor": "IN WITNESS WHEREOF",
+   "quote": "IN WITNESS WHEREOF, the parties have executed this agreement as of the date first written above.",
+   "severity": 3,
+   "why": "Archaic concluding clause.",
+   "fix": "Each party is signing this agreement on the date in the introductory clause."
+  },
+  {
+   "n": 19,
+   "type": "archaic",
+   "anchor": "have executed this agreement",
+   "quote": "IN WITNESS WHEREOF, the parties have executed this agreement as of the date first written above.",
+   "severity": 3,
+   "why": "\"execute\" for sign.",
+   "fix": "have signed this agreement"
+  },
+  {
+   "n": 20,
+   "type": "category-will",
+   "severity": 2,
+   "tier": "sneaky",
+   "anchor": "notice is effective",
+   "quote": "A notice is effective when the recipient receives it, except that a notice that the recipient receives after 5:00 p.",
+   "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
+   "fix": "A notice will be effective when the recipient receives it, except that a notice that the recipient receives after 5:00 p",
+   "optional": true,
+   "added_by": "audit"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "(the \"Disclosing Party\")",
+   "quote": "\"Confidential Information\" shall mean all nonpublic technical and business information that a party (the \"Disclosing Party\") discloses to the other party (the \"Receiving Party\"), including but not limited to assay designs, reagent formulations, software, and pricing.",
+   "why_correct": "Role labels keep \"the\" (house rule 11); so does (the \"Receiving Party\")."
+  },
+  {
+   "anchor": "is liable for any breach",
+   "quote": "The Receiving Party is liable for any breach of this agreement by its Representatives.",
+   "why_correct": "Adjective after \"is\" is a house exception to active voice."
+  },
+  {
+   "anchor": "5:00 p.m. Eastern time",
+   "quote": "A notice is effective when the recipient receives it, except that a notice that the recipient receives after 5:00 p.m. Eastern time is effective on the next day.",
+   "why_correct": "Correct time format; the periods in \"p.m.\" are not sentence ends, so 1 space follows."
+  }
+ ],
+ "notes": "whose_draft is unknown, so the represents-and-warrants rule does not arise (the NDA has no statements of fact).  Party names (\"Quarry Lane\", \"Sallow Creek\") correctly have no article.  The 1-space sentence spacing is document-wide and keyed once (issue 3); a flag at any sentence break counts.",
+ "audit": [
+  {
+   "n": 20,
+   "traps_removed": [
+    "is effective when the recipient receives it"
+   ],
+   "change": "optional category-will issue n20 added; 1 trap(s) removed",
+   "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  }
+ ]
 }

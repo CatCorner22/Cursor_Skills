@@ -8,4 +8,4 @@ A passive verb is a form of *be* (or *get*) plus a past participle, with the act
 
 Not passive: *is void*, *is effective*, *is liable*, *is entitled*, *is responsible* (linking verb plus adjective); *the attached form* (participle as adjective).
 
-MSCD's own rules below still matter: they explain why the passive hides the actor (3.15) and how to rephrase buried-actor policies (3.336-3.338). The MSCD allowances for the passive are marked HOUSE.
+MSCD's own rules below still matter: they explain why the passive hides the actor (3.15) and how to rephrase buried-actor policies (3.336-3.338). The MSCD allowances for the passive carry the HOUSE mark.

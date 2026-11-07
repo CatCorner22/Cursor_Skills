@@ -1,23 +1,23 @@
 # Ambiguity catalog
 
-**The skill removes every ambiguity it finds.** For each one, the finding states each possible meaning in plain words before proposing a fix. If the fix requires choosing a meaning, never choose silently: ask which meaning was intended, or, in a redline, comment with one wording for each meaning.
+**The skill removes every ambiguity it finds.** For each one, the finding states each possible meaning in plain words before proposing a fix. If the fix requires choosing a meaning, never choose silently: ask which meaning Blake intends, or, in a redline, comment with 1 wording for each meaning.
 
 ## Definitions
 
-- Text is **ambiguous** if it can express two or more inconsistent meanings (7.5). It is still ambiguous if context resolves it (7.6).
+- Text is **ambiguous** if it can express 2 or more inconsistent meanings (7.5). It is still ambiguous if context resolves it (7.6).
 - A dispute alone doesn't make text ambiguous, and a comma alone shouldn't decide meaning (7.28-7.29; 12.75-12.78; Adams, "What We Talk About When We Talk About Ambiguity").
-- The six sources of uncertain meaning (7.3): ambiguity; not being sufficiently specific; mistake; conflict; not addressing an issue; vagueness (see `vagueness.md`).
+- The 6 sources of uncertain meaning (7.3): ambiguity; not being sufficiently specific; mistake; conflict; not addressing an issue; vagueness (see `vagueness.md`).
 
 ## Causes added by the riders
 
-- **Right-node-raising pivot ambiguity**: two coordinated clauses share a final element, and it's unclear which words the shared element attaches to (*subject to the jurisdiction of and be construed according to the laws of the State of Florida*). Offsetting commas "aren't optional"; better, repeat the shared element. MSCD's "delimiting commas in coordination" (12.79-12.87) are now "offsetting commas in right node raising."
+- **Right-node-raising pivot ambiguity**: 2 coordinated clauses share a final element, and it's unclear which words the shared element attaches to (*subject to the jurisdiction of and be construed according to the laws of the State of Florida*). Offsetting commas "aren't optional"; better, repeat the shared element. MSCD's "delimiting commas in coordination" (12.79-12.87) are now "offsetting commas in right node raising."
 - **Each or in the aggregate**: a quantity attributed to several items or payments (*monthly severance payments ... in the amount of $680,000*). Say *each* or *in the aggregate*.
 - **Ambiguity of the specific versus the general**: *ejusdem generis* and *including* (*insects, birds, rodents, or other animals*). Apply the *including* rules (13.360-13.407).
 - **11.106, second printing**: for a single item, the *every/each/all* ambiguity also afflicts *the whole* and *the entire*.
 
 ## Elaboration: terms of art in their everyday sense
 
-MSCD 1.57 says not to use one word for different meanings. A word that contracts use as a term of art invites the legal reading when it appears in its everyday sense, above all in a contract that also uses the legal sense. Flag these and offer the plain word:
+MSCD 1.57 says not to use 1 word for different meanings. A word that contracts use as a term of art invites the legal reading when it appears in its everyday sense, above all in a contract that also uses the legal sense. Flag these and offer the plain word:
 
 | Everyday use | Legal sense it collides with | Write instead |
 |---|---|---|
@@ -30,11 +30,11 @@ MSCD 1.57 says not to use one word for different meanings. A word that contracts
 | *release payment* (outside an escrow) | release of claims | *pay*, *disburse* |
 | *strategic partner* | a legal partnership | the actual relationship |
 
-This is an elaboration (it applies 1.57; MSCD doesn't list these words), so tag findings `elaboration` and keep them low severity unless the contract uses the same word in its legal sense nearby. The lint flags these as `term-of-art`.
+This is house rule 13 (it applies MSCD 1.57 and 1.8-1.13; MSCD doesn't list these words): severity 1 when the contract also uses the word in its legal sense, otherwise 2 (house-style.md section 13). Cite "house rule 13", not "elaboration". The lint flags these as `term-of-art`.
 
 ## How to use the list below
 
-Records of kind `ambiguity-cause` give the signal to look for, the test and the fix. `scripts/mscd_lint.py` flags candidates where a regex can; many causes (modifier scope, part versus whole) need you to read the sentence, so check every sentence against the causes in pass 4.
+Records of kind `ambiguity-cause` give the signal to look for, the test, and the fix. `scripts/mscd_lint.py` flags candidates where a regex can; many causes (modifier scope, part versus whole) need you to read the sentence, so check every sentence against the causes in pass 4.
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 
@@ -46,11 +46,11 @@ Records of kind `ambiguity-cause` give the signal to look for, the test and the 
 - Chapter 7: Sources of Uncertain Meaning
 - Chapter 10: References to Time
 - Chapter 11: Part Versus the Whole
-- Chapter 11: Blog: a-new-variant-of-ambiguity-of-the-part-versus-the-whole
+- Chapter 11: Blog: A New Variant of Ambiguity of the Part Versus the Whole
 - Chapter 12: Syntactic Ambiguity
-- Chapter 12: Blog: a-new-kind-of-syntactic-ambiguity
+- Chapter 12: Blog: A New Kind of Syntactic Ambiguity
 - Chapter 13: Selected Usages
-- Chapter 13: Blog: say-hi-to-ambiguity-of-the-specific-versus-the-general
+- Chapter 13: Blog: Say Hi to "Ambiguity of the Specific Versus the General"
 - Chapter 14: Numbers and Formulas
 
 ## Rules (114, generated from `data/rules.jsonl`)
@@ -91,6 +91,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Fix: Make clear which antecedent you mean: repeat the noun, use a defined term, or restructure. Replace archaic referring words (said, thereof, such meaning those).
   - Book example: The defendant agrees to pay for one-half the cost of Sarah's college educational expenses ... subject to the limitation that said cost shall not exceed the tuition for a full-time residential student at UCONN-Storrs. → The defendant shall pay half the cost of Sarah's college educational expenses for a four-year degree net of any scholarships and grants, up to an amount equal to half the tuition for a full-time residential student at UCONN-Storrs.
 - **R-7.23-contract-reference-ambiguity** [sev 1] Contract-reference ambiguity: here-words (herein, hereunder, hereof, hereto, hereinbelow) and pointing words (above, below, the foregoing, as aforesaid) leave unclear whether they refer to part of the contract or the whole, or which part; hereunder can also be read as "below" rather than "by operation of." (7.23, 7.24, 7.25...; PDF p. 366)
+  - HOUSE: partly superseded: House rule 4: where a reference is needed, name the provision by its heading, not its number (the section titled "Payment"); better, restructure so no reference is needed.
   - Look for: a here-word or pointing word instead of a reference to a specific section
   - Test: Ask whether the word could mean the whole contract, the current section, or the text immediately before or after; if more than one reading is possible, it is ambiguous.
   - Fix: Refer to the whole contract as this agreement or to a specific section by number (section 4.2); use hereby only in language of performance.
@@ -129,10 +130,10 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Look for: midnight on a date, or 12:01 a.m. / 11:59 p.m. used to dodge the issue
   - Test: Ask whether midnight on the date could be read as the start of that day.
   - Fix: Say midnight at the beginning [or end] of [date]. Don't use 12:01 a.m. or 11:59 p.m., which is clumsy.
-- **R-10.65-minimum-notice-ambiguity** [sev 1] Backward-looking period ambiguity: in a period counted back from an event (before, prior to), especially minimum notice (at least ten days' prior notice), courts split between counting one terminal day and requiring "clear" or "entire" days that exclude both. (10.65, 10.66, 10.67; PDF p. 481)
-  - Look for: minimum notice or a period counted back from a date or event
-  - Test: Count back both ways (exclude one terminal day; exclude both) and see whether the last valid day differs (for a 31 December transfer with ten days' notice: 21 December versus 20 December).
-  - Fix: Be explicit about how the beginning date is determined; you could denote the period in entire days.
+- **R-10.65-minimum-notice-ambiguity** [sev 1] Minimum-notice ambiguity: when a provision requires at least (or no fewer than, or not less than) N days' notice before an event, courts split between counting 1 terminal day (the Nth day before the event is the last valid day, 10.66) and requiring "clear" days that exclude both (the N+1th day before). A plain backward deadline (no later than 10 days before the audit; during the 10 days before the Exclusivity Period expires) follows the convention in 10.65 (count 1 terminal day, not the other): it is not the court split, and making the count explicit there is at most a low-severity improvement. (10.65, 10.66, 10.67; PDF p. 481)
+  - Look for: minimum notice: at least, no fewer than or not less than N days' notice (or N days before an event, where the provision sets how much notice a party must give)
+  - Test: For a minimum-notice period, count back both ways (exclude 1 terminal day; exclude both) and see whether the last valid day differs (for a 31 December transfer with at least 10 days' notice: 21 December versus 20 December). For a plain deadline (no later than N days before), apply the 10.65 convention; flag it only if the parties' intent plainly differs.
+  - Fix: Name the deadline day and offer both counts (the Nth day before; the N+1th day before) and ask which the parties intend; or denote the period in entire days.
 - **R-10.69-within-ambiguity** [sev 1] Within ambiguity: within X days of an event can denote a period running forward, backward, or both (within seven days of the first anniversary), and within X days prior to can mean "during the X days before" or "at least X days before." (10.69, 10.70, 10.71; PDF p. 483)
   - Look for: within X days (or months) of, or within X days prior to, an event or date
   - Test: Ask whether the period could run before the reference point, after it, or both.
@@ -311,7 +312,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-11.158-broader-redrafting** [sev 2] Expect that eliminating part-versus-whole alternative meanings often becomes part of broader redrafting rather than a targeted adjustment. (11.158, 11.159, 11.160; PDF p. 548)
   - Book example: unable to perform any of the duties of his occupation or any occupation for which he is reasonably qualified by education, training or experience → (2) the member is able to perform none of the duties of the member's occupation and each other occupation for which the member is reasonably qualified by education, training, or experience
 
-### Chapter 11: Blog: a-new-variant-of-ambiguity-of-the-part-versus-the-whole
+### Chapter 11: Blog: A New Variant of Ambiguity of the Part Versus the Whole
 
 - **R-rider-each-or-aggregate** [sev 1] A new variant of part-versus-whole ambiguity: when a quantity is attributed to more than one item (or a modifier such as monthly could attach to the noun or the verb), it can be unclear whether the quantity applies to each item or to all of them in the aggregate. Say each or in the aggregate. (11.1; rider)
   - Look for: an amount or quantity attributed to plural items or periodic payments without each or in the aggregate
@@ -398,7 +399,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-12.90-restructure** [sev 1] Sometimes, instead of remedial work on an awkward structure, start afresh; for example, eliminate an abstract noun that creates the ambiguity. (12.90, 12.91, 12.92...; PDF p. 574)
   - Book example: Upon occurrence of a Change in Law or a Force Majeure Event that adversely affects the Seller's performance under this agreement, the Buyer and the Seller shall negotiate in good faith ... → If a Change in Law or a Force Majeure Event adversely affects the Seller's performance under this agreement, the Buyer and the Seller shall negotiate in good faith ...
 
-### Chapter 12: Blog: a-new-kind-of-syntactic-ambiguity
+### Chapter 12: Blog: A New Kind of Syntactic Ambiguity
 
 - **R-rider-rnr-pivot** [sev 1] Right-node-raising pivot ambiguity: when two coordinated clauses share a final element (right node raising), it can be unclear which words the shared element (the pivot) attaches to. If you use right node raising, use offsetting commas; they aren't optional. Better still, restructure so meaning doesn't depend on the commas. (12.79, 12.86, 12.87...; rider)
   - Look for: two coordinated clauses that share a final element, with no offsetting commas
@@ -425,10 +426,11 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.623-termination-prior-notice** [sev 1] Don't say Acme may terminate this agreement upon (or by giving, or with) 60 days' prior notice; upon and by giving suggest termination when notice is given, and with is unclear. A date or event restriction (After X, Acme may terminate ...) leaves unclear whether it applies to terminating or to giving notice. State that if the party notifies the other that it is terminating, the agreement terminates a stated period after the other party receives that notice. (13.623, 13.624, 13.625...; PDF p. 720)
   - Fix: If [after X] Acme notifies Widgetco that Acme is terminating this agreement in accordance with this section 4, this agreement will terminate 60 days after the day Widgetco receives that notice.
 - **R-13.635-notwithstanding-the-foregoing** [sev 1] Notwithstanding the foregoing is ambiguous: the foregoing might refer to the previous sentence, all preceding text, or something in between. (13.635; PDF p. 722)
+  - HOUSE: partly superseded: House rule 4: where a reference is needed, name the provision by its heading, not its number (the section titled "Payment"); better, restructure so no reference is needed.
   - Test: Can the reader tell exactly which text the foregoing refers to?
   - Fix: Name the provision (subject to section 3.2).
 
-### Chapter 13: Blog: say-hi-to-ambiguity-of-the-specific-versus-the-general
+### Chapter 13: Blog: Say Hi to "Ambiguity of the Specific Versus the General"
 
 - **R-rider-specific-vs-general** [sev 1] Treat ejusdem generis and including as one distinct kind of ambiguity, "ambiguity of the specific versus the general": a list of specific items followed by a general term (insects, birds, rodents, or other animals), or a general term followed by including and examples, may be read as limited to things like the specific items or as covering the whole general class. (13.359, 7.5; rider)
   - Look for: specific items followed by a general catchall, or a general term followed by examples

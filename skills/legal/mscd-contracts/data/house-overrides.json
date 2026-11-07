@@ -1,255 +1,297 @@
 {
-  "precedence": "Blake's house rules override MSCD5, riders and the blog.",
-  "counterparty_review_default": "flag",
-  "counterparty_note": "Blake chose full MSCD conformance on the other side's drafts; treat every let-pass rule as flag, but label style-only changes as style in the redline.",
-  "overrides": [
-    {
-      "house_rule": "active-voice",
-      "rule_ids": [
-        "R-3.23-passive-appropriate",
-        "R-3.339-passive-in-policy",
-        "R-13.209-deem-will-passive",
-        "R-18.12-hereby-amended",
-        "R-3.68-future-performance"
-      ],
-      "replacement": "Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('is effective'); amendments as 'The parties hereby amend the section titled ...'. See house-style.md section 1."
-    },
-    {
-      "house_rule": "digits",
-      "rule_ids": [
-        "R-14.15-words-then-digits",
-        "R-14.16-number-exceptions",
-        "R-14.19-digits-only-optional"
-      ],
-      "replacement": "Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Never start a sentence with a digit; restructure. See house-style.md section 2."
-    },
-    {
-      "house_rule": "enumeration",
-      "rule_ids": [
-        "R-4.11-article-numerals",
-        "R-4.17-number-sections-plain",
-        "R-4.17-section-number-format",
-        "R-4.20-enumerate-lone-section",
-        "R-4.29-subsection-letters",
-        "R-4.30-no-multiple-numeration-subsections",
-        "R-4.47-clause-hierarchy",
-        "R-4.48-no-commingled-enumeration",
-        "R-4.49-no-multiple-numeration-clauses",
-        "R-4.58-subsection-enumeration-indent",
-        "R-4.59-no-period-after-number-heading",
-        "R-4.62-word-styles"
-      ],
-      "replacement": "Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); one tab per level; native Word numbering; no only child at any level. See house-style.md section 3."
-    },
-    {
-      "house_rule": "cross-references",
-      "rule_ids": [
-        "R-4.100-crossref-name-and-number",
-        "R-4.102-self-reference-number",
-        "R-4.102-no-repeat-section",
-        "R-4.103-subsection-crossref",
-        "R-4.104-clause-crossref",
-        "R-4.105-crossref-lowercase",
-        "R-4.106-no-heading-in-crossref",
-        "R-4.108-auto-crossref-master"
-      ],
-      "replacement": "Avoid internal cross-references; where one is needed refer by the provision's heading, not its number. Headings must be unique and match exactly; delete or limit any headings-for-convenience clause (15.18). See house-style.md section 4."
-    },
-    {
-      "house_rule": "spacing",
-      "rule_ids": [
-        "R-16.44-one-space"
-      ],
-      "replacement": "Two spaces after sentence-ending punctuation within a paragraph; one space after a colon. See house-style.md section 5."
-    },
-    {
-      "house_rule": "attachment-capitals",
-      "rule_ids": [
-        "R-5.78-no-emphasis-attachment-refs"
-      ],
-      "partial": true,
-      "replacement": "Capitalize attachment references (Schedule A, Exhibit 2); the rest of 5.78 (no emphasis, no quotation marks around the enumeration) still applies. See house-style.md section 6."
-    },
-    {
-      "house_rule": "dates",
-      "rule_ids": [
-        "R-2.22-date-format",
-        "R-10.7-day-month-year"
-      ],
-      "replacement": "U.S. date form: January 1, 2027. MSCD 10.11-10.14 still apply. See house-style.md section 7."
-    },
-    {
-      "house_rule": "font",
-      "rule_ids": [
-        "R-16.37-font-size",
-        "R-proposal-aptos"
-      ],
-      "replacement": "12-point Aptos. See house-style.md section 9."
-    },
-    {
-      "house_rule": "singular-they",
-      "rule_ids": [
-        "R-17.11-gender-neutral"
-      ],
-      "partial": true,
-      "replacement": "Singular they is acceptable and preferred for an individual of unspecified gender; the rest of 17.11-17.18 applies."
-    },
-    {
-      "house_rule": "no-party-articles",
-      "rule_ids": [
-        "R-2.105-definite-article"
-      ],
-      "partial": false,
-      "replacement": "No article before a defined party name, including common-noun terms: Company shall pay Employee, not the Company shall pay the Employee (house-style.md section 11)."
-    },
-    {
-      "house_rule": "no-party-articles",
-      "rule_ids": [
-        "R-6.63-article-in-parenthetical"
-      ],
-      "partial": true,
-      "replacement": "A party-name definition takes no article: (\"Company\"), not (the \"Company\"). For other common-noun defined terms, 6.63 still applies: (the \"Shares\")."
-    },
-    {
-      "house_rule": "attachment-capitals",
-      "rule_ids": [
-        "R-17.29-initial-capitals"
-      ],
-      "partial": true,
-      "replacement": "Capitalize attachment references (Schedule A, Exhibit 1); the rest of MSCD's restraint with initial capitals applies."
-    },
-    {
-      "house_rule": "active-voice",
-      "rule_ids": [
-        "R-3.459-verb-remedy-sentence"
-      ],
-      "partial": true,
-      "replacement": "House wording, in the active: The verb that this agreement uses to introduce a statement of fact does not affect the remedies available for inaccuracy of that statement of fact."
-    },
-    {
-      "house_rule": "active-voice",
-      "rule_ids": [
-        "R-3.292-is-not-required-to"
-      ],
-      "partial": true,
-      "replacement": "Blake's decision: is not required to is a fixed exception to the active-voice rule; use it as MSCD prescribes."
-    }
-  ],
-  "additions": [
-    {
-      "house_rule": "negative-subject-shall",
-      "applies_with": [
-        "R-3.323-collective-noun-prohibition"
-      ],
-      "statement": "Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not."
-    },
-    {
-      "house_rule": "headings-clause",
-      "applies_with": [
-        "R-15.18-rule-headings"
-      ],
-      "statement": "If the contract refers to provisions by heading, delete or limit a headings-for-convenience clause, which would undercut those references."
-    }
-  ],
-  "lint": {
-    "suppress": {
-      "R-5.78-no-emphasis-attachment-refs": "(?:Schedule [A-Z]|Exhibit \\d+)\\b",
-      "R-17.29-initial-capitals": "(?:Schedule [A-Z]|Exhibit \\d+)\\b",
-      "R-10.13-no-numerical-dates": "\\d+(?:\\.\\d+)*-\\d+",
-      "R-14.75-range-gaps-overlaps": "\\d+(?:\\.\\d+)*-\\d+|\\d+\\.\\d+\\s+to\\s+\\d+\\.\\d+",
-      "R-1.65-wholly": "wholly[- ]owned",
-      "R-10.11-no-this-day-of": "the\\s+(?:\\d+(?:st|nd|rd|th)|last|first)\\s+(?:Business\\s+|business\\s+)?day\\s+of\\s+(?:each|every|the|any|a)\\b",
-      "R-7.12-lexical-ambiguity": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
-      "R-7.46-vagueness-def": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
-      "R-9.1-material-usage": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
-      "R-9.3-material-ambiguous": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
-      "R-9.33-location-suggests-meaning": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
-      "R-9.51-omit-material": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)",
-      "R-10.65-minimum-notice-ambiguity": "at\\s+least\\s+(?:\\$|\\d[\\d,]*(?:\\.\\d+)?\\s*(?:%|percent|hours|years|months|units|feet|square))"
-    },
-    "broad_only": [
-      "R-3.89-shall-duty",
-      "R-3.92-has-a-duty-test",
-      "R-3.231-might-for-possibility",
-      "R-4.101-no-hereof-in-crossref",
-      "R-2.117-role-labels",
-      "R-5.72-exhibit-vs-schedule",
-      "R-3.352-conditional-clause-structure",
-      "R-3.363-positive-or-negative",
-      "R-13.694-units-of-product",
-      "R-13.615-notify-not-notice",
-      "R-14.78-date-ranges",
-      "R-1.63-persuasive-words",
-      "R-3.45-agreement-lead-in-only",
-      "R-4.40-the-following-position",
-      "R-8.154-one-efforts-standard",
-      "R-11.18-plural-object-ambiguity",
-      "R-17.29-initial-capitals",
-      "R-4.36-clause-lowercase-start",
-      "R-14.1-words-digits-mismatch",
-      "R-17.28-possessives",
-      "R-10.62-forward-period",
-      "R-13.551-currency",
-      "R-rider-each-or-aggregate",
-      "R-11.9-any-not-plural",
-      "R-3.292-is-not-required-to",
-      "R-3.305-shall-not",
-      "R-13.927-virgule",
-      "R-11.66-or-negation",
-      "R-12.60-combined-elements",
-      "R-10.85-not-less-than-obligation",
-      "R-11.50-or-def",
-      "R-13.116-both-lengthy",
-      "R-5.16-as-of-concluding",
-      "R-9.135-field-surplusage",
-      "R-12.3-preceding-modifier",
-      "R-13.379-including-specialized-word",
-      "R-13.395-including-exhaustive",
-      "R-13.396-including-outside-item",
-      "R-15.5-autonomous-definitions-placement",
-      "R-17.24-there-is-there-are",
-      "R-13.644-nullified-provisions",
-      "R-15.7-time-zone-rule",
-      "R-rider-once-if",
-      "R-13.509-rule-405",
-      "R-3.53-hereby-only-performance",
-      "R-13.355-here-there-words",
-      "R-13.356-hereby-performance",
-      "R-3.50-use-hereby",
-      "R-5.7-signing-not-executing",
-      "R-6.13-single-item-term",
-      "R-3.153-no-obligation-via-other-party",
-      "R-13.241-disclaim",
-      "R-13.420-indemnify",
-      "R-12.58-use-serial-comma",
-      "R-13.399-including-class-modifier",
-      "R-13.949-warranty-noun",
-      "R-13.945-warranty-remedy-conditional",
-      "R-13.702-provision",
-      "R-5.78-no-emphasis-attachment-refs",
-      "R-13.629-notify-sense",
-      "R-intro-drafting-lowercase-agreement",
-      "R-16.36-rhetorical-typography",
-      "R-3.294-no-may-not-authorized-not",
-      "R-3.443-no-timeframe-rationale",
-      "R-13.448-losses-and-liabilities",
-      "R-14.67-stepped-vs-flat",
-      "R-2.104-final-syllable-pairs",
-      "R-2.165-no-recital-of-consideration",
-      "R-10.94-will-have-ambiguity",
-      "R-13.215-potential-default",
-      "R-11.28-and-object-ambiguity",
-      "R-18.1-amend-or-restate",
-      "R-1.13-unnecessary-term-of-art",
-      "R-13.381-general-word-last",
-      "R-rider-ampersand",
-      "R-16.29-how-to-emphasize",
-      "R-3.107-no-must-for-subject",
-      "R-3.111-no-will-for-obligation",
-      "R-5.103-virtual-not-subject-to",
-      "R-13.212-deem-release",
-      "R-2.47-between"
-    ],
-    "note": "suppress: drop a rule hit whose matched text fits the pattern (it already meets the house rule). broad_only: report the rule once as a count, because its trigger is a word that appears in nearly every contract; the analysis passes still apply it to every sentence. broad_only also holds the rules whose triggers matched 5 or more times in the 26-contract test corpus (November 2026) without once marking a problem a reviewer cited."
+ "precedence": "Blake's house rules override MSCD5, riders and the blog.",
+ "counterparty_review_default": "flag",
+ "counterparty_note": "Blake chose full MSCD conformance on the other side's drafts; treat every let-pass rule as flag, but label style-only changes as style in the redline.",
+ "overrides": [
+  {
+   "house_rule": "active-voice",
+   "rule_ids": [
+    "R-3.23-passive-appropriate",
+    "R-3.339-passive-in-policy",
+    "R-13.209-deem-will-passive",
+    "R-18.12-hereby-amended",
+    "R-3.68-future-performance"
+   ],
+   "replacement": "Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'. See house-style.md section 1."
+  },
+  {
+   "house_rule": "digits",
+   "rule_ids": [
+    "R-14.15-words-then-digits",
+    "R-14.16-number-exceptions",
+    "R-14.19-digits-only-optional"
+   ],
+   "replacement": "Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Never start a sentence with a digit; restructure. See house-style.md section 2."
+  },
+  {
+   "house_rule": "enumeration",
+   "rule_ids": [
+    "R-4.11-article-numerals",
+    "R-4.17-number-sections-plain",
+    "R-4.17-section-number-format",
+    "R-4.20-enumerate-lone-section",
+    "R-4.29-subsection-letters",
+    "R-4.30-no-multiple-numeration-subsections",
+    "R-4.47-clause-hierarchy",
+    "R-4.48-no-commingled-enumeration",
+    "R-4.49-no-multiple-numeration-clauses",
+    "R-4.58-subsection-enumeration-indent",
+    "R-4.59-no-period-after-number-heading",
+    "R-4.62-word-styles"
+   ],
+   "replacement": "Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3."
+  },
+  {
+   "house_rule": "cross-references",
+   "rule_ids": [
+    "R-4.100-crossref-name-and-number",
+    "R-4.102-self-reference-number",
+    "R-4.102-no-repeat-section",
+    "R-4.103-subsection-crossref",
+    "R-4.104-clause-crossref",
+    "R-4.105-crossref-lowercase",
+    "R-4.106-no-heading-in-crossref",
+    "R-4.108-auto-crossref-master"
+   ],
+   "replacement": "Avoid internal cross-references; where one is needed refer by the provision's heading, not its number. Headings must be unique and match exactly; delete or limit any headings-for-convenience clause (15.18). See house-style.md section 4."
+  },
+  {
+   "house_rule": "spacing",
+   "rule_ids": [
+    "R-16.44-one-space"
+   ],
+   "replacement": "2 spaces after sentence-ending punctuation within a paragraph; 1 space after a colon. See house-style.md section 5."
+  },
+  {
+   "house_rule": "attachment-capitals",
+   "rule_ids": [
+    "R-5.78-no-emphasis-attachment-refs"
+   ],
+   "partial": true,
+   "replacement": "Capitalize attachment references (Schedule A, Exhibit 2); the rest of 5.78 (no emphasis, no quotation marks around the enumeration) still applies. See house-style.md section 6."
+  },
+  {
+   "house_rule": "dates",
+   "rule_ids": [
+    "R-2.22-date-format",
+    "R-10.7-day-month-year"
+   ],
+   "replacement": "U.S. date form: January 1, 2027. MSCD 10.11-10.14 still apply. See house-style.md section 7."
+  },
+  {
+   "house_rule": "font",
+   "rule_ids": [
+    "R-16.37-font-size",
+    "R-proposal-aptos"
+   ],
+   "replacement": "12-point Aptos. See house-style.md section 9."
+  },
+  {
+   "house_rule": "singular-they",
+   "rule_ids": [
+    "R-17.11-gender-neutral"
+   ],
+   "partial": true,
+   "replacement": "Singular they is acceptable and preferred for an individual of unspecified gender; the rest of 17.11-17.18 applies."
+  },
+  {
+   "house_rule": "no-party-articles",
+   "rule_ids": [
+    "R-2.105-definite-article"
+   ],
+   "partial": false,
+   "replacement": "No article before a defined party name, including common-noun terms: Company shall pay Employee, not the Company shall pay the Employee (house-style.md section 11)."
+  },
+  {
+   "house_rule": "no-party-articles",
+   "rule_ids": [
+    "R-6.63-article-in-parenthetical"
+   ],
+   "partial": true,
+   "replacement": "A party-name definition takes no article: (\"Company\"), not (the \"Company\"). For other common-noun defined terms, 6.63 still applies: (the \"Shares\")."
+  },
+  {
+   "house_rule": "attachment-capitals",
+   "rule_ids": [
+    "R-17.29-initial-capitals"
+   ],
+   "partial": true,
+   "replacement": "Capitalize attachment references (Schedule A, Exhibit 1); the rest of MSCD's restraint with initial capitals applies."
+  },
+  {
+   "house_rule": "active-voice",
+   "rule_ids": [
+    "R-3.459-verb-remedy-sentence"
+   ],
+   "partial": true,
+   "replacement": "House wording, in the active: The verb that this agreement uses to introduce a statement of fact does not affect the remedies available for inaccuracy of that statement of fact."
+  },
+  {
+   "house_rule": "active-voice",
+   "rule_ids": [
+    "R-3.292-is-not-required-to"
+   ],
+   "partial": true,
+   "replacement": "Blake's decision: is not required to is a fixed exception to the active-voice rule; use it as MSCD prescribes."
+  },
+  {
+   "house_rule": "cross-references",
+   "partial": true,
+   "rule_ids": [
+    "R-7.23-contract-reference-ambiguity",
+    "R-13.635-notwithstanding-the-foregoing"
+   ],
+   "replacement": "House rule 4: where a reference is needed, name the provision by its heading, not its number (the section titled \"Payment\"); better, restructure so no reference is needed."
+  },
+  {
+   "house_rule": "attachments",
+   "rule_ids": [
+    "R-5.80-enumerate-attachments",
+    "R-5.83-hybrid-attachment-enumeration"
+   ],
+   "replacement": "House rule 6: schedules take letters (Schedule A, Schedule B) and exhibits take numbers (Exhibit 1, Exhibit 2), so no schedule and exhibit share a designation; relabel any other system and update every reference."
+  },
+  {
+   "house_rule": "headings-clause",
+   "partial": true,
+   "rule_ids": [
+    "R-15.18-rule-headings"
+   ],
+   "replacement": "House rule 4: always delete a headings-for-convenience clause or limit it (\"Headings do not affect the meaning of the provisions they introduce, but references to a provision by its heading identify that provision\"), because references identify provisions by heading."
+  },
+  {
+   "house_rule": "no-should",
+   "rule_ids": [
+    "R-13.506-define-knowledge"
+   ],
+   "partial": true,
+   "replacement": "Never should: define Knowledge with wording for actual knowledge and for knowledge after reasonable inquiry, not should have known. See house-style.md section 12."
   }
+ ],
+ "additions": [
+  {
+   "house_rule": "negative-subject-shall",
+   "applies_with": [
+    "R-3.323-collective-noun-prohibition"
+   ],
+   "statement": "Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not."
+  },
+  {
+   "house_rule": "terms-of-art",
+   "applies_with": [
+    "R-1.8-manage-terms-of-art",
+    "R-1.13-unnecessary-term-of-art"
+   ],
+   "statement": "A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13)."
+  }
+ ],
+ "lint": {
+  "suppress": {
+   "R-5.78-no-emphasis-attachment-refs": "(?:Schedule [A-Z]|Exhibit \\d+)\\b",
+   "R-17.29-initial-capitals": "(?:Schedule [A-Z]|Exhibit \\d+)\\b",
+   "R-10.13-no-numerical-dates": "\\d+(?:\\.\\d+)*-\\d+",
+   "R-14.75-range-gaps-overlaps": "\\d+(?:\\.\\d+)*-\\d+|\\d+\\.\\d+\\s+to\\s+\\d+\\.\\d+",
+   "R-1.65-wholly": "wholly[- ]owned",
+   "R-10.11-no-this-day-of": "the\\s+(?:\\d+(?:st|nd|rd|th)|last|first)\\s+(?:Business\\s+|business\\s+)?day\\s+of\\s+(?:each|every|the|any|a)\\b",
+   "R-7.12-lexical-ambiguity": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)|material\\s*,\\s+(?!adverse)|material\\s+(?:or|and)\\s+(?:tools?|equipment|supplies|components?|parts?|substances?|processes)",
+   "R-7.46-vagueness-def": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)|material\\s*,\\s+(?!adverse)|material\\s+(?:or|and)\\s+(?:tools?|equipment|supplies|components?|parts?|substances?|processes)",
+   "R-9.1-material-usage": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)|material\\s*,\\s+(?!adverse)|material\\s+(?:or|and)\\s+(?:tools?|equipment|supplies|components?|parts?|substances?|processes)",
+   "R-9.3-material-ambiguous": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)|material\\s*,\\s+(?!adverse)|material\\s+(?:or|and)\\s+(?:tools?|equipment|supplies|components?|parts?|substances?|processes)",
+   "R-9.33-location-suggests-meaning": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)|material\\s*,\\s+(?!adverse)|material\\s+(?:or|and)\\s+(?:tools?|equipment|supplies|components?|parts?|substances?|processes)",
+   "R-9.51-omit-material": "materials?\\s+(?:and|or)\\s+(?:workmanship|labor|equipment|supplies)|material\\s*,\\s+(?!adverse)|material\\s+(?:or|and)\\s+(?:tools?|equipment|supplies|components?|parts?|substances?|processes)",
+   "R-10.65-minimum-notice-ambiguity": "at\\s+least\\s+(?:\\$|\\d[\\d,]*(?:\\.\\d+)?\\s*(?:%|percent|hours|years|months|units|feet|square))",
+   "R-1.71-useful-purpose": "(?i)surviv(?:ing|or)\\s+(?:corporation|entity|company|spouse|partnership|limited liability company|LLC)",
+   "R-13.822-survival": "(?i)surviv(?:ing|or)\\s+(?:corporation|entity|company|spouse|partnership|limited liability company|LLC)",
+   "R-10.114-promptly-equals-immediately": "(?i)immediate(?:ly)?\\s+(?:before|after|following|preceding|prior\\s+to)\\b",
+   "R-3.485-acknowledges": "(?i)accepts?\\s+that\\s+(?:certificate|notice|offer|delivery|report|invoice|statement|determination|amount|payment|order|proposal|bid|deliverable|work|[A-Z])",
+   "R-10.24-preposition-verdicts": "(?i)(?:between|from)\\b(?![^.;]{0,60}?(?:\\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|days?|dates?|weeks?|months?|years?|hours?|a\\.m|p\\.m|noon|midnight|closing|effective)\\b|\\d))",
+   "R-7.23-contract-reference-ambiguity": "(?i)(?:above|below)\\s*(?:\\$|\\d|(?:that|the|such|this|its|any|a)\\s+(?:\\w+\\s+)?(?:threshold|minimum|maximum|level|limit|amount|rate|cap|floor|target|percentage|price|value))",
+   "R-7.26-specific-section-refs": "(?i)(?:above|below)\\s*(?:\\$|\\d|(?:that|the|such|this|its|any|a)\\s+(?:\\w+\\s+)?(?:threshold|minimum|maximum|level|limit|amount|rate|cap|floor|target|percentage|price|value))"
+  },
+  "broad_only": [
+   "R-3.89-shall-duty",
+   "R-3.92-has-a-duty-test",
+   "R-3.231-might-for-possibility",
+   "R-4.101-no-hereof-in-crossref",
+   "R-2.117-role-labels",
+   "R-5.72-exhibit-vs-schedule",
+   "R-3.352-conditional-clause-structure",
+   "R-3.363-positive-or-negative",
+   "R-13.694-units-of-product",
+   "R-13.615-notify-not-notice",
+   "R-14.78-date-ranges",
+   "R-1.63-persuasive-words",
+   "R-3.45-agreement-lead-in-only",
+   "R-4.40-the-following-position",
+   "R-8.154-one-efforts-standard",
+   "R-11.18-plural-object-ambiguity",
+   "R-17.29-initial-capitals",
+   "R-4.36-clause-lowercase-start",
+   "R-14.1-words-digits-mismatch",
+   "R-17.28-possessives",
+   "R-10.62-forward-period",
+   "R-13.551-currency",
+   "R-rider-each-or-aggregate",
+   "R-11.9-any-not-plural",
+   "R-3.292-is-not-required-to",
+   "R-3.305-shall-not",
+   "R-13.927-virgule",
+   "R-11.66-or-negation",
+   "R-12.60-combined-elements",
+   "R-10.85-not-less-than-obligation",
+   "R-11.50-or-def",
+   "R-13.116-both-lengthy",
+   "R-5.16-as-of-concluding",
+   "R-9.135-field-surplusage",
+   "R-12.3-preceding-modifier",
+   "R-13.379-including-specialized-word",
+   "R-13.395-including-exhaustive",
+   "R-13.396-including-outside-item",
+   "R-15.5-autonomous-definitions-placement",
+   "R-17.24-there-is-there-are",
+   "R-13.644-nullified-provisions",
+   "R-15.7-time-zone-rule",
+   "R-rider-once-if",
+   "R-13.509-rule-405",
+   "R-3.53-hereby-only-performance",
+   "R-13.355-here-there-words",
+   "R-13.356-hereby-performance",
+   "R-3.50-use-hereby",
+   "R-5.7-signing-not-executing",
+   "R-6.13-single-item-term",
+   "R-3.153-no-obligation-via-other-party",
+   "R-13.241-disclaim",
+   "R-13.420-indemnify",
+   "R-12.58-use-serial-comma",
+   "R-13.399-including-class-modifier",
+   "R-13.949-warranty-noun",
+   "R-13.945-warranty-remedy-conditional",
+   "R-13.702-provision",
+   "R-5.78-no-emphasis-attachment-refs",
+   "R-13.629-notify-sense",
+   "R-intro-drafting-lowercase-agreement",
+   "R-16.36-rhetorical-typography",
+   "R-3.294-no-may-not-authorized-not",
+   "R-3.443-no-timeframe-rationale",
+   "R-13.448-losses-and-liabilities",
+   "R-14.67-stepped-vs-flat",
+   "R-2.104-final-syllable-pairs",
+   "R-2.165-no-recital-of-consideration",
+   "R-10.94-will-have-ambiguity",
+   "R-13.215-potential-default",
+   "R-11.28-and-object-ambiguity",
+   "R-18.1-amend-or-restate",
+   "R-1.13-unnecessary-term-of-art",
+   "R-13.381-general-word-last",
+   "R-rider-ampersand",
+   "R-16.29-how-to-emphasize",
+   "R-3.107-no-must-for-subject",
+   "R-3.111-no-will-for-obligation",
+   "R-5.103-virtual-not-subject-to",
+   "R-13.212-deem-release",
+   "R-2.47-between",
+   "R-10.102-calendar-year-month"
+  ],
+  "note": "suppress: drop a rule hit whose matched text fits the pattern (it already meets the house rule). broad_only: report the rule once as a count, because its trigger is a word that appears in nearly every contract; the analysis passes still apply it to every sentence. broad_only also holds the rules whose triggers matched 5 or more times in the 26-contract test corpus (November 2026) without once marking a problem a reviewer cited."
+ }
 }

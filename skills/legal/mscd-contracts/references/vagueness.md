@@ -4,8 +4,8 @@ Vagueness is not ambiguity: text is vague when whether it is satisfied depends o
 
 ## Policy
 
-- **Flag every vague standard** (*reasonable*, *promptly*, *material*, *substantial*, *satisfactory*, *best efforts* and the like) and classify it: keep on purpose, replace with a specific standard, or ask Blake.
-- **Keep vagueness only when** the stakes are low and the context is commonplace (7.51-7.53), the party can't control the outcome (*reasonable legal expenses*), or negotiating precision costs more than it saves (7.48-7.49). Even then, narrow its scope.
+- **Flag every vague standard** (*reasonable*, *promptly*, *material*, *substantial*, *satisfactory*, *best efforts*, and the like) and classify it: keep on purpose, replace with a specific standard, or ask Blake.
+- **Rule *keep* only when no measure exists** (*reasonable efforts*, *substantially all*) and say why; otherwise offer the measure the contract supplies, or a bracketed number, and ask Blake. MSCD 7.48-7.53 give the reasons a drafter keeps vagueness (low stakes, an outcome the party can't control, the cost of negotiating precision); whether they apply is Blake's deal judgment, not yours. Even where it stays, narrow its scope.
 - **Never use gradations of vagueness** such as degrees of negligence or a hierarchy of efforts (7.54; 8.3).
 - **Never invent a number.** Use a bracketed blank and ask: *promptly, but no later than [__] Business Days after* (10.131).
 - **Pair every efforts obligation with a performance standard**; even *promptly* is enough (8.139-8.143). Use only *reasonable efforts* (8.134).
@@ -294,6 +294,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.500-knowledge-qualifier** [sev 2] Consider a knowledge qualification in a statement of fact if the party can't determine whether the statement is accurate, usually because the matters might be hidden (contamination) or under others' control (threatened litigation). It means the party claims only that it isn't aware of anything suggesting inaccuracy; who bears unknown risk is a risk-allocation question. (13.500, 13.501, 13.502...; PDF p. 691)
   - Fix: To the Seller's knowledge, ...
 - **R-13.506-define-knowledge** [sev 2] Consider making Knowledge a defined term to address whose knowledge counts (narrow for the stating party, broad for the other) and the level of knowledge (actual knowledge, or knowledge after inquiry of specified employees or after reasonable investigation, using knows or should have known). In a sale of a business, consider whether to include its managers. Avoid reasonable knowledge as unclear. (13.506, 13.507, 13.508...; PDF p. 692)
+  - HOUSE: partly superseded: Never should: define Knowledge with wording for actual knowledge and for knowledge after reasonable inquiry, not should have known. See house-style.md section 12.
   - Fix: Autonomous definition of Knowledge naming the individuals and the level of investigation.
 - **R-13.521-likely** [sev 2] Be aware of the uncertain meaning of likely (more or less than 50%? synonymous with probable?); in some contexts you can't avoid it. You could state a percentage probability instead, though debating 49% versus 51% is often meaningless for contract provisions. (13.521, 13.522, 13.523...; PDF p. 697)
   - Fix: has a probability of greater than 50% of [result]

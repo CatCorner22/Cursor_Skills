@@ -1,8 +1,8 @@
-# Standard English, writing and typography
+# Standard English, writing, and typography
 
-Aim for a specialized version of standard English: the English of educated native speakers (1.30-1.32). Apply house style first (`house-style.md`): digits for every number, U.S. dates, two spaces between sentences and one after a colon, 12-point Aptos, singular *they*, clean visual lines.
+Aim for a specialized version of standard English: the English of educated native speakers (1.30-1.32). Apply house style first (`house-style.md`): digits for every number, U.S. dates, 2 spaces between sentences and 1 after a colon, 12-point Aptos, singular *they*, clean visual lines.
 
-Key MSCD rules that still apply: split long sentences and keep subject, verb and object together (17.2-17.6); unbury verbs (17.7-17.9); write gender-neutral text (17.11-17.18); use the plain alternatives in the 36-pair table at 17.19; use possessives (17.28); capitalize per *Chicago* (17.29-17.35, except attachment references, which take capitals under house style); no contractions (17.37); punctuate by standard English without making meaning depend on punctuation (17.38); the serial comma (12.59); the subjunctive only where modern usage keeps it (3.34-3.40); third person (3.10-3.12).
+Key MSCD rules that still apply: split long sentences and keep subject, verb, and object together (17.2-17.6); unbury verbs (17.7-17.9); write gender-neutral text (17.11-17.18); use the plain alternatives in the 36-pair table at 17.19; use possessives (17.28); capitalize per *Chicago* (17.29-17.35, except attachment references, which take capitals under house style); no contractions (17.37); punctuate by standard English without making meaning depend on punctuation (17.38); the serial comma (12.59); the subjunctive only where modern usage keeps it (3.34-3.40); third person (3.10-3.12).
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 
@@ -12,7 +12,7 @@ Key MSCD rules that still apply: split long sentences and keep subject, verb and
 Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or dispute risk; 3 = style), the rule, and its MSCD paragraphs and PDF page. `HOUSE` marks a rule that Blake's house style changes: apply the house rule. For a rule's full record (test, fix, exceptions, verified book examples), run `python3 scripts/rules_query.py --id <id>`.
 
 
-### Blog: no-ampersands-in-contracts
+### Blog: No Ampersands in Contracts!
 
 - **R-rider-ampersand** [sev 3] Don't use an ampersand except where it appears in the name of a business or law firm; write and. In a heading, use a semicolon (Amendment; Waiver) or make separate sections. (Introduction; rider)
 
@@ -41,7 +41,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 
 - **R-5.95-in-not-on-schedule** [sev 3] Say in schedule X, not on schedule X. (5.95; PDF p. 324)
 
-### Chapter 6: Blog: an-exception-to-the-rule-against-also-stating-without-initial-capitals
+### Chapter 6: Blog: An Exception to the Rule Against Also Stating Without Initial Capitals
 
 - **R-rider-lowercase-party-noun** [sev 3] Exception to the rule that every instance of a defined term takes initial capitals: if a common noun is the defined term for a party (Company, Lender), you may also use that word without initial capitals in its ordinary sense. (6.10, 6.11; rider)
 
@@ -49,7 +49,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 
 - **R-6.15-a-or-an-abbreviation** [sev 3] Before an abbreviation used as a common noun, choose a or an by the sound of its first syllable, go with the pronunciation you and your colleagues use, and apply it consistently throughout the contract. (6.15; PDF p. 334)
 
-### Chapter 10: Blog: revisiting-date-and-day
+### Chapter 10: Blog: Revisiting "Date" and "Day"
 
 - **R-rider-date-day** [sev 3] Use date for the point on a calendar that a given day occupies and day for a unit of time; but because using date for day can't cause confusion, don't insist on either. Closing date is fine; don't change closing day to closing date either. (10.15, 10.16; elaboration)
 
@@ -131,7 +131,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-16.39-line-length** [sev 3] Keep line length within the recommended 45 to 90 characters; the simplest fix is 1.5- to 2-inch side margins, though keeping blocks of text short mitigates long lines. (16.39, 16.40, 16.41; PDF p. 840)
 - **R-16.42-line-spacing** [sev 3] Single spacing has been standard; consider experimenting with extra space (Typography for Lawyers recommends Word's Multiple at 1.03 to 1.24). (16.42, 16.43; PDF p. 841)
 - **R-16.44-one-space** [sev 3] Use one space, not two, after periods, question marks, exclamation marks, and colons. (16.44, 16.45, 16.46; PDF p. 842)
-  - HOUSE: Two spaces after sentence-ending punctuation within a paragraph; one space after a colon. See house-style.md section 5.
+  - HOUSE: 2 spaces after sentence-ending punctuation within a paragraph; 1 space after a colon. See house-style.md section 5.
 - **R-16.47-curly-quotes** [sev 3] Make all quotation marks and apostrophes curly; mixed marks are a hallmark of a sloppy copy-and-paste job. Turn on Word's AutoFormat As You Type replacement and convert straight marks with Find and Replace. (16.47, 16.49, 16.50...; PDF p. 842)
 - **R-16.54-first-line-indents** [sev 3] Don't use both first-line indents and space between paragraphs; the manual's samples use no first-line indents. (16.54, 16.55; PDF p. 843)
 

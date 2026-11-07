@@ -1,6 +1,6 @@
-# References to time, numbers and formulas
+# References to time, numbers, and formulas
 
-House style: digits for every number; U.S. dates (*January 1, 2027*). Key MSCD rules: state whether a point in time is inclusive or exclusive (10.22-10.28); *no later than X days after*, not *within* (10.69-10.71); *midnight at the beginning of*, never *12:00 a.m.* (10.35-10.38); name the time zone (10.51-10.56); *promptly*, not *immediately* (10.118-10.131); state the time component of a reference, *as of the date of this agreement* or *then in effect* (10.152-10.156); never words and digits (14.5-14.11); *the result of* for order of operations (14.26-14.40); state whether tiered rates are stepped or shifting flat (14.69-14.77).
+House style: digits for every number; U.S. dates (*January 1, 2027*). Key MSCD rules: state whether a point in time is inclusive or exclusive (10.22-10.28); *no later than X days after*, not *within* (10.69-10.71); for a minimum-notice period (*at least 20 days before*), name the deadline day and offer both counts, the 20th day before (1 end day, 10.65) and the 21st day before (clear days, 10.66), and ask which the parties intend; *until*, *to*, and *by* leave an end day in doubt, so write *through* or *before* (10.23-10.24); *midnight at the beginning of*, never *12:00 a.m.* (10.35-10.38); name the time zone (10.51-10.56); *promptly*, not *immediately* (10.118-10.131); state the time component of a reference, *as of the date of this agreement* or *then in effect* (10.152-10.156); never words and digits (14.5-14.11); *the result of* for order of operations (14.26-14.40); state whether tiered rates are stepped or shifting flat (14.69-14.77).
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 
@@ -61,10 +61,10 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: (none) → If during the 30 days after that 15-month period the Buyer notifies the Seller it wishes to sell the Property back to the Seller ...
 - **R-10.62-forward-period** [sev 1] In a forward-looking period (from, following, after), the convention excludes the day you count from and includes the last day; be explicit about how the ending date is determined, and if you know both ends, use paired points in time instead. (10.62, 10.63, 10.64; PDF p. 480)
   - Exceptions: The convention doesn't apply if the period clearly must consist of entire days (both terminal days excluded) or the parties clearly intend the first day to be included (10.63).
-- **R-10.65-minimum-notice-ambiguity** [sev 1] Backward-looking period ambiguity: in a period counted back from an event (before, prior to), especially minimum notice (at least ten days' prior notice), courts split between counting one terminal day and requiring "clear" or "entire" days that exclude both. (10.65, 10.66, 10.67; PDF p. 481)
-  - Look for: minimum notice or a period counted back from a date or event
-  - Test: Count back both ways (exclude one terminal day; exclude both) and see whether the last valid day differs (for a 31 December transfer with ten days' notice: 21 December versus 20 December).
-  - Fix: Be explicit about how the beginning date is determined; you could denote the period in entire days.
+- **R-10.65-minimum-notice-ambiguity** [sev 1] Minimum-notice ambiguity: when a provision requires at least (or no fewer than, or not less than) N days' notice before an event, courts split between counting 1 terminal day (the Nth day before the event is the last valid day, 10.66) and requiring "clear" days that exclude both (the N+1th day before). A plain backward deadline (no later than 10 days before the audit; during the 10 days before the Exclusivity Period expires) follows the convention in 10.65 (count 1 terminal day, not the other): it is not the court split, and making the count explicit there is at most a low-severity improvement. (10.65, 10.66, 10.67; PDF p. 481)
+  - Look for: minimum notice: at least, no fewer than or not less than N days' notice (or N days before an event, where the provision sets how much notice a party must give)
+  - Test: For a minimum-notice period, count back both ways (exclude 1 terminal day; exclude both) and see whether the last valid day differs (for a 31 December transfer with at least 10 days' notice: 21 December versus 20 December). For a plain deadline (no later than N days before), apply the 10.65 convention; flag it only if the parties' intent plainly differs.
+  - Fix: Name the deadline day and offer both counts (the Nth day before; the N+1th day before) and ask which the parties intend; or denote the period in entire days.
 - **R-10.68-no-confusing-points** [sev 1] Don't measure a period from a point in time that could cause argument over when or whether it occurred (final resolution of any disputes). (10.68; PDF p. 482)
   - Look for: period keyed to an event of uncertain timing
 - **R-10.69-within-ambiguity** [sev 1] Within ambiguity: within X days of an event can denote a period running forward, backward, or both (within seven days of the first anniversary), and within X days prior to can mean "during the X days before" or "at least X days before." (10.69, 10.70, 10.71; PDF p. 483)
@@ -141,7 +141,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Test: Ask whether the class could grow or change after signing, and which members the provision should cover.
   - Fix: Say so in the provision or definition: "Subsidiary" means, for a Person [on the date of this agreement] [at a given time], ... ; say whether shares includes shares acquired later.
 
-### Chapter 10: Blog: revisiting-date-and-day
+### Chapter 10: Blog: Revisiting "Date" and "Day"
 
 - **R-rider-date-day** [sev 3] Use date for the point on a calendar that a given day occupies and day for a unit of time; but because using date for day can't cause confusion, don't insist on either. Closing date is fine; don't change closing day to closing date either. (10.15, 10.16; elaboration)
 

@@ -1,7 +1,6 @@
 # Drafting and review practice
 
-- **Annotation first.** Adams doubts technology can "digest MSCD and present you with a suitably reworked draft"; he suggests "explanatory annotations," leaving fixes to the user ("Could You Use Artificial Intelligence to Check Whether a Contract Complies with MSCD?"). Every finding explains before it changes; Redline changes only wording whose meaning is certain.
-- **The other side's drafts.** MSCD advises flagging only deal departures and sources of confusion (Introduction, PDF pp. 54-55). Blake's house rule is full conformance; separate meaning changes from style changes so the other side sees what matters.
+- **Annotation first and the other side's drafts:** see SKILL.md, "2 principles" (the AI post, mid-2023), and `house-style.md` section 10.
 - **Caselaw.** MSCD never relies on caselaw to fix a usage's meaning; cases show which usages risk disputes (Introduction, PDF p. 42).
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.

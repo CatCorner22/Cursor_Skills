@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: redline-over-tracked-changes
+expected_outcome: |
+  A redline that keeps every tracked change by "Opposing Counsel" (4 insertions, 3 deletions) and adds Blake's AI Agent's own tracked changes and comments on top, a clean copy, and a note that lists each of the other side's changes with a recommendation. Among the fixes: "Neither party shall assign" becomes "Neither party may assign"; the conflicting inspection deadlines are flagged; "Prior to shipping" becomes "Before shipping"; "within 45 days of receipt" becomes a no-later-than-after deadline. Correct text stays: "in the form of Exhibit 1", "housings in Schedule A", "Buyer is not required to pay", "cooperate with one another".
+context:
+  scaffold_script: place-files.sh

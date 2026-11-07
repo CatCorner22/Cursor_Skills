@@ -1,122 +1,142 @@
 {
-  "id": "c35-software-reseller",
-  "file": "contracts/c35-software-reseller.docx",
-  "title": "Software Reseller Agreement",
-  "tier": "mixed",
-  "whose_draft": "other-side",
-  "issues": [
-    {
-      "n": 1,
-      "type": "party-article",
-      "anchor": "(the \"Reseller\")",
-      "quote": "This agreement is dated January 15, 2027, and is between Tallgrass Dispatch Software, Inc., a Kansas corporation (\"Vendor\"), and Brightwater Systems Integration LLC, a Colorado limited liability company (the \"Reseller\").",
-      "severity": 2,
-      "why": "House rule 11: no article before a defined party name. The definition should read (\"Reseller\"), as (\"Vendor\") does; the body already says Reseller without the article.",
-      "fix": "Brightwater Systems Integration LLC, a Colorado limited liability company (\"Reseller\")."
-    },
-    {
-      "n": 2,
-      "type": "may-not",
-      "anchor": "Reseller may not market",
-      "quote": "Reseller may not market or resell the Products to any end user outside the Territory.",
-      "severity": 2,
-      "why": "A prohibition on an affirmative subject expressed with may not (MSCD 3.307); may not can be read as \"might not.\" Use shall not, as the next sentence does.",
-      "fix": "Reseller shall not market or resell the Products to any end user outside the Territory."
-    },
-    {
-      "n": 3,
-      "type": "sole-discretion",
-      "anchor": "in its sole discretion",
-      "quote": "Vendor may, in its sole discretion, discontinue any Product by giving Reseller at least 90 days' notice.",
-      "severity": 3,
-      "why": "In its sole discretion adds nothing to may (MSCD 3.249).",
-      "fix": "Vendor may discontinue any Product by giving Reseller at least 90 days' notice."
-    },
-    {
-      "n": 4,
-      "type": "consistency",
-      "anchor": "license terms for the Goods",
-      "quote": "Reseller shall pass through to each end user Vendor's end-user license terms for the Goods.",
-      "severity": 1,
-      "why": "The contract defines and uses Products for the software; Goods names the same thing with a 2nd, undefined term (MSCD 1.57). A defined term used in 2 forms is severity 1 under the house policy.",
-      "fix": "Reseller shall pass through to each end user Vendor's end-user license terms for the Products."
-    },
-    {
-      "n": 5,
-      "type": "category-will",
-      "anchor": "Vendor will provide Reseller",
-      "quote": "Vendor will provide Reseller with 2 nonproduction licenses for each Product, at no charge, for demonstrations and training.",
-      "severity": 2,
-      "why": "Will used to impose a duty on Vendor.",
-      "fix": "Vendor shall provide Reseller with 2 nonproduction licenses for each Product, at no charge, for demonstrations and training."
-    },
-    {
-      "n": 6,
-      "type": "time-ambiguity",
-      "anchor": "within 30 days of the invoice date",
-      "quote": "Reseller shall pay each invoice within 30 days of the invoice date.",
-      "severity": 2,
-      "why": "Within 30 days of does not say before or after the invoice date; the payment deadline is open to dispute.",
-      "fix": "Reseller shall pay each invoice no later than 30 days after the invoice date."
-    },
-    {
-      "n": 7,
-      "type": "entitled-to-duty",
-      "anchor": "Reseller is entitled to receive",
-      "quote": "Reseller is entitled to receive a marketing development credit equal to 2% of the license fees that Reseller pays Vendor in each calendar quarter.",
-      "severity": 2,
-      "why": "Is entitled to receive hides Vendor's duty to issue the credit (MSCD 3.169); no party is obliged to give it, and the sentence doesn't say how or when.",
-      "fix": "Vendor shall give Reseller a marketing development credit equal to 2% of the license fees that Reseller pays Vendor in each calendar quarter, and Vendor shall apply each credit to Reseller's next invoice."
-    },
-    {
-      "n": 8,
-      "type": "cross-reference-number",
-      "anchor": "under Section G",
-      "quote": "Reseller shall follow Vendor's trademark guidelines, as Vendor updates them from time to time, and Reseller shall stop using Vendor's name and the names of the Products when this agreement ends under Section G.",
-      "severity": 2,
-      "why": "House rule 4: refer by heading, not by section letter.",
-      "fix": "when this agreement ends (or: when this agreement ends under the section titled \"Term and Termination\")."
-    },
-    {
-      "n": 9,
-      "type": "arising-out-of",
-      "anchor": "arising out of or relating to",
-      "quote": "Each party submits to the exclusive jurisdiction of the state and federal courts in Johnson County, Kansas, for any dispute arising out of or relating to this agreement.",
-      "severity": 2,
-      "why": "Arising out of or relating to is broad and uncertain (MSCD 13.41-13.54); say what is meant.",
-      "fix": "for any dispute arising out of this agreement (or: for any dispute under this agreement)."
-    },
-    {
-      "n": 10,
-      "type": "formatting",
-      "anchor": "[format]",
-      "quote": "This agreement is dated January 15, 2027, and is between Tallgrass Dispatch Software, Inc., a Kansas corporation (\"Vendor\"), and Brightwater Systems Integration LLC, a Colorado limited liability company (the \"Reseller\").",
-      "severity": 3,
-      "why": "Every body paragraph (title, introductory clause, sections, notices, signature lines) is justified; house rule 9 requires left alignment. Font and size are otherwise correct (Aptos 12).",
-      "fix": "Set every paragraph to left alignment."
-    }
-  ],
-  "traps": [
-    {
-      "anchor": "This agreement is dated January 15, 2027",
-      "quote": "This agreement is dated January 15, 2027, and is between Tallgrass Dispatch Software, Inc., a Kansas corporation (\"Vendor\"), and Brightwater Systems Integration LLC, a Colorado limited liability company (the \"Reseller\").",
-      "why_correct": "Is dated in the introductory clause is a fixed house exception; the date is in U.S. form."
-    },
-    {
-      "anchor": "Reseller is not required to purchase",
-      "quote": "Reseller is not required to purchase any minimum quantity of Products.",
-      "why_correct": "Is not required to is the house exception (MSCD 3.292)."
-    },
-    {
-      "anchor": "first-class mail",
-      "quote": "Each party shall give notices under this agreement in writing, by hand delivery, by nationally recognized overnight courier, or by first-class mail, to the other party's address below that party's signature.",
-      "why_correct": "Fixed term; keeps its word (house rule 2)."
-    },
-    {
-      "anchor": "5:00 p.m. Central time",
-      "quote": "For an order that Reseller submits after 5:00 p.m. Central time on a Business Day, that 2-Business-Day period starts on the next Business Day.",
-      "why_correct": "Correct time expression; the single space after p.m. is mid-sentence, not a sentence break."
-    }
-  ],
-  "notes": "Other-side draft. The file already carries a Word comment by \"T. Abernathy (Tallgrass Legal)\" on the section titled \"General\"; the comment is not an issue and its text is not part of the contract text. Formatting issue: all body paragraphs are justified. The schedule (a price table) is correctly a lettered schedule. \"Reseller shall use reasonable efforts\" is correct."
+ "id": "c35-software-reseller",
+ "file": "contracts/c35-software-reseller.docx",
+ "title": "Software Reseller Agreement",
+ "tier": "mixed",
+ "whose_draft": "other-side",
+ "issues": [
+  {
+   "n": 1,
+   "type": "party-article",
+   "anchor": "(the \"Reseller\")",
+   "quote": "This agreement is dated January 15, 2027, and is between Tallgrass Dispatch Software, Inc., a Kansas corporation (\"Vendor\"), and Brightwater Systems Integration LLC, a Colorado limited liability company (the \"Reseller\").",
+   "severity": 2,
+   "why": "House rule 11: no article before a defined party name. The definition should read (\"Reseller\"), as (\"Vendor\") does; the body already says Reseller without the article.",
+   "fix": "Brightwater Systems Integration LLC, a Colorado limited liability company (\"Reseller\")."
+  },
+  {
+   "n": 2,
+   "type": "may-not",
+   "anchor": "Reseller may not market",
+   "quote": "Reseller may not market or resell the Products to any end user outside the Territory.",
+   "severity": 2,
+   "why": "A prohibition on an affirmative subject expressed with may not (MSCD 3.307); may not can be read as \"might not.\" Use shall not, as the next sentence does.",
+   "fix": "Reseller shall not market or resell the Products to any end user outside the Territory."
+  },
+  {
+   "n": 3,
+   "type": "sole-discretion",
+   "anchor": "in its sole discretion",
+   "quote": "Vendor may, in its sole discretion, discontinue any Product by giving Reseller at least 90 days' notice.",
+   "severity": 3,
+   "why": "In its sole discretion adds nothing to may (MSCD 3.249).",
+   "fix": "Vendor may discontinue any Product by giving Reseller at least 90 days' notice."
+  },
+  {
+   "n": 4,
+   "type": "consistency",
+   "anchor": "license terms for the Goods",
+   "quote": "Reseller shall pass through to each end user Vendor's end-user license terms for the Goods.",
+   "severity": 1,
+   "why": "The contract defines and uses Products for the software; Goods names the same thing with a 2nd, undefined term (MSCD 1.57). A defined term used in 2 forms is severity 1 under the house policy.",
+   "fix": "Reseller shall pass through to each end user Vendor's end-user license terms for the Products."
+  },
+  {
+   "n": 5,
+   "type": "category-will",
+   "anchor": "Vendor will provide Reseller",
+   "quote": "Vendor will provide Reseller with 2 nonproduction licenses for each Product, at no charge, for demonstrations and training.",
+   "severity": 2,
+   "why": "Will used to impose a duty on Vendor.",
+   "fix": "Vendor shall provide Reseller with 2 nonproduction licenses for each Product, at no charge, for demonstrations and training."
+  },
+  {
+   "n": 6,
+   "type": "time-ambiguity",
+   "anchor": "within 30 days of the invoice date",
+   "quote": "Reseller shall pay each invoice within 30 days of the invoice date.",
+   "severity": 2,
+   "why": "Within 30 days of does not say before or after the invoice date; the payment deadline is open to dispute.",
+   "fix": "Reseller shall pay each invoice no later than 30 days after the invoice date."
+  },
+  {
+   "n": 7,
+   "type": "entitled-to-duty",
+   "anchor": "Reseller is entitled to receive",
+   "quote": "Reseller is entitled to receive a marketing development credit equal to 2% of the license fees that Reseller pays Vendor in each calendar quarter.",
+   "severity": 2,
+   "why": "Is entitled to receive hides Vendor's duty to issue the credit (MSCD 3.169); no party is obliged to give it, and the sentence doesn't say how or when.",
+   "fix": "Vendor shall give Reseller a marketing development credit equal to 2% of the license fees that Reseller pays Vendor in each calendar quarter, and Vendor shall apply each credit to Reseller's next invoice."
+  },
+  {
+   "n": 8,
+   "type": "cross-reference-number",
+   "anchor": "under Section G",
+   "quote": "Reseller shall follow Vendor's trademark guidelines, as Vendor updates them from time to time, and Reseller shall stop using Vendor's name and the names of the Products when this agreement ends under Section G.",
+   "severity": 2,
+   "why": "House rule 4: refer by heading, not by section letter.",
+   "fix": "when this agreement ends (or: when this agreement ends under the section titled \"Term and Termination\")."
+  },
+  {
+   "n": 9,
+   "type": "arising-out-of",
+   "anchor": "arising out of or relating to",
+   "quote": "Each party submits to the exclusive jurisdiction of the state and federal courts in Johnson County, Kansas, for any dispute arising out of or relating to this agreement.",
+   "severity": 2,
+   "why": "Arising out of or relating to is broad and uncertain (MSCD 13.41-13.54); say what is meant.",
+   "fix": "for any dispute arising out of this agreement (or: for any dispute under this agreement)."
+  },
+  {
+   "n": 10,
+   "type": "formatting",
+   "anchor": "[format]",
+   "quote": "This agreement is dated January 15, 2027, and is between Tallgrass Dispatch Software, Inc., a Kansas corporation (\"Vendor\"), and Brightwater Systems Integration LLC, a Colorado limited liability company (the \"Reseller\").",
+   "severity": 3,
+   "why": "Every body paragraph (title, introductory clause, sections, notices, signature lines) is justified; house rule 9 requires left alignment. Font and size are otherwise correct (Aptos 12).",
+   "fix": "Set every paragraph to left alignment."
+  },
+  {
+   "n": 11,
+   "type": "category-will",
+   "severity": 2,
+   "tier": "sneaky",
+   "anchor": "notice is effective",
+   "quote": "A notice is effective when the recipient receives it.",
+   "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
+   "fix": "A notice will be effective when the recipient receives it",
+   "optional": true,
+   "added_by": "audit"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "This agreement is dated January 15, 2027",
+   "quote": "This agreement is dated January 15, 2027, and is between Tallgrass Dispatch Software, Inc., a Kansas corporation (\"Vendor\"), and Brightwater Systems Integration LLC, a Colorado limited liability company (the \"Reseller\").",
+   "why_correct": "Is dated in the introductory clause is a fixed house exception; the date is in U.S. form."
+  },
+  {
+   "anchor": "Reseller is not required to purchase",
+   "quote": "Reseller is not required to purchase any minimum quantity of Products.",
+   "why_correct": "Is not required to is the house exception (MSCD 3.292)."
+  },
+  {
+   "anchor": "first-class mail",
+   "quote": "Each party shall give notices under this agreement in writing, by hand delivery, by nationally recognized overnight courier, or by first-class mail, to the other party's address below that party's signature.",
+   "why_correct": "Fixed term; keeps its word (house rule 2)."
+  },
+  {
+   "anchor": "5:00 p.m. Central time",
+   "quote": "For an order that Reseller submits after 5:00 p.m. Central time on a Business Day, that 2-Business-Day period starts on the next Business Day.",
+   "why_correct": "Correct time expression; the single space after p.m. is mid-sentence, not a sentence break."
+  }
+ ],
+ "notes": "Other-side draft. The file already carries a Word comment by \"T. Abernathy (Tallgrass Legal)\" on the section titled \"General\"; the comment is not an issue and its text is not part of the contract text. Formatting issue: all body paragraphs are justified. The schedule (a price table) is correctly a lettered schedule. \"Reseller shall use reasonable efforts\" is correct.",
+ "audit": [
+  {
+   "n": 11,
+   "traps_removed": [],
+   "change": "optional category-will issue n11 added",
+   "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  }
+ ]
 }
