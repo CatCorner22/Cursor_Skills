@@ -1,0 +1,136 @@
+{
+ "id": "c20-commission-agreement",
+ "file": "contracts/c20-commission-agreement.txt",
+ "title": "Sales Commission Agreement",
+ "tier": "mixed",
+ "whose_draft": "unknown",
+ "issues": [
+  {
+   "n": 1,
+   "type": "defined-term",
+   "anchor": "commission on each Qualified Sale",
+   "quote": "Representative is entitled to a commission on each Qualified Sale that Representative closes while this Agreement is in effect.",
+   "severity": 1,
+   "why": "\"Qualified Sale\" drives every commission but is never defined (anchored at its 1st use).",
+   "fix": "Add a definition: \"Qualified Sale\" means a sale of a solar installation to a customer in Representative's territory for which the customer has signed Company's purchase contract."
+  },
+  {
+   "n": 2,
+   "type": "category-shall",
+   "anchor": "commission rate shall be",
+   "quote": "The commission rate shall be 6% of the Net Revenue from each Qualified Sale.",
+   "severity": 2,
+   "why": "No duty imposed; language of policy.",
+   "fix": "The commission rate is 6% of the Net Revenue from each Qualified Sale."
+  },
+  {
+   "n": 3,
+   "type": "syntactic-ambiguity",
+   "anchor": "or a Service Contract exceeding $50,000",
+   "quote": "Company shall pay Representative a bonus of $2,000 for each sale of a battery-storage system or a Service Contract exceeding $50,000.",
+   "severity": 1,
+   "why": "\"exceeding $50,000\" can modify only the Service Contract or both the battery-storage system and the Service Contract.",
+   "fix": "Restructure, for example: for each sale of a battery-storage system, and for each Service Contract with a price over $50,000."
+  },
+  {
+   "n": 4,
+   "type": "ordinal",
+   "anchor": "the fifteenth day",
+   "quote": "Company shall pay each commission on the fifteenth day of the month after the month in which the customer pays Company in full.",
+   "severity": 3,
+   "why": "Spelled-out ordinal.",
+   "fix": "on the 15th day of the month"
+  },
+  {
+   "n": 5,
+   "type": "time-ambiguity",
+   "anchor": "from January 1 to March 31",
+   "quote": "For Qualified Sales that Representative closes from January 1 to March 31 of each year, the commission rate is 8% instead of 6%.",
+   "severity": 2,
+   "why": "\"from ... to\" leaves unclear whether the end dates are included.",
+   "fix": "from January 1 through March 31 of each year (both dates inclusive)"
+  },
+  {
+   "n": 6,
+   "type": "category-should",
+   "anchor": "Representative should enter",
+   "quote": "Representative should enter each Qualified Sale in Company's customer-relationship-management system no later than 2 days after closing that sale.",
+   "severity": 2,
+   "why": "\"should\" anywhere is a category error.",
+   "fix": "Representative shall enter each Qualified Sale ..."
+  },
+  {
+   "n": 7,
+   "type": "sole-discretion",
+   "anchor": "in its sole discretion",
+   "quote": "Company may, in its sole discretion, change Representative's territory by notice to Representative.",
+   "severity": 3,
+   "why": "\"sole discretion\" with \"may\" adds nothing (MSCD 3.249).",
+   "fix": "Company may change Representative's territory by notice to Representative."
+  },
+  {
+   "n": 8,
+   "type": "and-or",
+   "anchor": "Company and/or its affiliates",
+   "quote": "Representative shall offer the products of Company and/or its affiliates only to customers in Representative's territory.",
+   "severity": 2,
+   "why": "\"and/or\".",
+   "fix": "the products of Company, of Company's affiliates, or of both"
+  },
+  {
+   "n": 9,
+   "type": "agrees-to",
+   "anchor": "Representative agrees to repay",
+   "quote": "If a customer cancels a Qualified Sale and receives a refund no later than 90 days after installation, Representative agrees to repay the related commission to Company.",
+   "severity": 3,
+   "why": "\"agrees to\".",
+   "fix": "Representative shall repay the related commission to Company."
+  },
+  {
+   "n": 10,
+   "type": "number-words",
+   "anchor": "one or more",
+   "quote": "Company may deduct any repayment from one or more later commission payments to Representative.",
+   "severity": 3,
+   "why": "Number in words (house rule 2).",
+   "fix": "1 or more"
+  },
+  {
+   "n": 11,
+   "type": "spacing",
+   "anchor": "regarding commissions. The parties",
+   "quote": "This Agreement is the parties' entire agreement regarding commissions. The parties may amend this Agreement only in a writing that both parties sign.",
+   "severity": 3,
+   "why": "1 space between sentences.",
+   "fix": "2 spaces after \"commissions.\""
+  },
+  {
+   "n": 12,
+   "type": "nonparty-obligation",
+   "anchor": "Representative is entitled to a commission",
+   "quote": "Representative is entitled to a commission on each Qualified Sale that Representative closes while this Agreement is in effect.",
+   "severity": 2,
+   "why": "MSCD 3.169: don't use is entitled to to impose an obligation on someone other than the subject; it hides who must pay or deliver.",
+   "fix": "Company shall pay Representative a commission ...",
+   "source": "MSCD 3.169 (key corrected by reviewer: was listed as a trap)"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "Section 409A of the Internal Revenue Code",
+   "quote": "Company intends each commission payment to qualify as a short-term deferral under Section 409A of the Internal Revenue Code.",
+   "why_correct": "Statute reference; fine."
+  },
+  {
+   "anchor": "is not required to pay",
+   "quote": "Company is not required to pay any commission on a sale that Representative closes after the termination date.",
+   "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+  },
+  {
+   "anchor": "the section titled \"Commissions.\"",
+   "quote": "After termination, Company shall pay Representative commissions on Qualified Sales that Representative closed before the termination date, on the schedule in the section titled \"Commissions.\"",
+   "why_correct": "Correct house-style cross-reference by heading (house rule 4)."
+  }
+ ],
+ "notes": "Whose draft is unknown. Party names have no article; A./1. enumeration is correct. \"Qualified Sale\" is a document-level defined-term issue anchored at its 1st use (B.1); C.1, C.2, E.1, and F.2 use it again. The only spacing error is in G.2."
+}

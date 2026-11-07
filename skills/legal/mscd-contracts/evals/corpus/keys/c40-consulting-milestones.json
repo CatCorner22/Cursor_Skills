@@ -1,0 +1,131 @@
+{
+  "id": "c40-consulting-milestones",
+  "file": "contracts/c40-consulting-milestones.txt",
+  "title": "Consulting Agreement",
+  "tier": "mixed",
+  "whose_draft": "unknown",
+  "issues": [
+    {
+      "n": 1,
+      "type": "term-of-art",
+      "anchor": "Consultant shall execute a hydrology",
+      "quote": "Consultant shall execute a hydrology and water quality study (the \"Services\") for Client's proposed oyster nursery at Client's lease site in Bulls Bay, South Carolina (the \"Site\").",
+      "severity": 2,
+      "why": "Execute is a term of art (to sign a document); here it means perform.",
+      "fix": "Consultant shall perform a hydrology and water quality study ..."
+    },
+    {
+      "n": 2,
+      "type": "category-will",
+      "anchor": "Client will provide Consultant",
+      "quote": "Client will provide Consultant with access to the Site and to Client's boats and docks during normal working hours.",
+      "severity": 2,
+      "why": "Will used to impose a duty on Client.",
+      "fix": "Client shall provide Consultant with access to the Site and to Client's boats and docks during normal working hours."
+    },
+    {
+      "n": 3,
+      "type": "doublet",
+      "anchor": "including but not limited to",
+      "quote": "Client shall give Consultant copies of all water quality data for the Site that Client possesses, including but not limited to data from Client's 2025 and 2026 sampling programs.",
+      "severity": 3,
+      "why": "Including suffices.",
+      "fix": "including data from Client's 2025 and 2026 sampling programs."
+    },
+    {
+      "n": 4,
+      "type": "nonparty-obligation",
+      "anchor": "Consultant's employees shall comply",
+      "quote": "Consultant's employees shall comply with Client's site safety rules while they are at the Site.",
+      "severity": 2,
+      "why": "Consultant's employees are not parties, so shall cannot bind them.",
+      "fix": "Consultant shall cause its employees to comply with Client's site safety rules while they are at the Site."
+    },
+    {
+      "n": 5,
+      "type": "number-words",
+      "anchor": "Twelve Thousand Dollars ($12,000)",
+      "quote": "3           Draft hydrodynamic model               Twelve Thousand Dollars ($12,000)",
+      "severity": 2,
+      "why": "Milestone table, row 3: the fee is in words and digits; house rule 2 requires digits only.",
+      "fix": "$12,000"
+    },
+    {
+      "n": 6,
+      "type": "conflict",
+      "anchor": "all milestone fees: $48,000",
+      "quote": "Total of all milestone fees: $48,000",
+      "severity": 1,
+      "why": "The table total says $48,000, but the 4 milestone fees add up to $46,500 ($9,500 + $14,000 + $12,000 + $11,000).",
+      "fix": "Reconcile: correct the total to $46,500, or correct the milestone fee that is wrong."
+    },
+    {
+      "n": 7,
+      "type": "time-ambiguity",
+      "anchor": "promptly after receiving it",
+      "quote": "Client shall review each Deliverable and either accept it or give Consultant notice of the Deliverable's deficiencies promptly after receiving it.",
+      "severity": 2,
+      "why": "Promptly sets no deadline for Client's review, and payment depends on acceptance.",
+      "fix": "no later than 10 days after receiving it (and state what happens if Client doesn't respond in time)."
+    },
+    {
+      "n": 8,
+      "type": "ordinal",
+      "anchor": "the second milestone",
+      "quote": "Consultant shall not begin work on the second milestone until Client accepts the Deliverable for milestone 1.",
+      "severity": 2,
+      "why": "House rule 2: ordinals in digits (and the table numbers the milestones).",
+      "fix": "Consultant shall not begin work on milestone 2 until ..."
+    },
+    {
+      "n": 9,
+      "type": "reduced-passive",
+      "anchor": "the travel expenses incurred by Consultant",
+      "quote": "Client shall reimburse Consultant for the travel expenses incurred by Consultant in performing the Services, up to $3,000 in total, if Consultant submits receipts for those expenses with Consultant's invoices.",
+      "severity": 3,
+      "why": "Reduced passive (with an article); a clean active form exists.",
+      "fix": "the travel expenses that Consultant incurs in performing the Services"
+    },
+    {
+      "n": 10,
+      "type": "and-or",
+      "anchor": "and/or regulatory filings",
+      "quote": "Client may use the Deliverables for permit applications, investor presentations, grant proposals, and/or regulatory filings.",
+      "severity": 1,
+      "why": "And/or after a list of 4 items leaves unclear which combinations are allowed (severity 1 under this corpus).",
+      "fix": "Client may use the Deliverables for permit applications, investor presentations, grant proposals, regulatory filings, or any combination of them."
+    },
+    {
+      "n": 11,
+      "type": "successors-assigns",
+      "anchor": "successors and assigns",
+      "quote": "This agreement is binding on the parties and their respective successors and assigns.",
+      "severity": 3,
+      "why": "Usually unnecessary (MSCD 15.24).",
+      "fix": "Delete the sentence."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Each Deliverable is a work made for hire",
+      "quote": "Each Deliverable is a work made for hire for Client.",
+      "why_correct": "Work made for hire is the statutory term (Copyright Act); its participle is part of the term, not a recastable reduced passive."
+    },
+    {
+      "anchor": "Client is not required to pay",
+      "quote": "Client is not required to pay for any Deliverable that Client has not accepted.",
+      "why_correct": "Is not required to is the house exception (MSCD 3.292)."
+    },
+    {
+      "anchor": "cooperate with one another",
+      "quote": "The parties shall cooperate with one another in responding to any regulatory agency's questions about the Deliverables.",
+      "why_correct": "One is part of one another; house rule 2 keeps it."
+    },
+    {
+      "anchor": "no later than 30 days after Client receives it",
+      "quote": "Consultant shall invoice Client for each milestone after Client accepts the related Deliverable, and Client shall pay each invoice no later than 30 days after Client receives it.",
+      "why_correct": "Clear deadline measured from receipt; correct."
+    }
+  ],
+  "notes": "Unknown draft owner (.txt). The milestone table is typed in plain text with column spacing; the runs of spaces inside the table are layout, not sentence spacing. Issues 5 and 6 are inside the table."
+}

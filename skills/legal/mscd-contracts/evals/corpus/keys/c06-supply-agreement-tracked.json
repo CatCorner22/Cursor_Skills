@@ -1,0 +1,122 @@
+{
+  "id": "c06-supply-agreement-tracked",
+  "file": "contracts/c06-supply-agreement-tracked.docx",
+  "title": "Supply Agreement",
+  "tier": "mixed",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "reduced-passive",
+      "anchor": "Units ordered by Buyer",
+      "quote": "Supplier shall deliver the Units ordered by Buyer to Buyer's plant in Grand Rapids, Michigan, no later than 20 days after Supplier receives the purchase order, provided that Buyer has paid every invoice that is then past due.",
+      "severity": 3,
+      "why": "Recastable reduced passive.",
+      "fix": "the Units that Buyer orders"
+    },
+    {
+      "n": 2,
+      "type": "provided-that",
+      "anchor": "provided that Buyer has paid",
+      "quote": "Supplier shall deliver the Units ordered by Buyer to Buyer's plant in Grand Rapids, Michigan, no later than 20 days after Supplier receives the purchase order, provided that Buyer has paid every invoice that is then past due.",
+      "severity": 2,
+      "why": "Proviso used to state a condition. This text is a tracked insertion by Opposing Counsel.",
+      "fix": "Delete the proviso and add: \"Supplier is not required to deliver Units while any invoice of Buyer is past due.\""
+    },
+    {
+      "n": 3,
+      "type": "archaic",
+      "anchor": "Prior to shipping",
+      "quote": "Prior to shipping any Units, Supplier shall label each carton with Buyer's part number for the Units in that carton.",
+      "severity": 3,
+      "why": "\"prior to\".",
+      "fix": "Before shipping"
+    },
+    {
+      "n": 4,
+      "type": "category-shall",
+      "anchor": "Unit shall be the price",
+      "quote": "The price for each Unit shall be the price for that Unit in Schedule A.",
+      "severity": 2,
+      "why": "No duty; the price is a matter of policy.",
+      "fix": "The price for each Unit is the price for that Unit in Schedule A."
+    },
+    {
+      "n": 5,
+      "type": "ordinal",
+      "anchor": "the first anniversary",
+      "quote": "Supplier may increase the prices in Schedule A, effective on the first anniversary of the date of this agreement and on each later anniversary, by no more than 3% each time.",
+      "severity": 3,
+      "why": "Ordinal in words (house rule 2). This text is a tracked insertion by Opposing Counsel.",
+      "fix": "the 1st anniversary"
+    },
+    {
+      "n": 6,
+      "type": "time-ambiguity",
+      "anchor": "within 45 days of receipt",
+      "quote": "Buyer shall pay each invoice within 45 days of receipt.",
+      "severity": 2,
+      "why": "\"within 45 days of receipt\" could include days before receipt. The \"45\" is a tracked insertion replacing a deleted \"30\".",
+      "fix": "no later than 45 days after Buyer receives the invoice"
+    },
+    {
+      "n": 7,
+      "type": "conflict",
+      "anchor": "no later than 10 days after delivery",
+      "quote": "Buyer shall give Supplier notice of any nonconforming Unit no later than 10 days after delivery, or Buyer waives its right to reject that Unit.",
+      "severity": 1,
+      "why": "Buyer waives its right to reject a nonconforming Unit unless it gives notice no later than 10 days after delivery, but the next subsection lets Buyer reject by notice up to 30 days after delivery.",
+      "fix": "Use 1 deadline in both places."
+    },
+    {
+      "n": 8,
+      "type": "defined-term",
+      "anchor": "nonconforming Product",
+      "quote": "Buyer may reject any nonconforming Product by notice to Supplier no later than 30 days after delivery.",
+      "severity": 2,
+      "why": "\"Product\" is used instead of the defined term \"Units\" and is never defined.",
+      "fix": "any nonconforming Unit"
+    },
+    {
+      "n": 9,
+      "type": "negative-subject-shall",
+      "anchor": "Neither party shall assign",
+      "quote": "Neither party shall assign this agreement without the other party's consent.",
+      "severity": 1,
+      "why": "Negative subject with \"shall\" (house rule 8).",
+      "fix": "Neither party may assign this agreement without the other party's consent."
+    },
+    {
+      "n": 10,
+      "type": "arising-out-of",
+      "anchor": "arising out of or relating to",
+      "quote": "Supplier shall indemnify Buyer against any third-party claim arising out of or relating to a defect in any Unit.",
+      "severity": 2,
+      "why": "MSCD 13.41-13.54.",
+      "fix": "arising out of"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "housings in Schedule A",
+      "quote": "Supplier shall manufacture and sell to Buyer, and Buyer shall buy from Supplier, the molded polymer housings in Schedule A (the \"Units\").",
+      "why_correct": "Correct schedule: lettered, and it holds a price list."
+    },
+    {
+      "anchor": "in the form of Exhibit 1",
+      "quote": "Buyer shall order Units by sending Supplier a purchase order in the form of Exhibit 1.",
+      "why_correct": "Correct exhibit: numbered, and it holds a stand-alone form (the purchase order)."
+    },
+    {
+      "anchor": "Buyer is not required to pay",
+      "quote": "Buyer is not required to pay any amount that Buyer disputes in good faith if Buyer notifies Supplier of the dispute before the payment is due.",
+      "why_correct": "House exception to active voice: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "cooperate with one another",
+      "quote": "The parties shall cooperate with one another in good faith to resolve any dispute before either party starts litigation.",
+      "why_correct": "\"one another\" keeps its word form (house rule 2)."
+    }
+  ],
+  "notes": "Other side's draft with tracked changes by author \"Opposing Counsel\" (w:date 2026-10-01T00:00:00Z): 4 insertions (the delivery proviso; the price-increase sentence; \"45\"; \"no later than 30 days\") and 3 deletions (\"30\"; \"promptly and in any event \"; \"within thirty (30) days\").  All anchors match the text with every change accepted.  The provided-that and ordinal issues sit wholly inside inserted runs; the time-ambiguity anchor spans an insertion.  The deleted text holds number words and a \"within ... days\" phrase; it is not in the accepted text and must not be flagged.  \"third-party claim\" is a fixed term.  Formatting is compliant (Aptos 12, left-aligned)."
+}

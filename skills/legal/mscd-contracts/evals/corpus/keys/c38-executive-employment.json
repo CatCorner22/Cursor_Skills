@@ -1,0 +1,122 @@
+{
+  "id": "c38-executive-employment",
+  "file": "contracts/c38-executive-employment.md",
+  "title": "Executive Employment Agreement",
+  "tier": "mixed",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "throat-clearing",
+      "anchor": "For the avoidance of doubt",
+      "quote": "For the avoidance of doubt, the signing bonus is not part of Base Salary for any purpose.",
+      "severity": 3,
+      "why": "Throat-clearing; state the rule.",
+      "fix": "The signing bonus is not part of Base Salary for any purpose."
+    },
+    {
+      "n": 2,
+      "type": "category-shall",
+      "anchor": "Company shall have the right to",
+      "quote": "Company shall have the right to terminate Executive's employment at any time, with or without Cause.",
+      "severity": 2,
+      "why": "Shall have the right to expresses discretion, not a duty.",
+      "fix": "Company may terminate Executive's employment at any time, with or without Cause."
+    },
+    {
+      "n": 3,
+      "type": "category-must",
+      "anchor": "Executive must give Company",
+      "quote": "Executive must give Company at least 60 days' notice before resigning.",
+      "severity": 2,
+      "why": "Must used for a duty of the party that is the subject.",
+      "fix": "Executive shall give Company at least 60 days' notice before resigning."
+    },
+    {
+      "n": 4,
+      "type": "number-words",
+      "anchor": "twelve (12) months",
+      "quote": "During Executive's employment and for twelve (12) months after it ends, Executive shall not, anywhere in the United States, engage in any business that is substantially similar to Company's business of freight-rate analytics software; provided, however, that Executive may own up to 2% of the outstanding stock of any publicly traded company.",
+      "severity": 2,
+      "why": "House rule 2: digits only, never words with digits.",
+      "fix": "for 12 months after it ends"
+    },
+    {
+      "n": 5,
+      "type": "vagueness",
+      "anchor": "substantially similar",
+      "quote": "During Executive's employment and for twelve (12) months after it ends, Executive shall not, anywhere in the United States, engage in any business that is substantially similar to Company's business of freight-rate analytics software; provided, however, that Executive may own up to 2% of the outstanding stock of any publicly traded company.",
+      "severity": 2,
+      "why": "Undefined standard on which the reach of the noncompete turns; precision was possible (the next words name the business).",
+      "fix": "engage in any business that develops, licenses, or sells freight-rate analytics software"
+    },
+    {
+      "n": 6,
+      "type": "provided-that",
+      "anchor": "provided, however, that",
+      "quote": "During Executive's employment and for twelve (12) months after it ends, Executive shall not, anywhere in the United States, engage in any business that is substantially similar to Company's business of freight-rate analytics software; provided, however, that Executive may own up to 2% of the outstanding stock of any publicly traded company.",
+      "severity": 2,
+      "why": "Proviso; use except that or a new sentence.",
+      "fix": "... analytics software, except that Executive may own up to 2% of the outstanding stock of any publicly traded company."
+    },
+    {
+      "n": 7,
+      "type": "knowledge-standard",
+      "anchor": "knows or should have known",
+      "quote": "During Executive's employment and for 12 months after it ends, Executive shall not solicit (a) any customer that Executive knows or should have known is a customer of Company, for the purpose of selling freight-rate analytics software to that customer, or (b) any employee of Company to leave Company's employment, unless he or she is responding to a general job advertisement that does not target Company's employees.",
+      "severity": 2,
+      "why": "Settled policy: flag it but do not rewrite it; offer a defined Knowledge term (MSCD 13.506).",
+      "fix": "Keep the text. In a comment, offer a defined term, for example: \"Knowledge\" means the actual knowledge of Executive after reasonable inquiry."
+    },
+    {
+      "n": 8,
+      "type": "consistency",
+      "anchor": "he or she",
+      "quote": "During Executive's employment and for 12 months after it ends, Executive shall not solicit (a) any customer that Executive knows or should have known is a customer of Company, for the purpose of selling freight-rate analytics software to that customer, or (b) any employee of Company to leave Company's employment, unless he or she is responding to a general job advertisement that does not target Company's employees.",
+      "severity": 2,
+      "why": "House rule 9 requires singular they. The catalog has no dedicated type for this rule, so it is filed as consistency (one form of reference for persons); severity 2 because it is a house rule other than typography.",
+      "fix": "unless they are responding to a general job advertisement that does not target Company's employees."
+    },
+    {
+      "n": 9,
+      "type": "defined-term",
+      "anchor": "Proprietary Information",
+      "quote": "When Executive's employment ends, Executive shall return to Company all documents and devices that contain Proprietary Information.",
+      "severity": 1,
+      "why": "The same concept appears as Confidential Information (defined) and Proprietary Information (never defined); a defined term in 2 forms.",
+      "fix": "Executive shall return to Company all documents and devices that contain Confidential Information."
+    },
+    {
+      "n": 10,
+      "type": "survival",
+      "anchor": "by their nature should survive",
+      "quote": "All provisions of this agreement that by their nature should survive termination shall survive.",
+      "severity": 2,
+      "why": "Vague survival boilerplate (MSCD 13.822-13.831). Its should and shall survive are part of the same clause; count it as 1 issue.",
+      "fix": "Delete. Where needed, say that the section titled \"Restrictive Covenants\" and the severance terms continue to apply after Executive's employment ends, for the periods they state."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "the Sixth Circuit",
+      "quote": "Each party submits to the exclusive jurisdiction of the United States District Court for the Southern District of Ohio for any dispute under this agreement and, for any appeal, the United States Court of Appeals for the Sixth Circuit.",
+      "why_correct": "A number word inside a proper name stays (house rule 2)."
+    },
+    {
+      "anchor": "one-time signing bonus",
+      "quote": "Company shall pay Executive a one-time signing bonus of $60,000 no later than 30 days after the start of the Term.",
+      "why_correct": "One-time is a compound word; house rule 2 keeps it."
+    },
+    {
+      "anchor": "Section 409A of the Internal Revenue Code",
+      "quote": "Each installment is a separate payment for purposes of Section 409A of the Internal Revenue Code.",
+      "why_correct": "A statute reference, not an internal cross-reference (house rule 4)."
+    },
+    {
+      "anchor": "Executive is not required to mitigate",
+      "quote": "Executive is not required to mitigate the amount of any severance payment by seeking other employment.",
+      "why_correct": "Is not required to is the house exception (MSCD 3.292)."
+    }
+  ],
+  "notes": "Other-side draft (.md); the contract has no represents-and-warrants language. Issue 8 (he or she) is a house rule 9 breach with no dedicated catalog type; match it on its anchor. Issue 10 (survival) contains should and shall; do not count them as separate issues."
+}

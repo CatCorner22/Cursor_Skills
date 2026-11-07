@@ -1,0 +1,225 @@
+{
+ "id": "c16-promissory-note-legacy",
+ "file": "contracts/c16-promissory-note-legacy.docx",
+ "title": "Promissory Note",
+ "tier": "obvious",
+ "whose_draft": "other-side",
+ "issues": [
+  {
+   "n": 1,
+   "type": "formatting",
+   "anchor": "[format]",
+   "quote": "[format]",
+   "severity": 2,
+   "why": "Body text is Cambria 11 point; house rule 9 requires 12-point Aptos (font and size are both wrong).",
+   "fix": "Set all text to 12-point Aptos."
+  },
+  {
+   "n": 2,
+   "type": "formatting",
+   "anchor": "[format]",
+   "quote": "[format]",
+   "severity": 2,
+   "why": "Paragraph headings (\"1. Interest.\" through \"9. Governing Law.\") are underlined; house rule 9 bars underlined headings.",
+   "fix": "Remove the underlining (bold is fine)."
+  },
+  {
+   "n": 3,
+   "type": "date-format",
+   "anchor": "the 15th day of January, 2027",
+   "quote": "Denver, Colorado, the 15th day of January, 2027",
+   "severity": 3,
+   "why": "\"the 15th day of\" date format.",
+   "fix": "Denver, Colorado, January 15, 2027"
+  },
+  {
+   "n": 4,
+   "type": "party-article",
+   "anchor": "(the \"Borrower\")",
+   "quote": "Copperline Brewing Company, a Colorado corporation (the \"Borrower\"), promises to pay to the order of Front Range Equipment Finance, LLC, a Colorado limited liability company (the \"Lender\"), the principal sum of TWO HUNDRED FIFTY THOUSAND AND NO/100 DOLLARS ($250,000.00), with interest on the unpaid principal balance at the rates in this promissory note (this \"Note\").",
+   "severity": 3,
+   "why": "Document-wide: party names defined and used with \"the\" (the Borrower, the Lender).",
+   "fix": "Define (\"Borrower\") and (\"Lender\"); drop \"the\" throughout."
+  },
+  {
+   "n": 5,
+   "type": "number-words",
+   "anchor": "TWO HUNDRED FIFTY THOUSAND",
+   "quote": "Copperline Brewing Company, a Colorado corporation (the \"Borrower\"), promises to pay to the order of Front Range Equipment Finance, LLC, a Colorado limited liability company (the \"Lender\"), the principal sum of TWO HUNDRED FIFTY THOUSAND AND NO/100 DOLLARS ($250,000.00), with interest on the unpaid principal balance at the rates in this promissory note (this \"Note\").",
+   "severity": 3,
+   "why": "Amount in words with digits.",
+   "fix": "the principal sum of $250,000"
+  },
+  {
+   "n": 6,
+   "type": "enumeration",
+   "anchor": "1. Interest.",
+   "quote": "1. Interest.",
+   "severity": 2,
+   "why": "Top-level paragraphs numbered 1.-9.; a document without articles starts at A. (house rule 3).",
+   "fix": "A. Interest; B. Payments; ..."
+  },
+  {
+   "n": 7,
+   "type": "category-shall",
+   "anchor": "Interest shall accrue",
+   "quote": "Interest shall accrue on the unpaid principal balance at the rate of eight percent (8%) per year, based on a 365-day year.",
+   "severity": 2,
+   "why": "No duty; language of policy.",
+   "fix": "Interest accrues on the unpaid principal balance at 8% per year ..."
+  },
+  {
+   "n": 8,
+   "type": "number-words",
+   "anchor": "eight percent (8%)",
+   "quote": "Interest shall accrue on the unpaid principal balance at the rate of eight percent (8%) per year, based on a 365-day year.",
+   "severity": 3,
+   "why": "Words with digits.",
+   "fix": "8%"
+  },
+  {
+   "n": 9,
+   "type": "number-words",
+   "anchor": "sixty (60)",
+   "quote": "The Borrower shall pay principal and interest in sixty (60) equal monthly installments of $5,069.10 each, beginning on March 1, 2027, and continuing on the first day of each following month until the Borrower has paid all principal and accrued interest in full.",
+   "severity": 3,
+   "why": "Words with digits.",
+   "fix": "60 equal monthly installments"
+  },
+  {
+   "n": 10,
+   "type": "ordinal",
+   "anchor": "the first day of each",
+   "quote": "The Borrower shall pay principal and interest in sixty (60) equal monthly installments of $5,069.10 each, beginning on March 1, 2027, and continuing on the first day of each following month until the Borrower has paid all principal and accrued interest in full.",
+   "severity": 3,
+   "why": "Spelled-out ordinal that counts.",
+   "fix": "on the 1st day of each following month"
+  },
+  {
+   "n": 11,
+   "type": "nonparty-obligation",
+   "anchor": "The Lender shall apply",
+   "quote": "The Lender shall apply each payment to accrued interest before applying any part of it to principal.",
+   "severity": 2,
+   "why": "The Lender doesn't sign the note, so \"shall\" can't impose a duty on it.",
+   "fix": "The Lender must apply each payment to accrued interest before principal (MSCD 3.154), or language of policy: Each payment applies to accrued interest before principal."
+  },
+  {
+   "n": 12,
+   "type": "shall-in-condition",
+   "anchor": "shall fail to pay",
+   "quote": "If the Borrower shall fail to pay any installment within ten (10) days after its due date, the entire unpaid principal balance and all accrued interest shall, at the option of the Lender, become immediately due and payable.",
+   "severity": 2,
+   "why": "\"shall\" in a condition.",
+   "fix": "If Borrower fails to pay any installment ..."
+  },
+  {
+   "n": 13,
+   "type": "number-words",
+   "anchor": "ten (10) days",
+   "quote": "If the Borrower shall fail to pay any installment within ten (10) days after its due date, the entire unpaid principal balance and all accrued interest shall, at the option of the Lender, become immediately due and payable.",
+   "severity": 3,
+   "why": "Words with digits.",
+   "fix": "10 days"
+  },
+  {
+   "n": 14,
+   "type": "category-shall",
+   "anchor": "shall, at the option of the Lender",
+   "quote": "If the Borrower shall fail to pay any installment within ten (10) days after its due date, the entire unpaid principal balance and all accrued interest shall, at the option of the Lender, become immediately due and payable.",
+   "severity": 2,
+   "why": "\"shall ... become\" imposes no duty.",
+   "fix": "... the entire unpaid principal balance and all accrued interest become due immediately, at Lender's option."
+  },
+  {
+   "n": 15,
+   "type": "doublet",
+   "anchor": "due and payable",
+   "quote": "If the Borrower shall fail to pay any installment within ten (10) days after its due date, the entire unpaid principal balance and all accrued interest shall, at the option of the Lender, become immediately due and payable.",
+   "severity": 3,
+   "why": "Doublet.",
+   "fix": "due"
+  },
+  {
+   "n": 16,
+   "type": "agrees-to",
+   "anchor": "agrees to pay",
+   "quote": "The Borrower agrees to pay all costs of collection, including attorneys' fees, that the Lender incurs in enforcing this Note after a default under Paragraph 6 above.",
+   "severity": 3,
+   "why": "\"agrees to\".",
+   "fix": "Borrower shall pay all costs of collection ..."
+  },
+  {
+   "n": 17,
+   "type": "cross-reference-number",
+   "anchor": "Paragraph 6 above",
+   "quote": "The Borrower agrees to pay all costs of collection, including attorneys' fees, that the Lender incurs in enforcing this Note after a default under Paragraph 6 above.",
+   "severity": 2,
+   "why": "Numbered internal cross-reference (house rule 4).",
+   "fix": "after a default under the paragraph titled \"Default\""
+  },
+  {
+   "n": 18,
+   "type": "negative-subject-shall",
+   "anchor": "shall operate as a waiver",
+   "quote": "No delay by the Lender in exercising any right under this Note shall operate as a waiver of that right.",
+   "severity": 2,
+   "why": "\"shall\" with a negative subject (\"No delay ... shall\").",
+   "fix": "A delay by Lender in exercising a right under this Note does not waive that right."
+  },
+  {
+   "n": 19,
+   "type": "archaic",
+   "anchor": "IN WITNESS WHEREOF",
+   "quote": "IN WITNESS WHEREOF, the Borrower has executed this Note as of the date first written above.",
+   "severity": 3,
+   "why": "Archaic concluding clause; \"executed\"; \"date first written above\".",
+   "fix": "Borrower is signing this Note on the date stated above."
+  },
+  {
+   "n": 20,
+   "type": "category-will",
+   "severity": 2,
+   "tier": "sneaky",
+   "anchor": "payment is effective",
+   "quote": "Mountain time, that payment is effective on the following day.",
+   "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
+   "fix": "Mountain time, that payment will be effective on the following day",
+   "optional": true,
+   "added_by": "audit"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "promises to pay to the order of",
+   "quote": "Copperline Brewing Company, a Colorado corporation (the \"Borrower\"), promises to pay to the order of Front Range Equipment Finance, LLC, a Colorado limited liability company (the \"Lender\"), the principal sum of TWO HUNDRED FIFTY THOUSAND AND NO/100 DOLLARS ($250,000.00), with interest on the unpaid principal balance at the rates in this promissory note (this \"Note\").",
+   "why_correct": "Negotiable-instrument wording: a promise to pay that is payable to order (UCC 3-104 and 3-109). It is not \"agrees to\"; keep it."
+  },
+  {
+   "anchor": "First Horizon Bank",
+   "quote": "The Borrower shall make each payment by wire transfer to the Lender's account at First Horizon Bank or to any other account that the Lender designates by notice to the Borrower.",
+   "why_correct": "Real bank name; the number word is part of a proper name."
+  },
+  {
+   "anchor": "5:00 p.m. Mountain time",
+   "quote": "If the Lender receives a payment after 5:00 p.m. Mountain time, that payment is effective on the following day.",
+   "why_correct": "Correct time expression."
+  },
+  {
+   "anchor": "is not required to pay",
+   "quote": "The Borrower may prepay this Note in whole or in part at any time, and the Borrower is not required to pay any prepayment premium.",
+   "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+  }
+ ],
+ "notes": "Other side's draft; the Borrower (maker) is the only signer, so obligations on the Lender are nonparty obligations. Party-article and paragraph enumeration are document-wide. The 1st formatting issue covers both the Cambria font and the 11-point size. The default paragraph has 4 issues (shall-in-condition, number-words, category-shall, doublet).",
+ "audit": [
+  {
+   "n": 20,
+   "traps_removed": [
+    "that payment is effective"
+   ],
+   "change": "optional category-will issue n20 added; 1 trap(s) removed",
+   "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  }
+ ]
+}

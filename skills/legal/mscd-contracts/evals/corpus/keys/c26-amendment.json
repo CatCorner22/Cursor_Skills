@@ -1,0 +1,82 @@
+{
+  "id": "c26-amendment",
+  "file": "contracts/c26-amendment.docx",
+  "title": "1st Amendment to Lease",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "conflict",
+      "anchor": "March 1, 2030, through February 28, 2031",
+      "quote": "March 1, 2030, through February 28, 2031",
+      "severity": 1,
+      "why": "Table cell: the rent table runs through February 28, 2031, but the amended Term ends on February 28, 2030.",
+      "fix": "Delete the last row, or extend the Term to February 28, 2031."
+    },
+    {
+      "n": 2,
+      "type": "defined-term",
+      "anchor": "installment of Monthly Rent",
+      "quote": "Tenant shall pay each installment of Monthly Rent in advance on the 1st day of each month by ACH transfer to the account into which Tenant has paid rent under this Lease.\"",
+      "severity": 2,
+      "why": "\"Monthly Rent\" is used but the replacement section defines \"Base Rent\" (2 forms of 1 term).",
+      "fix": "Tenant shall pay each installment of Base Rent ..."
+    },
+    {
+      "n": 3,
+      "type": "time-ambiguity",
+      "anchor": "between March 1, 2027, and May 31, 2027",
+      "quote": "Tenant may perform the Improvements between March 1, 2027, and May 31, 2027.",
+      "severity": 2,
+      "why": "\"between\" leaves unclear whether March 1 and May 31 are included.",
+      "fix": "Tenant may perform the Improvements from March 1, 2027, through May 31, 2027."
+    },
+    {
+      "n": 4,
+      "type": "nonparty-obligation",
+      "anchor": "Tenant's contractor shall name",
+      "quote": "Tenant shall cause its contractor to obtain all permits for the Improvements, and Tenant's contractor shall name Landlord as an additional insured on the contractor's liability insurance.",
+      "severity": 2,
+      "why": "\"shall\" with a nonparty subject; the contractor doesn't sign (the 1st half of the sentence does it right).",
+      "fix": "and Tenant shall cause its contractor to name Landlord as an additional insured ..."
+    },
+    {
+      "n": 5,
+      "type": "referential-ambiguity",
+      "anchor": "after it gives Landlord",
+      "quote": "Landlord shall pay the Allowance to Tenant or Tenant's contractor no later than 30 days after it gives Landlord a final lien waiver and an invoice for the Improvements.",
+      "severity": 1,
+      "why": "\"it\" can refer to Tenant or to Tenant's contractor, so it's unclear whose delivery of the lien waiver and invoice starts the 30 days.",
+      "fix": "no later than 30 days after Tenant gives Landlord a final lien waiver from Tenant's contractor and an invoice for the Improvements"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "410 Second Avenue South",
+      "quote": "Landlord and Tenant are parties to a lease with an effective date of March 1, 2024 (the \"Lease\"), for Suite 210 in the building at 410 Second Avenue South, Nashville, Tennessee (the \"Premises\").",
+      "why_correct": "Number word inside a proper name (street name); keep it."
+    },
+    {
+      "anchor": "This amendment is effective",
+      "quote": "This amendment is effective March 1, 2027.",
+      "why_correct": "Adjective after \"is\" (house exception)."
+    },
+    {
+      "anchor": "the account into which",
+      "quote": "Tenant shall pay each installment of Monthly Rent in advance on the 1st day of each month by ACH transfer to the account into which Tenant has paid rent under this Lease.\"",
+      "why_correct": "Correct relative construction."
+    },
+    {
+      "anchor": "is not required to remove",
+      "quote": "Tenant is not required to remove the Improvements when the Term ends.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "the Lease remains in effect",
+      "quote": "Except as this amendment states, the Lease remains in effect.",
+      "why_correct": "\"the Lease\" is a defined term, not a party name, so it keeps \"the\" (house rule 11)."
+    }
+  ],
+  "notes": "Blake's draft. It amends the Lease sections titled \"Term\" and \"Base Rent\" by heading (house rule 4). The replacement text is quoted, with inner single quotes for the defined terms; \"this Lease\" inside the quotes is correct. The rent table is a Word table; the conflict anchor is in its last row. The title uses \"1st\" per house rule 2."
+}

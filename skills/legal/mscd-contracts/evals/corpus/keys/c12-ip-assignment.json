@@ -1,0 +1,82 @@
+{
+  "id": "c12-ip-assignment",
+  "file": "contracts/c12-ip-assignment.docx",
+  "title": "Intellectual Property Assignment and Work-Made-for-Hire Agreement",
+  "tier": "sneaky",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "defined-term",
+      "anchor": "and Contractor shall deliver",
+      "quote": "\"Work Product\" means all artwork, level designs, source files, and documentation that Contractor creates in performing the Services, and Contractor shall deliver to Company the native source file of each item of Work Product.",
+      "severity": 2,
+      "why": "The definition of \"Work Product\" contains an obligation.",
+      "fix": "End the definition at \"the Services\"; put the delivery obligation in the section titled \"Contractor's Obligations\"."
+    },
+    {
+      "n": 2,
+      "type": "syntactic-ambiguity",
+      "anchor": "may only use",
+      "quote": "Contractor may only use the Company Tools to create Work Product.",
+      "severity": 1,
+      "why": "Misplaced \"only\": it can limit the verb (use, as opposed to copy or modify) or the purpose (only to create Work Product).",
+      "fix": "Contractor may use the Company Tools only to create Work Product."
+    },
+    {
+      "n": 3,
+      "type": "nonparty-obligation",
+      "anchor": "shall sign a written assignment",
+      "quote": "Any person whom Contractor engages to assist with the Services shall sign a written assignment to Company of all rights in their contributions before they begin work.",
+      "severity": 2,
+      "why": "\"shall\" with a nonparty subject: the people whom Contractor engages are not parties.",
+      "fix": "Contractor shall cause each person whom Contractor engages to assist with the Services to sign a written assignment ... before they begin work."
+    },
+    {
+      "n": 4,
+      "type": "scope-ambiguity",
+      "anchor": "travel expenses of up to $2,000",
+      "quote": "Company shall reimburse Contractor's travel expenses of up to $2,000 for trips that Company requests in writing.",
+      "severity": 1,
+      "why": "Unclear whether the $2,000 limit applies to each trip or to all trips in the aggregate.",
+      "fix": "up to $2,000 in the aggregate (or: up to $2,000 for each trip)"
+    },
+    {
+      "n": 5,
+      "type": "referential-ambiguity",
+      "anchor": "unless it contains artwork",
+      "quote": "Contractor may display excerpts of the Work Product in Contractor's online portfolio after Company publicly releases the Game, unless it contains artwork that Company has not released.",
+      "severity": 1,
+      "why": "\"it\" could refer to the excerpt, the Work Product, the portfolio, or the Game.",
+      "fix": "unless the excerpt contains artwork that Company has not released"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "qualifies as a \"work made for hire\"",
+      "quote": "Each item of Work Product that qualifies as a \"work made for hire\" under Section 101 of the United States Copyright Act, 17 U.S.C. § 101, is a work made for hire that Company owns.",
+      "why_correct": "Statutory term (17 U.S.C. § 101); keep it."
+    },
+    {
+      "anchor": "Section 101 of the United States Copyright Act",
+      "quote": "Each item of Work Product that qualifies as a \"work made for hire\" under Section 101 of the United States Copyright Act, 17 U.S.C. § 101, is a work made for hire that Company owns.",
+      "why_correct": "Statute reference, not an internal cross-reference (house rule 4)."
+    },
+    {
+      "anchor": "Contractor hereby assigns",
+      "quote": "To the extent that any Work Product does not qualify as a work made for hire, Contractor hereby assigns to Company all of Contractor's rights in that Work Product, including all copyrights.",
+      "why_correct": "Language of performance uses \"hereby\" with the simple present (MSCD 3.48-3.50); \"hereby\" is not on the archaic list. \"Contractor hereby waives\" is correct for the same reason."
+    },
+    {
+      "anchor": "(the \"Company Tools\")",
+      "quote": "Company shall give Contractor access to Company's licensed art software and asset libraries (the \"Company Tools\").",
+      "why_correct": "\"Company Tools\" is a defined term that is not a party name, so it keeps \"the\" (house rule 11)."
+    },
+    {
+      "anchor": "Company is not required to use",
+      "quote": "Company is not required to use the Work Product in the Game or in any other product.",
+      "why_correct": "House exception to active voice: \"is not required to\" (MSCD 3.292)."
+    }
+  ],
+  "notes": "Other side's draft; it has no statements of fact.  \"their contributions before they begin work\" is singular \"they\", which house rule 9 requires.  Party names (\"Company\", \"Contractor\") correctly have no article.  Formatting is compliant (Aptos 12, left-aligned)."
+}

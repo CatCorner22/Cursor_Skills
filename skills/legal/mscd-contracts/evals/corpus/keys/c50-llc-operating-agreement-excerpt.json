@@ -1,0 +1,83 @@
+{
+  "id": "c50-llc-operating-agreement-excerpt",
+  "file": "contracts/c50-llc-operating-agreement-excerpt.docx",
+  "title": "LLC Operating Agreement (Excerpt)",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "conflict",
+      "anchor": "approving expenditures of up to $50,000",
+      "quote": "B. Authority of Manager.  Manager may take any action on Company's behalf that is not a Major Decision, including signing contracts and approving expenditures of up to $50,000.",
+      "severity": 1,
+      "why": "The section titled \"Authority of Manager\" lets Manager approve expenditures of up to $50,000 on its own, but the section titled \"Major Decisions\" makes any expenditure of more than $25,000 a Major Decision that needs Member approval. For an expenditure from $25,001 to $50,000 the 2 sections contradict each other.",
+      "fix": "Pick 1 threshold: for example, \"... including signing contracts and approving expenditures of up to $25,000.\""
+    },
+    {
+      "n": 2,
+      "type": "efforts",
+      "anchor": "use its best efforts",
+      "quote": "D. Standard of Care.  Manager shall use its best efforts to operate Company's orchards in accordance with the Annual Budget.",
+      "severity": 2,
+      "why": "Mixed efforts standards: *best efforts* here and *reasonable efforts* in the section titled \"Insurance\"; a court may read the 2 as different standards and *best efforts* as more onerous. MSCD ch. 8: use *reasonable efforts* consistently.",
+      "fix": "Manager shall use reasonable efforts to operate Company's orchards in accordance with the Annual Budget."
+    },
+    {
+      "n": 3,
+      "type": "category-should",
+      "anchor": "should consult its own tax adviser",
+      "quote": "Each Member should consult its own tax adviser about the effect of any audit adjustment on that Member's tax return.",
+      "severity": 2,
+      "why": "*should* as advice: it imposes no duty and grants no right, so it has no place in the operative text.",
+      "fix": "Delete it, or replace it with a statement that allocates the risk (for example, \"Neither Company nor Manager is responsible for advising any Member about the tax effect of an audit adjustment.\")."
+    },
+    {
+      "n": 4,
+      "type": "category-shall",
+      "anchor": "This agreement shall terminate on",
+      "quote": "C. Termination of Agreement.  This agreement shall terminate on the date on which Company files articles of dissolution with the Oregon Secretary of State.",
+      "severity": 2,
+      "why": "*shall* with a timing verb and a nonparty subject (the agreement): no one has a duty, so the sentence is language of policy.",
+      "fix": "This agreement terminates on the date on which Company files articles of dissolution with the Oregon Secretary of State."
+    },
+    {
+      "n": 5,
+      "type": "date-format",
+      "anchor": "11/9/2026",
+      "quote": "Draft of 11/9/2026 | Confidential",
+      "where": "footer",
+      "severity": 2,
+      "why": "Planted in the footer: a numeric date. House rule 7 requires the U.S. written form.",
+      "fix": "Draft of November 9, 2026 | Confidential"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "A. Management by Manager.",
+      "quote": "A. Management by Manager.  Manager shall manage Company's business and affairs, subject to the rights of the Members under this article.",
+      "why_correct": "House section line: the letter, a period, the bold heading, a period, 2 spaces, then the text (house rule 3). The period after the heading is correct under the house rule even though MSCD 4.59 omits it."
+    },
+    {
+      "anchor": "I. Partnership Representative.",
+      "quote": "I. Partnership Representative.  Company designates Manager as its partnership representative under Section 6223 of the Internal Revenue Code.",
+      "why_correct": "Article VII runs A. to K.; the house rule uses every letter, so section I. correctly follows H. It is a section letter, not a roman-numeral article number."
+    },
+    {
+      "anchor": "Manager shall terminate the engagement if",
+      "quote": "Manager shall terminate the engagement if the property manager fails to meet the yield targets in the Annual Budget for 2 consecutive growing seasons.",
+      "why_correct": "A real duty: Manager, a party, must act when the condition occurs. Contrast issue 4 (*This agreement shall terminate on*), where no one has a duty."
+    },
+    {
+      "anchor": "Section 6223 of the Internal Revenue Code",
+      "quote": "I. Partnership Representative.  Company designates Manager as its partnership representative under Section 6223 of the Internal Revenue Code.",
+      "why_correct": "A reference to a statute, not an internal cross-reference (house rule 4)."
+    },
+    {
+      "anchor": "Manager is not required to devote",
+      "quote": "E. Time Commitment.  Manager is not required to devote its full time to Company's business, and Manager may engage in other business activities, including managing orchards that Company does not own.",
+      "why_correct": "*is not required to* is the house exception for negating a duty (MSCD 3.292)."
+    }
+  ],
+  "notes": "Blake's draft. The header reads \"Cascade Orchard Holdings, LLC: Limited Liability Company Agreement (Excerpt)\" and is correct; the footer reads \"Draft of 11/9/2026 | Confidential\" and holds issue 5 (marked \"where\": \"footer\"). Formatting is compliant: Aptos 12 in body, header, and footer; left-aligned; bold headings; no underlining. The excerpt has 2 articles (VII with sections A. to K. and VIII with A. to C.), so neither article is an only child; omitted terms (Units, Annual Budget, capital account) are defined in the omitted article titled \"Definitions,\" which the bracketed note says. Quotes for section lines omit the bold markup because .docx bold does not appear in the joined text."
+}

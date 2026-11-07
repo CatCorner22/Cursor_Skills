@@ -1,0 +1,76 @@
+{
+  "id": "c42-credit-agreement",
+  "file": "contracts/c42-credit-agreement.md",
+  "title": "Credit Agreement (Excerpt): Definitions and Covenants",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "defined-term",
+      "anchor": "and Borrower shall deliver a Compliance Certificate",
+      "quote": "**\"Compliance Certificate\"** means a certificate that Borrower's chief financial officer signs and that shows Borrower's calculation of the Fixed Charge Coverage Ratio and the Leverage Ratio as of the last day of the most recent Fiscal Quarter, and Borrower shall deliver a Compliance Certificate to Lender with each set of financial statements that Borrower delivers under the section titled \"Financial Statements.\"",
+      "severity": 2,
+      "why": "A definition contains an obligation; the delivery duty is hidden in the definitions instead of the section titled \"Financial Statements,\" where a reader looks for it.",
+      "fix": "End the definition at \"the most recent Fiscal Quarter.\" In the section titled \"Financial Statements,\" add: \"Borrower shall deliver a Compliance Certificate to Lender with each set of financial statements that Borrower delivers under this section.\""
+    },
+    {
+      "n": 2,
+      "type": "conflict",
+      "anchor": "last Saturday of September",
+      "quote": "**\"Fiscal Year\"** means each 52- or 53-week period that ends on the last Saturday of September.",
+      "severity": 1,
+      "why": "The definitions conflict: Fiscal Quarter ends on calendar quarter-ends (March 31, June 30, September 30, December 31), but Fiscal Year is a 52- or 53-week year ending on the last Saturday of September, so the 4 Fiscal Quarters never line up with the Fiscal Year and the annual and quarterly covenant periods diverge.",
+      "fix": "Reconcile the 2 definitions: define each Fiscal Quarter as 1 of the 4 fiscal quarters of a Fiscal Year (ending on the last Saturday of December, March, June, and September), or make the Fiscal Year the calendar year.",
+      "alt_anchors": [
+        "each 3-month period that ends on March 31"
+      ]
+    },
+    {
+      "n": 3,
+      "type": "defined-term",
+      "anchor": "means Liens that the section titled",
+      "quote": "**\"Permitted Liens\"** means Liens that the section titled \"Liens\" permits.",
+      "severity": 1,
+      "why": "Circular definition: Permitted Liens means the Liens that the section titled \"Liens\" permits, and that section permits only Permitted Liens, so the term has no content (read literally, no Lien is permitted).",
+      "fix": "List the permitted Liens in the definition (for example, Liens in favor of Lender, Liens for taxes not yet due, and Liens securing capital lease obligations that the section titled \"Indebtedness\" permits)."
+    },
+    {
+      "n": 4,
+      "type": "scope-ambiguity",
+      "anchor": "Restricted Payments of not more than $2,500,000",
+      "quote": "Borrower shall not make any Restricted Payment, except that Borrower may make Restricted Payments of not more than $2,500,000 if Borrower is in compliance with the sections titled \"Fixed Charge Coverage Ratio\" and \"Leverage Ratio\" on the date of each Restricted Payment.",
+      "severity": 1,
+      "why": "Can be read as a cap on each Restricted Payment, a cap for each Fiscal Year, or a cap over the life of the agreement. Contrast the capital-lease basket, which says \"in total outstanding at any time.\"",
+      "fix": "Restricted Payments of not more than $2,500,000 in the aggregate during any Fiscal Year (or \"in the aggregate during the term of this agreement\")."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Fifth Third Bank",
+      "quote": "**\"Collection Account\"** means Borrower's deposit account at Fifth Third Bank with an account number ending in 4417.",
+      "why_correct": "A real bank; the number words are part of its name (house rule 2)."
+    },
+    {
+      "anchor": "the account into which",
+      "quote": "Borrower shall instruct each of Borrower's rental customers to pay all rental fees into the Collection Account, and Borrower shall not change the account into which any customer pays rental fees without Lender's written consent.",
+      "why_correct": "Correct relative construction; not archaic."
+    },
+    {
+      "anchor": "1.25 to 1.00",
+      "quote": "Borrower shall not permit the Fixed Charge Coverage Ratio for any period of 4 consecutive Fiscal Quarters to be less than 1.25 to 1.00.",
+      "why_correct": "Conventional financial-ratio form; not money, so the needless-cents rule does not apply."
+    },
+    {
+      "anchor": "most recently ended",
+      "quote": "**\"Leverage Ratio\"** means, on any date, the ratio of Borrower's Indebtedness on that date to EBITDA for the 4 consecutive Fiscal Quarters that most recently ended on or before that date.",
+      "why_correct": "Ended is the participle of an intransitive verb (a quarter ends); it is not a passive."
+    },
+    {
+      "anchor": "This agreement is dated March 15, 2027",
+      "quote": "This agreement is dated March 15, 2027, and is between Cumberland Gap Equipment Rentals, LLC, a Kentucky limited liability company (**\"Borrower\"**), and Larchmont Commercial Finance, LLC, a Delaware limited liability company (**\"Lender\"**).",
+      "why_correct": "Is dated in the introductory clause is a fixed house exception."
+    }
+  ],
+  "notes": "Blake's draft (.md), an excerpt of 2 articles. Compliance Certificate is used only in its own definition, which is part of issue 1; don't count it as a separate defined-but-unused term. Key audit: issue 2 is a conflict with 2 ends; alt_anchors lists the other end."
+}

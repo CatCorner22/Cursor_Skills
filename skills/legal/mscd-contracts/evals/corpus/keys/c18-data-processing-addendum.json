@@ -1,0 +1,141 @@
+{
+ "id": "c18-data-processing-addendum",
+ "file": "contracts/c18-data-processing-addendum.docx",
+ "title": "Data Processing Addendum",
+ "tier": "mixed",
+ "whose_draft": "other-side",
+ "issues": [
+  {
+   "n": 1,
+   "type": "formatting",
+   "anchor": "[format]",
+   "quote": "[format]",
+   "severity": 2,
+   "why": "Body text is Calibri 11 point; house rule 9 requires 12-point Aptos.",
+   "fix": "Set all text to 12-point Aptos."
+  },
+  {
+   "n": 2,
+   "type": "defined-term",
+   "anchor": "which Processor shall report",
+   "quote": "\"Security Incident\" means a breach of Processor's security that leads to unauthorized access to Customer Personal Data, which Processor shall report to Customer no later than 48 hours after discovering the breach.",
+   "severity": 2,
+   "why": "The definition of \"Security Incident\" contains an obligation (and the \"which\" could attach to the breach or to the data).",
+   "fix": "End the definition after \"Customer Personal Data\"; move the 48-hour reporting duty into the section titled \"Security Incidents\"."
+  },
+  {
+   "n": 3,
+   "type": "party-article",
+   "anchor": "the Customer's written instructions",
+   "quote": "Processor shall process Customer Personal Data only on the Customer's written instructions, including the instructions in the Agreement.",
+   "severity": 3,
+   "why": "Stray article before a defined party name; the definition is (\"Customer\") (house rule 11).",
+   "fix": "on Customer's written instructions"
+  },
+  {
+   "n": 4,
+   "type": "reduced-passive",
+   "anchor": "request received from a consumer",
+   "quote": "Processor shall notify Customer of any request received from a consumer regarding Customer Personal Data no later than 5 days after receiving that request.",
+   "severity": 3,
+   "why": "Recastable reduced passive that hides who receives the request.",
+   "fix": "any request that Processor receives from a consumer"
+  },
+  {
+   "n": 5,
+   "type": "category-will",
+   "anchor": "Processor will maintain",
+   "quote": "Processor will maintain the security measures in Annex A.",
+   "severity": 2,
+   "why": "\"will\" used to impose a duty on a party.",
+   "fix": "Processor shall maintain the security measures in Schedule A."
+  },
+  {
+   "n": 6,
+   "type": "category-shall",
+   "anchor": "shall have the right to",
+   "quote": "Processor shall have the right to engage any Subprocessor in Exhibit 1, and any other Subprocessor if Processor notifies Customer at least 30 days before engaging that Subprocessor.",
+   "severity": 2,
+   "why": "\"shall have the right to\" grants discretion.",
+   "fix": "Processor may engage any Subprocessor in Schedule B ..."
+  },
+  {
+   "n": 7,
+   "type": "nonparty-obligation",
+   "anchor": "Each Subprocessor shall protect",
+   "quote": "Each Subprocessor shall protect Customer Personal Data under written terms at least as protective as this Addendum.",
+   "severity": 2,
+   "why": "\"shall\" with a nonparty subject; Subprocessors don't sign.",
+   "fix": "Processor shall cause each Subprocessor to protect Customer Personal Data under written terms at least as protective as this Addendum."
+  },
+  {
+   "n": 8,
+   "type": "time-ambiguity",
+   "anchor": "within 30 days of the termination",
+   "quote": "Processor shall delete all Customer Personal Data within 30 days of the termination of the Agreement.",
+   "severity": 2,
+   "why": "\"within 30 days of\" can mean before or after.",
+   "fix": "no later than 30 days after the Agreement terminates"
+  },
+  {
+   "n": 9,
+   "type": "scope-ambiguity",
+   "anchor": "Processor's liability for claims",
+   "quote": "The maximum amount of Processor's liability for claims under this Addendum is $250,000.",
+   "severity": 1,
+   "why": "Unclear whether the $250,000 cap applies to each claim or to all claims in the aggregate.",
+   "fix": "The maximum amount of Processor's aggregate liability for all claims under this Addendum is $250,000."
+  },
+  {
+   "n": 10,
+   "type": "attachment-label",
+   "anchor": "ANNEX A",
+   "quote": "ANNEX A",
+   "severity": 3,
+   "why": "\"Annex\" label (house rule 6). The security measures are a list the body refers to, so the attachment is a schedule.",
+   "fix": "Schedule A"
+  },
+  {
+   "n": 11,
+   "type": "attachment-classification",
+   "anchor": "EXHIBIT 1",
+   "quote": "EXHIBIT 1",
+   "severity": 2,
+   "why": "A list of approved subprocessors is information the body refers to; it belongs in a schedule, not an exhibit.",
+   "fix": "Schedule B (schedules before any exhibits)."
+  },
+  {
+   "n": 12,
+   "type": "usage",
+   "anchor": "a third party that Processor engages",
+   "quote": "\"Subprocessor\" means a third party that Processor engages to process Customer Personal Data.",
+   "severity": 3,
+   "why": "MSCD 13.875: don't use third party; party means one who has entered into the contract.",
+   "fix": "any Person other than a party (or the defined term Nonparty)",
+   "source": "MSCD 13.875 (key corrected by reviewer: was listed as a trap)"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "Section 1798.140 of the California Civil Code",
+   "quote": "\"Customer Personal Data\" means personal information (within the meaning of Section 1798.140 of the California Civil Code) that Processor processes for Customer under the Agreement.",
+   "why_correct": "Statute reference; fine under house rule 4."
+  },
+  {
+   "anchor": "one another",
+   "quote": "The parties shall cooperate with one another in responding to consumer requests.",
+   "why_correct": "Pronoun; keep the word."
+  },
+  {
+   "anchor": "represents and warrants",
+   "quote": "Processor represents and warrants that it has implemented the security measures in Annex A.",
+   "why_correct": "Other side's draft: house rule 10 says keep \"represents and warrants\". A comment suggesting the remedies-neutral \"states\" is fine; flagging it as an error or rewriting it is a false positive."
+  },
+  {
+   "anchor": "is not required to delete",
+   "quote": "Processor is not required to delete Customer Personal Data that California law requires Processor to retain.",
+   "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+  }
+ ],
+ "notes": "Other side's draft. Party names are correctly defined without articles; only B.1 uses \"the Customer's\". \"Customer Personal Data\" and \"Security Incident\" are both used. The A./1. enumeration is correct. After the fixes, the 2 attachments become Schedule A (security measures) and Schedule B (subprocessors)."
+}

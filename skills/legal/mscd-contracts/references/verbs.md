@@ -1,46 +1,47 @@
-# Verb structures: shall, will, may, must and the categories of contract language
+# Verb structures: shall, will, may, must, and the categories of contract language
 
-Read this file when classifying sentences (pass 3), when choosing a verb in a redline or draft, and whenever a finding involves *shall*, *will*, *may*, *must*, *hereby*, *states*, *acknowledges* or a condition.
+Read this file when classifying sentences (pass 3), when choosing a verb in a redline or draft, and whenever a finding involves *shall*, *will*, *may*, *must*, *hereby*, *states*, *acknowledges*, or a condition.
 
 ## Procedure for every sentence in the body
 
-1. **Choose the category first, then the verb** (3.5). The categories: agreement, performance, obligation, discretion, prohibition, policy, declaration, intention, recommendation, and the three ways to express a condition.
+1. **Choose the category first, then the verb** (3.5). The categories: agreement, performance, obligation, discretion, prohibition, policy, declaration, intention, recommendation, and the 3 ways to express a condition.
 2. **Run the *has a duty* test on every *shall*** (3.89-3.92): substitute *has a duty to*. If the sentence stops making sense, *shall* is wrong; pick the verb the true category calls for.
-3. **Check the subject.** *shall* imposes a duty only on the subject, and only when the subject is a party. For a duty on anyone else, restructure first (active voice, or *shall cause* for a party's instrumentality); use *must* only if restructuring fails (3.154-3.166).
+3. **Check the subject.** *shall* imposes a duty only on the subject, and only when the subject is a party. For a duty on anyone else, restructure first (active voice, or *shall cause* for a party's instrumentality); use *must* only if restructuring fails (3.154-3.166). In a review, a correct *must* for a nonparty stays (SKILL.md, hard cases); never fix it with *shall cause*, *shall ensure*, *shall not permit*, or *shall prevent* for someone the party doesn't control (3.163; 3.176-3.177).
 4. **Never pair *shall* with a negative subject** (house rule; 3.324). *Neither party may assign*; *Acme shall not assign*.
 5. **Active voice** (house rule): every recast keeps the actor as the subject.
+6. **Pick the tense of every policy** (3.334; 3.361). In force on signing or at a fixed date: the present tense (*Tennessee law governs this agreement*; *the Term ends on May 31, 2030*). Tied to an event that may not happen or whose timing is uncertain, or in a matrix clause after *if*, *when*, or *unless*: *will* (*this agreement will terminate 30 days after Acme receives the notice*; *No amendment of this agreement will be effective unless*). Check this on every sentence you write, not only on sentences you change.
 
 ## Quick reference (MSCD5 Figure 1 and the MSCD5 Quick Reference, with riders applied)
 
 | Category | Verb structure | Use it for | Example | MSCD |
 |---|---|---|---|---|
 | Agreement | *agree* | The lead-in only | *The parties therefore agree as follows:* | 3.45-3.47 |
-| Performance | *hereby* + simple present | An act done by signing | *Acme hereby sells the Units to Widgetco.* | 3.48-3.50 |
+| Performance | *hereby* + simple present | An act the party does by signing | *Acme hereby sells the Units to Widgetco.* | 3.48-3.50 |
 | Policy (no action on signing) | present continuous, negative | Saying a party isn't taking an action on signing; don't retool *hereby* performance into the negative | *In this agreement Widgetco is not assuming any Excluded Liabilities.* | 3.67 (language of policy, 3.332) |
 | Obligation on the subject | *shall* | A duty on the subject, a party | *Acme shall deliver the Units to Widgetco.* | 3.89-3.92 |
 | Obligation on the subject | *shall cause* | Subject is a party; the object isn't a legal person, or is the party's instrumentality | *Parent shall cause Sub to transfer the Assets.* | 3.160-3.165 |
-| Obligation on someone else | *must* | Subject isn't a legal person, or is a nonparty (only if restructuring fails) | *The auditor must deliver its report to Widgetco no later than 30 days after the Closing.* | 3.149-3.157 |
+| Obligation on someone else | *must* | Subject isn't a legal person, or is a nonparty. In a review, keep *must* only when no party could do the act itself (3.166); when a party could, the fix is the restructure (3.165) | *The auditor must deliver its report to Widgetco no later than 30 days after the Closing.* | 3.149-3.157 |
 | Discretion | *may* | A choice the contract grants | *Lee may transfer the Shares to Kim.* | 3.205-3.207 |
 | Absence of obligation | *is not required to* | No duty | *Acme is not required to repair the Equipment.* | 3.292 |
-| Absence of prohibition (rider) | *The parties acknowledge that nothing in this agreement prohibits* | Silence of the contract, stated as a shared fact | *The parties acknowledge that nothing in this agreement prohibits Acme from selling the Widgets.* | 3.304, superseded by the 19 Nov 2025 rider |
+| Absence of prohibition (rider) | *The parties acknowledge that nothing in this agreement prohibits* | Silence of the contract, stated as a shared fact | *The parties acknowledge that nothing in this agreement prohibits Acme from selling the Widgets.* | 3.304, superseded by the November 19, 2025, rider |
 | Prohibition | *shall not* (positive subject); *may* with a negative subject | Forbidding conduct | *Customer shall not alter the Software.* *Neither party may assign this agreement.* | 3.305; 3.323-3.325 |
 | Policy | simple present | Rules in effect on signing, or taking effect at a stated time | *Tennessee law governs this agreement.* | 3.334 |
 | Policy | *will* | Uncertain future events | *Any purported transfer in breach of this agreement will be void.* | 3.334 |
 | Condition, conditional clause | simple present in the *if* clause; *will* in the matrix clause where it would otherwise be present | An uncertain future event that triggers a consequence | *If Jones leaves Company, the Option will lapse.* | 3.352-3.362 |
-| Condition, policy | *It is a condition to ... that* | One condition, or a list of *that* clauses | *It is a condition to Widgetco's obligation to close that Acme has delivered the Consent.* | 3.393-3.398 (prefer this to *is conditioned upon*) |
+| Condition, policy | *It is a condition to ... that* | 1 condition, or a list of *that* clauses | *It is a condition to Widgetco's obligation to close that Acme has delivered the Consent.* | 3.393-3.398 (prefer this to *is conditioned upon*) |
 | Condition, obligation | *must* after *To* + infinitive or a *for* clause | Conditions a party must meet to get something | *To receive reimbursement, Acme must submit a claim to Widgetco ... .* | 3.386-3.391 |
 | Declaration | *states* | Facts the declaring party knows | *Acme states that Schedule A lists all the Equipment.* | 3.457-3.458 |
 | Declaration | *acknowledges* | Facts the other party offers | *Widgetco acknowledges that Acme is a consultant.* | 3.485-3.490 |
-| Declaration (elaboration) | *states that it may* / *must* | A party's ability or requirement that exists apart from the contract | *Acme states that it may sell the Widgets.* | Nov 2025 blog; 3.208-3.211 |
+| Declaration (elaboration) | *states that it may* / *must* | A party's ability or requirement that exists apart from the contract | *Acme states that it may sell the Widgets.* | November 2025 blog; 3.208-3.211 |
 | Intention | *The parties intend that ... will* | Status that depends on later circumstances | *The parties intend that Consultant will be an independent contractor.* | 3.491-3.500 (Adams's "state of mind" proposal noted only) |
 | Recommendation | *recommends* (or *encourages*, *reminds*) + *that* | A stronger party pointing something out | *Company recommends that Participant consult a legal adviser.* | 3.502-3.505 |
 
-Examples are adapted from MSCD5's quick reference and restated in house style (active voice, digits, no *within*). The lint confirms that none is passive.
+The examples adapt MSCD5's quick reference to house style (active voice, digits, no *within*). The lint confirms that none is passive.
 
 ## Riders on verbs (verified against the posts)
 
 - **Absence of prohibition** becomes an acknowledgment (above).
-- ***once* and *when* don't introduce a condition**: use *if*; or delete *once* where an adjective phrase remains (*a Redemption Notice once submitted*). Both words "suggest an expectation that the circumstance in question will come to pass."
+- ***once* and *when* don't introduce a condition**: use *if*; or, where *once* opens an adjective phrase (*a Redemption Notice once submitted*), delete *once* and name the actor (house rule 1): *a Redemption Notice that a Holder has submitted*. Both words "suggest an expectation that the circumstance in question will come to pass."
 - **A party's ability outside the contract** is a statement of fact: *Acme states that it may ...*.
 
 ## Table ratings in the rules below
@@ -58,11 +59,13 @@ MSCD's Chapter 3 tables rate examples ✓✓ (recommended) and ✓ (acceptable b
 - Chapter 3: Language of Agreement
 - Chapter 3: Language of Performance
 - Chapter 3: Language of Discretion
+- Chapter 3: Blog: Whether Discretion and Obligation Arise Under the Contract or Reflect the World at Large
+- Chapter 3: Blog: "Is Not Prohibited From": I've Changed My Mind!
 - Chapter 3: Language of Prohibition
 - Chapter 3: Language of Policy
 - Chapter 3: Expressing Conditions (general)
 - Chapter 3: Expressing Conditions
-- Chapter 3: Blog: replacing-once-in-contracts-a-example-of-sweating-the-small-stuff
+- Chapter 3: Blog: Replacing "Once" in Contracts
 - Chapter 3: Language of Declaration
 - Chapter 3: Language of Intention
 - Chapter 3: Language of Recommendation
@@ -263,7 +266,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: [1-2] ××: The Buyer does not hereby assume the Excluded Liabilities. → [1-2b] ✓✓: In this agreement the Buyer is not assuming any Excluded Liabilities.
   - Book example: [1-2a] ××: The Buyer hereby does not assume the Excluded Liabilities. → [1-2b] ✓✓: In this agreement the Buyer is not assuming any Excluded Liabilities.
 - **R-3.68-future-performance** [sev 2] To state the consequences of entering into a contract or issuing a document in the future, don't use will ... thereby; use will be deemed. (3.68; PDF p. 144)
-  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('is effective'); amendments as 'The parties hereby amend the section titled ...'. See house-style.md section 1.
+  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'. See house-style.md section 1.
   - Book example: [1-3] ×: When the Company issues a Purchase Order, it will thereby hire the Contractor to perform the services stated in that Purchase Order. → [1-3a] ✓✓: When the Company issues a Purchase Order, it will be deemed to have hired the Contractor to perform the services stated in that Purchase Order.
 - **R-3.69-one-perspective** [sev 3] For a purchase on signing, use one perspective (Acme hereby purchases ... or Jackson hereby sells ...); using both verbs is unnecessary. (3.69, 3.70, 3.71; PDF p. 145)
   - Exceptions: Drafters may want reciprocity shown even at the cost of redundancy; be prepared to be asked to use both (3.71).
@@ -302,9 +305,6 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Look for: may + an action the party could take without the contract (inspect, rely, consult)
   - Fix: Delete it, or introduce the reminder with language of declaration using acknowledges (3.209).
   - Book example: The Buyer may inspect the Goods after they are received ... . → (see fix)
-- **R-rider-2025-whether-world-at-large** [sev 2] When a party's ability (or requirement) to act arises outside the contract, from the world at large, and isn't granted or imposed by the contract, say so with a statement of fact: Acme states that it may sell the Widgets (or Acme states that it must sell the Widgets), adding the basis if helpful (Acme states that because of X, it may sell the Widgets in accordance with Y). (3.208, 3.209, 3.457; PDF p. 181; elaboration)
-  - Look for: may or must describing a freedom or requirement that exists independently of the contract
-  - Fix: [Party] states that [because of X,] it may [or must] [verb] ... .
 - **R-3.210-dont-constrain-free-conduct** [sev 2] Don't constrain, in language of discretion, what a party is free to do anyway (inspect within a reasonable time); if timing matters only as a condition, put it in a conditional clause. (3.210, 3.211; PDF p. 181)
   - Book example: The Buyer may within a reasonable time inspect the Goods ... . → If on inspecting the Goods within a reasonable time after delivery the Buyer determines that any fail to meet the Specifications, the Buyer may return the Goods ... .
 - **R-3.215-explicit-limited-discretion** [sev 1] Be explicit about whether discretion is limited. A specific grant of discretion (Acme may sell the Shares to Ferguson) suggests, through the expectation of relevance, that other options are excluded, and courts may invoke expressio unius. (3.212, 3.213, 3.214...; PDF p. 182)
@@ -363,6 +363,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: [5-1] ✓: No later than five days after Rubin exercises the Option, Rubin will be entitled to purchase a number of Shares equal to ... . → [5-1c] ✓✓: No later than five days after Rubin exercises the Option, Acme shall sell to Rubin, at Rubin's election, a number of shares equal to ... .
   - Book example: [5-1a] ××: Exercise of the Option will entitle Rubin to purchase within five days a number of Shares equal to ... . → [5-1c] ✓✓ [as above]
 - **R-3.292-is-not-required-to** [sev 3] Express absence of obligation with is not required to + verb; don't use nothing in this agreement requires, this agreement does not require, in no event is ... required to, is not obligated to, is not obliged to, or is not bound to. (3.292, 3.293, 3.294; PDF p. 199)
+  - HOUSE: partly superseded: Blake's decision: is not required to is a fixed exception to the active-voice rule; use it as MSCD prescribes.
   - Book example: [6-1a] ××: Nothing in this agreement requires Acme to replace the Widget Equipment. → [6-1] ✓✓: Acme is not required to replace the Widget Equipment.
   - Book example: [6-1b] ✓: Acme is not [obligated] [obliged] to replace the Widget Equipment. → [6-1] ✓✓: Acme is not required to replace the Widget Equipment.
 - **R-3.294-no-may-not-authorized-not** [sev 1] Don't use may not to mean 'is authorized not to'; may not has three possible meanings. (3.294; PDF p. 199)
@@ -390,6 +391,15 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: Neither the Owner nor Architect shall have an obligation to pay or see to the payment of money to a Subcontractor or supplier except as may otherwise be required by law. → (see fix)
 - **R-3.304-is-not-prohibited-from** [sev 3] MSCD5: express absence of prohibition with is not prohibited from; except to avoid confusion, don't use this agreement does not prohibit or nothing in this agreement prohibits. You could use may instead, but if Acme could act anyway absent the contract, don't suggest its ability comes from the contract. (3.304; PDF p. 203)
   - Book example: (none) → Acme is not prohibited from removing the Widget Equipment. [figure 1]
+
+### Chapter 3: Blog: Whether Discretion and Obligation Arise Under the Contract or Reflect the World at Large
+
+- **R-rider-2025-whether-world-at-large** [sev 2] When a party's ability (or requirement) to act arises outside the contract, from the world at large, and isn't granted or imposed by the contract, say so with a statement of fact: Acme states that it may sell the Widgets (or Acme states that it must sell the Widgets), adding the basis if helpful (Acme states that because of X, it may sell the Widgets in accordance with Y). (3.208, 3.209, 3.457; PDF p. 181; elaboration)
+  - Look for: may or must describing a freedom or requirement that exists independently of the contract
+  - Fix: [Party] states that [because of X,] it may [or must] [verb] ... .
+
+### Chapter 3: Blog: "Is Not Prohibited From": I've Changed My Mind!
+
 - **R-rider-2025-11-19-nothing-prohibits** [sev 2] To express absence of prohibition, use language of declaration rather than language of discretion: The parties acknowledge that nothing in this agreement prohibits Acme from [verb]ing. Don't use is not prohibited from. (3.304; PDF p. 203; rider)
   - Fix: The parties acknowledge that nothing in this agreement prohibits [Party] from [verb]ing ... .
 
@@ -422,7 +432,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-3.322-no-nothing-gives-right** [sev 3] Don't say the contract doesn't authorize a party to do something; express it as a prohibition. (3.322; PDF p. 206)
   - Book example: [7-1j] ××: Nothing in this agreement gives the Customer the right to modify the Equipment ... . → [7-1] ✓✓: The Customer shall not modify the Equipment ... .
 - **R-3.323-collective-noun-prohibition** [sev 3] With a collective-noun subject, express prohibition with a negative subject (neither for two, no for more) plus may, or with a singular subject and a negative verb (each party shall not); avoid neither party shall and the parties shall not ... their. (3.323, 3.324, 3.325; PDF p. 208)
-  - HOUSE: House addition: Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not.
+  - HOUSE: House addition: Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not. When the subject isn't a person (No amendment shall be effective unless), the sentence is language of policy and takes will: An amendment of this agreement will not be effective unless ... (MSCD 3.334; 3.369). See house-style.md section 8.
   - Book example: [7-2] ×: Neither party shall assign any of its rights ... . → [7-2a] ✓: Neither party may assign any of its rights ... .
   - Book example: [7-2b] ×: The parties shall not assign any of their rights ... . → [7-2c] ✓: Each party shall not assign any of its rights ... .
 - **R-3.326-no-nor-shall** [sev 3] Don't use nor shall to continue a prohibition; start a new sentence with language of prohibition. (3.326, 3.327, 3.328; PDF p. 208)
@@ -454,7 +464,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: The Employee's position and assignments are subject to change. → The Company may change the Employee's position and assignments.
   - Book example: The Employee will be eligible for a bonus if ... → The Company shall pay the Employee a bonus if ...
 - **R-3.339-passive-in-policy** [sev 3] The passive voice in language of policy is unremarkable; where the missing by-agent is the world at large, prevent any implication that someone must act by adding automatically or by switching to an active verb with the same subject. (3.339, 3.340; PDF p. 213)
-  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('is effective'); amendments as 'The parties hereby amend the section titled ...'. See house-style.md section 1.
+  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'. See house-style.md section 1.
   - Exceptions: Don't switch will be deemed to the active voice (3.340; 13.209-.210).
   - Book example: the Option Price will be increased → the Option Price will increase
 - **R-3.341-no-policy-obfuscation** [sev 2] Don't turn provisions about party actions into opaque language of policy through jargon (lead-time, net 30); state the action and the actor, even at the cost of extra words. (3.341, 3.342, 3.343...; PDF p. 213)
@@ -509,7 +519,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: It is a condition to Acme's conducting a public sale of widgets that Acme notify Widgetco in advance ... . → Before conducting a public sale of widgets, Acme shall notify Widgetco in advance of the date and location of that sale.
 - **R-3.408-not-only-condition** [sev 2] Recognize that a stated condition might not be the only condition; a court might read others into the contract (an invoice 'valid only if' timely still wouldn't be valid at triple the agreed price). (3.408, 3.409; PDF p. 229)
 
-### Chapter 3: Blog: replacing-once-in-contracts-a-example-of-sweating-the-small-stuff
+### Chapter 3: Blog: Replacing "Once" in Contracts
 
 - **R-rider-once-if** [sev 2] Don't use once (or when) to introduce a condition; use if. If deleting once leaves an adjective phrase, just delete once. (3.352; rider)
   - Look for: once or when as the subordinator of a conditional clause
@@ -539,6 +549,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: [13-1c] ××: Acme represents and warrants ... . → [13-1] ✓✓: Acme states that the Equipment is listed in schedule A.
 - **R-3.458-states-series** [sev 3] To introduce a series of statements of fact, say [Party name] states that the following facts are accurate: so a full independent clause precedes the colon. No signal is needed that an inaccurate statement supports a remedy. (3.458; PDF p. 242)
 - **R-3.459-verb-remedy-sentence** [sev 3] To allay fears about states, add: The verb used to introduce a statement of fact in this agreement does not affect the remedies available for inaccuracy of that statement of fact. (3.459, 3.460, 3.463; PDF p. 242)
+  - HOUSE: partly superseded: House wording, in the active: The verb that this agreement uses to introduce a statement of fact does not affect the remedies available for inaccuracy of that statement of fact.
   - Book example: (none) → The verb used to introduce a statement of fact in this agreement does not affect the remedies available for inaccuracy of that statement of fact.
 - **R-3.461-states-pushback** [sev 2] In slow-changing practice areas (one-off M&A deals) or when marking up the other side's draft in higher-volume deals, states may cause more consternation than it's worth; if stuck with represents and warrants in a U.S. contract, rely on a no-reliance provision and add the 3.459 sentence. (3.461, 3.462; PDF p. 242)
 - **R-3.464-address-remedies-directly** [sev 2] If remedies for inaccurate statements of fact are an issue, address them explicitly (for example, state that a party may claim misrepresentation, breach of warranty, or both, or that misrepresentation claims are precluded); relying on any combination of represents and warrants is irresponsible. (3.464, 3.465, 3.466...; PDF p. 242)
@@ -634,7 +645,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: Any violation ... will be deemed to be a breach by Acme of this section 4.2. → Any violation ... will be a breach by Acme of this section 4.2.
   - Book example: The date of exercise will be deemed to be the date on which the Company receives notice of exercise. → The date of exercise will be the date on which the Company receives notice of exercise.
 - **R-13.209-deem-will-passive** [sev 3] Use deem with will, not shall (Any notice will be deemed to have been received on delivery), and in the passive, not the active voice (not The parties will deem). (13.209, 13.210; PDF p. 624)
-  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('is effective'); amendments as 'The parties hereby amend the section titled ...'. See house-style.md section 1.
+  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'. See house-style.md section 1.
   - Test: Has-a-duty test: substitute 'has a duty to'; shall be deemed fails.
   - Fix: will be deemed
 - **R-13.212-deem-release** [sev 2] To make a release automatic, use deem instead of language of obligation: instead of If X, Acme shall release Widgetco, say If X, Acme will be deemed to have released Widgetco. (13.212, 13.213, 13.214; PDF p. 625)
@@ -647,7 +658,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Fix: states
 - **R-13.945-warranty-remedy-conditional** [sev 3] In sale-of-goods contracts, you can instead combine the warranty and its remedy in one sentence: make the actual or future fact a conditional clause and the remedy the matrix clause. (13.945, 13.946, 13.947; PDF p. 794)
   - Look for: product warranty followed by a separate remedy provision
-  - Fix: If at any time during the six months after the date of this agreement the Equipment does not conform to the Specifications, the Vendor shall modify or replace the Equipment.
+  - Fix: If at any time during the 6 months after the date of this agreement the Equipment does not conform to the Specifications, Vendor shall modify or replace the Equipment.
 - **R-13.948-warrants-obligation** [sev 2] Don't use warrants to introduce an obligation (Acme warrants that it shall perform routine maintenance); it is throat-clearing. (13.948; PDF p. 795)
   - Fix: Acme shall perform routine maintenance ...
 - **R-13.949-warranty-noun** [sev 3] The noun warranty may refer to provisions in a contract or absent from it (Acme makes no warranties, express or implied), and it is appropriate to head a section Warranty or Warranties if that is what it consists of. But whether a provision is a warranty depends on content, not label. (13.949, 13.950, 13.951; PDF p. 795)

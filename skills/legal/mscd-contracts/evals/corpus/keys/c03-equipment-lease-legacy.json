@@ -1,0 +1,199 @@
+{
+  "id": "c03-equipment-lease-legacy",
+  "file": "contracts/c03-equipment-lease-legacy.docx",
+  "title": "Equipment Lease Agreement",
+  "tier": "obvious",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "[format]",
+      "severity": 3,
+      "why": "Body text is Arial; house rule 9 requires Aptos.",
+      "fix": "Set all text to Aptos."
+    },
+    {
+      "n": 2,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "[format]",
+      "severity": 3,
+      "why": "Body text is 10 point; house rule 9 requires 12 point.",
+      "fix": "Set all text to 12 point."
+    },
+    {
+      "n": 3,
+      "type": "enumeration",
+      "anchor": "Section 1.01 Lease.",
+      "quote": "Section 1.01 Lease.",
+      "severity": 3,
+      "why": "\"ARTICLE I\" with \"Section 1.01\" numbering; house rule 3 uses I. for articles and A. for sections.",
+      "fix": "I. LEASE AND TERM; A. Lease; B. Term; and so on."
+    },
+    {
+      "n": 4,
+      "type": "date-format",
+      "anchor": "dated 1/15/2027",
+      "quote": "This equipment lease agreement is dated 1/15/2027 and is between Tamarind Equipment Finance Corp., a Colorado corporation (\"Lessor\"), and Greywater Excavation, LLC, a Colorado limited liability company (\"Lessee\").",
+      "severity": 3,
+      "why": "Numeric date (house rule 7).",
+      "fix": "January 15, 2027"
+    },
+    {
+      "n": 5,
+      "type": "archaic",
+      "anchor": "WHEREAS, Lessee wishes",
+      "quote": "WHEREAS, Lessee wishes to lease from Lessor the excavation equipment in Schedule A (the \"Equipment\"), and Lessor is willing to lease the Equipment to Lessee on the terms of this lease.",
+      "severity": 3,
+      "why": "WHEREAS recital.",
+      "fix": "Delete WHEREAS; state the background as a plain sentence."
+    },
+    {
+      "n": 6,
+      "type": "category-shall",
+      "anchor": "shall commence on",
+      "quote": "The term of this lease (the \"Term\") shall commence on the date on which the Equipment arrives at Lessee's yard and shall continue for sixty (60) months.",
+      "severity": 2,
+      "why": "No duty: \"shall commence ... and shall continue\" states a policy about the term.",
+      "fix": "The term of this lease (the \"Term\") begins on the date on which the Equipment arrives at Lessee's yard and continues for 60 months."
+    },
+    {
+      "n": 7,
+      "type": "number-words",
+      "anchor": "sixty (60) months",
+      "quote": "The term of this lease (the \"Term\") shall commence on the date on which the Equipment arrives at Lessee's yard and shall continue for sixty (60) months.",
+      "severity": 3,
+      "why": "Words with digits (house rule 2).",
+      "fix": "60 months"
+    },
+    {
+      "n": 8,
+      "type": "passive-voice",
+      "anchor": "The Equipment shall be delivered",
+      "quote": "The Equipment shall be delivered to Lessee's yard at 2100 Quarry Road, Golden, Colorado 80401, no later than February 15, 2027.",
+      "severity": 1,
+      "why": "Passive hides who must deliver the Equipment.",
+      "fix": "Lessor shall deliver the Equipment to Lessee's yard at ..."
+    },
+    {
+      "n": 9,
+      "type": "category-must",
+      "anchor": "Lessee must pay Lessor",
+      "quote": "Lessee must pay Lessor rent of $4,850 per month (the \"Rent\").",
+      "severity": 2,
+      "why": "\"must\" used for a duty of a party that is the subject.",
+      "fix": "Lessee shall pay Lessor rent of $4,850 per month (the \"Rent\")."
+    },
+    {
+      "n": 10,
+      "type": "doublet",
+      "anchor": "due and payable",
+      "quote": "Rent for each calendar month is due and payable before that month begins.",
+      "severity": 3,
+      "why": "Doublet.",
+      "fix": "due"
+    },
+    {
+      "n": 11,
+      "type": "shall-in-condition",
+      "anchor": "If Lessee shall fail",
+      "quote": "If Lessee shall fail to pay any Rent when due, Lessee shall pay Lessor a late charge equal to 5% of the overdue amount.",
+      "severity": 2,
+      "why": "\"shall\" in a condition.",
+      "fix": "If Lessee fails to pay any Rent when due, ..."
+    },
+    {
+      "n": 12,
+      "type": "time-is-of-the-essence",
+      "anchor": "Time is of the essence",
+      "quote": "Time is of the essence of this lease.",
+      "severity": 2,
+      "why": "MSCD 13.884: say what happens on a missed deadline instead.",
+      "fix": "Delete; the late charge in the section titled \"Late Payment\" already states the consequence."
+    },
+    {
+      "n": 13,
+      "type": "cross-reference-number",
+      "anchor": "condition that Section 3.02",
+      "quote": "At the end of the Term, Lessee shall return the Equipment to Lessor at Lessor's yard in Denver, Colorado, in the condition that Section 3.02 hereof requires, except for ordinary wear.",
+      "severity": 3,
+      "why": "Numbered internal cross-reference (house rule 4).",
+      "fix": "in the condition that the section titled \"Maintenance\" requires"
+    },
+    {
+      "n": 14,
+      "type": "archaic",
+      "anchor": "3.02 hereof",
+      "quote": "At the end of the Term, Lessee shall return the Equipment to Lessor at Lessor's yard in Denver, Colorado, in the condition that Section 3.02 hereof requires, except for ordinary wear.",
+      "severity": 3,
+      "why": "\"hereof\".",
+      "fix": "Delete \"hereof\"."
+    },
+    {
+      "n": 15,
+      "type": "doublet",
+      "anchor": "indemnify and hold harmless",
+      "quote": "Lessee shall indemnify and hold harmless Lessor from any and all claims arising out of or relating to Lessee's use of the Equipment.",
+      "severity": 3,
+      "why": "Doublet.",
+      "fix": "indemnify"
+    },
+    {
+      "n": 16,
+      "type": "doublet",
+      "anchor": "any and all claims",
+      "quote": "Lessee shall indemnify and hold harmless Lessor from any and all claims arising out of or relating to Lessee's use of the Equipment.",
+      "severity": 3,
+      "why": "Doublet.",
+      "fix": "any claim"
+    },
+    {
+      "n": 17,
+      "type": "arising-out-of",
+      "anchor": "arising out of or relating to",
+      "quote": "Lessee shall indemnify and hold harmless Lessor from any and all claims arising out of or relating to Lessee's use of the Equipment.",
+      "severity": 2,
+      "why": "MSCD 13.41-13.54.",
+      "fix": "arising out of"
+    },
+    {
+      "n": 18,
+      "type": "survival",
+      "anchor": "by their nature should survive",
+      "quote": "All provisions of this lease that by their nature should survive termination shall survive termination.",
+      "severity": 2,
+      "why": "Vague survival clause (MSCD 13.822-13.831); it also uses \"should\".",
+      "fix": "Delete; state which obligations survive termination and for how long."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "excavation equipment in Schedule A",
+      "quote": "WHEREAS, Lessee wishes to lease from Lessor the excavation equipment in Schedule A (the \"Equipment\"), and Lessor is willing to lease the Equipment to Lessee on the terms of this lease.",
+      "why_correct": "Correct schedule: lettered, and it holds a list of equipment that the body refers to."
+    },
+    {
+      "anchor": "the date on which the Equipment arrives",
+      "quote": "The term of this lease (the \"Term\") shall commence on the date on which the Equipment arrives at Lessee's yard and shall continue for sixty (60) months.",
+      "why_correct": "\"the date on which\" is correct."
+    },
+    {
+      "anchor": "Lessor is not required to repair",
+      "quote": "Lessor is not required to repair the Equipment.",
+      "why_correct": "House exception to active voice: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "IMPLIED WARRANTY OF MERCHANTABILITY",
+      "quote": "LESSOR MAKES NO WARRANTY, EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.",
+      "why_correct": "UCC disclaimer that the statute requires: UCC Section 2A-214 requires an exclusion of the implied warranty of merchantability to mention merchantability and, in a writing, to be conspicuous. Keep the capitals. Settled policy: statutory wording stays; a note that flags it while keeping it unchanged is acceptable, but rewriting or lowercasing it is an error."
+    },
+    {
+      "anchor": "Lessor hereby leases",
+      "quote": "Lessor hereby leases the Equipment to Lessee for the Term.",
+      "why_correct": "Language of performance uses \"hereby\" with the simple present (MSCD 3.48-3.50); \"hereby\" is not on the archaic list."
+    }
+  ],
+  "notes": "Other side's legacy template.  Formatting issues are Arial 10 only; paragraphs are left-aligned and headings are not underlined.  Party names (\"Lessor\", \"Lessee\") correctly have no article.  Spacing is compliant."
+}
