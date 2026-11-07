@@ -5,6 +5,7 @@ These rules come from Blake Reagan, the user. They override MSCD5 and Adams's bl
 Apply these rules to everything the skill writes: redlines, comments, drafts, and suggested wording in a review. When you apply one against MSCD, say so in the finding ("house rule; MSCD 14.15 differs"), so Blake can see the departure.
 
 ## Contents
+0. Severity of a house-rule finding
 1. Active voice only
 2. Digits for every number
 3. Enumeration: I., A., 1., (a), (i); no only child
@@ -19,11 +20,9 @@ Apply these rules to everything the skill writes: redlines, comments, drafts, an
 12. Never *should*
 13. Terms of art keep their legal meaning
 
-And, before rule 1: Severity of a house-rule finding.
-
 ## Severity of a house-rule finding
 
-Rule 8 (*shall* with a negative subject), an undefined or 2-form defined term, and a passive with a modal that hides who must or may act when more than 1 party could be the actor (*Payment shall be made*) are severity 1; if only 1 party could act, that passive is severity 2. Typography (rules 5 and 9: spacing, font, size, alignment, underlining, bold definitions) and reduced passives (rule 1) are severity 3. *Should* for a duty, advice, or an expectation (rule 12) and a term of art used in 2 senses in 1 contract (rule 13) are severity 1. Every other house rule is severity 2. A finding under an MSCD rule that the house style doesn't change takes the severity in its rule record. When a finding is both a house-rule breach and an ambiguity, it takes the higher severity. The lint applies this policy, so for a lint finding use the lint's severity unless the context changes it, and say why.
+Rule 8 (*shall* with a negative subject), an undefined or 2-form defined term, and a passive with a modal that hides who must or may act when more than 1 party could be the actor (*Payment shall be made*) are severity 1; if only 1 party could act, that passive is severity 2. Typography (rules 5 and 9: spacing, font, size, alignment, underlining, bold definitions) and reduced passives (rule 1) are severity 3. *Should* for a duty, advice, or an expectation (rule 12) and a term of art used in 2 senses in 1 contract (rule 13) are severity 1. Every other house rule is severity 2. A finding under an MSCD rule that the house style doesn't change takes the severity in its rule record. When a finding is both a house-rule breach and an ambiguity, it takes the higher severity. The lint applies this policy, so for a lint finding use the lint's severity unless the context changes it (the severity policy in SKILL.md says when), and say why.
 
 ## 1. Active voice only
 
@@ -72,7 +71,7 @@ Rule 8 (*shall* with a negative subject), an undefined or 2-form defined term, a
 | 4 | (a), (b), (c) | Enumerated clauses within a sentence |
 | 5 | (i), (ii), (iii) | Subclauses |
 
-Supersedes 4.11, 4.17, 4.29-4.30, 4.47-4.49, and 4.58-4.59 (MSCD's numbering scheme). If a short contract has no articles, start at level 2 (A., B., C.) and say so in the intake summary.
+Supersedes 4.11, 4.17, 4.29-4.30, 4.47-4.49, 4.58-4.59, and 4.62 (MSCD's numbering scheme and its Word styles). If a short contract has no articles, start at level 2 (A., B., C.) and say so in the intake summary.
 
 **Section line.** The section letter takes a period, and the bold heading runs into the text and also ends with a period, followed by 2 spaces: **A. Purchase and Sale.**  Seller shall sell the Assets to Buyer. (Blake's decision; MSCD 4.59-4.60 put no period after either.)
 
@@ -88,7 +87,7 @@ Supersedes 4.11, 4.17, 4.29-4.30, 4.47-4.49, and 4.58-4.59 (MSCD's numbering sch
 
 ## 4. Cross-references: avoid; refer by heading
 
-**Rule.** Avoid internal cross-references; restructure so each provision stands on its own (MSCD agrees: "the fewer cross-references in a contract, the better," 4.98). Where a reference is unavoidable, refer to the provision by its heading, not its number: *as stated in the section titled "Indemnification"* or *under the Indemnification section*. Supersedes 4.100-4.106 (references by number and the rule against headings in references).
+**Rule.** Avoid internal cross-references; restructure so each provision stands on its own (MSCD agrees: "the fewer cross-references in a contract, the better," 4.98). Where a reference is unavoidable, refer to the provision by its heading, not its number: *as stated in the section titled "Indemnification"* or *under the Indemnification section*. Supersedes 4.100-4.106 and 4.108-4.109 (references by number, the rule against headings in references, and automatic cross-references).
 
 **Contingencies.**
 - **Headings become operative.** Every heading used in a reference must be unique in the contract and must match the reference word for word. Check every reference against the headings after every edit; renaming a heading breaks a reference just as renumbering would.
@@ -116,7 +115,7 @@ Supersedes 4.11, 4.17, 4.29-4.30, 4.47-4.49, and 4.58-4.59 (MSCD's numbering sch
 
 **Rule.** Never write *Neither party shall*, *No Shareholder shall*, *Nobody shall*. Under the *has a duty* test, a negative subject with *shall* reads as an absence of duty, not a prohibition (MSCD 3.324: "it would appear to express the absence of duty rather than expressing prohibition"). Write *Neither party may assign* or *No Shareholder may transfer* (MSCD 3.324: "using may is the better option"). With a positive subject, the prohibition is *shall not*: *Acme shall not assign*.
 
-**When the subject isn't a person.** *No amendment shall be effective unless ...* and *No failure to exercise a right shall operate as a waiver* prohibit nothing: an amendment can't bear a prohibition. They are language of policy about an event that may never happen (an amendment, a failure to exercise), so they take *will* (MSCD 3.334; 3.369; MSCD's own form is *No amendment of this agreement will be effective unless ...*): *An amendment of this agreement will not be effective unless ...*; *A failure to exercise a right will not waive it*. The present tense fits only a policy in force on signing or at a fixed date (*Tennessee law governs this agreement*; *the Term ends on May 31, 2030*). The lint flags both kinds as `negative-subject-shall`; pick the fix by the subject.
+**When the subject isn't a person.** *No amendment shall be effective unless ...* and *No failure to exercise a right shall operate as a waiver* prohibit nothing: an amendment can't bear a prohibition. They are language of policy about an event that may never happen (an amendment, a failure to exercise), so they take *will* (MSCD 3.334; 3.369; Appendix B, section 9, uses *No amendment of this agreement will be effective unless ...*): *An amendment of this agreement will not be effective unless ...*; *A failure to exercise a right will not waive it*. The present tense fits only a policy in force on signing or at a fixed date (*Tennessee law governs this agreement*; *the Term ends on May 31, 2030*). The lint flags both kinds as `negative-subject-shall`; pick the fix by the subject.
 
 Blake reports that Tina Stark has described litigation in which a court read *neither party shall assign* as imposing no duty. Nobody has verified the case; cite MSCD 3.324 for the rule, not the case.
 

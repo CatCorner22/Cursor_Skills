@@ -1,5 +1,5 @@
 {
- "precedence": "Blake's house rules override MSCD5, riders and the blog.",
+ "precedence": "Blake's house rules override MSCD5, riders, and the blog.",
  "counterparty_review_default": "flag",
  "counterparty_note": "Blake chose full MSCD conformance on the other side's drafts; treat every let-pass rule as flag, but label style-only changes as style in the redline.",
  "overrides": [
@@ -92,7 +92,7 @@
     "R-17.11-gender-neutral"
    ],
    "partial": true,
-   "replacement": "Singular they is acceptable and preferred for an individual of unspecified gender; the rest of 17.11-17.18 applies."
+   "replacement": "Use singular they for an individual of unspecified gender (house-style.md section 10); the rest of 17.11-17.18 applies."
   },
   {
    "house_rule": "no-party-articles",
@@ -174,7 +174,7 @@
    "applies_with": [
     "R-3.323-collective-noun-prohibition"
    ],
-   "statement": "Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not."
+   "statement": "Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not. When the subject isn't a person (No amendment shall be effective unless), the sentence is language of policy and takes will: An amendment of this agreement will not be effective unless ... (MSCD 3.334; 3.369). See house-style.md section 8."
   },
   {
    "house_rule": "terms-of-art",

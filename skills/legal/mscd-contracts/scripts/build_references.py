@@ -5,15 +5,16 @@ Run after any change to the rule database (for example, after adding a new rider
     python3 scripts/build_references.py
 
 Each generated file starts from a hand-written header in scripts/ref_headers/<name>.md
-(if present) and lists every relevant rule, one entry per rule, ordered by MSCD paragraph.
+(required) and lists every relevant rule, one entry per rule, ordered by MSCD paragraph.
 Rules that a house rule supersedes are marked HOUSE so the reader applies Blake's rule instead.
 """
 import collections
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _cli import ArgParser, InputError, OK, run_main, setup_output  # noqa: E402
+from _cli import ArgParser, InputError, OK, run_main, setup_output, write_text  # noqa: E402
 from _rules_data import ROOT, house_notes, load_overrides, load_records  # noqa: E402
 
 REFS = os.path.join(ROOT, 'references')
@@ -47,6 +48,22 @@ def cite(r):
     if r['status'] != 'book':
         c += f"; {r['status']}"
     return c
+
+
+def usage_label(r):
+    """The Usage cell of a verdict row: the word. The book's section line reads Selected Usages > WORD > Sub-heading for some chapter-13
+    entries (INDEMNIFY > Function) and Topic > Sub-heading outside chapter 13 (Reasonable Efforts > Components), so the sub-heading
+    alone would hide the word and sort the row under F or C. The word comes first (the entry heading, else the 1st trigger word), and
+    the sub-heading follows in parentheses: INDEMNIFY (function), SUFFER (intransitive), COMMERCIALLY REASONABLE EFFORTS (components)."""
+    parts = [x.strip() for x in (r.get('section') or '').split(' > ') if x.strip()]
+    if not parts:
+        return ''
+    last = parts[-1]
+    if last == last.upper() or len(parts) == 1:
+        return last
+    words = [w for w in (r.get('trigger') or {}).get('words') or [] if re.fullmatch(r"[A-Za-z][\w'/ -]*", w)]
+    word = parts[1] if len(parts) >= 3 else words[0].upper() if words else parts[0]
+    return f"{word} ({re.sub(r'\s*\(\d+\.\d+\)$', '', last).lower()})"
 
 
 def entry(r, house, detail):
@@ -102,11 +119,10 @@ def main():
     for name, title, sel, det in SPECS:
         all_rows = sorted([r for r in active if sel(r)], key=sort_key)
         hdr_path = os.path.join(HEADERS, name + '.md')
-        if os.path.exists(hdr_path):
-            with open(hdr_path, encoding='utf-8') as fh:
-                head = fh.read().rstrip() + '\n'
-        else:
-            head = f'# {title}\n'
+        if not os.path.exists(hdr_path):  # the skill reads each file's hand-written header first: a rebuild must never drop it
+            raise InputError(f'missing {hdr_path}: every generated reference starts from its hand-written header; restore it before rebuilding')
+        with open(hdr_path, encoding='utf-8') as fh:
+            head = fh.read().rstrip() + '\n'
         head += ('\n> **Book examples are in MSCD5\'s style, not house style.** They may use lowercase *schedule*, *1 January 2024*, '
                  'spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. '
                  'Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. ' + flag_note)
@@ -122,9 +138,9 @@ def main():
             out.append(f"\n### Usage verdicts ({len(verd)})\n")
             out.append('| Usage | Rule | Fix | Sev | MSCD | id |')
             out.append('|---|---|---|---|---|---|')
-            for r in sorted(verd, key=lambda r: (r.get('section') or '').split(' > ')[-1].lower()):
+            for r in sorted(verd, key=lambda r: usage_label(r).lower()):
                 h = ' HOUSE: ' + house[r['id']] if r['id'] in house else ''
-                out.append(f"| {cell((r.get('section') or '').split(' > ')[-1])} | {cell(r['statement'])}{cell(h)} | {cell(r['fix'])} | {r['severity']} | {cell(cite(r))} | {r['id']} |")
+                out.append(f"| {cell(usage_label(r))} | {cell(r['statement'])}{cell(h)} | {cell(r['fix'])} | {r['severity']} | {cell(cite(r))} | {r['id']} |")
             out.append(f"\n### Other usage rules and exceptions ({len(rows)})\n")
         bysec = collections.OrderedDict()
         for r in rows:
@@ -139,11 +155,7 @@ def main():
             toc = '\n## Contents of the rules list\n\n' + '\n'.join(f'- {h}' for h in heads) + '\n'
             text = text.replace('\n## Rules (', toc + '\n## Rules (', 1)
         dest = os.path.join(REFS, name + '.md')
-        try:
-            with open(dest, 'w', encoding='utf-8') as fh:
-                fh.write(text)
-        except OSError as e:
-            raise InputError(f'cannot write {dest}: {e.strerror or e}') from e
+        write_text(dest, text)  # atomic: a crash mid-write never leaves a truncated reference for the skill to read
         sizes[name] = (len(all_rows), len(text))
     for k, (n, c) in sizes.items():
         print(f'{k:20} rules {n:4}  chars {c:7}')

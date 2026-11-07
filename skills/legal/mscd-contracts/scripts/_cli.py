@@ -55,22 +55,32 @@ def read_json(path, what='file'):
         raise InputError(f'{what} {path} is not valid JSON ({e}); fix or regenerate it') from e
 
 
-def write_json(path, data):
-    """Write JSON atomically: a crash or a full disk never leaves a half-written file for the next script to read."""
+def _write_atomic(path, dump):
+    """Write a file atomically through dump(fh): a crash or a full disk never leaves a half-written file for the next script (or the skill) to read."""
     folder = os.path.dirname(os.path.abspath(path))
     try:
-        fd, tmp = tempfile.mkstemp(prefix='.tmp-', suffix='.json', dir=folder)
+        fd, tmp = tempfile.mkstemp(prefix='.tmp-', suffix=os.path.splitext(path)[1], dir=folder)
     except OSError as e:
         raise InputError(f'cannot write {path}: {e.strerror or e}') from e
     try:
         with os.fdopen(fd, 'w', encoding='utf-8') as fh:
-            json.dump(data, fh, indent=1, ensure_ascii=False)
+            dump(fh)
         os.replace(tmp, path)
     except OSError as e:
         raise InputError(f'cannot write {path}: {e.strerror or e}') from e
     finally:
         if os.path.exists(tmp):
             os.remove(tmp)
+
+
+def write_json(path, data):
+    """Write JSON atomically (see _write_atomic)."""
+    _write_atomic(path, lambda fh: json.dump(data, fh, indent=1, ensure_ascii=False))
+
+
+def write_text(path, text):
+    """Write text atomically (see _write_atomic): a generated reference file is whole or absent, never truncated."""
+    _write_atomic(path, lambda fh: fh.write(text))
 
 
 def run_main(prog, main):

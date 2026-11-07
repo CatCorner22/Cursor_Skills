@@ -1,6 +1,6 @@
 # Vagueness
 
-Vagueness is not ambiguity: text is vague when whether it is satisfied depends on the circumstances (7.46). MSCD treats vagueness, used with restraint, as an essential tool; ambiguity is never acceptable.
+Vagueness is not ambiguity: text is vague when the circumstances decide whether a party has met it (7.46). MSCD treats vagueness, used with restraint, as an essential tool; ambiguity is never acceptable.
 
 ## Policy
 
@@ -9,7 +9,7 @@ Vagueness is not ambiguity: text is vague when whether it is satisfied depends o
 - **Never use gradations of vagueness** such as degrees of negligence or a hierarchy of efforts (7.54; 8.3).
 - **Never invent a number.** Use a bracketed blank and ask: *promptly, but no later than [__] Business Days after* (10.131).
 - **Pair every efforts obligation with a performance standard**; even *promptly* is enough (8.139-8.143). Use only *reasonable efforts* (8.134).
-- ***material***: decide whether "nontrivial" or "dealbreaker" is meant (9.21-9.32); omit it, use *nontrivial*, or use a defined *Material* (9.51-9.64).
+- ***material***: decide whether the drafter means "nontrivial" or "dealbreaker" (9.21-9.32); omit it, use *nontrivial*, or use a defined *Material* (9.51-9.64).
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 
@@ -265,7 +265,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.41-arising-out-of-or-relating-to** [sev 2] Don't rely on arising out of or relating to to set the scope of dispute-resolution, liability-limitation, or release provisions; it combines two nonspecific standards. To bring in a broad but predictable set of claims, refer to the contract and to the activities the parties will engage in as part of the transaction, and drop or relating to. (13.41, 13.45, 13.47...; PDF p. 586)
   - Fix: any dispute arising out of this agreement or [named transaction activities]
 - **R-13.48-subject-matter-of-this-agreement** [sev 2] Say what the subject matter is rather than arising out of the subject matter of this agreement; that phrase trades one nonspecificity for another and has generated litigation. (13.48, 13.49; PDF p. 588)
-  - Fix: Name the activities (for example, ownership of any Interest, or management or operations of the Company).
+  - Fix: Name the activities (for example, ownership of any Interest, or management or operations of Company).
   - Book example: any action or proceeding brought to enforce any provision of this Agreement → any dispute arising out of this agreement, ownership of any Interest, or management or operations of the Company
 - **R-13.101-because** [sev 2] Whenever you use because in a contract (typically in a conditional clause, If X because of Y, then Z), consider being specific about the type of causation required, such as sole cause or but-for cause. (13.101, 13.103; PDF p. 602)
   - Test: Must Y be the sole cause or only one of several causes? If the provision doesn't say, it invites dispute.
@@ -280,7 +280,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.287-faithfully** [sev 2] Don't use faithfully and comparable adverbs (diligently, competently, industriously) to state an employee's standard of performance; be specific about the employee's duties. (13.287, 13.288, 13.290...; PDF p. 641)
   - Fix: State the employee's duties and any measurable targets.
 - **R-13.320-fraud-intentional-misrepresentation** [sev 2] In exceptions to indemnification limits, referring to both fraud and intentional misrepresentation is safer than fraud alone, because the elements differ and a court might treat fraud as a distinct claim. Clearer still, avoid the terms of art and describe the conduct. (13.320, 13.323, 13.324...; PDF p. 649)
-  - Fix: any claim that the Indemnifying Party intentionally supplied one or more Indemnified Parties with information that the Indemnifying Party knew [or should have known] was inaccurate or any claim that the Indemnifying Party intentionally withheld information from one or more Indemnified Parties
+  - Fix: any claim that the Indemnifying Party intentionally supplied 1 or more Indemnified Parties with information that the Indemnifying Party knew [or, after reasonable inquiry, would have known] was inaccurate or any claim that the Indemnifying Party intentionally withheld information from 1 or more Indemnified Parties
 - **R-13.330-full-time** [sev 2] Be more specific than full-time when referring to work: state the minimum hours per day and days per week, how long that level must be maintained, and whether the person must be employed (and whether volunteer or independent-contractor work counts). (13.330, 13.331, 13.332; PDF p. 651)
   - Fix: State minimum hours and days, duration, and what kinds of work count.
 - **R-13.346-absolute-unconditional-guarantee** [sev 2] Omit absolutely, unconditionally, irrevocably, and the adjectives absolute, continuing, irrevocable, and unconditional from guarantees; be specific about the deal terms instead. They are unclear terms of art, add words, don't prevail over the law (a guarantor may revoke as to future advances), and don't prevail over the deal terms. (13.346, 13.347, 13.348...; PDF p. 654)
@@ -292,7 +292,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.452-defend** [sev 2] Don't rely on adding defend; address explicitly, in the indemnification procedure provisions, how defense of nonparty claims is handled. (13.452; PDF p. 679)
   - Fix: Procedures stating who controls the defense, counsel, expenses, and settlement.
 - **R-13.500-knowledge-qualifier** [sev 2] Consider a knowledge qualification in a statement of fact if the party can't determine whether the statement is accurate, usually because the matters might be hidden (contamination) or under others' control (threatened litigation). It means the party claims only that it isn't aware of anything suggesting inaccuracy; who bears unknown risk is a risk-allocation question. (13.500, 13.501, 13.502...; PDF p. 691)
-  - Fix: To the Seller's knowledge, ...
+  - Fix: To Seller's knowledge, ...
 - **R-13.506-define-knowledge** [sev 2] Consider making Knowledge a defined term to address whose knowledge counts (narrow for the stating party, broad for the other) and the level of knowledge (actual knowledge, or knowledge after inquiry of specified employees or after reasonable investigation, using knows or should have known). In a sale of a business, consider whether to include its managers. Avoid reasonable knowledge as unclear. (13.506, 13.507, 13.508...; PDF p. 692)
   - HOUSE: partly superseded: Never should: define Knowledge with wording for actual knowledge and for knowledge after reasonable inquiry, not should have known. See house-style.md section 12.
   - Fix: Autonomous definition of Knowledge naming the individuals and the level of investigation.

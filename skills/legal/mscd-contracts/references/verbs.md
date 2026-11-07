@@ -16,7 +16,7 @@ Read this file when classifying sentences (pass 3), when choosing a verb in a re
 | Category | Verb structure | Use it for | Example | MSCD |
 |---|---|---|---|---|
 | Agreement | *agree* | The lead-in only | *The parties therefore agree as follows:* | 3.45-3.47 |
-| Performance | *hereby* + simple present | An act done by signing | *Acme hereby sells the Units to Widgetco.* | 3.48-3.50 |
+| Performance | *hereby* + simple present | An act the party does by signing | *Acme hereby sells the Units to Widgetco.* | 3.48-3.50 |
 | Policy (no action on signing) | present continuous, negative | Saying a party isn't taking an action on signing; don't retool *hereby* performance into the negative | *In this agreement Widgetco is not assuming any Excluded Liabilities.* | 3.67 (language of policy, 3.332) |
 | Obligation on the subject | *shall* | A duty on the subject, a party | *Acme shall deliver the Units to Widgetco.* | 3.89-3.92 |
 | Obligation on the subject | *shall cause* | Subject is a party; the object isn't a legal person, or is the party's instrumentality | *Parent shall cause Sub to transfer the Assets.* | 3.160-3.165 |
@@ -432,7 +432,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-3.322-no-nothing-gives-right** [sev 3] Don't say the contract doesn't authorize a party to do something; express it as a prohibition. (3.322; PDF p. 206)
   - Book example: [7-1j] ××: Nothing in this agreement gives the Customer the right to modify the Equipment ... . → [7-1] ✓✓: The Customer shall not modify the Equipment ... .
 - **R-3.323-collective-noun-prohibition** [sev 3] With a collective-noun subject, express prohibition with a negative subject (neither for two, no for more) plus may, or with a singular subject and a negative verb (each party shall not); avoid neither party shall and the parties shall not ... their. (3.323, 3.324, 3.325; PDF p. 208)
-  - HOUSE: House addition: Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not.
+  - HOUSE: House addition: Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not. When the subject isn't a person (No amendment shall be effective unless), the sentence is language of policy and takes will: An amendment of this agreement will not be effective unless ... (MSCD 3.334; 3.369). See house-style.md section 8.
   - Book example: [7-2] ×: Neither party shall assign any of its rights ... . → [7-2a] ✓: Neither party may assign any of its rights ... .
   - Book example: [7-2b] ×: The parties shall not assign any of their rights ... . → [7-2c] ✓: Each party shall not assign any of its rights ... .
 - **R-3.326-no-nor-shall** [sev 3] Don't use nor shall to continue a prohibition; start a new sentence with language of prohibition. (3.326, 3.327, 3.328; PDF p. 208)
@@ -658,7 +658,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Fix: states
 - **R-13.945-warranty-remedy-conditional** [sev 3] In sale-of-goods contracts, you can instead combine the warranty and its remedy in one sentence: make the actual or future fact a conditional clause and the remedy the matrix clause. (13.945, 13.946, 13.947; PDF p. 794)
   - Look for: product warranty followed by a separate remedy provision
-  - Fix: If at any time during the six months after the date of this agreement the Equipment does not conform to the Specifications, the Vendor shall modify or replace the Equipment.
+  - Fix: If at any time during the 6 months after the date of this agreement the Equipment does not conform to the Specifications, Vendor shall modify or replace the Equipment.
 - **R-13.948-warrants-obligation** [sev 2] Don't use warrants to introduce an obligation (Acme warrants that it shall perform routine maintenance); it is throat-clearing. (13.948; PDF p. 795)
   - Fix: Acme shall perform routine maintenance ...
 - **R-13.949-warranty-noun** [sev 3] The noun warranty may refer to provisions in a contract or absent from it (Acme makes no warranties, express or implied), and it is appropriate to head a section Warranty or Warranties if that is what it consists of. But whether a provision is a warranty depends on content, not label. (13.949, 13.950, 13.951; PDF p. 795)

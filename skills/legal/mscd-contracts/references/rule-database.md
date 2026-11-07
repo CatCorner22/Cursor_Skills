@@ -1,13 +1,13 @@
 # The rule database (`data/rules.jsonl`)
 
-Each line holds 1 JSON object, and each object holds 1 MSCD rule: 1,338 records built from a full reading of MSCD5 (first printing, with the second-printing correction to 11.106 applied) plus the verified blog riders and proposals. The lint script and the lookup script read it at runtime, so a new record takes effect at once.
+Each line holds 1 JSON object, and each object holds 1 MSCD rule: 1,338 records built from a full reading of MSCD5 (1st printing, with the 2nd-printing correction to 11.106 applied) plus the verified blog riders and proposals. The lint script and the lookup script read it at runtime, so a new record takes effect at once.
 
 ## Fields
 
 | Field | Meaning |
 |---|---|
-| `id` | `R-<first paragraph>-<slug>`; riders `R-rider-...`; proposals `R-proposal-...` |
-| `paras`, `pdf_pages`, `chapter`, `section` | Where the rule lives in MSCD5 (PDF page numbers of the first printing) |
+| `id` | `R-<1st paragraph>-<slug>`; riders `R-rider-...`; proposals `R-proposal-...` |
+| `paras`, `pdf_pages`, `chapter`, `section` | Where the rule lives in MSCD5 (PDF page numbers of the 1st printing) |
 | `topic`, `key_items` | Grouping; `key_items` marks active-voice, words-to-avoid, verbs, attachments, standard-english, ambiguity, vagueness |
 | `kind` | rule, test, exception, definition, usage-verdict, ambiguity-cause, method |
 | `statement` | The rule as 1 instruction |
@@ -36,5 +36,5 @@ python3 scripts/rules_query.py --key attachments
 1. Read the new post and confirm it changes or adds to MSCD5 (not just floats an idea).
 2. Append a record with `status: "rider"`, the post's URL, date, and a verbatim key quotation in `notes`, and the MSCD paragraphs it changes in `paras`.
 3. If it supersedes a book rule, say so in that rule's `notes`.
-4. Run `python3 scripts/build_references.py` to regenerate the reference lists, and add the rider to `references/riders.md` with the new swept-through date. `scripts/build_references.py` generates 12 files (verbs, active-voice, words-to-avoid, attachments, ambiguity-catalog, vagueness, defined-terms, efforts-material, time-and-numbers, standard-english, structure, practice): their headers live in `scripts/ref_headers/`, so edit a header there, never in `references/`, or the next rebuild loses the edit. `house-style.md`, `comment-templates.md`, `riders.md`, `fix-check.md`, `look-alikes.md`, `fix-patterns.md`, and this file are hand-written.
+4. Run `python3 scripts/build_references.py` to regenerate the reference lists, and add the rider to `references/riders.md` with the new swept-through date. `scripts/build_references.py` generates 12 files (verbs, active-voice, words-to-avoid, attachments, ambiguity-catalog, vagueness, defined-terms, efforts-material, time-and-numbers, standard-english, structure, practice): their headers live in `scripts/ref_headers/`, so edit a header there, never in `references/`, or the next rebuild loses the edit. `house-style.md`, `comment-templates.md`, `riders.md`, `fix-check.md`, `look-alikes.md`, `fix-patterns.md`, `docx-mechanics.md`, and this file are hand-written.
 5. Run `python3 scripts/mscd_lint.py --self-test`.

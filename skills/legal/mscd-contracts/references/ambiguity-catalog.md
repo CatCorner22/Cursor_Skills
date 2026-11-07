@@ -5,15 +5,15 @@
 ## Definitions
 
 - Text is **ambiguous** if it can express 2 or more inconsistent meanings (7.5). It is still ambiguous if context resolves it (7.6).
-- A dispute alone doesn't make text ambiguous, and a comma alone shouldn't decide meaning (7.28-7.29; 12.75-12.78; Adams, "What We Talk About When We Talk About Ambiguity").
+- A dispute alone doesn't make text ambiguous, and never let a comma alone decide meaning (7.28-7.29; 12.75-12.78).
 - The 6 sources of uncertain meaning (7.3): ambiguity; not being sufficiently specific; mistake; conflict; not addressing an issue; vagueness (see `vagueness.md`).
 
 ## Causes added by the riders
 
 - **Right-node-raising pivot ambiguity**: 2 coordinated clauses share a final element, and it's unclear which words the shared element attaches to (*subject to the jurisdiction of and be construed according to the laws of the State of Florida*). Offsetting commas "aren't optional"; better, repeat the shared element. MSCD's "delimiting commas in coordination" (12.79-12.87) are now "offsetting commas in right node raising."
 - **Each or in the aggregate**: a quantity attributed to several items or payments (*monthly severance payments ... in the amount of $680,000*). Say *each* or *in the aggregate*.
-- **Ambiguity of the specific versus the general**: *ejusdem generis* and *including* (*insects, birds, rodents, or other animals*). Apply the *including* rules (13.360-13.407).
-- **11.106, second printing**: for a single item, the *every/each/all* ambiguity also afflicts *the whole* and *the entire*.
+- **Ambiguity of the specific versus the general**: *ejusdem generis* and *including* (*insects, birds, rodents, or other animals*). Apply the *including* rules (13.359-13.407).
+- **11.106, 2nd printing**: for a single item, the *every/each/all* ambiguity also afflicts *the whole* and *the entire*.
 
 ## Elaboration: terms of art in their everyday sense
 
@@ -137,12 +137,12 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-10.69-within-ambiguity** [sev 1] Within ambiguity: within X days of an event can denote a period running forward, backward, or both (within seven days of the first anniversary), and within X days prior to can mean "during the X days before" or "at least X days before." (10.69, 10.70, 10.71; PDF p. 483)
   - Look for: within X days (or months) of, or within X days prior to, an event or date
   - Test: Ask whether the period could run before the reference point, after it, or both.
-  - Fix: Say no later than seven days after it receives a Sale Notice (or during the X days before, or at least X days before).
+  - Fix: Say no later than 7 days after it receives a Sale Notice (or during the X days before, or at least X days before).
   - Book example: within seven days of receiving a Sale Notice → no later than seven days after it receives a Sale Notice
 - **R-10.80-bi-semi-ambiguity** [sev 1] Bi- and semi- ambiguity: biannual and semiannual both mean twice a year, but some dictionaries give biannual the meaning of biennial; bimonthly and biweekly invite similar confusion. (10.80; PDF p. 485)
   - Look for: a frequency word with the prefix bi- or semi-
   - Test: Ask whether the word could mean twice per unit or once every two units.
-  - Fix: Say twice a year (month, week) or every two years (months, weeks).
+  - Fix: Say twice a year (month, week) or every 2 years (months, weeks).
 - **R-10.88-time-of-day-end-ambiguity** [sev 1] Time-of-day-at-end ambiguity: before 2:00 p.m. on the date that is 20 Business Days after the Closing can mean any time up to 2:00 p.m. on day 20, or only on day 20 before 2:00 p.m. (10.88, 10.89, 10.90; PDF p. 487)
   - Look for: before [time] on the [date] that is X days after [event]
   - Test: Ask whether delivery on day 19 (or earlier) counts, or only delivery on day 20 before the stated time.
@@ -166,7 +166,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-10.111-consecutive-ambiguity** [sev 1] Block-of-time ambiguity: when the thing apportioned is itself a unit of time (two months of each year), it is unclear whether it must be taken as a single block. (10.111, 10.112, 10.113; PDF p. 492)
   - Look for: a number of days, weeks, or months to be taken within a year or month
   - Test: Ask whether the time may be split into several shorter blocks.
-  - Fix: To require a block, use consecutive (two consecutive months each year; convert one month to 30 consecutive days). If not, say so (over the course of one or more visits, each no shorter than five business days).
+  - Fix: To require a block, use consecutive (2 consecutive months each year; convert 1 month to 30 consecutive days). If not, say so (over the course of 1 or more visits, each no shorter than 5 business days).
   - Book example: (none) → Over the course of one or more visits, each no shorter than five business days, excluding travel days, the Employee shall work in Acme's Budapest office for two months of each year.
 - **R-10.152-time-component-ambiguity** [sev 1] Time-component ambiguity: a reference to things that pertain to a party (affiliates, subsidiaries, clients, shares, applicable law) can mean those existing at signing or those existing at some later time. (10.152, 10.153, 10.154...; PDF p. 501)
   - Look for: a class of persons or things belonging to a party (affiliates, subsidiaries, clients, shares) or applicable law, with no time reference
@@ -179,12 +179,12 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-11.3-singular-plural-ambiguity** [sev 1] Singular-for-plural ambiguity: a provision that refers to a thing or unnamed person in the singular (a non-affiliated third party; notice) may or may not apply to more than one. (11.3, 11.4, 11.5...; PDF p. 503)
   - Look for: singular noun naming a counterparty, event, or document that could occur more than once
   - Test: Ask whether the provision should apply regardless of number, only to one, or only to more than one; usually you want regardless of number.
-  - Fix: Make the intended scope explicit (one or more non-affiliated persons); sometimes a further sentence is needed.
+  - Fix: Make the intended scope explicit (1 or more non-affiliated persons); sometimes a further sentence is needed.
 - **R-11.7-one-or-more** [sev 3] Use one or more rather than X or Xs (one or more widgets, not the widget or widgets). (11.7; PDF p. 505)
   - Book example: the widget or widgets → one or more widgets
 - **R-11.8-no-number-interpretation-rule** [sev 1] Don't rely on an internal rule of interpretation (the singular includes the plural) to make provisions apply regardless of number. (11.8; PDF p. 505)
 - **R-11.9-any-not-plural** [sev 1] Don't count on any to extend a provision to more than one; any can mean any one member of the class, like a. Use one or more (if Acme files a complaint with one or more government bodies). (11.9, 11.10, 11.11...; PDF p. 505)
-  - Fix: Replace any with one or more where more than one should be covered.
+  - Fix: Replace any with 1 or more where more than 1 should be covered.
 - **R-11.13-balanced-approach** [sev 3] Use one or more only where the context poses a greater risk of dispute; making every singular provision expressly cover the plural produces ponderous prose. (11.13, 11.14; PDF p. 505)
 - **R-11.15-plural-subject-ambiguity** [sev 1] Plural-subject ambiguity: with a plural subject (The Stockholders shall notify Acme), it can be unclear whether members act individually or collectively; in language of discretion (may) there is a third meaning (one or more may act, or only if all do). Adding all of doesn't change the analysis. (11.15, 11.16, 11.17; PDF p. 506)
   - Look for: plural noun (or all of the [noun]s) as the subject of shall, may, must, or will
@@ -195,7 +195,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-11.18-plural-object-ambiguity** [sev 1] Plural-direct-object ambiguity: with a plural direct object (Acme shall notify the Stockholders; Acme may sell the Shares), it can be unclear whether the subject acts as to each member or the group collectively, and in language of discretion whether it must act as to all or may act as to some. (11.18, 11.19; PDF p. 507)
   - Look for: plural noun as the object of a verb of obligation, discretion, or prohibition
   - Test: Ask whether the action must cover all members, may cover some, or treats them as a group.
-  - Fix: Say each of the Stockholders, the Stockholders considered collectively, one or more Shares, or but only if it sells all of them.
+  - Fix: Say each of the Stockholders, the Stockholders considered collectively, 1 or more Shares, or but only if it sells all of them.
   - Exceptions: When collective treatment makes no sense (Acme shall sell the Shares), the meanings narrow (11.18).
 - **R-11.20-plural-subject-object-ambiguity** [sev 1] Plural-subject-and-object ambiguity: with a plural subject and a plural object (The Stockholders shall promptly submit the completed questionnaires), it can be unclear whether the object relates to each subject member separately or to all together. (11.20; PDF p. 508)
   - Look for: plural subject plus plural object
@@ -212,7 +212,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-11.28-and-object-ambiguity** [sev 1] And-direct-object ambiguity: nouns linked by and as direct objects (Acme shall notify Able and Baker) raise individual-versus-collective meanings; with may, whether both, one, or either is meant (Acme may dissolve Subsidiary A and Subsidiary B); with shall not, whether both are prohibited separately or only the combination. (11.28, 11.29, 11.30; PDF p. 511)
   - Look for: two or more nouns joined by and as the object of shall, may, or shall not
   - Test: For shall not: is each act prohibited, or only doing both? For may: must the party act as to both, or may it act as to one?
-  - Fix: Say shall not notify Able and shall not notify Baker; may dissolve one or both of Subsidiary A and Subsidiary B; or both ..., as opposed to one or the other.
+  - Fix: Say shall not notify Able and shall not notify Baker; may dissolve 1 or both of Subsidiary A and Subsidiary B; or both ..., as opposed to one or the other.
   - Exceptions: When the objects can't be considered collectively (Acme shall dissolve Subsidiary A and Subsidiary B), the ambiguity is reduced (11.28).
 - **R-11.31-and-subject-object-ambiguity** [sev 1] Distributive-versus-joint ambiguity: with and in both subject and object (Able and Baker shall notify Acme and Widgetco), it is unclear whether each subject acts as to each object, each acts as to one object respectively, or they act collectively. (11.31; PDF p. 512)
   - Look for: and joining two subjects and and joining two objects in one sentence
@@ -221,7 +221,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-11.32-multiple-verb-phrases** [sev 1] Multiple-verb-phrase ambiguity: one may governing two verb phrases joined by and (Acme may sell assets and make capital expenditures) can mean the party may do both only together, or each separately. (11.32, 11.33; PDF p. 513)
   - Look for: may followed by two or more verb phrases joined by and
   - Test: Ask whether the party may do one without the other.
-  - Fix: Repeat may (Acme may sell assets and may make capital expenditures), or say Acme may sell assets or make capital expenditures, or it may do both; with three or more, say may do any one or more of the following.
+  - Fix: Repeat may (Acme may sell assets and may make capital expenditures), or say Acme may sell assets or make capital expenditures, or it may do both; with 3 or more, say may do any 1 or more of the following.
   - Exceptions: When the first act logically leads to the second (Parent may dissolve Sub and liquidate its assets), "together" is likely intended (11.33).
 - **R-11.34-and-preposition-objects** [sev 1] Objects-of-preposition ambiguity: nouns joined by and as objects of a preposition alongside a direct object (Delta shall issue a promissory note to Echo and Foxtrot) can mean one to each, or one to them jointly; may and shall not multiply the meanings. (11.34, 11.35; PDF p. 513)
   - Look for: a direct object plus two or more objects of a preposition joined by and (issue a note to X and Y)
@@ -284,20 +284,20 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-11.101-and-for-or** [sev 1] And-for-or mistake: and used where or makes sense (or the converse), as in a guarantee that terminates upon (1) ..., (2) ..., and (3) ..., where requiring all three events makes no sense. (11.101, 11.102, 11.103...; PDF p. 534)
   - Look for: a list of alternative triggering events joined by and
   - Test: Ask whether the provision should operate when only one listed event occurs.
-  - Fix: Use or when any one suffices; to prevent an argument that more than one occurring defeats the provision, put one or more of the following before the alternatives and and after the next-to-last.
+  - Fix: Use or when any 1 suffices; to prevent an argument that more than one occurring defeats the provision, put 1 or more of the following before the alternatives and and after the next-to-last.
 - **R-11.105-every-each-all-discretion** [sev 1] Every/each/all-in-discretion ambiguity: in language of obligation these words are clear, but with may (Acme may purchase every vehicle included in the Lee Assets) they can mean no fewer than all, or one or more. (11.105, 11.106; PDF p. 535)
   - Look for: may followed by every, each, or all; for a single item, also the whole or the entire
   - Test: Ask whether the party may take only some.
-  - Fix: Say may purchase one or more of the vehicles, or may purchase the vehicles, but only all of them.
+  - Fix: Say may purchase 1 or more of the vehicles, or may purchase the vehicles, but only all of them.
   - Exceptions: For a single item, the ambiguity afflicts equivalents to all, including the whole and the entire (11.106, second printing).
 - **R-11.107-any-ambiguity** [sev 1] Any ambiguity: in language of obligation, any can mean all (shall purchase any vehicle, as in "take the name of any person who comes through the door") or one ("pick any card"), and may imply there may be none; in language of discretion, it can mean only one or one or more. (11.107, 11.108, 11.109; PDF p. 536)
   - Look for: any after shall, must, or may, or any in a condition
   - Test: Ask whether any means each one, just one, or one or more.
-  - Fix: Say each, one, or one or more, as intended; refer to "a single term" or "one or more terms."
+  - Fix: Say each, 1, or 1 or more, as intended; refer to "a single term" or "1 or more terms."
 - **R-11.110-failure-inability-ambiguity** [sev 1] Failure-or-inability ambiguity: every, each, all, and any in a sentence expressing failure or inability (inability to perform any duty; if all of the Conditions have not been discharged; prevents a Party from performing any of its obligations) can mean failure as to all, as to none, or as to one or more. (11.110, 11.111, 11.112...; PDF p. 537)
   - Look for: every, each, all, or any combined with failure, inability, prevention, or not
   - Test: Ask whether the provision is triggered by failure as to one item or only as to all.
-  - Fix: Say inability to perform one or more duties, or inability to perform all duties; if one or more of the Conditions has not been satisfied.
+  - Fix: Say inability to perform 1 or more duties, or inability to perform all duties; if 1 or more of the Conditions has not been satisfied.
   - Book example: "Disability" means the Employee's inability to perform any duty under this agreement. → "Disability" means the Employee's inability to perform one or more duties under this agreement.
 - **R-11.119-dont-ignore-part-whole** [sev 1] Don't ignore part-versus-whole ambiguity; it confuses practitioners, clients, and judges. (11.119, 11.120; PDF p. 539)
 - **R-11.121-meyer-case** [sev 1] Read "unable to perform any of the duties of his occupation or any occupation for which he is reasonably qualified" as a negated or-coordination: the natural meaning is unable to perform any duties of his own occupation and unable to perform any duties of any qualified occupation. The alternative reading (either inability suffices) makes half the provision redundant and so is unreasonable. (11.121, 11.122, 11.123...; PDF p. 540)
@@ -344,7 +344,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-12.19-squinting-modifier** [sev 1] Squinting-modifier ambiguity: a modifier placed between two elements could modify what comes before or after it (If Acme rejects any Asset within 10 days the Seller shall reimburse Acme). (12.19, 12.20; PDF p. 556)
   - Look for: a time or condition phrase sitting between a conditional clause and the main clause with no comma, or with only a comma to show its attachment
   - Test: Read the modifier with the preceding element, then with the following one; if both make sense, it squints.
-  - Fix: Move the modifier, and if needed use it twice: If no later than 10 days after the Closing Acme rejects any Asset, the Seller shall no later than 10 days after receiving the notice of rejection reimburse Acme. Don't rely only on a comma.
+  - Fix: Move the modifier, and if needed use it twice: If no later than 10 days after the Closing Acme rejects any Asset, Seller shall no later than 10 days after receiving the notice of rejection reimburse Acme. Don't rely only on a comma.
 - **R-12.21-uncertain-length** [sev 1] Uncertain-length ambiguity: it can be unclear whether a modifier incorporates a following relative clause (any item of apparel not constituting a Product that Widgetco has ... sold). (12.21; PDF p. 557)
   - Look for: a negative or participial modifier followed by a relative clause
   - Test: Ask whether the relative clause belongs to the modifier (not constituting a Product that Widgetco sold) or to the head noun (item of apparel that Widgetco sold).
@@ -352,7 +352,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-12.22-poorly-placed-modifier** [sev 1] Misplaced-modifier ambiguity: a modifier separated from what it modifies (... to an account designated by Galactic no later than five Business Days after the closing ...; a motor vehicle included in the Assets that is in Acme's possession) can attach to the wrong element. (12.22, 12.23; PDF p. 557)
   - Look for: a time phrase or relative clause placed after an intervening noun
   - Test: Ask what the nearest preceding element is and whether the modifier is meant for it.
-  - Fix: Put the modifier next to what it modifies, or move it to the front of the sentence (No later than five Business Days after the closing of a sale, the Sellers shall deliver the Proceeds of that sale to Galactic).
+  - Fix: Put the modifier next to what it modifies, or move it to the front of the sentence (No later than 5 Business Days after the closing of a sale, Sellers shall deliver the Proceeds of that sale to Galactic).
   - Book example: every certificate of title relating to a motor vehicle included in the Assets that is in Acme's possession → every certificate of title that is in Acme's possession relating to a motor vehicle included in the Assets
 - **R-12.24-opening-closing-modifier** [sev 1] Opening-or-closing-modifier ambiguity: a phrase that opens or closes a sentence containing two or more clauses (Other than in the Ordinary Course of Business, Acme shall not incur debt and Acme shall not make any capital expenditures; ..., unless and until terminated by one year prior notice) can modify one clause or all. (12.24, 12.25, 12.27...; PDF p. 558)
   - Look for: an opening or closing phrase in a sentence with two or more clauses
@@ -411,7 +411,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.73-at-least-one-of-categories** [sev 1] If at least one of refers to categories, or to units within categories, say so explicitly, and say whether you mean units in all categories or in fewer than all; if it refers to units, nothing more is needed. (13.73, 13.77, 13.85; PDF p. 594)
   - Look for: at least one of before a list of categories that each contain units
   - Test: Could one of mean one item within a category or one category? If so, the provision is ambiguous.
-  - Fix: at least one of the following categories: ...; at least one unit in each of the following categories: ...; at least one unit in [at least] one of the following categories: ...
+  - Fix: at least 1 of the following categories: ...; at least 1 unit in each of the following categories: ...; at least 1 unit in [at least] 1 of the following categories: ...
 - **R-13.163-special-and-consequential** [sev 1] Don't exclude both special damages and consequential damages; U.S. courts generally treat them as synonyms, and special damages means something else in tort, so the pairing adds confusion. (13.163; PDF p. 614)
   - Fix: Use the alternatives in R-13.167-foreseeable-damages and R-13.170-special-circumstances.
 - **R-13.164-direct-and-indirect** [sev 1] Don't exclude both direct and indirect damages; that could lead to a fight over whether all damages are excluded or the contract is void. (13.164; PDF p. 614)

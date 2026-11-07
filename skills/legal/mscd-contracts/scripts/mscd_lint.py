@@ -17,7 +17,6 @@ an output that can't be written, or a damaged data file; 3 an internal error (a 
 import argparse, codecs, collections, datetime, os, re, sys
 from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # the shared helpers sit beside this script
 from _cli import ArgParser, InputError, read_json, run_main, setup_output, write_json  # noqa: E402
 from _rules_data import TERMS_OF_ART_PATH, VARIANTS_PATH, load_overrides, load_records, superseded_ids  # noqa: E402
@@ -35,6 +34,22 @@ def _docx_xml_errors():
 
 
 DOCX_XML_ERRORS = _docx_xml_errors()
+
+
+def _xml_parser():
+    """python-docx's own parser setting for the parts this script parses itself (theme, comments, headers, footnotes):
+    a part from an untrusted file can't pull in an entity or a network resource. None without lxml."""
+    try:
+        from lxml import etree
+        return etree.XMLParser(resolve_entities=False, no_network=True)
+    except ImportError:
+        return None
+
+
+_XML = _xml_parser()
+# invisible format characters a paste from a PDF or a web page carries: a soft hyphen, zero-width spaces and joiners, a word
+# joiner, a stray byte-order mark. Word shows none of them, and each one splits a word in 2 for every regex here
+INVISIBLE = re.compile('[\u00ad\u200b\u200c\u200d\u2060\ufeff]')
 
 # ---------------------------------------------------------------- reading the document
 
@@ -164,7 +179,7 @@ def theme_fonts(d):
     try:
         from lxml import etree
         part = next(r.target_part for r in d.part.rels.values() if r.reltype.endswith('/theme'))
-        root = etree.fromstring(part.blob)
+        root = etree.fromstring(part.blob, _XML)
         for which in ('minor', 'major'):
             el = root.find('.//' + _A + which + 'Font/' + _A + 'latin')
             if el is not None and el.get('typeface'):
@@ -282,8 +297,11 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 # a business entity's suffix, as an introductory clause writes it (Acme Holdings, Inc.; Beta LLC)
 ENTITY = r"(?:Inc\.|LLC|L\.L\.C\.|LLP|L\.L\.P\.|LP|L\.P\.|Ltd\.|Corp\.|Co\.|P\.A\.|P\.C\.|PLLC|N\.A\.)"
 LEAD_IN = re.compile(r"\bagrees?\s+as\s+follows\b", re.I)  # the lead-in (MSCD 2.159): the recitals end here
-LEAD_IN_WINDOW = 60  # paragraphs: the lead-in or the 1st article sits in the first 60
+BETWEEN_AMONG = re.compile(r"\b(?:between|among|amongst)\b", re.I)  # the introductory clause's word (MSCD 2.47)
+INTRO_WINDOW = 60  # substantive paragraphs: a short introductory clause sits among the first 60 (a cover page and a table of contents come before it)
+INTRO_MIN_WORDS = 6  # an introductory clause can be short: This agreement is between ACME LLC ("Acme") and BETA INC. ("Beta").
 CHANGES_SHOWN = 60  # tracked changes listed in the report; --json lists every one
+COMMENTS_SHOWN = 10  # top-level Word comments listed in the report, with their replies; --json lists every one
 BROAD_MIN_HITS, BROAD_SHARE = 5, 0.15  # a rule that hits more than 5 paragraphs and 15% of them is a broad trigger, not a finding
 
 
@@ -322,7 +340,12 @@ def own_text(p_el, stats=None):
                 out.append('\ufffc')  # a symbol-font character (a checkbox): kept as 1 marker so the text keeps its place
                 continue
             if tag in (_W + 't', _M + 't'):
-                out.append(ch.text or '')  # an equation's text (m:t) reads in line: Price × 1.05 stays checkable
+                txt = ch.text or ''  # an equation's text (m:t) reads in line: Price × 1.05 stays checkable
+                if INVISIBLE.search(txt):
+                    if stats is not None:
+                        stats['invisible_chars'] = stats.get('invisible_chars', 0) + len(INVISIBLE.findall(txt))
+                    txt = INVISIBLE.sub('', txt)
+                out.append(txt)
             elif tag == _W + 'tab':
                 out.append('\t')
             elif tag in (_W + 'br', _W + 'cr'):
@@ -513,7 +536,7 @@ def _comments_with_replies(croot, d):
             para_ids[first_p.get(_W14_PARA_ID).upper()] = n
     try:
         xpart = next(r.target_part for r in d.part.rels.values() if r.reltype.endswith('/commentsExtended'))
-        xroot = etree.fromstring(xpart.blob)
+        xroot = etree.fromstring(xpart.blob, _XML)
         for ex in xroot.iter(_W15 + 'commentEx'):
             child, parent = (ex.get(_W15 + 'paraId') or '').upper(), (ex.get(_W15 + 'paraIdParent') or '').upper()
             if child in para_ids and parent in para_ids and para_ids[parent] != para_ids[child]:
@@ -621,7 +644,7 @@ def _read_docx(path):
             continue
         try:
             from lxml import etree
-            root = etree.fromstring(rel.target_part.blob)
+            root = etree.fromstring(rel.target_part.blob, _XML)
         except Exception:
             continue
         for note in root:
@@ -650,7 +673,7 @@ def _read_docx(path):
         kind_ = rel.reltype.rsplit('/', 1)[-1]
         if kind_ in ('header', 'footer', 'footnotes', 'endnotes') and not rel.is_external:
             try:
-                part_roots.append((kind_, etree.fromstring(rel.target_part.blob)))
+                part_roots.append((kind_, etree.fromstring(rel.target_part.blob, _XML)))
             except (etree.XMLSyntaxError, ValueError, AttributeError):
                 paras_meta.setdefault('unread_parts', []).append(kind_)
     changes = []  # each change with its author, so a response to the other side's markup can take them 1 by 1
@@ -684,7 +707,7 @@ def _read_docx(path):
         paras_meta['equations'] = n_eq  # read as plain text in the paragraphs; the layout (fractions, exponents) is lost
     try:
         cpart = next(r.target_part for r in d.part.rels.values() if r.reltype.endswith('/comments'))
-        croot = etree.fromstring(cpart.blob)
+        croot = etree.fromstring(cpart.blob, _XML)
         paras_meta['comments'] = _comments_with_replies(croot, d)
     except StopIteration:
         pass  # no comments part
@@ -732,6 +755,10 @@ def _read_text(path, ext):
     if '\x00' in text:
         meta['nul_chars'] = text.count('\x00')
         text = text.replace('\x00', '')
+    n_inv = len(INVISIBLE.findall(text))
+    if n_inv:
+        meta['invisible_chars'] = n_inv
+        text = INVISIBLE.sub('', text)
     junk = sum(1 for ch in text if ch == '\ufffd' or (ord(ch) < 32 and ch not in '\t\n\r\f'))
     if len(text) >= 40 and junk > len(text) // 20:
         raise ValueError("this file isn't text (most of it is control characters or undecodable bytes): it may be an image, a PDF or a binary file with a .txt name; extract or convert its text first")
@@ -984,6 +1011,14 @@ SERIAL_V = re.compile(r"\b(?:shall|must|will|may|to)\s+(?:not\s+)?[a-z]+\s+(?:" 
 MODAL_ASIDE = re.compile(r"\b(?:shall|may|must|will)(?:\s+not)?\s*,\s+(?:with|without|in|at|on|for|by|upon|after|before|subject|notwithstanding|except|to)\b[^,;:]*$")
 
 
+# an opening adverbial phrase, with or without a leading adverb or an enumerator (Immediately after the Closing, Seller and Buyer ...),
+# ends at the sentence's 1st comma: the 2 names after it are a compound subject, not a list
+OPENERS = (r"(?:after|before|if|when|once|upon|on|until|unless|during|following|except|notwithstanding|in|at|by|for|from|under|within|without|"
+           r"subject\s+to|as\s+of|prior\s+to|subsequent\s+to|pursuant\s+to|throughout|pending|effective|concurrently\s+with|simultaneously\s+with|"
+           r"with\s+respect\s+to|regarding|concerning|beginning|commencing|starting|absent|despite|to)")
+OPENING_PHRASE = re.compile(r"(?:^|[.;:]\s+)(?:\(?[A-Za-z0-9]{1,4}[.)]\s+)?(?:[A-Za-z]+ly\s+)?" + OPENERS + r"\b[^,;:]*$", re.I)
+
+
 def serial_lists(t):
     # lists of 3 or more items with no serial comma; items alike in case (a clause boundary mixes them:
     # If Acme defaults, Beta and Gamma may ...), with no digits (dates, amounts) and no place names
@@ -1015,8 +1050,8 @@ def serial_lists(t):
                 at_start = not before.strip() or re.search(r"[.;:]\s*$", before)
                 if not (pw in LIST_LEADS or pw.endswith(("'s", "’s")) or at_start and items[0][0].isupper() and items[0] not in SENT_STARTERS):
                     continue
-                if re.search(r"(?:^|[.;:]\s+)(?:After|Before|If|When|Once|Upon|On|Until|Unless|During|Following|Except|Notwithstanding|In|At|By|For|From|Under|Within|Without|Subject\s+to|As\s+of)\b[^,;:]*$", before.rstrip()):
-                    continue  # After the Closing, Seller and Owner ...: the 1st comma ends an opening phrase, not a list item
+                if OPENING_PHRASE.search(before.rstrip()):
+                    continue  # After the Closing, Seller and Owner ...; Prior to the Closing, Seller and Buyer ...: the 1st comma ends an opening phrase, not a list item
                 if MODAL_ASIDE.search(before):
                     continue  # Lender may, without notice ... and without affecting its rights, extend or renew: the 1st comma closes an aside after the modal
                 if re.search(r",\s+(?!(?:and|or|but|nor)\s+$)\w+\s+$", before):
@@ -1051,7 +1086,9 @@ ATT_QUOTE = re.compile(r"\b(?:Schedule|Exhibit)\s+[\"“][A-Z0-9]+[\"”]")
 DMY = re.compile(r"\b\d{1,2}\s+" + MONTH + r"\s+\d{4}\b")
 DATE_WORDS = re.compile(r"\b(?:(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s+)?(" + '|'.join(MONTHS) + r")\s+(\d{1,2}),\s+(\d{4})\b")
 TERM_NOTICE = re.compile(r"\b(?:terminate|determine)\s+(?:this\s+[A-Za-z]+|the\s+[A-Z][\w ]{0,30}?|it)\s+(?:at\s+any\s+time\s+)?(?:upon|by\s+giving(?:\s+to)?(?:\s+(?:the\s+other(?:\s+party)?|[A-Z]\w+))?|with)\s+(?:at\s+least\s+|not\s+less\s+than\s+)?(?:\d+|[a-z]+(?:[- ][a-z]+)?)(?:\s+\(\d+\))?\s+(?:days|months|Business\s+Days|business\s+days)['’]?\s+(?:prior\s+|advance\s+|written\s+|prior\s+written\s+)?notice")
-NUMDATE = re.compile(r"\b\d{1,2}/\d{1,2}/\d{2,4}\b|(?<![\w./-])(?:19|20)\d{2}/(?:0?[1-9]|1[0-2])/(?:0?[1-9]|[12]\d|3[01])(?![\w/])")  # 2/3/2027 and the year-first 2027/01/05; a version number 2.0/3 is not a date
+# 2/3/2027 and the year-first 2027/01/05; a month or day never exceeds 31 and a year has 2 or 4 digits, so 24/7/365 (a service level)
+# and a version number 2.0/3 are not dates
+NUMDATE = re.compile(r"\b(?:0?[1-9]|[12]\d|3[01])/(?:0?[1-9]|[12]\d|3[01])/(?:\d{4}|\d{2})(?![\d/])|(?<![\w./-])(?:19|20)\d{2}/(?:0?[1-9]|1[0-2])/(?:0?[1-9]|[12]\d|3[01])(?![\w/])")
 THIS_DAY = re.compile(r"\b(?:this|the)\s+\S+\s+day\s+of\s+(?:" + MONTH + r"|[_\s]{2,})|\bthis\s+\S+\s+day\s+of\b", re.I)
 HEADINGS_CLAUSE = re.compile(r"\bheadings?\b[^.]{0,120}\b(?:convenience|reference|guidance|identification|navigation)\b", re.I)  # the clause headings are for guidance only
 TYPED_NUM = re.compile(r"^\s*(?:\d+\.\d+(?:\.\d+)*\.?|\(\d+\)|\([ivx]+\)|\([a-z]\)|[IVX]+\.|[A-Z]\.|\d+\.)\s+")
@@ -1098,13 +1135,25 @@ def front(paras, n=15, min_words=12):
     return [p for p in paras if len(p['text'].split()) >= min_words][:n]
 
 
+def intro_like(paras):
+    """The indexes of short paragraphs near the front that read like an introductory clause whatever their length:
+    between or among plus a defined party (This agreement is between ACME LLC ("Acme") and BETA INC. ("Beta"), 10 words)."""
+    return {p['idx'] for p in front(paras, INTRO_WINDOW, INTRO_MIN_WORDS) if BETWEEN_AMONG.search(p['text']) and DEF_PAREN.search(p['text'])}
+
+
+def intro_candidates(paras, n=15):
+    """The paragraphs the introductory clause may sit in, in document order: front(paras, n) plus intro_like(paras)."""
+    ids = {p['idx'] for p in front(paras, n)} | intro_like(paras)
+    return [p for p in paras if p['idx'] in ids]
+
+
 PARTIES_ENOUGH = 2  # an introductory clause that defines 2 parties is complete: a later "between" names another agreement's parties
 
 
 def party_terms(paras):
     found = set()
     cont_i = None  # index of the next paragraph when the introductory clause lists each party in its own paragraph (the list item ends with ":", ";", or "; and")
-    front_ids = {p['idx'] for p in front(paras)}
+    front_ids = {p['idx'] for p in intro_candidates(paras)}
     for p in paras:
         continues = cont_i is not None and p['idx'] == cont_i
         if p['idx'] not in front_ids and not continues:
@@ -1112,7 +1161,7 @@ def party_terms(paras):
         if len(found) >= PARTIES_ENOUGH and not continues:
             break  # a recital's "a loan agreement ... between Borrower and Lender" defines a nonparty (Borrower), not a party
         before = len(found)
-        if re.search(r"\b(?:between|among|amongst)\b", p['text'], re.I) or continues:
+        if BETWEEN_AMONG.search(p['text']) or continues:
             for m in DEF_PAREN.finditer(p['text']):
                 prev = p['text'][max(0, m.start() - 80):m.start()].rstrip(' ,')
                 if re.search(r"(?:corporation|company|partnership|association|cooperative|trust|bank|credit\s+union|union|foundation|society|fund|university|college|hospital|district|individual|organization|LLC|L\.L\.C\.|Inc\.|Co\.|Corp\.|LP|L\.P\.|LLP|PLLC|N\.A\.)$", prev, re.I) \
@@ -1121,9 +1170,9 @@ def party_terms(paras):
                     found.add(m.group(1))  # a party: a name or an entity description just before the parenthetical, not "the Desert Basin Water Authority (the "Authority")"; or a role after the name (Fifth Third Bank, in its capacity as escrow agent (the "Escrow Agent"))
             for m in ROLE_PAREN.finditer(p['text']):
                 found.add(m.group(1))  # Volunteer State Trust Company, as escrow agent (in that role, the "Escrow Agent")
-            if re.search(r"(?::|;|;\s*and|,\s*and)\s*$", p['text'].rstrip()) and (len(found) > before or re.search(r"\b(?:between|among|amongst)\b", p['text'], re.I)):
+            if re.search(r"(?::|;|;\s*and|,\s*and)\s*$", p['text'].rstrip()) and (len(found) > before or BETWEEN_AMONG.search(p['text'])):
                 cont_i = p['idx'] + 1
-    for p in ([] if found else front(paras, 4)):  # no "between" clause (purchase terms): "Saltmarsh Provisions Co., a Virginia corporation ("Buyer"), issues to a supplier ("Seller")"
+    for p in ([] if found else intro_candidates(paras, 4)):  # no "between" clause (purchase terms): "Saltmarsh Provisions Co., a Virginia corporation ("Buyer"), issues to a supplier ("Seller")"
         for m in DEF_PAREN.finditer(p['text']):
             if re.search(r"(?:corporation|company|partnership|association|cooperative|individual|LLC|Inc\.|Co\.|supplier|vendor|customer|seller|buyer|contractor|licensee|licensor)\W{0,4}$", p['text'][max(0, m.start() - 60):m.start()], re.I):
                 found.add(m.group(1))
@@ -1137,18 +1186,23 @@ TAIL_SHARE = 0.5  # the signature blocks sit in the back half of the document's 
 def document_shape(paras):
     """Where the contract's parts are, computed once per document: intro (the paragraph of the introductory clause, with
     between/among and a defined party), lead_in (the paragraph with "agree as follows", or None), lead (the lead-in, or
-    the 1st article after the intro: house style has no lead-in, so the recitals end there), tail (the paragraph index
-    where the signature-block search starts), and tail_text (the text from there on)."""
+    the 1st article after the intro: house style has no lead-in, so the recitals end there), attachments (the index of the
+    1st attachment heading, or len(paras)), tail (the paragraph index where the signature-block search starts), and
+    tail_text (the text from there on)."""
     by_idx = {p['idx']: p for p in paras}
-    intro_i = next((p['idx'] for p in front(paras) if re.search(r"\b(?:between|among|amongst)\b", p['text'], re.I)
+    intro_i = next((p['idx'] for p in intro_candidates(paras) if BETWEEN_AMONG.search(p['text'])
                     and (DEF_PAREN.search(p['text']) or p['text'].rstrip().endswith(':') and p['idx'] + 1 in by_idx and DEF_PAREN.search(by_idx[p['idx'] + 1]['text']))), None)  # "is among the following parties:" with each party in its own paragraph
+    attachments = next((p['idx'] for p in paras if EXHIBIT_HEAD.match(p['text'])), len(paras))
     lead_in = next((p['idx'] for p in paras if LEAD_IN.search(p['text'])), None)
-    lead_i = next((p['idx'] for p in paras[:LEAD_IN_WINDOW] if LEAD_IN.search(p['text'])
+    # the lead-in or the 1st article after the intro, anywhere before the attachments (a cover page and a table of contents can push
+    # it past any fixed window; an attached form's own lead-in isn't this contract's)
+    lead_i = next((p['idx'] for p in paras if p['idx'] < attachments and (LEAD_IN.search(p['text'])
                    or (intro_i is not None and p['idx'] > intro_i
-                       and re.match(r"\s*(?:#+\s*)?(?:(?:ARTICLE|Article)\s+)?(?:[IVX]+|\d+)[.:]?\s+[A-Z]", ((p.get('auto_label') or '') + ' ' + p['text']).strip()))), None)
+                       and re.match(r"\s*(?:#+\s*)?(?:(?:ARTICLE|Article)\s+)?(?:[IVX]+|\d+)[.:]?\s+[A-Z]", ((p.get('auto_label') or '') + ' ' + p['text']).strip())))), None)
     body = [p for p in paras if p['text'].strip()]
     tail_i = body[int(len(body) * TAIL_SHARE)]['idx'] if body else 0
-    return {'intro': intro_i, 'lead_in': lead_in, 'lead': lead_i, 'tail': tail_i, 'tail_text': ' '.join(p['text'] for p in paras if p['idx'] >= tail_i)}
+    return {'intro': intro_i, 'lead_in': lead_in, 'lead': lead_i, 'attachments': attachments, 'tail': tail_i,
+            'tail_text': ' '.join(p['text'] for p in paras if p['idx'] >= tail_i)}
 
 
 def nonparty_named(paras, parties, shape, defs):
@@ -1233,11 +1287,32 @@ COLLECTIVE_TERM = re.compile(QO + r"\**([A-Z][\w-]*(?:\s+[A-Z][\w-]*){0,2}),?\**
 
 def party_collective(paras):
     found = set()
-    for p in front(paras):
-        if re.search(r"\b(?:between|among|amongst)\b", p['text'], re.I):
+    for p in intro_candidates(paras):
+        if BETWEEN_AMONG.search(p['text']):
             for paren in COLLECTIVE_PAREN.finditer(p['text']):
                 for m in COLLECTIVE_TERM.finditer(paren.group(0)):
                     found |= _forms(m.group(1))
+    return found
+
+
+# a signatory named by its role with no defined term: HARBOR TITLE LLC, a Tennessee limited liability company, as escrow agent.
+# The role must follow an entity description or suffix (not "the Loan Agreement, as amended") and end the clause
+SIGNATORY_ROLE = re.compile(r",\s+(?:as|in\s+(?:its|their|that)\s+(?:capacity|role)\s+as)\s+(?:an?\s+)?([a-z][\w-]*(?:\s+[a-z][\w-]*){0,3}?)\s*(?=[.;,)]|\(|$|\s+(?:and|or)\b)")
+ENTITY_BEFORE = re.compile(r"(?:corporation|company|partnership|association|cooperative|trust|bank|credit\s+union|union|foundation|society|fund|university|college|hospital|district|individual|organization|LLC|L\.L\.C\.|Inc\.|Co\.|Corp\.|LP|L\.P\.|LLP|PLLC|N\.A\.)$", re.I)
+
+
+def signatory_roles(paras):
+    """The roles the introductory clause gives a signatory without a defined term (as escrow agent), as written and in title case:
+    that signatory is a party, so "the escrow agent shall" states a duty (MSCD 3.89). They join PARTY_COLLECTIVE, not PARTY_TERMS:
+    a role label keeps its article (house rule 11), and the missing defined term is the inventory's finding (MSCD 2.91)."""
+    found = set()
+    for p in intro_candidates(paras):
+        if not BETWEEN_AMONG.search(p['text']):
+            continue
+        for m in SIGNATORY_ROLE.finditer(p['text']):
+            if ENTITY_BEFORE.search(p['text'][max(0, m.start() - 60):m.start()].rstrip(' ,')):
+                role = m.group(1)
+                found |= {role, ' '.join(w.capitalize() for w in role.split())}
     return found
 
 
@@ -1296,6 +1371,7 @@ SIGNATURE_SRC = [  # (pattern, check, severity, message, rule ids); SIGNATURE be
     # the adverb and the adjective (prompt written notice); "prompts" (a verb, or a software prompt) and the defined term Prompt stay clear
     (r"\bprompt(?:ly)?\b(?!\s+(?:engineering|template|text|window|box)\b)", 'vagueness', 3, 'prompt (or promptly) is vague, and a court may read it as immediately; state a number of days if timing matters (MSCD 10.114; 7.46-7.47).', ['R-10.114-promptly-equals-immediately']),
     (r"\b(?:[Tt]hird|3rd)[- ][Pp]art(?:y|ies)\b(?![- ][Bb]eneficiar)(?![- ][Ll]ogistics)(?![- ][Aa]dministrator)", 'usage', 3, 'third party: write Person, any Person other than a party, or a defined Nonparty (MSCD 13.875).', ['R-13.875-third-party']),
+    # signature_checks exempts this entry inside quoted text (a statute's words), keyed on its rule id
     (r"\b(?:duly\s+)?execut(?:e|es|ed|ing|ion)\b(?!\s+(?i:(?:of\s+)?(?:the\s+|its\s+|their\s+|all\s+|any\s+)?(?:work|services?|tasks?|project|duties|obligations|deliverables|plan|protocol|testing))\b)(?!\s+(?:a|an)\s+(?!copy|counterpart|document|written|separate|new\s+agreement|joinder|release|certificate|deed|note|amendment|instrument)[a-z])", 'archaic', 3, 'execute for signing: write sign (MSCD 5.7).', ['R-5.7-signing-not-executing']),
     (r"\bshall\s+be\s+entitled\s+to\b|\bshall\s+have\s+the\s+right\s+to\b", 'category-shall', 2, 'shall be entitled to / shall have the right to: for discretion write may (MSCD 3.206); if another party owes the thing, state that party\'s duty with shall (3.169; 3.288); is entitled to plus a noun stays only when no party owes it (3.147).', ['R-3.206-use-may']),
     (r"\bshall\s+be\s+(?:governed|construed|interpreted)\s+(?:by|in\s+accordance)\b|\bshall\s+(?:be\s+)?deemed\b|\bshall\s+(?:commence|begin|continue|terminate|expire|end|accrue)\b(?=\s*(?:[,.;:)]|$)|\s+(?:on|at|upon|when|whenever|if|unless|in|until|for|automatically|immediately|with|after|before|no\s+later|as\s+of|and|or|without|by|effective|under|while|once|daily|monthly)\b)|\bshall\s+be\s+(?:effective|valid|binding|void|enforceable|final)\b|\bshall\s+be\s+for\s+(?:a|the)\s+(?:term|period)\b|\bshall\s+be\s+(?:equal\s+to\s+)?(?:\$\s?\d|\d+(?:\.\d+)?\s*(?:%|percent\b))|\bshall\s+(?:remain|be)\s+in\s+(?:full\s+)?(?:force|effect)\b", 'category-shall', 2, 'shall with no duty on the subject: language of policy. Pick the tense by MSCD 3.334: the present tense for a policy in force on signing or at a fixed date (Tennessee law governs this agreement; the Term ends on May 31, 2030); will for a policy tied to an event that may not happen or whose timing is uncertain (this agreement will terminate when ...; will be void) (MSCD 3.98; 3.334; 3.335).', ['R-3.98-shall-future-time']),
@@ -1356,7 +1432,8 @@ WORDY = {  # MSCD 17.19 table (Wordy -> Better); "once" dropped from "at the tim
     'set forth in': 'stated in, in', 'subsequent to': 'after', 'under the provisions of': 'under', 'until such time as': 'until',
     'with the exception of': 'except for'}
 WORDY_RE = re.compile(r"\b(" + '|'.join(re.escape(k) for k in sorted(WORDY, key=len, reverse=True)) + r")\b", re.I)
-PROVISO = re.compile(r"\bprovided,?\s+(?:however|further|also)?,?\s*that\b|\bprovided\s+that\b", re.I)
+# not the verb after an auxiliary (Seller has provided that information): only the proviso
+PROVISO = re.compile(r"(?<!\bhas\s)(?<!\bhave\s)(?<!\bhad\s)(?<!\bnot\s)(?<!\bbeen\s)(?<!\bhaving\s)\bprovided,?\s+(?:however|further|also)?,?\s*that\b", re.I)
 
 STOP = set('shall will may must if and or the a an any each all every which such before after date day days within '
            'notice party parties agreement section article clause in on of to for by with as that this these those '
@@ -1461,7 +1538,12 @@ SHALL_CAUSE_UNCONTROLLED = re.compile(r"\b(?:shall|will|must)\s+(?:cause(?:\s+th
                                       r"(?:[\w'’-]+\s+){0,2}?(?:employees?|personnel|staff|agents?|contractors?|subcontractors?|sub-?agents?|representatives?|officers?|directors?|"
                                       r"invitees?|guests?|customers?|end\s+users?|sublicensees?|suppliers?|vendors?|consultants?|workers?|technicians?|lenders?|"
                                       r"carriers?|drivers?|haulers?|brokers?|dealers?|resellers?|franchisees?|licensees?|members?|participants?|volunteers?|visitors?|passengers?|"
-                                      r"tenants?|occupants?|students?|patients?|physicians?|providers?|nurses?|crews?|pilots?|installers?|auditors?|insurers?)\b", re.I)
+                                      r"tenants?|occupants?|students?|patients?|physicians?|providers?|nurses?|crews?|pilots?|installers?|auditors?|insurers?|"
+                                      # the other nonparty roles (NONPARTY_HEADS) and the counterparties a party doesn't control: the landlord of the Premises, a lender, a bank
+                                      r"landlords?|lessors?|lessees?|licensors?|borrowers?|counterpart(?:y|ies)|banks?|clients?|governmental\s+authorit(?:y|ies)|"
+                                      r"(?:escrow|paying|collateral|exchange|transfer|disbursing|settlement|closing)\s+agents?|arbitrators?|arbitral\s+tribunals?|mediators?|accountants?|"
+                                      r"appraisers?|experts?|title\s+compan(?:y|ies)|title\s+insurers?|escrow\s+holders?|spouses?|courts?|judges?|referees?|surveyors?|inspectors?|"
+                                      r"trustees?|administrators?|users?)\b", re.I)
 
 
 def clause_start(t, pos):
@@ -1486,6 +1568,11 @@ RELATIVE_WHO_HEAD = re.compile(r"(?:\b(?:the|a|an|each|any|every|its|their)\s+|[
 EXCEPT_THAT = re.compile(r"(?:except|provided|save)(?:\s*,?\s*however\s*,?)?\s+that\s+(\S.*)$", re.I | re.S)
 
 
+# a typed enumerator or section label before the subject: 1., (a), (a)(i), 3.1(a), Section 3.1(a), Section 3, Article II
+SUBJ_LABEL = re.compile(r"^(?:(?:Section|SECTION|Article|ARTICLE|Clause|Paragraph)\s+[IVXLC\d]+(?:\.\d+)*(?:\([a-z0-9]{1,4}\))*\.?|"
+                        r"\d+(?:\.\d+)*(?:\([a-z0-9]{1,4}\))*\.?|\(?[A-Za-z0-9]{1,4}[.)](?:\([a-z0-9]{1,4}\))*)\s+")
+
+
 def subject_of(t, pos):
     """The subject before a modal at pos: (kind, words), kind = party | thing | nonparty | unknown | skip."""
     start = clause_start(t, pos)
@@ -1503,7 +1590,8 @@ def subject_of(t, pos):
         cand = parts[-1] = exc.group(1)  # ..., except that Buyer shall pay: Buyer is the subject, not the main clause before the comma
     if len(parts) > 1 and (not cand or SUBJ_COND.match(cand) or re.match(r"(?:\w+ly|[a-z]+ing)\b", cand)):
         cand = parts[0].strip()  # Seller, at its own cost, shall: the subject is before the 1st comma
-    cand = re.sub(r"^(?:\(?[A-Za-z0-9]{1,4}[.)]\s+|[A-Z][\w'’ -]{0,40}\.\s{1,2})?", '', cand)  # an enumerator or a run-in heading
+    cand = SUBJ_LABEL.sub('', cand, count=1)  # a typed enumerator or section label
+    cand = re.sub(r"^[A-Z][\w'’ -]{0,40}\.\s{1,2}", '', cand)  # a run-in heading
     cand = re.sub(r"^(?:and|or|but|then|also|so|thus|that|and\s+that)\s+", '', cand, flags=re.I).strip()
     cand = re.sub(r"\s+(?:also|then|thereafter|promptly|immediately|automatically|each|jointly|severally|not|further|only|solely|in\s+no\s+event|at\s+no\s+time)$", '', cand, flags=re.I).strip()
     if not cand or SUBJ_COND.match(cand) or re.match(r"(?:neither|no|none|nothing|nobody)\b", cand, re.I):
@@ -1541,6 +1629,8 @@ def subject_of(t, pos):
 
 def subject_modal_checks(t, out, add):
     for m in re.finditer(r"\b(?:shall|will)\b", t):
+        if in_quotation(t, m.start()):
+            continue  # quoted text keeps its own verbs (house rule 1): a clause another contract must contain, a statute's words
         word = m.group(0)
         kind, subj = subject_of(t, m.start())
         after = t[m.end():m.end() + 60]
@@ -1550,9 +1640,11 @@ def subject_modal_checks(t, out, add):
                 continue  # a passive (The Fee shall be paid) or another check already reports this shall
             mm = re.match(r"\s+(?:not\s+)?\w+", after)
             span = _Span(t, m.start(), m.end() + (mm.end() if mm else 0))
-            add('category-shall', f'Shall with a subject that can\'t have a duty ({subj}): this is language of policy, so use the present tense '
-                '(The Term is 3 years; Tennessee law governs this agreement; this agreement controls), or will for a future event that may not happen '
-                '(MSCD 3.98; 3.334-3.335). If a party must act, make that party the subject of shall.', span, 'medium', ['R-3.98-shall-future-time'])
+            add('category-shall', f'Shall with a subject that can\'t have a duty ({subj}). Apply the has-a-duty test (MSCD 3.92) and pick the category: '
+                'for a policy, the present tense (The Term is 3 years; Tennessee law governs this agreement; this agreement controls) or will for a contingent '
+                'future event (MSCD 3.98; 3.334-3.335); for a requirement the sentence imposes on this thing or event (The Closing shall take place; Each Deliverable '
+                'shall conform), write must (MSCD 3.154: The Closing must take place at Acme\'s offices), or better, restructure so a party is the subject of shall (3.158). '
+                'Don\'t turn a requirement into a statement of fact (The Closing takes place).', span, 'medium', ['R-3.98-shall-future-time', 'R-3.154-must-for-others'])
         elif kind == 'expletive' and word == 'shall' and re.match(r"\s+be\b", after):
             span = re.compile(r"\b(?:There|there|It|it)\s+shall\s+be\b").match(t, t.rfind(subj, 0, m.start()))
             if span:
@@ -1567,10 +1659,13 @@ def subject_modal_checks(t, out, add):
                 st = clause_start(t, m.start())
                 st += len(t[st:m.start()]) - len(t[st:m.start()].lstrip())
             span = _Span(t, st, m.end() + (mm.end() if mm else 0))
+            # with no introductory clause read (a pasted clause), a capitalized role (the Trustee, the Sublicensee) may be the signing party: a candidate, not a required finding
+            conf = 'low' if not PARTY_TERMS and subj[:1].isupper() else 'medium'
+            note = '' if PARTY_TERMS else ' No introductory clause was read, so the parties are unknown: if this role signs the document, it is a party and shall is right.'
             add('nonparty-obligation', f'{word.capitalize()} with a nonparty subject ({subj}): a contract binds only its parties, so this duty binds no one. '
                 'Restructure so a party has the duty (Acme shall deliver the notice to the escrow agent), or use must for the nonparty and say what happens if it doesn\'t act (MSCD 3.89; 3.166). '
                 'Use shall cause only for a party\'s instrumentality, such as a wholly owned subsidiary, never for a nonparty the party doesn\'t control (MSCD 3.160-3.163). '
-                'If this nonparty signs the contract, it is a party and shall is right.', span, 'medium', ['R-3.89-shall-duty'])
+                'If this nonparty signs the contract, it is a party and shall is right.' + note, span, conf, ['R-3.89-shall-duty'])
         elif kind == 'unknown' and word == 'shall' and PARTY_TERMS and subj.islower() and not re.match(r"\s+(?:not\s+)?be\b", after) \
                 and re.search(r"\b(?:the|each|any|every|an?|all|such|its|their|[A-Z][\w-]*['’]s)\s+$", t[:max(t.rfind(subj, 0, m.start()), 0)], re.I) \
                 and subj.split()[-1] not in ('party', 'parties', 'other', 'others', 'one', 'who') and ' '.join(w.capitalize() for w in subj.split()) not in PARTY_TERMS \
@@ -1584,6 +1679,8 @@ def subject_modal_checks(t, out, add):
                 'this duty binds no one: restructure so a party has the duty, or use must for the nonparty and say what happens if it doesn\'t act (MSCD 3.89; 3.166). '
                 'If it is a party written in lowercase, capitalize the defined term (MSCD 6.7).', _Span(t, st, m.end() + (mm.end() if mm else 0)), 'low', ['R-3.89-shall-duty'], sev=2)
     for m in SHALL_CAUSE_UNCONTROLLED.finditer(t):
+        if in_quotation(t, m.start()):
+            continue
         add('nonparty-obligation', 'Shall cause (or shall require, shall ensure) for nonparties the party doesn\'t control, such as employees or contractors: '
             'the party can\'t guarantee what they do. Restructure so the party has the duty (Acme shall enter into a confidentiality agreement with each of its employees), '
             'or use must for the nonparty (MSCD 3.162-3.166). Shall cause is right only for an instrumentality, such as a wholly owned subsidiary (3.160).', m, 'medium', ['R-3.163-no-shall-cause-uncontrolled'])
@@ -1597,13 +1694,22 @@ def subject_modal_checks(t, out, add):
             add(check, msg, m, 'medium', rules, sev=sev if sev_is_free(check, rules) else None)
 
 
+QUOTE_OPEN = re.compile(r'[“]|(?<![\w])"(?=\w)')
+QUOTE_CLOSE = re.compile(r'[”]|(?<=[\w.,;:!?])"')
+
+
 def in_quotation(t, pos):
-    """True when pos sits inside a quotation of more than a few words (not a defined term in quotation marks)."""
-    opens = [m.start() for m in re.finditer(r'[“]|(?<![\w])"(?=\w)', t[:pos])]
-    closes = [m.start() for m in re.finditer(r'[”]|(?<=[\w.,;:!?])"', t[:pos])]
+    """True when pos sits inside a quotation of 3 or more words that closes in the same paragraph: quoted text keeps its own
+    words (a clause another contract must contain, a statute's wording). A defined term in quotation marks closes before the
+    verb that follows it, so it never counts."""
+    opens = [m.start() for m in QUOTE_OPEN.finditer(t[:pos])]
+    closes = [m.start() for m in QUOTE_CLOSE.finditer(t[:pos])]
     if len(opens) <= len(closes):
         return False
-    return len(t[opens[-1]:pos].split()) > 4
+    close = QUOTE_CLOSE.search(t, pos)
+    if not close:
+        return False
+    return len(t[opens[-1]:close.start()].split()) >= 3
 
 
 MATCH_CUT = 120  # characters of matched text a finding carries
@@ -1612,14 +1718,11 @@ MATCH_CUT = 120  # characters of matched text a finding carries
 def finding(check, msg, para, m=None, conf='medium', rules=(), source='house', sev=None, match=None, start=None, end=None, cut=MATCH_CUT):
     """The 1 shape every finding has. m is the match (or _Span) the finding points at; match, start and end override what it
     gives (a defined term's name, a cell's offset); a finding about the whole document has para -1 and start and end -1.
-    sev=None takes the severity policy's value (severity_for); an explicit sev is the site's own judgment, and keep_sev marks
-    it until collapse() drops the marker."""
+    sev=None takes the severity policy's value (severity_for); an explicit sev is the site's own judgment."""
     f = {'check': check, 'severity': severity_for(check, rules, sev), 'para': para,
          'match': (match if match is not None else (m.group(0) if m else ''))[:cut],
          'start': start if start is not None else (m.start() if m else -1), 'end': end if end is not None else (m.end() if m else -1),
          'message': msg, 'confidence': conf, 'rule_ids': list(rules), 'source': source}
-    if sev is not None:
-        f['keep_sev'] = True
     return f
 
 
@@ -1666,8 +1769,8 @@ def signature_checks(t, p, add, out):
     """the signature phrases MSCD tells you to change (SIGNATURE), with their contextual exceptions."""
     for rx, chk, sev, msg, rules in SIGNATURE:
         for m in rx.finditer(t):
-            if msg.startswith('execute for signing') and in_quotation(t, m.start()):
-                continue  # quoted text the contract must reproduce word for word (Cal. Civ. Code Section 1542)
+            if rules == ['R-5.7-signing-not-executing'] and in_quotation(t, m.start()):
+                continue  # quoted text the contract must reproduce word for word (Cal. Civ. Code Section 1542); keyed on the rule id, which outlives the message
             if chk == 'represents-warrants' and WHOSE == 'other-side':
                 add(chk, "Keep represents and warrants on the other side's draft; suggest the remedies-neutral sentence in a comment (3.459-3.463; house rule 10).", m, 'high', rules, sev=3)
             elif chk == 'represents-warrants' and WHOSE == 'blake':
@@ -1699,6 +1802,8 @@ def party_verb_checks(t, p, add, out):
         lead_in = LEAD_IN.search(t)
         if p['idx'] in RECITAL_IDX or (lead_in and m.start() < lead_in.start()):
             continue  # a recital (Manager will do so through the Operator): background, not a duty; the recital may share a paragraph with the lead-in
+        if in_quotation(t, m.start()):
+            continue  # quoted text keeps its own verbs
         add('category-will', 'will for a party\'s duty: use shall (MSCD 3.111). Keep will only for future events no party controls.', m, 'medium', ['R-3.111-no-will-for-obligation'])
     must_x = r"(?:must\b(?!\s+(?:be|have)\b)|mustn['’]t\b)"
     for m in list(re.finditer(party_x + must_x, t)) + list(re.finditer(pronoun_x + must_x, t)):
@@ -1716,6 +1821,10 @@ def party_verb_checks(t, p, add, out):
     for m in DEF_WITH_ARTICLE.finditer(t):
         if m.group(1) in terms:
             add('party-article', f'House rule 11: a party-name definition takes no article: ("{m.group(1)}") (MSCD 6.63 differs).', m, 'high', ['R-6.63-article-in-parenthetical'])
+
+
+# pay [Party] N% of ...: a bare percentage as the amount (MSCD 14.24 inserts an amount equal to); a fee equal to N% of and an amount equal to N% of stay clear
+PERCENT_PAY = re.compile(r"\b(?:pay|pays|paid|reimburse|reimburses|refund|refunds|credit|credits)\s+(?:(?:to\s+)?(?:[A-Z][\w-]*(?:\s+[A-Z][\w-]*)?|(?:the|each|either|both)\s+(?:other\s+)?part(?:y|ies)|it|them)\s+)?(\d+(?:\.\d+)?\s*(?:%|percent))\s+of\b")
 
 
 def number_checks(t, p, add, out):
@@ -1788,6 +1897,9 @@ def number_checks(t, p, add, out):
         if Decimal(w) != dv:
             add('words-digits-conflict', f'The digits say {dv:,} and the words say {Decimal(w):,}. A court may prefer the words (UCC 3-114 does for '
                 'negotiable instruments); confirm the intended amount, then state it once in digits (MSCD 14.5-14.11).', m, 'high', ['R-14.5-words-and-digits'], sev=1)
+    for m in PERCENT_PAY.finditer(t):
+        add('percentage-amount-equal-to', f'A bare percentage as the amount paid (pay {m.group(1)} of ...): when calculating money, write an amount equal to {m.group(1)} of ... (MSCD 14.24).',
+            m, 'high', ['R-14.22-simple-formula'])
     for m in CENTS_00.finditer(t):
         add('money-cents', 'Needless cents: write $850,000, not $850,000.00, unless an amount nearby has cents (MSCD 13.546).', m, 'high', ['R-13.546-money-decimals'])
 
@@ -1810,16 +1922,16 @@ def spacing_list_checks(t, p, add, out):
 def policy_checks(t, p, add, out):
     """a nonparty with shall, a contingent policy in the present tense, a negative subject with shall, should, once, when, wordy phrases and provisos."""
     for m in NONPARTY_SHALL.finditer(t):
-        if re.search(r"\b(?:nor|and|or)\s+$", t[:m.start()]):
-            continue  # a compound subject that includes a party (neither Buyer nor its agents shall): other checks cover it
+        if re.search(r"\b(?:nor|and|or)\s+$", t[:m.start()]) or in_quotation(t, m.start()):
+            continue  # a compound subject that includes a party (neither Buyer nor its agents shall): other checks cover it; quoted text keeps its verbs
         add('nonparty-obligation', 'Shall with a nonparty subject: a contract binds only its parties, so this duty binds no one. Restructure so the party has the duty (Consultant shall enter into a confidentiality agreement with each of its employees), or use must for the nonparty (MSCD 3.89; 3.166). Don\'t write shall cause, shall require or shall ensure for employees or other nonparties the party doesn\'t control (MSCD 3.162-3.163); keep shall cause for a party\'s instrumentality, such as a wholly owned subsidiary (3.160).', m, 'high', ['R-3.89-shall-duty'])
     seen_policy = set()
     party_words = {w.lower() for w in (PARTY_TERMS or PARTY_DEFAULT) | PARTY_COLLECTIVE}
     for rx in (CONTINGENT_LEAD, CONTINGENT_TAIL, CONTINGENT_REL):
         for m in rx.finditer(t):
             span = (m.start('verb'), m.end('verb'))  # the present-tense policy verb
-            if span in seen_policy or re.search(r"\b(?:shall|will|may|must|to|that|which|who)\s+$", t[:span[0]]):
-                continue  # a modal before the verb, or a relative clause (the amount that becomes due after ...)
+            if span in seen_policy or re.search(r"\b(?:shall|will|may|must|to|that|which|who)\s+$", t[:span[0]]) or in_quotation(t, span[0]):
+                continue  # a modal before the verb, or a relative clause (the amount that becomes due after ...), or quoted text
             if rx is CONTINGENT_TAIL and re.search(r"\b(?:before|after|until|when|whenever|if|unless|once|while|as\s+long\s+as|so\s+long\s+as|the\s+day|the\s+date)\s+(?:[\w'’-]+\s+){0,5}$", t[:m.start()]):
                 continue  # "no later than 180 days before the Term ends": the verb sits in a time clause, not a matrix clause
             if m.groupdict().get('subj'):
@@ -1868,6 +1980,18 @@ def policy_checks(t, p, add, out):
         add('provided-that', 'Provided that: state the relationship directly with except that, and in any event, on condition that, or a separate sentence (13.698-13.701).', m, 'high', sev=1)
 
 
+# a verb of saying or choosing right before which: an embedded question, where which is a question word, not a relative pronoun
+EMBEDDED_QUESTION = re.compile(r"\b(?:specif(?:y|ies|ying)|determin(?:e|es|ing)|stat(?:e|es|ing)|indicat(?:e|es|ing)|identif(?:y|ies|ying)|designat(?:e|es|ing)|"
+                               r"decid(?:e|es|ing)|select(?:s|ing)?|choos(?:e|es|ing)|elect(?:s|ing)?|say(?:s|ing)?|confirm(?:s|ing)?|know(?:s|ing)?|ask(?:s|ing)?|"
+                               r"(?:notify|notifies|tell|tells|inform|informs)\s+[\w'’-]+)\s*$", re.I)
+# the participles a reference by heading uses: stated in the section titled "Payment"
+HEADING_PARTICIPLE = re.compile(r"\b(?:stated|described|set\s+out|set\s+forth|listed|specified)\s+in\b", re.I)
+# is entitled to that names something no party to this agreement owes (MSCD 3.169 bars is entitled to only where it stands in for another
+# party's duty): an award or proceeds a nonparty pays, or a right that a plan, a charter, or the law creates. Every other object stays a finding.
+ENTITLED_NOT_OWED = re.compile(r"\s+(?:the\s+|any\s+|all\s+|its\s+)?(?:entire\s+|full\s+)?(?:[\w-]+\s+){0,3}?(?:condemnation|eminent\s+domain|insurance)\s+(?:award|proceeds|payments?)\b|"
+                               r"[^.;:]{0,80}?\b(?:under|by)\s+(?:the\s+)?(?:(?:[A-Z0-9][\w()-]*\s+){0,4}(?:Plan|Charter|Bylaws|Certificate|Policy)|applicable\s+law|law|statute)\b", re.I)
+
+
 def usage_checks(t, p, add, out):
     """the EXTRA patterns (such, which, conditions, attachments, reduced passives, terms of art), reduced passives with a by-agent, and the ampersand."""
     for rx, chk, sev, msg, rules in EXTRA:
@@ -1878,6 +2002,8 @@ def usage_checks(t, p, add, out):
                 continue  # a preposition before which (the period during which): which is right there
             if chk == 'restrictive-which' and re.search(r"[,(]\s*$", t[:m.start()]):
                 continue  # a comma or a parenthesis before which, with 2 spaces or a line break between: nonrestrictive
+            if chk == 'restrictive-which' and EMBEDDED_QUESTION.search(t[:m.start()]):
+                continue  # an embedded question (Buyer shall specify which Units it wants): which is a question word, and that would be wrong
             if chk == 'shall-in-condition' and re.match(r"until\b[^,.;:]{0,60}?\s+and\s+shall\b", m.group(0), re.I):
                 continue  # "shall insure the Equipment until the Closing and shall name Seller": until ends the 1st duty; the 2nd shall is a new duty
             if chk == 'attachment-scheme' and re.match(r"[\w.]*\s+(?:of|to|in|under)\s+(?:the\s+)?(?:[A-Z][\w-]+\s+){1,3}(?:Agreement|Lease|Note|Plan|Indenture|Guaranty|Declaration|Credit\s+Agreement)\b", t[m.end():]):
@@ -1886,12 +2012,20 @@ def usage_checks(t, p, add, out):
                 continue  # an integrated definition (each such consent, a "Required Consent"): correct (MSCD 6.74)
             if chk in ('is-entitled-to', 'category-may') and re.search(r"\b(?:states?|represents?|warrants?|acknowledges?|confirms?)(?:\s+and\s+\w+)?\s+(?:to\s+\w+\s+)?that\b[^.;]{0,120}$", t[:m.start()], re.I):
                 continue  # a statement of fact that a party has a right (Seller states that it is entitled to sell the Assets)
+            if chk == 'is-entitled-to' and ENTITLED_NOT_OWED.match(t, m.end()):
+                # no party owes it (the entire condemnation award; benefits under the Company 401(k) Plan): a trigger for the analysis passes, not a finding
+                out.append(finding(chk, msg, p['idx'], m, 'low', rules, source='rules'))
+                continue
             if chk == 'reduced-passive' and re.search(r"\b(?:divided|multiplied|reduced|increased|offset|rounded|adjusted)\s+by\b", m.group(0), re.I):
                 continue  # arithmetic (the Valuation Cap divided by the Fully Diluted Capitalization), not a passive that hides an actor
             if chk == 'reduced-passive':
                 noun = m.group(0).split()[1]
                 if noun in (PARTY_TERMS or PARTY_DEFAULT) or noun.lower() in ('parties', 'party') or re.search(r"\b(?:that|which|who|whom)\s+$", t[:m.start()]):
                     continue  # "that the Company provided to": an active relative clause, not a reduced passive
+                if (noun.lower() == 'manner' or re.search(r"\bas\s*$", t[:m.start()])) and HEADING_PARTICIPLE.search(m.group(0)) \
+                        and re.match(r"\s+the\s+(?:section|article|clause|paragraph)s?\s+(?:titled|entitled|captioned|headed)\b", t[m.end():]):
+                    continue  # as stated in / in the manner stated in the section titled "Payment": house rule 4's form of a reference by heading.
+                    # A participle that modifies a thing (the sale described in the section titled "Consent") still has a clean active form: the sale that the section titled "Consent" describes.
             add(chk, msg, m, 'medium', rules, sev=sev if sev_is_free(chk, rules) else None)
     for m in REDUCED_BY.finditer(t):
         before = t[:m.start()].rstrip()
@@ -1974,6 +2108,11 @@ def date_checks(t, p, add, out):
         add('headings-clause', 'Headings-for-convenience clause: always delete it, or limit it so it doesn\'t undercut references by heading (house rule 4; MSCD 15.18).', m, 'high', ['R-15.18-rule-headings'])
 
 
+CAPS_BODY_WORDS = 8  # a title or an article heading is shorter; body text in capitals runs on
+CAPS_HEADING = re.compile(r"^[\s#>*_]*(?:ARTICLE|EXHIBIT|SCHEDULE|ANNEX|APPENDIX|ATTACHMENT)\s+[IVXLC\d]+|^[\s#>*_]*[IVXLC]+\.\s")  # an article or attachment heading: capitals are right there (MSCD 4.10; 16.18)
+CONSPICUOUS = re.compile(r"\b(?:DISCLAIM\w*|WARRANT\w*|MERCHANTABILITY|FITNESS|AS\s+IS|LIABILITY|CONSEQUENTIAL|NEGLIGENCE)\b")
+
+
 def format_checks(t, p, add, out):
     """the paragraph's formatting (house rule 9): justified, underlined, off-house font or size."""
     f = p.get('fmt') or {}
@@ -1989,6 +2128,15 @@ def format_checks(t, p, add, out):
     bad_sizes = [s for s in f.get('sizes', []) if off_house_size(s)]
     if bad_sizes:
         add('font-size', f'Font size {", ".join(map(str, bad_sizes))} pt; house rule is 12 point.', None, 'medium')
+    if len(t.split()) >= CAPS_BODY_WORDS and t == t.upper() and re.search(r"[A-Z]", t) and not CAPS_HEADING.match(t):
+        if CONSPICUOUS.search(t):
+            # a conspicuous disclaimer: MSCD 16.19 prefers bold for conspicuousness, but a statute-driven form (UCC 2-316, 1-201(b)(10)) stays; a trigger for the analysis passes
+            out.append(finding('capitals-body', 'A paragraph in all capitals that reads as a conspicuous disclaimer or limitation: MSCD 16.19 prefers bold for conspicuousness, '
+                               'but a form a statute drives (UCC 2-316: a conspicuous warranty disclaimer) stays as it is; confirm which this is (house rule 9).', p['idx'], None, 'low',
+                               ['R-16.18-caps-headings-names'], source='rules', match=t[:60]))
+        else:
+            add('capitals-body', 'A paragraph in all capitals: house rule 9 and MSCD 16.18-16.19 use sentence case for body text; capitals are for article headings and party names in the introductory clause and signature blocks.',
+                _Span(t, 0, min(len(t), MATCH_CUT)), 'medium', ['R-16.18-caps-headings-names'])
 
 
 # a heading quoted in a reference (the section titled "Financial Covenants"; the article captioned "Restrictive Covenants"); a quoted
@@ -2264,12 +2412,17 @@ SMALL_WORDS = r"(?:of|and|or|the|to|for|in|on|by|with|a|an|from|under|upon|as|at
 RUNIN_HEAD = re.compile(r"^[*_]*[A-Z][\w'’-]*[;,]?(?:\s+(?:" + SMALL_WORDS + r"|[A-Z0-9][\w'’-]*[;,]?))*?[*_]*\.[*_]*(?:\s|$)")  # Section 409A. is a heading
 
 
-def has_heading(rest):
+def heading_of(rest):
+    """The heading at the start of a section's text (Return of Materials; SERVICES), or None: a run-in heading that ends in a
+    period, or a heading line of up to 8 capitalized words."""
     rest = rest.strip()
-    if RUNIN_HEAD.match(rest) and len(RUNIN_HEAD.match(rest).group(0).split()) <= 8:
-        return True
+    m = RUNIN_HEAD.match(rest)
+    if m and len(m.group(0).split()) <= 8:
+        return re.sub(r"[*_]+", '', m.group(0)).strip().rstrip('.').strip()
     words = re.sub(r"[*_]+", '', rest).rstrip('.: ').split()
-    return 1 <= len(words) <= 8 and all(w[0].isupper() or not w[0].isalpha() or re.fullmatch(SMALL_WORDS, w) for w in words)
+    if 1 <= len(words) <= 8 and all(w[0].isupper() or not w[0].isalpha() or re.fullmatch(SMALL_WORDS, w) for w in words):
+        return ' '.join(words)
+    return None
 
 
 # outline levels, outermost first (house rule 3: I., A., 1., (a), (i)); a decimal number (1.1) and another enumerator ((1), 1)) sit outside the scheme
@@ -2277,7 +2430,7 @@ LVL_ARTICLE, LVL_SECTION, LVL_SUBSECTION, LVL_CLAUSE, LVL_SUBCLAUSE, LVL_OTHER, 
 ENUM_RE = re.compile(r"^[\s#>*_]*(?:(?:Article|ARTICLE|Section|SECTION)\s+)?(\d+(?:\.\d+)+\.?|[IVXLC]+\.|[A-Z]\.|\d+\.|\(\d+\)|\([a-z]{1,4}\)|\d+\))(?=\s)")
 
 
-def outline_checks(paras):
+def outline_checks(paras, shape):
     """House rule 3: I. (articles), A. (sections), 1. (subsections), (a) (clauses), (i) (subclauses); no only child."""
     items = []
 
@@ -2393,18 +2546,40 @@ def outline_checks(paras):
         lv = LVL_SECTION if any(it[2] == 'roman' for it in items) else min(it[1] for it in seq)
         secs = [it for it in seq if it[1] == lv]
     text_of = {p['idx']: ((p['auto_label'] + ' ' + p['text']) if p.get('auto_label') else p['text']) for p in paras}
-    att = next((p['idx'] for p in paras if EXHIBIT_HEAD.match(p['text'])), len(paras))
+    att = shape['attachments']
     secs = [it for it in secs if it[0] < att and not re.match(r"\s*\*{0,2}[\"“]", text_of[it[0]][it[4].end():])]  # skip attachments and autonomous definitions
-    bare = [it for it in secs if not has_heading(text_of[it[0]][it[4].end():])]
+    heads = [(it, heading_of(text_of[it[0]][it[4].end():])) for it in secs]
+    bare = [it for it, h in heads if h is None]
     if len(secs) >= 2 and bare:
         it = bare[0]
         out.append(finding('section-headings', f'{len(bare)} of {len(secs)} sections have no heading. Give each section a heading (MSCD 4.21); house rule 4 refers to provisions by heading, so a section without one can\'t be referred to.',
                            it[0], rules=['R-4.21-section-heading-format'], match=it[4].group(1), start=it[4].start(1), end=it[4].end(1)))
+    # a section heading in all capitals (A. SERVICES.): house rules 3 and 9 and MSCD 4.21 put it in bold headline-style capitals; all capitals are for article headings (4.10)
+    caps = [(it, h) for it, h in heads if h and h == h.upper() and (len(h.split()) >= 2 or len(re.findall(r"[A-Z]", h)) >= 4)]
+    if caps:
+        it, h = caps[0]
+        st = text_of[it[0]].find(h, it[4].end())
+        out.append(finding('section-heading-caps', f'{len(caps)} section headings are in all capitals ({h}); house rules 3 and 9 and MSCD 4.21 put a section heading in bold, headline-style capitalization (Services), and keep all capitals for article headings (MSCD 4.10).',
+                           it[0], rules=['R-4.21-section-heading-format'], match=h, start=st, end=st + len(h) if st >= 0 else -1))
     return out
 
 # ---------------------------------------------------------------- rule-database triggers
 
 _RULES = None  # the compiled rule triggers, loaded once: (compiled, bad, ctrl)
+
+
+def compile_hint(h):
+    """(the compiled regex_hint, None), or (None, the problem): a hint that doesn't compile, or one that matches whitespace alone,
+    which would make every paragraph a hit and crash the active-voice token test."""
+    try:
+        # a hint that spells out capitals ([A-Z], NOT, [Ee]ffective) means them; other hints match any case
+        cased = '(?i)' in h or re.search(r"\[A-Z\]|(?<![\\\[])[A-Z]{2,}|\[[A-Z][a-z]\]", h)
+        rx = re.compile(h, 0 if cased else re.I)
+    except re.error as e:
+        return None, str(e)
+    if rx.search('  \t'):
+        return None, 'regex_hint matches whitespace alone'
+    return rx, None
 
 
 def load_rules():
@@ -2427,12 +2602,9 @@ def load_rules():
         h = (r.get('trigger') or {}).get('regex_hint') or ''
         if not h:
             continue
-        try:
-            # a hint that spells out capitals ([A-Z], NOT, [Ee]ffective) means them; other hints match any case
-            cased = '(?i)' in h or re.search(r"\[A-Z\]|(?<![\\\[])[A-Z]{2,}|\[[A-Z][a-z]\]", h)
-            rx = re.compile(h, 0 if cased else re.I)
-        except re.error as e:
-            bad.append(f"{r['id']}: {e}")
+        rx, problem = compile_hint(h)
+        if problem:
+            bad.append(f"{r['id']}: {problem}")
             continue
         compiled.append((r, rx))
     _RULES = (compiled + phrase_rules(), bad, ctrl)
@@ -2459,7 +2631,8 @@ def rule_checks(paras, compiled, ctrl, broad_share=BROAD_SHARE):
             if p.get('where') == 'table' and r.get('chapter') == 2:
                 continue  # the front of the contract (introductory clause, dates, recitals) isn't in a table
             m = rx.search(p['text'])
-            if m and 'active-voice' in (r.get('key_items') or []) and m.group(0).split()[-1].lower().strip('.,;') in NOT_PASSIVE:
+            tokens = m.group(0).split() if m else []
+            if m and 'active-voice' in (r.get('key_items') or []) and tokens and tokens[-1].lower().strip('.,;') in NOT_PASSIVE:
                 m = None  # a linking verb plus an adjective (is dated, is liable), not a passive
             sup = (ctrl.get('suppress') or {}).get(r['id'])
             if m and sup and re.match(sup, p['text'][m.start():m.start() + 100]):
@@ -2491,7 +2664,11 @@ AUTON_LEAD = re.compile(r"(?i:\b" + DEF_LEAD_WORDS + r")\s*,\s*(?:the\s+)?\**[\"
 IMPORTS = re.compile(r"[Cc]apitalized terms?\b[^.]{0,120}\b(?:have|has|given)\b[^.]{0,40}\bmeanings?\b[^.]{0,80}\b(?:in|that)\b", re.I)
 CONTRACT_NOUN = re.compile(r"\b(?:(?:Disclosing|Receiving|Indemnifying|Indemnified|Defaulting|Nondefaulting|Non-Defaulting|Breaching|Nonbreaching|Non-Breaching|Terminating|Notifying|Requesting|Affected|Prevailing|Paying) Party|Information|Agreement|Date|Period|Price|Assets?|Software|Services?|Products?|Effect|Event|Change|Claims?|Losses|Fees?|Rent|Term|Territory|Data|Materials|Property|Rights|Work|Deliverables?|Documentation|Units?|Shares|Amount|Account|Plan|Certificate|Statement|Orders?|Budget|Report|Specifications|Equipment|Goods|Premises|Interest|Payment|Expenses|Release|Cause|Reason|Disability|Control|Default|Closing|Obligations|Liabilities|Approval|Notice|Days?|Hours|Year|Month|Quarter|Representatives|Affiliates?|Subsidiar(?:y|ies)|Indemnitees?|Liens?|Taxes|Personnel|Permits|Contracts|Persons?|Members?|Shareholders?|Stockholders?|Partners?|Ratios?|Manuals?|Lists?|Users?|Transferees?|Holders?|Standards?|Levels?|Tests?|Milestones?|Deposits?|Securities|Index|Environment|Credits?|Commitments?|Percentages?|Completion|Guarant(?:y|ee)|Warrant(?:y|ies)|Polic(?:y|ies)|Schedule|"
                            r"Assistance|Targets?|Criteria|Indicators?|Window|Region|Review|Process|Procedures?|Program|Threshold|Objectives?)\b")
-EXHIBIT_HEAD = re.compile(r"^[\s#*_]*(?:EXHIBIT|Exhibit|SCHEDULE|Schedule|ANNEX|Annex|APPENDIX|Appendix)\s+[A-Z0-9]+[ \t*_]*(?:$|[-\u2014\u2013:]|\s{2,}|\n)")
+# an attachment heading: the label (A; "A"; 1.1; 3.2(a)) then the end of the line, a dash, a colon, 2 spaces, or FORM OF on the same line;
+# "Exhibit A lists ..." in running text is not a heading
+ATT_LABEL = r"\s+[\"“]?[A-Z0-9]+(?:\.[0-9]+)*(?:\([a-z0-9]{1,3}\))?[\"”]?"
+ATT_TAIL = r"[ \t*_]*(?:$|[-\u2014\u2013:]|\s{2,}|\n|\s+(?:FORM|Form)\s+(?:OF|of)\b)"
+EXHIBIT_HEAD = re.compile(r"^[\s#*_]*(?:EXHIBIT|Exhibit|SCHEDULE|Schedule|ANNEX|Annex|APPENDIX|Appendix)" + ATT_LABEL + ATT_TAIL)
 
 
 def _forms(term):
@@ -2556,13 +2733,13 @@ def _splits_into(words, known):
 FORM_OF = re.compile(r"\bform\s+of\b|^\W*form\b", re.I)  # a form of a document signed later; "the form of payment" in a schedule's text is past the 2-paragraph window
 
 
-def collect_definitions(paras, all_defs):
+def collect_definitions(paras, all_defs, shape):
     """The body's definitions, keyed by term: {term: [(kind, paragraph, position)]}, with the terms defined inside exhibits
     (exhibit_defs), the terms defined only inside an attached form, keyed to that form's label (form_defs), and where the
-    attachments start (body_end). all_defs: definitions(paras)."""
+    attachments start (body_end). all_defs: definitions(paras); shape: document_shape(paras)."""
     defs, in_exhibit, in_att, exhibit_defs, exhibit_where = {}, False, False, set(), {}
     form_defs, in_form, att_label, since_head = {}, False, '', 99
-    body_end = next((i for i, p in enumerate(paras) if EXHIBIT_HEAD.match(p['text'])), len(paras))
+    body_end = shape['attachments']
     by_para = collections.defaultdict(list)
     for d in all_defs:
         by_para[d[2]].append(d)
@@ -2607,7 +2784,8 @@ def _inventory_text(paras):
     head_label = re.compile(head_runin.pattern.replace("[*_]*\\.[*_]*\\s+", "[*_]*[.:][*_]*\\s+"))  # for the undefined-term text only: a run-in label can end in a colon (4. Permitted Liens: the security interest ...), but "Expiration Date: March 31, 2032" still counts as a use of a defined term
     md_header_row = re.compile(r"\s*\|?(?:\s*[A-Z][\w./'’-]*(?:\s+(?:" + SMALL_WORDS + r"|[A-Z][\w./'’-]*)){0,4}\s*\|)+(?:\s*[A-Z][\w./'’-]*(?:\s+(?:" + SMALL_WORDS + r"|[A-Z][\w./'’-]*)){0,4})?\s*")  # a table's heading row, with or without outer pipes (| Product | Unit Price |; Installment | Percentage of Purchase Price | Amount)
     sig_line = re.compile(r"\bBy:\s*_{3,}|_{5,}.*\b(?:Name|Title|Date):|\b(?:Name|Title|Date):.*_{5,}")  # a signature block line (By: ____  Name: ____  Date: ____)
-    typed_header_row = re.compile(r"\s*[A-Z][\w./'’-]*(?:\s(?:" + SMALL_WORDS + r"|[A-Z][\w./'’-]*))*(?:(?:\s{2,}|\t+)[A-Z][\w./'’-]*(?:\s(?:" + SMALL_WORDS + r"|[A-Z][\w./'’-]*))*)+\s*")
+    # words inside a column are 1 space apart, so a tab is always a column boundary (a tab that both loops could take made a failing line exponential)
+    typed_header_row = re.compile(r"\s*[A-Z][\w./'’-]*(?: (?:" + SMALL_WORDS + r"|[A-Z][\w./'’-]*))*(?:(?: {2,}|\t+)[A-Z][\w./'’-]*(?: (?:" + SMALL_WORDS + r"|[A-Z][\w./'’-]*))*)+\s*")
     head_only = re.compile(r"[\s#*_>]*(?:(?:Section|SECTION|Article|ARTICLE)\s+)?(?:\(?[A-Za-z0-9]{1,4}[.)]\s+|\d+(?:\.\d+)+\.?\s+)?[*_]*[A-Z][\w'’-]*(?:\s+(?:" + SMALL_WORDS + r"|[A-Z][\w'’-]*)){0,7}[*_]*\.?[*_]*\s*")  # a heading alone (F. Access and Information.)
 
     def is_heading(p):
@@ -2686,7 +2864,6 @@ def definition_findings(paras, defs, all_defs, shape, tx):
     and shall in a definition."""
     full = tx['full']
     findings = []
-    locate = lambda text, cased=True: _locate(paras, text, cased)
     for p in paras:
         dm = AUTON.match(def_text(p['text']))
         if dm:
@@ -2751,7 +2928,7 @@ def definition_findings(paras, defs, all_defs, shape, tx):
                                     p['idx'], x, rules=['R-1.57-one-word-one-meaning'], source='inventory', match=term.lower()))
     for m in re.finditer(r"[\"“][^\"”\n]{1,60}[\"”][ \t]+shall\s+(?:mean|be|have)", full):  # within 1 paragraph: neither the quotation nor the space after it spans 2
         findings.append(finding('shall-in-definition', 'Use means, not shall mean or shall be, in a definition (MSCD 6.42).', conf='high', rules=['R-6.42-no-shall-mean'], source='inventory',
-                                match=m.group(0)[:80], **locate(m.group(0))))
+                                match=m.group(0)[:80], **_locate(paras, m.group(0))))
     return findings
 
 
@@ -2760,7 +2937,6 @@ def undefined_terms(paras, defs, exhibit_defs, form_defs, body_end, tx):
     and an undefined term (6.122); names, statutes, agencies and table labels are left out."""
     full, prose, is_heading, head_runin = tx['full'], tx['prose'], tx['is_heading'], tx['head_runin']
     findings = []
-    locate = lambda text, cased=True: _locate(paras, text, cased)
     caps, initial = collections.Counter(), collections.Counter()  # initial: uses that start a sentence
     for m in re.finditer(r"(?<![\w-])(?:[A-Z][a-z]+(?:-[A-Z][a-z]+)*)(?:[ \t ]+[A-Z][a-z]+(?:-[A-Z][a-z]+)*){0,3}\b(?!-)", prose):  # within 1 line: never join 2 table cells  # Non-Defaulting Party and Letter of Credit whole; not inside Out-of-Scope Services
         phrase, st = m.group(0), m.start()
@@ -2788,7 +2964,7 @@ def undefined_terms(paras, defs, exhibit_defs, form_defs, body_end, tx):
         if n_body:
             exhibit_defs.discard(term_)
             findings.append(finding('possibly-undefined-term', f'"{term_}" is defined only inside the form in {label_.title()}, a document signed later, but the body uses it {n_body} {"time" if n_body == 1 else "times"}: '
-                                    f'define it in the body, where the form can then use it (MSCD 6.122).', source='inventory', match=term_, **locate(term_)))
+                                    f'define it in the body, where the form can then use it (MSCD 6.122).', source='inventory', match=term_, **_locate(paras, term_)))
             caps.pop(term_, None)
     known = set(defs) | exhibit_defs | {v for t in set(defs) | exhibit_defs for v in _forms(t)} | PARTY_TERMS
     for phrase, c in caps.items():
@@ -2825,7 +3001,7 @@ def undefined_terms(paras, defs, exhibit_defs, form_defs, body_end, tx):
             continue  # defined terms side by side (Transfer Shares; pay Lessor Basic Rent), not a 2nd form of 1 term
         if second_form:
             findings.append(finding('possibly-undefined-term', f'"{phrase}" looks like a 2nd form of the defined term "{second_form}"; use 1 form throughout (MSCD 1.57; 6.122).',
-                                    rules=['R-1.57-one-word-one-meaning'], source='inventory', match=phrase, **locate(phrase)))
+                                    rules=['R-1.57-one-word-one-meaning'], source='inventory', match=phrase, **_locate(paras, phrase)))
             continue
         if any(phrase in k for k in known):
             continue
@@ -2833,13 +3009,13 @@ def undefined_terms(paras, defs, exhibit_defs, form_defs, body_end, tx):
             continue
         note = ' This document gives capitalized terms the meanings in another document, so check that one first.' if IMPORTS.search(full) else ''
         findings.append(finding('possibly-undefined-term', f'"{phrase}" is capitalized {c} {"time" if c == 1 else "times"} but not defined; define it, or lowercase it; ignore it if it is a name (6.122).' + note,
-                                conf='low', source='inventory', match=phrase, **locate(phrase)))
+                                conf='low', source='inventory', match=phrase, **_locate(paras, phrase)))
     return findings
 
 
 def inventory(paras, shape, all_defs):
     """The defined-term inventory and its findings: (rows, findings). shape: document_shape(paras); all_defs: definitions(paras)."""
-    defs, exhibit_defs, form_defs, body_end, exhibit_where = collect_definitions(paras, all_defs)
+    defs, exhibit_defs, form_defs, body_end, exhibit_where = collect_definitions(paras, all_defs, shape)
     tx = _inventory_text(paras)
     rows, findings = term_rows(paras, defs, tx)
     rows += exhibit_rows(paras, defs, exhibit_where, tx)
@@ -2860,7 +3036,7 @@ def _shorten(text, n):
 def report_notes(meta, paras=()):
     """The notes at the top of the report: what the lint couldn't read or decoded specially. --json carries them too."""
     out = []
-    if not any(p['text'].strip() for p in paras):
+    if not any(re.search(r"\w", p['text']) for p in paras):  # whitespace and punctuation alone is no text either
         out.append("- No text found. If this came from a scanned PDF or an image, its text must be recognized first; if it's a Word file, check that it isn't empty.")
     if meta and meta.get('harness_header'):
         out.append(f"- The 1st line is a note about the draft, not contract text (\"{meta['harness_header'][:80]}...\"); the lint skipped it, so its paragraph reads as blank.")
@@ -2870,6 +3046,8 @@ def report_notes(meta, paras=()):
         out.append(f"- {meta['bad_chars']} characters couldn't be decoded and show as \ufffd. Ask for the file in UTF-8 or as a .docx, or check those spots by hand: a defined term or a quotation mark may be among them.")
     if meta and meta.get('nul_chars'):
         out.append(f"- The file held {meta['nul_chars']} NUL characters (a sign of a damaged or misnamed file); they were removed. Check the text against the original.")
+    if meta and meta.get('invisible_chars'):
+        out.append(f"- {meta['invisible_chars']} invisible characters (soft hyphens, zero-width spaces or joiners, a stray byte-order mark: a paste from a PDF or a web page) were removed before the lint; Word doesn't show them, but each one splits a word. Delete them in the file too (Find and Replace ^- for a soft hyphen).")
     if meta and meta.get('page_breaks'):
         out.append(f"- The file has {meta['page_breaks']} page breaks (text extracted from a PDF); each one was read as a paragraph break, so a sentence split across 2 pages shows as 2 paragraphs.")
     if meta and meta.get('code_blocks'):
@@ -2900,11 +3078,14 @@ def report_notes(meta, paras=()):
                        + (f"; {n_rep} of them replies" if n_rep else '') + "). Read each before you review: leave them in place, and answer any that bear on your findings.")
             shown = 0
             for i, (a, t, parent) in enumerate(cms):  # each reply under its parent, indented
-                if parent is not None or shown >= 10:
+                if parent is not None or shown >= COMMENTS_SHOWN:
                     continue
                 out.append(f'  - {a}: "{_shorten(t, COMMENT_SHOWN)}"')
                 shown += 1
                 out += [f'    - reply by {ra}: "{_shorten(rt, COMMENT_SHOWN)}"' for ra, rt, rp in cms if rp == i]
+            hidden = sum(1 for c in cms if c[2] is None) - shown
+            if hidden > 0:
+                out.append(f'  - ... and {hidden} more comments, with their replies (the JSON from --json lists every one under "comments")')
         if meta.get('tracked_changes'):
             out.append('- The document has tracked changes; the text was read as if every change were accepted. Ask Blake whether to accept them first or redline on top. Text they deleted is not in the paragraphs below: review it from this list.')
             if meta.get('para_mark_deletions'):
@@ -3011,6 +3192,30 @@ def severity_for(check, rules, sev=None):
 EFFORTS_STD = re.compile(r"\b((?:commercially\s+|all\s+|every\s+|very\s+)?reasonable(?:\s+best|\s+commercial)?|best|good[- ]faith|diligent)\s+(?:efforts|endeavou?rs)\b", re.I)
 
 
+# a definition that names an entity: Acme Widgets, Inc., a Tennessee corporation; Dana Ruiz, an individual; Acme Holdings LLC
+ENTITY_NAMED = re.compile(r"\s*(?:means\s+)?[A-Z][\w.&'’-]*(?:,?\s+[A-Z][\w.&'’-]*){0,6}?,?\s+(?:" + ENTITY + r"\s*,?\s*)?(?:a|an)\s+(?:[A-Z][\w-]*\s+)?"
+                          r"(?:corporation|company|partnership|limited\s+liability\s+company|limited\s+partnership|trust|association|bank|credit\s+union|individual)\b"
+                          r"|\s*(?:means\s+)?[A-Z][\w.&'’-]*(?:,?\s+[A-Z][\w.&'’-]*){0,6}?,?\s+" + ENTITY + r"(?=[\s.,;]|$)")
+
+
+def party_term_caps_checks(paras, defs):
+    """MSCD 2.96: no all capitals for a party-name defined term ("ACME" means Acme Widgets, Inc., a Tennessee corporation; ACME WIDGETS, INC.,
+    a Tennessee corporation ("ACME")). An acronym with another kind of definition ("SOW" means a statement of work) stays. defs: definitions(paras)."""
+    out = []
+    for term, words, pidx, st, en, kind in defs:
+        if kind not in ('autonomous', 'integrated') or not re.fullmatch(r"[A-Z][A-Z&.-]*(?:\s+[A-Z][A-Z&.-]*){0,2}", term) or len(re.findall(r"[A-Z]", term)) < 2:
+            continue
+        body = words.rstrip() if kind == 'autonomous' else re.sub(r"\(\s*(?:the\s+|a\s+|an\s+)?\**[\"“‘']?\s*$", '', words).rstrip(' ,')
+        if kind == 'integrated':
+            body = body[-120:]  # the entity description right before the parenthetical
+        if (ENTITY_NAMED.match(body) if kind == 'autonomous' else ENTITY_BEFORE.search(body)):
+            cap = ''.join(w.capitalize() if w.isupper() else w for w in re.split(r"(\s+)", term))
+            out.append(finding('party-term-capitals', f'"{term}" names a party in all capitals: MSCD 2.96 and house rule 9 put a party-name defined term in initial capitals only ("{cap}"); '
+                               'all capitals are for the party\'s name in the introductory clause and signature blocks (MSCD 2.51).', pidx, conf='high',
+                               rules=['R-2.96-no-emphasis-party-terms'], match=term, start=st, end=en))
+    return out
+
+
 def efforts_mix(paras):
     """MSCD 8.154: use 1 efforts standard in a contract. Flag the 1st place a 2nd standard appears."""
     seen = {}
@@ -3033,6 +3238,7 @@ MONEY_RE = re.compile(MONEY, re.I)
 # a count in digits or in number words (3; twelve; twenty-four; one hundred twenty): words_value() reads the words
 NUM_RUN = r"(?:\d+|(?:" + '|'.join(sorted(_NUMBER_WORDS)) + r")(?:[-\s]+(?:" + '|'.join(sorted(_NUMBER_WORDS)) + r"))*)"
 RATE_AFTER = re.compile(r"\s*(?:per|a|each|every)\s+(?:calendar\s+)?(?:day|week|month|quarter|year|hour|unit)\b|\s*monthly\b|\s*annually\b|\s*/\s*(?:mo|month|yr|year)\b", re.I)
+PER_PERIOD = re.compile(r"\b(?:monthly|annual(?:ly)?|quarterly|weekly|daily|hourly|recurring|per\s+(?:month|year|quarter|week|day|hour|unit|user|seat|licen[cs]e)|/\s*(?:mo|month|yr|year|hr|hour|user|seat))\b", re.I)
 NOT_A_TOTAL = re.compile(r"\b(?:balance|remainder|remaining|rest|deposit|down\s+payment|thereafter|then|plus|interest|amortiz\w*|principal\s+and\s+interest)\b", re.I)
 
 
@@ -3082,7 +3288,9 @@ def arithmetic_checks(paras, path=None, tables=None):
     for p in paras:
         t = p['text']
         defs = [(m, m.group(4), _money(m)) for m in re.finditer(MONEY + r"\s*\((?:the\s+)?[\"“]\**([A-Z][\w ]{1,40}?)\**[\"”]\)", t)]
-        defs += [(m, m.group(1), _money(m, 2)) for m in re.finditer(r"[Tt]he\s+(?:[\"“])?([A-Z][\w ]{1,40}?)(?:[\"”])?\s+(?:is|equals|means)\s+" + MONEY + r"(?!\d|,\d)", t)]
+        # the unconditional form only: the amount ends the statement. The Base Rent is $5,000 for the first Lease Year is a schedule, not a conflict
+        defs += [(m, m.group(1), _money(m, 2)) for m in re.finditer(r"[Tt]he\s+(?:[\"“])?([A-Z][\w ]{1,40}?)(?:[\"”])?\s+(?:is|equals|means)\s+" + MONEY
+                                                                     + r"(?!\d|,\d|\.\d)(?=\s*[.,;:)]|\s*$|\s+(?:and|or|which|payable|plus|less|minus|net)\b)", t)]
         for m, name, cents in defs:
             if cents is None:
                 continue
@@ -3151,7 +3359,8 @@ def arithmetic_checks(paras, path=None, tables=None):
     return out
 
 
-_NEG_MONEY = re.compile(r"\(\s*\$|[-−–]\s*\$|\$\s*\(")
+# a credit is the whole cell in parentheses or with a leading minus; "30% ($30,000)" restates an amount, it doesn't negate it
+_NEG_MONEY = re.compile(r"^\s*(?:\(\s*\$[^()]*\)|[-−–]\s*\$[^()]*|\$\s*\([^()]*\))\s*$")
 
 
 def _cell_cents(cell):
@@ -3220,9 +3429,9 @@ def _md_tables(p):
 NAMED_AMOUNT = re.compile(r"\bthe\s+((?:[A-Z][\w-]*\s+){0,3}(?:Fee|Rent|Price|Deposit|Payment|Charge|Amount|Salary|Retainer))\s+of\s+(\$\s?[\d,]+(?:\.\d{2})?)")
 
 
-def restated_amount_checks(paras):
-    """Findings for a named body amount that a schedule restates (MSCD 1.56)."""
-    start = next((i for i, p in enumerate(paras) if EXHIBIT_HEAD.match(p['text'])), len(paras))
+def restated_amount_checks(paras, shape):
+    """Findings for a named body amount that a schedule restates (MSCD 1.56). shape: document_shape(paras)."""
+    start = shape['attachments']
     sched_lines, in_sched = [], False
     for p in paras[start:]:
         if EXHIBIT_HEAD.match(p['text']):
@@ -3261,8 +3470,13 @@ def table_total_checks(paras, path, tables=None):
             stated = _cell_cents(rows[tot_i][col][0]) if col < len(rows[tot_i]) else None
             if stated is None or not body or any(v is None for _, v in body):
                 continue
+            cells = [r[col][0] if col < len(r) else '' for r in rows[k:tot_i]]
             if any(NOT_A_TOTAL.search(lab) for lab, _ in body):
                 continue  # Purchase Price, Deposit, Balance, Total: a closing statement, not a column that sums to its Total row
+            per = [bool(PER_PERIOD.search(lab) or PER_PERIOD.search(c)) for (lab, _), c in zip(body, cells)]
+            if any(per) and (not all(per) or not PER_PERIOD.search(labels[tot_i])):
+                continue  # a rate row ($1,000 per month) beside a one-time fee, or monthly rows under a Total Year 1: a contract value over a term, not the
+                # column's sum. Rows that are all the same kind (3 monthly fees and a Total Monthly Fee; a Monthly Fee column) still must add up.
             problems, running, subtotals = [], 0, 0
             for lab, v in body:
                 if re.search(r"\bsub-?\s?total\b", lab, re.I):
@@ -3337,12 +3551,14 @@ def _run(path, want_inventory):
     global PARTY_COLLECTIVE, NONPARTY_NAMED
     PARTY_COLLECTIVE = party_collective(paras) - PARTY_TERMS
     PARTY_COLLECTIVE |= signing_roles(paras, PARTY_TERMS | PARTY_COLLECTIVE, shape, defs) if PARTY_TERMS else set()
+    PARTY_COLLECTIVE |= signatory_roles(paras)  # a signatory named by its role alone (as escrow agent) is a party for the subject checks
     named = nonparty_named(paras, PARTY_TERMS | PARTY_COLLECTIVE, shape, defs) if PARTY_TERMS else set()
     global EXHIBIT_PARTIES, RECITAL_IDX
     intro_i, lead_i = shape['intro'], shape['lead']
     RECITAL_IDX = {p['idx'] for p in paras if intro_i is not None and lead_i is not None and intro_i < p['idx'] < lead_i} if lead_i is not None else set()
     ex_starts = [i for i, p in enumerate(paras) if EXHIBIT_HEAD.match(p['text'])]
-    ex_parties = {a: party_terms(paras[a:(ex_starts[k + 1] if k + 1 < len(ex_starts) else len(paras))]) for k, a in enumerate(ex_starts)}
+    ex_parties = {a: party_terms(paras[a:(ex_starts[k + 1] if k + 1 < len(ex_starts) else len(paras))]) | signatory_roles(paras[a:(ex_starts[k + 1] if k + 1 < len(ex_starts) else len(paras))])
+                  for k, a in enumerate(ex_starts)}
     for i, p in enumerate(paras):
         # in an exhibit (a form the nonparty signs, such as an escrow agreement), a named nonparty may be a party,
         # and the form's own introductory clause names its parties
@@ -3351,7 +3567,8 @@ def _run(path, want_inventory):
         if p['text'].strip():
             findings += house_checks(p)
     NONPARTY_NAMED, EXHIBIT_PARTIES, RECITAL_IDX = named, set(), set()
-    findings += outline_checks(paras)
+    findings += outline_checks(paras, shape)
+    findings += party_term_caps_checks(paras, defs)
     findings += front_checks(paras, meta, shape, defs)
     findings += efforts_mix(paras)
     findings += term_of_art_checks(paras)
@@ -3363,7 +3580,7 @@ def _run(path, want_inventory):
                                 '(a footnote that states a figure or a condition is a term the body may contradict); delete explanatory notes.',
                                 first_note['idx'], conf='high', rules=['R-4.6-no-footnotes'], sev=3, match=first_note['text'][:80], start=0, end=min(80, len(first_note['text']))))
     findings += arithmetic_checks(paras, path, meta.get('tables') if path.lower().endswith('.docx') else None)
-    findings += restated_amount_checks(paras)
+    findings += restated_amount_checks(paras, shape)
     nf, ns = meta.get('normal_font'), meta.get('normal_size')
     if off_house_font(nf) or off_house_size(ns):
         findings.append(finding('font', f'Document default font is {nf} {ns} pt; house rule 9 is 12-point Aptos (set it in the Normal style).', -1, conf='high'))
@@ -3390,7 +3607,10 @@ def _run(path, want_inventory):
     inv = None
     if want_inventory:
         inv, invf = inventory(paras, shape, defs)
-        findings += invf
+        # shall in a definition: the sentence-level variant reports the sentence-initial form; the inventory's catch-all keeps the rest
+        house_shall = [f for f in findings if f['check'] == 'shall-in-definition']
+        findings += [f for f in invf if f['check'] != 'shall-in-definition'
+                     or not any(h['para'] == f['para'] and h['start'] < f['end'] and f['start'] < h['end'] for h in house_shall)]
     return paras, meta, collapse(findings), broad, inv
 
 
@@ -3398,8 +3618,8 @@ STATUTE_TEXT = re.compile(r"\b(?:disclosure|notice|statement|legend|warning|lang
                           r"|\b(?:disclosure|notice|statement|legend|warning|language|text|wording)\s+(?:required|mandated|prescribed)\s+by\s+[^.:]{0,160}?:", re.I)
 
 
-SCHED_HEAD = re.compile(r"^[\s#*_]*(?:SCHEDULE|Schedule|ANNEX|Annex|APPENDIX|Appendix)\s+[A-Z0-9]+")
-EXH_HEAD_ONLY = re.compile(r"^[\s#*_]*(?:EXHIBIT|Exhibit)\s+[A-Z0-9]+")
+SCHED_HEAD = re.compile(r"^[\s#*_]*(?:SCHEDULE|Schedule|ANNEX|Annex|APPENDIX|Appendix)" + ATT_LABEL)
+EXH_HEAD_ONLY = re.compile(r"^[\s#*_]*(?:EXHIBIT|Exhibit)" + ATT_LABEL)
 
 
 def schedule_section_checks(paras):
@@ -3469,7 +3689,6 @@ def collapse(findings):
     the same problem 40 times). Each collapsed finding keeps all its locations in 'occurrences'."""
     out, seen = [], {}
     for f in findings:
-        f.pop('keep_sev', None)  # the severity is settled; the marker never reaches the JSON
         if f['source'] == 'rules':
             key = ('rule', f['rule_ids'][0] if f['rule_ids'] else f['check'])
         elif f['check'] in PER_DOC:
@@ -3522,7 +3741,7 @@ def front_checks(paras, meta, shape, defs):
     letter = any(re.match(r"\s*(?:Dear|To)\s+[A-Z]", p['text']) for p in body[:12]) or any(re.search(r"\bthis letter agreement\b", p['text'], re.I) for p in body[:6])
     # a letter agreement has no introductory clause (MSCD 19.3-19.9); otherwise the shape's intro, or an early between-clause with a parenthetical
     by_idx = {p['idx']: p for p in paras}
-    intro = None if letter else by_idx.get(shape['intro']) if shape['intro'] is not None else next((p for p in body[:6] if re.search(r"\b(?:between|among|amongst)\b", p['text']) and re.search(r"\(", p['text'])), None)
+    intro = None if letter else by_idx.get(shape['intro']) if shape['intro'] is not None else next((p for p in body[:6] if BETWEEN_AMONG.search(p['text']) and re.search(r"\(", p['text'])), None)
     if intro:
         for m in INTRO_NAME.finditer(intro['text']):
             name = m.group(1)
@@ -3534,9 +3753,8 @@ def front_checks(paras, meta, shape, defs):
         intro_names = {_nm(m.group(1)) for m in INTRO_NAME.finditer(intro['text']) if re.search(ENTITY + r"\s*$", m.group(1))}
         intro_names |= {_nm(m.group(0)) for m in re.finditer(r"[A-Z][\w.&'’ -]{1,60}?,?\s+" + ENTITY, intro['text'])}
         seen = set()
-        att_from = next((q['idx'] for q in body if EXHIBIT_HEAD.match(q['text'])), None)
         for p in (q for q in body if q['idx'] >= shape['tail']):
-            if p.get('where') == 'table' or (att_from is not None and p['idx'] >= att_from):
+            if p.get('where') == 'table' or p['idx'] >= shape['attachments']:
                 continue  # a schedule's table of contracts names counterparties, and an exhibit is a form with its own signers: not this contract's signature blocks
             s = re.sub(r"^[#>\s*_]+|[*_:\s]+$", '', p['text']).strip()
             m = re.fullmatch(r"([A-Z0-9][A-Za-z0-9.&'’ -]{1,70}?,?\s+" + ENTITY + r")(?:,\s+as\s+[\w ]{2,40})?", s)
@@ -3552,11 +3770,10 @@ def front_checks(paras, meta, shape, defs):
         if not any(LEAD_IN.search(p['text']) for p in body):
             add('front', 'No lead-in: add "The parties agree as follows:" after the introductory clause (MSCD 2.159).', intro, None, ['R-2.159-lead-in'])
     unbolded, bold_quotes = [], []
-    exhibit_from = next((p['idx'] for p in body if EXHIBIT_HEAD.match(p['text'])), len(paras))  # a form attached as an exhibit keeps its own format
     for term, _words, pidx, st, en, _kind in defs:
         p = by_idx[pidx]
         f = p.get('fmt') or {}
-        if 'bold_text' not in f or pidx >= exhibit_from or not p['text'].strip():
+        if 'bold_text' not in f or pidx >= shape['attachments'] or not p['text'].strip():  # a form attached as an exhibit keeps its own format
             continue
         m = _Span(p['text'], st, en)
         if term and term not in f['bold_text']:
@@ -3601,9 +3818,9 @@ def _round8_cases(_tmp, ar, tb):
     word += [{'idx': 2 + n, 'auto_label': f'({c})', 'auto_level': 2, 'text': f'item {c};', 'where': 'body', 'fmt': {}} for n, c in enumerate('abcdefgh')]
     word += [{'idx': 10, 'auto_label': '(i)', 'auto_level': 3, 'text': 'item i;', 'where': 'body', 'fmt': {}}, {'idx': 11, 'auto_label': '(ii)', 'auto_level': 3, 'text': 'item ii.', 'where': 'body', 'fmt': {}},
              {'idx': 12, 'auto_label': 'B.', 'auto_level': 1, 'text': 'Next.  Beta shall pay.', 'where': 'body', 'fmt': {}}]
-    deeper = [f for f in outline_checks(word) if 'Only child' in f['message']]
+    deeper = [f for f in outline_checks(word, document_shape(word)) if 'Only child' in f['message']]
     word[10]['auto_level'] = 2  # Word numbers (i) at the same level as (h): the letter i, so (ii) is a lone subclause
-    same = [f for f in outline_checks(word) if 'Only child' in f['message']]
+    same = [f for f in outline_checks(word, document_shape(word)) if 'Only child' in f['message']]
     out.append(("outline: Word's list level tells (i) the subclause from (i) the letter", not deeper and len(same) == 1 and same[0]['match'] == '(ii)'))
     # C4, R2: a longer term's uses don't count for the shorter term; a term with a non-word edge is counted
     res = run_text(intro + '.\n\n"Closing" means the closing of the sale.  "Closing Date" means the day on which the sale closes.\n\nSeller shall deliver the Shares on the Closing Date.\n')
@@ -3618,7 +3835,7 @@ def _round8_cases(_tmp, ar, tb):
     # C7: a singular import clause
     out.append(('IMPORTS reads "Each capitalized term"', bool(IMPORTS.search('Each capitalized term used in this amendment has the meaning given in the Agreement.'))))
     # C10: the phrase-variants file with the wrong shape is a data error
-    out.append(('a phrase-variants file that is a list, or has no checks list, is an InputError', all(_raises_input(lambda d=d: _variant_entries(d)) for d in ([], {'about': 'x'}, {'checks': 'x'})) and _variant_entries({'checks': []}) == []))
+    out.append(('a phrase-variants file that is a list, or has no checks list, is an InputError', all(_raises(InputError, lambda d=d: _variant_entries(d)) for d in ([], {'about': 'x'}, {'checks': 'x'})) and _variant_entries({'checks': []}) == []))
     # C12: 2 patterns reading 1 definition are not a term defined twice; a term really defined twice in 1 paragraph is
     res = run_text(intro + '.\n\nSeller shall lease the Premises for 3 years (the "Term" is 3 years), and Buyer shall pay Rent during the Term.\n\nA. Definitions.  "Unit" means a widget.  "Unit" means a gadget.  Seller shall deliver each Unit.\n')
     out.append(('defined-twice: deduped on (kind, paragraph, position); a real repeat in 1 paragraph still counts', [f['match'] for f in res[2] if f['check'] == 'defined-twice'] == ['Unit']))
@@ -3629,7 +3846,7 @@ def _round8_cases(_tmp, ar, tb):
     t = '| Item | Amount |\n|---|---|\n| Fee | $80 |\n| Credit | $20 |\n| Total | $80 |'
     f_ = table_total_checks([{'idx': 0, 'text': t}], None)
     out.append(('Markdown table: the finding points at the Total cell', len(f_) == 1 and f_[0]['start'] == t.rfind('$80') and t[f_[0]['start']:f_[0]['end']] == '$80'))
-    t2 = 'Item | Amount | Note\n--- | --- | ---\nSetup | $100.00 | x\nMonthly | $200.00 | y\nTotal | $400.00 |'
+    t2 = 'Item | Amount | Note\n--- | --- | ---\nSetup | $100.00 | x\nSupport | $200.00 | y\nTotal | $400.00 |'  # a rate row (Monthly) would be no sum (PER_PERIOD)
     f_ = table_total_checks([{'idx': 0, 'text': t2}], None)
     out.append(('Markdown table without outer pipes is read; a sentence with a pipe is not a table', len(f_) == 1 and t2[f_[0]['start']:f_[0]['end']] == '$400.00'
                 and not table_total_checks([{'idx': 0, 'text': 'Acme | Beta shall pay $5 | Total $5'}], None)))
@@ -3798,6 +4015,145 @@ def _round9_cases():
     out.append(('restated-amount: the Support Fee of $24,000 restated in Schedule A is flagged; a schedule with another amount is not',
                 [m for c, m in checks_of(rs, want={'restated-amount'})] == ['the Support Fee of $24,000'] and not checks_of(rs.replace('Fee: $24,000', 'Fee: $30,000'), want={'restated-amount'})))
     out.append(('comment text is kept whole; the report shortens it with ...', _shorten('x' * 400, COMMENT_SHOWN).endswith('...') and _shorten('short', COMMENT_SHOWN) == 'short'))
+    many = [('A', f'comment {n}', None) for n in range(12)] + [('B', 'reply', 11)]
+    notes = report_notes({'comments': many}, [])
+    out.append(('the comments list says how many more it holds (ROB-010)', any(n.startswith('  - ... and 2 more comments') for n in notes)
+                and not any('more comments' in n for n in report_notes({'comments': many[:10]}, []))))
+    return out
+
+
+def _round10_cases(_tmp):
+    """The round-10 cases (the board review and the adversarial probe), each a (name, passed) pair."""
+    out = []
+    intro = 'This agreement is dated January 1, 2027, and is between ACME LLC, a Delaware limited liability company ("Seller"), and BETA INC., a Texas corporation ("Buyer").\n\n'
+
+    def checks_of(text, inventory=False, suffix='.txt', want=None, whose=None):
+        res = lint_text(text, suffix, inventory, whose)
+        return [(f['check'], f['match']) for f in res[2] if want is None or f['check'] in want]
+    # ACC-004: a short introductory clause (10 words) still names the parties
+    short = 'This agreement is between ACME LLC ("Acme") and BETA INC. ("Beta").\n\nAcme will deliver the Units.  Beta must pay the Price.  The Company that owns the Site is not a party.\n'
+    got = {c for c, m in checks_of(short)}
+    out.append(('a 10-word introductory clause names the parties: Acme will is category-will, and the Company (a nonparty) keeps its article (ACC-004)',
+                {'category-will', 'category-must'} <= got and 'party-article' not in got))
+    # ACC-008: a capitalized nonparty role in a fragment is a low-confidence candidate; with the parties known it is medium
+    frag = [f for f in lint_text('The Trustee shall distribute the income to the beneficiaries each quarter.\n')[2] if f['check'] == 'nonparty-obligation']
+    known = [f for f in lint_text(intro + 'The Trustee shall distribute the income to the beneficiaries each quarter.\n')[2] if f['check'] == 'nonparty-obligation']
+    out.append(('nonparty-obligation on a fragment is low confidence and says the parties are unknown; with an introductory clause it is medium (ACC-008)',
+                frag and frag[0]['confidence'] == 'low' and 'parties are unknown' in frag[0]['message'] and known and known[0]['confidence'] == 'medium'))
+    # ACC-010: a 70-line table of contents before the introductory clause and the lead-in: the recital's will is not a duty
+    toc = ''.join(f'Article {n} Heading {n}\n\n' for n in range(1, 71))
+    res = lint_text(toc + intro + 'Seller owns the Assets, and Buyer will operate the Business after the Closing.\n\nThe parties therefore agree as follows:\n\nSeller will deliver the Assets.\n')
+    wills = [f for f in res[2] if f['check'] == 'category-will']
+    out.append(('a 70-line table of contents does not hide the lead-in: will in the recital is not a duty, will in the body is (ACC-010)',
+                len(wills) == 1 and 'deliver' in res[0][wills[0]['para']]['text']))
+    # ACC-003: the thing-subject message offers must and cites R-3.154
+    cs = [f for f in house_checks({'idx': 0, 'text': 'Final Completion shall occur no later than July 31, 2027.', 'fmt': {}}) if f['check'] == 'category-shall']
+    out.append(('category-shall on a thing or event offers must (MSCD 3.154) and keeps R-3.98 first (ACC-003)',
+                cs and 'write must' in cs[0]['message'] and cs[0]['rule_ids'] == ['R-3.98-shall-future-time', 'R-3.154-must-for-others'] and cs[0]['severity'] == 3))
+    # ROB-001: invisible characters are stripped and counted
+    res = lint_text(intro + 'Seller shall protect the information (the "Confi\u00addential Information").  Buyer shall keep the Confidential Information secret.  Seller shall return the Confidential Information.  Buyer may use the Confidential\u200b Information.\n', inventory=True)
+    out.append(('a soft hyphen and a zero-width space are removed and noted: no 2nd form, no unused term (ROB-001)',
+                res[1].get('invisible_chars') == 2 and any('invisible characters' in n for n in report_notes(res[1], res[0]))
+                and not any(f['check'] in ('possibly-undefined-term', 'defined-unused') for f in res[2])))
+    # ROB-002: quoted, section-numbered and 1-line form labels are attachment headings; a reference in running text is not
+    quoted = intro + 'Seller shall deliver the release in Exhibit 1.\n\nEXHIBIT "1"\n\nFORM OF RELEASE\n\n"Agreement" means the asset purchase agreement.  Executive gives this release under the Agreement.\n'
+    out.append(('EXHIBIT "1" (a quoted label) is an exhibit heading: its definitions are not defined twice (ROB-002)', not checks_of(quoted, True, want={'defined-twice'})
+                and EXHIBIT_HEAD.match('SCHEDULE 1.1') and EXHIBIT_HEAD.match('Schedule 3.2(a)') and EXHIBIT_HEAD.match('EXHIBIT A FORM OF PROMISSORY NOTE')
+                and not EXHIBIT_HEAD.match('Exhibit A lists the Assets.') and not EXHIBIT_HEAD.match('Schedule 1, as updated from time to time, lists the Products.')))
+    # ROB-007: a malformed addition or lint block in the overrides, and a hint that matches whitespace, are data errors
+    import json as _json
+    from _rules_data import load_overrides as _lo
+    def bad_ov(ov):
+        f_ = _tmp(_json.dumps(ov).encode('utf-8'), '.json')
+        try:
+            return _raises(InputError, lambda: _lo(f_))
+        finally:
+            os.unlink(f_)
+    out.append(('house-overrides: a malformed addition, a string broad_only and a list suppress are rejected; a good file is read (ROB-007)',
+                bad_ov({'overrides': [], 'additions': [{'statement': 5}]}) and bad_ov({'overrides': [], 'lint': {'broad_only': 'R-1'}}) and bad_ov({'overrides': [], 'lint': {'suppress': []}})
+                and not bad_ov({'overrides': [], 'additions': [{'statement': 's', 'applies_with': ['R-1']}], 'lint': {'suppress': {'R-1': 'x'}, 'broad_only': []}})))
+    out.append(('a regex_hint that matches whitespace alone, or does not compile, is reported (ROB-007)', compile_hint(r'\s*')[1] and compile_hint('(')[1] and compile_hint(r'\bshall\b')[1] is None))
+    # ROB-008: the reference generator refuses to run without a hand-written header, and writes atomically
+    import build_references as _br
+    from _cli import write_text as _wt
+    import tempfile as _tf
+    saved = (_br.HEADERS, _br.REFS, sys.argv)
+    with _tf.TemporaryDirectory() as td:
+        _br.HEADERS, _br.REFS, sys.argv = os.path.join(td, 'no-such-ref-headers'), td, ['build_references.py']  # never the skill's own references
+        try:
+            out.append(('build_references: a missing header is an InputError, not a silent bare title (ROB-008)', _raises(InputError, _br.main) and not os.listdir(td)))
+        finally:
+            _br.HEADERS, _br.REFS, sys.argv = saved
+    f_ = _tmp(b'old', '.md')
+    try:
+        _wt(f_, 'new')
+        with open(f_, encoding='utf-8') as fh:
+            written = fh.read()
+        out.append(('write_text replaces the file whole (ROB-008)', written == 'new' and not [x for x in os.listdir(os.path.dirname(f_)) if x.startswith('.tmp-') and x.endswith('.md')]))
+    finally:
+        os.unlink(f_)
+    # ROB-004: --json is written even when the reader closes the pipe after the 1st line
+    import subprocess as _sp
+    fc = _tmp((intro + 'Seller shall deliver the Units and/or the Parts. ' * 400 + '\n').encode('utf-8'))
+    fj = fc + '.json'
+    try:
+        _sp.run(f'"{sys.executable}" "{os.path.abspath(__file__)}" "{fc}" --json "{fj}" | head -1', shell=True, capture_output=True, check=False)
+        written = {}
+        if os.path.exists(fj):
+            with open(fj, encoding='utf-8') as fh:
+                written = _json.load(fh)
+        out.append(('--json is written before the report, so | head leaves no stale lint.json (ROB-004)', written.get('file') == fc))
+    finally:
+        os.unlink(fc)
+        if os.path.exists(fj):
+            os.unlink(fj)
+    # probe: a signatory named by its role alone (as escrow agent) is a party for the subject checks, with or without a defined term
+    escrow = ('This agreement is dated January 15, 2027, and is between CUMBERLAND HOLDINGS, INC., a Tennessee corporation ("Buyer"), ORION FABRICATION LLC, '
+              'a Delaware limited liability company ("Seller"), and HARBOR TITLE LLC, a Tennessee limited liability company, as escrow agent{}.\n\n'
+              'The parties agree as follows:\n\n{} shall hold the Deposit in a segregated account at Pinnacle Bank until the Closing.\n')
+    out.append(('a signatory named as escrow agent is a party: the escrow agent shall (unquoted) and Escrow Agent shall (defined) both clear nonparty-obligation',
+                not checks_of(escrow.format('', 'The escrow agent'), want={'nonparty-obligation', 'party-article'})
+                and not checks_of(escrow.format(' ("Escrow Agent")', 'Escrow Agent'), want={'nonparty-obligation'})
+                and checks_of(intro + 'The escrow agent shall hold the Deposit until the Closing.\n', want={'nonparty-obligation'})))
+    # probe: quoted text keeps its verbs; the unquoted clause with a nonparty subject still fires; a 4-word statutory quotation clears execute
+    req = intro + 'Each Subcontract must contain the following sentence (the "Required Clause"): {}Subcontractor shall not disclose any Buyer Confidential Information to any Person other than Subcontractor\'s employees who need to know it.{}\n'
+    out.append(('a quoted clause another contract must contain keeps its shall; the unquoted form with no Subcontractor party fires',
+                not checks_of(req.format('"', '"'), want={'nonparty-obligation', 'category-shall'}) and checks_of(req.format('', ''), want={'nonparty-obligation'})))
+    out.append(('a 4-word statutory quotation ("at the time of executing the release.") clears execute; a 2-word quotation does not',
+                not checks_of(intro + 'Employee hereby waives the protection of Section 1542 of the California Civil Code, which covers claims that a releasing party does not know of "at the time of executing the release."\n', want={'archaic'})
+                and checks_of(intro + 'Employee shall sign the form marked "duly executed" at the Closing.\n', want={'archaic'})))
+    out.append(('a quoted will or shall cause keeps its verb', not checks_of(intro + 'The Guaranty must read: "Guarantor will pay each amount when due and shall cause its lenders to release the lien."\n', want={'category-will', 'nonparty-obligation'})))
+    # probe: is entitled to fires as a finding only where it stands in for another party's duty; otherwise it is a trigger
+    ent = lambda t: [f['source'] for f in house_checks({'idx': 0, 'text': t, 'fmt': {}}) if f['check'] == 'is-entitled-to']
+    out.append(('is-entitled-to: a direct finding wherever another party could owe the thing; a trigger only for a condemnation award or a right a plan or the law creates',
+                ent('Consultant is entitled to receive the Fee at the Closing.') == ['house'] and ent('Consultant is entitled to reimbursement from Company.') == ['house']
+                and ent('Contractor is entitled to an extension of the Completion Date.') == ['house'] and ent('Sponsor is entitled to 20 complimentary tickets.') == ['house']
+                and ent('Tenant is entitled to quiet enjoyment of the Premises.') == ['house'] and ent('Employee is entitled to participate in each benefit plan.') == ['house']
+                and ent('Buyer is entitled to the entire condemnation award for the Property.') == ['rules']
+                and ent('Employee is entitled to the benefits under the Company 401(k) Plan.') == ['rules']))
+    # probe: a section heading in capitals; an article heading and an exhibit label are not
+    caps = intro + 'I. FIRST ARTICLE\n\nA. SERVICES.  Seller shall perform the Services.\n\nB. FEES AND PAYMENT.  Buyer shall pay the Fee.\n\nII. SECOND ARTICLE\n\nA. Term.  The Term is 2 years.\n\nB. Use.  Buyer may use the Units.\n\nEXHIBIT 1\n\nFORM OF NOTE\n'
+    sh = [f for f in lint_text(caps)[2] if f['check'] == 'section-heading-caps']
+    out.append(('section headings in all capitals (A. SERVICES.) are flagged once at severity 3; Services, Use, ARTICLE and EXHIBIT lines are not',
+                len(sh) == 1 and sh[0]['match'] == 'SERVICES' and '2 section headings' in sh[0]['message'] and sh[0]['severity'] == 3
+                and not [f for f in lint_text(caps.replace('SERVICES', 'Services').replace('FEES AND PAYMENT', 'Fees and Payment'))[2] if f['check'] == 'section-heading-caps']))
+    # probe: an all-capitals party-name defined term; an acronym with another kind of definition stays
+    pt = lambda t: [f['match'] for f in lint_text(t)[2] if f['check'] == 'party-term-capitals']
+    out.append(('"ACME" means Acme Widgets, Inc., a Tennessee corporation is flagged (MSCD 2.96); "SOW" means a statement of work is not',
+                pt(intro + '"ACME" means Acme Widgets, Inc., a Tennessee corporation.  "SOW" means a statement of work that the parties sign.  "LLC" means a limited liability company.\n') == ['ACME']
+                and pt('This agreement is between ACME WIDGETS, INC., a Tennessee corporation ("ACME"), and DANA RUIZ, an individual ("Consultant").\n') == ['ACME']
+                and not pt(intro + '"GAAP" means generally accepted accounting principles in the United States.\n')))
+    # probe: a conspicuous disclaimer in capitals is a trigger, not a finding; body text in capitals is a finding
+    disc = [f for f in lint_text(intro + 'SELLER DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING THE IMPLIED WARRANTY OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n')[2] if f['check'] == 'capitals-body']
+    body_caps = [f for f in lint_text(intro + 'BUYER SHALL PAY THE FEE NO LATER THAN 30 DAYS AFTER RECEIVING AN INVOICE FROM SELLER.\n')[2] if f['check'] == 'capitals-body']
+    out.append(('a conspicuous disclaimer in capitals is a rule trigger (MSCD 16.19 prefers bold; a statute-driven form stays); body text in capitals is a direct finding',
+                len(disc) == 1 and disc[0]['source'] == 'rules' and 'prefers bold' in disc[0]['message'] and len(body_caps) == 1 and body_caps[0]['source'] == 'house'))
+    # probe: "Business Day" shall mean is caught at the sentence level, and once with --inventory
+    bd = lambda inv: [f for f in lint_text(intro + '"Business Day" shall mean a day other than a Saturday or Sunday.  Seller shall deliver on a Business Day.\n', inventory=inv)[2] if f['check'] == 'shall-in-definition']
+    out.append(('"Business Day" shall mean is a sentence-level finding without --inventory, and 1 finding (not 2) with it', len(bd(False)) == 1 and len(bd(True)) == 1))
+    # probe: a file of whitespace and punctuation gets the no-text note
+    out.append(('a file that holds only whitespace and punctuation gets the "No text found" note', any('No text found' in n for n in report_notes({}, [{'idx': 0, 'text': ' \u201c\u201d \u2018\u2019 , . '}]))
+                and not any('No text found' in n for n in report_notes({}, [{'idx': 0, 'text': 'Acme shall pay.'}]))))
     return out
 
 
@@ -3887,6 +4243,29 @@ def _round8_docx_cases(_tmp):
     notes = report_notes(meta, paras)
     out.append(('a comment reply is read from commentsExtended.xml and listed under its parent', meta.get('comments') == [('Opposing Counsel', 'Add a minimum.', None), ('Blake Reagan', 'Agreed.', 0)]
                 and any(n.startswith('    - reply by Blake Reagan') for n in notes)))
+    # ROB-006: an entity declared inside a comments part is not expanded (python-docx's own parser setting)
+    f_ = build(commented)
+    ent = (f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><!DOCTYPE w:comments [<!ENTITY leak "SECRET">]><w:comments {W}>'
+           '<w:comment w:id="0" w:author="X"><w:p><w:r><w:t>Add &leak; here.</w:t></w:r></w:p></w:comment></w:comments>')
+    tmp2 = f_ + '.2'
+    with zipfile.ZipFile(f_) as zin, zipfile.ZipFile(tmp2, 'w', zipfile.ZIP_DEFLATED) as zout:
+        for item in zin.infolist():
+            data = zin.read(item.filename)
+            if item.filename == '[Content_Types].xml':
+                data = data.replace(b'</Types>', f'<Override PartName="/word/comments.xml" ContentType="{parts[0][2]}"/></Types>'.encode())
+            if item.filename == 'word/_rels/document.xml.rels':
+                data = data.replace(b'</Relationships>', f'<Relationship Id="rId901" Type="{parts[0][3]}" Target="comments.xml"/></Relationships>'.encode())
+            zout.writestr(item, data)
+        zout.writestr('word/comments.xml', ent)
+    os.replace(tmp2, f_)
+    paras, meta = read(f_)
+    out.append(('an entity declared in a comments part is never expanded into the comment text: the part is refused and noted as unreadable (ROB-006)',
+                not any('SECRET' in c[1] for c in meta.get('comments') or []) and bool(meta.get('comments') or meta.get('comments_unreadable'))))
+    # ROB-001: a soft hyphen typed into a run is removed and counted
+    def soft(d):
+        d.add_paragraph('Lessee shall keep the Confi\u00addential Information secret.')
+    paras, meta = read(build(soft))
+    out.append(('a soft hyphen inside a run is removed and counted (ROB-001)', paras[1]['text'] == 'Lessee shall keep the Confidential Information secret.' and meta.get('invisible_chars') == 1))
     # R5: a damaged theme or docDefaults part is best effort
     class _Broken:
         part = property(lambda self: (_ for _ in ()).throw(RuntimeError('damaged')))
@@ -3941,16 +4320,6 @@ def _raises(exc, fn):
     return False
 
 
-def _raises_input(fn):
-    try:
-        fn()
-    except InputError:
-        return True
-    except Exception:
-        return False
-    return False
-
-
 def self_test():
     skipped = 0  # blocks of .docx tests skipped because python-docx isn't installed
     cases = [
@@ -3966,6 +4335,9 @@ def self_test():
         ('Acme may terminate at any time, with or without cause.', 'serial-comma', False),
         ('The Seller\'s employees, agents and contractors shall comply.', 'serial-comma', True),
         ('If Acme defaults, Beta and Gamma may terminate.', 'serial-comma', False),
+        ('Prior to the Closing, Seller and Buyer shall sign the Deed.', 'serial-comma', False),  # an opening phrase with a 2-word opener (ACC-005)
+        ('Immediately after the Closing, Buyer and Seller shall file the Deed.', 'serial-comma', False),  # an adverb before the opener
+        ('Acme shall deliver the Units, Parts and Tools.', 'serial-comma', True),  # the positive control
         ('However, Acme and Beta shall meet.', 'serial-comma', False),
         ('Acme may use the Software, the Documentation and the Updates.', 'serial-comma', True),
         ('The office is in Nashville, Tennessee and Acme shall staff it.', 'serial-comma', False),
@@ -4060,6 +4432,9 @@ def self_test():
         ('Acme shall pay if Park knows or should have known of the defect.', 'should', True),
         ('Acme shall reimburse any expenses incurred by Park.', 'reduced-passive', True),
         ('Acme shall pay the amounts that Park invoices.', 'reduced-passive', False),
+        ('Buyer shall pay the Purchase Price in the manner stated in the section titled "Payment."', 'reduced-passive', False),  # the house form of a reference by heading (probe)
+        ('Buyer shall pay the Purchase Price in the manner stated in the Payment Schedule.', 'reduced-passive', True),
+        ('This waiver applies only to the sale described in the section titled "Consent".', 'reduced-passive', True),  # a thing the participle modifies: recast (corpus6 c147)
         ('The Receiving Party shall not disclose the information.', 'party-article', False),
         ('The Company shall pay Employee.', 'party-article', True),
         ("ACME WIDGETS, INC., a Tennessee corporation (the \u201cCompany\u201d)", 'party-article', True),
@@ -4078,6 +4453,8 @@ def self_test():
         ('This consulting agreement is dated January 1, 2027.', 'passive-voice', False),
         ('the day on which this agreement ends', 'restrictive-which', False),
         ('any claim which arises under this agreement', 'restrictive-which', True),
+        ('The notice must specify which option Tenant elects.', 'restrictive-which', False),  # an embedded question (ACC-006)
+        ('Buyer shall notify Seller which Units it rejects.', 'restrictive-which', False),
         ('Acme shall pay within five (5) days.', 'words-and-digits', True),
         ('Acme shall pay within three days.', 'number-word', True),
         ('Acme shall pay within 3 days.', 'number-word', False),
@@ -4121,6 +4498,8 @@ def self_test():
         ('Acme hereby grants Widgetco a license.', 'archaic', False),
         ('The parties hereto agree as follows.', 'archaic', True),
         ('The headings in this agreement are for convenience only.', 'headings-clause', True),
+        ('Buyer may assign this agreement, provided that Seller consents.', 'provided-that', True),
+        ('Seller has provided that information to Buyer.', 'provided-that', False),  # the verb after an auxiliary (ACC-009)
         ('Acme shall pay the Price no later than 30 days after the Closing Date, and Widgetco shall deliver the Units.', 'negative-subject-shall', False),
         ('If no Default exists, Acme shall pay the Price.', 'negative-subject-shall', False),
         ('Acme shall pay, and no Shareholder shall transfer any Shares.', 'negative-subject-shall', True),
@@ -4137,6 +4516,9 @@ def self_test():
         ('Once Licensee pays the Fee, the license is perpetual.', 'once', True),
         ('Distributor may not sell the Products at a price below Company\'s published price list.', 'contract-reference', False),
         ('Licensee shall pay 5% of Net Sales above $2,000,000.', 'contract-reference', False),
+        ('Company shall pay Consultant 2% of the Net Revenue for each Contract Year.', 'percentage-amount-equal-to', True),  # a bare percentage as the amount (MSCD 14.24)
+        ('Company shall pay Consultant a fee equal to 2% of the Net Revenue.', 'percentage-amount-equal-to', False),
+        ('Company shall pay an amount equal to 2% of the Net Revenue.', 'percentage-amount-equal-to', False),
         ('Licensee shall comply with the requirements stated below.', 'contract-reference', True),
         ('Notice is effective at 5:00 p.m. Central time.', 'spacing', False),
         ('the form attached as Exhibit A', 'attachment-scheme', True),
@@ -4151,6 +4533,8 @@ def self_test():
         ('Acme shall use good-faith efforts to obtain the consent.', 'efforts', True),
         ('Acme shall use reasonable efforts to obtain the consent.', 'efforts', False),
         ('The payment is due on 2/3/2027.', 'numeric-date', True),
+        ('Supplier shall staff the help desk 24/7/365.', 'numeric-date', False),  # a service level, not a date (ACC-001)
+        ('The Term begins on 1/15/2027.', 'numeric-date', True),
         ('Acme shall continue providing the Services during the dispute.', 'category-shall', False),
         ('Acme shall terminate the subcontract if Widgetco fails to pay.', 'category-shall', False),
         ('Acme shall commence the Work on May 1, 2027.', 'category-shall', False),
@@ -4165,6 +4549,10 @@ def self_test():
         ('Supplier shall not be liable for any delay that a Force Majeure Event causes.', 'category-shall', True),
         ('Customer shall have the right, but not the obligation, to inspect the Facility.', 'category-shall', True),
         ('Seller, at its own cost, shall repair the Unit.', 'category-shall', False),
+        ('Section 3.1(a) Company shall pay the Fee at the Closing.', 'category-shall', False),  # a typed section label is not the subject (probe)
+        ('Section 3 Company shall pay the Fee.', 'category-shall', False),
+        ('3.1(a) Company shall pay the Fee.', 'category-shall', False),
+        ('(a)(i) Company shall pay the Fee.', 'category-shall', False),
         ('A party giving notice under this agreement shall send it by certified mail.', 'category-shall', False),
         ('Each party shall give each notice in writing and shall deliver it by hand.', 'category-shall', False),
         ('The Fee shall be paid by Customer.', 'category-shall', False),
@@ -4230,6 +4618,9 @@ def self_test():
         ('Beta shall see to it that each driver completes the safety course before operating the Equipment.', 'nonparty-obligation', True),
         ('Operator shall make sure that all passengers wear seat belts.', 'nonparty-obligation', True),
         ('Parent shall cause each of its Subsidiaries to sign a joinder.', 'nonparty-obligation', False),
+        ('Consultant shall cause the landlord of the Premises to sign an estoppel certificate.', 'nonparty-obligation', True),  # a counterparty the party doesn't control (probe)
+        ('Borrower shall cause the bank to release the lien.', 'nonparty-obligation', True),
+        ('Parent shall cause its Affiliates to comply.', 'nonparty-obligation', False),  # an instrumentality stays as it is
         ('Beta shall see to it that the Equipment stays insured.', 'nonparty-obligation', False),
         # a negative subject with 1 comma-set clause inside it
         ('No change order, unless Acme signs it, shall bind Acme.', 'negative-subject-shall', True),
@@ -4293,12 +4684,18 @@ def self_test():
         ('Supplier has the right, but not the obligation, to audit the records.', 'category-may', True),
         ('Seller states that it has the right to sell the Assets.', 'category-may', False),
         ('Supplier is entitled, on request, to a copy of the records.', 'is-entitled-to', True),
+        ('Consultant is entitled to receive the Fee at the Closing.', 'is-entitled-to', True),
+        ('Consultant is entitled to reimbursement from Company for all expenses.', 'is-entitled-to', True),
         ('Supplier shall pay the Base Rent, the Additional Rent and all other sums due under this lease.', 'serial-comma', True),
         ('In its sole discretion, the Lender and the Borrower may extend the date.', 'serial-comma', False),
         ('Supplier shall indemnify and hold each of the Customer Indemnitees harmless from all Losses.', 'doublet', True),
         ('Supplier shall hold the Deposit in a segregated account.', 'doublet', False),
         ('EACH PARTY REPRESENTS AND WARRANTS THAT IT HAS FULL POWER TO ENTER INTO THIS AGREEMENT.', 'represents-warrants', True),
         ('EACH PARTY STATES THAT IT HAS FULL POWER TO ENTER INTO THIS AGREEMENT.', 'represents-warrants', False),
+        ('COMPANY SHALL PAY THE FEE NO LATER THAN 30 DAYS AFTER RECEIVING AN INVOICE.', 'capitals-body', True),  # body text in capitals (house rule 9; MSCD 16.18)
+        ('Company shall pay the Fee no later than 30 days after receiving an invoice.', 'capitals-body', False),
+        ('ARTICLE I DEFINITIONS AND RULES OF INTERPRETATION OF THIS AGREEMENT', 'capitals-body', False),  # an article heading
+        ('MASTER SERVICES AGREEMENT', 'capitals-body', False),  # a title: under 8 words
         ('Supplier shall pay the Rent stated in Schedule A to this lease.', 'attachment-hereto', True),
         ('Supplier shall pay the Rent stated in Schedule A.', 'attachment-hereto', False),
         ('Each Key Person shall conduct himself or herself in accordance with the Code of Conduct.', 'singular-they', True),
@@ -4339,6 +4736,8 @@ def self_test():
         ('The Company shall pay Widgetco.', 'party-article', 2),
         ('The parties amend Section 4 under the Master Agreement.', 'numbered-cross-reference', 3),  # another agreement's number: the site's own severity (S13)
         ('This agreement shall be governed by Tennessee law.', 'category-shall', 3),  # a policy fork: the rule record's severity
+        ('Company shall pay Consultant 2% of the Net Revenue.', 'percentage-amount-equal-to', 3),
+        ('COMPANY SHALL PAY THE FEE NO LATER THAN 30 DAYS AFTER RECEIVING AN INVOICE.', 'capitals-body', 3),
     ]
     checks = []  # every self-test case: (name, passed); the printed count is len(checks), so it can't drift
     for text, check, expect in cases:
@@ -4666,7 +5065,7 @@ def self_test():
            {'idx': 2, 'auto_label': 'Article II', 'text': 'PAYMENT', 'where': 'body', 'fmt': {}},
            {'idx': 3, 'auto_label': 'A.', 'text': 'Fee.  Acme shall pay the Fee.', 'where': 'body', 'fmt': {}},
            {'idx': 4, 'auto_label': 'B.', 'text': 'Timing.  Acme shall pay it on the Closing Date.', 'where': 'body', 'fmt': {}}]
-    oc = [f for f in outline_checks(art) if 'Only child' in f['message']]
+    oc = [f for f in outline_checks(art, document_shape(art)) if 'Only child' in f['message']]
     checks.append(('Word labels "Article I" are outline items, so a lone A. under one is an only child', len(oc) == 1 and oc[0]['para'] == 1))
     res = lint_text(('This agreement is dated January 1, 2027, and is between ACME LLC, a Delaware limited liability company (“Seller”), and BETA INC., a Texas corporation (“Buyer”).\n\n'
                 '“Escrow Agent” means First Trust Company, a Tennessee trust company.\n\nThe Escrow Agent, N.A. shall release the Holdback Amount to Seller.  Acme Holdings, Inc. shall deliver the Units.\n'), inventory=False)
@@ -4706,16 +5105,31 @@ def self_test():
     checks.append(('the attachment reminder is 1 trigger-style note, not a direct finding', len(att) == 1 and att[0]['source'] == 'rules' and 'Attachments in 2 paragraphs' in att[0]['message']))
     checks.append(('arithmetic: 1 amount defined twice', len(arithmetic_checks([{'idx': 0, 'text': 'The Purchase Price is $4,200,000, payable at Closing.'},
                                                                            {'idx': 1, 'text': 'The Purchase Price is $4,100,000.'}])) == 1))
+    checks.append(('arithmetic: an amount qualified by a period is a schedule, not a conflict (ACC-007)',
+                   not ar('The Base Rent is $5,000 for the first Lease Year.  The Base Rent is $5,150 for the second Lease Year.')
+                   and not ar('The Fee is $500 per month.  The Fee is $6,000.50 for the year.') and len(ar('The Fee is $500.  The Fee is $600.')) == 1))
     tb = lambda rows: table_total_checks([], None, [[[(c, 0) for c in r] for r in rows]])
     checks.append(('table: subtotal and tax', not tb([['Item', 'Amount'], ['A', '$100'], ['B', '$200'], ['Subtotal', '$300'], ['Tax', '$24'], ['Total', '$324']])))
     checks.append(('table: no header row', not tb([['Phase 1', '$10,000'], ['Phase 2', '$20,000'], ['Total', '$30,000']])))
     checks.append(('table: a credit in parentheses', not tb([['Item', 'Amount'], ['Fee', '$1,000'], ['Credit', '($200)'], ['Total', '$800']])))
+    checks.append(('table: a Monthly Fee column whose rows miss their Total Monthly Fee is a conflict (corpus6 c138)',
+                   bool(tb([['Service', 'Monthly Fee'], ['Platform', '$10,000'], ['Pipeline', '$6,000'], ['Support', '$3,000'], ['Total Monthly Fee', '$18,500']]))))
+    checks.append(('table: a one-time fee beside a monthly fee under a Total Year 1 is a contract value, not a sum',
+                   not tb([['Item', 'Amount'], ['Implementation Fee', '$5,000'], ['Monthly Subscription Fee', '$1,000'], ['Total Year 1', '$17,000']])))
+    checks.append(('table: a percentage restated in parentheses is not a credit (ACC-002)',
+                   not tb([['Milestone', 'Amount'], ['Signing', '30% ($30,000)'], ['Delivery', '70% ($70,000)'], ['Total', '$100,000']])
+                   and not tb([['Milestone', 'Amount'], ['Signing', '$30,000'], ['Delivery', '$70,000'], ['Total', '100% ($100,000)']])
+                   and not tb([['Item', 'Amount'], ['Fee', '$1,000'], ['Credit', '-$200'], ['Total', '$800']])))
+    checks.append(('table: a rate row beside a one-time fee is a contract value, not a sum (ROB-003)',
+                   not tb([['Item', 'Amount'], ['Implementation Fee', '$5,000'], ['Monthly Subscription Fee', '$1,000'], ['Total Year 1', '$17,000']])
+                   and not tb([['Item', 'Amount'], ['Setup', '$5,000'], ['Support', '$1,000 per month'], ['Total', '$17,000']])))
     checks.append(('money with 30 digits and a scale word is exact', _money(MONEY_RE.search('$' + '9' * 30)) == int('9' * 30) * 100 and _money(MONEY_RE.search('$1.5 million')) == 150000000 and _money(MONEY_RE.search('$1.005')) is None))
     checks.append(('roman numerals past 3999 and a gridSpan of billions are clamped', _fmt_num(4000, 'upperRoman') == '4000' and _fmt_num(14, 'upperRoman') == 'XIV'))
     checks.append(('table: a closing statement with a Balance row is not a sum', not tb([['Item', 'Amount'], ['Purchase Price', '$100,000'], ['Deposit', '$10,000'], ['Balance', '$90,000'], ['Total', '$100,000']])))
     checks.append(('table: a wrong total', len(tb([['Item', 'Amount'], ['Fee', '$1,000'], ['Credit', '$200'], ['Total', '$1,300']])) == 1))
     checks += _round8_cases(_tmp, ar, tb)
     checks += _round9_cases()
+    checks += _round10_cases(_tmp)
     # terms of art (house rule 13): each example fires for its term; each look-alike doesn't
     for e in terms_of_art():
         for texts, want in ((e['examples'], True), (e['lookalikes'], False)):
@@ -4771,8 +5185,8 @@ def main():
     paras, meta, findings, broad, inv = run(a.path, a.inventory, a.whose)
     if BAD_VARIANTS or load_rules()[1]:
         meta = dict(meta, skipped_checks=len(BAD_VARIANTS) + len(load_rules()[1]))
-    sys.stdout.write(report(a.path, paras, meta, findings, broad, inv))
-    if a.json:
+    text = report(a.path, paras, meta, findings, broad, inv)
+    if a.json:  # the durable artifact first: a reader that closes the pipe early (| head) must never leave a stale lint.json behind
         write_json(a.json, {'file': a.path,
                             'paragraphs': [dict({'idx': p['idx'], 'text': p['text'], 'where': p.get('where', 'body')},
                                                 **({'label': p['auto_label']} if p.get('auto_label') else {})) for p in paras],
@@ -4781,6 +5195,7 @@ def main():
                             'comments': [dict({'author': c[0], 'text': c[1]}, **({'reply_to': c[2]} if len(c) > 2 and c[2] is not None else {}))
                                          for c in meta.get('comments') or []],
                             'notes': report_notes(meta, paras)})
+    sys.stdout.write(text)
     return 0
 
 

@@ -83,7 +83,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.71-at-least-one-of** [sev 2] Use at least one of X and Y (with and), never at least one of X or Y; or say one or more of X and Y, which is simpler. Courts and drafters should ignore SuperGuide's suggestion that or changes the result. (13.71, 13.81, 13.85...; PDF p. 594)
   - Look for: at least one of / one or more of followed by a list joined by or
   - Test: Is the list after at least one of joined by or? If so, change or to and.
-  - Fix: at least one of X, Y, and Z; one or more of X, Y, and Z
+  - Fix: at least 1 of X, Y, and Z; 1 or more of X, Y, and Z
 - **R-13.107-between-or-among** [sev 3] Instead of between or among, use just between; there is no basis in English usage for reserving between for two and among for more than two. To avoid any confusion about contracts between the parties, say agreements between two or more of the parties. (13.107, 13.108; PDF p. 603)
 - **R-13.129-the-closing** [sev 3] When closing means the moment a transaction is consummated, it is a gerundial noun; use it with the definite article (on or before the Closing). (13.129, 13.130, 13.137...; PDF p. 607)
 - **R-13.514-latinisms** [sev 3] Omit Latinisms, including those the book lists from EDGAR contracts, and express the meaning in standard English. (13.514, 13.515; PDF p. 695)
@@ -93,7 +93,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.629-notify-sense** [sev 3] Use notify in the sense 'to inform someone' (Acme shall promptly notify Widgetco of any Security Incident), not the English sense 'to make known' (notify any Security Incident to Widgetco). (13.629, 13.630; PDF p. 721)
 - **R-13.649-only-placement** [sev 2] Place only immediately before the words it is meant to limit, not by reflex before the verb; the farther it sits from its correct position, the greater the risk of ambiguity. (13.649, 13.650, 13.651...; PDF p. 726)
   - Test: Which words does only limit? Move it immediately before them.
-  - Fix: The Tenant may move furniture ... only during nonbusiness hours
+  - Fix: Tenant may move furniture ... only during nonbusiness hours
   - Book example: The Tenant may only move furniture ... during nonbusiness hours → The Tenant may move furniture, fixtures, and equipment into and out of the Premises only during nonbusiness hours unless Landlord gives approval otherwise
 - **R-13.662-parentheses** [sev 3] Don't use parentheses for explanations or asides. Use them to eliminate syntactic ambiguity, with enumeration, to create a defined term after an integrated definition, for paired alternative arrangements that apply in different circumstances, and for two alternative scenarios of even modest complexity instead of delimiting commas. (13.662, 13.663, 13.664; PDF p. 730)
 - **R-13.665-parentheses-within-words** [sev 3] Don't use parentheses within a word, such as (s) on a singular noun (say one or more), (sub)licensee, (sub)contractor, (self)insured, or (s)he. (13.665, 13.666; PDF p. 731)
@@ -106,7 +106,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.910-registration-symbol** [sev 3] Contracts can drop the registration symbol: they aren't disseminated publicly, and a party is unlikely to need notice in a contract for Lanham Act recovery (15 U.S.C. s. 1111). A concerned owner should address unauthorized use expressly. (13.910, 13.911, 13.912...; PDF p. 786)
 - **R-13.927-virgule** [sev 2] Don't use the virgule (forward slash) in contracts other than to state a fraction; writers use it for per, or, and, or a vague disjunction, and there is almost always a better choice. (13.927, 13.928; PDF p. 790)
   - Look for: slash between words
-  - Fix: or; and; per; one or more of
+  - Fix: or; and; per; 1 or more of
 
 ### Chapter 16: Typography
 
@@ -142,13 +142,13 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-17.7-buried-verbs** [sev 3] Whenever possible, use strong verbs instead of abstract nouns (buried verbs, nominalizations) or adjectives; they make prose bureaucratic, add prepositions and weak verbs, and let the drafter drop the actor. (17.7, 17.8, 17.9; PDF p. 847)
 - **R-17.10-buried-verb-exception** [sev 3] Like the passive, a buried verb is useful when dropping the actor helps: Upon exercise of the Option rather than When one or more Optionholders exercise the Option. (17.10; PDF p. 849)
 - **R-17.11-gender-neutral** [sev 2] For a group that includes or might include women and men, don't use exclusively he, his, him. Use a plural pronoun with conforming changes, repeat the noun, or add a feminine or neuter pronoun or both; singular they is acceptable but each drafter decides. Don't use singular they for a member of a group made up only of entities (use it), and be accurate however you handle pronouns. (17.11, 17.12, 17.13...; PDF p. 849)
-  - HOUSE: partly superseded: Singular they is acceptable and preferred for an individual of unspecified gender; the rest of 17.11-17.18 applies.
+  - HOUSE: partly superseded: Use singular they for an individual of unspecified gender (house-style.md section 10); the rest of 17.11-17.18 applies.
   - Fix: The Stockholders must surrender their stock certificates; Each Stockholder must surrender that Stockholder's stock certificate; his, her, or its
   - Book example: Each Stockholder must surrender his stock certificates → The Stockholders must surrender their stock certificates
 - **R-17.19-wordy-phrases** [sev 3] Replace wordy phrases with simpler ones: prior to -> before; subsequent to -> after; in lieu of -> instead of; in the event that / in the event of -> if; pursuant to -> under, in accordance with, authorized by; set forth in -> stated in, in; until such time as -> until; in order to -> to; for the purpose of [verb]ing -> to [verb]; by reason of -> because of; due to the fact that -> because; despite the fact that -> although; is unable to -> cannot; is binding upon -> binds; per annum -> a year; with the exception of -> except for; and the other entries in the 17.19 table. (17.19, 17.20; PDF p. 851)
 - **R-17.21-to-the-extent-that** [sev 2] Use to the extent that only when the degree of application depends on a variable (except to the extent that the federal securities laws apply); use if when satisfying a condition applies the provision in full. (17.21; PDF p. 852)
   - Test: Does the provision apply partly, in proportion to a variable? If it applies fully once the condition is met, use if.
-  - Fix: If any document is required to be filed ..., the Seller shall prepare and sign that document.
+  - Fix: If any document is required to be filed ..., Seller shall prepare and sign that document.
   - Book example: To the extent that any document is required to be filed → If any document is required to be filed
 - **R-17.22-the-fact-that** [sev 3] The fact that can almost always be improved (by virtue of the fact that -> because; The fact that there may be no Loans outstanding -> Whether any Loans are outstanding); notwithstanding the fact that and regardless of the fact that can always be replaced by although, even though, or even if. (17.22, 17.23; PDF p. 852)
 - **R-17.24-there-is-there-are** [sev 3] Don't start a clause with there or it plus a form of to be; find the real subject and verb. (17.24; PDF p. 853)

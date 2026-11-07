@@ -266,7 +266,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-4.85-frontload-if-justified** [sev 3] Frontload selected deal information (for example, in a table at the top) only if transactional and administrative benefits justify it. (4.85, 4.86, 4.87...; PDF p. 292)
 - **R-4.89-move-not-repeat** [sev 2] Move frontloaded information out of the body; don't state it in two places. (4.89; PDF p. 293)
   - Look for: the same deal term stated in a cover table and in the body
-  - Fix: Delete one statement and refer to the other.
+  - Fix: Delete 1 statement and refer to the other.
 - **R-4.90-frontloaded-signatures** [sev 3] Be cautious about frontloading signature blocks: it shows at once whether the contract is signed, but it may encourage signing without reading, and dissuading readers from reading the boilerplate invites later claims of ignorance. (4.90; PDF p. 293)
 - **R-4.91-backending** [sev 3] "Backending" puts deal-specific information in a schedule; it makes more sense when that information is voluminous. (4.91; PDF p. 294)
 - **R-4.92-master-agreement-analogy** [sev 3] A master agreement with statements of work is analogous to backending, driven by serial transactions between the same parties; purchase orders with separate terms are analogous to both frontloading and backending. (4.92, 4.93; PDF p. 294)
@@ -385,7 +385,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Fix: Use shall only to impose a duty on a party that is the subject (3.89).
 - **R-15.22-rule-shall-mandatory** [sev 3] A rule that shall is mandatory and may is discretionary is unnecessary if you use shall only to impose a duty on the subject of the sentence; courts have long recognized shall for obligations. Drafters who overuse shall shouldn't use the rule, since it couldn't apply to their drafting. (15.22; PDF p. 824)
 - **R-15.23-rule-singular-includes-plural** [sev 2] Don't rely on a rule that the singular includes the plural and vice versa to prevent a singular/plural fight; if you mean one or more widgets, say so. (15.23; PDF p. 824)
-  - Fix: one or more [nouns]
+  - Fix: 1 or more [nouns]
 - **R-15.24-rule-successors-assigns** [sev 3] Instead of a rule that a reference to a Person includes its successors and assigns, state to what extent a party may transfer elements of its performance. (15.24; PDF p. 825)
 
 ### Chapter 18: Amendments

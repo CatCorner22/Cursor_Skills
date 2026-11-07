@@ -107,10 +107,16 @@ def load_overrides(path=OVERRIDES_PATH):
     for i, o in enumerate(ov['overrides']):
         if not isinstance(o, dict) or not isinstance(o.get('rule_ids'), list) or not all(isinstance(r, str) for r in o['rule_ids']) or not isinstance(o.get('replacement'), str):
             raise InputError(f'{path}: override {i} needs a "rule_ids" list of strings and a "replacement" string')
-    for rid, sup in ((ov.get('lint') or {}).get('suppress') or {}).items():
+    for i, a in enumerate(ov.get('additions') or []):
+        if not isinstance(a, dict) or not isinstance(a.get('statement'), str) or not all(isinstance(r, str) for r in a.get('applies_with') or []):
+            raise InputError(f'{path}: addition {i} needs a "statement" string and an "applies_with" list of strings')
+    lint = ov.get('lint') or {}
+    if not isinstance(lint, dict) or not isinstance(lint.get('suppress', {}), dict) or not isinstance(lint.get('broad_only', []), list):
+        raise InputError(f'{path}: "lint" must be an object with a "suppress" object and a "broad_only" list')
+    for rid, sup in (lint.get('suppress') or {}).items():
         try:
             re.compile(sup)
-        except re.error as e:
+        except (re.error, TypeError) as e:
             raise InputError(f'{path}: lint.suppress[{rid}] does not compile ({e})') from e
     _cache[key] = ov
     return ov

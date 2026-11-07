@@ -16,7 +16,7 @@ Read this file when classifying sentences (pass 3), when choosing a verb in a re
 | Category | Verb structure | Use it for | Example | MSCD |
 |---|---|---|---|---|
 | Agreement | *agree* | The lead-in only | *The parties therefore agree as follows:* | 3.45-3.47 |
-| Performance | *hereby* + simple present | An act done by signing | *Acme hereby sells the Units to Widgetco.* | 3.48-3.50 |
+| Performance | *hereby* + simple present | An act the party does by signing | *Acme hereby sells the Units to Widgetco.* | 3.48-3.50 |
 | Policy (no action on signing) | present continuous, negative | Saying a party isn't taking an action on signing; don't retool *hereby* performance into the negative | *In this agreement Widgetco is not assuming any Excluded Liabilities.* | 3.67 (language of policy, 3.332) |
 | Obligation on the subject | *shall* | A duty on the subject, a party | *Acme shall deliver the Units to Widgetco.* | 3.89-3.92 |
 | Obligation on the subject | *shall cause* | Subject is a party; the object isn't a legal person, or is the party's instrumentality | *Parent shall cause Sub to transfer the Assets.* | 3.160-3.165 |

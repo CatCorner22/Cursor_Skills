@@ -2898,7 +2898,7 @@
    "id": "def-shall-verbs",
    "check": "shall-in-definition",
    "severity": 3,
-   "pattern": "(?:^|(?<=[.:;]\\s)|(?<=[.:;]\\s\\s))[\\s#>*_]*(?:\\(?[A-Za-z0-9]{1,4}[.)]\\s+)?(?:In\\s+this\\s+\\w+,\\s+)?(?:[Tt]he\\s+(?:terms?|words?|expressions?)\\s+)?\\**[\"“‘]\\**[A-Z][^\\\"\\u201d\\u2019*]{0,60}\\**[\"”’]\\**\\s+(?:shall\\s+(?:also\\s+)?(?:include|refer\\s+to|denote|signify|encompass|comprise|consist\\s+of)|will\\s+(?:(?:also\\s+)?(?:include|refer\\s+to|denote|signify|encompass|comprise|consist\\s+of|mean)|be\\s+deemed\\s+to\\s+(?:mean|include|refer\\s+to)|be\\s+defined\\s+as|have\\s+the\\s+(?:same\\s+)?meanings?))\\b",
+   "pattern": "(?:^|(?<=[.:;]\\s)|(?<=[.:;]\\s\\s))[\\s#>*_]*(?:\\(?[A-Za-z0-9]{1,4}[.)]\\s+)?(?:In\\s+this\\s+\\w+,\\s+)?(?:[Tt]he\\s+(?:terms?|words?|expressions?)\\s+)?\\**[\"“‘]\\**[A-Z][^\\\"\\u201d\\u2019*]{0,60}\\**[\"”’]\\**\\s+(?:shall\\s+(?:also\\s+)?(?:mean|have\\s+the\\s+(?:same\\s+)?meanings?|include|refer\\s+to|denote|signify|encompass|comprise|consist\\s+of)|will\\s+(?:(?:also\\s+)?(?:include|refer\\s+to|denote|signify|encompass|comprise|consist\\s+of|mean)|be\\s+deemed\\s+to\\s+(?:mean|include|refer\\s+to)|be\\s+defined\\s+as|have\\s+the\\s+(?:same\\s+)?meanings?))\\b",
    "rule_ids": [
     "R-6.42-no-shall-mean"
    ],
@@ -2907,6 +2907,8 @@
     "\"Intellectual Property\" shall include patents, copyrights, trademarks, and trade secrets.",
     "\"Software\" shall refer to the computer programs in Schedule A.",
     "\"Territory\" will mean the United States.",
+  "\"Business Day\" shall mean a day other than a Saturday or Sunday.",
+  "\"Affiliate\" shall have the meaning given in Rule 405.",
     "B. Definitions.  \"Affiliate\" will have the meaning given in Rule 405."
    ],
    "lookalikes": [

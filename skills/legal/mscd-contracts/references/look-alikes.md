@@ -1,6 +1,8 @@
 # Look-alikes: correct text that resembles a problem
 
-Each line is a sentence that is correct under MSCD and the house rules, though it resembles a problem the lint or a pattern-minded reader flags. Before you flag text that matches a pattern, search this file (`grep -i "<words>" references/look-alikes.md`). The note says why the text is correct. Built from the phrase-variant knowledge base (1,210 entries); the problem forms themselves are in `data/phrase-variants.json`, which the lint runs. The last section, "Recurring cases from blind tests", lists correct text that earlier reviews flagged by mistake.
+Each line is a sentence that is correct under MSCD and the house rules, though it resembles a problem the lint or a pattern-minded reader flags. Before you flag text that matches a pattern, search this file (`grep -i "<words>" references/look-alikes.md`). The note says why the text is correct. Built from `data/phrase-variants.json` (267 checks, each with examples the lint must catch and look-alikes it must not); the lint runs that file. The last section, "Recurring cases from blind tests", lists correct text that earlier reviews flagged by mistake.
+
+Sections, by lint check: agrees-to, and-or, archaic, arising-out-of, attachment-classification, attachment-label, attachment-language, category-must, category-shall, category-should, category-will, contract-reference, cross-reference-number, date-format, defined-term, doublet, efforts, entitled-to-duty, enumeration, headings-clause, knowledge-standard, may-not, money, negative-subject-shall, nonparty-obligation, number-words, once-when-condition, ordinal, party-article, passive-voice, provided-that, reduced-passive, represents-warrants, shall-in-condition, sole-discretion, spacing, successors-assigns, survival, this-agreement-term, throat-clearing, time-ambiguity, time-is-of-the-essence, usage; then Recurring cases from blind tests.
 
 ## agrees-to
 
@@ -26,7 +28,7 @@ Each line is a sentence that is correct under MSCD and the house rules, though i
 - *In this agreement, "Triggering Event" means a Change of Control or a Qualified IPO.* Defined term containing Event. (MSCD 6.25)
 - *Smoky Peak hereby grants Customer a nonexclusive license to use the Software at the Facility during the Term.* hereby is correct in language of performance. (MSCD 3.50; 3.76)
 - *Employee hereby assigns to Company all of Employee's interest in each Invention.* Language of performance. (MSCD 3.50)
-- *During the term of this agreement and for 3 years thereafter, Employee shall not solicit any customer of Company.* MSCD itself uses thereafter this way to state a duration. (MSCD 13.826; 13.356)
+- *During the term of this agreement and for 3 years thereafter, Employee shall not solicit any customer of Company.* MSCD itself uses thereafter this way to state a duration. (MSCD 13.827; 13.356)
 - *Company shall keep a copy of the Plan and any amendments thereto at its principal office.* The there-word avoids repeating "the Plan"; MSCD 13.356 gives "any amendments thereto" as acceptable.
 - *Acme shall deliver the Units to the Port Said terminal of Orion Freight LLC no later than June 30, 2027.* Said is part of a place name (Port Said, Egypt), not a pointing word. (MSCD 13.758)
 - *Supplier shall charge Customer the same price for each Product that Supplier charges its most favored distributor.* the same is an adjective before a noun, not a pronoun. (MSCD 13.760)
@@ -81,7 +83,7 @@ Each line is a sentence that is correct under MSCD and the house rules, though i
 - *The arbitrator must state the reasons for the award in writing.* Nonparty subject: must is right. (MSCD 3.166)
 - *To obtain reimbursement for an expense, Consultant must submit an expense report to Client no later than 90 days after Consultant incurs the expense.* Condition with a to-infinitive (MSCD's "To be reimbursed" recast in active voice for house rule 1). (MSCD 3.386 (11-1))
 - *For an Exercise Notice to be effective, Holder must deliver it with the Exercise Price.* A for clause makes the condition explicit. (MSCD 3.386; 3.391)
-- *To be effective, a waiver must be in writing and the waiving party must sign it.* Condition. (MSCD 3.386; 3.546)
+- *To be effective, a waiver must be in writing and the waiving party must sign it.* Condition. (MSCD 3.386)
 - *To receive the Annual Bonus for a year, Employee must be an employee of Company on December 31 of that year.* Condition. (MSCD 3.386)
 
 ## category-shall
@@ -106,11 +108,11 @@ Each line is a sentence that is correct under MSCD and the house rules, though i
 
 - *If Company terminates Executive's employment for Cause, the Option will terminate.* Policy in a matrix clause after a conditional clause takes will. (MSCD 3.361 (10-1))
 - *Any purported transfer of Shares that breaches this agreement will be void.* Policy about a contingent future event. (MSCD 3.334 (8-1a))
-- *Neither party will be liable for breach-of-contract damages that the breaching party could not reasonably have foreseen at the time of breach.* Policy with a negative subject; house rule 8 bars only shall, and MSCD uses this wording. (MSCD 13.166)
+- *Neither party will be liable for breach-of-contract damages that the breaching party could not reasonably have foreseen at the time of breach.* Policy with a negative subject; house rule 8 bars only shall, and MSCD uses this wording. (MSCD 13.167)
 - *The parties intend that Consultant will be an independent contractor of Client.* Language of intention uses will. (MSCD 3.491)
 - *Holder may transfer the Option only by will or under the laws of descent and distribution.* Will is a noun here (a testamentary will). (none (noun))
 - *Employee's employment with Company is at will, and Company may end it without Cause.* "At will" is a noun phrase, not the modal. (none (noun))
-- *Contractor is liable for any Loss that results from the willful misconduct of Contractor's employees.* Word-boundary trap: willful. (none)
+- *Buyer shall pay Seller $50,000 for the goodwill of the Business.* Word-boundary trap: goodwill, not the modal. (none)
 - *If Buyer fails to pay an installment on its due date, the unpaid balance will bear interest at the Default Rate.* Policy after a conditional clause. (MSCD 3.361)
 
 ## contract-reference
@@ -154,13 +156,13 @@ Type contract-reference: an unnumbered internal reference (*above*, *below*, *th
 - *"Register," "Registered," and "Registration" refer to registration under the Securities Act of 1933.* 'Refer to' is right where the terms are different parts of speech. (MSCD 6.43)
 - *"Losses" means damages, fines, and penalties and includes reasonable attorneys' fees.* Full definition plus enlarging language; contrast with 'means and includes'. (MSCD 6.39)
 - *"Separation from Service" has the meaning given in Section 409A of the Internal Revenue Code.* Points to a statute, not to another part of this agreement. (MSCD 6.99)
-- *Each capitalized term that this amendment uses but does not define has the meaning that the Credit Agreement gives it.* Judgment call: correct in an amendment or other ancillary document whose base agreement holds the definitions. (MSCD 6.122)
+- *Each capitalized term that this amendment uses but does not define has the meaning that the Credit Agreement gives it.* Judgment call: correct in an amendment or other ancillary document whose base agreement holds the definitions. (judgment call; MSCD 6.122 covers only undefined and unused terms)
 - *Employee may serve as a director of any company that does not compete with Company.* A party's common-noun defined term may also appear in lowercase in its ordinary sense (rider to MSCD 6.10). (MSCD 6.10; MSCD 6.11)
 - *"Confidential Information" means all nonpublic information that Discloser provides to Recipient but does not include information that is publicly available.* Limiting language after a full definition. (MSCD 6.39)
 
 ## doublet
 
-- *Any purported assignment that breaches this section is void.* Correct on voice: a linking verb plus an adjective is not passive. Flag the tense: a transfer that breaches the agreement is a contingent future event, so *will be void* (MSCD 3.334, example [8-1]). (house rule 1; MSCD 1.36; 3.334)
+- *Any purported assignment that breaches this section is void.* *void* alone, not the doublet *null and void* (MSCD 1.36). Correct on voice too: a linking verb plus an adjective is not passive. Flag the tense: a transfer that breaches the agreement is a contingent future event, so *will be void* (MSCD 3.334, example [8-1]). (house rule 1; MSCD 1.36; 3.334)
 - *Acme shall indemnify every director and every officer of Widgetco against all Losses arising out of the Merger.* Repeating every cures the every-X-and-Y ambiguity; it is not each and every. (MSCD 11.40)
 - *Customer's sole remedy for breach of the warranty is a refund of the Fees for the defective Services.* MSCD's recommended replacement for sole and exclusive remedy. (MSCD 13.784)
 - *The state and federal courts in Davidson County, Tennessee, have exclusive jurisdiction over any dispute arising out of this agreement.* 2 different court systems, not synonyms; exclusive jurisdiction is MSCD's form. (MSCD 1.36; 13.784)
@@ -171,13 +173,13 @@ Type contract-reference: an unnumbered internal reference (*above*, *below*, *th
 - *Acme shall not assign its rights or delegate its obligations under this agreement without Widgetco's consent.* Rights and obligations are different things. (MSCD 1.36)
 - *The Purchase Price includes all sales and use taxes on the Equipment.* 2 different taxes. (MSCD 1.36)
 - *Supplier shall comply with all export laws, including the Export Administration Regulations.* including alone, used in a targeted way. (MSCD 13.361)
-- *The Initial Term begins on the date the parties entered into this agreement and ends on the 2nd anniversary of that date.* MSCD's own phrase; not made and entered into. (MSCD 2.31)
+- *The Initial Term begins on the date of this agreement and ends on the 2nd anniversary of that date.* MSCD's phrase for the date (2.23); *is dated*, not *made and entered into* (2.21). (MSCD 2.21; 2.23)
 
 ## efforts
 
 - *Distributor shall use reasonable efforts to promote the Products in the Territory.* The house standard. (MSCD 8.134)
 - *Calder shall use Reasonable Efforts to obtain Regulatory Approval of the Product in Canada.* Assumes the contract defines Reasonable Efforts, which MSCD recommends. (MSCD 8.155)
-- *The parties shall negotiate in good faith the terms of any Extension Agreement.* The right standard for an agreement to agree. (MSCD 8.20)
+- *The parties shall negotiate in good faith the terms of any Extension Agreement.* The right standard for an agreement to agree. (MSCD 8.21)
 - *Trustee shall act in the best interests of the Beneficiaries when making any distribution.* A fiduciary standard, not an efforts standard. (MSCD 8.91)
 - *Landlord hereby leases to Tenant Suite 400 of the Endeavour Building at 120 Fourth Avenue North, Nashville, Tennessee.* A building name. (MSCD 8.9)
 - *Distributor shall bear the expense of its own marketing efforts in the Territory.* efforts names an activity here; it is not an efforts standard. (MSCD 8.13)
@@ -332,11 +334,11 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 ## shall-in-condition
 
 - *If Distributor fails to meet the Minimum Purchase Requirement for a Quarter, Manufacturer may terminate this agreement.* Present tense in the conditional clause. (MSCD 3.358)
-- *If Tenant receives a notice of violation from a Governmental Authority, Tenant shall give Landlord a copy of that notice.* Shall in the matrix clause is unaffected by the conditional clause. (MSCD 3.361)
+- *If Tenant receives a notice of violation from a Governmental Authority, Tenant shall give Landlord a copy of that notice.* The conditional clause doesn't affect shall in the matrix clause. (MSCD 3.361)
 - *Unless Widgetco consents, Acme shall not transfer the Shares.* Shall not in the matrix clause after unless. (MSCD 3.361; 3.363)
 - *If the FDA does not approve the Licensed Product on or before December 31, 2028, Licensee may terminate this agreement.* Negative present tense in the conditional clause. (MSCD 3.358)
 - *Buyer's obligation to close is subject to the condition that Seller has obtained the Landlord Consent.* Present perfect in a condition stated as policy. (MSCD 3.395; 3.397)
-- *Each Share that Investor owns on the date of this agreement or acquires later is subject to this agreement.* Present tense in the relative clause, and it says whether after-acquired Shares are covered. (MSCD 3.507; 3.508)
+- *Each Share that Investor owns on the date of this agreement or acquires later is subject to this agreement.* Present tense in the relative clause, and it says whether the agreement covers after-acquired Shares. (MSCD 3.507; 3.508)
 
 ## sole-discretion
 
@@ -371,7 +373,7 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 
 - *If Employee dies during the Term, Company shall pay the Death Benefit to Employee's surviving spouse.* Ordinary use of surviving. (MSCD 13.822)
 - *After the Merger, the Surviving Corporation shall pay the Retention Bonuses to the Key Employees.* Merger term of art. (MSCD 13.822)
-- *During the term of this agreement and for 3 years thereafter, the Receiving Party shall not disclose any Confidential Information.* The duration built into the obligation, as MSCD recommends. (MSCD 13.826)
+- *During the term of this agreement and for 3 years thereafter, the Receiving Party shall not disclose any Confidential Information.* The duration built into the obligation, as MSCD recommends. (MSCD 13.827)
 - *Buyer may bring a claim for breach of a statement of fact in this agreement only if Buyer notifies Seller of the claim no later than 18 months after the Closing Date.* A time limit on claims, as MSCD recommends. (MSCD 13.829)
 - *As a result, in addition to any other consequences under law, this power is irrevocable and will survive Owner's death or incompetence.* MSCD's own wording for a power of attorney coupled with an interest. (MSCD 13.200)
 - *Termination of this agreement does not affect any rights that accrued before termination.* Stating settled law can help. (MSCD 13.825)
@@ -402,16 +404,16 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 - *Tenant may extend the Term by notifying Landlord no later than 180 days before the Initial Term ends.* A plain backward deadline follows MSCD 10.65's counting convention (count 1 terminal day, not the other); the court split in 10.66 is about minimum-notice wording (at least N days' notice), so don't recast this deadline with 2 counts. (MSCD 10.65-10.66)
 - *Seller shall obtain the Landlord Consent on or before March 1, 2027.* Inclusive on its face. (MSCD 10.23)
 - *Lender shall fund the Loan no later than March 1, 2027.* The catalog's fix form; the day is included. (MSCD 13.608; MSCD 10.23)
-- *Licensee may sell its remaining inventory of Licensed Products through December 31, 2027.* 'Through' is likely inclusive. (MSCD 10.24)
+- *Licensee may sell its remaining inventory of Licensed Products through December 31, 2027.* 'Through' is likely inclusive. (MSCD 10.25)
 - *Buyer may exercise the Option on or after January 1, 2027.* Inclusive on its face. (MSCD 10.23)
 - *The Exclusivity Period starts on January 1, 2027, and ends on June 30, 2027.* Paired points with 'starts on' and 'ends on'. (MSCD 10.23; MSCD 10.24)
-- *Seller shall deliver the Estoppel Certificates to Buyer before March 1, 2027.* 'Before' is likely exclusive and MSCD prefers it: delivery on March 1 is late. (MSCD 10.24)
+- *Seller shall deliver the Estoppel Certificates to Buyer before March 1, 2027.* 'Before' is likely exclusive and MSCD prefers it: delivery on March 1 is late. (MSCD 10.25)
 - *The Initial Term is 3 years, commencing on January 1, 2027.* 'Commences on' is likely inclusive (MSCD 10.24).
 - *Any dispute between Acme and Widgetco over an invoice does not suspend Acme's duty to pay the undisputed amount.* 'Between ... and' joins parties, not days. (MSCD 10.23)
 - *Seller shall ship the Goods from its Memphis warehouse to Buyer's Nashville plant.* 'From ... to' marks places, not a period. (MSCD 10.23)
 - *Seller retains title to the Equipment until Buyer pays the Purchase Price in full.* 'Until' an event (a moment), not a day, so no inclusive-day question arises. (MSCD 10.23)
 - *Each Bid must reach Seller no later than 5:00 p.m. Central time on March 1, 2027.* Time of day fixes the boundary. (MSCD 10.33)
-- *Licensee may cure any breach no later than 30 days after Licensee receives notice of the breach.* Receipt is the anchor; contrast with 'after notice'. (MSCD 10.62)
+- *Licensee may cure any breach no later than 30 days after Licensee receives notice of the breach.* Receipt is the anchor; contrast with 'after notice'. (MSCD 10.63)
 
 ## time-is-of-the-essence
 
@@ -426,7 +428,7 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 Type usage: a wordy or imprecise usage that MSCD 17.19 or the Selected Usages chapter treats and no catalog type covers.
 
 - *Supplier shall notify Customer of any Security Breach, and Customer may audit Supplier's systems after any such Security Breach.* such after any means "of this kind". (MSCD 13.816)
-- *Supplier is not liable for any delay that events beyond its control cause, such as floods, strikes, and epidemics.* such as introduces examples. (MSCD 13.816)
+- *Supplier is not liable for any delay that events beyond its control cause, including floods, strikes, and epidemics.* The *such* in *any such delay* is "of this kind"; *such as* itself is a severity-1 finding under MSCD 13.806, so this list uses *including*. (MSCD 13.816; 13.806)
 - *Acme and Widgetco shall contribute $60,000 and $40,000, respectively, to the Joint Fund.* 2 lists of equal length, joined by and. (MSCD 13.746)
 - *No person other than the parties is a third-party beneficiary of this agreement.* Term of art that MSCD keeps. (MSCD 13.881)
 - *Caterer shall set up the buffet in the Event Space no later than 5:00 p.m. Central time.* "the Event Space" is a defined place, not "in the event".
@@ -436,7 +438,7 @@ Type usage: a wordy or imprecise usage that MSCD 17.19 or the Selected Usages ch
 
 ## Recurring cases from blind tests
 
-- *The parties shall each designate a project engineer and a plant coordinator, Acme and Widgetco respectively.* Respectively pairs 2 lists of equal length, both joined by and. (MSCD 13.746)
+- *Acme and Widgetco shall designate a project engineer and a plant coordinator, respectively.* Respectively pairs 2 lists of equal length, both joined by *and*; don't add *each*, which contradicts it. (MSCD 13.746)
 - *If the quality manager is unavailable, they may designate another employee to approve the shipment.* May grants a nonparty discretion and imposes no duty; singular they is the house form. (MSCD 3.166; house rule 10)
 - *Contractor shall use the Customer Data only to perform the Services.* Only sits right before the purpose it limits; MSCD 3.222's ambiguity concerns may ... only, not shall ... only. But don't write it as a fix for *may only use*, because there it adds a duty to use: write the prohibition *shall not use ... other than* (3.226). (MSCD 13.649)
 - *Lessee may operate the Equipment only from April 1 through October 31.* Only before a time phrase is MSCD's own fix for a misplaced only (*may move furniture ... only during nonbusiness hours*, 13.651); it limits when, so 3.222's 2 readings don't arise. The dates still need the inclusive-day check (10.24). (MSCD 13.651)

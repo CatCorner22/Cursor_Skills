@@ -5,15 +5,15 @@
 ## Definitions
 
 - Text is **ambiguous** if it can express 2 or more inconsistent meanings (7.5). It is still ambiguous if context resolves it (7.6).
-- A dispute alone doesn't make text ambiguous, and a comma alone shouldn't decide meaning (7.28-7.29; 12.75-12.78; Adams, "What We Talk About When We Talk About Ambiguity").
+- A dispute alone doesn't make text ambiguous, and never let a comma alone decide meaning (7.28-7.29; 12.75-12.78).
 - The 6 sources of uncertain meaning (7.3): ambiguity; not being sufficiently specific; mistake; conflict; not addressing an issue; vagueness (see `vagueness.md`).
 
 ## Causes added by the riders
 
 - **Right-node-raising pivot ambiguity**: 2 coordinated clauses share a final element, and it's unclear which words the shared element attaches to (*subject to the jurisdiction of and be construed according to the laws of the State of Florida*). Offsetting commas "aren't optional"; better, repeat the shared element. MSCD's "delimiting commas in coordination" (12.79-12.87) are now "offsetting commas in right node raising."
 - **Each or in the aggregate**: a quantity attributed to several items or payments (*monthly severance payments ... in the amount of $680,000*). Say *each* or *in the aggregate*.
-- **Ambiguity of the specific versus the general**: *ejusdem generis* and *including* (*insects, birds, rodents, or other animals*). Apply the *including* rules (13.360-13.407).
-- **11.106, second printing**: for a single item, the *every/each/all* ambiguity also afflicts *the whole* and *the entire*.
+- **Ambiguity of the specific versus the general**: *ejusdem generis* and *including* (*insects, birds, rodents, or other animals*). Apply the *including* rules (13.359-13.407).
+- **11.106, 2nd printing**: for a single item, the *every/each/all* ambiguity also afflicts *the whole* and *the entire*.
 
 ## Elaboration: terms of art in their everyday sense
 

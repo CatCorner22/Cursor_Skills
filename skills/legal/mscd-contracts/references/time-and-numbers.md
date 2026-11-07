@@ -70,7 +70,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-10.69-within-ambiguity** [sev 1] Within ambiguity: within X days of an event can denote a period running forward, backward, or both (within seven days of the first anniversary), and within X days prior to can mean "during the X days before" or "at least X days before." (10.69, 10.70, 10.71; PDF p. 483)
   - Look for: within X days (or months) of, or within X days prior to, an event or date
   - Test: Ask whether the period could run before the reference point, after it, or both.
-  - Fix: Say no later than seven days after it receives a Sale Notice (or during the X days before, or at least X days before).
+  - Fix: Say no later than 7 days after it receives a Sale Notice (or during the X days before, or at least X days before).
   - Book example: within seven days of receiving a Sale Notice → no later than seven days after it receives a Sale Notice
 - **R-10.72-choose-unit** [sev 3] Choose the unit of time deliberately; for days, often prefer business days, defined as a day other than a weekend or public holiday in a specified jurisdiction, or a day banks are open. (10.72, 10.73; PDF p. 483)
 - **R-10.74-no-calendar-days** [sev 3] Don't use calendar days instead of days; it is unnecessary and potentially confusing. (10.74; PDF p. 484)
@@ -81,7 +81,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-10.80-bi-semi-ambiguity** [sev 1] Bi- and semi- ambiguity: biannual and semiannual both mean twice a year, but some dictionaries give biannual the meaning of biennial; bimonthly and biweekly invite similar confusion. (10.80; PDF p. 485)
   - Look for: a frequency word with the prefix bi- or semi-
   - Test: Ask whether the word could mean twice per unit or once every two units.
-  - Fix: Say twice a year (month, week) or every two years (months, weeks).
+  - Fix: Say twice a year (month, week) or every 2 years (months, weeks).
 - **R-10.81-no-year-and-a-day** [sev 3] Instead of agreeing not to start bankruptcy proceedings until one year and a day after repayment, say no sooner than one year after. (10.81, 10.82, 10.83; PDF p. 485)
 - **R-10.84-on-day-long** [sev 3] When an act must occur on a specified date, the period is that day's 24 hours; no beginning or ending point need be stated, though you may add a time of day. (10.84; PDF p. 486)
 - **R-10.85-not-less-than-obligation** [sev 1] To state how many units of time satisfy a condition, use at least X (not not less than X or X or more); don't use any of these in language of obligation or prohibition, where they suggest the duration is open-ended. (10.85, 10.86, 10.87; PDF p. 486)
@@ -117,7 +117,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-10.111-consecutive-ambiguity** [sev 1] Block-of-time ambiguity: when the thing apportioned is itself a unit of time (two months of each year), it is unclear whether it must be taken as a single block. (10.111, 10.112, 10.113; PDF p. 492)
   - Look for: a number of days, weeks, or months to be taken within a year or month
   - Test: Ask whether the time may be split into several shorter blocks.
-  - Fix: To require a block, use consecutive (two consecutive months each year; convert one month to 30 consecutive days). If not, say so (over the course of one or more visits, each no shorter than five business days).
+  - Fix: To require a block, use consecutive (2 consecutive months each year; convert 1 month to 30 consecutive days). If not, say so (over the course of 1 or more visits, each no shorter than 5 business days).
   - Book example: (none) → Over the course of one or more visits, each no shorter than five business days, excluding travel days, the Employee shall work in Acme's Budapest office for two months of each year.
 - **R-10.114-promptly-equals-immediately** [sev 2] Treat promptly and immediately (and prompt and immediate) as meaning the same thing in contracts: courts apply a reasonableness standard to both. (10.114, 10.115, 10.116...; PDF p. 493)
   - Exceptions: Immediately also means "without intermediary" (the immediately preceding Business Day); that use is not a speed standard (10.119).
@@ -160,7 +160,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.546-money-decimals** [sev 3] Use zeros after a decimal point only when fractional amounts appear in the same context ($2, not $2.00, unless the provision also refers to, say, $3.94); don't add and 00/100 dollars; for less than a whole unit, use $0.32, not 32 cents written with the cent sign. (13.546, 13.547; PDF p. 702)
 - **R-13.548-money-separators** [sev 2] Decimal and thousands separators vary by country; pick conventions and apply them consistently. (13.548; PDF p. 702)
   - Look for: amounts using both 1,000.00 and 1.000,00 styles
-  - Fix: Use one separator convention throughout.
+  - Fix: Use 1 separator convention throughout.
 - **R-13.549-money-large-amounts** [sev 3] A mix of words and digits for large amounts ($4.4 billion; $3 million) is acceptable and can aid reading, but don't switch to it if other numbers in the same context use all digits, and don't go beyond two decimal places. (13.549; PDF p. 703)
 - **R-13.550-billion** [sev 1] Billion means a thousand million in the U.S. but a million million in Germany and many non-English-speaking regions; if confusion might arise in an international transaction, use only digits for amounts of one thousand million units or more. (13.550; PDF p. 703)
   - Fix: Digits only (1,000,000,000)
