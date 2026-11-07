@@ -59,16 +59,21 @@
    "quote": "A notice is effective when the recipient receives it.",
    "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
    "fix": "A notice will be effective when the recipient receives it",
-   "optional": true,
    "added_by": "audit"
+  },
+  {
+   "n": 7,
+   "type": "time-ambiguity",
+   "tier": "sneaky",
+   "anchor": "no later than 30 days before the proposed closing date",
+   "quote": "2. A Shareholder that proposes to Transfer Shares shall notify Company and the other Shareholders of the proposed Transfer no later than 30 days before the proposed closing date, and no Shareholder shall Transfer any Shares to a Competitor.",
+   "severity": 3,
+   "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the count removes a doubt rather than a court split (rule record R-10.65).",
+   "fix": "... no later than the 30th day before the proposed closing date, ...",
+   "added_by": "blake-answers-2026-11-07"
   }
  ],
  "traps": [
-  {
-   "anchor": "no later than 30 days before the proposed closing date",
-   "quote": "2. A Shareholder that proposes to Transfer Shares shall notify Company and the other Shareholders of the proposed Transfer no later than 30 days before the proposed closing date, and no Shareholder shall Transfer any Shares to a Competitor.",
-   "why_correct": "*no later than* is the house time standard, not a negative subject; the duty to notify is a real duty of the proposing Shareholder. It sits in the same sentence as issue 1, which tests whether the skill confines the flag to the negative subject."
-  },
   {
    "anchor": "No Shareholder may pledge",
    "quote": "3. No Shareholder may pledge any Shares as security for a loan without the prior written consent of Company's board of directors.",
@@ -97,6 +102,18 @@
    "traps_removed": [],
    "change": "optional category-will issue n6 added",
    "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  },
+  {
+   "n": 6,
+   "anchor": "notice is effective",
+   "change": "Blake answer Q18 (November 7, 2026): optional dropped; the issue is required (will for a policy about a contingent future event, MSCD 3.334, 3.369, 13.209) (optional dropped)",
+   "why": "See the key entry."
+  },
+  {
+   "n": 7,
+   "anchor": "no later than 30 days before the proposed closing date",
+   "change": "Blake answer Q9 (November 7, 2026): trap made a required issue (backward count)",
+   "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the "
   }
  ]
 }

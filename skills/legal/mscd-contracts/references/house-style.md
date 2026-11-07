@@ -5,6 +5,7 @@ These rules come from Blake Reagan, the user. They override MSCD5 and Adams's bl
 Apply these rules to everything the skill writes: redlines, comments, drafts, and suggested wording in a review. When you apply one against MSCD, say so in the finding ("house rule; MSCD 14.15 differs"), so Blake can see the departure.
 
 ## Contents
+
 0. Severity of a house-rule finding
 1. Active voice only
 2. Digits for every number
@@ -12,9 +13,9 @@ Apply these rules to everything the skill writes: redlines, comments, drafts, an
 4. Cross-references: avoid; refer by heading
 5. Spacing: 2 spaces between sentences, 1 after a colon
 6. Attachments: Schedule and Exhibit, capitalized
-7. Dates: January 1, 2027
+7. Dates: January 1, 2027; deadlines and periods
 8. Prohibition: never shall with a negative subject
-9. Typography: 12-point Aptos, clean visual lines
+9. Typography: 12-point Aptos, clean visual lines, conspicuous clauses
 10. Other settled choices
 11. Party names: no article
 12. Never *should*
@@ -22,7 +23,7 @@ Apply these rules to everything the skill writes: redlines, comments, drafts, an
 
 ## Severity of a house-rule finding
 
-Rule 8 (*shall* with a negative subject), an undefined or 2-form defined term, and a passive with a modal that hides who must or may act when more than 1 party could be the actor (*Payment shall be made*) are severity 1; if only 1 party could act, that passive is severity 2. Typography (rules 5 and 9: spacing, font, size, alignment, underlining, bold definitions) and reduced passives (rule 1) are severity 3. *Should* for a duty, advice, or an expectation (rule 12) and a term of art used in 2 senses in 1 contract (rule 13) are severity 1. Every other house rule is severity 2. A finding under an MSCD rule that the house style doesn't change takes the severity in its rule record. When a finding is both a house-rule breach and an ambiguity, it takes the higher severity. The lint applies this policy, so for a lint finding use the lint's severity unless the context changes it (the severity policy in SKILL.md says when), and say why.
+Rule 8 (*shall* with a negative subject), an undefined or 2-form defined term, a capitalized defined term used inside its own definition (section 10), and a passive with a modal that hides who must or may act when more than 1 party could be the actor (*Payment shall be made*) are severity 1; if only 1 party could act, that passive is severity 2. Typography (rules 5 and 9: spacing, font, size, alignment, underlining, bold definitions), typed numbering in a redline (rule 3, flagged once), *RESOLVED, that* in a written consent (section 10), and reduced passives (rule 1) are severity 3. The exception is a conspicuous clause (rule 9): capitals, or type that isn't bold and 14-point, is severity 2, because that formatting is what makes the clause conspicuous; a missing initial line is severity 3. *Should* for a duty, advice, or an expectation (rule 12) and a term of art used in 2 senses in 1 contract (rule 13) are severity 1. Every other house rule is severity 2. A finding under an MSCD rule that the house style doesn't change takes the severity in its rule record. When a finding is both a house-rule breach and an ambiguity, it takes the higher severity. The lint applies this policy, so for a lint finding use the lint's severity unless the context changes it (the severity policy in SKILL.md says when), and say why.
 
 ## 1. Active voice only
 
@@ -31,6 +32,7 @@ Rule 8 (*shall* with a negative subject), an undefined or 2-form defined term, a
 **Why it works with MSCD.** MSCD already requires the active voice for anything a party does (3.15). The house rule extends that to the cases where MSCD tolerates the passive. The reader then always sees who acts.
 
 **How to recast the hard cases:**
+
 | Passive form | Active recast | Note |
 |---|---|---|
 | *if any Necessary Project Approval is revoked* | *if any Person revokes a Necessary Project Approval* | Name a catchall actor when the actor is unknown or plural. Use the contract's defined term for persons if it has one. |
@@ -38,8 +40,11 @@ Rule 8 (*shall* with a negative subject), an undefined or 2-form defined term, a
 | *Section 4 of the Original Agreement is hereby amended to read as follows:* | *The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows:* | Amendments become language of performance with the parties as subject. The reference is to another agreement, so it keeps that agreement's number and adds its heading (section 4, provisional default). |
 | *The Shares will be issued at Closing* | *Acme shall issue the Shares at Closing* | A party's action: name the party and pick the category (here, obligation). |
 | *is payable*, *is exercisable*, *is due* | *Acme shall pay*, *Lee may exercise* | MSCD agrees (3.336-3.338). |
+| *solicit any employee of Company to be hired by a competitor* | *solicit any employee of Company to accept employment with a competitor* | A passive infinitive hides who acts; the recast gives the employee's own act. Recast *to be employed*, *to be engaged*, and *to be retained* the same way, every time (Blake's decision). |
+| *The parties are signing this agreement on the date stated in the introductory clause.* (MSCD's concluding clause, 5.3) | *The parties are signing this agreement on the date that the introductory clause states.* | A reduced passive with a clean active form, so MSCD's own wording takes the recast (Blake's decision). The same recast applies to *as of the date stated in the introductory clause*: *as of the date that the introductory clause states*. |
 
 **Contingencies.**
+
 - A linking verb plus an adjective is not passive: *is void*, *is effective*, *is liable*, *is entitled*, and *is dated* in the introductory clause (MSCD 2.21), where *dated* describes the agreement and no actor is missing. Don't flag these as passive. Voice is the only question here; the tense is pass 3's question (a transfer that breaches the agreement is a contingent event, so *will be void*, MSCD 3.334). (But *is entitled to* has its own MSCD problems; see `verbs.md`.)
 - A past participle used as an adjective before a noun is not passive (*the attached form*, *the Excluded Assets*).
 - **Fixed exception: *is not required to*** (Blake's decision). It is passive in form, but it is MSCD's verb structure for the absence of obligation (3.292), and it hides no actor: the party is the subject (*Acme is not required to repair the Equipment*). Its active alternative, *this agreement does not require Acme to*, is a form MSCD rejects. Use it as is, and use the active voice after it (3.295).
@@ -52,44 +57,51 @@ Rule 8 (*shall* with a negative subject), an undefined or 2-form defined term, a
 **Rule.** State every number in Arabic digits: *2 days*, *the 3rd anniversary*, *10 Business Days*, *$5,000*. Never spell a number out, and never use words and digits together (*five (5)*). Supersedes 14.15-14.16 and 14.19-14.21. Keeps 14.5-14.11 (no words and digits) and 14.12 (digits for the big number).
 
 **Contingencies.**
+
 - Don't start a sentence with a digit. Restructure the sentence (*Within 30 days...* becomes *Acme shall ..., no later than 30 days after ...*), rather than spelling the number out.
 - **When *one* is a number** (Blake's decision). Write a digit whenever the word counts something: *1 or more Units*, *1 of the parties*, *1 party*, *any 1 Lender*. Keep the word where *one* is a pronoun or part of another word: *no one*, *one another*, *each one*, *the one that*, *anyone*, *one-time*, *one-way*. The test: if you could replace the word with *2* and the sentence would still make sense, it counts something, so use the digit.
-- Ordinals: write *1st*, *2nd*, *3rd* where the word counts something (*the 1st anniversary*, *the 2nd installment*). Words such as *first* that don't count (*first-priority lien*, *at first*) and fixed terms (*right of first refusal*, *first-class mail*) aren't numbers; leave them.
-- Fractions: *1/2* or *50%* by context; MSCD prefers a percentage when other percentages appear nearby (13.670-13.671).
+- Ordinals: write *1st*, *2nd*, *3rd* where the word counts something (*the 1st anniversary*, *the 2nd installment*). Words such as *first* that don't count (*first-priority lien*, *at first*) and fixed terms (*right of first refusal*, *first-class mail*) aren't numbers; leave them. A document's name keeps its word: *Second Amendment*, *this second amendment*, *the First Amended and Restated Agreement* (Blake's decision).
+- Fractions: fraction words stay words: *half*, *one-half*, *a third*, *a quarter* (Blake's choice). A fraction already in figures takes *1/2* or *50%* by context; MSCD prefers a percentage when other percentages appear nearby (13.670-13.671).
 - Money and percentages follow MSCD 13.544-13.556 and 14.53-14.55, in digits.
 - A number inside a proper name or quotation stays as written (*Fifth Third Bank*).
 
 ## 3. Enumeration: I., A., 1., (a), (i); no only child
 
-**Rule.** Use this hierarchy, 1 tab further in for each level, with Word's native multilevel numbering:
+**Rule.** Use this hierarchy for the outline, 1 tab further in for each level:
 
 | Level | Marker | What it numbers |
 |---|---|---|
 | 1 | I., II., III. | Articles (groups of sections), with a heading in capitals |
 | 2 | A., B., C. | Sections, each with a bold heading |
 | 3 | 1., 2., 3. | Subsections (distinct aspects of the section's topic) |
-| 4 | (a), (b), (c) | Enumerated clauses within a sentence |
+| 4 | (a), (b), (c) | Enumerated clauses within a sentence, and list items that are full sentences (Blake's decision) |
 | 5 | (i), (ii), (iii) | Subclauses |
 
 Supersedes 4.11, 4.17, 4.29-4.30, 4.47-4.49, 4.58-4.59, and 4.62 (MSCD's numbering scheme and its Word styles). If a short contract has no articles, start at level 2 (A., B., C.) and say so in the intake summary.
+
+**Native numbering.** Convert to native Word numbering only in a document Blake drafts. In a redline of an existing document, keep its typed or native numbering, and flag typed numbering once at severity 3 (Blake's decision).
+
+**The outline only.** The scheme governs the outline only. Inline enumeration inside a sentence (*(1) ... and (2) ...*) and numbered definitions keep their form: don't flag them, and don't reletter them (Blake's decision). What you draft uses (a) and (i) for enumerated clauses and lists its definitions without markers.
 
 **Section line.** The section letter takes a period, and the bold heading runs into the text and also ends with a period, followed by 2 spaces: **A. Purchase and Sale.**  Seller shall sell the Assets to Buyer. (Blake's decision; MSCD 4.59-4.60 put no period after either.)
 
 **Every letter.** Section letters run through the whole alphabet, I and O included (Blake's decision). An article I. and a section I. can share a label; the level tells them apart: an article sits at the margin with its heading in capitals, and a section sits 1 tab in with a bold heading. The lint reads I. after H. as a section.
 
-**No only child.** Never create a single item at any level (a lone A. under I., a lone 1. under A., a lone (a)). If a parent has only 1 sub-concept, put that text directly under the parent with no marker. Supersedes 4.20.
+**No only child.** Never create a single item at any level below the article (a lone 1. under A., a lone (a)). If a parent has only 1 sub-concept, put that text directly under the parent with no marker. An article may hold a single section (a Definitions article with only A.; Blake's decision); MSCD 4.20 agrees.
 
 **MSCD rules that still apply within the house scheme:** give every section a heading (4.21-4.27); don't use unenumerated paragraphs in a section that has subsections (4.28); always use introductory text before enumerated clauses and put nothing after them (4.37-4.38); don't use bullets (4.53); don't follow a number at 1 level directly by the 1st item of the next level down with no text between them (4.54); 1 set of enumerated clauses per provision (4.55); about 15 lines per block before dividing (4.63).
 
-**Definitions.** A set of autonomous definitions isn't enumerated (MSCD 6.27): list them in alphabetical order, each its own paragraph without a marker, under the section that introduces them (*In this agreement, the following definitions apply:*). Don't number definitions 1., 2., 3. to fit this hierarchy; on a draft that numbers them, flag it at severity 3 and remove the numbers when you renumber.
+**Definitions.** In a document Blake drafts, a set of autonomous definitions isn't enumerated (MSCD 6.27): list them in alphabetical order, each its own paragraph without a marker, under the section that introduces them (*In this agreement, the following definitions apply:*), and don't number them 1., 2., 3. to fit this hierarchy. On a draft that already numbers its definitions, keep the numbers and don't flag them (the outline only, above).
 
 **Renumbering.** When you renumber an existing contract into this scheme, keep an old-to-new map and give it to Blake with the redline.
 
 ## 4. Cross-references: avoid; refer by heading
 
-**Rule.** Avoid internal cross-references; restructure so each provision stands on its own (MSCD agrees: "the fewer cross-references in a contract, the better," 4.98). Where a reference is unavoidable, refer to the provision by its heading, not its number: *as stated in the section titled "Indemnification"* or *under the Indemnification section*. Supersedes 4.100-4.106 and 4.108-4.109 (references by number, the rule against headings in references, and automatic cross-references).
+**Rule.** Avoid internal cross-references; restructure so each provision stands on its own (MSCD agrees: "the fewer cross-references in a contract, the better," 4.98). Where a reference is unavoidable, refer to the provision by its heading, not its number: *under the section titled "Indemnification"*. Supersedes 4.100-4.106 and 4.108-4.109 (references by number, the rule against headings in references, and automatic cross-references).
 
 **Contingencies.**
+
+- **No reduced passive before the heading.** *Stated*, *described*, *set forth*, *set out*, *specified*, or *listed in the section titled ...* is a reduced passive (house rule 1), so every one takes a finding, *as stated in* included (Blake's decision). For *as stated in* or *in the manner stated in*, write *under the section titled "Payment"*. For a participle that modifies a noun, write *the sale that the section titled "Consent" describes*.
 - **Headings become operative.** Every heading used in a reference must be unique in the contract and must match the reference word for word. Check every reference against the headings after every edit; renaming a heading breaks a reference just as renumbering would.
 - **The headings clause.** A clause saying headings "are for convenience only and do not affect" meaning (MSCD 15.18) undercuts references that identify provisions by heading. Under the house rule every reference is by heading, so always delete that clause or limit it ("Headings do not affect the meaning of the provisions they introduce, but references to a provision by its heading identify that provision"), and explain why in a comment.
 - References to attachments name the attachment (*Schedule A*), which is not an internal cross-reference.
@@ -105,11 +117,17 @@ Supersedes 4.11, 4.17, 4.29-4.30, 4.47-4.49, 4.58-4.59, and 4.62 (MSCD's numberi
 
 ## 6. Attachments
 
-**Rule.** Write references to attachments with initial capitals: *Schedule A*, *Exhibit 2*. Schedules take letters (*Schedule A, Schedule B*) and exhibits take numbers (*Exhibit 1, Exhibit 2*), so no schedule and exhibit share a designation; relabel any other system and update every reference. MSCD allows sequential letters or numbers, or section numbers, and suggests a hybrid of schedules by section number and exhibits by letter (5.80-5.83); this house rule supersedes those options. Supersedes MSCD's lowercase convention (5.79, 17.35). Every other MSCD attachment rule applies in full; see `attachments.md`. Blake asked for the schedule-versus-exhibit check on every contract: check every attachment, every time.
+**Rule.** Write references to attachments with initial capitals: *Schedule A*, *Exhibit 2*. Schedules take letters (*Schedule A, Schedule B*) and exhibits take numbers (*Exhibit 1, Exhibit 2*), so no schedule and exhibit share a designation; relabel any other system and update every reference. MSCD allows sequential letters or numbers, or section numbers, and suggests a hybrid of schedules by section number and exhibits by letter (5.80-5.83); this house rule supersedes those options. Supersedes MSCD's lowercase convention (5.79, 17.35). A document with its own signature blocks is a stand-alone document: label it Exhibit, even when the draft calls it Schedule A (Blake's decision; MSCD 5.72). Every other MSCD attachment rule applies in full; see `attachments.md`. Blake asked for the schedule-versus-exhibit check on every contract: check every attachment, every time.
 
 ## 7. Dates
 
 **Rule.** *January 1, 2027*. Supersedes 2.22 and 10.7-10.10. MSCD's other date rules still apply: no *this 24th day of October*, no numerical dates such as *10/9/2027*, no *A.D.* (10.11-10.14).
+
+**Deadlines and periods** (Blake's decisions, applying MSCD chapter 10):
+
+- A *no later than [date]* deadline that decides a right (exercising an option, curing a breach, terminating, giving a notice that starts or ends a right) always states a time of day and a time zone: *no later than 5:00 p.m. Eastern time on June 30, 2027* (MSCD 10.33-10.34).
+- Every backward-counted period gets a finding, not only minimum-notice wording (MSCD 10.65-10.67). Fix *no later than 30 days before the Closing Date* as *no later than the 30th day before the Closing Date* (the count stated) or as a stated date. A minimum-notice period (*at least 20 days' notice*) still gets both counts, the 20th day before and the 21st day before (10.66), and a question to Blake.
+- *From [date] through [date]* (or *to* or *until*) gets a finding, because *from* leaves the 1st day in doubt (MSCD 10.24). Write *starting on November 1, 2027, and ending on April 30, 2028*. The finding needs an explicit date or a defined date term after *from* (*from the Closing Date through ...*) and *through*, *to*, or *until* later in the sentence; *from time to time* and a place (*from its Memphis warehouse to Buyer's plant*) aren't findings.
 
 ## 8. Prohibition: never shall with a negative subject
 
@@ -117,12 +135,15 @@ Supersedes 4.11, 4.17, 4.29-4.30, 4.47-4.49, 4.58-4.59, and 4.62 (MSCD's numberi
 
 **When the subject isn't a person.** *No amendment shall be effective unless ...* and *No failure to exercise a right shall operate as a waiver* prohibit nothing: an amendment can't bear a prohibition. They are language of policy about an event that may never happen (an amendment, a failure to exercise), so they take *will* (MSCD 3.334; 3.369; Appendix B, section 9, uses *No amendment of this agreement will be effective unless ...*): *An amendment of this agreement will not be effective unless ...*; *A failure to exercise a right will not waive it*. The present tense fits only a policy in force on signing or at a fixed date (*Tennessee law governs this agreement*; *the Term ends on May 31, 2030*). The lint flags both kinds as `negative-subject-shall`; pick the fix by the subject.
 
+**When the subject is a nonparty.** For a nonparty subject (an Authorized User, an employee, a subcontractor), don't write *No Authorized User may*; restructure so a party is the subject (Blake's decision). Write a reasonable-efforts duty plus a risk allocation: *Customer shall use reasonable efforts to prevent any Authorized User from sharing credentials, and Customer is liable for any loss that results from an Authorized User's sharing them* (MSCD 3.180; 8.5), because a party can't guarantee what its users, employees, or contractors do (3.163). Write *shall cause* only when the nonparty is the party's instrumentality, such as its subsidiary or its own board (MSCD 3.160-3.161; 3.165). In a review, bracket the liability sentence for Blake, because it adds a risk allocation that the original sentence doesn't state (`fix-check.md`, test 3). The restructure governs the fix for *No [nonparty] shall* and every prohibition you draft; a *No person may* sentence already in the contract isn't a house rule 8 finding (`fix-patterns.md`, pattern 3).
+
 Blake reports that Tina Stark has described litigation in which a court read *neither party shall assign* as imposing no duty. Nobody has verified the case; cite MSCD 3.324 for the rule, not the case.
 
 ## 9. Typography and layout
 
-- 12-point Aptos throughout (supersedes the size guidance at 16.37-16.38).
-- Clean, clear visual lines: ragged-right text, never justified (16.16-16.17); no underlining (16.21); bold only for section headings and for defined terms where the contract defines them (16.20; the title and article headings take the format MSCD gives them, 2.2 and 4.10); capitals only where MSCD uses them (the title, 2.2; article headings, 4.10; party names in the introductory clause, 2.51) or where a statute requires (16.19, 16.24-16.31); consistent indents (1 tab per level); white space between blocks; native Word numbering, never typed numbers.
+- 12-point Aptos throughout, except a conspicuous clause (below) (supersedes the size guidance at 16.37-16.38).
+- Clean, clear visual lines: ragged-right text, never justified (16.16-16.17); no underlining (16.21); bold only for section headings, for defined terms where the contract defines them (16.20; the title and article headings take the format MSCD gives them, 2.2 and 4.10), and for a conspicuous clause; capitals only where MSCD uses them (the title, 2.2; article headings, 4.10; party names in the introductory clause, 2.51) or where a statute requires them (16.19, 16.24-16.31); consistent indents (1 tab per level); white space between blocks; native Word numbering in a document Blake drafts (rule 3 says what to do in a redline).
+- **Conspicuous clauses** (Blake's decision; the 1 exception to 12-point Aptos). When law, regulation, case law, or leading practice requires a clause to be conspicuous (a jury waiver, a warranty disclaimer, a limitation of liability or remedies, an arbitration clause, an automatic-renewal term, a release of unknown claims), format it in bold, 14-point type, never capitals or underlining, and add an initial line for each party directly under it: *Initials: ________ [Party] ________ [Party]*. This form replaces MSCD's bold italics or border (16.29-16.33). A statute that requires capitals or another specific form still governs when Blake identifies it (SKILL.md, precedence 2); the words a statute requires (*merchantability* in a UCC disclaimer) stay either way.
 - Render every delivered .docx to images and look at it before delivery.
 
 ## 10. Other settled choices
@@ -131,12 +152,14 @@ Blake reports that Tina Stark has described litigation in which a court read *ne
 |---|---|---|
 | Precedence | Blake's rules always prevail | (precedence list in SKILL.md) |
 | The other side's drafts | Full MSCD conformance by default ("We need to start educating people"); separate meaning changes from style changes so the other side sees what matters | Differs from MSCD's review advice (Introduction, PDF pp. 54-55) |
-| *states* versus *represents and warrants* | *states* on Blake's drafts; on the other side's drafts, keep their verb and suggest in a comment the remedies-neutral sentence (3.459-3.463) | Agrees |
+| *states* versus *represents and warrants* | *states* on Blake's drafts. On Blake's draft, conform every *represents and warrants* to *states*, including a stray one in a contract that otherwise says *states*. On Blake's draft, *states* also covers a statement of future fact (*Franchisee states that it will not contest the Marks*); don't convert it to an obligation (a house choice; MSCD 3.474-3.476 would convert it). On the other side's drafts, keep their verb and suggest in a comment the remedies-neutral sentence (3.459-3.463) | Agrees, except the future fact (3.474-3.476 differ) |
 | *intends that* | MSCD5 3.491-3.500 as printed; Adams's "language of state of mind" proposal noted only | Agrees |
 | Articles with party names | No article: *Company*, *Buyer*, *Apple* (section 11) | Differs (2.105; 6.63) |
 | Singular *they* | Use it | Optional under 17.15-17.16 |
 | *knows or should have known* | Replace it (house rule 12: no *should*). Because the words set a legal knowledge standard, don't pick 1: offer a defined *Knowledge* term (MSCD 13.506: whose knowledge counts, and actual knowledge or knowledge after reasonable inquiry) with wording for each, and ask Blake | 13.506 |
-| Wording a statute or rule requires | Keep it, even where a house rule would change it, and flag it. Examples: a UCC disclaimer naming MERCHANTABILITY in capitals; *promises to pay to the order of* in a negotiable note; *work made for hire* | Agrees (16.24-16.31) |
+| Wording a statute or rule requires | Keep it, even where a house rule would change it, and flag it. Examples: *merchantability* in a UCC disclaimer (MSCD 16.23 cites UCC 2-316(2)), set in the conspicuous form of section 9; *promises to pay to the order of* in a negotiable note; *work made for hire* | Agrees (16.24-16.31) |
+| Written consents | Drop *RESOLVED, that*; state each action as the board's or the members' act: *The Board approves the Merger Agreement.* (Blake's choice, which he bases on Adams's later blog writing; the skill's blog sweep holds no post on it, so cite this house rule) | Differs (3.514) |
+| A capitalized defined term inside its own definition | Severity 1: a circular definition of 1 term (*"Obligations" means all Obligations of Borrower under the Loan Documents*), MSCD 6.3 notwithstanding (Blake's choice). The word in lowercase, in its ordinary sense, stays (*"Trademark" means a registered trademark ...*) | Differs (6.3) |
 | The remedies-neutral sentence | In the active: *The verb that this agreement uses to introduce a statement of fact does not affect the remedies available for inaccuracy of that statement of fact.* | Recast of 3.463 (house rule 1) |
 | Tracked-change author | *Blake's AI Agent*; comment initials *BAR-AI* (Blake Alan Reagan's AI agent; never *BAA*) | n/a |
 | Adams's floated proposals | Note only | n/a |
@@ -148,8 +171,9 @@ Blake reports that Tina Stark has described litigation in which a court read *ne
 **Why it works.** In English a singular common noun needs a determiner (*the company*). A word used without one reads as a name, the way *Apple* does. Dropping the article makes each party term work as a name, so it reads the same whether the term is a common noun (*Company*) or a trade name (*Apple*).
 
 **Scope and contingencies.**
+
 - Covers every defined term that names a party in the introductory clause: *Company*, *Buyer*, *Employee*, *Licensee*, and plurals (*Sellers shall deliver*).
-- Doesn't cover role labels, which keep *the* (Blake's decision): *the Receiving Party*, *the Disclosing Party*, *the Indemnifying Party*. A role label (MSCD 2.117) points to whichever party plays a role, so it works as a common noun, not a name.
+- Doesn't cover role labels, which keep *the* (Blake's decision): *the Receiving Party*, *the Disclosing Party*, *the Indemnifying Party*. A role label (MSCD 2.117) points to whichever party plays a role, so it works as a common noun, not a name. In an LLC agreement, *Company* is a party name (no article), and *the Member* and *the Manager* are role labels that keep theirs (Blake's decision).
 - Doesn't cover other defined terms (*the Shares*, *the Purchase Price*, *the Closing*) or generic references to parties (*the other party*, *each party*, *either party*, *the parties*). Those keep their articles and determiners.
 - An article that belongs to another noun stays: *the Company Plan*, *a Company employee*. There *the* or *a* goes with *Plan* or *employee*, not with *Company*.
 - Possessives drop the article too: *Company's obligations*.
@@ -160,6 +184,7 @@ Blake reports that Tina Stark has described litigation in which a court read *ne
 ## 12. Never *should*
 
 **Rule.** *Should* never appears in Blake's contracts, in any sense or position (Blake's decision). Never write it in a draft. On the other side's draft, flag every *should* and give the replacement for its sense:
+
 - A duty: *shall* (MSCD 3.89). Advice to a party: *recommends*, or delete it (MSCD 3.502).
 - Discretion: *may*.
 - A condition (*If Acme should fail to pay*): the present tense, *If Acme fails to pay* (MSCD 3.358-3.360).
@@ -173,5 +198,7 @@ Blake reports that Tina Stark has described litigation in which a court read *ne
 **Rule.** A term of art of contract law (the list is `data/terms-of-art.json`) means only its legal meaning in Blake's contracts. Never use it, as a defined term or as an ordinary word, to name something else: an *Assignment* that means a work order, a software *Release*, *marketing collateral*, an *Uptime Guarantee*, *Options* that are product features, a *Default* setting, a *Tender* that means a bid. A word must not carry 2 meanings (MSCD 1.57), and a court may read the legal meaning into the other use (MSCD 1.8-1.13).
 
 **How to fix.** Rename a defined term (*Work Order*, *Version*, *Marketing Materials*, *Availability Commitment*, *Optional Features*, *Default Setting* becomes *Standard Setting*, *Bid*). Replace an ordinary word with the plain word for the job (*designate*, *task*, *review*, *justify*, *pay*). Change every use, including headings.
+
+**Security.** *Security* keeps its legal meaning (a security interest). Settled data-security usage stays: *data security*, *information security*, *cybersecurity*, *security incident*, *security breach*, *security measures*, *security controls*, *security safeguards*, *security program*. A *security deposit* is settled lease usage and stays too. Still flag a bare defined term *Security* (rename it *Security Interest* or *Collateral*) and a physical-safety use (*Security Badge*, *security personnel*, *security guard*) (Blake's decision).
 
 **Contingencies.** A term of art used in its legal sense stays. So does a term a statute or the deal's industry fixes (an escrow agent *releases* funds; a *security interest* in Collateral). Severity: 1 when the contract also uses the word in its legal sense (2 meanings in 1 contract); 2 when it doesn't (a dispute risk: a reader may take the legal meaning).

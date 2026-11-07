@@ -5,7 +5,7 @@ Blake asked for the schedule-versus-exhibit check on every contract. Run it on e
 ## Decision procedure for each attachment
 
 1. **Classify it** (5.72-5.73):
-   - **Exhibit**: a stand-alone document, such as a form of agreement, certificate, note, or organizational document, often one that a party signs or delivers.
+   - **Exhibit**: a stand-alone document, such as a form of agreement, certificate, note, or organizational document, often one that a party signs or delivers. A document with its own signature blocks (a signed order form) is a stand-alone document: label it Exhibit, even when the draft calls it Schedule A (house rule 6; Blake's decision).
    - **Schedule**: information that could have been in the body but the drafter moved out because it is long, or because other people prepare it on another timetable: lists, disclosure items, specifications, pricing, addresses.
    - If an attachment carries the wrong label, relabel it and update every reference.
 2. **Order** (5.75-5.76): signatures, then all schedules, then all exhibits.
@@ -45,6 +45,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 ### Chapter 5: Back of the Contract
 
 - **R-5.72-exhibit-vs-schedule** [sev 2] Follow the prevailing U.S. convention: call a stand-alone document an exhibit, and call information that could have been in the body a schedule. (5.72, 5.73; PDF p. 319)
+  - HOUSE: partly superseded: House rule 6: a document with its own signature blocks is a stand-alone document: label it Exhibit, even when the draft calls it Schedule A (Blake's decision). See house-style.md section 6.
   - Test: Ask whether the attachment is a stand-alone document (exhibit) or information that could have been in the body (schedule).
   - Exceptions: Other jurisdictions differ (Australia uses annexure for stand-alone documents).
 - **R-5.74-generic-attachment-term** [sev 3] With only a few attachments, don't feel bound by the exhibit/schedule distinction; a generic term (appendix, annex, attachment) works, and four attachments beats three exhibits and one schedule. (5.74; PDF p. 319)

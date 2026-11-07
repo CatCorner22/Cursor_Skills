@@ -23,7 +23,7 @@ Each line holds 1 JSON object, and each object holds 1 MSCD rule: 1,338 records 
 
 ## Querying
 
-```
+```text
 python3 scripts/rules_query.py --id R-11.90-no-and-or
 python3 scripts/rules_query.py --word "provided that"
 python3 scripts/rules_query.py --para 5.95

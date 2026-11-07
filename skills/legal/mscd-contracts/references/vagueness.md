@@ -2,6 +2,11 @@
 
 Vagueness is not ambiguity: text is vague when the circumstances decide whether a party has met it (7.46). MSCD treats vagueness, used with restraint, as an essential tool; ambiguity is never acceptable.
 
+## Contents
+
+- Policy
+- Contents of the rules list, then Rules: every vagueness rule, by MSCD chapter
+
 ## Policy
 
 - **Flag every vague standard** (*reasonable*, *promptly*, *material*, *substantial*, *satisfactory*, *best efforts*, and the like) and classify it: keep on purpose, replace with a specific standard, or ask Blake.
@@ -43,6 +48,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: [3-4d] ×: Parent shall procure Sub to sell the Widget Assets ... . → [3-4c] ✓✓: Parent shall cause Sub to sell the Widget Assets ... .
   - Book example: [3-4e] ×: Parent shall ensure that Sub sells the Widget Assets ... . → [3-4c] ✓✓: Parent shall cause Sub to sell the Widget Assets ... .
 - **R-3.176-prevent-undesirable-events** [sev 2] To stop an undesirable event not fully within a party's control, use two provisions: a reasonable efforts obligation to take steps to prevent it, and a risk-allocation provision making the party liable for resulting losses if it happens anyway. Avoid shall prohibit (unclear how much is required) and shall prevent (liable regardless?). (3.176, 3.178, 3.179...; PDF p. 173)
+  - HOUSE: House addition: For a nonparty subject (an Authorized User, an employee, a subcontractor), restructure so a party is the subject (Blake's decision): a reasonable-efforts duty plus a risk allocation, Customer shall use reasonable efforts to prevent any Authorized User from sharing credentials, and Customer is liable for any loss that results from an Authorized User's sharing them (3.180; 8.5); shall cause only for the party's instrumentality, such as its subsidiary or its own board (3.160-3.161). In a review, bracket the liability for Blake. See house-style.md section 8.
 
 ### Chapter 3: Language of Discretion
 
@@ -240,6 +246,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 ### Chapter 10: References to Time
 
 - **R-10.29-day-insufficiently-specific** [sev 1] Recognize that fixing a point in time by reference to a day is insufficiently specific: a beginning or ending point could fall at the midnight starting or ending the day, and a party might claim it had some other time in mind. (10.29, 10.30, 10.31...; PDF p. 474)
+  - HOUSE: House addition: A no later than [date] deadline that decides a right (exercising an option, curing a breach, terminating, giving a notice that starts or ends a right) always states a time of day and a time zone: no later than 5:00 p.m. Eastern time on June 30, 2027 (Blake's decision; MSCD 10.33-10.34). See house-style.md section 7.
   - Look for: deadline or period stated by day with no time of day
   - Test: Ask at what moment on the day the period begins or ends.
   - Fix: State a time of day (10.33); or say from the beginning of 15 April 2023 to the end of 30 April 2023 (which could be read as business hours); or state inclusive or exclusive expressly (legalistic); or add a comprehensive interpretation section.

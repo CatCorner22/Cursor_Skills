@@ -4,8 +4,8 @@
 # Gates: lint self-test, coverage self-test, description <= 1,000 characters, references rebuilt and unchanged.
 # The ZIP holds `mscd-contracts/` at the top and excludes evals/, deploy/, CHANGELOG-*.md, .ruff_cache/, __pycache__/, *.pyc.
 set -euo pipefail
-S=${1:-/tmp/claude-0/-home-claude/d78606e6-7e6f-59c2-8e58-1a65259e0dbc/scratchpad/skill-r4}
-OUT=${2:-/tmp/claude-0/-home-claude/d78606e6-7e6f-59c2-8e58-1a65259e0dbc/scratchpad/r4/release}
+S=${1:-$(cd "$(dirname "$0")/.." && pwd)}
+OUT=${2:-$PWD}
 STAMP=$(date +%Y%m%d-%H%M)
 mkdir -p "$OUT"
 cd "$S"

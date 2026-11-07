@@ -2,11 +2,17 @@
 
 Read this file in pass 6 (words to avoid) and whenever `scripts/mscd_lint.py` reports a usage hit. The table holds 1 verdict per MSCD Chapter 13 entry plus the other usage verdicts; the list after it holds the exceptions and related rules.
 
+## Contents
+
+- The usages that matter most
+- Contents of the rules list, then Usage verdicts (1 row per word), Other usage rules and exceptions, and Rules by MSCD chapter
+
 ## The usages that matter most
 
 - ***should***: never; for *knows or should have known* don't pick a replacement yourself: offer a defined *Knowledge* term with wording for actual knowledge and for knowledge after reasonable inquiry, and ask Blake (MSCD 13.506; house rule 12). In a conditional clause it adds only tentativeness: *If Acme exercises the Option*, not *If Acme should exercise* or *Should Acme exercise* (3.360). In the sense of duty it imposes no obligation; use the verb the category calls for (*shall*, *recommends*).
 - **Obligation verbs other than *shall***: *agrees to*, *covenants to*, *undertakes to*, *is obligated to*, *shall be obligated to* (3.125-3.132).
-- ***represents and warrants***: *states* on Blake's drafts (3.457-3.458); on the other side's drafts, suggest the remedies-neutral sentence in a comment (3.459-3.463).
+- ***represents and warrants***: *states* on Blake's drafts (3.457-3.458), every instance, a stray one included; on the other side's drafts, suggest the remedies-neutral sentence in a comment (3.459-3.463).
+- ***RESOLVED, that*** in a written consent: drop it, and state each action as the board's or the members' act (*The Board approves the Merger Agreement*; house-style.md section 10; MSCD 3.514 differs).
 - **Here- and there- words, *said*, *same*, pointing *such***: use *this*, *that*, *it*, or name the provision (by heading, house rule); *hereby* survives only in language of performance.
 - **Ambiguity breeders**: *and/or*, *provided that*, *including without limitation*, *notwithstanding*, *for the avoidance of doubt*, *respectively*, *within* a period, *from time to time*.
 - **Rhetorical emphasis**: *absolutely*, *strictly*, *whatsoever*, *under no circumstances*, *utmost*, *very* (1.63-1.67).

@@ -10,6 +10,7 @@ Read this file in Redline and Comment modes, with the docx skill's own SKILL.md 
 - Give each change a `w:id` higher than every `w:id` already in any part of the file.
 - Find each paragraph by its words; the lint's paragraph numbers count every paragraph in order, table cells included.
 - Leave the other side's tracked changes alone: don't edit inside their `<w:ins>` or `<w:del>` (SKILL.md, Redline step 4).
+- To put a clause that must be conspicuous in the house form (house rule 9), delete its capitalized words and insert them in sentence case as tracked changes, with `<w:b/>` and `<w:sz w:val="28"/>` (14 points: `w:sz` counts half-points) in each new run's `<w:rPr>`, and insert the initial line (*Initials: ________ [Party] ________ [Party]*) as a tracked paragraph directly under the clause. Say why in a comment on the clause.
 
 ## Validate the redline and make the clean copy (Redline steps 6 and 7)
 

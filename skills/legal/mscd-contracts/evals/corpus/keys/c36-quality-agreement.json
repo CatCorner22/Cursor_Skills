@@ -66,7 +66,7 @@
       "quote": "Supplier shall complete Supplier's own internal quality audit between January 1 and March 31 of each year and shall give Buyer a summary of the results.",
       "severity": 2,
       "why": "Between leaves unclear whether January 1 and March 31 are included.",
-      "fix": "Supplier shall complete Supplier's own internal quality audit no later than March 31 of each year (or: during the period from January 1 through March 31 of each year, both dates included)."
+      "fix": "Supplier shall complete Supplier's own internal quality audit no later than March 31 of each year (or: during the period starting on January 1 and ending on March 31 of each year)."
     },
     {
       "n": 8,
@@ -119,5 +119,13 @@
       "why_correct": "A standard designation; the 1-space-after-colon rule does not apply inside it."
     }
   ],
-  "notes": "Unknown draft owner, so no represents-and-warrants question arises (the contract has no statements of fact). Issue 10 sits in the page header (\"where\": \"header\"); the footer reads \"Confidential\" and has no issue. Schedule A is a Word table; issues 8 and 9 sit inside table cells. The header is a .docx header part, so extract it with the body to find the anchor."
+  "notes": "Unknown draft owner, so no represents-and-warrants question arises (the contract has no statements of fact). Issue 10 sits in the page header (\"where\": \"header\"); the footer reads \"Confidential\" and has no issue. Schedule A is a Word table; issues 8 and 9 sit inside table cells. The header is a .docx header part, so extract it with the body to find the anchor.",
+  "audit": [
+    {
+      "n": 7,
+      "anchor": "between January 1 and March 31",
+      "change": "Blake answer Q12 (November 7, 2026): fix rewritten: starting on ... and ending on, not from ... through (fix edited)",
+      "why": "See the key entry."
+    }
+  ]
 }

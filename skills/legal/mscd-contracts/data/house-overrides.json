@@ -12,7 +12,7 @@
     "R-18.12-hereby-amended",
     "R-3.68-future-performance"
    ],
-   "replacement": "Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'. See house-style.md section 1."
+   "replacement": "Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'; 'solicit any employee of Company to accept employment with a competitor', never 'to be hired' (or employed, engaged, retained). See house-style.md section 1."
   },
   {
    "house_rule": "digits",
@@ -21,7 +21,7 @@
     "R-14.16-number-exceptions",
     "R-14.19-digits-only-optional"
    ],
-   "replacement": "Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Never start a sentence with a digit; restructure. See house-style.md section 2."
+   "replacement": "Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Fraction words stay words (half, one-half, a third, a quarter), and a document's name keeps its word (Second Amendment, this second amendment). Never start a sentence with a digit; restructure. See house-style.md section 2."
   },
   {
    "house_rule": "enumeration",
@@ -29,7 +29,6 @@
     "R-4.11-article-numerals",
     "R-4.17-number-sections-plain",
     "R-4.17-section-number-format",
-    "R-4.20-enumerate-lone-section",
     "R-4.29-subsection-letters",
     "R-4.30-no-multiple-numeration-subsections",
     "R-4.47-clause-hierarchy",
@@ -39,7 +38,23 @@
     "R-4.59-no-period-after-number-heading",
     "R-4.62-word-styles"
    ],
-   "replacement": "Hierarchy I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses), (i) (subclauses); 1 tab per level; native Word numbering; no only child at any level. See house-style.md section 3."
+   "replacement": "Hierarchy for the outline only: I. (articles), A. (sections), 1. (subsections), (a) (enumerated clauses and full-sentence list items), (i) (subclauses); 1 tab per level; no only child below the article, but an article may hold 1 section. Native Word numbering only in a document Blake drafts; in a redline, keep the document's typed or native numbering and flag typed numbering once (severity 3). Inline enumeration ((1) ... and (2) ...) and numbered definitions keep their form. See house-style.md section 3."
+  },
+  {
+   "house_rule": "enumeration",
+   "partial": true,
+   "rule_ids": [
+    "R-4.20-enumerate-lone-section"
+   ],
+   "replacement": "Agrees (Blake's decision): an article may hold a single section, which keeps its letter (a Definitions article with only A.). No only child below the article. See house-style.md section 3."
+  },
+  {
+   "house_rule": "enumeration",
+   "partial": true,
+   "rule_ids": [
+    "R-6.27-no-enumerated-definitions"
+   ],
+   "replacement": "In a document Blake drafts, list definitions without markers. On a draft that already numbers its definitions, keep the numbers and don't flag them (Blake's decision). See house-style.md section 3."
   },
   {
    "house_rule": "cross-references",
@@ -53,7 +68,7 @@
     "R-4.106-no-heading-in-crossref",
     "R-4.108-auto-crossref-master"
    ],
-   "replacement": "Avoid internal cross-references; where one is needed refer by the provision's heading, not its number. Headings must be unique and match exactly; delete or limit any headings-for-convenience clause (15.18). See house-style.md section 4."
+   "replacement": "Avoid internal cross-references; where one is needed refer by the provision's heading, not its number: under the section titled \"Payment\". Stated, described, set forth, set out, specified, or listed in the section titled ... is a reduced passive and takes a finding, as stated in included: write under the section titled \"Payment\", or the sale that the section titled \"Consent\" describes. Headings must be unique and match exactly; delete or limit any headings-for-convenience clause (15.18). See house-style.md section 4."
   },
   {
    "house_rule": "spacing",
@@ -79,12 +94,29 @@
    "replacement": "U.S. date form: January 1, 2027. MSCD 10.11-10.14 still apply. See house-style.md section 7."
   },
   {
+   "house_rule": "periods",
+   "partial": true,
+   "rule_ids": [
+    "R-10.65-minimum-notice-ambiguity"
+   ],
+   "replacement": "Blake's decision: every backward-counted period gets a finding, not only minimum-notice wording. Fix a plain deadline (no later than 30 days before the Closing Date) as no later than the 30th day before the Closing Date (the count stated) or a stated date; a minimum-notice period (at least 20 days' notice) still gets both counts and a question to Blake. See house-style.md section 7."
+  },
+  {
    "house_rule": "font",
    "rule_ids": [
     "R-16.37-font-size",
     "R-proposal-aptos"
    ],
-   "replacement": "12-point Aptos. See house-style.md section 9."
+   "replacement": "12-point Aptos. The 1 exception: a clause that law, regulation, case law, or leading practice requires to be conspicuous takes bold, 14-point type, never capitals or underlining, with an initial line for each party directly under it. See house-style.md section 9."
+  },
+  {
+   "house_rule": "conspicuous",
+   "partial": true,
+   "rule_ids": [
+    "R-16.23-emphasize-provisions",
+    "R-16.29-how-to-emphasize"
+   ],
+   "replacement": "Blake's decision: when law, regulation, case law, or leading practice requires a clause to be conspicuous (a jury waiver, a warranty disclaimer, a limitation of liability or remedies, an arbitration clause, an automatic-renewal term, a release of unknown claims), format it in bold, 14-point type, never capitals or underlining, and add an initial line for each party directly under it (Initials: ________ [Party] ________ [Party]). This form replaces bold italics or a border; a statute that requires capitals or another form still governs when Blake identifies it. See house-style.md section 9."
   },
   {
    "house_rule": "singular-they",
@@ -152,6 +184,14 @@
    "replacement": "House rule 6: schedules take letters (Schedule A, Schedule B) and exhibits take numbers (Exhibit 1, Exhibit 2), so no schedule and exhibit share a designation; relabel any other system and update every reference."
   },
   {
+   "house_rule": "attachments",
+   "partial": true,
+   "rule_ids": [
+    "R-5.72-exhibit-vs-schedule"
+   ],
+   "replacement": "House rule 6: a document with its own signature blocks is a stand-alone document: label it Exhibit, even when the draft calls it Schedule A (Blake's decision). See house-style.md section 6."
+  },
+  {
    "house_rule": "headings-clause",
    "partial": true,
    "rule_ids": [
@@ -166,6 +206,38 @@
    ],
    "partial": true,
    "replacement": "Never should: define Knowledge with wording for actual knowledge and for knowledge after reasonable inquiry, not should have known. See house-style.md section 12."
+  },
+  {
+   "house_rule": "states",
+   "partial": true,
+   "rule_ids": [
+    "R-3.474-no-future-facts"
+   ],
+   "replacement": "On Blake's draft, states also covers a statement of future fact (Franchisee states that it will not contest the Marks); don't convert it to an obligation (Blake's choice; MSCD 3.474-3.476 would convert it). See house-style.md section 10."
+  },
+  {
+   "house_rule": "written-consents",
+   "partial": true,
+   "rule_ids": [
+    "R-3.514-be-and-hereby-is"
+   ],
+   "replacement": "Blake's choice: in a written consent, drop RESOLVED, that; state each action as the board's or the members' act (The Board approves the Merger Agreement). The rest of 3.514-3.519 (no be and hereby is; hereby only in language of performance) applies. See house-style.md section 10."
+  },
+  {
+   "house_rule": "circular-definition",
+   "partial": true,
+   "rule_ids": [
+    "R-6.3-term-in-own-definition"
+   ],
+   "replacement": "Blake's choice: a capitalized defined term used inside its own definition (\"Obligations\" means all Obligations of Borrower under the Loan Documents) is a circular definition of 1 term, severity 1; the word in lowercase, in its ordinary sense, stays (\"Trademark\" means a registered trademark ...). See house-style.md sections 0 and 10."
+  },
+  {
+   "house_rule": "active-voice",
+   "partial": true,
+   "rule_ids": [
+    "R-5.3-concluding-clause-undated"
+   ],
+   "replacement": "House rule 1 recasts the reduced passive: The parties are signing this agreement on the date that the introductory clause states (Blake's decision). See house-style.md section 1."
   }
  ],
  "additions": [
@@ -174,7 +246,7 @@
    "applies_with": [
     "R-3.323-collective-noun-prohibition"
    ],
-   "statement": "Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not. When the subject isn't a person (No amendment shall be effective unless), the sentence is language of policy and takes will: An amendment of this agreement will not be effective unless ... (MSCD 3.334; 3.369). See house-style.md section 8."
+   "statement": "Never use shall with a negative subject (Neither party shall, No Shareholder shall); use Neither party may / No Shareholder may (3.324). With a positive subject use shall not. When the subject isn't a person (No amendment shall be effective unless), the sentence is language of policy and takes will: An amendment of this agreement will not be effective unless ... (MSCD 3.334; 3.369). When the subject is a nonparty (No Authorized User shall), don't write No Authorized User may: restructure onto the party (see the nonparty-prohibition addition). See house-style.md section 8."
   },
   {
    "house_rule": "terms-of-art",
@@ -182,7 +254,39 @@
     "R-1.8-manage-terms-of-art",
     "R-1.13-unnecessary-term-of-art"
    ],
-   "statement": "A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13)."
+   "statement": "A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13). Security: data-security terms (data security, information security, cybersecurity, security incident, security breach, security measures, security controls, security safeguards, security program) and a security deposit stay; flag a bare defined term Security (rename it Security Interest or Collateral) and a physical-safety use (Security Badge, security personnel, security guard)."
+  },
+  {
+   "house_rule": "nonparty-prohibition",
+   "applies_with": [
+    "R-3.323-collective-noun-prohibition",
+    "R-3.165-restructure-nonparty",
+    "R-3.176-prevent-undesirable-events"
+   ],
+   "statement": "For a nonparty subject (an Authorized User, an employee, a subcontractor), restructure so a party is the subject (Blake's decision): a reasonable-efforts duty plus a risk allocation, Customer shall use reasonable efforts to prevent any Authorized User from sharing credentials, and Customer is liable for any loss that results from an Authorized User's sharing them (3.180; 8.5); shall cause only for the party's instrumentality, such as its subsidiary or its own board (3.160-3.161). In a review, bracket the liability for Blake. See house-style.md section 8."
+  },
+  {
+   "house_rule": "deadline-time-of-day",
+   "applies_with": [
+    "R-10.33-state-time-of-day",
+    "R-10.29-day-insufficiently-specific"
+   ],
+   "statement": "A no later than [date] deadline that decides a right (exercising an option, curing a breach, terminating, giving a notice that starts or ends a right) always states a time of day and a time zone: no later than 5:00 p.m. Eastern time on June 30, 2027 (Blake's decision; MSCD 10.33-10.34). See house-style.md section 7."
+  },
+  {
+   "house_rule": "from-date-through",
+   "applies_with": [
+    "R-10.24-preposition-verdicts",
+    "R-10.23-inclusive-exclusive-ambiguity"
+   ],
+   "statement": "Every from [date] through [date] (or to or until) gets a finding, because from leaves the 1st day in doubt: write starting on November 1, 2027, and ending on April 30, 2028 (Blake's decision; MSCD 10.24). The finding needs an explicit date or a defined date term after from; from time to time and a place aren't findings. See house-style.md section 7."
+  },
+  {
+   "house_rule": "states",
+   "applies_with": [
+    "R-3.457-use-states"
+   ],
+   "statement": "On Blake's draft, conform every represents and warrants to states, including a stray one in a contract that otherwise says states (Blake's decision). See house-style.md section 10."
   }
  ],
  "lint": {

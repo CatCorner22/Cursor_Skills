@@ -48,7 +48,7 @@
    "quote": "For Qualified Sales that Representative closes from January 1 to March 31 of each year, the commission rate is 8% instead of 6%.",
    "severity": 2,
    "why": "\"from ... to\" leaves unclear whether the end dates are included.",
-   "fix": "from January 1 through March 31 of each year (both dates inclusive)"
+   "fix": "For Qualified Sales that Representative closes during the period starting on January 1 and ending on March 31 of each year, the commission rate is 8% instead of 6%."
   },
   {
    "n": 6,
@@ -132,5 +132,13 @@
    "why_correct": "Correct house-style cross-reference by heading (house rule 4)."
   }
  ],
- "notes": "Whose draft is unknown. Party names have no article; A./1. enumeration is correct. \"Qualified Sale\" is a document-level defined-term issue anchored at its 1st use (B.1); C.1, C.2, E.1, and F.2 use it again. The only spacing error is in G.2."
+ "notes": "Whose draft is unknown. Party names have no article; A./1. enumeration is correct. \"Qualified Sale\" is a document-level defined-term issue anchored at its 1st use (B.1); C.1, C.2, E.1, and F.2 use it again. The only spacing error is in G.2.",
+ "audit": [
+  {
+   "n": 5,
+   "anchor": "from January 1 to March 31",
+   "change": "Blake answer Q12 (November 7, 2026): fix rewritten: starting on ... and ending on, not from ... through (fix edited)",
+   "why": "See the key entry."
+  }
+ ]
 }

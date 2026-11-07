@@ -1,0 +1,29 @@
+# Changelog: round 11, Lint (Blake's answers of November 7, 2026)
+
+Scope: `scripts/mscd_lint.py`, `data/phrase-variants.json`, and the variant shares in `r4/variants/`. Backups: `r4/answers/before-lint/`. Self-test: 2,339 to 2,397 cases, all passing.
+
+| Answer | Check | Change | Self-test cases |
+|---|---|---|---|
+| Q16 | represents-warrants (`rw-obligation-after`) | *states that it will* no longer matches; *states that it shall* still matches | + *states that it shall*; − *states that it will* (variant); 2 house cases |
+| Q22 | negative-subject-shall | A nonparty subject (`negative_nonparty`, `NONPARTY_PERSON`) gets the restructure: *[Party] shall cause each X not to ...* (MSCD 3.165), or reasonable efforts plus liability (3.180; 8.5). Never *may*. Severity 1 | + *No Authorized User shall*; − the reasonable-efforts fix; round-11 message case |
+| Q7 | time-of-day (new house check, `DEADLINE_DATE`) | Fires on *no later than / by / on or before [date]* with no time of day when the sentence decides a right. Severity 1 (R-10.33) | + renewal-option deadline; − with 5:00 p.m.; − Lender funding |
+| Q9 | time-ambiguity (new variant `time-days-before`) | Every *N days before / prior to*; *during the N days before* stays clear. `time-minimum-before` look-alike swapped for the 180th-day form | 3 examples, 4 look-alikes |
+| Q12 | time-ambiguity (`time-from-date-range` and the SIGNATURE *from* entry) | Covers a defined date term and a parenthetical; the fix is *starting on ... and ending on* (MSCD 10.24) | + *from the Effective Date through*; − *starts on ... ends on*; 3 examples, 3 look-alikes |
+| Q4 | number-word, ordinal-word, words-and-digits (`FRACTION_WORD`), `nw-one-unit` | A fraction keeps its word. A mixed number (*one and one-half*) is still flagged. *one-half (50%)* says to keep the word and drop the digits | − one-half, two-thirds, a third of; + mixed number; round-11 message case |
+| Q29 | ordinal-word (`DOC_ORDINAL_NEXT`, `ord-first-*`) | No finding before amendment, amended, restated, supplement, modification, addendum, or renewal. A *renewal term / period / option* stays a count | − *this second amendment*, *third amended and restated*; + *third renewal term*; 4 variant look-alikes |
+| Q26 | definition (new variant `def-term-heads-own-definition`) | *"Obligations" means all Obligations* at severity 1 (own_severity). Recursive uses (*through another Subsidiary*) stay clear | 2 examples, 3 look-alikes; round-11 severity case |
+| Q10 | typed-numbering; `enum-decimal-subsection`, `enum-lowercase-label` | The message follows `--whose`: Blake's draft converts, the other side's keeps, unknown says both. Severity stays 3. Numbered definitions are not counted | round-11 case (3 whose values) |
+| Q15 | enumeration (outline only child) | A lone section under an article is not an only child | + lone 1. under a section; − lone A. under Article I |
+| Q23 | enumeration | Numbered definitions are left out of the outline. `enum-clause-labels` and `enum-roman-first-level` are removed (inline enumeration keeps its form) | + top-level 1., 2. sections; − (1) "Affiliate" means |
+| Q13 | attachment-classification (new `attachment_classification_checks`) | A schedule, annex, or appendix with its own signature block is labeled an exhibit. Severity 2. Only when the body has its own signature block. That schedule also gets no schedule-provision finding | + SCHEDULE A with By:; − an information schedule |
+| Q32 | reduced-passive (`REF_PASSIVE`) | Exemption removed. Every *(as / in the manner) stated, described, set forth, set out, specified, or listed in the section titled* fires. Fix: *under the section titled "X"*, or *the [noun] that the section titled "X" [verb]s*. A wordy *set forth in* is not reported twice | + *in the manner stated*, *as stated*; − *under the section titled*, *the sale that ... describes*; ± wordy |
+| Q24 | reduced-passive | *the date stated in the introductory clause* fires, with the fix *the date that the introductory clause states* | + and − |
+| Q1 | resolved (new SIGNATURE entry) | *RESOLVED, (FURTHER,) that* at a sentence start, any case. Severity 3, R-3.514 | + 2; − 2 |
+| Q3 | passive-voice (`TO_BE_HIRED`) | *to be hired / employed / engaged / retained* after a person or a solicitation word gives the recast. *engaged in* and *records to be retained* keep the general message | + and − |
+| Q6 | represents-warrants | Behavior confirmed, no code change | round-11 case: Blake's draft gives use states (severity 2); the other side's gives Keep |
+| Q2 | capitals-body; conspicuous-format (new `conspicuous_checks`); font-size | A conspicuous clause in capitals is a direct finding at severity 2 with the house form. In a .docx, a conspicuous clause not in bold 14 point is severity 2, and a missing initial line is part of the same finding (severity 3 on its own). 14 point there is no font-size finding | probe case updated; round-11 .docx case (5 parts) |
+| Q11 | repetition (`amount-restated-period`) | Changed at the coordinator's direction: severity 3, and a per-square-foot rate beside its figure is now flagged (the old look-alike becomes an example). The message says a disagreeing pair is a conflict | + per-square-foot example; − bare rate |
+| Q32/Q7/Q9 | variant look-alikes in `us-in-the-event`, `xref-capitals`, `vague-standard`, `date-ordinal-suffix` | Rewrote 4 look-alikes whose text now holds an answered problem | — |
+| Q34 | terms-of-art.json | Not edited (the Docs agent's file). Its current entry passes the self-test | — |
+
+Share flips (logged in `r4/answers/lint-work/share-flips.log`), all in share3: the 180-days-before look-alike becomes a problem (Q9); *one-half of the fees* and *two-thirds of the outstanding Units* become look-alikes (Q4); the inline (A)/(B), (1)/(2), (i)/(ii), and (x)/(y) entries become look-alikes (Q23).

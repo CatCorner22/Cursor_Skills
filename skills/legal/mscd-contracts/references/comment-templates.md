@@ -6,7 +6,7 @@ Blake wants to understand why each change is right, so internal comments always 
 
 ## Internal comment (to Blake)
 
-```
+```text
 [Sev 2 · Clarifies meaning · MSCD 11.90-11.95] "and/or"
 "Acme shall purchase Widget A and/or Widget B" states the duty 2 ways at once: Acme must buy at least 1 widget, and it may buy both (11.93).
 Fix: "Acme shall purchase Widget A or Widget B and may purchase both."
@@ -17,7 +17,7 @@ Fields, in this order: severity; effect (*Clarifies meaning*, *Decision needed*,
 
 ## External comment (to the other side)
 
-```
+```text
 Suggest "Acme shall purchase Widget A or Widget B and may purchase both," so the sentence states the duty and the choice separately (A Manual of Style for Contract Drafting (MSCD) 11.93).
 ```
 
@@ -26,30 +26,37 @@ Suggest "Acme shall purchase Widget A or Widget B and may purchase both," so the
 ## Examples
 
 **Negative subject with shall (house rule; 3.324)**
+
 - Internal: `[Sev 1 · Clarifies meaning · MSCD 3.324; house rule 8] "Neither party shall assign" — Under the has-a-duty test this reads "neither party has a duty to assign," which states an absence of duty, not a prohibition. Fix: "Neither party may assign". Why: with a negative subject, may negates the permission itself, so the sentence forbids the act.`
 - External: `Suggest "Neither party may assign," so the sentence prohibits assignment rather than stating that neither party has a duty to assign (MSCD 3.324).`
 
 **should (3.360)**
+
 - Internal: `[Sev 2 · Style only · MSCD 3.358-3.360; house rule 12] "If Acme should exercise the Option" — should adds only tentativeness to a condition. Fix: "If Acme exercises the Option". Why: a conditional clause states a future event in the simple present; the modal adds nothing but doubt.`
 
 **Passive voice that hides the actor (house rule 1; MSCD 3.15)**
+
 - Internal: `[Sev 2 · Clarifies meaning · MSCD 3.15; house rule 1] "The Shares will be issued at Closing" — the sentence hides who issues them, so it doesn't say who has the duty. Fix: "Acme shall issue the Shares at Closing". Why: in the passive the actor drops out; naming Acme as subject also lets the verb carry the category (shall = Acme has a duty to).`
 
 **Number words (house rule)**
+
 - Internal: `[Sev 2 · Style only · house rule 2] "five (5) Business Days" — words and digits say the same thing twice and can conflict (MSCD 14.5-14.11). Fix: "5 Business Days".`
 
 **Schedule versus exhibit (5.72-5.73)**
+
 - Internal: `[Sev 2 · Style only · MSCD 5.72-5.73; house rule 6] "Schedule C (Form of Escrow Agreement)" — a form of agreement is a stand-alone document, so it is an exhibit. Fix: "Exhibit 1 (Form of Escrow Agreement)", update every reference, and move it after the schedules (5.75).`
 
 **represents and warrants on the other side's draft (3.459-3.463)**
+
 - External: `To make clear that the choice of verb doesn't limit remedies, suggest adding: "The verb that this agreement uses to introduce a statement of fact does not affect the remedies available for inaccuracy of that statement of fact." (MSCD 3.459-3.463)`
 
 **Repeated change**
+
 - `[Sev 2 · Style only · house rule 2] Changed 14 spelled-out numbers to digits: sections titled "Term", "Payment", "Notices" ... (1 comment covers all).`
 
 ## Review report (Review mode)
 
-```
+```text
 # MSCD review: <contract name>
 As of <date> · rules: MSCD5 with riders through <swept-through date>; Blake's house style
 Summary: <n> findings (<n1> must fix, <n2> fix, <n3> style); the 3 to 5 findings that matter most, in 1 line each.

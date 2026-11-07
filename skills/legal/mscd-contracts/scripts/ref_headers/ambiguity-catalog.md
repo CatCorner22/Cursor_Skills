@@ -2,6 +2,14 @@
 
 **The skill removes every ambiguity it finds.** For each one, the finding states each possible meaning in plain words before proposing a fix. If the fix requires choosing a meaning, never choose silently: ask which meaning Blake intends, or, in a redline, comment with 1 wording for each meaning.
 
+## Contents
+
+- Definitions
+- Causes added by the riders
+- Elaboration: terms of art in their everyday sense
+- How to use the list below
+- Contents of the rules list, then Rules: every ambiguity rule, by MSCD chapter
+
 ## Definitions
 
 - Text is **ambiguous** if it can express 2 or more inconsistent meanings (7.5). It is still ambiguous if context resolves it (7.6).

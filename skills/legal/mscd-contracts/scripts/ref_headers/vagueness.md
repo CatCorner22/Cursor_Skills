@@ -2,6 +2,11 @@
 
 Vagueness is not ambiguity: text is vague when the circumstances decide whether a party has met it (7.46). MSCD treats vagueness, used with restraint, as an essential tool; ambiguity is never acceptable.
 
+## Contents
+
+- Policy
+- Contents of the rules list, then Rules: every vagueness rule, by MSCD chapter
+
 ## Policy
 
 - **Flag every vague standard** (*reasonable*, *promptly*, *material*, *substantial*, *satisfactory*, *best efforts*, and the like) and classify it: keep on purpose, replace with a specific standard, or ask Blake.

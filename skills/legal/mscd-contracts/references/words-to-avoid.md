@@ -2,11 +2,17 @@
 
 Read this file in pass 6 (words to avoid) and whenever `scripts/mscd_lint.py` reports a usage hit. The table holds 1 verdict per MSCD Chapter 13 entry plus the other usage verdicts; the list after it holds the exceptions and related rules.
 
+## Contents
+
+- The usages that matter most
+- Contents of the rules list, then Usage verdicts (1 row per word), Other usage rules and exceptions, and Rules by MSCD chapter
+
 ## The usages that matter most
 
 - ***should***: never; for *knows or should have known* don't pick a replacement yourself: offer a defined *Knowledge* term with wording for actual knowledge and for knowledge after reasonable inquiry, and ask Blake (MSCD 13.506; house rule 12). In a conditional clause it adds only tentativeness: *If Acme exercises the Option*, not *If Acme should exercise* or *Should Acme exercise* (3.360). In the sense of duty it imposes no obligation; use the verb the category calls for (*shall*, *recommends*).
 - **Obligation verbs other than *shall***: *agrees to*, *covenants to*, *undertakes to*, *is obligated to*, *shall be obligated to* (3.125-3.132).
-- ***represents and warrants***: *states* on Blake's drafts (3.457-3.458); on the other side's drafts, suggest the remedies-neutral sentence in a comment (3.459-3.463).
+- ***represents and warrants***: *states* on Blake's drafts (3.457-3.458), every instance, a stray one included; on the other side's drafts, suggest the remedies-neutral sentence in a comment (3.459-3.463).
+- ***RESOLVED, that*** in a written consent: drop it, and state each action as the board's or the members' act (*The Board approves the Merger Agreement*; house-style.md section 10; MSCD 3.514 differs).
 - **Here- and there- words, *said*, *same*, pointing *such***: use *this*, *that*, *it*, or name the provision (by heading, house rule); *hereby* survives only in language of performance.
 - **Ambiguity breeders**: *and/or*, *provided that*, *including without limitation*, *notwithstanding*, *for the avoidance of doubt*, *respectively*, *within* a period, *from time to time*.
 - **Rhetorical emphasis**: *absolutely*, *strictly*, *whatsoever*, *under no circumstances*, *utmost*, *very* (1.63-1.67).
@@ -271,10 +277,10 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 ### Chapter 1: Contract Language Shouldn't Be Legalistic
 
 - **R-1.8-manage-terms-of-art** [sev 3] Manage legal terms of art: keep those the transaction needs (for example, security interest, perfection), and avoid the flawed kinds. (1.7, 1.8, 1.9...; PDF p. 62)
-  - HOUSE: House addition: A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13).
+  - HOUSE: House addition: A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13). Security: data-security terms (data security, information security, cybersecurity, security incident, security breach, security measures, security controls, security safeguards, security program) and a security deposit stay; flag a bare defined term Security (rename it Security Interest or Collateral) and a physical-safety use (Security Badge, security personnel, security guard).
 - **R-1.12-flawed-terms-of-art** [sev 3] Avoid three kinds of flawed terms of art: unnecessary, improvised, and unduly complex. (1.12; PDF p. 62)
 - **R-1.13-unnecessary-term-of-art** [sev 3] Don't use a doctrinal term of art where simpler terminology does the job. (1.13, 1.14, 1.15...; PDF p. 63)
-  - HOUSE: House addition: A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13).
+  - HOUSE: House addition: A term of art in data/terms-of-art.json keeps its legal meaning; rename any other use (house-style.md section 13). Security: data-security terms (data security, information security, cybersecurity, security incident, security breach, security measures, security controls, security safeguards, security program) and a security deposit stay; flag a bare defined term Security (rename it Security Interest or Collateral) and a physical-safety use (Security Badge, security personnel, security guard).
 - **R-1.18-improvised-terms-of-art** [sev 2] Avoid improvised terms of art: ordinary wording onto which lawyers and judges have grafted doctrinal implications, such as hold harmless and best efforts. (1.18, 1.19; PDF p. 64)
 - **R-1.20-give-effect-every-word** [sev 2] Expect courts to give effect to every word: that principle, applied zealously, gives significance to stray words and variations and to each element of a redundant string. (1.20, 1.41; PDF p. 65)
 - **R-1.21-unduly-complex-terms** [sev 2] Don't use unduly complex terms of art (for example, consequential damages, coupled with an interest, time is of the essence) without fully appreciating their implications; the provision might be unenforceable or have unexpected consequences. (1.21; PDF p. 65)
@@ -424,6 +430,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 ### Chapter 3: Language of Declaration
 
 - **R-3.457-use-states** [sev 3] Don't use represents, warrants, or represents and warrants to introduce statements of fact; use states. Use the noun statement of fact, not representation and warranty, and don't use asserts or confirms. (3.454, 3.455, 3.456...; PDF p. 242)
+  - HOUSE: House addition: On Blake's draft, conform every represents and warrants to states, including a stray one in a contract that otherwise says states (Blake's decision). See house-style.md section 10.
 - **R-3.458-states-series** [sev 3] To introduce a series of statements of fact, say [Party name] states that the following facts are accurate: so a full independent clause precedes the colon. No signal is needed that an inaccurate statement supports a remedy. (3.458; PDF p. 242)
 - **R-3.459-verb-remedy-sentence** [sev 3] To allay fears about states, add: The verb used to introduce a statement of fact in this agreement does not affect the remedies available for inaccuracy of that statement of fact. (3.459, 3.460, 3.463; PDF p. 242)
   - HOUSE: partly superseded: House wording, in the active: The verb that this agreement uses to introduce a statement of fact does not affect the remedies available for inaccuracy of that statement of fact.

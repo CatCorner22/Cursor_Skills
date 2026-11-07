@@ -128,9 +128,9 @@ def main():
                  'Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. ' + flag_note)
         out = [head,
                f"\n## Rules ({len(all_rows)}, generated from `data/rules.jsonl`)\n",
-               "Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or dispute risk; 3 = style), the rule, and its MSCD paragraphs and PDF page. "
+               ("Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or dispute risk; 3 = style), the rule, and its MSCD paragraphs and PDF page. "
                "`HOUSE` marks a rule that Blake's house style changes: apply the house rule. For a rule's full record (test, fix, exceptions, verified book examples), run "
-               "`python3 scripts/rules_query.py --id <id>`.\n"]
+               "`python3 scripts/rules_query.py --id <id>`.\n")]
         rows = all_rows
         if name == 'words-to-avoid':
             verd = [r for r in all_rows if r['kind'] == 'usage-verdict']

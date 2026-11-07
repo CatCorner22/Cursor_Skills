@@ -45,21 +45,24 @@
    "id": "rw-obligation-after",
    "check": "represents-warrants",
    "severity": 2,
-   "pattern": "(?:(?<=warrants)|(?<=warrant)|(?<=represents)|(?<=represent)|(?<=states))\\s+(?:to\\s+(?:[A-Z][\\w-]*|the\\s+other\\s+part(?:y|ies)|each\\s+other)\\s+)?that\\s+(?:it|they|he|she|each\\s+party|[A-Z][a-z][\\w-]*)\\s+(?:will|shall)\\s+(?:not\\s+)?(?!be\\b|have\\b)[a-z]+",
+   "pattern": "(?:(?<=warrants)|(?<=warrant)|(?<=represents)|(?<=represent))\\s+(?:to\\s+(?:[A-Z][\\w-]*|the\\s+other\\s+part(?:y|ies)|each\\s+other)\\s+)?that\\s+(?:it|they|he|she|each\\s+party|[A-Z][a-z][\\w-]*)\\s+(?:will|shall)\\s+(?:not\\s+)?(?!be\\b|have\\b)[a-z]+|(?<=states)\\s+(?:to\\s+(?:[A-Z][\\w-]*|the\\s+other\\s+part(?:y|ies)|each\\s+other)\\s+)?that\\s+(?:it|they|he|she|each\\s+party|[A-Z][a-z][\\w-]*)\\s+shall\\s+(?:not\\s+)?(?!be\\b|have\\b)[a-z]+",
    "rule_ids": [
     "R-3.451-rw-disorder",
     "R-13.948-warrants-obligation"
    ],
-   "message": "A promise after represents, warrants or states (represents and warrants that it will perform ...) is an obligation dressed as a statement of fact: move it to language of obligation (Contractor shall perform ...). This applies on either side's draft (MSCD 3.451; 13.948).",
+   "message": "A promise after represents or warrants (represents and warrants that it will perform ...), or shall after states, is an obligation dressed as a statement of fact: move it to language of obligation (Contractor shall perform ...). This applies on either side's draft (MSCD 3.451; 13.948). States that it will (a statement of future fact) stays as it is on Blake's draft (Blake's house rule 10; Blake's answer Q16).",
    "examples": [
     "Contractor represents and warrants that it will perform the Services in accordance with the Specifications.",
     "Acme warrants that it shall perform routine maintenance on the Equipment.",
-    "Supplier represents that it will not use any Subcontractor without Customer's consent."
+    "Supplier represents that it will not use any Subcontractor without Customer's consent.",
+    "Franchisee states that it shall not contest the Marks."
    ],
    "lookalikes": [
     "Seller states that the Equipment is free of any Lien.",
     "Contractor shall perform the Services in accordance with the Specifications.",
-    "Seller states that the Products will be free from defects for 12 months after delivery."
+    "Seller states that the Products will be free from defects for 12 months after delivery.",
+    "Franchisee states that it will not contest the Marks.",
+    "Seller states that Seller will deliver the Units on the Closing Date."
    ]
   },
   {
@@ -2381,7 +2384,7 @@
    ],
    "lookalikes": [
     "Caterer shall set up the buffet in the Event Space.",
-    "Acme shall notify Widgetco in the event described in the section titled \"Recalls.\"",
+    "Acme shall notify Widgetco of each event that the section titled \"Recalls\" describes.",
     "Landlord may terminate this lease if Tenant abandons the Premises."
    ]
   },
@@ -2907,8 +2910,8 @@
     "\"Intellectual Property\" shall include patents, copyrights, trademarks, and trade secrets.",
     "\"Software\" shall refer to the computer programs in Schedule A.",
     "\"Territory\" will mean the United States.",
-  "\"Business Day\" shall mean a day other than a Saturday or Sunday.",
-  "\"Affiliate\" shall have the meaning given in Rule 405.",
+    "\"Business Day\" shall mean a day other than a Saturday or Sunday.",
+    "\"Affiliate\" shall have the meaning given in Rule 405.",
     "B. Definitions.  \"Affiliate\" will have the meaning given in Rule 405."
    ],
    "lookalikes": [
@@ -3043,6 +3046,29 @@
    ]
   },
   {
+   "id": "def-term-heads-own-definition",
+   "check": "definition",
+   "severity": 1,
+   "own_severity": true,
+   "pattern": "\\**[\\\"“‘]\\**([A-Z][\\w-]*(?:\\s+[A-Z][\\w-]*){0,4})\\**[\\\"”’]\\**\\s+(?:means|includes)\\s+(?:(?:all|any|each|every|the|those|such)\\s+)?(?:(?:other|present|future|existing|outstanding|applicable)\\s+)?\\1(?:s|es)?\\b",
+   "ctx": 0,
+   "rule_ids": [
+    "R-6.3-term-in-own-definition",
+    "R-6.115-no-circular-definitions"
+   ],
+   "message": "The defined term, capitalized, heads its own definition (\"Obligations\" means all Obligations of Borrower ...), so the definition rests on itself. Lowercase the inner word (all obligations of Borrower), or anchor the definition to something outside it. Blake treats this as a circular definition at severity 1 (Blake's answer Q26), though MSCD 6.3 allows repeating the word itself.",
+   "examples": [
+    "\"Obligations\" means all Obligations of Borrower to Lender under the Loan Documents, whether now existing or later arising.",
+    "\"Losses\" means any Losses, damages, costs, and expenses, including reasonable attorneys' fees."
+   ],
+   "lookalikes": [
+    "\"Obligations\" means all obligations of Borrower to Lender under the Loan Documents.",
+    "\"Subsidiary\" means any entity that Company controls, directly or through another Subsidiary.",
+    "\"Trademark\" means a registered trademark or service mark."
+   ],
+   "note": "Blake's answer Q26 (November 7, 2026). A term used later in its own definition (through another Subsidiary; any successor Escrow Agent) is recursive, not circular, and stays clear; def-circular-self covers the as-X form."
+  },
+  {
    "id": "def-outside-meaning",
    "check": "possibly-undefined-term",
    "severity": 1,
@@ -3090,7 +3116,7 @@
    "rule_ids": [
     "R-4.30-no-multiple-numeration-subsections"
    ],
-   "message": "Decimal subsection label (1.1(a)): house rule 3 numbers subsections 1., 2., 3. under a lettered section (I., A., 1., (a), (i)); use Word's native numbering (MSCD 4.29-4.30 differ).",
+   "message": "Decimal subsection label (1.1(a)): house rule 3 numbers subsections 1., 2., 3. under a lettered section (I., A., 1., (a), (i)) (MSCD 4.29-4.30 differ). In a document Blake drafts, use Word's native numbering; in a redline of an existing document, keep its typed or native numbering and change only the labels (Blake's answer Q10).",
    "examples": [
     "1.1(a) Buyer shall pay the Purchase Price to Seller at the Closing by wire transfer.",
     "3.2(b)(i) Seller shall deliver the Bill of Sale."
@@ -3120,47 +3146,6 @@
     "Article 9 of the Uniform Commercial Code governs the security interest."
    ],
    "ctx": 40
-  },
-  {
-   "id": "enum-clause-labels",
-   "check": "enumeration",
-   "severity": 2,
-   "pattern": "(?<=[\\s,;:\\u2014\\u2013])(?:\\(A\\)(?=\\s.{1,400}?[\\s,;:\\u2014\\u2013]\\(B\\)\\s)|\\(1\\)(?=\\s.{1,400}?[\\s,;:\\u2014\\u2013]\\(2\\)\\s)|\\(x\\)(?=\\s.{1,400}?[\\s,;:\\u2014\\u2013]\\(y\\)\\s))",
-   "rule_ids": [
-    "R-4.47-clause-hierarchy"
-   ],
-   "message": "Enumerated clauses labeled (A), (1) or (x): house rule 3 labels clauses in a sentence (a), (b), (c), and subclauses (i), (ii) (MSCD 4.47 differs).",
-   "examples": [
-    "Buyer may terminate this agreement if (A) Seller breaches any covenant or (B) Seller becomes insolvent.",
-    "Licensee may use the Software only (1) for its internal business purposes and (2) at the Licensed Sites.",
-    "Buyer shall pay the greater of (x) $50,000 and (y) 5% of Net Revenue."
-   ],
-   "lookalikes": [
-    "Buyer may terminate this agreement if (a) Seller breaches any covenant or (b) Seller becomes insolvent.",
-    "Licensee shall comply with Section 101(1) of the Act.",
-    "The Class (A) Units carry voting rights."
-   ],
-   "ctx": 40
-  },
-  {
-   "id": "enum-roman-first-level",
-   "check": "enumeration",
-   "severity": 2,
-   "pattern": "(?<=[\\s,;:\\u2014\\u2013])\\(i\\)(?=\\s.{1,400}?[\\s,;:\\u2014\\u2013]\\(ii\\)\\s)",
-   "not": "(?<![\\w(])\\([a-h]\\)\\s",
-   "ctx": 400,
-   "rule_ids": [
-    "R-4.47-clause-hierarchy"
-   ],
-   "message": "(i), (ii) at the 1st clause level: house rule 3 labels clauses (a), (b) and reserves (i), (ii) for subclauses under a clause.",
-   "examples": [
-    "At the Closing, Seller shall deliver to Buyer (i) the Bill of Sale and (ii) the Assignment Agreement.",
-    "Licensee shall (i) keep the Software confidential and (ii) use it only at the Licensed Sites."
-   ],
-   "lookalikes": [
-    "Buyer may terminate this agreement if (a) Seller breaches any covenant or (b) any of the following occurs: (i) Seller becomes insolvent; or (ii) Seller makes an assignment for the benefit of creditors.",
-    "Seller shall deliver (a) the Bill of Sale and (b) the Assignment Agreement."
-   ]
   },
   {
    "id": "enum-ordinal-labels",
@@ -3227,7 +3212,7 @@
    "rule_ids": [
     "R-4.47-clause-hierarchy"
    ],
-   "message": "Lowercase label with a period or a half parenthesis (a. or a)): house rule 3 uses A. for sections, 1. for subsections and (a), (i) for clauses, with Word's native numbering.",
+   "message": "Lowercase label with a period or a half parenthesis (a. or a)): house rule 3 uses A. for sections, 1. for subsections and (a), (i) for clauses. Use Word's native numbering only in a document Blake drafts; a redline keeps the document's typed or native numbering (Blake's answer Q10).",
    "examples": [
     "a. Buyer shall pay the Purchase Price to Seller at the Closing.",
     "b) Seller shall deliver the Bill of Sale.",
@@ -3294,7 +3279,7 @@
     "Landlord may increase Base Rent by 3% on each January 1st during the Term."
    ],
    "lookalikes": [
-    "Buyer may exercise the Option at any time on or before January 5, 2027.",
+    "Buyer may exercise the Option at any time on or before 5:00 p.m. Eastern time on January 5, 2027.",
     "Tenant shall pay Base Rent in advance on the 1st day of each month."
    ],
    "ctx": 40
@@ -3415,7 +3400,7 @@
     "Brightwater may enter the Premises for inspection on not less than 48 hours' prior notification to Kestrel."
    ],
    "lookalikes": [
-    "Tenant may extend the Term by notifying Landlord no later than 180 days before the Initial Term ends.",
+    "Tenant may extend the Term by notifying Landlord no later than the 180th day before the Initial Term ends.",
     "Executive must have at least 5 years of experience in the industry.",
     "Buyer shall pay at least 50% of the Purchase Price at the Closing.",
     "Buyer may inspect the books no later than the 2nd Business Day after it gives notice.",
@@ -3424,6 +3409,30 @@
     "Beta shall employ 5 or more drivers at the Site.",
     "Kestrel shall notify Brightwater no later than the 10th day before each Site visit."
    ]
+  },
+  {
+   "id": "time-days-before",
+   "check": "time-ambiguity",
+   "severity": 1,
+   "pattern": "(?<!\\bthe\\s)(?<!\\bthose\\s)(?<!\\bthese\\s)(?<!\\bThe\\s)\\b(?:\\d+|(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred)(?:[- ](?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred))?(?:\\s+\\(\\d+\\))?)\\s+(?:calendar\\s+|business\\s+|Business\\s+|full\\s+|clear\\s+|consecutive\\s+)?(?:days?|Days?)\\s+(?:before|prior\\s+to|preceding)\\b",
+   "not": "\\bcount(?:ing|ed)?\\b|\\b(?:exclud|includ)(?:ing|es)\\s+(?:the\\s+)?(?:day|date)\\b|\\bboth\\s+days\\b",
+   "ctx": 60,
+   "rule_ids": [
+    "R-10.65-minimum-notice-ambiguity"
+   ],
+   "message": "N days before [event]: a period counted back from an event leaves unclear which day is the last one, and courts count it differently (MSCD 10.65-10.67). State the day: no later than the 30th day before the Closing Date, or a stated date (Blake's answer Q9).",
+   "examples": [
+    "Tenant may extend the Term by notifying Landlord no later than 180 days before the Initial Term ends.",
+    "Seller shall deliver the Rent Roll to Buyer 5 Business Days prior to the Closing.",
+    "Buyer shall give Seller notice no later than thirty (30) days before the Closing Date."
+   ],
+   "lookalikes": [
+    "Tenant may extend the Term by notifying Landlord no later than the 180th day before the Initial Term ends.",
+    "Seller shall operate the Business in the ordinary course during the 30 days before the Closing.",
+    "Buyer shall pay the Deposit no later than 5 Business Days after the date of this agreement.",
+    "Buyer shall give Seller notice no later than 30 days before the Closing Date, counting the Closing Date as 1 of the 30 days."
+   ],
+   "note": "Blake's answer Q9 (November 7, 2026): flag every N days before, not only the minimum-notice wording (time-minimum-before keeps that wording and runs first)."
   },
   {
    "id": "term-notice-on",
@@ -3503,20 +3512,26 @@
    "id": "time-from-date-range",
    "check": "time-ambiguity",
    "severity": 1,
-   "pattern": "\\b[Ff]rom\\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},?\\s*(?:\\d{4},?\\s+)?(?:to|until|till|through|thru)\\b(?!\\s+and\\s+including)",
+   "pattern": "\\b[Ff]rom\\s+(?:(?:January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},?\\s*(?:\\d{4},?\\s*)?|the\\s+(?:[A-Z][\\w-]*\\s+){0,3}Date,?\\s*)(?:\\([^()]{1,60}\\),?\\s*)?(?:and\\s+)?(?:continuing\\s+|running\\s+|ending\\s+)?(?:to|until|till|through|thru)\\b(?!\\s+and\\s+including)",
    "rule_ids": [
     "R-10.24-preposition-verdicts"
    ],
-   "message": "From [date] to (or through) [date]: from leaves unclear whether the 1st day is included, and to or until does the same for the last day. Write \"starting on January 1, 2027, and ending on March 31, 2027,\" or \"from and including ... to and including ...\" (MSCD 10.23-10.24).",
+   "message": "From [date] to (through, until) [date]: from leaves unclear whether the 1st day is included, and to or until does the same for the last day. Write starting on November 1, 2027, and ending on March 31, 2028 (or starting on the Effective Date and ending on the Expiration Date) (MSCD 10.24; Blake's answer Q12).",
    "examples": [
     "Contractor shall perform the Phase 1 Work from January 1, 2027, to March 31, 2027.",
-    "The Exclusivity Period runs from January 1, 2027, through June 30, 2027."
+    "The Exclusivity Period runs from January 1, 2027, through June 30, 2027.",
+    "The Exclusivity Period runs from the Effective Date through the Expiration Date.",
+    "Licensee may sell the Products from the Commencement Date until the Termination Date.",
+    "Contractor shall perform the Work from January 1, 2027 (the \"Start Date\") to March 31, 2027."
    ],
    "lookalikes": [
     "The Exclusivity Period starts on January 1, 2027, and ends on June 30, 2027.",
     "The Exclusivity Period runs from and including January 1, 2027, to and including June 30, 2027.",
     "Seller shall ship the Goods from its Memphis warehouse to Buyer's Nashville plant.",
-    "Buyer may return Units from January 1, 2027, through March 31, 2027, both days included."
+    "Buyer may return Units from January 1, 2027, through March 31, 2027, both days included.",
+    "Contractor shall perform the Work from time to time.",
+    "The Exclusivity Period starts on the Effective Date and ends on the Expiration Date.",
+    "Buyer shall pay the Purchase Price from the Escrow Account to Seller."
    ],
    "ctx": 40,
    "not": "\\bboth\\s+(?:days|dates)\\s+(?:included|inclusive)\\b|\\binclusive\\b"
@@ -4025,7 +4040,7 @@
    ],
    "lookalikes": [
     "ANY WARRANTY DISCLAIMER IN THIS AGREEMENT MUST SATISFY SECTION 2-316 OF THE UNIFORM COMMERCIAL CODE.",
-    "EXCEPT AS STATED IN THE SECTION TITLED \"WARRANTY,\" SELLER DISCLAIMS ALL OTHER WARRANTIES."
+    "EXCEPT UNDER THE SECTION TITLED \"WARRANTY,\" SELLER DISCLAIMS ALL OTHER WARRANTIES."
    ],
    "ctx": 40
   },
@@ -4053,7 +4068,7 @@
    "id": "nw-one-unit",
    "check": "number-word",
    "severity": 2,
-   "pattern": "\\b[Oo]ne-(?:year|month|week|day|hour|minute|quarter|decade|mile|percent|page|person|member|vote|share|unit)s?\\b",
+   "pattern": "\\b[Oo]ne-(?:year|month|week|day|hour|minute|quarter(?!s?\\s+of\\b)|decade|mile|percent|page|person|member|vote|share|unit)s?\\b",
    "rule_ids": [
     "R-14.15-words-then-digits"
    ],
@@ -4064,7 +4079,8 @@
    ],
    "lookalikes": [
     "Customer shall pay Supplier a one-time setup fee of $5,000 when Customer signs this agreement.",
-    "Each Restricted Stock Unit vests over a 4-year period."
+    "Each Restricted Stock Unit vests over a 4-year period.",
+    "Each party shall bear one-quarter of the fees of the Mediator."
    ],
    "ctx": 40
   },
@@ -4092,11 +4108,11 @@
    "id": "ord-first-before-term",
    "check": "ordinal-word",
    "severity": 2,
-   "pattern": "(?<!\\bof\\s)(?<![-\\w])first(?=\\s+(?!(?:Lien|Liens|Priority|Mortgage|Deed|Refusal|Offer|Negotiation)\\b)[A-Z][a-z])",
+   "pattern": "(?<!\\bof\\s)(?<![-\\w])first(?=\\s+(?!(?:Lien|Liens|Priority|Mortgage|Deed|Refusal|Offer|Negotiation|Amendments?|Amended|Restatements?|Restated|Supplements?|Supplemental|Modifications?|Addend(?:um|a)|Renewals?(?!\\s+(?:Terms?|Periods?|Options?|Years?|Dates?)\\b))\\b)[A-Z][a-z])",
    "rule_ids": [
     "R-14.15-words-then-digits"
    ],
-   "message": "First counts something here (the first Milestone Payment): write 1st (house rule 2). Keep fixed terms such as right of first refusal and first-priority.",
+   "message": "First counts something here (the first Milestone Payment): write 1st (house rule 2). Keep fixed terms such as right of first refusal and first-priority, and a document's name (the first Amendment; Blake's answer Q29).",
    "examples": [
     "Licensee shall make the first Milestone Payment no later than 30 days after the Launch Date.",
     "The Annual Minimum Royalty for the first Contract Year is $50,000."
@@ -4104,7 +4120,9 @@
    "lookalikes": [
     "This agreement amends the agreement titled \"First Amendment to Master Services Agreement\" between Acme Analytics, Inc. and Widgetco LLC.",
     "Borrower hereby grants Lender a first Lien on the Collateral.",
-    "Licensee shall make the 1st Milestone Payment no later than 30 days after the Launch Date."
+    "Licensee shall make the 1st Milestone Payment no later than 30 days after the Launch Date.",
+    "The parties signed this first Amendment on March 1, 2027.",
+    "This agreement is the first Amended and Restated Agreement between the parties."
    ],
    "ctx": 40
   },
@@ -4112,7 +4130,7 @@
    "id": "ord-first-count-noun",
    "check": "ordinal-word",
    "severity": 2,
-   "pattern": "(?<!\\bof\\s)(?<![-\\w])first(?=\\s+(?:invoice|shipment|delivery|order|renewal|extension|tranche|advance|draw|disbursement|closing|milestone|phase|round|sale|purchase|report|statement|period|term|calendar\\s+month|fiscal\\s+(?:year|quarter))s?\\b)|(?<![-\\w])first(?=\\s+of\\s+(?:each|every|the)\\s+(?:month|calendar\\s+month|year|quarter|week)\\b)",
+   "pattern": "(?<!\\bof\\s)(?<![-\\w])first(?=\\s+(?:invoice|shipment|delivery|order|renewal(?=s?\\s+(?:term|period|option|year|date)s?\\b)|extension|tranche|advance|draw|disbursement|closing|milestone|phase|round|sale|purchase|report|statement|period|term|calendar\\s+month|fiscal\\s+(?:year|quarter))s?\\b)|(?<![-\\w])first(?=\\s+of\\s+(?:each|every|the)\\s+(?:month|calendar\\s+month|year|quarter|week)\\b)",
    "rule_ids": [
     "R-14.15-words-then-digits"
    ],
@@ -4125,7 +4143,9 @@
    "lookalikes": [
     "Tenant shall pay Base Rent on the 1st day of each month.",
     "Tenant has a right of first refusal to lease any vacant space.",
-    "Borrower hereby grants Lender a first-priority security interest in the Collateral."
+    "Borrower hereby grants Lender a first-priority security interest in the Collateral.",
+    "The parties signed the first renewal on March 1, 2027.",
+    "The parties signed the second amendment on March 1, 2027."
    ],
    "ctx": 40
   },
@@ -4232,7 +4252,7 @@
     "Buyer shall pay the Price no later than 30 days after the Closing.",
     "A Material Adverse Effect occurs if Revenue falls by more than 20%.",
     "If Beta sells all or substantially all of its assets, Acme may terminate this agreement.",
-    "Beta shall give Acme notice no later than 10 days before relocating any Equipment.",
+    "Beta shall give Acme notice no later than the 10th day before relocating any Equipment.",
     "Acme may terminate this agreement if Beta sells substantially all of the Assets."
    ]
   },
@@ -5582,27 +5602,28 @@
   {
    "id": "amount-restated-period",
    "check": "repetition",
-   "severity": 2,
+   "severity": 3,
    "own_severity": true,
    "flags": "",
    "ctx": 40,
-   "pattern": "\\$\\s?[\\d,]+(?:\\.\\d+)?(?:\\s+(?:per|a|an|each)\\s+(?:year|month|quarter|week|day))?\\s*\\(\\s?\\$\\s?[\\d,]+(?:\\.\\d+)?\\s+(?:per|a|an|each)\\s+(?:month|year|week|day|quarter|hour)\\)",
+   "pattern": "\\$\\s?[\\d,]+(?:\\.\\d+)?(?:\\s+(?:per|a|an|each)\\s+(?:year|month|quarter|week|day))?\\s*\\(\\s?\\$\\s?[\\d,]+(?:\\.\\d+)?\\s+(?:(?:per|a|an|each)\\s+(?:month|year|week|day|quarter|hour)\\)|(?:per|for\\s+each)\\s+(?:rentable\\s+|usable\\s+)?square\\s+foot\\b[^()]{0,60}\\))",
    "rule_ids": [
     "R-1.56-no-repetition",
     "R-13.662-parentheses"
    ],
-   "message": "The same amount stated twice, as a total and as a rate ($84,000 ($7,000 per month)): state it once, and when the copies disagree each option both reconciles and deletes 1 copy (MSCD 1.56; 13.662).",
+   "message": "The same amount stated twice, as a total and as a rate ($84,000 ($7,000 per month); $6,650 a month ($28.50 per rentable square foot per year)): state it once (MSCD 1.56; 13.662). Severity 3 when the figures agree; when they disagree it is a conflict: reconcile them, and each option both reconciles and deletes 1 copy (Blake's answer Q11).",
    "examples": [
     "Annual subscription fee: $84,000 ($7,000 per month).",
     "Tenant shall pay Base Rent of $102,000 ($8,500 per month) for the 1st Lease Year.",
-    "The Fee is $84,000 per year ($7,000 per month)."
+    "The Fee is $84,000 per year ($7,000 per month).",
+    "Tenant shall pay $6,650 a month ($28.50 per rentable square foot per year)."
    ],
    "lookalikes": [
     "Annual subscription fee: $84,000.",
     "Tenant shall pay Base Rent of $8,500 per month.",
-    "Tenant shall pay $6,650 a month ($28.50 per rentable square foot per year)."
+    "Tenant shall pay Base Rent at the rate of $28.50 per rentable square foot per year."
    ],
-   "note": "From the round-7 lint analysis (10 real, 0 false in the corpora). A rate per square foot beside a monthly figure is a different unit, not a restatement (question 11 for Blake), so the look-alike keeps it clear."
+   "note": "From the round-7 lint analysis. Blake's answer Q11 (November 7, 2026): a rate restated beside its dollar figure, including a per-square-foot rate, is a severity-3 finding under MSCD 1.56 (a conflict when the figures disagree)."
   },
   {
    "id": "shall-in-where",

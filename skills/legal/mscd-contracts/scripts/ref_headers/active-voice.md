@@ -1,6 +1,6 @@
 # Active voice
 
-**House rule: active voice only, in every sentence and clause.** Read `house-style.md` section 1 for the recast patterns (unknown actor, legal fiction, amendment, party action) and the contingencies (linking verbs and adjectival participles aren't passive; quoted text stays; never change meaning to satisfy the rule).
+**House rule: active voice only, in every sentence and clause.** Read `house-style.md` section 1 for the recast patterns (unknown actor, legal fiction, amendment, party action, *solicit ... to accept employment* for *to be hired*, MSCD's concluding clause as *the date that the introductory clause states*) and the contingencies (linking verbs and adjectival participles aren't passive; quoted text stays; never change meaning to satisfy the rule).
 
 ## How to detect the passive
 

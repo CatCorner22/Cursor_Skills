@@ -2,6 +2,14 @@
 
 **The skill removes every ambiguity it finds.** For each one, the finding states each possible meaning in plain words before proposing a fix. If the fix requires choosing a meaning, never choose silently: ask which meaning Blake intends, or, in a redline, comment with 1 wording for each meaning.
 
+## Contents
+
+- Definitions
+- Causes added by the riders
+- Elaboration: terms of art in their everyday sense
+- How to use the list below
+- Contents of the rules list, then Rules: every ambiguity rule, by MSCD chapter
+
 ## Definitions
 
 - Text is **ambiguous** if it can express 2 or more inconsistent meanings (7.5). It is still ambiguous if context resolves it (7.6).
@@ -122,6 +130,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 ### Chapter 10: References to Time
 
 - **R-10.23-inclusive-exclusive-ambiguity** [sev 1] Inclusive-versus-exclusive ambiguity: a preposition marking the beginning or end of a period (from, after, until, to, by, between) can leave unclear whether the stated day is included. (10.23, 10.24, 10.25...; PDF p. 473)
+  - HOUSE: House addition: Every from [date] through [date] (or to or until) gets a finding, because from leaves the 1st day in doubt: write starting on November 1, 2027, and ending on April 30, 2028 (Blake's decision; MSCD 10.24). The finding needs an explicit date or a defined date term after from; from time to time and a place aren't findings. See house-style.md section 7.
   - Look for: a period bounded by a day using from, after, until, to, by, or between
   - Test: Ask whether the boundary day itself falls inside the period. Caselaw: from and after mostly exclusive; until, to, and by split; between mostly exclusive at both ends; starting and commences on likely inclusive; before likely exclusive; through likely inclusive.
   - Fix: State the time of day for each boundary (10.33), or use starting [day] and ending on or through [day], or say expressly inclusive or exclusive.
@@ -131,6 +140,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Test: Ask whether midnight on the date could be read as the start of that day.
   - Fix: Say midnight at the beginning [or end] of [date]. Don't use 12:01 a.m. or 11:59 p.m., which is clumsy.
 - **R-10.65-minimum-notice-ambiguity** [sev 1] Minimum-notice ambiguity: when a provision requires at least (or no fewer than, or not less than) N days' notice before an event, courts split between counting 1 terminal day (the Nth day before the event is the last valid day, 10.66) and requiring "clear" days that exclude both (the N+1th day before). A plain backward deadline (no later than 10 days before the audit; during the 10 days before the Exclusivity Period expires) follows the convention in 10.65 (count 1 terminal day, not the other): it is not the court split, and making the count explicit there is at most a low-severity improvement. (10.65, 10.66, 10.67; PDF p. 481)
+  - HOUSE: partly superseded: Blake's decision: every backward-counted period gets a finding, not only minimum-notice wording. Fix a plain deadline (no later than 30 days before the Closing Date) as no later than the 30th day before the Closing Date (the count stated) or a stated date; a minimum-notice period (at least 20 days' notice) still gets both counts and a question to Blake. See house-style.md section 7.
   - Look for: minimum notice: at least, no fewer than or not less than N days' notice (or N days before an event, where the provision sets how much notice a party must give)
   - Test: For a minimum-notice period, count back both ways (exclude 1 terminal day; exclude both) and see whether the last valid day differs (for a 31 December transfer with at least 10 days' notice: 21 December versus 20 December). For a plain deadline (no later than N days before), apply the 10.65 convention; flag it only if the parties' intent plainly differs.
   - Fix: Name the deadline day and offer both counts (the Nth day before; the N+1th day before) and ask which the parties intend; or denote the period in entire days.

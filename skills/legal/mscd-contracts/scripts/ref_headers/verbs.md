@@ -2,12 +2,20 @@
 
 Read this file when classifying sentences (pass 3), when choosing a verb in a redline or draft, and whenever a finding involves *shall*, *will*, *may*, *must*, *hereby*, *states*, *acknowledges*, or a condition.
 
+## Contents
+
+- Procedure for every sentence in the body
+- Quick reference (MSCD5 Figure 1 and the MSCD5 Quick Reference, with riders applied)
+- Riders on verbs (verified against the posts)
+- Table ratings in the rules below
+- Contents of the rules list, then Rules: every verb and category rule, by MSCD chapter
+
 ## Procedure for every sentence in the body
 
 1. **Choose the category first, then the verb** (3.5). The categories: agreement, performance, obligation, discretion, prohibition, policy, declaration, intention, recommendation, and the 3 ways to express a condition.
 2. **Run the *has a duty* test on every *shall*** (3.89-3.92): substitute *has a duty to*. If the sentence stops making sense, *shall* is wrong; pick the verb the true category calls for.
-3. **Check the subject.** *shall* imposes a duty only on the subject, and only when the subject is a party. For a duty on anyone else, restructure first (active voice, or *shall cause* for a party's instrumentality); use *must* only if restructuring fails (3.154-3.166). In a review, a correct *must* for a nonparty stays (SKILL.md, hard cases); never fix it with *shall cause*, *shall ensure*, *shall not permit*, or *shall prevent* for someone the party doesn't control (3.163; 3.176-3.177).
-4. **Never pair *shall* with a negative subject** (house rule; 3.324). *Neither party may assign*; *Acme shall not assign*.
+3. **Check the subject.** *shall* imposes a duty only on the subject, and only when the subject is a party. For a duty on anyone else, restructure first (active voice, or *shall cause* for a party's instrumentality); use *must* only if restructuring fails (3.154-3.166). In a review, a correct *must* for a nonparty stays (SKILL.md, hard cases); never fix it with *shall cause*, *shall ensure*, *shall not permit*, or *shall prevent* for someone the party doesn't control (3.163; 3.176-3.177). Company's own board isn't a nonparty: *The Board shall review* and *Company shall cause the Board to* are correct (3.160-3.161; Blake's decision).
+4. **Never pair *shall* with a negative subject** (house rule; 3.324). *Neither party may assign*; *Acme shall not assign*. For a nonparty subject (*No Authorized User shall*), don't write *No Authorized User may*: restructure onto the party, a reasonable-efforts duty plus a risk allocation (3.180; 8.5), and *shall cause* only for the party's instrumentality, such as its subsidiary or its own board (3.160-3.161) (house rule 8).
 5. **Active voice** (house rule): every recast keeps the actor as the subject.
 6. **Pick the tense of every policy** (3.334; 3.361). In force on signing or at a fixed date: the present tense (*Tennessee law governs this agreement*; *the Term ends on May 31, 2030*). Tied to an event that may not happen or whose timing is uncertain, or in a matrix clause after *if*, *when*, or *unless*: *will* (*this agreement will terminate 30 days after Acme receives the notice*; *No amendment of this agreement will be effective unless*). Check this on every sentence you write, not only on sentences you change.
 
@@ -37,6 +45,8 @@ Read this file when classifying sentences (pass 3), when choosing a verb in a re
 | Recommendation | *recommends* (or *encourages*, *reminds*) + *that* | A stronger party pointing something out | *Company recommends that Participant consult a legal adviser.* | 3.502-3.505 |
 
 The examples adapt MSCD5's quick reference to house style (active voice, digits, no *within*). The lint confirms that none is passive.
+
+**House rule 10 and declarations.** On Blake's draft, *states* also covers a statement of future fact (*Franchisee states that it will not contest the Marks*): don't convert it to an obligation (Blake's choice; MSCD 3.474-3.476 would convert it), and conform every *represents and warrants* to *states*, a stray one included. In a written consent, drop *RESOLVED, that*: *The Board approves the Merger Agreement* (Blake's choice over 3.514; `house-style.md` section 10).
 
 ## Riders on verbs (verified against the posts)
 

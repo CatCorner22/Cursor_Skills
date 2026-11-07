@@ -49,6 +49,17 @@
       "severity": 2,
       "why": "*should* in a condition (archaic subjunctive); a condition takes the present tense.",
       "fix": "If Tenant exercises the Renewal Option, ..."
+    },
+    {
+      "n": 6,
+      "type": "time-ambiguity",
+      "tier": "sneaky",
+      "anchor": "no later than 180 days before the Expiration Date",
+      "quote": "2. To exercise the Renewal Option, Tenant must give Landlord notice of exercise (the \"Renewal Notice\") no later than 180 days before the Expiration Date (that is, no later than Friday, September 2, 2027).",
+      "severity": 3,
+      "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the count removes a doubt rather than a court split (rule record R-10.65).  The parenthetical restates the deadline as a date, so the draft also says it twice (MSCD 1.56).",
+      "fix": "State the deadline once (MSCD 1.56): \"... no later than the 180th day before the Expiration Date.\"  Or keep only the stated date, with a time of day because the notice exercises the Renewal Option (Blake answers Q7 and Q9): \"... no later than [5:00 p.m.] [city] time on September 2, 2027.\"  Either way, delete the other statement; the weekday is issue 3.",
+      "added_by": "blake-answers-2026-11-07"
     }
   ],
   "traps": [
@@ -56,11 +67,6 @@
       "anchor": "February 29, 2028",
       "quote": "The term of the Lease began on March 1, 2018, and ends on February 29, 2028 (the \"Expiration Date\").",
       "why_correct": "2028 is a leap year, so February 29, 2028 is a real date (it is a Tuesday), and a 10-year term that began March 1, 2018 ends on it."
-    },
-    {
-      "anchor": "no later than 180 days before the Expiration Date",
-      "quote": "2. To exercise the Renewal Option, Tenant must give Landlord notice of exercise (the \"Renewal Notice\") no later than 180 days before the Expiration Date (that is, no later than Friday, September 2, 2027).",
-      "why_correct": "*no later than 180 days before* is the house-correct way to state a notice window (compare issue 4); only the weekday in the parenthetical is wrong (issue 3)."
     },
     {
       "anchor": "To exercise the Renewal Option, Tenant must give",
@@ -78,5 +84,13 @@
       "why_correct": "Blake's draft: *states* is the house verb for statements of fact (house rule 10)."
     }
   ],
-  "notes": "Issues 1 and 2 share a sentence and have separate anchors. The weekday was computed with Python's datetime: date(2028, 2, 29) - timedelta(days=180) = 2027-09-02, a Thursday; the contract says Friday. *1 period of 5 years*, *those 2 appraisers*, *a 3rd appraiser*, and *the 1st day* follow house rule 2. *no assignee or subtenant of Tenant may exercise it* is a correct negative subject with *may*. *MAI* is an appraisal designation, not an undefined defined term."
+  "notes": "Issues 1 and 2 share a sentence and have separate anchors. The weekday was computed with Python's datetime: date(2028, 2, 29) - timedelta(days=180) = 2027-09-02, a Thursday; the contract says Friday. *1 period of 5 years*, *those 2 appraisers*, *a 3rd appraiser*, and *the 1st day* follow house rule 2. *no assignee or subtenant of Tenant may exercise it* is a correct negative subject with *may*. *MAI* is an appraisal designation, not an undefined defined term.",
+  "audit": [
+    {
+      "n": 6,
+      "anchor": "no later than 180 days before the Expiration Date",
+      "change": "Blake answer Q9 (November 7, 2026): trap made a required issue (backward count stated twice)",
+      "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the "
+    }
+  ]
 }

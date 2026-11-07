@@ -1,6 +1,11 @@
 # Structure: front and back of the contract, layout, amendments, letter agreements, internal rules
 
-Apply house style first: enumeration I., A., 1., (a), (i) with no only child; avoid cross-references and refer by heading; Schedule and Exhibit capitalized. MSCD's layout rules marked HOUSE below yield to it.
+Apply house style first: enumeration I., A., 1., (a), (i) for the outline only, with no only child below the article (an article may hold 1 section; inline *(1) ... and (2) ...* and numbered definitions keep their form); native Word numbering only in a document Blake drafts (in a redline, keep the document's numbering and flag typed numbering once, severity 3); avoid cross-references and refer by heading (*under the section titled "Payment"*); Schedule and Exhibit capitalized. MSCD's layout rules marked HOUSE below yield to it.
+
+## Contents
+
+- Skeleton of an MSCD contract (with house style)
+- Contents of the rules list, then Rules: every structure rule, by MSCD chapter
 
 ## Skeleton of an MSCD contract (with house style)
 
@@ -10,6 +15,6 @@ Apply house style first: enumeration I., A., 1., (a), (i) with no only child; av
 4. **Lead-in**: *The parties agree as follows:*; after recitals, *The parties therefore agree as follows:* (2.159-2.164). No recital of consideration (2.165-2.217).
 5. **Body**: articles (I.) when there are more than about 25 sections (4.7), sections (A.) with bold headings, subsections (1.), enumerated clauses ((a)), subclauses ((i)).
 6. **Definitions**: an autonomous-definitions section for clear terms, on-site definitions for custom terms (6.86-6.98). Not first, and not in an attachment.
-7. **Concluding clause** (optional): *The parties are signing this agreement on the date that the introductory clause states.* (5.3-5.15).
+7. **Concluding clause** (optional): *The parties are signing this agreement on the date that the introductory clause states.* (5.3-5.15; house rule 1 recasts MSCD's *on the date stated in the introductory clause*).
 8. **Signature blocks**: 1 per party, entity name in capitals, *By:*, name and title (5.28-5.40).
 9. **Schedules, then exhibits** (`attachments.md`).

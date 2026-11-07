@@ -47,8 +47,8 @@
       "anchor": "no transferee shall exercise",
       "quote": "Optionee may transfer the Option only by will or by the laws of descent and distribution, and no transferee shall exercise the Option until the transferee gives Company a copy of the will or court order under which the transferee received the Option.",
       "severity": 1,
-      "why": "\"shall\" with a negative subject, hidden mid-sentence.",
-      "fix": "and no transferee may exercise the Option until ..."
+      "why": "\"shall\" with a negative subject, hidden mid-sentence. Blake answer Q22 (November 7, 2026): for a nonparty subject, restructure onto the party (MSCD 3.165, 3.180); the may form keeps the nonparty subject and is incorrect.",
+      "fix": "Optionee may transfer the Option only by will or by the laws of descent and distribution, and Company is not required to honor a transferee's exercise of the Option until the transferee gives Company a copy of the will or court order under which the transferee received the Option.  (Restructured onto Company, a party: MSCD 3.165, 3.292.  Not \"no transferee may exercise\": a transferee doesn't sign; Blake answer Q22.)"
     }
   ],
   "traps": [
@@ -78,5 +78,13 @@
       "why_correct": "\"the\" goes with \"Plan\"; \"Company Plan\" is not a party name (house rule 11)."
     }
   ],
-  "notes": "Blake's draft, otherwise clean: Aptos 12, A./1./(a) enumeration, digits, \"states\", no party articles. \"Company grants Optionee an option\" is language of performance and correct. D.1's \"must ... and must pay\" are both conditions of exercise."
+  "notes": "Blake's draft, otherwise clean: Aptos 12, A./1./(a) enumeration, digits, \"states\", no party articles. \"Company grants Optionee an option\" is language of performance and correct. D.1's \"must ... and must pay\" are both conditions of exercise.",
+  "audit": [
+    {
+      "n": 5,
+      "anchor": "no transferee shall exercise",
+      "change": "Blake answer Q22 (November 7, 2026): fix rewritten: restructured onto the party; the may form with a nonparty subject is no longer offered (why: answer noted; fix rewritten)",
+      "why": "See the key entry."
+    }
+  ]
 }

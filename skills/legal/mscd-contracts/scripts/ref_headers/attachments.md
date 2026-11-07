@@ -5,7 +5,7 @@ Blake asked for the schedule-versus-exhibit check on every contract. Run it on e
 ## Decision procedure for each attachment
 
 1. **Classify it** (5.72-5.73):
-   - **Exhibit**: a stand-alone document, such as a form of agreement, certificate, note, or organizational document, often one that a party signs or delivers.
+   - **Exhibit**: a stand-alone document, such as a form of agreement, certificate, note, or organizational document, often one that a party signs or delivers. A document with its own signature blocks (a signed order form) is a stand-alone document: label it Exhibit, even when the draft calls it Schedule A (house rule 6; Blake's decision).
    - **Schedule**: information that could have been in the body but the drafter moved out because it is long, or because other people prepare it on another timetable: lists, disclosure items, specifications, pricing, addresses.
    - If an attachment carries the wrong label, relabel it and update every reference.
 2. **Order** (5.75-5.76): signatures, then all schedules, then all exhibits.

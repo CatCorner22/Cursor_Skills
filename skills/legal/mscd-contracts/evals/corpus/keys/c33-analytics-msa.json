@@ -122,7 +122,6 @@
    "quote": "Each notice under this agreement must be in writing and is effective when the recipient receives it.",
    "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
    "fix": "Each notice under this agreement must be in writing and will be effective when the recipient receives it",
-   "optional": true,
    "added_by": "audit"
   }
  ],
@@ -155,6 +154,12 @@
    "traps_removed": [],
    "change": "optional category-will issue n13 added",
    "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  },
+  {
+   "n": 13,
+   "anchor": "and is effective",
+   "change": "Blake answer Q18 (November 7, 2026): optional dropped; the issue is required (will for a policy about a contingent future event, MSCD 3.334, 3.369, 13.209) (optional dropped)",
+   "why": "See the key entry."
   }
  ]
 }

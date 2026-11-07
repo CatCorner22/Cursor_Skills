@@ -41,7 +41,8 @@ score() { # $1 skill, $2 corpus root, $3 json out
 for root in "$C/evals/corpus" $S/corpus3 $S/corpus4 $S/corpus5 $S/corpus6 $S/corpus7; do
   [ -d "$root/keys" ] || continue
   n=$(basename $(dirname "$root"))-$(basename "$root")
-  bt=$(score "$B" "${root/$C/$B}" "$O/$n-base.json"); ct=$(score "$C" "$root" "$O/$n-cand.json")
+  # both trees score against the SAME keys (the candidate's), so a key change never reads as a lint change
+  bt=$(score "$B" "$root" "$O/$n-base.json"); ct=$(score "$C" "$root" "$O/$n-cand.json")
   echo "$n"; echo "  baseline:  $(echo $bt)"; echo "  candidate: $(echo $ct)"
   python3 - "$O/$n-base.json" "$O/$n-cand.json" "$O/$n-lost.txt" "$n" <<'EOF' || FAIL=1
 import json, sys

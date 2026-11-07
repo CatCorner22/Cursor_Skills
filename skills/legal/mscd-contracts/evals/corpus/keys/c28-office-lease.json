@@ -167,8 +167,18 @@
    "quote": "Each notice under this Lease must be in writing and is effective when the recipient receives it.",
    "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
    "fix": "Each notice under this Lease must be in writing and will be effective when the recipient receives it",
-   "optional": true,
    "added_by": "audit"
+  },
+  {
+   "n": 19,
+   "type": "time-ambiguity",
+   "tier": "sneaky",
+   "anchor": "no later than 180 days before",
+   "quote": "Tenant may extend the term for 1 additional period of 2 years by giving Landlord notice no later than 180 days before the Expiration Date.",
+   "severity": 3,
+   "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the count removes a doubt rather than a court split (rule record R-10.65).",
+   "fix": "... no later than the 180th day before the Expiration Date.",
+   "added_by": "blake-answers-2026-11-07"
   }
  ],
  "traps": [
@@ -181,11 +191,6 @@
    "anchor": "February 29, 2028",
    "quote": "The term of this Lease shall commence on March 1, 2027, and shall end on February 29, 2028 (the \"Expiration Date\"), unless Tenant extends the term under the section titled \"Option to Extend.\"",
    "why_correct": "2028 is a leap year, so February 29, 2028 is a real date, and it is in U.S. format."
-  },
-  {
-   "anchor": "no later than 180 days before",
-   "quote": "Tenant may extend the term for 1 additional period of 2 years by giving Landlord notice no later than 180 days before the Expiration Date.",
-   "why_correct": "Clear deadline: \"no later than ... before\" has no before/after ambiguity."
   },
   {
    "anchor": "Tenant is not required to remove",
@@ -205,6 +210,18 @@
    "traps_removed": [],
    "change": "optional category-will issue n18 added",
    "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  },
+  {
+   "n": 18,
+   "anchor": "and is effective",
+   "change": "Blake answer Q18 (November 7, 2026): optional dropped; the issue is required (will for a policy about a contingent future event, MSCD 3.334, 3.369, 13.209) (optional dropped)",
+   "why": "See the key entry."
+  },
+  {
+   "n": 19,
+   "anchor": "no later than 180 days before",
+   "change": "Blake answer Q9 (November 7, 2026): trap made a required issue (backward count)",
+   "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the "
   }
  ]
 }

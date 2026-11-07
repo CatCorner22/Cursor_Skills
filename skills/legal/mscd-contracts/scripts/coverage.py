@@ -191,7 +191,7 @@ def self_test():
                          {'check': 'rule:rule', 'severity': 1, 'source': 'rules', 'para': 1, 'start': 0, 'end': 4, 'match': 'Acme'}]}
     found = [{'quote': 'The Company shall deliver the Units', 'type': 'party-article', 'fix': 'Company shall deliver the Units.'},
              {'quote': 'Acme shall pay the Fee', 'type': 'justified paragraph', 'fix': 'left-align'}]
-    rows, missing = coverage(lint, found)
+    rows, _missing = coverage(lint, found)
     st = [(r['check'], r['status']) for r in rows]
     cases = [('2nd occurrence quoted: the 1st is still missing', st[0] == ('party-article', 'MISSING') and st[1] == ('party-article', 'accounted')),
              ('a formatting finding named in a finding quoting its paragraph', st[2] == ('justified', 'accounted')),

@@ -79,7 +79,7 @@ Sections, by lint check: agrees-to, and-or, archaic, arising-out-of, attachment-
 
 ## category-must
 
-- *To exercise the Option, Holder must give Company notice no later than March 1, 2028.* Condition: must with a to-infinitive. (MSCD 3.386)
+- *To exercise the Option, Holder must give Company notice no later than 5:00 p.m. Central time on March 1, 2028.* Condition: must with a to-infinitive. The deadline decides a right, so it states a time of day and a time zone (house-style.md section 7). (MSCD 3.386; 10.33)
 - *The arbitrator must state the reasons for the award in writing.* Nonparty subject: must is right. (MSCD 3.166)
 - *To obtain reimbursement for an expense, Consultant must submit an expense report to Client no later than 90 days after Consultant incurs the expense.* Condition with a to-infinitive (MSCD's "To be reimbursed" recast in active voice for house rule 1). (MSCD 3.386 (11-1))
 - *For an Exercise Notice to be effective, Holder must deliver it with the Exercise Price.* A for clause makes the condition explicit. (MSCD 3.386; 3.391)
@@ -134,7 +134,7 @@ Type contract-reference: an unnumbered internal reference (*above*, *below*, *th
 - *Processor shall comply with Article 28 of Regulation (EU) 2016/679 in processing Personal Data for Controller.* Regulation. (house rule 4)
 - *Employee is eligible for leave if Employee meets the requirements of 29 C.F.R. § 825.110.* Regulation; the section mark is correct here. (house rule 4)
 - *Company shall disclose this agreement in a Current Report on Form 8-K under Item 1.01.* SEC form item; looks like MSCD-style numbering. (house rule 4)
-- *Buyer shall pay the Purchase Price in the manner stated in the section titled "Payment."* House form for a needed internal reference. (house rule 4)
+- *Buyer shall pay the Purchase Price under the section titled "Payment."* House form for a needed internal reference. *In the manner stated in the section titled* is a reduced passive and takes a finding. (house rules 1 and 4)
 - *Each party's obligations under this section continue for 3 years after this agreement ends.* Self-reference without a number. (house rule 4)
 - *Licensee may elect to retain its rights under Section 365(n) of the United States Bankruptcy Code.* Statute with a subsection. (house rule 4)
 - *Lender has the rights of a secured party under Article 9 of the Uniform Commercial Code as in effect in Tennessee.* Statute; contrast with the internal 'Article 9' problem entry. (house rule 4)
@@ -152,7 +152,7 @@ Type contract-reference: an unnumbered internal reference (*above*, *below*, *th
 ## defined-term
 
 - *In this agreement, "Business Day" means a day other than a Saturday, Sunday, or day on which banks in Nashville, Tennessee, are closed.* Correct verb and lead-in. (MSCD 6.25; MSCD 6.32)
-- *"Trademark" means a registered trademark or service mark, or any trademark or service mark that is the subject of a pending application.* Repeating the defined word inside its definition isn't circular (MSCD 6.3); contrast with 'any change of control of Company'.
+- *"Trademark" means a registered trademark or service mark, or any trademark or service mark that is the subject of a pending application.* Repeating the word in lowercase, in its ordinary sense, inside its definition isn't circular (MSCD 6.3); contrast with 'any change of control of Company'. The capitalized term inside its own definition (*"Obligations" means all Obligations of Borrower ...*) is circular: severity 1 (house-style.md section 10).
 - *"Register," "Registered," and "Registration" refer to registration under the Securities Act of 1933.* 'Refer to' is right where the terms are different parts of speech. (MSCD 6.43)
 - *"Losses" means damages, fines, and penalties and includes reasonable attorneys' fees.* Full definition plus enlarging language; contrast with 'means and includes'. (MSCD 6.39)
 - *"Separation from Service" has the meaning given in Section 409A of the Internal Revenue Code.* Points to a statute, not to another part of this agreement. (MSCD 6.99)
@@ -203,6 +203,10 @@ Type contract-reference: an unnumbered internal reference (*above*, *below*, *th
 - *1. Buyer shall pay the Purchase Price to Seller at the Closing.* Subsection level under a lettered section. Excerpt: a 2. follows. (house rule 3)
 - *I. PURCHASE AND SALE
 A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House article line: Roman numeral and an all-capitals heading. Excerpt: the article has more sections. (house rule 3; MSCD 4.10)
+- *I. DEFINITIONS
+A. Defined Terms.  In this agreement, the following definitions apply:* An article may hold a single section, so a lone A. under I. isn't an only child (Blake's decision). (house rule 3; MSCD 4.20)
+- *Buyer may terminate this agreement if (1) Seller fails to deliver the Units or (2) Seller becomes insolvent.* Inline enumeration inside a sentence keeps its form; the house scheme governs the outline only (Blake's decision). (house rule 3)
+- *(a) "Business Day" means a day other than a Saturday or Sunday.* On the other side's draft, numbered definitions keep their numbers: house rule 3 doesn't reach them (Blake's decision). Don't number definitions in a draft you write (MSCD 6.27). (house rule 3)
 
 ## headings-clause
 
@@ -254,6 +258,7 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 - *Each Lender shall fund its Pro Rata Share of each Advance on the Funding Date.* The Lenders sign the credit agreement. (MSCD 3.89)
 - *Guarantor shall reimburse Lender for each cost that Lender incurs in enforcing this guaranty.* Guarantor signs the guaranty. (MSCD 3.89)
 - *Each Subcontractor's employees must wear hard hats while on the Site.* Nonparty subject: must. (MSCD 3.166)
+- *The Board shall review Executive's Base Salary each year.* Company's own board acts for Company, so it isn't a nonparty, and *shall* on it is correct (Blake's decision). (MSCD 3.160-3.161)
 
 ## number-words
 
@@ -264,6 +269,7 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 - *Tenant shall deliver each notice under this agreement to Landlord at One Liberty Plaza, New York, New York 10006.* Proper name of a building. (house rule 2)
 - *Licensee shall not permit anyone other than its employees to use the Software.* Pronoun; not 'any one'. (house rule 2)
 - *Contractor shall replace any Key Person who resigns with one that Customer approves in writing.* 'one' is a pronoun standing for 'an individual'. (house rule 2)
+- *Buyer shall pay half of the Escrow Agent's fees.* A fraction word stays a word: *half*, *one-half*, *a third*, *a quarter* (Blake's choice). (house rule 2)
 - *This agreement is dated January 5, 2027, and is between Three Rivers Holdings, LLC, a Tennessee limited liability company ("Owner"), and Acme Builders, Inc., a Delaware corporation ("Contractor").* Number inside a proper name. (house rule 2)
 
 ## once-when-condition
@@ -278,6 +284,7 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 - *Tenant has a right of first refusal to lease any vacant space on the 4th floor of the Building.* Fixed term. (house rule 2)
 - *Recipient shall not disclose the Confidential Information to any third party.* 'third' doesn't count a position, so house rule 2 (digits) doesn't reach it; the *third party* usage itself is a separate severity-3 finding (MSCD 13.875: write *any Person other than a party*). (house rule 2)
 - *This agreement amends the agreement titled "First Amendment to Master Services Agreement" between Acme Analytics, Inc. and Widgetco LLC.* Title of a document is a proper name. (house rule 2)
+- *This second amendment amends the Lease.* A document's name keeps its ordinal word (*Second Amendment*, *this second amendment*, *the First Amended and Restated Agreement*; Blake's decision). (house rule 2)
 - *Landlord shall make the Premises at 500 Third Avenue, Seattle, Washington, available to Tenant on March 1, 2027.* Street name is a proper name. (house rule 2)
 - *Borrower hereby grants Lender a first-priority security interest in the Collateral.* Term of art in secured lending; it ranks the lien rather than counting. (house rule 2)
 - *Lessee may terminate this agreement on the 3rd anniversary of the Commencement Date.* Correct house form; MSCD would write 'third'. (house rule 2; MSCD 14.15 (overridden))
@@ -326,17 +333,18 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 ## represents-warrants
 
 - *Seller states that the Equipment is free of any Lien.* The house form. (house rule 10; MSCD 3.457 (13-1))
-- *SELLER DISCLAIMS THE IMPLIED WARRANTY OF MERCHANTABILITY AND THE IMPLIED WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE.* A UCC disclaimer must name merchantability conspicuously; flag but keep. (settled policy (statutory wording); MSCD 3.415)
+- *SELLER DISCLAIMS THE IMPLIED WARRANTY OF MERCHANTABILITY AND THE IMPLIED WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE.* Not a represents-and-warrants problem: a UCC disclaimer must name merchantability conspicuously, so the words stay. The capitals still take a finding: the house form is bold, 14-point type in sentence case, with an initial line for each party under it, unless Blake identifies a statute that requires capitals (house rule 9). (settled policy (statutory wording); MSCD 3.415; 16.23)
 - *Holder may exercise the Warrant in whole or in part before March 1, 2030.* Warrant is the noun for the security, not the verb. (MSCD 13.934)
 - *The Receiving Party may disclose Confidential Information to its Representatives who need to know it.* Represent appears inside a defined noun. (none)
-- *Supplier represents and warrants that the Products comply with the Specifications.* Correct only on the other side's draft: keep it, and add a comment suggesting the remedies-neutral sentence. On Blake's own draft this is a problem. (house rule 10)
+- *Supplier represents and warrants that the Products comply with the Specifications.* Correct only on the other side's draft: keep it, and add a comment suggesting the remedies-neutral sentence. On Blake's own draft this is a problem, even as a stray instance in a contract that otherwise says *states*. (house rule 10)
+- *Franchisee states that it will not contest the Marks.* On Blake's draft, *states* covers a statement of future fact; don't convert it to an obligation (Blake's choice). (house rule 10; MSCD 3.474-3.476 differ)
 
 ## shall-in-condition
 
 - *If Distributor fails to meet the Minimum Purchase Requirement for a Quarter, Manufacturer may terminate this agreement.* Present tense in the conditional clause. (MSCD 3.358)
 - *If Tenant receives a notice of violation from a Governmental Authority, Tenant shall give Landlord a copy of that notice.* The conditional clause doesn't affect shall in the matrix clause. (MSCD 3.361)
 - *Unless Widgetco consents, Acme shall not transfer the Shares.* Shall not in the matrix clause after unless. (MSCD 3.361; 3.363)
-- *If the FDA does not approve the Licensed Product on or before December 31, 2028, Licensee may terminate this agreement.* Negative present tense in the conditional clause. (MSCD 3.358)
+- *If the FDA does not approve the Licensed Product on or before 5:00 p.m. Eastern time on December 31, 2028, Licensee may terminate this agreement.* Negative present tense in the conditional clause. The deadline decides the termination right, so it states a time of day and a time zone (house-style.md section 7). (MSCD 3.358; 10.33)
 - *Buyer's obligation to close is subject to the condition that Seller has obtained the Landlord Consent.* Present perfect in a condition stated as policy. (MSCD 3.395; 3.397)
 - *Each Share that Investor owns on the date of this agreement or acquires later is subject to this agreement.* Present tense in the relative clause, and it says whether the agreement covers after-acquired Shares. (MSCD 3.507; 3.508)
 
@@ -401,7 +409,6 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 - *Each unvested Option will vest in full upon a Change of Control.* Automatic event. (MSCD 10.57)
 - *The Escrow Agreement will terminate upon the release of the entire Escrow Amount.* Automatic event. (MSCD 10.57)
 - *Buyer shall deliver the Closing Statement to Seller no later than 60 days after the Closing Date.* MSCD 10.69's recommended form. (MSCD 10.69; MSCD 13.608)
-- *Tenant may extend the Term by notifying Landlord no later than 180 days before the Initial Term ends.* A plain backward deadline follows MSCD 10.65's counting convention (count 1 terminal day, not the other); the court split in 10.66 is about minimum-notice wording (at least N days' notice), so don't recast this deadline with 2 counts. (MSCD 10.65-10.66)
 - *Seller shall obtain the Landlord Consent on or before March 1, 2027.* Inclusive on its face. (MSCD 10.23)
 - *Lender shall fund the Loan no later than March 1, 2027.* The catalog's fix form; the day is included. (MSCD 13.608; MSCD 10.23)
 - *Licensee may sell its remaining inventory of Licensed Products through December 31, 2027.* 'Through' is likely inclusive. (MSCD 10.25)
@@ -414,6 +421,7 @@ A. Sale of Assets.  Seller shall sell the Assets to Buyer at the Closing.* House
 - *Seller retains title to the Equipment until Buyer pays the Purchase Price in full.* 'Until' an event (a moment), not a day, so no inclusive-day question arises. (MSCD 10.23)
 - *Each Bid must reach Seller no later than 5:00 p.m. Central time on March 1, 2027.* Time of day fixes the boundary. (MSCD 10.33)
 - *Licensee may cure any breach no later than 30 days after Licensee receives notice of the breach.* Receipt is the anchor; contrast with 'after notice'. (MSCD 10.63)
+- *Supplier shall deliver copies of the records no later than 30 days after Customer requests them.* A request doesn't get the giving-versus-receipt choice that a notice gets (Blake's decision). (MSCD 13.623-13.627)
 
 ## time-is-of-the-essence
 
@@ -441,13 +449,13 @@ Type usage: a wordy or imprecise usage that MSCD 17.19 or the Selected Usages ch
 - *Acme and Widgetco shall designate a project engineer and a plant coordinator, respectively.* Respectively pairs 2 lists of equal length, both joined by *and*; don't add *each*, which contradicts it. (MSCD 13.746)
 - *If the quality manager is unavailable, they may designate another employee to approve the shipment.* May grants a nonparty discretion and imposes no duty; singular they is the house form. (MSCD 3.166; house rule 10)
 - *Contractor shall use the Customer Data only to perform the Services.* Only sits right before the purpose it limits; MSCD 3.222's ambiguity concerns may ... only, not shall ... only. But don't write it as a fix for *may only use*, because there it adds a duty to use: write the prohibition *shall not use ... other than* (3.226). (MSCD 13.649)
-- *Lessee may operate the Equipment only from April 1 through October 31.* Only before a time phrase is MSCD's own fix for a misplaced only (*may move furniture ... only during nonbusiness hours*, 13.651); it limits when, so 3.222's 2 readings don't arise. The dates still need the inclusive-day check (10.24). (MSCD 13.651)
+- *Lessee may operate the Equipment only from April 1 through October 31.* Only before a time phrase is MSCD's own fix for a misplaced only (*may move furniture ... only during nonbusiness hours*, 13.651); it limits when, so 3.222's 2 readings don't arise. *From [date] through [date]* still takes a finding, because *from* leaves the 1st day in doubt (MSCD 10.24; Blake's decision): write *only during the period starting on April 1 and ending on October 31*. (MSCD 13.651; 10.24)
 - *Holder may sell the Shares only if Company has consented.* Only before a condition is MSCD's form (3.363), not the 3.222 ambiguity. (MSCD 3.363)
 - *No one other than the Key Consultant may lead the Services.* House rule 8's form for a prohibition with a negative subject. (house rule 8)
 - *Lonestar is not required to close unless Brazos has delivered the Consents.* Blake's fixed exception for the absence of an obligation. (MSCD 3.292)
 - *Seller is responsible for the work of each of its subcontractors.* Is responsible for allocates liability for work the party handles as it wishes; MSCD 3.144 bars it only with a present participle to state a duty. (MSCD 3.145)
 - *Landlord is entitled to the entire award.* A nonparty pays the award, so the sentence hides no party's duty. (MSCD 3.169)
-- *Base Rent is $42 per rentable square foot of the Premises, or $176,400 a year.* The 2 figures agree ($42 x 4,200 = $176,400), so this is no ambiguity; at most a severity 3 point that MSCD 1.56 bars saying it twice. (MSCD 1.56)
+- *Base Rent is $42 per rentable square foot of the Premises, or $176,400 a year.* The 2 figures agree ($42 x 4,200 = $176,400), so this is no ambiguity. It is still a severity-3 finding, because MSCD 1.56 bars saying it twice: keep 1 figure (Blake's decision). When the figures disagree, it is a conflict. (MSCD 1.56)
 - *"Lease Year" means each 12-month period during the Term that begins on April 1.* The definition is clear, and Schedule B confirms the reading. (MSCD 10.99)
 - *The Escrow Agent shall hold the Escrow Funds in a segregated account.* Inside the form of escrow agreement attached as an exhibit, the escrow agent signs, so it is a party there. (MSCD 3.89)
 - *This section contains the disclosure that Section 8-70-115(2) of the Colorado Revised Statutes requires: Juniper Peak is not entitled to unemployment insurance benefits unless unemployment compensation coverage is provided by Juniper Peak or some other entity.* Text a statute requires keeps the statute's words, even where it breaks a house rule; the lint marks it `statutory-text`. (SKILL.md precedence 2)
