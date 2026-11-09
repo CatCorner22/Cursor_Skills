@@ -1,0 +1,76 @@
+P|Your prescription will be filled by tomorrow.
+P|All staff are trained in CPR.
+P|The procedure is performed under general anesthesia.
+P|Side effects are reported to the FDA.
+P|Your call might be recorded.
+P|The bandage shouldn't be removed for 2 days.
+P|Your biopsy was sent out on Monday.
+P|Patients who are admitted after midnight stay until noon.
+P|The leftover medicine must be disposed of safely.
+P|Your name was called twice.
+P|Insulin pens are stored in the refrigerator.
+P|Your account has been closed.
+P|Copies can be requested in writing.
+P|The trial was stopped early.
+P|Results are usually posted no later than 3 days after the test.
+P|The ethics committee was consulted.
+P|You'll be given a wristband.
+P|A second opinion was sought.
+P|The incision is closed with staples.
+P|No samples were lost.
+P|The chart notes were written by a resident.
+P|She was taught how to use the inhaler.
+P|The drug has been shown to lower cholesterol.
+P|Patients being treated for cancer need a flu shot.
+P|Specimens received after 5 p.m. go to the lab the next day.
+P|Data collected in this study stay private.
+P|The pills shown in the picture are 10 mg tablets.
+P|Questions asked by patients go to the pharmacist.
+P|Your skin gets cleaned before the shot.
+P|The policy was approved by the board in 2024.
+P|It is expected that most patients go home in 2 days.
+P|It has been reported that this drug causes rash.
+P|Your belongings will be returned to you.
+P|You may be contacted for future studies.
+P|The order needs to be cosigned.
+P|Do you want to be resuscitated?
+P|The cast must be kept dry.
+P|You will have your stitches removed in 10 days.
+P|Your medicine is covered under Part D.
+P|This document is governed by Tennessee law.
+P|The vaccine is given as a shot in the arm.
+P|Payment is expected at the time of service.
+P|The patient was struck by a car.
+P|Your doctor will be notified.
+P|Smoking is not allowed on campus.
+A|The pharmacist fills your prescription.
+A|We record calls for training.
+A|Your nurse removed the bandage this morning.
+A|You have finished the course of antibiotics.
+A|The board approved the policy in 2024.
+A|Store the pens in the refrigerator.
+A|Your doctor has shown you how to use the pen.
+A|The cough lasted 3 weeks.
+A|Your fever broke overnight.
+A|We closed your account on 1 May.
+A|The test is quick and safe.
+A|You are at risk for falls.
+A|Your insurance has paid the claim.
+A|You'll feel a small pinch.
+A|The pain spread to the left arm.
+A|The cast is heavy.
+A|Wash your hands after you touch the cream.
+A|The drug lowered cholesterol in this study.
+A|You've had this rash before.
+A|The resident wrote the chart notes.
+A|Your heart sounds normal.
+A|Cancer is a group of diseases.
+A|The study ended early.
+A|We expect most patients to go home in 2 days.
+A|Get a flu shot every year.
+S|You might feel bloated.
+S|Your eyes might look red and irritated.
+S|If you are scared, tell the nurse.
+S|Your skin might be dry and cracked.
+S|The clinic is crowded on Mondays.
+S|Are you divorced or widowed?

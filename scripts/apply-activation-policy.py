@@ -75,9 +75,9 @@ PACK_BLURBS = {
         "Mention when building or debugging LangChain or LangGraph apps.",
     ),
     "legal": (
-        "Contract drafting (MSCD)",
-        "Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style.",
-        "Mention when reviewing, marking up, or drafting contract language.",
+        "Legal and one-way text (MSCD)",
+        "Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style; draft and review one-way medical text (policies, SOPs, patient materials) in active voice.",
+        "Mention when working on contract language, or on medical, pharmacy, or research text that readers can't ask questions about.",
     ),
     "microsoft365": (
         "Microsoft 365",

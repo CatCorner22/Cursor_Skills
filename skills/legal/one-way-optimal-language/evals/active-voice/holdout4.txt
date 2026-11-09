@@ -1,0 +1,59 @@
+P|With the IV removed, you can shower.
+P|You have been told about the risks.
+P|After being discharged, rest for 2 days.
+P|There are 3 forms to be completed before surgery.
+P|Nothing was found on your scan.
+P|What is known about this drug in pregnancy?
+P|Where is my sample sent?
+P|How is this medicine taken?
+P|Why was my claim denied?
+P|Which drugs are covered by my plan?
+P|Payments made late incur a fee.
+P|Help is needed to get out of bed.
+P|The patient was observed overnight for bleeding.
+P|Your name and birth date are checked before each dose.
+P|Most side effects are caused by the higher dose.
+P|You could be asked to stop eating at midnight.
+P|Patients must be kept informed about their care.
+P|Your test is being processed.
+P|The trial has been stopped for safety reasons.
+P|Alcohol should not be consumed with this medicine.
+P|Data are stored on secure servers.
+P|Your surgeon will be assisted by a resident.
+P|Copies of your records are available if requested.
+P|Some side effects have not been reported yet.
+P|Children should be watched closely for 2 hours.
+P|The tablets are coated to protect your stomach.
+P|The patient was placed on a ventilator.
+P|An advance directive is honored only if it is signed.
+P|Before being examined, change into a gown.
+P|Your liver is tested every 3 months while you take this drug.
+A|Have you eaten today?
+A|Has your child eaten today?
+A|Has the nurse checked your pulse?
+A|Have you had a flu shot this year?
+A|Was it you who called?
+A|Did your doctor explain the risks?
+A|Your nurse will remove the IV before you shower.
+A|We found nothing on your scan.
+A|Your plan covers these drugs.
+A|The resident will assist your surgeon.
+A|Please change into a gown before the exam.
+A|The coating protects your stomach.
+A|You need help to get out of bed.
+A|Watch your child closely for 2 hours.
+A|The higher dose causes most side effects.
+A|We test your liver every 3 months while you take this drug.
+A|Stop eating at midnight.
+A|The rash has gone away.
+A|Your pulse slowed during the night.
+A|Ask for a copy of your records.
+A|Is your pain better today?
+A|Are you having trouble breathing?
+A|Has anyone explained this form to you?
+A|The pharmacist answered my questions.
+A|Do not drink alcohol while you take this medicine.
+S|The patient appeared distressed.
+S|Are you satisfied with your care?
+S|The rash is gone.
+S|You might get confused at night.
