@@ -552,7 +552,7 @@ Plain source text translates more efficiently and more accurately [Research: ISO
 | Headings | Use heading styles, not bold body text, so that screen readers can navigate. | WCAG 2.1 AA |
 | Lists | Number sequences; bullet unordered items; introduce each list with a full sentence and a colon. | MSCD 4.38–4.46 |
 | Blocks of text | No more than about 15 lines without a break. | MSCD 4.63 |
-| Spacing after periods | One space. | MSCD 16.44–16.46 |
+| Spacing after sentences | Two spaces after each sentence inside a paragraph; one after a colon and after an abbreviation inside a sentence. HTML shows two spaces as one; do not force the second with a no-break space. | House rule (Blake's decision), which overrides MSCD 16.44–16.46 |
 | Quotation marks | Curly, consistently. | MSCD 16.47–16.53 |
 | Images | Each with a caption and with alternative text in digital versions. | Houts 2006; WCAG 2.1 AA |
 
