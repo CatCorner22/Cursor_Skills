@@ -3,9 +3,13 @@
 
 Standard library only. If spaCy and an English model are installed, the script
 also runs a dependency-parse pass and merges its hits (use --no-spacy to skip).
+It loads en_core_web_sm by default. --model NAME loads another model. On
+evals/active-voice/all.txt (9 November 2026), en_core_web_sm left 194 of 196
+active sentences clean and en_core_web_trf left 195 of 196, but trf ran about
+7 times slower on a 2-core CPU. Both caught 262 of 262 passives.
 
 Usage:
-    python3 active_voice_check.py FILE [FILE ...] [--no-spacy] [--quiet] [--strict]
+    python3 active_voice_check.py FILE [FILE ...] [--no-spacy] [--model NAME] [--quiet] [--strict]
 
 --strict counts MENTION hits as blocking. Use it on a file that holds only the
 revised text, where italics and quotation marks mark emphasis, not examples.
@@ -411,10 +415,9 @@ def in_spans(pos, spans):
 SPACY_NLP = None
 
 
-def spacy_hits(text):
-    """Dependency-parse pass: passive subjects/auxiliaries and VBN modifiers."""
+def spacy_hits(doc):
+    """Dependency-parse pass over a parsed line: passive subjects/auxiliaries and VBN modifiers."""
     out = []
-    doc = SPACY_NLP(text)
     for t in doc:
         if t.dep_ in ("auxpass", "nsubjpass", "csubjpass"):
             out.append(("PASSIVE", t.head.idx))
@@ -434,8 +437,20 @@ def check_text(text, use_spacy=True):
     in_verbatim = False
     in_mention = False
     results = []
+    lines = text.splitlines()
+    parsed = {}
+    if use_spacy and SPACY_NLP is not None:
+        # One batched parse is far faster than one call per line.
+        prose, code_block = [], False
+        for i, line in enumerate(lines):
+            if line.lstrip().startswith("```"):
+                code_block = not code_block
+            elif not code_block and line.strip():
+                prose.append(i)
+        docs = SPACY_NLP.pipe((lines[i].replace("’", "'") for i in prose), batch_size=256)
+        parsed = dict(zip(prose, docs))
     in_code = False
-    for ln, line in enumerate(text.splitlines(), 1):
+    for ln, line in enumerate(lines, 1):
         if line.lstrip().startswith("```"):
             in_code = not in_code
             continue
@@ -449,10 +464,9 @@ def check_text(text, use_spacy=True):
         spans = protected_spans(line)
         seen = set()
         raw = [(code, tokens[j][1]) for code, j in find_hits(tokens)]
-        if use_spacy and SPACY_NLP is not None and line.strip():
-            raw += spacy_hits(line.replace("’", "'"))
+        if ln - 1 in parsed:
+            raw += spacy_hits(parsed[ln - 1])
         for code, pos in sorted(raw, key=lambda x: x[1]):
-            key = pos // 1
             if any(abs(pos - p) < 3 for p in seen):
                 continue
             seen.add(pos)
@@ -475,6 +489,14 @@ BLOCKING = {"PASSIVE", "GET-PASSIVE", "PSEUDO", "CAUSATIVE", "REDUCED",
 
 def main(argv):
     global SPACY_NLP
+    model = "en_core_web_sm"
+    if "--model" in argv:
+        i = argv.index("--model")
+        if i + 1 >= len(argv):
+            print("--model needs a model name", file=sys.stderr)
+            return 2
+        model = argv[i + 1]
+        argv = argv[:i] + argv[i + 2:]
     files = [a for a in argv if not a.startswith("--")]
     use_spacy = "--no-spacy" not in argv
     quiet = "--quiet" in argv
@@ -482,12 +504,11 @@ def main(argv):
     if use_spacy:
         try:
             import spacy
-            for name in ("en_core_web_trf", "en_core_web_lg", "en_core_web_md", "en_core_web_sm"):
-                try:
-                    SPACY_NLP = spacy.load(name)
-                    break
-                except OSError:
-                    continue
+            try:
+                SPACY_NLP = spacy.load(model, exclude=["ner"])
+            except OSError:
+                print(f"spaCy model {model} is not installed; running the regex pass only", file=sys.stderr)
+                SPACY_NLP = None
         except ImportError:
             SPACY_NLP = None
     blocking = 0
@@ -495,11 +516,12 @@ def main(argv):
         with open(fn, encoding="utf-8") as fh:
             res = check_text(fh.read(), use_spacy)
         for ln, code, snip in res:
-            if code in BLOCKING or (strict and code == "MENTION"):
+            counts = code in BLOCKING or (strict and code == "MENTION")
+            if counts:
                 blocking += 1
-            if not quiet or code in BLOCKING:
+            if not quiet or counts:
                 print(f"{fn}:{ln}: {code:<11} ...{snip}...")
-    engine = "regex + spaCy" if SPACY_NLP is not None else "regex only"
+    engine = f"regex + spaCy {model}" if SPACY_NLP is not None else "regex only"
     print(f"[{engine}] blocking hits: {blocking}", file=sys.stderr)
     return 1 if blocking else 0
 

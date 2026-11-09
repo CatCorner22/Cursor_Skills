@@ -24,7 +24,7 @@ MSCD sets a comprehensive, rule-based style for the *language* of business contr
 - **Categories of contract language (Ch. 3):** agreement (lead-in only), performance (*hereby* + present tense), obligation (*shall* = "has a duty to" only; *must* for duties on non-subjects and for conditions), discretion (*may*), absence of obligation (*is not required to*), prohibition (*shall not*), policy (present tense; *will* for contingent future events), declaration (*states*, *acknowledges*), intention (*intends that*), recommendation (*recommends*). Conditions: conditional clause, language of obligation with explicit consequence, or language of policy (*It is a condition to…*).
 - **The *has a duty* test (3.92, 3.120–3.124):** replace *shall* with *has a duty to*; if the sentence stops making sense, *shall* is wrong.
 - **Active voice (3.13–3.26):** use it unless the passive helps; drawbacks of passive = extra words, broken S-V-O order, hidden actor. MSCD allows passive for nonparty/non-person actors and focus on the thing.
-- **Hidden-actor family:** buried-actor policies (*payable*, *due*, *subject to*, *eligible for*, 3.336–3.338), buried verbs/nominalizations (17.7–17.10), *receive* (3.168), *is entitled to* (3.169).
+- **Hidden-actor family:** buried-actor policies (*payable*, *due*, *subject to*, *eligible for*, 3.336–3.338), nominalizations, which bury verbs (17.7–17.10), *receive* (3.168), *is entitled to* (3.169).
 - **May / might (3.231–3.240):** *may* = discretion only; *might* = possibility. *May not* has three meanings (3.307). *May … only* is ambiguous (3.222–3.226).
 - **Expectation of relevance (3.213):** specific grants of discretion imply limits; state whether any limit applies to the discretion.
 - ***Unless* with activity verbs (3.372–3.385):** replace with *except that if X, A will no longer be required to Y*.
@@ -57,7 +57,7 @@ Two audits (files in `research_notes/Evidence for one way medical text/`: `mscd_
   - *Must* hints at a condition, but courts default to reading a duty, so the drafter must add a *to*-clause that names what the condition unlocks (3.386–3.391). A skill that uses *must* for every duty loses even that hint.
   - The prudence test for vagueness needs low stakes **and** a commonplace context (7.52), not one or the other.
   - *Likely* states a probability; it is not vague (13.522).
-- **Overstated:** 8.144 lists five benchmarks that courts used to measure efforts; guidelines and protocols extend that list only by analogy. The skill's third keep condition (no safety-critical action turns on the term) belongs to the skill, not to MSCD.
+- **Overstated:** 8.144 lists five benchmarks that courts apply when they measure efforts; guidelines and protocols extend that list only by analogy. The skill's third keep condition (no safety-critical action turns on the term) belongs to the skill, not to MSCD.
 - **Omitted tools (about 50), most important for one-way medical text:**
   - Inclusive versus exclusive *or* (11.50–11.65).
   - A negative in front of an *or*-list (11.60, 11.66–11.68).

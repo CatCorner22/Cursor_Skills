@@ -316,7 +316,7 @@ Work through these techniques in order and use the first one that fits:
 1. **A number or threshold.** *Drink plenty of fluids* → *Drink at least [X] cups of water each day.* *A high fever* → *A temperature of [X] °F or higher.*
 2. **An observable event.** *If your symptoms get worse* → *If you cannot keep fluids down for [X] hours, or if you have trouble breathing.*
 3. **A named decision maker.** When judgment cannot leave the text, say whose judgment governs and how that person records it: *The attending physician decides whether the patient has decision-making capacity and records the reasons in the chart.* [MSCD 7.48; Design choice]
-4. **A benchmark the reader can find.** Tie a standard that must stay vague to past practice, or to a named guideline or written protocol with its version and date. MSCD 8.144 lists the benchmarks that courts used to measure efforts; guidelines and protocols extend that list only by analogy.
+4. **A benchmark the reader can find.** Tie a standard that must stay vague to past practice, or to a named guideline or written protocol with its version and date. MSCD 8.144 lists the benchmarks that courts apply when they measure efforts; guidelines and protocols extend that list only by analogy.
 5. **Freestanding sub-duties beside an efforts duty.** Keep *reasonable efforts* for the goal that the actor does not control, give it a deadline, and state each related task as its own duty, not as the meaning of *reasonable efforts* (MSCD 8.136, 8.140, 8.161). Example: *The social worker must use reasonable efforts to reach the patient's surrogate no later than [X] hours after the attending physician asks. The social worker must also call each telephone number in the chart at least twice, at least [X] hours apart, and must record each attempt.*
 
 Use the placeholders [X] in this manual's examples deliberately: the clinical value belongs to the clinicians who own the document, not to the writer.
@@ -344,7 +344,7 @@ Use the placeholders [X] in this manual's examples deliberately: the clinical va
 
 ### 5.1 Why a fixed lexicon
 
-MSCD's central idea holds that each kind of meaning gets its own verb structure, and that the writer picks the meaning first (MSCD 3.2–3.5). Clinical guideline research confirms the stakes. When health-services professionals rated how much obligation guideline authors intended by twelve deontic terms, *must* scored a median of 100 out of 100 with almost no spread, *may* and *may consider* scored about 33 to 37, and *should*, *is recommended*, *is indicated*, and *should consider* fell in a middle zone with wide, overlapping ranges [Research: Lomotan et al. 2010]. In other words, readers disagree about what *should* demands. The study's authors recommended three distinct levels, recommended that guideline writers tie them to recommendation strength, and advised against *consider* because nobody can audit whether a reader "considered" something [Research: Lomotan et al. 2010].
+MSCD's central idea holds that each kind of meaning gets its own verb structure, and that the writer picks the meaning first (MSCD 3.2–3.5). Clinical guideline research confirms the stakes. When health-services professionals rated the obligation that each of twelve deontic terms conveys in a guideline, *must* scored a median of 100 out of 100 with almost no spread, *may* and *may consider* scored about 33 to 37, and *should*, *is recommended*, *is indicated*, and *should consider* fell in a middle zone with wide, overlapping ranges [Research: Lomotan et al. 2010]. In other words, readers disagree about what *should* demands. The study's authors recommended three distinct levels, recommended that guideline writers tie them to recommendation strength, and advised against *consider* because nobody can audit whether a reader "considered" something [Research: Lomotan et al. 2010].
 
 ### 5.2 The lexicon
 
@@ -571,7 +571,7 @@ Plain source text translates more efficiently and more accurately [Research: ISO
 | 5 | Mood | Indicative, not imperative (3.133–3.140) | Imperative for patient instructions | One actor; USP <17> practice |
 | 6 | Numbers 1–10 | Words (14.15) | Digits in patient-facing text | USP <17> explicit numeric instructions |
 | 7 | *Acknowledge* | Use *acknowledges* (3.485–3.486) | *I understand that* in patient-signed forms | Plain wording for lay signers [Design choice] |
-| 8 | Contractions | Never in contracts (17.37) | Patient explanatory text may use them; instructions never use negative contractions (write *do not*, *cannot*) | Spelled-out *not* resists skimming [Design choice] |
+| 8 | Contractions | Never in contracts (17.37) | Patient explanatory text may use them; instructions never use negative contractions (write *do not*, *cannot*) | A full *not* resists skimming [Design choice] |
 | 9 | Emphasis | None, absent a legal or bargaining reason (16.23) | Bold for the single most important instruction in patient-facing text | Disparity in sophistication — MSCD 16.23's own exception |
 
 ### 10.2 Contradictions among sources (keep these visible)
