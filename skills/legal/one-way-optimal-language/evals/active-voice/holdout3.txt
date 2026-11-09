@@ -1,0 +1,60 @@
+P|Not recommended for children under 6.
+P|If swallowed, get medical help right away.
+P|Use only as directed by your doctor.
+P|When taken with food, this medicine causes less nausea.
+P|Once opened, throw the bottle away after 30 days.
+P|This medicine is to be taken by mouth.
+P|Not to be used by pregnant women.
+P|Unless otherwise directed, take 1 tablet each day.
+P|The patient, who was admitted yesterday, is stable.
+P|You have the right to be informed of the risks.
+P|The surrogate's decision will be respected unless it conflicts with the patient's known wishes.
+P|Any concern raised by a staff member goes to the ethics committee.
+P|Your participation is voluntary and can be withdrawn at any time.
+P|A clinician trained in palliative care leads the meeting.
+P|The results, once confirmed, go into your chart.
+P|Benefits cannot be guaranteed.
+P|Your information will not be sold.
+P|The study was designed to test a new drug.
+P|Patients who were enrolled before 2025 keep their current schedule.
+P|An interpreter will be provided at no cost.
+P|Pain medicine that is prescribed for you must not be shared.
+P|The meeting was held in the family room.
+P|It is assumed that the patient lacks capacity.
+P|Your tumor was removed in one piece.
+P|Changes to this policy are approved by the medical executive committee.
+P|The patient got discharged home on Friday.
+P|Shots are typically given in the upper arm.
+P|Your visit has already been paid for.
+P|Every request is reviewed no later than 2 business days after we get it.
+P|The patient presented with chest pain and was admitted.
+A|Keep out of reach of children.
+A|Shake well before use.
+A|Store at room temperature.
+A|Take this medicine by mouth.
+A|The patient lacks capacity, according to Dr. Shah.
+A|We will not sell your information.
+A|You may stop taking part at any time.
+A|The committee meets on the first Tuesday of each month.
+A|Dr. Shah removed your tumor in one piece.
+A|The patient presented with chest pain.
+A|Our interpreters help at no cost.
+A|The family held a meeting in the family room.
+A|You have the right to know the risks.
+A|A nurse will call you if the results change.
+A|Your nurse has already shown you the pump.
+A|The drug works by lowering blood sugar.
+A|Most people tolerate this medicine well.
+A|Tell us if you have questions.
+A|The medicine starts working in 1 hour.
+A|Doctors at this hospital follow the policy.
+A|The clinic opened in 2019.
+A|Your heart rate dropped during the test.
+A|We reviewed every request no later than 2 business days after we got it.
+A|You and your family decide together.
+A|The scar will fade over time.
+S|You might feel lightheaded and disoriented.
+S|Patients often feel exhausted after chemotherapy.
+S|Is your child vaccinated?
+S|The office is located on the second floor.
+S|You might be embarrassed to ask.
