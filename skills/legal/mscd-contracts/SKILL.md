@@ -1,8 +1,8 @@
 ---
 name: mscd-contracts
+disable-model-invocation: true
 description: "Review, redline (real Word tracked changes), comment on, proofread, and draft business contracts to Kenneth A. Adams's A Manual of Style for Contract Drafting (MSCD, 5th edition), as updated by his blog, in Blake Reagan's house style (active voice, digits, I./A./1./(a)/(i) numbering, Schedule A and Exhibit 1, cross-references by heading, no article before party names). Use it whenever Blake asks to review, mark up, redline, edit, tighten, fix, comment on, or draft any contract, agreement, amendment, NDA, clause, definition, or term sheet; whenever he asks about shall, will, may, must, should, efforts, active voice, ambiguity, vagueness, defined terms, recitals, numbering, dates, numbers, or schedules and exhibits; and whenever he pastes contract language and asks what's wrong with it, even in a 1-line question that doesn't name MSCD. Load it before the docx skill or a search of Project files. Not for deal or legal-risk advice on its own, or for writing that isn't contract language."
 ---
-
 # MSCD contracts
 
 This skill makes contract language say 1 thing, clearly, the way Ken Adams's *A Manual of Style for Contract Drafting* (MSCD5, 2023) prescribes, as updated by his blog through October 2026 and adjusted by Blake's house style. It works in 4 modes: **Review** (a findings report), **Redline** (tracked changes in the .docx), **Comment** (Word comments), and **Draft** (a new contract). Every mode runs the same analysis and cites the MSCD paragraph or blog post behind every change.

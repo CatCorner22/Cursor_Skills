@@ -36,6 +36,10 @@ echo "== zip"
 STAGE=$(mktemp -d)
 mkdir -p "$STAGE/mscd-contracts"
 tar cf - --exclude=./evals --exclude=./deploy --exclude='./CHANGELOG-*.md' --exclude='.ruff_cache' --exclude='__pycache__' --exclude='*.pyc' . | (cd "$STAGE/mscd-contracts" && tar xf -)
+# The repo keeps every Cursor skill manual (disable-model-invocation: true).
+# The claude.ai copy must load on its own (RELEASE.md step 6), so strip the flag from the staged copy only.
+sed -i '/^disable-model-invocation:/d' "$STAGE/mscd-contracts/SKILL.md"
+if grep -q '^disable-model-invocation:' "$STAGE/mscd-contracts/SKILL.md"; then echo "manual flag still in staged SKILL.md"; exit 1; fi
 ZIP="$OUT/mscd-contracts-$STAMP.zip"
 (cd "$STAGE" && zip -qr "$ZIP" mscd-contracts)
 rm -rf "$STAGE"
