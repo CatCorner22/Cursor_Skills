@@ -1,6 +1,6 @@
-# Efforts standards, material and MAC
+# Efforts standards, material, and MAC
 
-Use only *reasonable efforts*, with a performance standard (8.134-8.143); no hierarchy of efforts standards makes sense (8.3). Consider the core definition at 8.156. For *material*, decide which meaning is intended, "nontrivial" or "dealbreaker" (9.21-9.32), then omit it, use *nontrivial*, or use a defined *Material* (9.51-9.64). Use one term, MAC (9.103-9.111), with the definition at 9.113-9.115.
+Use only *reasonable efforts*, with a performance standard (8.134-8.143); no hierarchy of efforts standards makes sense (8.3). Consider the core definition at 8.156. For *material*, decide which meaning the drafter intends, "nontrivial" or "dealbreaker" (9.21-9.32), then omit it, use *nontrivial*, or use a defined *Material* (9.51-9.64). Use 1 term, MAC (9.103-9.111), with the definition at 9.113-9.115.
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 

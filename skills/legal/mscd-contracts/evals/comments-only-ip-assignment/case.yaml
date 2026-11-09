@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: comments-only-ip-assignment
+expected_outcome: |
+  ip-assignment-comments.docx with Word comments by "Blake's AI Agent" and no tracked changes or text changes. Because Blake will send the file to the other side, the comments use the skill's external form. They cover the 5 planted problems: an obligation inside the Work Product definition; "may only use" (ambiguous limited discretion); a duty on nonparties ("shall sign a written assignment"); a $2,000 travel cap that can be read per trip or in the aggregate; and "unless it contains artwork", where "it" has 2 possible antecedents. They leave the correct text alone: "work made for hire", "Section 101 of the United States Copyright Act", "Contractor hereby assigns", "Company is not required to use".
+context:
+  scaffold_script: place-files.sh

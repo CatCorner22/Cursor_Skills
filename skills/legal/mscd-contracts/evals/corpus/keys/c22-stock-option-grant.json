@@ -1,0 +1,90 @@
+{
+  "id": "c22-stock-option-grant",
+  "file": "contracts/c22-stock-option-grant.docx",
+  "title": "Stock Option Grant Notice and Agreement",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "defined-term",
+      "anchor": "and Company shall make each determination",
+      "quote": "\"Cause\" means (a) Optionee's conviction of a felony, (b) Optionee's fraud against Company, or (c) Optionee's breach of Optionee's confidentiality obligations to Company, and Company shall make each determination of Cause in good faith.",
+      "severity": 2,
+      "why": "The definition of \"Cause\" contains an obligation.",
+      "fix": "End the definition after clause (c); put the good-faith duty in its own sentence (for example, in the section titled \"Expiration\")."
+    },
+    {
+      "n": 2,
+      "type": "syntactic-ambiguity",
+      "anchor": "the earlier of the 10th anniversary",
+      "quote": "The Option expires on the earlier of the 10th anniversary of the Grant Date or the date that is 3 months after Optionee's Service terminates.",
+      "severity": 1,
+      "why": "\"the earlier of X or Y\" (MSCD 13.862).",
+      "fix": "The Option expires on the earlier of (a) the 10th anniversary of the Grant Date and (b) the date that is 3 months after Optionee's Service terminates."
+    },
+    {
+      "n": 3,
+      "type": "conflict",
+      "anchor": "Option for 90 days",
+      "quote": "After Optionee's Service terminates for any reason other than Cause, Optionee may exercise the vested portion of the Option for 90 days.",
+      "severity": 1,
+      "why": "E.2's 90-day post-termination exercise period conflicts with E.1's 3 months (3 calendar months can be 89 to 92 days).",
+      "fix": "Use 1 measure in both places, for example 3 months, and have E.2 refer to the expiration rule."
+    },
+    {
+      "n": 4,
+      "type": "shall-in-condition",
+      "anchor": "If Company shall effect",
+      "quote": "If Company shall effect a stock split, reverse stock split, or stock dividend, Company shall adjust the number of Shares and the exercise price proportionately.",
+      "severity": 2,
+      "why": "\"shall\" in a condition.",
+      "fix": "If Company effects a stock split, reverse stock split, or stock dividend, ..."
+    },
+    {
+      "n": 5,
+      "type": "negative-subject-shall",
+      "anchor": "no transferee shall exercise",
+      "quote": "Optionee may transfer the Option only by will or by the laws of descent and distribution, and no transferee shall exercise the Option until the transferee gives Company a copy of the will or court order under which the transferee received the Option.",
+      "severity": 1,
+      "why": "\"shall\" with a negative subject, hidden mid-sentence. Blake answer Q22 (November 7, 2026): for a nonparty subject, restructure onto the party (MSCD 3.165, 3.180); the may form keeps the nonparty subject and is incorrect.",
+      "fix": "Optionee may transfer the Option only by will or by the laws of descent and distribution, and Company is not required to honor a transferee's exercise of the Option until the transferee gives Company a copy of the will or court order under which the transferee received the Option.  (Restructured onto Company, a party: MSCD 3.165, 3.292.  Not \"no transferee may exercise\": a transferee doesn't sign; Blake answer Q22.)"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "To exercise the Option, Optionee must",
+      "quote": "To exercise the Option, Optionee must give Company notice stating the number of Shares that Optionee elects to buy and must pay the exercise price for those Shares in full.",
+      "why_correct": "\"must\" in a condition is correct; it states what Optionee needs to do to exercise, not a duty."
+    },
+    {
+      "anchor": "Section 422 of the Internal Revenue Code",
+      "quote": "The Option is a nonqualified stock option and is not an incentive stock option under Section 422 of the Internal Revenue Code.",
+      "why_correct": "Statute reference; fine."
+    },
+    {
+      "anchor": "the day on which Company receives",
+      "quote": "An exercise is effective on the day on which Company receives both the notice and the payment.",
+      "why_correct": "Correct relative construction."
+    },
+    {
+      "anchor": "is not required to issue",
+      "quote": "Company is not required to issue any fractional Share.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "the terms of the Company Plan",
+      "quote": "If this agreement conflicts with the terms of the Company Plan, the Company Plan controls.",
+      "why_correct": "\"the\" goes with \"Plan\"; \"Company Plan\" is not a party name (house rule 11)."
+    }
+  ],
+  "notes": "Blake's draft, otherwise clean: Aptos 12, A./1./(a) enumeration, digits, \"states\", no party articles. \"Company grants Optionee an option\" is language of performance and correct. D.1's \"must ... and must pay\" are both conditions of exercise.",
+  "audit": [
+    {
+      "n": 5,
+      "anchor": "no transferee shall exercise",
+      "change": "Blake answer Q22 (November 7, 2026): fix rewritten: restructured onto the party; the may form with a nonparty subject is no longer offered (why: answer noted; fix rewritten)",
+      "why": "See the key entry."
+    }
+  ]
+}

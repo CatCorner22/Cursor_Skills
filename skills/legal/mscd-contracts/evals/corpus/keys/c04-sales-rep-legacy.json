@@ -1,0 +1,203 @@
+{
+  "id": "c04-sales-rep-legacy",
+  "file": "contracts/c04-sales-rep-legacy.md",
+  "title": "Sales Representative Agreement",
+  "tier": "obvious",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "date-format",
+      "anchor": "this ___ day of",
+      "quote": "This sales representative agreement is made this ___ day of ________, 2027, between Corvane Marine Supply, Inc., a Florida corporation (the \"Principal\"), and Pell Harbor Marketing LLC, a Florida limited liability company (\"Representative\").",
+      "severity": 3,
+      "why": "\"this ___ day of\" blank date (house rule 7). The clause also uses \"is made\" rather than \"is dated\".",
+      "fix": "This sales representative agreement is dated ________, 2027, and is between ..."
+    },
+    {
+      "n": 2,
+      "type": "party-article",
+      "anchor": "(the \"Principal\")",
+      "quote": "This sales representative agreement is made this ___ day of ________, 2027, between Corvane Marine Supply, Inc., a Florida corporation (the \"Principal\"), and Pell Harbor Marketing LLC, a Florida limited liability company (\"Representative\").",
+      "severity": 3,
+      "why": "House rule 11: no article before a defined party name; \"the Principal\" recurs throughout (keyed once). \"Representative\" is correct.",
+      "fix": "(\"Principal\"); \"Principal\" without \"the\" throughout."
+    },
+    {
+      "n": 3,
+      "type": "archaic",
+      "anchor": "WHEREAS, the Principal manufactures",
+      "quote": "WHEREAS, the Principal manufactures and sells marine hardware; and",
+      "severity": 3,
+      "why": "WHEREAS recitals (both are covered by this issue).",
+      "fix": "State the background as plain sentences."
+    },
+    {
+      "n": 4,
+      "type": "archaic",
+      "anchor": "NOW, THEREFORE",
+      "quote": "NOW, THEREFORE, the parties agree as follows:",
+      "severity": 3,
+      "why": "Archaic lead-in.",
+      "fix": "The parties therefore agree as follows:"
+    },
+    {
+      "n": 5,
+      "type": "term-of-art",
+      "anchor": "its strategic partner",
+      "quote": "The Principal hereby appoints Representative as its strategic partner and exclusive sales representative for the Principal's marine hardware products (the \"Products\") in the Florida counties in Schedule A (the \"Territory\").",
+      "severity": 2,
+      "why": "\"partner\" suggests a partnership; the relationship is an independent sales representative.",
+      "fix": "Delete \"strategic partner and\"."
+    },
+    {
+      "n": 6,
+      "type": "category-will",
+      "anchor": "Representative will solicit",
+      "quote": "Representative will solicit orders for the Products only within said Territory and only from retail chandleries.",
+      "severity": 2,
+      "why": "\"will\" used to impose a duty.",
+      "fix": "Representative shall solicit ..."
+    },
+    {
+      "n": 7,
+      "type": "archaic",
+      "anchor": "within said Territory",
+      "quote": "Representative will solicit orders for the Products only within said Territory and only from retail chandleries.",
+      "severity": 3,
+      "why": "\"said\" as an adjective.",
+      "fix": "within the Territory"
+    },
+    {
+      "n": 8,
+      "type": "efforts",
+      "anchor": "commercially reasonable best efforts",
+      "quote": "Representative shall use commercially reasonable best efforts to promote the Products in the Territory.",
+      "severity": 2,
+      "why": "Mixed efforts standard (MSCD ch. 8).",
+      "fix": "reasonable efforts"
+    },
+    {
+      "n": 9,
+      "type": "term-of-art",
+      "anchor": "for the Principal's consideration",
+      "quote": "Representative shall submit each order to the Principal for the Principal's consideration.",
+      "severity": 2,
+      "why": "\"consideration\" is a contract term of art.",
+      "fix": "for the Principal's review"
+    },
+    {
+      "n": 10,
+      "type": "sole-discretion",
+      "anchor": "in its sole discretion",
+      "quote": "The Principal may, in its sole discretion, accept or reject any order.",
+      "severity": 3,
+      "why": "Redundant with \"may\" (MSCD 3.249).",
+      "fix": "The Principal may accept or reject any order."
+    },
+    {
+      "n": 11,
+      "type": "category-should",
+      "anchor": "Representative should notify",
+      "quote": "Representative should notify the Principal of any customer complaint about the Products.",
+      "severity": 1,
+      "why": "\"should\" leaves unclear whether Representative has a duty.",
+      "fix": "Representative shall notify ..."
+    },
+    {
+      "n": 12,
+      "type": "vagueness",
+      "anchor": "a substantial inventory",
+      "quote": "Representative shall keep a substantial inventory of demonstration Products at its office.",
+      "severity": 2,
+      "why": "\"substantial\" is undefined where a number was possible.",
+      "fix": "at least [number] units of each Product"
+    },
+    {
+      "n": 13,
+      "type": "number-words",
+      "anchor": "five percent (5%)",
+      "quote": "The Principal shall pay Representative a commission of five percent (5%) of the amount that each customer in the Territory pays the Principal for Products that Representative sold to that customer.",
+      "severity": 3,
+      "why": "Words with digits (house rule 2).",
+      "fix": "5%"
+    },
+    {
+      "n": 14,
+      "type": "provided-that",
+      "anchor": "provided that the customer",
+      "quote": "The Principal shall pay Representative each commission no later than 15 days after the end of the month in which the Principal receives the customer's payment, provided that the customer has paid for the order in full.",
+      "severity": 2,
+      "why": "Proviso used to state a condition.",
+      "fix": "..., but only if the customer has paid for the order in full."
+    },
+    {
+      "n": 15,
+      "type": "cross-reference-number",
+      "anchor": "as provided in Section C above",
+      "quote": "On termination, the Principal shall pay Representative, as provided in Section C above, the commission on each order that the Principal accepted before the termination date.",
+      "severity": 3,
+      "why": "Numbered internal cross-reference (house rule 4).",
+      "fix": "as the section titled \"Commissions\" provides"
+    },
+    {
+      "n": 16,
+      "type": "and-or",
+      "anchor": "samples and/or sales literature",
+      "quote": "Representative shall return all samples and/or sales literature to the Principal no later than 10 days after termination.",
+      "severity": 2,
+      "why": "\"and/or\" is ambiguous.",
+      "fix": "all samples and sales literature"
+    },
+    {
+      "n": 17,
+      "type": "enumeration",
+      "anchor": "E. Assignment",
+      "quote": "E. Assignment / 1. Any assignment of this agreement by Representative without the Principal's prior written consent is null and void.",
+      "severity": 3,
+      "why": "Section E has an only child: its single subsection \"1.\" has no \"2.\" (house rule 3).",
+      "fix": "Delete the \"1.\" and put the sentence directly under \"E. Assignment\", or move it into the section titled \"General\"."
+    },
+    {
+      "n": 18,
+      "type": "doublet",
+      "anchor": "null and void",
+      "quote": "Any assignment of this agreement by Representative without the Principal's prior written consent is null and void.",
+      "severity": 3,
+      "why": "Doublet.",
+      "fix": "void"
+    },
+    {
+      "n": 19,
+      "type": "archaic",
+      "anchor": "pursuant to this agreement",
+      "quote": "Each party shall give notices pursuant to this agreement in writing, by hand delivery or by certified mail, to the other party's address below its signature.",
+      "severity": 3,
+      "why": "\"pursuant to\".",
+      "fix": "under this agreement"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Florida counties in Schedule A",
+      "quote": "The Principal hereby appoints Representative as its strategic partner and exclusive sales representative for the Principal's marine hardware products (the \"Products\") in the Florida counties in Schedule A (the \"Territory\").",
+      "why_correct": "Correct schedule: lettered, and it holds a list (the counties)."
+    },
+    {
+      "anchor": "No one other than Representative may",
+      "quote": "No one other than Representative may solicit orders for the Products in the Territory on the Principal's behalf.",
+      "why_correct": "Negative subject with \"may\" is correct (house rule 8), and \"no one\" keeps its word form."
+    },
+    {
+      "anchor": "Principal is not required to reimburse",
+      "quote": "Representative is responsible for all of its own expenses, including travel and samples, and the Principal is not required to reimburse them.",
+      "why_correct": "House exception to active voice: \"is not required to\" (MSCD 3.292). (The sentence's \"the Principal\" is covered by the party-article issue.)"
+    },
+    {
+      "anchor": "hereby appoints Representative",
+      "quote": "The Principal hereby appoints Representative as its strategic partner and exclusive sales representative for the Principal's marine hardware products (the \"Products\") in the Florida counties in Schedule A (the \"Territory\").",
+      "why_correct": "Language of performance uses \"hereby\" with the simple present (MSCD 3.48-3.50); \"hereby\" is not on the archaic list."
+    }
+  ],
+  "notes": "Other side's legacy template in Markdown.  The house enumeration is mostly followed (A. sections, 1. subsections); the planted enumeration issue is the only child under E.  Markdown heading markers (#, ##) are formatting, not part of the enumeration.  Spacing is compliant."
+}

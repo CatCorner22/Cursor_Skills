@@ -1,0 +1,171 @@
+{
+  "id": "c31-jv-letter",
+  "file": "contracts/c31-jv-letter.txt",
+  "title": "Joint Venture Letter Agreement",
+  "tier": "obvious",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "enumeration",
+      "anchor": "1. Formation of the Venture.",
+      "quote": "1. Formation of the Venture.",
+      "severity": 2,
+      "why": "Top-level paragraphs are numbered 1. to 9.; house rule 3 starts a contract without articles at A.",
+      "fix": "Renumber the paragraphs A. to I. (the 9th paragraph becomes I.)."
+    },
+    {
+      "n": 2,
+      "type": "agrees-to",
+      "anchor": "Each party agrees to contribute",
+      "quote": "Each party agrees to contribute 50% of the cost of preparing the proposal prior to the proposal due date of May 20, 2027.",
+      "severity": 3,
+      "why": "\"Agrees to\" for an obligation.",
+      "fix": "Each party shall contribute 50% of the cost of preparing the proposal ..."
+    },
+    {
+      "n": 3,
+      "type": "archaic",
+      "anchor": "prior to",
+      "quote": "Each party agrees to contribute 50% of the cost of preparing the proposal prior to the proposal due date of May 20, 2027.",
+      "severity": 3,
+      "why": "\"Prior to\" is archaic for \"before.\"",
+      "fix": "before the proposal due date of May 20, 2027"
+    },
+    {
+      "n": 4,
+      "type": "category-will",
+      "anchor": "Saguaro will supply",
+      "quote": "If the Authority awards the Project to the Venture, Saguaro will supply the meters, radio modules, and data-collection software for the Project, and Pennant will provide the installation crews, vehicles, and field supervision.",
+      "severity": 2,
+      "why": "\"Will\" used to impose a duty on Saguaro; the letter otherwise uses \"shall.\"",
+      "fix": "Saguaro shall supply the meters, radio modules, and data-collection software ..."
+    },
+    {
+      "n": 5,
+      "type": "category-will",
+      "anchor": "Pennant will provide",
+      "quote": "If the Authority awards the Project to the Venture, Saguaro will supply the meters, radio modules, and data-collection software for the Project, and Pennant will provide the installation crews, vehicles, and field supervision.",
+      "severity": 2,
+      "why": "\"Will\" used to impose a duty on Pennant.",
+      "fix": "Pennant shall provide the installation crews, vehicles, and field supervision."
+    },
+    {
+      "n": 6,
+      "type": "money",
+      "anchor": "fifty-five percent (55%)",
+      "quote": "The parties shall share the profits and losses of the Venture fifty-five percent (55%) to Saguaro and 45% to Pennant.",
+      "severity": 2,
+      "why": "Percentage stated 2 ways (words and digits), and inconsistent with \"45%\" in the same sentence; house rule 2 calls for digits once.",
+      "fix": "55% to Saguaro and 45% to Pennant"
+    },
+    {
+      "n": 7,
+      "type": "doublet",
+      "anchor": "indemnify and hold harmless",
+      "quote": "Each party shall indemnify and hold harmless the other party against any claim arising from the indemnifying party's negligence in performing its obligations hereunder.",
+      "severity": 3,
+      "why": "\"Hold harmless\" adds nothing to \"indemnify.\"",
+      "fix": "Each party shall indemnify the other party against ..."
+    },
+    {
+      "n": 8,
+      "type": "archaic",
+      "anchor": "its obligations hereunder",
+      "quote": "Each party shall indemnify and hold harmless the other party against any claim arising from the indemnifying party's negligence in performing its obligations hereunder.",
+      "severity": 3,
+      "why": "Here-word.",
+      "fix": "its obligations under this letter agreement"
+    },
+    {
+      "n": 9,
+      "type": "cross-reference-number",
+      "anchor": "paragraph 4 above",
+      "quote": "The final proposal price requires the approval of the management committee under paragraph 4 above.",
+      "severity": 2,
+      "why": "House rule 4: refer by heading, not by number (\"above\" adds nothing).",
+      "fix": "requires the approval of the management committee (or: the committee under the section titled \"Management\")."
+    },
+    {
+      "n": 10,
+      "type": "archaic",
+      "anchor": "pursuant to",
+      "quote": "This letter agreement terminates on the earliest of (a) the date on which the Authority awards the Project to another bidder, (b) the date on which the Venture completes the Project, and (c) the date on which a party withdraws pursuant to Section 6.",
+      "severity": 3,
+      "why": "\"Pursuant to\" is archaic for \"under.\"",
+      "fix": "withdraws under the section titled \"Withdrawal\""
+    },
+    {
+      "n": 11,
+      "type": "cross-reference-number",
+      "anchor": "Section 6",
+      "quote": "This letter agreement terminates on the earliest of (a) the date on which the Authority awards the Project to another bidder, (b) the date on which the Venture completes the Project, and (c) the date on which a party withdraws pursuant to Section 6.",
+      "severity": 2,
+      "why": "House rule 4: numbered internal cross-reference (and it calls the paragraph a \"Section\" while paragraph 7 says \"paragraph\").",
+      "fix": "under the section titled \"Withdrawal\""
+    },
+    {
+      "n": 12,
+      "type": "time-is-of-the-essence",
+      "anchor": "Time is of the essence",
+      "quote": "Time is of the essence in the performance of each party's obligations under this letter agreement.",
+      "severity": 2,
+      "why": "MSCD 13.884: the phrase is vague about which deadlines it covers and what a miss allows.",
+      "fix": "Delete it; if a deadline matters, say what happens when a party misses it (for example, the proposal due date)."
+    },
+    {
+      "n": 13,
+      "type": "successors-assigns",
+      "anchor": "successors and assigns",
+      "quote": "This letter agreement is binding on the parties and their respective successors and assigns.",
+      "severity": 3,
+      "why": "MSCD 15.24: the provision does no work.",
+      "fix": "Delete the sentence."
+    },
+    {
+      "n": 14,
+      "type": "headings-clause",
+      "anchor": "are for convenience only",
+      "quote": "Headings in this letter agreement are for convenience only and do not affect its interpretation.",
+      "severity": 2,
+      "why": "House rule 4: a headings-for-convenience clause must be deleted or limited; headings are meant to be read with the text.",
+      "fix": "Delete the sentence."
+    },
+    {
+      "n": 15,
+      "type": "archaic",
+      "anchor": "please execute a copy",
+      "quote": "If this letter accurately states our agreement, please execute a copy of this letter in the space below and return it to me no later than April 19, 2027.",
+      "severity": 3,
+      "why": "\"Execute\" used for \"sign.\"",
+      "fix": "please sign a copy of this letter in the space below"
+    },
+    {
+      "n": 16,
+      "type": "archaic",
+      "anchor": "the date hereof",
+      "quote": "Agreed as of the date hereof:",
+      "severity": 3,
+      "why": "Here-word.",
+      "fix": "Agreed as of the date of this letter:"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "a party must give the other party",
+      "quote": "To withdraw from the Venture before the Authority awards the Project, a party must give the other party at least 15 days' notice.",
+      "why_correct": "\"Must\" in a condition (\"To withdraw ..., a party must give\") is correct."
+    },
+    {
+      "anchor": "the earliest of (a)",
+      "quote": "This letter agreement terminates on the earliest of (a) the date on which the Authority awards the Project to another bidder, (b) the date on which the Venture completes the Project, and (c) the date on which a party withdraws pursuant to Section 6.",
+      "why_correct": "\"The earliest of (a) ..., (b) ..., and (c)\" correctly uses \"and\" (MSCD 13.862)."
+    },
+    {
+      "anchor": "neither party may withdraw",
+      "quote": "After the Authority awards the Project, neither party may withdraw until the Venture has completed the Project.",
+      "why_correct": "Negative subject with \"may,\" not \"shall\": correct under house rule 8."
+    }
+  ],
+  "notes": "Letter agreement from Saguaro (other side). \"The Authority\", \"the Venture\", \"the Project\" are defined terms for nonparties or things and keep \"the\"; the parties (\"Saguaro\", \"Pennant\") are defined without articles, which is correct. Issue 1 is document-level (all 9 paragraph numbers). \"Neither party may bind\" in paragraph 1 is also correct house usage."
+}

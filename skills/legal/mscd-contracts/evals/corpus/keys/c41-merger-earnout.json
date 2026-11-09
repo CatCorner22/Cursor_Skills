@@ -1,0 +1,113 @@
+{
+ "id": "c41-merger-earnout",
+ "file": "contracts/c41-merger-earnout.docx",
+ "title": "Agreement and Plan of Merger (Excerpt) with Earnout",
+ "tier": "sneaky",
+ "whose_draft": "other-side",
+ "issues": [
+  {
+   "n": 1,
+   "type": "syntactic-ambiguity",
+   "anchor": "volume discounts exceeding 5% of gross revenue",
+   "quote": "\"Revenue\" means, for any Earnout Year, the gross revenue that the Business earns in that Earnout Year under the Accounting Principles, less returns, chargebacks, and volume discounts exceeding 5% of gross revenue.",
+   "severity": 1,
+   "why": "Trailing modifier after a list: exceeding 5% of gross revenue can modify only volume discounts (deduct all returns and chargebacks, and volume discounts only when they exceed 5%) or all 3 items; it also leaves open whether the whole discount or only the excess comes off. Revenue drives every Earnout Payment.",
+   "fix": "less (a) returns, (b) chargebacks, and (c) the amount by which volume discounts exceed 5% of gross revenue."
+  },
+  {
+   "n": 2,
+   "type": "scope-ambiguity",
+   "anchor": "up to a maximum of $9,000,000",
+   "quote": "For each Earnout Year in which Revenue exceeds the Revenue Target for that Earnout Year, Parent shall pay Stockholder an amount equal to 30% of the excess (each, an \"Earnout Payment\"), up to a maximum of $9,000,000.",
+   "severity": 1,
+   "why": "The cap can be read per Earnout Payment (up to $9,000,000 for each Earnout Year, $27,000,000 in total) or for all Earnout Payments in the aggregate ($9,000,000 in total).",
+   "fix": "State it: \"... except that Parent is not required to pay more than $9,000,000 in the aggregate for all Earnout Payments\" (or \"for any Earnout Year\")."
+  },
+  {
+   "n": 3,
+   "type": "negative-subject-shall",
+   "anchor": "neither Parent nor any Subsidiary of Parent shall",
+   "quote": "Parent shall deliver to Stockholder, no later than 90 days after the end of each Earnout Year, a statement that shows Parent's calculation of Revenue for that Earnout Year and of the resulting Earnout Payment, if any (an \"Earnout Statement\"), and neither Parent nor any Subsidiary of Parent shall change the Accounting Principles for the purpose of preparing an Earnout Statement.",
+   "severity": 1,
+   "why": "House rule 8: shall with a negative subject, buried mid-sentence after \"and\"; it reads as \"neither has a duty to change the Accounting Principles.\" Blake answer Q22 (November 7, 2026): for a nonparty subject, restructure onto the party (MSCD 3.165, 3.180); the may form keeps the nonparty subject and is incorrect.",
+   "fix": "... and Parent shall not change, and shall cause each Subsidiary of Parent not to change, the Accounting Principles for the purpose of preparing an Earnout Statement.  (Parent controls its Subsidiaries, so shall cause works here: MSCD 3.160, 3.165.  Not \"neither Parent nor any Subsidiary of Parent may change\": the Subsidiaries don't sign; Blake answer Q22.)"
+  },
+  {
+   "n": 4,
+   "type": "syntactic-ambiguity",
+   "anchor": "the later of the 10th Business Day",
+   "quote": "Parent shall pay each Earnout Payment on the later of the 10th Business Day after the Earnout Statement for that Earnout Year becomes final or April 30 of the year after that Earnout Year.",
+   "severity": 2,
+   "why": "The later of X or Y; use and (MSCD 13.862).",
+   "fix": "on the later of (a) the 10th Business Day after the Earnout Statement for that Earnout Year becomes final and (b) April 30 of the year after that Earnout Year."
+  },
+  {
+   "n": 5,
+   "type": "referential-ambiguity",
+   "anchor": "it shall pay Stockholder",
+   "quote": "If, before the end of the Earnout Period, Parent sells to a Person that is not a Subsidiary of Parent any assets of the Business that generated more than 50% of the gross revenue of the Business during the 12 months before that sale, it shall pay Stockholder, no later than 10 Business Days after that sale closes, the Earnout Payment for each Earnout Year that has not ended.",
+   "severity": 1,
+   "why": "It can refer to Parent or to the Person that buys the assets; the acceleration payment could be read as falling on the buyer, a nonparty.",
+   "fix": "Parent shall pay Stockholder, no later than 10 Business Days after that sale closes, ..."
+  },
+  {
+   "n": 6,
+   "type": "category-will",
+   "severity": 2,
+   "tier": "sneaky",
+   "anchor": "notice is effective",
+   "quote": "A notice is effective when the recipient receives it.",
+   "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
+   "fix": "A notice will be effective when the recipient receives it",
+   "added_by": "audit"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "Section 251 of the Delaware General Corporation Law",
+   "quote": "At the Effective Time, Merger Sub merges with and into Company under Section 251 of the Delaware General Corporation Law (the \"Merger\"), the separate existence of Merger Sub ends, and Company continues as the surviving corporation.",
+   "why_correct": "A statute reference, not an internal cross-reference (house rule 4)."
+  },
+  {
+   "anchor": "no later than 90 days after the end",
+   "quote": "Parent shall deliver to Stockholder, no later than 90 days after the end of each Earnout Year, a statement that shows Parent's calculation of Revenue for that Earnout Year and of the resulting Earnout Payment, if any (an \"Earnout Statement\"), and neither Parent nor any Subsidiary of Parent shall change the Accounting Principles for the purpose of preparing an Earnout Statement.",
+   "why_correct": "No later than is not a negative subject; it sits in the same sentence as the buried negative subject (issue 3)."
+  },
+  {
+   "anchor": "The Escrow Agent must hold",
+   "quote": "The Escrow Agent must hold and release each deposit in accordance with the Escrow Agreement.",
+   "why_correct": "The Escrow Agent does not sign this agreement, so must is right for a nonparty subject (MSCD 3.154)."
+  },
+  {
+   "anchor": "Parent is not required to operate",
+   "quote": "Parent is not required to operate the Business in a manner that maximizes Revenue, and Parent may make decisions about the Business in good faith, but Parent shall not take any action whose primary purpose is to reduce or delay any Earnout Payment.",
+   "why_correct": "Is not required to is the house exception (MSCD 3.292)."
+  },
+  {
+   "anchor": "One Liberty Plaza",
+   "quote": "If to Parent or Merger Sub: Calloway Robotics Holdings, Inc., One Liberty Plaza, 27th Floor, New York, New York 10006, Attention: General Counsel, email: legal@callowayrobotics.example.",
+   "why_correct": "A number word inside a proper name (an address) stays (house rule 2)."
+  }
+ ],
+ "notes": "Other-side draft; long contract (see word count in the summary). The file has a header (\"Agreement and Plan of Merger (Excerpt)\") and a footer (\"Confidential\") with no issues. The Escrow Agent is a nonparty (it signs only the Escrow Agreement). The Independent Accountant is also a nonparty, and the text correctly puts the duty on Parent and Stockholder to instruct it.",
+ "audit": [
+  {
+   "n": 6,
+   "traps_removed": [],
+   "change": "optional category-will issue n6 added",
+   "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  },
+  {
+   "n": 6,
+   "anchor": "notice is effective",
+   "change": "Blake answer Q18 (November 7, 2026): optional dropped; the issue is required (will for a policy about a contingent future event, MSCD 3.334, 3.369, 13.209) (optional dropped)",
+   "why": "See the key entry."
+  },
+  {
+   "n": 3,
+   "anchor": "neither Parent nor any Subsidiary of Parent shall",
+   "change": "Blake answer Q22 (November 7, 2026): fix rewritten: restructured onto the party; the may form with a nonparty subject is no longer offered (why: answer noted; fix rewritten)",
+   "why": "See the key entry."
+  }
+ ]
+}

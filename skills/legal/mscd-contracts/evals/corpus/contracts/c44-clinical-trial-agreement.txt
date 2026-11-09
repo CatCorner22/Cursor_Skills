@@ -1,0 +1,83 @@
+CLINICAL TRIAL AGREEMENT
+
+This clinical trial agreement is dated March 22, 2027, and is between Marlowe Biosciences, Inc., a Delaware corporation ("Sponsor"), and Piedmont Valley Research Institute, LLC, a North Carolina limited liability company ("Site").
+
+Sponsor is developing CTX-114, an investigational drug for moderate-to-severe plaque psoriasis (the "Study Drug").  Sponsor wishes to have Site conduct a clinical study of the Study Drug (the "Study") under Sponsor's protocol number CTX-114-202, including each amendment that Sponsor makes to it (the "Protocol").
+
+The parties therefore agree as follows:
+
+A. Conduct of the Study.
+
+   1. Site shall conduct the Study in accordance with the Protocol, this agreement, and the regulations of the U.S. Food and Drug Administration (the "FDA") that apply to the Study.
+
+   2. Site has designated Dr. Imani Rowe as the principal investigator for the Study (the "Principal Investigator").  The Principal Investigator is not a party to this agreement, but Site shall cause the Principal Investigator to supervise the Study at Site.
+
+   3. The Principal Investigator must personally sign each case report form before Site submits it to Sponsor.
+
+   4. Site staff shall complete Sponsor's Protocol training before performing any Study procedure.
+
+   5. Before enrolling any individual in the Study, Site shall obtain approval of the Protocol and the informed consent form from the institutional review board that oversees the Study at Site (the "IRB").
+
+   6. Site shall report each serious adverse event, as the Protocol defines that term, to Sponsor no later than 24 hours after Site learns of the event.
+
+   7. Site shall retain all Study records for the longer of (a) the period that Section 312.62 of Title 21 of the Code of Federal Regulations requires and (b) 5 years after the Study ends.  Site shall allow Sponsor's monitors and the FDA to inspect those records during Site's normal business hours.
+
+B. Enrollment.
+
+   1. In this agreement, "Subject" means an individual who signs the informed consent form that the IRB has approved and who enrolls in the Study.
+
+   2. Site shall use reasonable efforts to enroll 24 Subjects no later than September 30, 2027.
+
+   3. Site is not required to enroll any individual who the Principal Investigator determines is ineligible under the Protocol.
+
+C. Study Drug.
+
+   1. Sponsor shall supply the Study Drug to Site at no charge in the quantities that the Protocol requires.
+
+   2. Site shall store the Study Drug as the Protocol specifies and shall use the Study Drug only for the Study.
+
+   3. At the end of the Study, Site shall return all unused Investigational Product to Sponsor or, if Sponsor so instructs, destroy it and certify the destruction to Sponsor.
+
+D. Payment.
+
+   1. Sponsor shall pay Site a one-time start-up fee of $8,500 no later than 30 days after the IRB approves the Protocol.
+
+   2. Sponsor shall pay Site $3,150 for each Subject who completes all Protocol visits and $260 for each visit that a Subject completes before withdrawing from the Study.
+
+   3. Sponsor shall also reimburse Site for screen-failure costs and pharmacy fees exceeding $500 per month.
+
+   4. Site shall invoice Sponsor monthly, and Sponsor shall pay each undisputed invoice within 45 days of the invoice date.
+
+E. Confidentiality and Publication.
+
+   1. Site shall keep confidential all nonpublic information that Sponsor discloses to Site about the Study Drug or the Study, and Site shall use that information only to conduct the Study.
+
+   2. Site may publish its results from the Study after the earlier of (a) Sponsor's publication of the combined results of the Study at all sites and (b) the date 18 months after the Study ends at all sites.  Site shall give Sponsor a copy of each proposed publication no later than 60 days before submitting it for publication.
+
+   3. Sponsor may require Site to delete from a proposed publication any of Sponsor's nonpublic information other than Study results.
+
+F. Subject Injury.  If the Study Drug or a procedure that the Protocol requires injures a Subject, Sponsor shall reimburse Site for the cost of the Subject's medical treatment at Site's customary rates, except to the extent that Site's negligence or failure to follow the Protocol caused the injury.
+
+G. Term and Termination.
+
+   1. This agreement terminates when Site completes all Study close-out activities that the Protocol requires.
+
+   2. Either party may terminate this agreement by giving the other party at least 30 days' notice.  Sponsor may terminate this agreement immediately by notice to Site if the FDA places the Study on clinical hold.
+
+   3. If Sponsor terminates this agreement before Site completes enrollment, Sponsor shall pay Site for all Subject visits that Site completed before the termination date, and it shall return all unused Study Drug no later than 30 days after the termination date.
+
+H. Governing Law.  North Carolina law governs this agreement.
+
+The parties are signing this agreement on the date in the introductory clause.
+
+MARLOWE BIOSCIENCES, INC.
+
+By: ____________________________
+Name: Gregory Atwell
+Title: Vice President, Clinical Operations
+
+PIEDMONT VALLEY RESEARCH INSTITUTE, LLC
+
+By: ____________________________
+Name: Lorraine Petit
+Title: Chief Executive Officer

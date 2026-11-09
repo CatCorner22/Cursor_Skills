@@ -1,0 +1,212 @@
+{
+  "id": "c15-services-agreement-legacy",
+  "file": "contracts/c15-services-agreement-legacy.txt",
+  "title": "Professional Services Agreement",
+  "tier": "obvious",
+  "whose_draft": "unknown",
+  "issues": [
+    {
+      "n": 1,
+      "type": "date-format",
+      "anchor": "as of 3/1/2027",
+      "quote": "This Professional Services Agreement (this \"Agreement\") is effective as of 3/1/2027 (the \"Effective Date\") and is between Tallgrass Regional Medical Center, Inc., a Kansas nonprofit corporation (the \"Client\"), and Meridian Point Consulting, LLC, a Georgia limited liability company (the \"Consultant\").",
+      "severity": 3,
+      "why": "Numeric date (house rule 7).",
+      "fix": "March 1, 2027"
+    },
+    {
+      "n": 2,
+      "type": "party-article",
+      "anchor": "(the \"Client\")",
+      "quote": "This Professional Services Agreement (this \"Agreement\") is effective as of 3/1/2027 (the \"Effective Date\") and is between Tallgrass Regional Medical Center, Inc., a Kansas nonprofit corporation (the \"Client\"), and Meridian Point Consulting, LLC, a Georgia limited liability company (the \"Consultant\").",
+      "severity": 3,
+      "why": "Document-wide: both party names defined and used with \"the\" (the Client, the Consultant).",
+      "fix": "Define (\"Client\") and (\"Consultant\"); drop \"the\" throughout."
+    },
+    {
+      "n": 3,
+      "type": "enumeration",
+      "anchor": "1. DEFINITIONS",
+      "quote": "1. DEFINITIONS",
+      "severity": 2,
+      "why": "Top-level sections numbered 1.-7. with (a) under them; a contract without articles starts at A., then 1., then (a) (house rule 3).",
+      "fix": "A. Definitions; 1., 2. for subsections."
+    },
+    {
+      "n": 4,
+      "type": "defined-term",
+      "anchor": "\"Services\" shall mean",
+      "quote": "\"Services\" shall mean the revenue-cycle consulting services in Appendix A attached hereto.",
+      "severity": 3,
+      "why": "Definition uses \"shall mean\".",
+      "fix": "\"Services\" means ..."
+    },
+    {
+      "n": 5,
+      "type": "attachment-language",
+      "anchor": "Appendix A attached hereto",
+      "quote": "\"Services\" shall mean the revenue-cycle consulting services in Appendix A attached hereto.",
+      "severity": 3,
+      "why": "\"attached hereto\" (house rule 6).",
+      "fix": "the revenue-cycle consulting services in Schedule A."
+    },
+    {
+      "n": 6,
+      "type": "attachment-label",
+      "anchor": "APPENDIX A",
+      "quote": "APPENDIX A",
+      "severity": 3,
+      "why": "\"Appendix\" label. The list of services is information the body refers to, so it is a schedule.",
+      "fix": "Schedule A"
+    },
+    {
+      "n": 7,
+      "type": "term-of-art",
+      "anchor": "execute the Services",
+      "quote": "The Consultant shall execute the Services at the Client's hospital in Wichita, Kansas, and remotely.",
+      "severity": 2,
+      "why": "\"execute\" is a term of art for signing; here it means perform.",
+      "fix": "Consultant shall perform the Services ..."
+    },
+    {
+      "n": 8,
+      "type": "category-shall",
+      "anchor": "shall have the right to",
+      "quote": "The Consultant shall have the right to subcontract any part of the Services with the Client's written consent.",
+      "severity": 2,
+      "why": "\"shall have the right to\" grants discretion, not a duty.",
+      "fix": "Consultant may subcontract any part of the Services with Client's written consent."
+    },
+    {
+      "n": 9,
+      "type": "category-must",
+      "anchor": "The Client must pay",
+      "quote": "The Client must pay the Consultant $185 per hour for the Services, plus a one-time onboarding fee of $2,500.",
+      "severity": 2,
+      "why": "\"must\" for a duty on the subject, a party.",
+      "fix": "Client shall pay Consultant $185 per hour ..."
+    },
+    {
+      "n": 10,
+      "type": "reduced-passive",
+      "anchor": "expenses incurred by the Consultant",
+      "quote": "The Client shall reimburse travel expenses incurred by the Consultant, provided, however, that the Consultant obtains the Client's written approval before incurring any single expense over $500.",
+      "severity": 3,
+      "why": "Recastable reduced passive.",
+      "fix": "travel expenses that Consultant incurs"
+    },
+    {
+      "n": 11,
+      "type": "provided-that",
+      "anchor": "provided, however, that",
+      "quote": "The Client shall reimburse travel expenses incurred by the Consultant, provided, however, that the Consultant obtains the Client's written approval before incurring any single expense over $500.",
+      "severity": 2,
+      "why": "Proviso.",
+      "fix": "Client shall reimburse travel expenses that Consultant incurs, but only if Consultant obtains Client's written approval before incurring any single expense over $500."
+    },
+    {
+      "n": 12,
+      "type": "number-words",
+      "anchor": "fifteen (15) days",
+      "quote": "The Consultant shall invoice the Client monthly, and the Client shall pay each invoice no later than fifteen (15) days after the day on which the Client receives it.",
+      "severity": 3,
+      "why": "Words with digits.",
+      "fix": "15 days"
+    },
+    {
+      "n": 13,
+      "type": "throat-clearing",
+      "anchor": "It is understood and agreed",
+      "quote": "It is understood and agreed that the Consultant is an independent contractor and not an employee of the Client.",
+      "severity": 3,
+      "why": "Throat-clearing.",
+      "fix": "Consultant is an independent contractor and not an employee of Client."
+    },
+    {
+      "n": 14,
+      "type": "spacing",
+      "anchor": "employee of the Client. The",
+      "quote": "It is understood and agreed that the Consultant is an independent contractor and not an employee of the Client. The Consultant's personnel shall comply with the Client's safety and patient-privacy policies while on the Client's premises.",
+      "severity": 3,
+      "why": "1 space between sentences (house rule 5).",
+      "fix": "2 spaces after \"Client.\""
+    },
+    {
+      "n": 15,
+      "type": "nonparty-obligation",
+      "anchor": "personnel shall comply",
+      "quote": "The Consultant's personnel shall comply with the Client's safety and patient-privacy policies while on the Client's premises.",
+      "severity": 2,
+      "why": "\"shall\" with a nonparty subject (Consultant's personnel don't sign).",
+      "fix": "Consultant shall cause its personnel to comply with Client's safety and patient-privacy policies ..."
+    },
+    {
+      "n": 16,
+      "type": "and-or",
+      "anchor": "Client and/or its affiliates",
+      "quote": "The Consultant shall keep confidential all patient information and other non-public information of the Client and/or its affiliates that the Consultant obtains in performing the Services.",
+      "severity": 2,
+      "why": "\"and/or\".",
+      "fix": "of Client, of Client's affiliates, or of both"
+    },
+    {
+      "n": 17,
+      "type": "cross-reference-number",
+      "anchor": "Section 3(a) above",
+      "quote": "On termination, the Client shall pay the Consultant all fees that accrued through the termination date under Section 3(a) above.",
+      "severity": 2,
+      "why": "Numbered internal cross-reference (house rule 4).",
+      "fix": "under the section titled \"Fees and Expenses\""
+    },
+    {
+      "n": 18,
+      "type": "survival",
+      "anchor": "by their nature should survive",
+      "quote": "All provisions of this Agreement that by their nature should survive termination shall survive termination.",
+      "severity": 2,
+      "why": "Generic survival clause (the \"should\" inside it is part of the same problem).",
+      "fix": "Delete; state survival periods for specific provisions where needed (MSCD 13.822-13.831)."
+    },
+    {
+      "n": 19,
+      "type": "doublet",
+      "anchor": "terms and conditions",
+      "quote": "The parties may amend the terms and conditions of this Agreement only by a writing that both parties sign.",
+      "severity": 3,
+      "why": "Doublet.",
+      "fix": "The parties may amend this agreement only by a writing that both parties sign."
+    },
+    {
+      "n": 20,
+      "type": "archaic",
+      "anchor": "IN WITNESS WHEREOF",
+      "quote": "IN WITNESS WHEREOF, the parties have executed this Agreement as of the Effective Date.",
+      "severity": 3,
+      "why": "Archaic concluding clause; \"executed\" for signed.",
+      "fix": "The parties are signing this agreement as of the Effective Date."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "is not required to provide",
+      "quote": "The Client is not required to provide office space or equipment to the Consultant's personnel.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "one-time onboarding fee",
+      "quote": "The Client must pay the Consultant $185 per hour for the Services, plus a one-time onboarding fee of $2,500.",
+      "why_correct": "\"one-time\": keep the word (house rule 2)."
+    },
+    {
+      "anchor": "the day on which",
+      "quote": "The Consultant shall invoice the Client monthly, and the Client shall pay each invoice no later than fifteen (15) days after the day on which the Client receives it.",
+      "why_correct": "Correct relative construction; not archaic."
+    },
+    {
+      "anchor": "works made for hire",
+      "quote": "The Deliverables are works made for hire under the Copyright Act, and the Client owns all rights in the Deliverables.",
+      "why_correct": "Statutory term (Copyright Act); keep as is."
+    }
+  ],
+  "notes": "Whose draft is unknown. Party-article and section enumeration are document-wide, anchored at the 1st occurrence. The planted spacing error is the single space after \"of the Client.\" in section 4; every other sentence break has 2 spaces. The survival issue subsumes the \"should\" inside that sentence; a category-should finding on that sentence should be matched to it. The Appendix (a)-(c) list and the 2(c) sentence are clean."
+}

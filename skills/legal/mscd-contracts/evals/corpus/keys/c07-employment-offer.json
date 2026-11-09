@@ -1,0 +1,145 @@
+{
+  "id": "c07-employment-offer",
+  "file": "contracts/c07-employment-offer.txt",
+  "title": "Employment Offer Letter Agreement",
+  "tier": "mixed",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "category-will",
+      "anchor": "You will devote",
+      "quote": "You will devote your full working time to Brightfield's business.",
+      "severity": 2,
+      "why": "\"will\" used to impose a duty.",
+      "fix": "You shall devote your full working time to Brightfield's business."
+    },
+    {
+      "n": 2,
+      "type": "category-shall",
+      "anchor": "shall be $96,000",
+      "quote": "Your annual base salary (the \"Base Salary\") shall be $96,000, which Brightfield shall pay in accordance with its regular payroll practices.",
+      "severity": 2,
+      "why": "No duty; the amount of the salary is a matter of policy (the duty to pay follows in the same sentence).",
+      "fix": "Your annual base salary (the \"Base Salary\") is $96,000, which Brightfield shall pay ..."
+    },
+    {
+      "n": 3,
+      "type": "passive-voice",
+      "anchor": "will be reviewed each year",
+      "quote": "The Base Salary will be reviewed each year.",
+      "severity": 2,
+      "why": "Passive hides who reviews the salary.",
+      "fix": "Brightfield shall review the Base Salary each year."
+    },
+    {
+      "n": 4,
+      "type": "number-words",
+      "anchor": "one or more of the bonus targets",
+      "quote": "You are eligible for an annual bonus of up to 15% of the Base Salary if you meet one or more of the bonus targets that Brightfield sets for that year.",
+      "severity": 3,
+      "why": "Words for a number (house rule 2).",
+      "fix": "1 or more of the bonus targets"
+    },
+    {
+      "n": 5,
+      "type": "spacing",
+      "anchor": "that year. Brightfield is",
+      "quote": "You are eligible for an annual bonus of up to 15% of the Base Salary if you meet one or more of the bonus targets that Brightfield sets for that year. Brightfield is not required to pay any bonus for a year in which your employment ends before December 31 of that year.",
+      "severity": 3,
+      "why": "1 space between these 2 sentences (house rule 5 requires 2); the rest of the letter uses 2.",
+      "fix": "that year.  Brightfield is"
+    },
+    {
+      "n": 6,
+      "type": "time-ambiguity",
+      "anchor": "by March 15, 2027",
+      "quote": "Brightfield shall pay you a signing bonus of $10,000 (the \"Signing Bonus\") by March 15, 2027.",
+      "severity": 2,
+      "why": "\"by March 15\" leaves unclear whether March 15 is included.",
+      "fix": "no later than March 15, 2027"
+    },
+    {
+      "n": 7,
+      "type": "negative-subject-shall",
+      "anchor": "Neither you nor Brightfield shall",
+      "quote": "Neither you nor Brightfield shall disclose the amount of the Signing Bonus to any other Brightfield employee.",
+      "severity": 1,
+      "why": "Negative subject with \"shall\" (house rule 8).",
+      "fix": "Neither you nor Brightfield may disclose ..."
+    },
+    {
+      "n": 8,
+      "type": "ordinal",
+      "anchor": "the second anniversary",
+      "quote": "The option vests as to 50% of the shares on the 1st anniversary of the Start Date and as to the remaining 50% on the second anniversary of the Start Date.",
+      "severity": 3,
+      "why": "Ordinal in words; the same sentence correctly uses \"1st\".",
+      "fix": "the 2nd anniversary"
+    },
+    {
+      "n": 9,
+      "type": "knowledge-standard",
+      "anchor": "knew or should have known",
+      "quote": "\"Cause\" means (a) your conviction of a felony; (b) your willful failure to perform your duties after Brightfield gives you notice of that failure; or (c) your disclosure of Brightfield's confidential information to anyone who you knew or should have known was a competitor of Brightfield.",
+      "severity": 2,
+      "why": "Knowledge standard. House policy: flag it, don't rewrite it, and offer a defined Knowledge term (MSCD 13.506).",
+      "fix": "Flag only; suggest a defined \"Knowledge\" term."
+    },
+    {
+      "n": 10,
+      "type": "vagueness",
+      "anchor": "a material reduction",
+      "quote": "\"Good Reason\" means a material reduction in the Base Salary without your consent, and you shall give Brightfield notice of the reduction no later than 30 days after it occurs.",
+      "severity": 2,
+      "why": "\"material\" is undefined where a measure was possible.",
+      "fix": "a reduction of more than [X]% in the Base Salary"
+    },
+    {
+      "n": 11,
+      "type": "defined-term",
+      "anchor": "and you shall give Brightfield notice",
+      "quote": "\"Good Reason\" means a material reduction in the Base Salary without your consent, and you shall give Brightfield notice of the reduction no later than 30 days after it occurs.",
+      "severity": 2,
+      "why": "The definition of \"Good Reason\" contains an obligation.",
+      "fix": "End the definition at \"consent\"; put the notice requirement in the severance provision (for example, \"To end your employment for Good Reason, you must give Brightfield notice ...\")."
+    },
+    {
+      "n": 12,
+      "type": "represents-warrants",
+      "anchor": "You represent and warrant",
+      "quote": "You represent and warrant that no agreement prohibits you from working for Brightfield.",
+      "severity": 2,
+      "why": "Blake's own draft: statements of fact use \"states\" (house rule 10).",
+      "fix": "You state that no agreement prohibits you from working for Brightfield."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Brightfield is not required to pay",
+      "quote": "Brightfield is not required to pay any bonus for a year in which your employment ends before December 31 of that year.",
+      "why_correct": "House exception to active voice: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "Section 409A of the Internal Revenue Code",
+      "quote": "Brightfield shall pay each reimbursement no later than December 31 of the year after the year in which you incur the expense, as Section 409A of the Internal Revenue Code requires.",
+      "why_correct": "Statute reference, not an internal cross-reference (house rule 4)."
+    },
+    {
+      "anchor": "the day on which your employment ends",
+      "quote": "If Brightfield ends your employment without Cause, or you end it for Good Reason, Brightfield shall pay you severance equal to 3 months of Base Salary, starting on the 1st regular payroll date that is at least 60 days after the day on which your employment ends.",
+      "why_correct": "\"the day on which\" is correct."
+    },
+    {
+      "anchor": "no one may change it",
+      "quote": "This letter agreement is the entire agreement between you and Brightfield on its subject, and no one may change it except in a writing that both you and Brightfield sign.",
+      "why_correct": "\"no one\" keeps its word form, and a negative subject with \"may\" is correct."
+    },
+    {
+      "anchor": "To accept this offer, you must sign",
+      "quote": "To accept this offer, you must sign this letter agreement and return it to me no later than January 25, 2027.",
+      "why_correct": "\"must\" in a condition is correct (MSCD 3.386, 3.391)."
+    }
+  ],
+  "notes": "Blake's draft, as a letter agreement addressed to \"you\".  \"Your employment is at will\" uses \"will\" as a noun (at-will employment), not as a verb of obligation.  \"the 1st anniversary\" and \"the 1st regular payroll date\" are correct ordinals.  Enumeration follows the house scheme (A. sections, 1. subsections, inline (a) clauses)."
+}

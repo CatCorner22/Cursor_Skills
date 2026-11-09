@@ -1,0 +1,82 @@
+{
+  "id": "c13-guaranty",
+  "file": "contracts/c13-guaranty.txt",
+  "title": "Guaranty",
+  "tier": "sneaky",
+  "whose_draft": "unknown",
+  "issues": [
+    {
+      "n": 1,
+      "type": "conflict",
+      "anchor": "This guaranty is irrevocable",
+      "quote": "This guaranty is irrevocable.",
+      "severity": 1,
+      "why": "The absolute statement conflicts with the section titled \"Revocation as to Future Advances,\" which lets Guarantor revoke the guaranty as to future advances. A flag at either provision counts.",
+      "fix": "Limit it: \"Guarantor may revoke this guaranty only as the section titled \"Revocation as to Future Advances\" provides.\""
+    },
+    {
+      "n": 2,
+      "type": "shall-in-condition",
+      "anchor": "if Borrower shall have failed",
+      "quote": "Guarantor shall pay Lender any Guaranteed Obligation no later than 5 days after Lender demands payment, if Borrower shall have failed to pay that Guaranteed Obligation when due.",
+      "severity": 2,
+      "why": "\"shall\" in a condition.",
+      "fix": "if Borrower has failed to pay that Guaranteed Obligation when due"
+    },
+    {
+      "n": 3,
+      "type": "negative-subject-shall",
+      "anchor": "no delay by Lender in exercising",
+      "quote": "Guarantor hereby waives notice of acceptance of this guaranty and notice of any default by Borrower, and no delay by Lender in exercising any right under this guaranty shall operate as a waiver of that right.",
+      "severity": 1,
+      "why": "Negative subject with \"shall\", hidden mid-sentence after a comma (house rule 8).",
+      "fix": "and Lender does not waive any right under this guaranty by delaying in exercising it."
+    },
+    {
+      "n": 4,
+      "type": "nonparty-obligation",
+      "anchor": "Borrower shall deliver to Lender",
+      "quote": "Borrower shall deliver to Lender, no later than 30 days after the end of each calendar quarter, Borrower's balance sheet and income statement for that quarter.",
+      "severity": 2,
+      "why": "Borrower is not a party to this guaranty (the background says so), so \"shall\" cannot bind it.",
+      "fix": "Guarantor shall cause Borrower to deliver to Lender ..."
+    },
+    {
+      "n": 5,
+      "type": "vagueness",
+      "anchor": "any material change",
+      "quote": "Guarantor shall notify Lender no later than 10 days after any material change in Guarantor's financial condition.",
+      "severity": 2,
+      "why": "\"material\" is undefined where a measure was possible.",
+      "fix": "any change that reduces Guarantor's net worth by more than [X]%"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "the account into which Borrower",
+      "quote": "Guarantor shall make each payment by wire transfer to the account into which Borrower makes its payments under the Loan Agreement.",
+      "why_correct": "\"the account into which\" is correct."
+    },
+    {
+      "anchor": "Lender is not required to proceed",
+      "quote": "Lender is not required to proceed against Borrower or any collateral before demanding payment from Guarantor.",
+      "why_correct": "House exception to active voice: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "Guarantor is liable for the Guaranteed Obligations",
+      "quote": "Guarantor is liable for the Guaranteed Obligations whether or not Lender has taken any action against Borrower.",
+      "why_correct": "Adjective after \"is\" is a house exception to active voice."
+    },
+    {
+      "anchor": "Guarantor hereby guarantees",
+      "quote": "Guarantor hereby guarantees to Lender the payment of all amounts that Borrower owes Lender under the Loan Agreement (the \"Guaranteed Obligations\").",
+      "why_correct": "Language of performance uses \"hereby\" with the simple present (MSCD 3.48-3.50); the 2 \"Guarantor hereby waives\" sentences are correct for the same reason."
+    },
+    {
+      "anchor": "Section 17.001 of the Texas",
+      "quote": "Guarantor hereby waives its rights under Rule 31 of the Texas Rules of Civil Procedure, Section 17.001 of the Texas Civil Practice and Remedies Code, and Chapter 43 of the Texas Civil Practice and Remedies Code.",
+      "why_correct": "Statute reference, not an internal cross-reference (house rule 4); likewise Rule 31 and Chapter 43."
+    }
+  ],
+  "notes": "Unknown drafter.  Lender signs too, so the guaranty is \"between\" the parties.  Borrower is a nonparty.  Clean otherwise: 2-space sentences, house enumeration, digits, U.S. dates."
+}

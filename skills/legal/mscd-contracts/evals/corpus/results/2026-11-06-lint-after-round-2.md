@@ -1,0 +1,54 @@
+Planted issues: 543; found by a direct lint finding: 466 (86%); lint-detectable types: 309/310
+Traps flagged by a direct finding (false alarms): 1 of 223
+
+| type | planted | direct | trigger only | lint should catch |
+|---|---|---|---|---|
+| archaic | 37 | 37 | 0 | no |
+| category-shall | 32 | 30 | 1 | no |
+| number-words | 29 | 29 | 0 | yes |
+| defined-term | 27 | 22 | 3 | no |
+| time-ambiguity | 25 | 24 | 1 | no |
+| conflict | 20 | 4 | 11 | no |
+| doublet | 18 | 18 | 0 | yes |
+| formatting | 17 | 17 | 0 | yes |
+| nonparty-obligation | 17 | 10 | 3 | no |
+| cross-reference-number | 16 | 16 | 0 | yes |
+| syntactic-ambiguity | 15 | 1 | 11 | no |
+| negative-subject-shall | 14 | 14 | 0 | yes |
+| enumeration | 13 | 13 | 0 | yes |
+| date-format | 13 | 13 | 0 | yes |
+| passive-voice | 13 | 13 | 0 | yes |
+| category-will | 13 | 12 | 1 | yes |
+| party-article | 12 | 12 | 0 | yes |
+| reduced-passive | 12 | 12 | 0 | yes |
+| scope-ambiguity | 12 | 2 | 9 | no |
+| shall-in-condition | 11 | 11 | 0 | yes |
+| vagueness | 10 | 1 | 9 | no |
+| money | 10 | 9 | 1 | no |
+| spacing | 9 | 9 | 0 | yes |
+| ordinal | 9 | 9 | 0 | yes |
+| referential-ambiguity | 9 | 1 | 5 | no |
+| attachment-label | 8 | 8 | 0 | yes |
+| efforts | 8 | 8 | 0 | yes |
+| throat-clearing | 8 | 8 | 0 | yes |
+| provided-that | 8 | 8 | 0 | yes |
+| agrees-to | 7 | 7 | 0 | yes |
+| and-or | 7 | 7 | 0 | yes |
+| category-must | 7 | 7 | 0 | yes |
+| category-should | 7 | 7 | 0 | yes |
+| attachment-classification | 7 | 5 | 1 | no |
+| arising-out-of | 6 | 6 | 0 | yes |
+| term-of-art | 6 | 6 | 0 | yes |
+| sole-discretion | 6 | 6 | 0 | yes |
+| represents-warrants | 6 | 6 | 0 | yes |
+| attachment-language | 5 | 5 | 0 | yes |
+| usage | 5 | 5 | 0 | yes |
+| headings-clause | 4 | 4 | 0 | yes |
+| successors-assigns | 4 | 4 | 0 | yes |
+| this-agreement-term | 4 | 4 | 0 | no |
+| time-is-of-the-essence | 3 | 3 | 0 | yes |
+| survival | 3 | 3 | 0 | yes |
+| knowledge-standard | 3 | 3 | 0 | yes |
+| entitled-to-duty | 3 | 3 | 0 | no |
+| consistency | 3 | 2 | 1 | no |
+| may-not | 2 | 2 | 0 | no |

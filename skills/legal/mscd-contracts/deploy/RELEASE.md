@@ -1,0 +1,12 @@
+# Release checklist for mscd-contracts
+
+The skill reaches Blake in 3 places, and they must match: the GitHub master (CatCorner22/Cursor_Skills, skills/legal/mscd-contracts), the skill in his claude.ai account (Customize > Skills), and the MSCD Project's custom instructions (`project-instructions.md` in this folder, saved on November 6, 2026, and out of date since the November 7 edits to items 1, 3(l), and 3(m): run step 5.
+
+0. **No change ships without the regression gate.** Make every change in a copy of the skill, never in the master. Then run `bash deploy/gate.sh <copy> <master>`: it runs the self-tests, the 3 phrase-variant shares, every keyed test corpus, the data-file parse, the description length, and the reference rebuild, and it fails if the copy catches fewer planted issues or flags more correct text than the master on any of them. Read each `*-lost.txt` it writes. Replace the master only on PASS, and back the master up first. A change that loses a finding is fixed or dropped, never accepted. Set `MSCD_TEST_ROOT` to the folder that holds the corpora when you run the gate somewhere else.
+1. Run the self-tests: `python3 scripts/mscd_lint.py --self-test` and `python3 scripts/coverage.py --self-test`; both must pass.
+2. Check the description in SKILL.md: 1,000 characters or fewer.
+3. Build the ZIP with `bash deploy/build_zip.sh <skill folder> <out folder>`: it runs steps 1 and 2, rebuilds the references and reports any stale copy, zips the folder `mscd-contracts/` without `evals/` (the answer keys would leak into later blind tests), `deploy/`, `CHANGELOG-*.md`, `.ruff_cache/`, `__pycache__/`, and `*.pyc`, removes the `disable-model-invocation: true` line from the zipped SKILL.md (the repo copy keeps it, because the repo makes every Cursor skill manual; the claude.ai copy must load on its own, per step 6), and runs `unzip -t`.
+4. Replace the skill in claude.ai: upload the new ZIP first; remove the old version only after the new one shows in the list. Keep the previous ZIP.
+5. If the house rules or the fallback file paths changed, update `project-instructions.md`, then the Project's instructions, and confirm the saved text matches this file exactly.
+6. Test in a new MSCD Project chat: a 1-line shall question and a pasted clause must load the skill; a non-contract question must not. Delete the test chats.
+7. Commit and push to a branch of the GitHub master, never to main, and update the pull request.

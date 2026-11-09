@@ -1,0 +1,217 @@
+{
+  "id": "c17-settlement-release-legacy",
+  "file": "contracts/c17-settlement-release-legacy.md",
+  "title": "Settlement Agreement and Release",
+  "tier": "obvious",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "archaic",
+      "anchor": "WHEREAS, on",
+      "quote": "WHEREAS, on 14 September 2026, the Owner sued the Installer in the Circuit Court for Duval County, Florida, Case No. 2026-CA-004417 (the \"Lawsuit\"), alleging defects in commercial kitchen equipment that the Installer installed at the Owner's restaurant at Two Riverside Place, Jacksonville, Florida; and",
+      "severity": 3,
+      "why": "WHEREAS recitals (both paragraphs).",
+      "fix": "Delete WHEREAS; state the background in plain sentences."
+    },
+    {
+      "n": 2,
+      "type": "archaic",
+      "anchor": "NOW, THEREFORE",
+      "quote": "NOW, THEREFORE, in consideration of the mutual promises herein, the parties agree as follows:",
+      "severity": 3,
+      "why": "Archaic lead-in with \"herein\".",
+      "fix": "The parties therefore agree as follows:"
+    },
+    {
+      "n": 3,
+      "type": "date-format",
+      "anchor": "14 September 2026",
+      "quote": "WHEREAS, on 14 September 2026, the Owner sued the Installer in the Circuit Court for Duval County, Florida, Case No. 2026-CA-004417 (the \"Lawsuit\"), alleging defects in commercial kitchen equipment that the Installer installed at the Owner's restaurant at Two Riverside Place, Jacksonville, Florida; and",
+      "severity": 3,
+      "why": "Day-month-year date (house rule 7).",
+      "fix": "September 14, 2026"
+    },
+    {
+      "n": 4,
+      "type": "party-article",
+      "anchor": "(the \"Owner\")",
+      "quote": "This Settlement Agreement and Release (this \"Agreement\") is dated February 2, 2027, and is between Gulfstream Hospitality Group, LLC, a Florida limited liability company (the \"Owner\"), and Coastal Kitchen Installations, Inc., a Georgia corporation (the \"Installer\").",
+      "severity": 3,
+      "why": "Document-wide: party names defined and used with \"the\" (the Owner, the Installer).",
+      "fix": "Define (\"Owner\") and (\"Installer\"); drop \"the\" throughout."
+    },
+    {
+      "n": 5,
+      "type": "enumeration",
+      "anchor": "1.1 The Installer",
+      "quote": "1.1 The Installer will pay the Owner Forty-Two Thousand Five Hundred Dollars ($42,500.00) (the \"Settlement Amount\") within ten (10) days of the date of this Agreement.",
+      "severity": 2,
+      "why": "MSCD-style 1.1 numbering throughout (house rule 3).",
+      "fix": "A. Settlement Payment; 1., 2. ..."
+    },
+    {
+      "n": 6,
+      "type": "category-will",
+      "anchor": "The Installer will pay",
+      "quote": "The Installer will pay the Owner Forty-Two Thousand Five Hundred Dollars ($42,500.00) (the \"Settlement Amount\") within ten (10) days of the date of this Agreement.",
+      "severity": 2,
+      "why": "\"will\" used to impose a duty on a party.",
+      "fix": "Installer shall pay Owner $42,500 ..."
+    },
+    {
+      "n": 7,
+      "type": "number-words",
+      "anchor": "Forty-Two Thousand Five Hundred Dollars",
+      "quote": "The Installer will pay the Owner Forty-Two Thousand Five Hundred Dollars ($42,500.00) (the \"Settlement Amount\") within ten (10) days of the date of this Agreement.",
+      "severity": 3,
+      "why": "Amount in words with digits.",
+      "fix": "$42,500"
+    },
+    {
+      "n": 8,
+      "type": "number-words",
+      "anchor": "ten (10) days",
+      "quote": "The Installer will pay the Owner Forty-Two Thousand Five Hundred Dollars ($42,500.00) (the \"Settlement Amount\") within ten (10) days of the date of this Agreement.",
+      "severity": 3,
+      "why": "Words with digits.",
+      "fix": "10 days"
+    },
+    {
+      "n": 9,
+      "type": "time-ambiguity",
+      "anchor": "days of the date of this Agreement",
+      "quote": "The Installer will pay the Owner Forty-Two Thousand Five Hundred Dollars ($42,500.00) (the \"Settlement Amount\") within ten (10) days of the date of this Agreement.",
+      "severity": 2,
+      "why": "\"within 10 days of\" can mean before or after.",
+      "fix": "no later than 10 days after the date of this agreement"
+    },
+    {
+      "n": 10,
+      "type": "doublet",
+      "anchor": "any and all claims",
+      "quote": "The Owner releases the Installer from any and all claims arising out of or relating to the Lawsuit or the kitchen equipment, including but not limited to claims for breach of warranty, negligence, and delay damages.",
+      "severity": 3,
+      "why": "Doublet.",
+      "fix": "all claims"
+    },
+    {
+      "n": 11,
+      "type": "arising-out-of",
+      "anchor": "arising out of or relating to",
+      "quote": "The Owner releases the Installer from any and all claims arising out of or relating to the Lawsuit or the kitchen equipment, including but not limited to claims for breach of warranty, negligence, and delay damages.",
+      "severity": 2,
+      "why": "\"arising out of or relating to\" (MSCD 13.41-13.54).",
+      "fix": "arising out of the Lawsuit or the kitchen equipment"
+    },
+    {
+      "n": 12,
+      "type": "doublet",
+      "anchor": "including but not limited to",
+      "quote": "The Owner releases the Installer from any and all claims arising out of or relating to the Lawsuit or the kitchen equipment, including but not limited to claims for breach of warranty, negligence, and delay damages.",
+      "severity": 3,
+      "why": "\"including but not limited to\" where \"including\" suffices.",
+      "fix": "including"
+    },
+    {
+      "n": 13,
+      "type": "knowledge-standard",
+      "anchor": "knows or should have known",
+      "quote": "The Owner's release does not extend to any latent defect that the Installer knows or should have known about and did not disclose to the Owner before the date of this Agreement.",
+      "severity": 2,
+      "why": "Knowledge standard \"knows or should have known\": flag it, don't rewrite it.",
+      "fix": "Leave the wording; offer a defined Knowledge term (MSCD 13.506)."
+    },
+    {
+      "n": 14,
+      "type": "archaic",
+      "anchor": "assert the same",
+      "quote": "The Installer releases the Owner from all claims arising out of the Lawsuit, and the Installer shall not assert the same in any later proceeding.",
+      "severity": 3,
+      "why": "\"the same\" as a pronoun.",
+      "fix": "and Installer shall not assert those claims in any later proceeding."
+    },
+    {
+      "n": 15,
+      "type": "throat-clearing",
+      "anchor": "The parties acknowledge and agree that",
+      "quote": "The parties acknowledge and agree that the Owner shall file a stipulation of dismissal with prejudice in the form of Exhibit A no later than 5 days after the Owner receives the Settlement Amount.",
+      "severity": 3,
+      "why": "Throat-clearing.",
+      "fix": "Owner shall file a stipulation of dismissal with prejudice in the form of Exhibit 1 ..."
+    },
+    {
+      "n": 16,
+      "type": "attachment-label",
+      "anchor": "EXHIBIT A",
+      "quote": "EXHIBIT A",
+      "severity": 3,
+      "why": "Lettered exhibit; exhibits take numbers. A form of stipulation is correctly an exhibit.",
+      "fix": "Exhibit 1"
+    },
+    {
+      "n": 17,
+      "type": "passive-voice",
+      "anchor": "shall be kept confidential",
+      "quote": "The terms of this Agreement shall be kept confidential, except for disclosures to a party's attorneys, accountants, and insurers.",
+      "severity": 2,
+      "why": "Passive hides who must keep the terms confidential.",
+      "fix": "Each party shall keep the terms of this agreement confidential, except for disclosures to its attorneys, accountants, and insurers."
+    },
+    {
+      "n": 18,
+      "type": "negative-subject-shall",
+      "anchor": "No party shall make",
+      "quote": "No party shall make any statement that disparages another party regarding the Lawsuit.",
+      "severity": 1,
+      "why": "\"shall\" with a negative subject.",
+      "fix": "No party may make any statement that disparages another party regarding the Lawsuit."
+    },
+    {
+      "n": 19,
+      "type": "successors-assigns",
+      "anchor": "successors and assigns",
+      "quote": "This Agreement shall be binding upon and inure to the benefit of the parties and their respective successors and assigns.",
+      "severity": 3,
+      "why": "Successors-and-assigns boilerplate (MSCD 15.24).",
+      "fix": "Delete it."
+    },
+    {
+      "n": 20,
+      "type": "spacing",
+      "anchor": "Entire agreement:  This",
+      "quote": "Entire agreement:  This Agreement is the parties' entire agreement regarding the Lawsuit.",
+      "severity": 3,
+      "why": "2 spaces after a colon (house rule 5).",
+      "fix": "1 space after the colon."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "is dated February 2, 2027, and is between",
+      "quote": "This Settlement Agreement and Release (this \"Agreement\") is dated February 2, 2027, and is between Gulfstream Hospitality Group, LLC, a Florida limited liability company (the \"Owner\"), and Coastal Kitchen Installations, Inc., a Georgia corporation (the \"Installer\").",
+      "why_correct": "House exception: \"is dated\" in the introductory clause; U.S. date format."
+    },
+    {
+      "anchor": "one-time payment",
+      "quote": "The Settlement Amount is a one-time payment, and the Installer has no other payment obligation under this Agreement.",
+      "why_correct": "\"one-time\": keep the word."
+    },
+    {
+      "anchor": "Two Riverside Place",
+      "quote": "WHEREAS, on 14 September 2026, the Owner sued the Installer in the Circuit Court for Duval County, Florida, Case No. 2026-CA-004417 (the \"Lawsuit\"), alleging defects in commercial kitchen equipment that the Installer installed at the Owner's restaurant at Two Riverside Place, Jacksonville, Florida; and",
+      "why_correct": "Number word inside a proper name (a street address); keep it."
+    },
+    {
+      "anchor": "Section 768.79 of the Florida Statutes",
+      "quote": "Each party shall bear its own attorneys' fees and costs, and each party waives any right to recover fees under Section 768.79 of the Florida Statutes.",
+      "why_correct": "Reference to a statute; numbered references to statutes are fine (house rule 4)."
+    },
+    {
+      "anchor": "FOURTH JUDICIAL CIRCUIT",
+      "quote": "IN THE CIRCUIT COURT OF THE FOURTH JUDICIAL CIRCUIT IN AND FOR DUVAL COUNTY, FLORIDA",
+      "why_correct": "Official name of the court; the number word is part of a proper name."
+    }
+  ],
+  "notes": "Other side's draft. Party-article and 1.1 numbering are document-wide. The WHEREAS issue covers both recitals. Section 1.1 holds 4 separate issues (category-will, 2 number-words, time-ambiguity). The release in 2.1 holds 3. The Exhibit A form uses the court's name in capitals; its \"Defendant.  Case No.\" line has the correct 2 spaces."
+}

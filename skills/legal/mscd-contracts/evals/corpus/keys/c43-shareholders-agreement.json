@@ -1,0 +1,119 @@
+{
+ "id": "c43-shareholders-agreement",
+ "file": "contracts/c43-shareholders-agreement.docx",
+ "title": "Shareholders Agreement",
+ "tier": "sneaky",
+ "whose_draft": "other-side",
+ "issues": [
+  {
+   "n": 1,
+   "type": "negative-subject-shall",
+   "anchor": "no Shareholder shall Transfer",
+   "quote": "2. A Shareholder that proposes to Transfer Shares shall notify Company and the other Shareholders of the proposed Transfer no later than 30 days before the proposed closing date, and no Shareholder shall Transfer any Shares to a Competitor.",
+   "severity": 1,
+   "why": "House rule 8: shall with a negative subject, buried in the 2nd half of a compound sentence. Read literally, it says no Shareholder has a duty to Transfer Shares to a Competitor, which is not a prohibition. The 1st half of the sentence (a duty of the proposing Shareholder) is correct.",
+   "fix": "..., and no Shareholder may Transfer any Shares to a Competitor."
+  },
+  {
+   "n": 2,
+   "type": "defined-term",
+   "anchor": "that the Dragging Shareholders shall deliver",
+   "quote": "\"Drag-Along Notice\" means a notice that states the identity of the buyer in a Drag-Along Sale, the price per Share, and the expected closing date and that the Dragging Shareholders shall deliver to each other Shareholder no later than 20 days before the closing of the Drag-Along Sale.",
+   "severity": 2,
+   "why": "A definition that contains an obligation (a duty to deliver, with a deadline). Obligations belong in the body; buried in a definition, the duty is easy to miss and here it contradicts the body (see issue 3).",
+   "fix": "\"Drag-Along Notice\" means a notice that states the identity of the buyer in a Drag-Along Sale, the price per Share, and the expected closing date.  (Keep the delivery duty only in the section titled \"Drag-Along Right.\")"
+  },
+  {
+   "n": 3,
+   "type": "conflict",
+   "anchor": "Drag-Along Notice no later than 30 days",
+   "quote": "2. The Dragging Shareholders shall give each other Shareholder a Drag-Along Notice no later than 30 days before the closing of the Drag-Along Sale.",
+   "severity": 1,
+   "why": "The definition of Drag-Along Notice requires delivery no later than 20 days before the closing; the section titled \"Drag-Along Right\" requires it no later than 30 days before the closing. A notice given 25 days before closing complies with 1 and breaches the other.",
+   "fix": "Pick 1 period (for example, 30 days), state it only in the section titled \"Drag-Along Right,\" and delete the timing from the definition."
+  },
+  {
+   "n": 4,
+   "type": "shall-in-condition",
+   "anchor": "If any other Shareholder shall fail",
+   "quote": "4. If any other Shareholder shall fail to sign the purchase agreement as this section requires, that Shareholder appoints Company's president as its attorney-in-fact to sign the purchase agreement on that Shareholder's behalf.",
+   "severity": 2,
+   "why": "Shall in a condition imposes no duty; MSCD uses the present tense in conditions.",
+   "fix": "If any other Shareholder fails to sign the purchase agreement as this section requires, ..."
+  },
+  {
+   "n": 5,
+   "type": "referential-ambiguity",
+   "anchor": "unless it pays those expenses",
+   "quote": "Company shall deduct from the sale proceeds payable to each other Shareholder a share of the transaction expenses of the Drag-Along Sale proportional to that Shareholder's Shares, unless it pays those expenses directly at the closing.",
+   "severity": 1,
+   "why": "\"it\" has 2 possible antecedents: Company (the paying agent, the subject of the sentence) and the other Shareholder. If Company pays the expenses, the Shareholders get a windfall; if the Shareholder pays them, the deduction is skipped. The pronoun decides who bears the expenses.",
+   "fix": "..., unless that Shareholder pays its share of those expenses directly at the closing."
+  },
+  {
+   "n": 6,
+   "type": "category-will",
+   "severity": 2,
+   "tier": "sneaky",
+   "anchor": "notice is effective",
+   "quote": "A notice is effective when the recipient receives it.",
+   "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
+   "fix": "A notice will be effective when the recipient receives it",
+   "added_by": "audit"
+  },
+  {
+   "n": 7,
+   "type": "time-ambiguity",
+   "tier": "sneaky",
+   "anchor": "no later than 30 days before the proposed closing date",
+   "quote": "2. A Shareholder that proposes to Transfer Shares shall notify Company and the other Shareholders of the proposed Transfer no later than 30 days before the proposed closing date, and no Shareholder shall Transfer any Shares to a Competitor.",
+   "severity": 3,
+   "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the count removes a doubt rather than a court split (rule record R-10.65).",
+   "fix": "... no later than the 30th day before the proposed closing date, ...",
+   "added_by": "blake-answers-2026-11-07"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "No Shareholder may pledge",
+   "quote": "3. No Shareholder may pledge any Shares as security for a loan without the prior written consent of Company's board of directors.",
+   "why_correct": "Negative subject with *may* is the house form of a prohibition (house rule 8; MSCD 3.307)."
+  },
+  {
+   "anchor": "Company is not required to record",
+   "quote": "4. Any Transfer that does not comply with this agreement is void, and Company is not required to record it in Company's stock ledger.",
+   "why_correct": "*is not required to* is the house exception for negating a duty (MSCD 3.292); *is void* is an adjective after *is*."
+  },
+  {
+   "anchor": "right of first refusal",
+   "quote": "2. Company has a right of first refusal to buy all, but not less than all, of the offered Shares at the price and on the terms in the offer.",
+   "why_correct": "Fixed legal term; house rule 2 keeps *first* in words."
+  },
+  {
+   "anchor": "(the \"Selling Shareholder\")",
+   "quote": "1. If a Shareholder wishes to accept a written offer from a person other than a Permitted Transferee to buy any of its Shares, that Shareholder (the \"Selling Shareholder\") shall deliver a copy of the offer to Company and the other Shareholders before accepting it.",
+   "why_correct": "Role label for whichever Shareholder is selling; role labels keep *the* (house rule 11). Party names in the document (Company, Ridgeline, Shareholder) correctly have no article."
+  }
+ ],
+ "notes": "Formatting is compliant (Aptos 12 on every run and in the style defaults, all paragraphs left-aligned, bold headings, no underlining). Section lines use the house form *A. Heading.  Text*; sections run A. to H. Inline enumerations use (a), (b), (c). The subsection numbers are typed in the text, not Word list numbering.",
+ "audit": [
+  {
+   "n": 6,
+   "traps_removed": [],
+   "change": "optional category-will issue n6 added",
+   "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  },
+  {
+   "n": 6,
+   "anchor": "notice is effective",
+   "change": "Blake answer Q18 (November 7, 2026): optional dropped; the issue is required (will for a policy about a contingent future event, MSCD 3.334, 3.369, 13.209) (optional dropped)",
+   "why": "See the key entry."
+  },
+  {
+   "n": 7,
+   "anchor": "no later than 30 days before the proposed closing date",
+   "change": "Blake answer Q9 (November 7, 2026): trap made a required issue (backward count)",
+   "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the "
+  }
+ ]
+}

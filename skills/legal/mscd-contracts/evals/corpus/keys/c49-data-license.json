@@ -1,0 +1,77 @@
+{
+  "id": "c49-data-license",
+  "file": "contracts/c49-data-license.md",
+  "title": "Data License Agreement",
+  "tier": "sneaky",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "consistency",
+      "anchor": "2025 County Soil Moisture",
+      "quote": "| SMY-2025-ANNUAL.parquet | 2025 County Soil Moisture and Yield Dataset, final annual release | 1,212,480 |",
+      "severity": 1,
+      "why": "Body/attachment mismatch in a defined term: the body defines Licensed Data as the 2026 dataset (with its Quarterly Updates), but Schedule A says the Licensed Data consists of files that include the 2025 annual dataset. The license grant, the use restrictions, the ownership clause, and the destruction duty all turn on what Licensed Data covers.",
+      "fix": "Decide whether the 2025 file is licensed.  If yes, amend the definition (\"Licensor's 2025 and 2026 County Soil Moisture and Yield Datasets, including each Quarterly Update\"); if no, delete the 2025 row from Schedule A."
+    },
+    {
+      "n": 2,
+      "type": "conflict",
+      "anchor": "all data that Licensee creates or collects",
+      "quote": "\"**Licensee Data**\" means all data that Licensee creates or collects in operating its business, including its policyholder records and loss models.",
+      "severity": 1,
+      "why": "Definitions that conflict: everything that is Derived Data (data that Licensee creates using the Licensed Data) is also Licensee Data (all data that Licensee creates), and the section titled \"Ownership\" gives Derived Data to Licensor and Licensee Data to Licensee. Loss models built with the Licensed Data are owned by both parties under the text.",
+      "fix": "\"Licensee Data\" means all data that Licensee creates or collects in operating its business, other than Derived Data, including ...  (and decide whether Licensee's loss models are Derived Data).",
+      "alt_anchors": [
+        "Licensee owns all Licensee Data",
+        "\"**Derived Data**\" means"
+      ]
+    },
+    {
+      "n": 3,
+      "type": "time-ambiguity",
+      "anchor": "within 15 days of the end",
+      "quote": "2. Licensor shall deliver each Quarterly Update within 15 days of the end of the calendar quarter that it covers.",
+      "severity": 2,
+      "why": "*within 15 days of* does not say before or after the end of the quarter.",
+      "fix": "Licensor shall deliver each Quarterly Update no later than 15 days after the end of the calendar quarter that it covers."
+    },
+    {
+      "n": 4,
+      "type": "vagueness",
+      "anchor": "substantially similar to the Licensed Data",
+      "quote": "3. Licensee shall not use the Licensed Data to create a dataset that is substantially similar to the Licensed Data.",
+      "severity": 2,
+      "why": "*substantially similar* is undefined and gives no measure, and every Derived Data set is arguably similar; Licensee cannot tell which of its permitted underwriting analyses breach.",
+      "fix": "Licensee shall not use the Licensed Data to create any dataset that reproduces county-level soil-moisture or yield values from the Licensed Data for resale or for disclosure to any person other than its Authorized Users."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "deliver the files in Schedule A",
+      "quote": "1. Licensor shall deliver the files in Schedule A to Licensee by secure file transfer no later than 5 days after the date of this agreement.",
+      "why_correct": "Correct attachment label and classification: Schedule A is a list of files (information the body refers to), lettered, capitalized, and placed before the exhibit (house rule 6). The problem with Schedule A is its content (issue 1), not its label or placement."
+    },
+    {
+      "anchor": "in the form of Exhibit 1",
+      "quote": "3. No later than 30 days after this agreement terminates or expires, Licensee shall destroy all copies of the Licensed Data in its possession and deliver to Licensor a certificate of destruction in the form of Exhibit 1.",
+      "why_correct": "Correct attachment label and classification: Exhibit 1 is a stand-alone form of certificate, numbered and capitalized, placed after Schedule A (house rule 6)."
+    },
+    {
+      "anchor": "Licensor is not required to customize",
+      "quote": "3. Licensor is not required to customize the Licensed Data for Licensee.",
+      "why_correct": "*is not required to* is the house exception for negating a duty (MSCD 3.292)."
+    },
+    {
+      "anchor": "and the Receiving Party shall use",
+      "quote": "F. **Confidentiality.**  Each party (the \"**Receiving Party**\") shall keep confidential all nonpublic information that the other party (the \"**Disclosing Party**\") discloses to it under this agreement, and the Receiving Party shall use that information only to perform its obligations and exercise its rights under this agreement.",
+      "why_correct": "Role labels keep *the* (house rule 11); Licensor and Licensee (party names) correctly have none."
+    },
+    {
+      "anchor": "Licensee is liable for",
+      "quote": "4. Licensee is liable for any act or omission of an Authorized User that would breach this agreement if Licensee had committed it.",
+      "why_correct": "*is liable* is an adjective after *is*, a house exception to the active-voice rule."
+    }
+  ],
+  "notes": "Other side's draft (Licensor's). Markdown: bold marks each defined term where it is defined; anchors avoid the asterisks, but the quotes for the definition and the confidentiality section include them because they are exact. Schedule A's file list is a Markdown table; issue 1 is anchored in its 1st row. The certificate in Exhibit 1 uses *Licensed Data* in the body's sense; it is a form, so it does not define Licensor or Licensee again. Key audit: issue 2 is a conflict with 2 ends; alt_anchors lists the other end."
+}

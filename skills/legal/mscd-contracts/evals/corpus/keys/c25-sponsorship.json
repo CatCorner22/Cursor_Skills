@@ -1,0 +1,82 @@
+{
+ "id": "c25-sponsorship",
+ "file": "contracts/c25-sponsorship.txt",
+ "title": "Event Sponsorship Agreement",
+ "tier": "sneaky",
+ "whose_draft": "unknown",
+ "issues": [
+  {
+   "n": 1,
+   "type": "shall-in-condition",
+   "anchor": "If Sponsor shall fail",
+   "quote": "If Sponsor shall fail to pay either installment when due, Organizer may remove Sponsor's name from Festival advertising.",
+   "severity": 2,
+   "why": "\"shall\" in a condition.",
+   "fix": "If Sponsor fails to pay either installment when due, ..."
+  },
+  {
+   "n": 2,
+   "type": "syntactic-ambiguity",
+   "anchor": "Sponsor may only sell",
+   "quote": "Sponsor may only sell its beverages at the 2 booths that Organizer designates for Sponsor.",
+   "severity": 1,
+   "why": "Misplaced \"only\": it can limit what Sponsor sells (only its beverages) or where (only at the 2 booths).",
+   "fix": "Sponsor may sell its beverages only at the 2 booths that Organizer designates for Sponsor."
+  },
+  {
+   "n": 3,
+   "type": "conflict",
+   "anchor": "the Festival's beer vendor",
+   "quote": "Organizer may accept funding from companies in other industries, and Organizer may display the logo of Big Muddy Brewing Company, the Festival's beer vendor, on the beer tent.",
+   "severity": 1,
+   "why": "D.2 lets a brewery (a beverage company) display its logo and sell at the Festival, which D.1 bars absolutely.",
+   "fix": "Reconcile: carve out Big Muddy Brewing Company expressly in D.1, or delete the logo right in D.2."
+  },
+  {
+   "n": 4,
+   "type": "referential-ambiguity",
+   "anchor": "it shall refund",
+   "quote": "If the City of Kansas City revokes Organizer's event permit or Organizer cancels the Festival for any other reason, it shall refund the Sponsorship Fee to Sponsor no later than 30 days after the cancellation.",
+   "severity": 1,
+   "why": "\"it\" can refer to the City of Kansas City or to Organizer (and the City isn't a party).",
+   "fix": "Organizer shall refund the Sponsorship Fee to Sponsor ..."
+  },
+  {
+   "n": 5,
+   "type": "scope-ambiguity",
+   "anchor": "liability to the other party for claims",
+   "quote": "The maximum amount of each party's liability to the other party for claims arising out of this agreement is $25,000.",
+   "severity": 1,
+   "why": "Unclear whether $25,000 caps each claim or all claims in the aggregate.",
+   "fix": "The maximum amount of each party's aggregate liability to the other party for all claims arising out of this agreement is $25,000."
+  },
+  {
+   "n": 6,
+   "type": "nonparty-obligation",
+   "anchor": "is entitled to 20 complimentary tickets",
+   "quote": "Sponsor is entitled to 20 complimentary tickets for each Festival day.",
+   "severity": 2,
+   "why": "MSCD 3.169: don't use is entitled to to impose an obligation on someone other than the subject; it hides who must pay or deliver.",
+   "fix": "[the organizer] shall give Sponsor 20 complimentary tickets ...",
+   "source": "MSCD 3.169 (key corrected by reviewer: was listed as a trap)"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "Third Street Pavilion",
+   "quote": "Organizer shall produce the Riverbend Lantern Festival at the Third Street Pavilion in Kansas City, Missouri, on September 18, 2027, and September 19, 2027 (the \"Festival\").",
+   "why_correct": "Number word inside a proper name; keep it."
+  },
+  {
+   "anchor": "5:00 p.m. Central time",
+   "quote": "Sponsor shall deliver its banners to Organizer no later than 5:00 p.m. Central time on September 10, 2027, and Organizer shall display those banners at the main stage and at each Festival entrance.",
+   "why_correct": "Correct time expression."
+  },
+  {
+   "anchor": "The Receiving Party shall use",
+   "quote": "The Receiving Party shall use the Disclosing Party's Confidential Information only to perform this agreement.",
+   "why_correct": "Role label keeps \"the\" (house rule 11)."
+  }
+ ],
+ "notes": "Whose draft is unknown. Otherwise clean: 2 spaces between sentences, 1 after colons, A./1. enumeration, digits, no party articles. F.2's \"only to perform\" places \"only\" correctly, in contrast to C.3."
+}

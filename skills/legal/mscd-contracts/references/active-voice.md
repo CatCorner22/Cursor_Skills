@@ -1,6 +1,6 @@
 # Active voice
 
-**House rule: active voice only, in every sentence and clause.** Read `house-style.md` section 1 for the recast patterns (unknown actor, legal fiction, amendment, party action) and the contingencies (linking verbs and adjectival participles aren't passive; quoted text stays; never change meaning to satisfy the rule).
+**House rule: active voice only, in every sentence and clause.** Read `house-style.md` section 1 for the recast patterns (unknown actor, legal fiction, amendment, party action, *solicit ... to accept employment* for *to be hired*, MSCD's concluding clause as *the date that the introductory clause states*) and the contingencies (linking verbs and adjectival participles aren't passive; quoted text stays; never change meaning to satisfy the rule).
 
 ## How to detect the passive
 
@@ -8,7 +8,7 @@ A passive verb is a form of *be* (or *get*) plus a past participle, with the act
 
 Not passive: *is void*, *is effective*, *is liable*, *is entitled*, *is responsible* (linking verb plus adjective); *the attached form* (participle as adjective).
 
-MSCD's own rules below still matter: they explain why the passive hides the actor (3.15) and how to rephrase buried-actor policies (3.336-3.338). The MSCD allowances for the passive are marked HOUSE.
+MSCD's own rules below still matter: they explain why the passive hides the actor (3.15) and how to rephrase buried-actor policies (3.336-3.338). The MSCD allowances for the passive carry the HOUSE mark.
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 
@@ -31,7 +31,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Fix: State the actor: If Acme terminates Player's employment ...
   - Book example: If Jason Player's employment with Buyer is terminated prior to two years from the date of this Agreement for any reason other than a for cause termination, this Non-Compete Agreement will no longer be binding. → (see fix)
 - **R-3.23-passive-appropriate** [sev 3] The passive may be appropriate if the by-agent is a nonparty or isn't a person, or if leading with the thing acted on keeps the focus where it belongs. (3.23, 3.24, 3.25...; PDF p. 131)
-  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('is effective'); amendments as 'The parties hereby amend the section titled ...'. See house-style.md section 1.
+  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'; 'solicit any employee of Company to accept employment with a competitor', never 'to be hired' (or employed, engaged, retained). See house-style.md section 1.
   - Book example: (none) → if a Necessary Project Approval is revoked
   - Book example: (none) → No party will be bound by this amendment until the Parent, the Borrowers, and the Required Lenders have signed a counterpart.
 
@@ -70,7 +70,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-3.337-no-is-due** [sev 2] Rephrase is due as language of obligation. (3.337; PDF p. 213)
   - Book example: The First Installment is due by 1 March 2024. → The Purchaser shall pay the First Installment by 1 March 2024.
 - **R-3.339-passive-in-policy** [sev 3] The passive voice in language of policy is unremarkable; where the missing by-agent is the world at large, prevent any implication that someone must act by adding automatically or by switching to an active verb with the same subject. (3.339, 3.340; PDF p. 213)
-  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('is effective'); amendments as 'The parties hereby amend the section titled ...'. See house-style.md section 1.
+  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'; 'solicit any employee of Company to accept employment with a competitor', never 'to be hired' (or employed, engaged, retained). See house-style.md section 1.
   - Exceptions: Don't switch will be deemed to the active voice (3.340; 13.209-.210).
   - Book example: the Option Price will be increased → the Option Price will increase
 
@@ -82,7 +82,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 ### Chapter 13: Selected Usages
 
 - **R-13.209-deem-will-passive** [sev 3] Use deem with will, not shall (Any notice will be deemed to have been received on delivery), and in the passive, not the active voice (not The parties will deem). (13.209, 13.210; PDF p. 624)
-  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('is effective'); amendments as 'The parties hereby amend the section titled ...'. See house-style.md section 1.
+  - HOUSE: Active voice only. Recast passives: name the actor (any Person if unknown); legal fictions as 'This agreement treats X as' or a linking verb ('will be effective'; will, because a notice is a contingent future event, MSCD 3.334); amendments as 'The parties hereby amend Section 4 (Payment) of the Original Agreement to read as follows'; 'solicit any employee of Company to accept employment with a competitor', never 'to be hired' (or employed, engaged, retained). See house-style.md section 1.
   - Test: Has-a-duty test: substitute 'has a duty to'; shall be deemed fails.
   - Fix: will be deemed
 - **R-13.730-regard-shall-be-had** [sev 3] Don't use regard shall be had to (passive, with a shall that fails the has-a-duty test); one approach is the active voice with take into account, consider, or include. (13.730, 13.731; PDF p. 745)

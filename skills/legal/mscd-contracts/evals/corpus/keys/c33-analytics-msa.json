@@ -1,0 +1,165 @@
+{
+ "id": "c33-analytics-msa",
+ "file": "contracts/c33-analytics-msa.docx",
+ "title": "Master Services Agreement",
+ "tier": "mixed",
+ "whose_draft": "other-side",
+ "issues": [
+  {
+   "n": 1,
+   "type": "attachment-label",
+   "anchor": "in the form of Schedule 1",
+   "quote": "1. For each engagement, the parties shall sign a statement of work in the form of Schedule 1 (each, a \"Statement of Work\") describing the services for that engagement (the \"Services\"), the Deliverables, the fees, and the schedule.",
+   "severity": 2,
+   "why": "Numbered schedule; house rule 6 gives schedules letters and exhibits numbers.",
+   "fix": "in the form of Exhibit 1 (a form is an exhibit; see the classification issue)"
+  },
+  {
+   "n": 2,
+   "type": "attachment-classification",
+   "anchor": "SCHEDULE 1 – FORM OF STATEMENT OF WORK",
+   "quote": "SCHEDULE 1 – FORM OF STATEMENT OF WORK",
+   "severity": 2,
+   "why": "The statement-of-work form is a stand-alone document, so it belongs in an exhibit, not a schedule (house rule 6).",
+   "fix": "Retitle it \"EXHIBIT 1 – FORM OF STATEMENT OF WORK\" and refer to \"Exhibit 1\" in the body."
+  },
+  {
+   "n": 3,
+   "type": "category-shall",
+   "anchor": "Statement of Work shall be effective",
+   "quote": "2. Each Statement of Work shall be effective when both parties have signed it.",
+   "severity": 2,
+   "why": "No duty; \"shall be effective\" is language of policy written as obligation.",
+   "fix": "Each Statement of Work is effective when both parties have signed it."
+  },
+  {
+   "n": 4,
+   "type": "efforts",
+   "anchor": "shall use best efforts to",
+   "quote": "2. Provider shall use best efforts to meet each delivery date in a Statement of Work.",
+   "severity": 2,
+   "why": "Mixed efforts standards: \"best efforts\" here, \"reasonable efforts\" for Customer in the section titled \"Customer Responsibilities.\" Mixing invites the argument that 2 different standards apply (MSCD ch. 8).",
+   "fix": "Provider shall use reasonable efforts to meet each delivery date in a Statement of Work."
+  },
+  {
+   "n": 5,
+   "type": "nonparty-obligation",
+   "anchor": "Provider's subcontractors shall comply",
+   "quote": "4. Provider's subcontractors shall comply with Customer's site-safety rules while at any Customer terminal.",
+   "severity": 2,
+   "why": "Provider's subcontractors don't sign this agreement, so \"shall\" can't bind them.",
+   "fix": "Provider shall cause its subcontractors to comply with Customer's site-safety rules while at any Customer terminal."
+  },
+  {
+   "n": 6,
+   "type": "party-article",
+   "anchor": "the Customer's information-security",
+   "quote": "5. Provider shall comply with the Customer's information-security policies that Customer gives Provider in writing.",
+   "severity": 2,
+   "why": "House rule 11: no article before the defined party name \"Customer\" (used without \"the\" everywhere else).",
+   "fix": "Provider shall comply with Customer's information-security policies that Customer gives Provider in writing."
+  },
+  {
+   "n": 7,
+   "type": "time-ambiguity",
+   "anchor": "within 30 days of the invoice date",
+   "quote": "2. Customer shall pay each invoice within 30 days of the invoice date.",
+   "severity": 2,
+   "why": "\"Within 30 days of\" doesn't say before or after the invoice date.",
+   "fix": "Customer shall pay each invoice no later than 30 days after the invoice date."
+  },
+  {
+   "n": 8,
+   "type": "reduced-passive",
+   "anchor": "travel expenses incurred by Provider",
+   "quote": "3. Customer shall reimburse Provider for travel expenses incurred by Provider in performing the Services, if Customer approved the travel in writing in advance.",
+   "severity": 3,
+   "why": "Recastable reduced passive (no article before the noun).",
+   "fix": "Customer shall reimburse Provider for travel expenses that Provider incurs in performing the Services, if ..."
+  },
+  {
+   "n": 9,
+   "type": "reduced-passive",
+   "anchor": "the reports prepared by Provider",
+   "quote": "4. Customer may share the reports prepared by Provider with Customer's lenders, auditors, and insurers.",
+   "severity": 3,
+   "why": "Recastable reduced passive (with an article).",
+   "fix": "Customer may share the reports that Provider prepares with Customer's lenders, auditors, and insurers."
+  },
+  {
+   "n": 10,
+   "type": "defined-term",
+   "anchor": "the Work Product",
+   "quote": "3. Provider grants Customer a nonexclusive, perpetual, royalty-free license to use that software as part of the Work Product.",
+   "severity": 1,
+   "why": "\"Work Product\" is never defined; it appears once, apparently meaning the Deliverables (2 forms for 1 thing).",
+   "fix": "Provider grants Customer a nonexclusive, perpetual, royalty-free license to use that software as part of the Deliverables."
+  },
+  {
+   "n": 11,
+   "type": "scope-ambiguity",
+   "anchor": "limited to $250,000 for claims",
+   "quote": "2. Provider's liability is limited to $250,000 for claims arising out of this agreement.",
+   "severity": 1,
+   "why": "Unclear whether the $250,000 cap applies to each claim or to all claims in the aggregate.",
+   "fix": "Provider's total liability for all claims arising out of this agreement is limited to $250,000 in the aggregate (or: $250,000 for each claim)."
+  },
+  {
+   "n": 12,
+   "type": "arising-out-of",
+   "anchor": "arising out of or relating to",
+   "quote": "Each party shall bring any claim arising out of or relating to this agreement only in the state or federal courts in King County, Washington.",
+   "severity": 2,
+   "why": "\"Arising out of or relating to\" is broader and vaguer than needed (MSCD 13.41-13.54).",
+   "fix": "Each party shall bring any claim arising out of this agreement only in the state or federal courts in King County, Washington."
+  },
+  {
+   "n": 13,
+   "type": "category-will",
+   "severity": 2,
+   "tier": "sneaky",
+   "anchor": "and is effective",
+   "quote": "Each notice under this agreement must be in writing and is effective when the recipient receives it.",
+   "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
+   "fix": "Each notice under this agreement must be in writing and will be effective when the recipient receives it",
+   "added_by": "audit"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "Customer is not required to purchase",
+   "quote": "3. Customer is not required to purchase any minimum volume of Services.",
+   "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+  },
+  {
+   "anchor": "The Receiving Party shall use",
+   "quote": "2. The Receiving Party shall use the Disclosing Party's Confidential Information only for this agreement and shall not disclose it to anyone other than the Receiving Party's employees and contractors who need to know it for this agreement.",
+   "why_correct": "Role labels (\"the Receiving Party\", \"the Disclosing Party\") keep \"the\" (house rule 11)."
+  },
+  {
+   "anchor": "a one-time onboarding fee",
+   "quote": "4. Customer shall pay Provider a one-time onboarding fee of $7,500 when the parties sign the 1st Statement of Work.",
+   "why_correct": "\"One-time\" is part of a word, not a count; \"the 1st Statement of Work\" correctly uses a digit."
+  },
+  {
+   "anchor": "I. Term and Termination.",
+   "quote": "I. Term and Termination.",
+   "why_correct": "Section I. correctly follows H.; the house scheme uses every letter, I included."
+  }
+ ],
+ "notes": "The file already holds 3 Word comments by \"Dana Whitlock\" (on the liability cap in the section titled \"Limitation of Liability\", on the insurance text in \"Insurance\", and on the Schedule 1 heading). They are business points, not drafting issues: a review should keep them and not count them as findings. Issue 4 (mixed efforts standards) is anchored at \"best efforts\"; a finding anchored at Customer's \"shall use reasonable efforts to make\" that names the inconsistency should count as a match for issue 4, and Customer's \"reasonable efforts\" wording is itself correct. Issues 1 and 2 share 1 fix (Exhibit 1). Defined terms inside the statement-of-work form (\"the MSA\") are correct. Font Aptos 12, left-aligned, typed house enumeration (A. to J., subsections 1.).",
+ "audit": [
+  {
+   "n": 13,
+   "traps_removed": [],
+   "change": "optional category-will issue n13 added",
+   "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  },
+  {
+   "n": 13,
+   "anchor": "and is effective",
+   "change": "Blake answer Q18 (November 7, 2026): optional dropped; the issue is required (will for a policy about a contingent future event, MSCD 3.334, 3.369, 13.209) (optional dropped)",
+   "why": "See the key entry."
+  }
+ ]
+}

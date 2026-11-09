@@ -1,0 +1,82 @@
+{
+  "id": "c44-clinical-trial-agreement",
+  "file": "contracts/c44-clinical-trial-agreement.txt",
+  "title": "Clinical Trial Agreement",
+  "tier": "sneaky",
+  "whose_draft": "unknown",
+  "issues": [
+    {
+      "n": 1,
+      "type": "nonparty-obligation",
+      "anchor": "Site staff shall complete",
+      "quote": "4. Site staff shall complete Sponsor's Protocol training before performing any Study procedure.",
+      "severity": 2,
+      "why": "Site's staff do not sign this agreement, so shall cannot impose a duty on them, and it is unclear whether Site breaches if a staff member skips training. MSCD 3.154.",
+      "fix": "Site shall cause each member of its staff to complete Sponsor's Protocol training before that staff member performs any Study procedure."
+    },
+    {
+      "n": 2,
+      "type": "defined-term",
+      "anchor": "unused Investigational Product",
+      "quote": "3. At the end of the Study, Site shall return all unused Investigational Product to Sponsor or, if Sponsor so instructs, destroy it and certify the destruction to Sponsor.",
+      "severity": 1,
+      "why": "The defined term is Study Drug; Investigational Product is never defined and is a 2nd form of the same term, so a reader can argue that the return duty covers something else (for example, comparator or placebo supplies).",
+      "fix": "... Site shall return all unused Study Drug to Sponsor ..."
+    },
+    {
+      "n": 3,
+      "type": "syntactic-ambiguity",
+      "anchor": "pharmacy fees exceeding $500 per month",
+      "quote": "3. Sponsor shall also reimburse Site for screen-failure costs and pharmacy fees exceeding $500 per month.",
+      "severity": 1,
+      "why": "\"exceeding $500 per month\" can modify pharmacy fees only or both screen-failure costs and pharmacy fees; it can also mean only the excess over $500 or the whole amount once the threshold is passed. Each reading changes the payment.",
+      "fix": "Sponsor shall also reimburse Site for (a) all screen-failure costs and (b) the amount by which Site's pharmacy fees for a calendar month exceed $500."
+    },
+    {
+      "n": 4,
+      "type": "time-ambiguity",
+      "anchor": "within 45 days of the invoice date",
+      "quote": "4. Site shall invoice Sponsor monthly, and Sponsor shall pay each undisputed invoice within 45 days of the invoice date.",
+      "severity": 2,
+      "why": "*within 45 days of* does not say before or after; elsewhere the contract uses *no later than ... after*.",
+      "fix": "... Sponsor shall pay each undisputed invoice no later than 45 days after the invoice date."
+    },
+    {
+      "n": 5,
+      "type": "referential-ambiguity",
+      "anchor": "and it shall return all unused",
+      "quote": "3. If Sponsor terminates this agreement before Site completes enrollment, Sponsor shall pay Site for all Subject visits that Site completed before the termination date, and it shall return all unused Study Drug no later than 30 days after the termination date.",
+      "severity": 1,
+      "why": "\"it\" can refer to Sponsor (the subject of the preceding clause) or Site (which holds the unused Study Drug). Grammar points to Sponsor; logic points to Site. The duty to return has no clear owner.",
+      "fix": "..., and Site shall return all unused Study Drug to Sponsor no later than 30 days after the termination date."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "The Principal Investigator must personally sign",
+      "quote": "3. The Principal Investigator must personally sign each case report form before Site submits it to Sponsor.",
+      "why_correct": "The Principal Investigator is expressly not a party, so *must* is the right word for a requirement on a nonparty (MSCD 3.154). Contrast issue 1 (Site staff shall)."
+    },
+    {
+      "anchor": "Site is not required to enroll",
+      "quote": "3. Site is not required to enroll any individual who the Principal Investigator determines is ineligible under the Protocol.",
+      "why_correct": "*is not required to* is the house exception for negating a duty (MSCD 3.292)."
+    },
+    {
+      "anchor": "Section 312.62 of Title 21",
+      "quote": "7. Site shall retain all Study records for the longer of (a) the period that Section 312.62 of Title 21 of the Code of Federal Regulations requires and (b) 5 years after the Study ends.",
+      "why_correct": "A reference to a regulation, not an internal cross-reference (house rule 4). *the longer of (a) ... and (b)* uses *and*, as MSCD 13.862 requires."
+    },
+    {
+      "anchor": "one-time start-up fee",
+      "quote": "1. Sponsor shall pay Site a one-time start-up fee of $8,500 no later than 30 days after the IRB approves the Protocol.",
+      "why_correct": "*one-time* is part of a compound word, which house rule 2 keeps in words."
+    },
+    {
+      "anchor": "This clinical trial agreement is dated",
+      "quote": "This clinical trial agreement is dated March 22, 2027, and is between Marlowe Biosciences, Inc., a Delaware corporation (\"Sponsor\"), and Piedmont Valley Research Institute, LLC, a North Carolina limited liability company (\"Site\").",
+      "why_correct": "*is dated* in the introductory clause is a house exception to the active-voice rule, and the date is in U.S. form."
+    }
+  ],
+  "notes": "Plain text, so no bold is possible; sections are typed A. to H. with indented subsections 1., 2., ... Nonparty defined terms (the \"Study Drug\", the \"Principal Investigator\", the \"IRB\", the \"FDA\") correctly keep the article; Sponsor and Site have none. *Dr.* is an abbreviation, so the single space after it is correct."
+}

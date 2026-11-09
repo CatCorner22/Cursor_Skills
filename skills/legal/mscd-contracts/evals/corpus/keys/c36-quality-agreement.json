@@ -1,0 +1,131 @@
+{
+  "id": "c36-quality-agreement",
+  "file": "contracts/c36-quality-agreement.docx",
+  "title": "Manufacturing Quality Agreement",
+  "tier": "mixed",
+  "whose_draft": "unknown",
+  "issues": [
+    {
+      "n": 1,
+      "type": "defined-term",
+      "anchor": "Specifications\" shall mean",
+      "quote": "\"Specifications\" shall mean the requirements in Schedule A and in the drawings that Buyer issues to Supplier for each Part.",
+      "severity": 3,
+      "why": "Definition uses shall mean; a definition takes means, as the definition of Nonconforming Part does.",
+      "fix": "\"Specifications\" means the requirements in Schedule A and in the drawings that Buyer issues to Supplier for each Part."
+    },
+    {
+      "n": 2,
+      "type": "nonparty-obligation",
+      "anchor": "Supplier's subcontractors shall maintain",
+      "quote": "Supplier's subcontractors shall maintain that certification for any work that they perform on the Parts.",
+      "severity": 2,
+      "why": "Supplier's subcontractors are not parties, so shall cannot bind them.",
+      "fix": "Supplier shall cause its subcontractors to maintain that certification for any work that they perform on the Parts."
+    },
+    {
+      "n": 3,
+      "type": "reduced-passive",
+      "anchor": "defects discovered by Buyer",
+      "quote": "Supplier shall reimburse Buyer for Buyer's documented costs of sorting and reworking Parts to correct defects discovered by Buyer after delivery.",
+      "severity": 3,
+      "why": "Reduced passive with no article; a clean active form exists.",
+      "fix": "to correct defects that Buyer discovers after delivery."
+    },
+    {
+      "n": 4,
+      "type": "number-words",
+      "anchor": "five percent (5%)",
+      "quote": "Supplier shall keep the rate of Nonconforming Parts in each calendar month at or below five percent (5%) of the Parts that Supplier delivers in that month.",
+      "severity": 2,
+      "why": "House rule 2: digits only, never words with digits.",
+      "fix": "at or below 5% of the Parts that Supplier delivers in that month"
+    },
+    {
+      "n": 5,
+      "type": "category-should",
+      "anchor": "Supplier should notify Buyer",
+      "quote": "Supplier should notify Buyer no later than 24 hours after Supplier discovers that Supplier has shipped a Nonconforming Part.",
+      "severity": 1,
+      "why": "Should leaves unclear whether Supplier has a duty to notify; read literally, it is only advice.",
+      "fix": "Supplier shall notify Buyer no later than 24 hours after Supplier discovers that Supplier has shipped a Nonconforming Part."
+    },
+    {
+      "n": 6,
+      "type": "passive-voice",
+      "anchor": "shall be quarantined",
+      "quote": "Nonconforming Parts shall be quarantined and labeled until Buyer decides whether to return, rework, or scrap them.",
+      "severity": 2,
+      "why": "Passive hides who must quarantine and label the parts (Supplier at its plant, or Buyer after delivery).",
+      "fix": "Each party shall quarantine and label each Nonconforming Part in its possession until Buyer decides whether to return, rework, or scrap it."
+    },
+    {
+      "n": 7,
+      "type": "time-ambiguity",
+      "anchor": "between January 1 and March 31",
+      "quote": "Supplier shall complete Supplier's own internal quality audit between January 1 and March 31 of each year and shall give Buyer a summary of the results.",
+      "severity": 2,
+      "why": "Between leaves unclear whether January 1 and March 31 are included.",
+      "fix": "Supplier shall complete Supplier's own internal quality audit no later than March 31 of each year (or: during the period starting on January 1 and ending on March 31 of each year)."
+    },
+    {
+      "n": 8,
+      "type": "money",
+      "anchor": "Not more than .05",
+      "quote": "Not more than .05",
+      "severity": 1,
+      "why": "Inside a table cell (Schedule A, row \"Maximum defect rate (%)\"). The defect-rate limit is stated 2 ways: five percent (5%) in the section titled \"Defect Rate\" and .05 in a column marked (%), which reads as 0.05%, a limit 100 times stricter. The 2 statements conflict; flag for a decision and state the limit once.",
+      "fix": "Decide the intended limit and state it once, in digits: \"Not more than 5%\" in Schedule A, matching the body (or refer to the body instead of restating it)."
+    },
+    {
+      "n": 9,
+      "type": "number-words",
+      "anchor": "three years",
+      "quote": "three years",
+      "severity": 2,
+      "why": "Inside a table cell (Schedule A, row \"Record and sample retention\"). House rule 2: digits for numbers that count.",
+      "fix": "3 years"
+    },
+    {
+      "n": 10,
+      "type": "date-format",
+      "anchor": "Rev. 3/1/2027",
+      "quote": "Halvorsen–Redcliff Quality Agreement, Rev. 3/1/2027",
+      "severity": 2,
+      "why": "In the page header. House rule 7: U.S. dates spelled out, not numeric.",
+      "fix": "Rev. March 1, 2027",
+      "where": "header"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Supplier must submit a deviation request",
+      "quote": "To request a deviation from the Specifications, Supplier must submit a deviation request to Buyer in the form of Exhibit 1.",
+      "why_correct": "Must in a condition (\"To request a deviation from the Specifications, Supplier must submit ...\") is correct; it states what Supplier has to do to get the benefit, not a duty."
+    },
+    {
+      "anchor": "in the form of Exhibit 1",
+      "quote": "To request a deviation from the Specifications, Supplier must submit a deviation request to Buyer in the form of Exhibit 1.",
+      "why_correct": "A form of request is a stand-alone document, correctly placed in a numbered exhibit, which follows Schedule A (house rule 6)."
+    },
+    {
+      "anchor": "the day on which",
+      "quote": "The retention period for each lot starts on the day on which Supplier ships that lot.",
+      "why_correct": "Correct relative construction; not archaic."
+    },
+    {
+      "anchor": "ISO 9001:2015",
+      "quote": "Supplier shall maintain ISO 9001:2015 certification for Supplier's quality management system throughout the term of the Supply Agreement.",
+      "why_correct": "A standard designation; the 1-space-after-colon rule does not apply inside it."
+    }
+  ],
+  "notes": "Unknown draft owner, so no represents-and-warrants question arises (the contract has no statements of fact). Issue 10 sits in the page header (\"where\": \"header\"); the footer reads \"Confidential\" and has no issue. Schedule A is a Word table; issues 8 and 9 sit inside table cells. The header is a .docx header part, so extract it with the body to find the anchor.",
+  "audit": [
+    {
+      "n": 7,
+      "anchor": "between January 1 and March 31",
+      "change": "Blake answer Q12 (November 7, 2026): fix rewritten: starting on ... and ending on, not from ... through (fix edited)",
+      "why": "See the key entry."
+    }
+  ]
+}

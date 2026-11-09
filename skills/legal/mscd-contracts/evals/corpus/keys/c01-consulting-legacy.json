@@ -1,0 +1,222 @@
+{
+ "id": "c01-consulting-legacy",
+ "file": "contracts/c01-consulting-legacy.docx",
+ "title": "Consulting Agreement",
+ "tier": "obvious",
+ "whose_draft": "other-side",
+ "issues": [
+  {
+   "n": 1,
+   "type": "formatting",
+   "anchor": "[format]",
+   "quote": "[format]",
+   "severity": 3,
+   "why": "Body text is Times New Roman; house rule 9 requires Aptos.",
+   "fix": "Set all text to Aptos."
+  },
+  {
+   "n": 2,
+   "type": "formatting",
+   "anchor": "[format]",
+   "quote": "[format]",
+   "severity": 3,
+   "why": "Body text is 11 point; house rule 9 requires 12 point.",
+   "fix": "Set all text to 12 point."
+  },
+  {
+   "n": 3,
+   "type": "formatting",
+   "anchor": "[format]",
+   "quote": "[format]",
+   "severity": 3,
+   "why": "Body paragraphs are justified; house rule 9 bars justified text.",
+   "fix": "Left-align every paragraph."
+  },
+  {
+   "n": 4,
+   "type": "formatting",
+   "anchor": "[format]",
+   "quote": "[format]",
+   "severity": 3,
+   "why": "Article headings (for example \"1. SERVICES AND TERM\") and the run-in section headings (\"Services.\", \"Term.\") are underlined; house rule 9 bars underlined headings.",
+   "fix": "Remove the underlining; use bold."
+  },
+  {
+   "n": 5,
+   "type": "enumeration",
+   "anchor": "1.1 Services.",
+   "quote": "1.1 Services.",
+   "severity": 3,
+   "why": "MSCD-style 1.1 numbering under articles numbered 1. to 5.; house rule 3 requires I. for articles and A. for sections (and 1. for subsections). The schedule list uses (a) at the top level.",
+   "fix": "Renumber: articles I. to V., sections A., B., and so on; schedule items 1., 2., 3."
+  },
+  {
+   "n": 6,
+   "type": "date-format",
+   "anchor": "this 3rd day of March, 2027",
+   "quote": "THIS CONSULTING AGREEMENT is made this 3rd day of March, 2027, between Bellmont Freight Systems, Inc., an Ohio corporation (the \"Company\"), and Harrow Ridge Analytics LLC, an Ohio limited liability company (the \"Consultant\").",
+   "severity": 3,
+   "why": "House rule 7 bars \"the 1st day of\" dates. The clause also uses \"is made\" rather than the \"is dated\" introductory-clause form.",
+   "fix": "This consulting agreement is dated March 3, 2027, and is between ..."
+  },
+  {
+   "n": 7,
+   "type": "party-article",
+   "anchor": "(the \"Company\")",
+   "quote": "THIS CONSULTING AGREEMENT is made this 3rd day of March, 2027, between Bellmont Freight Systems, Inc., an Ohio corporation (the \"Company\"), and Harrow Ridge Analytics LLC, an Ohio limited liability company (the \"Consultant\").",
+   "severity": 3,
+   "why": "House rule 11: no article before a defined party name. \"the Company\" recurs throughout; keyed once here.",
+   "fix": "(\"Company\"), and \"Company\" without \"the\" throughout."
+  },
+  {
+   "n": 8,
+   "type": "party-article",
+   "anchor": "(the \"Consultant\")",
+   "quote": "THIS CONSULTING AGREEMENT is made this 3rd day of March, 2027, between Bellmont Freight Systems, Inc., an Ohio corporation (the \"Company\"), and Harrow Ridge Analytics LLC, an Ohio limited liability company (the \"Consultant\").",
+   "severity": 3,
+   "why": "Same problem for the other party: \"the Consultant\" throughout; keyed once here.",
+   "fix": "(\"Consultant\"), and \"Consultant\" without \"the\" throughout."
+  },
+  {
+   "n": 9,
+   "type": "archaic",
+   "anchor": "WHEREAS, the Company wishes",
+   "quote": "WHEREAS, the Company wishes to retain the Consultant to provide logistics analytics services, and the Consultant is willing to provide those services.",
+   "severity": 3,
+   "why": "WHEREAS recital.",
+   "fix": "Delete WHEREAS; state the background as a plain sentence."
+  },
+  {
+   "n": 10,
+   "type": "archaic",
+   "anchor": "NOW, THEREFORE",
+   "quote": "NOW, THEREFORE, the parties agree as follows:",
+   "severity": 3,
+   "why": "Archaic lead-in.",
+   "fix": "The parties therefore agree as follows:"
+  },
+  {
+   "n": 11,
+   "type": "attachment-label",
+   "anchor": "services in Schedule 1",
+   "quote": "The Consultant shall perform the logistics analytics services in Schedule 1 attached hereto (the \"Services\").",
+   "severity": 3,
+   "why": "Schedules take letters, not numbers (house rule 6). The schedule heading \"SCHEDULE 1\" and the 2nd reference in the same section have the same problem. The schedule is correctly classified (it holds a list).",
+   "fix": "Schedule A"
+  },
+  {
+   "n": 12,
+   "type": "attachment-language",
+   "anchor": "attached hereto",
+   "quote": "The Consultant shall perform the logistics analytics services in Schedule 1 attached hereto (the \"Services\").",
+   "severity": 3,
+   "why": "\"attached hereto\" is barred (house rule 6).",
+   "fix": "Delete \"attached hereto\"."
+  },
+  {
+   "n": 13,
+   "type": "agrees-to",
+   "anchor": "agrees to use",
+   "quote": "The Consultant agrees to use its best efforts to complete each item of the Services no later than the date for that item in Schedule 1.",
+   "severity": 3,
+   "why": "\"agrees to\" instead of language of obligation.",
+   "fix": "The Consultant shall use ..."
+  },
+  {
+   "n": 14,
+   "type": "efforts",
+   "anchor": "best efforts",
+   "quote": "The Consultant agrees to use its best efforts to complete each item of the Services no later than the date for that item in Schedule 1.",
+   "severity": 2,
+   "why": "\"best efforts\" is an uncertain standard; MSCD ch. 8 recommends reasonable efforts.",
+   "fix": "reasonable efforts"
+  },
+  {
+   "n": 15,
+   "type": "category-shall",
+   "anchor": "agreement shall be twelve",
+   "quote": "The term of this agreement shall be twelve (12) months, beginning on March 3, 2027.",
+   "severity": 2,
+   "why": "No duty is imposed on anyone; the length of the term is a matter of policy.",
+   "fix": "The term of this agreement is 12 months, beginning on March 3, 2027."
+  },
+  {
+   "n": 16,
+   "type": "number-words",
+   "anchor": "twelve (12) months",
+   "quote": "The term of this agreement shall be twelve (12) months, beginning on March 3, 2027.",
+   "severity": 3,
+   "why": "Words with digits (house rule 2).",
+   "fix": "12 months"
+  },
+  {
+   "n": 17,
+   "type": "and-or",
+   "anchor": "employees and/or agents",
+   "quote": "The Consultant shall not disclose to any third party any nonpublic information of the Company that the Consultant obtains in performing the Services, and the Consultant shall cause its employees and/or agents to comply with this restriction.",
+   "severity": 2,
+   "why": "\"and/or\" is ambiguous.",
+   "fix": "its employees and agents"
+  },
+  {
+   "n": 18,
+   "type": "cross-reference-number",
+   "anchor": "in accordance with Section 1.1",
+   "quote": "The Company may terminate this agreement immediately by notice to the Consultant if the Consultant fails to perform the Services in accordance with Section 1.1.",
+   "severity": 3,
+   "why": "Numbered internal cross-reference (house rule 4).",
+   "fix": "in accordance with the section titled \"Services\""
+  },
+  {
+   "n": 19,
+   "type": "headings-clause",
+   "anchor": "are for convenience only",
+   "quote": "The headings in this agreement are for convenience only and shall not affect its interpretation.",
+   "severity": 2,
+   "why": "Headings clause must be deleted or limited (house rule 4). It also uses \"shall\" with an inanimate subject; deleting the clause fixes both.",
+   "fix": "Delete the section titled \"Headings\"."
+  },
+  {
+   "n": 20,
+   "type": "archaic",
+   "anchor": "IN WITNESS WHEREOF",
+   "quote": "IN WITNESS WHEREOF, the parties have signed this agreement as of the date first written above.",
+   "severity": 3,
+   "why": "Archaic concluding clause, with \"as of the date first written above\".",
+   "fix": "Each party is signing this agreement on the date in the introductory clause."
+  },
+  {
+   "n": 21,
+   "type": "usage",
+   "anchor": "to any third party",
+   "quote": "The Consultant shall not disclose to any third party any nonpublic information of the Company that the Consultant obtains in performing the Services, and the Consultant shall cause its employees and/or agents to comply with this restriction.",
+   "severity": 3,
+   "why": "MSCD 13.875: don't use third party; party means one who has entered into the contract.",
+   "fix": "any Person other than a party (or the defined term Nonparty)",
+   "source": "MSCD 13.875 (key corrected by reviewer: was listed as a trap)"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "one-time onboarding fee",
+   "quote": "The Company shall pay the Consultant $150 per hour for the Services, plus a one-time onboarding fee of $2,500.",
+   "why_correct": "\"one-time\" keeps its word form (house rule 2)."
+  },
+  {
+   "anchor": "is not required to reimburse",
+   "quote": "The Company is not required to reimburse any other expense.",
+   "why_correct": "House exception to active voice: \"is not required to\" (MSCD 3.292)."
+  },
+  {
+   "anchor": "first-class mail",
+   "quote": "Each party shall send any notice under this agreement by first-class mail or by email to the other party at the address below the other party's signature.",
+   "why_correct": "\"first-class mail\" is a fixed term (house rule 2)."
+  },
+  {
+   "anchor": "invoice no later than 30 days",
+   "quote": "The Consultant shall invoice the Company monthly, and the Company shall pay each invoice no later than 30 days after the Company receives it.",
+   "why_correct": "\"no later than 30 days after\" is the recommended deadline form; it is not a negative subject. (The sentence's \"the Company\" is covered by the party-article issue.)"
+  }
+ ],
+ "notes": "Other side's legacy template.  Format issues are in the .docx formatting itself: Times New Roman 11, justified body paragraphs, underlined headings.  Section numbers and headings are typed into each paragraph (\"1.1 \" followed by an underlined run \"Services.\").  The 2 party-article issues are pervasive and are keyed once each, at the definitions.  The Schedule 1 list is correctly a schedule (a list the body refers to); only its label is wrong.  Spacing is compliant (2 spaces between sentences)."
+}

@@ -1,0 +1,122 @@
+{
+  "id": "c39-trademark-license",
+  "file": "contracts/c39-trademark-license.docx",
+  "title": "Trademark License Agreement",
+  "tier": "mixed",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "this-agreement-term",
+      "anchor": "(this \"Agreement\")",
+      "quote": "This Trademark License Agreement (this \"Agreement\") is dated February 8, 2027, and is between Copper Kettle Provisions, LLC, a Georgia limited liability company (\"Licensor\"), and Sweetwater Bakehouse Group, Inc., a North Carolina corporation (\"Licensee\").",
+      "severity": 3,
+      "why": "Defines the contract itself as a term (MSCD 2.123). The capitalized this Agreement throughout follows from it; count 1 issue.",
+      "fix": "This agreement is dated February 8, 2027, and is between ... (no definition; use lowercase this agreement throughout)."
+    },
+    {
+      "n": 2,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "II. QUALITY CONTROL",
+      "severity": 3,
+      "why": "The 6 article headings (I. LICENSE through VI. GENERAL) are underlined; house rule 9 bars underlined headings. Font and size are otherwise correct (Aptos 12, left-aligned).",
+      "fix": "Remove the underlining; keep the headings bold."
+    },
+    {
+      "n": 3,
+      "type": "reduced-passive",
+      "anchor": "Licensed Products sold by Licensee",
+      "quote": "Licensee shall pay Licensor a royalty of 6% of Net Sales of Licensed Products sold by Licensee in the Territory.",
+      "severity": 3,
+      "why": "Reduced passive with no article; a clean active form exists.",
+      "fix": "a royalty of 6% of Net Sales of Licensed Products that Licensee sells in the Territory."
+    },
+    {
+      "n": 4,
+      "type": "money",
+      "anchor": "$25,000.00",
+      "quote": "For each calendar year of the Term, Licensee shall pay Licensor a minimum annual royalty of $25,000.00, less the royalties that Licensee paid for that calendar year under the section titled \"Royalty Rate,\" no later than January 31 after the end of that calendar year.",
+      "severity": 3,
+      "why": "Cents shown where no amount in the contract has cents.",
+      "fix": "$25,000"
+    },
+    {
+      "n": 5,
+      "type": "passive-voice",
+      "anchor": "shall be made by wire transfer",
+      "quote": "All royalty payments shall be made by wire transfer no later than 30 days after the end of each calendar quarter.",
+      "severity": 2,
+      "why": "Passive hides who must pay.",
+      "fix": "Licensee shall pay all royalties by wire transfer no later than 30 days after the end of each calendar quarter."
+    },
+    {
+      "n": 6,
+      "type": "attachment-classification",
+      "anchor": "in the form of Schedule B",
+      "quote": "With each payment, Licensee shall deliver to Licensor a royalty report in the form of Schedule B.",
+      "severity": 2,
+      "why": "A form of report is a stand-alone document, so under house rule 6 it belongs in an exhibit, not a schedule.",
+      "fix": "in the form of Exhibit 1 (rename Schedule B as Exhibit 1, placed after Schedule A)."
+    },
+    {
+      "n": 7,
+      "type": "efforts",
+      "anchor": "best efforts",
+      "quote": "Licensor may decide whether to act against any infringement, and Licensee shall use best efforts to cooperate with Licensor in any action that Licensor takes.",
+      "severity": 2,
+      "why": "Use reasonable efforts (MSCD ch. 8).",
+      "fix": "Licensee shall use reasonable efforts to cooperate with Licensor in any action that Licensor takes."
+    },
+    {
+      "n": 8,
+      "type": "cross-reference-number",
+      "anchor": "breaches Article II",
+      "quote": "Licensor may terminate this Agreement by notice to Licensee if Licensee breaches Article II and does not cure the breach no later than 30 days after receiving Licensor's notice of the breach.",
+      "severity": 2,
+      "why": "House rule 4: refer by heading, not by article number.",
+      "fix": "if Licensee breaches the article titled \"Quality Control\" and does not cure ..."
+    },
+    {
+      "n": 9,
+      "type": "doublet",
+      "anchor": "indemnify and hold harmless",
+      "quote": "Licensee shall indemnify and hold harmless Licensor against all losses that arise from Licensee's manufacture or sale of Licensed Products.",
+      "severity": 3,
+      "why": "Hold harmless adds nothing to indemnify.",
+      "fix": "Licensee shall indemnify Licensor against all losses that arise from ..."
+    },
+    {
+      "n": 10,
+      "type": "headings-clause",
+      "anchor": "for convenience only",
+      "quote": "The headings in this Agreement are for convenience only and do not affect its interpretation.",
+      "severity": 2,
+      "why": "House rule 4: a headings clause must be deleted or limited; the contract relies on headings for its cross-references.",
+      "fix": "Delete the section titled \"Headings.\""
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "I. Product Recalls.",
+      "quote": "I. Product Recalls.  Licensee shall notify Licensor no later than 24 hours after Licensee learns of any recall or regulatory inquiry involving a Licensed Product, and Licensee shall conduct any recall at Licensee's expense.",
+      "why_correct": "The article titled \"Quality Control\" has 9 sections, A. to I.; under house rule 3 section letters use every letter, so I. correctly follows H."
+    },
+    {
+      "anchor": "A. Grant of License.  Licensor grants",
+      "quote": "A. Grant of License.  Licensor grants Licensee a nonexclusive, nontransferable license to use the trademarks in Schedule A (the \"Licensed Marks\") on Licensed Products in the Territory during the Term.",
+      "why_correct": "The house section line: letter, period, bold heading, period, 2 spaces, text (house rule 3)."
+    },
+    {
+      "anchor": "the trademarks in Schedule A",
+      "quote": "Licensor grants Licensee a nonexclusive, nontransferable license to use the trademarks in Schedule A (the \"Licensed Marks\") on Licensed Products in the Territory during the Term.",
+      "why_correct": "A list of marks is information the body refers to; a lettered schedule is correct (house rule 6)."
+    },
+    {
+      "anchor": "Licensor states that Licensor owns",
+      "quote": "Licensor states that Licensor owns the Licensed Marks and has the right to grant the license in this Agreement.",
+      "why_correct": "Blake's draft; states is the house form for a statement of fact (house rule 10)."
+    }
+  ],
+  "notes": "Blake's draft. Formatting issue: underlined article headings. Article II has 9 sections so that section I. follows H. The roman numeral I. of the 1st article heading (I. LICENSE) and the letter I. of the 9th section of Article II both appear; only the section is a trap."
+}

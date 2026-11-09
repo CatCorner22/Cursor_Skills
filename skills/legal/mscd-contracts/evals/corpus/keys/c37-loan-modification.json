@@ -1,0 +1,136 @@
+{
+  "id": "c37-loan-modification",
+  "file": "contracts/c37-loan-modification.txt",
+  "title": "Commercial Loan Modification Agreement",
+  "tier": "mixed",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "time-ambiguity",
+      "anchor": "from March 1, 2027 to June 30, 2027",
+      "quote": "\"Modification Period\" means the period from March 1, 2027 to June 30, 2027.",
+      "severity": 2,
+      "why": "From ... to does not say whether June 30, 2027 is in the Modification Period (MSCD ch. 10); the interest-only payments turn on it.",
+      "fix": "\"Modification Period\" means the period that starts on March 1, 2027, and ends on June 30, 2027, both dates included."
+    },
+    {
+      "n": 2,
+      "type": "category-shall",
+      "anchor": "shall be 6.25% per year",
+      "quote": "Starting on the date of this agreement, the interest rate on the Loan shall be 6.25% per year.",
+      "severity": 2,
+      "why": "No duty is imposed on the interest rate; use language of policy.",
+      "fix": "Starting on the date of this agreement, the interest rate on the Loan is 6.25% per year."
+    },
+    {
+      "n": 3,
+      "type": "ordinal",
+      "anchor": "the first Payment Date",
+      "quote": "Starting on the first Payment Date after the Modification Period, Borrower shall pay Lender monthly installments of principal and interest of $31,420 each.",
+      "severity": 2,
+      "why": "House rule 2: ordinals in digits.",
+      "fix": "Starting on the 1st Payment Date after the Modification Period, ..."
+    },
+    {
+      "n": 4,
+      "type": "agrees-to",
+      "anchor": "Borrower agrees to pay Lender",
+      "quote": "Borrower agrees to pay Lender a modification fee of $7,500 on the date of this agreement.",
+      "severity": 3,
+      "why": "Agrees to used instead of shall.",
+      "fix": "Borrower shall pay Lender a modification fee of $7,500 on the date of this agreement."
+    },
+    {
+      "n": 5,
+      "type": "conflict",
+      "anchor": "February 29, 2027",
+      "quote": "Borrower shall deliver to Lender a renovation budget and construction schedule for the Hotel no later than February 29, 2027.",
+      "severity": 1,
+      "why": "2027 is not a leap year, so February 29, 2027 does not exist; the budget deadline is indeterminate (February 28 or March 1?).",
+      "fix": "Pick a real date, for example \"no later than February 26, 2027.\""
+    },
+    {
+      "n": 6,
+      "type": "archaic",
+      "anchor": "prior to signing it",
+      "quote": "Borrower shall give Lender a copy of each renovation contract that exceeds $50,000 prior to signing it.",
+      "severity": 3,
+      "why": "Prior to is legalese for before.",
+      "fix": "before signing it"
+    },
+    {
+      "n": 7,
+      "type": "time-ambiguity",
+      "anchor": "by April 15, 2027",
+      "quote": "Borrower shall deliver to Lender Borrower's unaudited financial statements for the quarter ending March 31, 2027, by April 15, 2027.",
+      "severity": 2,
+      "why": "By leaves open whether delivery on April 15, 2027 is timely.",
+      "fix": "no later than April 15, 2027"
+    },
+    {
+      "n": 8,
+      "type": "conflict",
+      "anchor": "Monday, June 1, 2027",
+      "quote": "Borrower shall make the Hotel available for Lender's inspection at 10:00 a.m. Central time on Monday, June 1, 2027.",
+      "severity": 1,
+      "why": "June 1, 2027 is a Tuesday (checked with Python datetime). The weekday and the date conflict, so the inspection day is uncertain; Monday, May 31, 2027 is Memorial Day.",
+      "fix": "State the date without the weekday (\"on June 1, 2027\"), or correct the weekday to Tuesday after confirming the intended day."
+    },
+    {
+      "n": 9,
+      "type": "represents-warrants",
+      "anchor": "Borrower represents and warrants",
+      "quote": "Borrower represents and warrants to Lender that on the date of this agreement no Event of Default exists and Borrower has no defense, offset, or counterclaim to Borrower's obligations under the Loan Agreement or the Note.",
+      "severity": 2,
+      "why": "House rule 10: Blake's own draft uses states for statements of fact.",
+      "fix": "Borrower states to Lender that on the date of this agreement no Event of Default exists and ..."
+    },
+    {
+      "n": 10,
+      "type": "spacing",
+      "anchor": "this agreement. Guarantor confirms",
+      "quote": "Guarantor consents to this agreement. Guarantor confirms that the Guaranty remains in effect and covers all of Borrower's obligations under the Loan Agreement, the Note, and this agreement.",
+      "severity": 3,
+      "why": "1 space between sentences; house rule 5 requires 2.",
+      "fix": "Guarantor consents to this agreement.  Guarantor confirms that ..."
+    },
+    {
+      "n": 11,
+      "type": "time-is-of-the-essence",
+      "anchor": "Time is of the essence",
+      "quote": "Time is of the essence of this agreement.",
+      "severity": 2,
+      "why": "Vague (MSCD 13.884); say what happens if a deadline is missed.",
+      "fix": "Delete. If a consequence is wanted, state it (for example, that a missed payment is an Event of Default without a grace period)."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Tuesday, February 29, 2028",
+      "quote": "The Maturity Date is Tuesday, February 29, 2028.",
+      "why_correct": "2028 is a leap year, and February 29, 2028 is a Tuesday (checked with Python datetime). Correct date and weekday."
+    },
+    {
+      "anchor": "Borrower is not required to pay principal",
+      "quote": "Borrower is not required to pay principal on those Payment Dates.",
+      "why_correct": "Is not required to is the house exception (MSCD 3.292)."
+    },
+    {
+      "anchor": "10:00 a.m. Central time",
+      "quote": "Borrower shall make the Hotel available for Lender's inspection at 10:00 a.m. Central time on Monday, June 1, 2027.",
+      "why_correct": "Correct time expression (Arkansas is in the Central zone); a.m. mid-sentence is not a sentence break."
+    },
+    {
+      "anchor": "the 1st day of each calendar month",
+      "quote": "\"Payment Date\" means the 1st day of each calendar month.",
+      "why_correct": "A recurring day, not a date; the digit ordinal is correct under house rule 2. It is not the barred \"1st day of January, 2027\" date form."
+    },
+    {
+      "anchor": "no later than 10 days after Borrower receives",
+      "quote": "Borrower shall also reimburse Lender for the reasonable attorneys' fees that Lender incurs in preparing this agreement, no later than 10 days after Borrower receives Lender's invoice for those fees.",
+      "why_correct": "Clear deadline measured from receipt; correct."
+    }
+  ],
+  "notes": "Blake's draft (.txt). The Background paragraphs are unnumbered by design. Maturity Date and Event of Default are Loan Agreement terms that the section titled \"Definitions\" imports; they are not undefined terms. Dates checked with Python datetime: June 1, 2027 = Tuesday; May 31, 2027 = Monday; February 29, 2028 = Tuesday; February 29, 2027 is invalid."
+}

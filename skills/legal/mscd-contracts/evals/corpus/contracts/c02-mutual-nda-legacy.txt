@@ -1,0 +1,49 @@
+MUTUAL NONDISCLOSURE AGREEMENT
+
+This mutual nondisclosure agreement is dated 1 February 2027 and is between Quarry Lane Biotech, Inc., a Delaware corporation ("Quarry Lane"), and Sallow Creek Instruments LLC, a Massachusetts limited liability company ("Sallow Creek").
+
+WITNESSETH THAT:
+
+The parties wish to evaluate a possible joint development of benchtop assay instruments (the "Purpose"). In connection with the Purpose, each party may disclose Confidential Information to the other party.
+
+NOW, THEREFORE, the parties agree as follows:
+
+1. Definitions.
+
+(a) "Confidential Information" shall mean all nonpublic technical and business information that a party (the "Disclosing Party") discloses to the other party (the "Receiving Party"), including but not limited to assay designs, reagent formulations, software, and pricing.
+
+(b) "Representatives" means a party's employees, officers, and professional advisors.
+
+2. Exceptions. Confidential Information does not include information that:  (a) is or becomes public through no fault of the Receiving Party; (b) the Receiving Party lawfully possessed before the Disclosing Party disclosed it; or (c) the Receiving Party develops independently.
+
+3. Obligations. The Receiving Party shall hold the Disclosing Party's Confidential Information in confidence and shall use it only for the Purpose. The Receiving Party may disclose Confidential Information only to those of its Representatives and/or lenders who need to know it for the Purpose. The Receiving Party is liable for any breach of this agreement by its Representatives.
+
+4. Return of Materials. Within 10 days of the Disclosing Party's written request, the Receiving Party shall return or destroy all Proprietary Information of the Disclosing Party.
+
+5. No License. It is understood and agreed that this agreement grants the Receiving Party no license under any patent or copyright of the Disclosing Party.
+
+6. Term. The Receiving Party's obligations under this agreement shall continue for two (2) years after the date of this agreement.
+
+7. Remedies. If the Receiving Party breaches this agreement, the Disclosing Party may seek an injunction, provided, however, that the Disclosing Party shall first give the Receiving Party notice of the breach.
+
+8. Miscellaneous.
+
+(a) Neither party shall assign this agreement without the other party's prior written consent.
+
+(b) This agreement shall be governed by the laws of the Commonwealth of Massachusetts.
+
+(c) Each party shall send any notice under this agreement by email to the address below the other party's signature. A notice is effective when the recipient receives it, except that a notice that the recipient receives after 5:00 p.m. Eastern time is effective on the next day.
+
+IN WITNESS WHEREOF, the parties have executed this agreement as of the date first written above.
+
+QUARRY LANE BIOTECH, INC.
+By: ______________________
+Name: Marisol Teague
+Title: Chief Executive Officer
+Email: mteague@quarrylanebio.example
+
+SALLOW CREEK INSTRUMENTS LLC
+By: ______________________
+Name: Dorian Esterhay
+Title: Manager
+Email: desterhay@sallowcreek.example

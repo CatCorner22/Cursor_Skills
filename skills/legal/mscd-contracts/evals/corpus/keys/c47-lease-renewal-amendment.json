@@ -1,0 +1,96 @@
+{
+  "id": "c47-lease-renewal-amendment",
+  "file": "contracts/c47-lease-renewal-amendment.txt",
+  "title": "Amendment to Lease (Renewal Option)",
+  "tier": "sneaky",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "syntactic-ambiguity",
+      "anchor": "the greater of 103% of the prior rent",
+      "quote": "1. The annual Base Rent for the Renewal Term is the greater of 103% of the prior rent or fair market rent determined by an MAI appraiser that Landlord and Tenant jointly select.",
+      "severity": 1,
+      "why": "The renewal-rent formula can be read 2 ways: the greater of (103% of the prior rent) and (fair market rent), or 103% of the greater of (the prior rent) and (fair market rent). *the greater of X or Y* also uses *or* where MSCD 13.862 requires *and*. \"the prior rent\" is undefined (the last month's Base Rent annualized? Base Rent for the last lease year? Including any abatement?).",
+      "fix": "The annual Base Rent for the Renewal Term is the greater of (a) 103% of the annual Base Rent payable for the last 12 full months before the Expiration Date and (b) Fair Market Rent.  (Define Fair Market Rent separately, with the appraisal procedure.)"
+    },
+    {
+      "n": 2,
+      "type": "reduced-passive",
+      "anchor": "fair market rent determined by an MAI appraiser",
+      "quote": "1. The annual Base Rent for the Renewal Term is the greater of 103% of the prior rent or fair market rent determined by an MAI appraiser that Landlord and Tenant jointly select.",
+      "severity": 3,
+      "why": "Reduced passive without an article (*fair market rent determined by*); a clean active form exists. Fold into the fix for issue 1.",
+      "fix": "... the fair market rent that an MAI appraiser whom Landlord and Tenant jointly select determines."
+    },
+    {
+      "n": 3,
+      "type": "conflict",
+      "anchor": "Friday, September 2, 2027",
+      "quote": "2. To exercise the Renewal Option, Tenant must give Landlord notice of exercise (the \"Renewal Notice\") no later than 180 days before the Expiration Date (that is, no later than Friday, September 2, 2027).",
+      "severity": 1,
+      "why": "September 2, 2027 is a Thursday, not a Friday (computed with Python's datetime: February 29, 2028 minus 180 days is Thursday, September 2, 2027). The 180-day count and the date agree; the weekday contradicts both, which invites an argument that the deadline is Friday, September 3, 2027 — on a renewal option, a 1-day dispute can forfeit the option.",
+      "fix": "(that is, no later than Thursday, September 2, 2027)  (or drop the weekday)"
+    },
+    {
+      "n": 4,
+      "type": "time-ambiguity",
+      "anchor": "within 90 days of the Expiration Date",
+      "quote": "2. If Landlord and Tenant do not jointly select an appraiser within 90 days of the Expiration Date, Landlord and Tenant shall each select an appraiser no later than 10 days after that period ends, and Landlord and Tenant shall cause those 2 appraisers to select a 3rd appraiser, whose determination of fair market rent binds both parties.",
+      "severity": 2,
+      "why": "*within 90 days of the Expiration Date* can mean the 90 days before or the 90 days after it; the later 10-day deadline runs from the end of that period, so it is uncertain too. Contrast the correct *no later than 180 days before the Expiration Date* in the Renewal Option section.",
+      "fix": "If Landlord and Tenant have not jointly selected an appraiser on or before the date 90 days before the Expiration Date, ...  (or measure from the Renewal Notice: \"no later than 30 days after Tenant gives the Renewal Notice\")"
+    },
+    {
+      "n": 5,
+      "type": "category-should",
+      "anchor": "If Tenant should exercise the Renewal Option",
+      "quote": "4. If Tenant should exercise the Renewal Option, all provisions of the Lease apply during the Renewal Term, except that the section of this amendment titled \"Renewal Rent\" governs Base Rent for the Renewal Term and Tenant has no further option to renew.",
+      "severity": 2,
+      "why": "*should* in a condition (archaic subjunctive); a condition takes the present tense.",
+      "fix": "If Tenant exercises the Renewal Option, ..."
+    },
+    {
+      "n": 6,
+      "type": "time-ambiguity",
+      "tier": "sneaky",
+      "anchor": "no later than 180 days before the Expiration Date",
+      "quote": "2. To exercise the Renewal Option, Tenant must give Landlord notice of exercise (the \"Renewal Notice\") no later than 180 days before the Expiration Date (that is, no later than Friday, September 2, 2027).",
+      "severity": 3,
+      "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the count removes a doubt rather than a court split (rule record R-10.65).  The parenthetical restates the deadline as a date, so the draft also says it twice (MSCD 1.56).",
+      "fix": "State the deadline once (MSCD 1.56): \"... no later than the 180th day before the Expiration Date.\"  Or keep only the stated date, with a time of day because the notice exercises the Renewal Option (Blake answers Q7 and Q9): \"... no later than [5:00 p.m.] [city] time on September 2, 2027.\"  Either way, delete the other statement; the weekday is issue 3.",
+      "added_by": "blake-answers-2026-11-07"
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "February 29, 2028",
+      "quote": "The term of the Lease began on March 1, 2018, and ends on February 29, 2028 (the \"Expiration Date\").",
+      "why_correct": "2028 is a leap year, so February 29, 2028 is a real date (it is a Tuesday), and a 10-year term that began March 1, 2018 ends on it."
+    },
+    {
+      "anchor": "To exercise the Renewal Option, Tenant must give",
+      "quote": "2. To exercise the Renewal Option, Tenant must give Landlord notice of exercise (the \"Renewal Notice\") no later than 180 days before the Expiration Date (that is, no later than Friday, September 2, 2027).",
+      "why_correct": "*must* in a condition to exercising an option is correct; it is not a duty, so *shall* would be wrong."
+    },
+    {
+      "anchor": "Landlord is not required to make",
+      "quote": "D. Condition of Premises.  Tenant shall accept the Premises for the Renewal Term in their condition on the Expiration Date, and Landlord is not required to make any improvements to the Premises or give Tenant any improvement allowance for the Renewal Term.",
+      "why_correct": "*is not required to* is the house exception for negating a duty (MSCD 3.292)."
+    },
+    {
+      "anchor": "Tenant states that the Lease",
+      "quote": "E. Tenant's Statements.  Tenant states that the Lease is in effect, that Tenant has not assigned the Lease or sublet any part of the Premises, and that Tenant has not given Landlord any notice of default under the Lease that remains uncured.",
+      "why_correct": "Blake's draft: *states* is the house verb for statements of fact (house rule 10)."
+    }
+  ],
+  "notes": "Issues 1 and 2 share a sentence and have separate anchors. The weekday was computed with Python's datetime: date(2028, 2, 29) - timedelta(days=180) = 2027-09-02, a Thursday; the contract says Friday. *1 period of 5 years*, *those 2 appraisers*, *a 3rd appraiser*, and *the 1st day* follow house rule 2. *no assignee or subtenant of Tenant may exercise it* is a correct negative subject with *may*. *MAI* is an appraisal designation, not an undefined defined term.",
+  "audit": [
+    {
+      "n": 6,
+      "anchor": "no later than 180 days before the Expiration Date",
+      "change": "Blake answer Q9 (November 7, 2026): trap made a required issue (backward count stated twice)",
+      "why": "Blake answer Q9 (November 7, 2026): every backward-counted period gets a finding (MSCD 10.65-10.67), and the fix states the count: no later than the Nth day before the event.  The trap treated this as a plain deadline that MSCD 10.65's convention settles (count 1 end day, not the other); Blake wants the count stated in every form.  Severity 3: the convention gives 1 likely reading, so stating the "
+    }
+  ]
+}

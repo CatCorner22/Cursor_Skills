@@ -1,0 +1,176 @@
+{
+ "id": "c34-marketing-services",
+ "file": "contracts/c34-marketing-services.md",
+ "title": "Marketing Services Agreement",
+ "tier": "mixed",
+ "whose_draft": "blake",
+ "issues": [
+  {
+   "n": 1,
+   "type": "defined-term",
+   "anchor": "which Client shall approve in writing",
+   "quote": "1. \"**Approved Budget**\" means the budget for the campaign in Schedule A, which Client shall approve in writing before Agency begins work.",
+   "severity": 2,
+   "why": "The definition of \"Approved Budget\" contains an obligation (Client's duty to approve); obligations belong in the body, not in definitions.",
+   "fix": "\"Approved Budget\" means the budget for the campaign in Schedule A.  Then, in the body: \"Client shall approve the Approved Budget in writing before Agency begins work.\""
+  },
+  {
+   "n": 2,
+   "type": "category-will",
+   "anchor": "Agency will submit",
+   "quote": "2. Agency will submit each item of Campaign Materials to Client for approval at least 5 business days before its scheduled release.",
+   "severity": 2,
+   "why": "\"Will\" used to impose a duty on Agency; the rest of the agreement uses \"shall.\"",
+   "fix": "Agency shall submit each item of Campaign Materials to Client for approval ..."
+  },
+  {
+   "n": 3,
+   "type": "category-should",
+   "anchor": "Client should review",
+   "quote": "3. Client should review each item of Campaign Materials for factual accuracy before approving it.",
+   "severity": 2,
+   "why": "\"Should\" used as advice: unclear whether Client has a duty to review.",
+   "fix": "Delete the sentence, or if a duty is meant: \"Client shall review each item of Campaign Materials for factual accuracy before approving it.\""
+  },
+  {
+   "n": 4,
+   "type": "defined-term",
+   "anchor": "the approved budget",
+   "quote": "1. Agency shall not incur third-party media costs in excess of the approved budget without Client's written consent.",
+   "severity": 2,
+   "why": "Lowercase use of the defined term \"Approved Budget.\"",
+   "fix": "in excess of the Approved Budget"
+  },
+  {
+   "n": 5,
+   "type": "category-should",
+   "anchor": "If Agency should exceed",
+   "quote": "2. If Agency should exceed the Approved Budget, Agency shall bear the excess cost unless Client consented to the excess in writing.",
+   "severity": 2,
+   "why": "\"Should\" in a condition; use the present tense.",
+   "fix": "If Agency exceeds the Approved Budget, ..."
+  },
+  {
+   "n": 6,
+   "type": "sole-discretion",
+   "anchor": "in its sole discretion",
+   "quote": "3. Client may, in its sole discretion, increase the Approved Budget by notice to Agency.",
+   "severity": 3,
+   "why": "\"In its sole discretion\" with \"may\" adds nothing (MSCD 3.249).",
+   "fix": "Client may increase the Approved Budget by notice to Agency."
+  },
+  {
+   "n": 7,
+   "type": "entitled-to-duty",
+   "anchor": "Agency is entitled to receive",
+   "quote": "1. Agency is entitled to receive a monthly retainer of $8,500 for each month of the term.",
+   "severity": 2,
+   "why": "\"Is entitled to receive\" hides Client's duty to pay the retainer (MSCD 3.169).",
+   "fix": "Client shall pay Agency a monthly retainer of $8,500 for each month of the term."
+  },
+  {
+   "n": 8,
+   "type": "time-ambiguity",
+   "anchor": "by the 5th day of each month",
+   "quote": "2. Agency shall invoice Client for each month's retainer, and for the third-party media costs that Agency paid in the preceding month, by the 5th day of each month.",
+   "severity": 2,
+   "why": "\"By the 5th day\" leaves open whether the 5th is included.",
+   "fix": "no later than the 5th day of each month"
+  },
+  {
+   "n": 9,
+   "type": "throat-clearing",
+   "anchor": "For the avoidance of doubt",
+   "quote": "For the avoidance of doubt, Agency retains ownership of its pre-existing templates and software tools.",
+   "severity": 3,
+   "why": "Throat-clearing; state the rule.",
+   "fix": "Agency retains ownership of its pre-existing templates and software tools."
+  },
+  {
+   "n": 10,
+   "type": "category-shall",
+   "anchor": "This agreement shall terminate on",
+   "quote": "1. This agreement shall terminate on December 31, 2027, unless either party terminates it earlier under this section.",
+   "severity": 2,
+   "why": "No duty is imposed on the agreement; \"shall terminate\" is language of policy written as obligation.",
+   "fix": "This agreement terminates on December 31, 2027, unless either party terminates it earlier under this section."
+  },
+  {
+   "n": 11,
+   "type": "spacing",
+   "anchor": "Budget:  $96,000",
+   "quote": "Total Approved Budget:  $96,000",
+   "severity": 3,
+   "why": "2 spaces after a colon; house rule 5 calls for 1.",
+   "fix": "Total Approved Budget: $96,000"
+  },
+  {
+   "n": 12,
+   "type": "usage",
+   "anchor": "incur third-party media costs",
+   "quote": "Agency shall not incur third-party media costs in excess of the approved budget without Client's written consent.",
+   "severity": 3,
+   "why": "MSCD 13.875: don't use third party; say whom the costs are paid to.",
+   "fix": "media costs that Agency pays to Persons other than Client (or define Media Costs)",
+   "source": "MSCD 13.875"
+  },
+  {
+   "n": 13,
+   "type": "usage",
+   "anchor": "for the third-party media costs",
+   "quote": "Agency shall invoice Client for each month's retainer, and for the third-party media costs that Agency paid in the preceding month, by the 5th day of each month.",
+   "severity": 3,
+   "why": "MSCD 13.875: don't use third party; say whom the costs are paid to.",
+   "fix": "media costs that Agency pays to Persons other than Client (or define Media Costs)",
+   "source": "MSCD 13.875"
+  },
+  {
+   "n": 14,
+   "type": "category-will",
+   "severity": 2,
+   "tier": "sneaky",
+   "anchor": "and is effective",
+   "quote": "Each notice under this agreement must be in writing and is effective when the recipient receives it.",
+   "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
+   "fix": "Each notice under this agreement must be in writing and will be effective when the recipient receives it",
+   "added_by": "audit"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "Client shall terminate the campaign if",
+   "quote": "3. Client shall terminate the campaign if the U.S. Food and Drug Administration or the Georgia Department of Agriculture announces a recall of any product that the campaign promotes, and Client shall notify Agency of that termination no later than 1 business day after the announcement.",
+   "why_correct": "A real duty on Client to end the campaign when a recall occurs; \"shall\" is correct here, unlike \"This agreement shall terminate.\""
+  },
+  {
+   "anchor": "Each Influencer must clearly disclose",
+   "quote": "2. Each Influencer must clearly disclose the Influencer's relationship with Client in each sponsored post, as 16 C.F.R. Part 255 requires.",
+   "why_correct": "Influencers are nonparties; \"must\" is right for a requirement on a nonparty (MSCD 3.154). \"16 C.F.R. Part 255\" is a regulation reference."
+  },
+  {
+   "anchor": "Schedule A – Campaign Plan and Approved Budget",
+   "quote": "## Schedule A – Campaign Plan and Approved Budget",
+   "why_correct": "Correct attachment: a budget and plan (information the body refers to) in a lettered schedule."
+  },
+  {
+   "anchor": "Neither party may assign",
+   "quote": "2. Neither party may assign this agreement without the other party's written consent.",
+   "why_correct": "Negative subject with \"may,\" not \"shall\": correct under house rule 8."
+  }
+ ],
+ "notes": "Blake's draft. \"campaign\" is deliberately lowercase and undefined throughout (it is not a defined term), so \"Client shall terminate the campaign\" is not a lowercase-defined-term issue. Sections B., C., D., E., G., and H. have only subsections, so their section lines carry the heading alone; F. uses the full house section line. \"Each notice under this agreement must be in writing\" is correct (nonparty subject). Key audit (November 6, 2026): 2 uses of third-party added as usage issues under MSCD 13.875.",
+ "audit": [
+  {
+   "n": 14,
+   "traps_removed": [],
+   "change": "optional category-will issue n14 added",
+   "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  },
+  {
+   "n": 14,
+   "anchor": "and is effective",
+   "change": "Blake answer Q18 (November 7, 2026): optional dropped; the issue is required (will for a policy about a contingent future event, MSCD 3.334, 3.369, 13.209) (optional dropped)",
+   "why": "See the key entry."
+  }
+ ]
+}

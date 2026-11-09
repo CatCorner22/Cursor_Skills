@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: review-text-pdf
+expected_outcome: |
+  lease-amendment-review.md, built from the PDF's text, says what a PDF review can't check (typography). It finds the 5 planted problems: the renewal-rent formula "the greater of 103% of the prior rent or fair market rent determined by ..." is ambiguous; "fair market rent determined by an MAI appraiser" is a reduced passive; "Friday, September 2, 2027" names the wrong weekday (it is a Thursday); "within 90 days of the Expiration Date" can run before or after; "If Tenant should exercise" should be in the present tense. It leaves alone February 29, 2028 (a real date), "no later than 180 days before the Expiration Date", "To exercise the Renewal Option, Tenant must give" (must in a condition), "Landlord is not required to make" and "Tenant states that".
+context:
+  scaffold_script: place-files.sh

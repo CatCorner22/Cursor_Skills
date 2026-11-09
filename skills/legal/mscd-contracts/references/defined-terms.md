@@ -1,8 +1,10 @@
 # Defined terms
 
-Read this file in pass 2 (the defined-term inventory). `scripts/mscd_lint.py --inventory` lists every defined term, where it is defined, and every use, and flags terms that are unused, undefined, or used in two forms.
+Read this file in pass 2 (the defined-term inventory). `scripts/mscd_lint.py --inventory` lists every defined term, where the contract defines it, and every use, and flags terms that are unused, undefined, or used in 2 forms.
 
-Key points: definitions are autonomous (*"X" means*) or integrated (*(the "X")*; for a party name, no article: *("Company")*, house rule 11) (6.21); *means* for a full definition, *includes* to enlarge, *does not include* to limit (6.32-6.39); never *shall mean* or *shall be* in a definition (6.33-6.42; Adams, "It's Never Good to Use 'Shall Be' in an Autonomous Definition"); don't stuff a definition with obligations or conditions (6.49-6.56); capitalize every use (6.10), except that a party's common-noun defined term may also appear in lowercase in its ordinary sense (rider, July 2026); party names take no article: *Company*, *Apple* (house rule 11; 2.105 and 6.63 differ).
+Key points: definitions are autonomous (*"X" means*) or integrated (*(the "X")*; for a party name, no article: *("Company")*, house rule 11) (6.21); *means* for a full definition, *includes* to enlarge, *does not include* to limit (6.32-6.39); never *shall mean* or *shall be* in a definition (6.33-6.42); don't stuff a definition with obligations or conditions (6.49-6.56); capitalize every use (6.10), except that a party's common-noun defined term may also appear in lowercase in its ordinary sense (rider, July 2026); party names take no article: *Company*, *Apple* (house rule 11; 2.105 and 6.63 differ).
+
+A capitalized defined term used inside its own definition (*"Obligations" means all Obligations of Borrower under the Loan Documents*) is a circular definition of 1 term: severity 1, MSCD 6.3 notwithstanding (Blake's choice; `house-style.md` section 10). The word in lowercase, in its ordinary sense, isn't circular (*"Trademark" means a registered trademark ...*). Numbered definitions on the other side's draft keep their numbers (house rule 3); in a draft you write, list definitions without markers (6.27). Check every term against the terms of art (house rule 13): *Security* keeps its legal meaning, but data-security terms (*data security*, *security incident*, *security measures*) and a *security deposit* stay; a bare defined *Security* becomes *Security Interest* or *Collateral*.
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 
@@ -59,6 +61,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-6.1-defined-term-types** [sev 3] Treat words and phrases for which the contract provides definitions as "defined terms"; each definition is either autonomous (linked to the defined term by a definitional verb) or integrated (part of a regular sentence, with the defined term in a parenthetical). (6.1, 6.21; PDF p. 331)
 - **R-6.2-purpose** [sev 3] Use a defined term to make the contract easier to read (a short term replaces a longer definition) and to ensure that whatever is defined is expressed consistently. (6.2; PDF p. 331)
 - **R-6.3-term-in-own-definition** [sev 3] You may repeat the defined term inside its own definition; a contract defined term is only a convenient substitute for its definition in that contract, so this isn't circular. (6.3, 9.120; PDF p. 331)
+  - HOUSE: partly superseded: Blake's choice: a capitalized defined term used inside its own definition ("Obligations" means all Obligations of Borrower under the Loan Documents) is a circular definition of 1 term, severity 1; the word in lowercase, in its ordinary sense, stays ("Trademark" means a registered trademark ...). See house-style.md sections 0 and 10.
 - **R-6.4-parts-of-speech-terms** [sev 3] Defined terms are usually nouns (common or proper) or noun phrases; occasionally a verb (transfer) or a prepositional phrase (to Acme's knowledge). (6.4; PDF p. 331)
 - **R-6.5-no-singular-and-plural** [sev 3] Don't define a term in both singular and plural forms ("Note" and "Notes" mean ...; each a "Member" and collectively the "Members"). (6.5; PDF p. 332)
 - **R-6.5-no-singular-plural-rule** [sev 3] Don't address in an internal rule of interpretation the practice of defining in the singular and using in the plural, or vice versa. (6.5; PDF p. 332)
@@ -90,6 +93,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-6.26-no-text-after-autonomous** [sev 2] Don't add text at the end of the paragraph that constitutes an autonomous definition, including another sentence that builds on the definition; address that topic elsewhere. (6.26, 6.55; PDF p. 336)
   - Look for: a second sentence in a definition paragraph
 - **R-6.27-no-enumerated-definitions** [sev 3] Don't enumerate a set of autonomous definitions. (6.27; PDF p. 336)
+  - HOUSE: partly superseded: In a document Blake drafts, list definitions without markers. On a draft that already numbers its definitions, keep the numbers and don't flag them (Blake's decision). See house-style.md section 3.
 - **R-6.28-autonomous-placement** [sev 3] Place an autonomous definition either in a definition section or on-site; put on-site autonomous definitions (a sentence among others, or their own subsection if more than a couple of lines) right after the provisions that use the defined terms. (6.28, 6.29, 6.30; PDF p. 337)
 - **R-6.31-quote-and-bold** [sev 3] Put the defined term in quotation marks and bold, in both autonomous definitions and defined-term parentheticals; don't bold the quotation marks. (6.31, 6.66; PDF p. 337)
 - **R-6.32-means-full** [sev 3] If the definition is full (it gives the entire meaning), use means. (6.32; PDF p. 337)
@@ -164,7 +168,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-6.131-no-dictionary-provisions** [sev 2] Don't rely on provisions that tie meaning to a dictionary, whether general (Oxford English Dictionary) or for a specific term (disparage). (6.131, 6.132, 6.133...; PDF p. 358)
 - **R-6.135-no-herein-so-called** [sev 3] Don't use herein so called; it serves no evident purpose. (6.135, 6.136, 6.137; PDF p. 359)
 
-### Chapter 6: Blog: an-exception-to-the-rule-against-also-stating-without-initial-capitals
+### Chapter 6: Blog: An Exception to the Rule Against Also Stating Without Initial Capitals
 
 - **R-rider-lowercase-party-noun** [sev 3] Exception to the rule that every instance of a defined term takes initial capitals: if a common noun is the defined term for a party (Company, Lender), you may also use that word without initial capitals in its ordinary sense. (6.10, 6.11; rider)
 
@@ -180,6 +184,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Look for: indemnification provision that relies on hold harmless to cover incurred liabilities
   - Fix: Define Indemnifiable Losses to state what is covered (including judgments).
 - **R-13.506-define-knowledge** [sev 2] Consider making Knowledge a defined term to address whose knowledge counts (narrow for the stating party, broad for the other) and the level of knowledge (actual knowledge, or knowledge after inquiry of specified employees or after reasonable investigation, using knows or should have known). In a sale of a business, consider whether to include its managers. Avoid reasonable knowledge as unclear. (13.506, 13.507, 13.508...; PDF p. 692)
+  - HOUSE: partly superseded: Never should: define Knowledge with wording for actual knowledge and for knowledge after reasonable inquiry, not should have known. See house-style.md section 12.
   - Fix: Autonomous definition of Knowledge naming the individuals and the level of investigation.
 - **R-13.509-rule-405** [sev 3] Use a rule 405 (Securities Act) reference to define executive officers in a knowledge definition only if the party benefiting from the qualification is a U.S. public company. (13.509; PDF p. 694)
 - **R-13.694-units-of-product** [sev 2] Use the defined term Product for a product line and refer to units of the Product for individual samples; Product alone is ambiguous between the two. (13.694; PDF p. 737)

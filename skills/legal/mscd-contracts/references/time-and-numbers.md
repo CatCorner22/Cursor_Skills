@@ -1,6 +1,14 @@
-# References to time, numbers and formulas
+# References to time, numbers, and formulas
 
-House style: digits for every number; U.S. dates (*January 1, 2027*). Key MSCD rules: state whether a point in time is inclusive or exclusive (10.22-10.28); *no later than X days after*, not *within* (10.69-10.71); *midnight at the beginning of*, never *12:00 a.m.* (10.35-10.38); name the time zone (10.51-10.56); *promptly*, not *immediately* (10.118-10.131); state the time component of a reference, *as of the date of this agreement* or *then in effect* (10.152-10.156); never words and digits (14.5-14.11); *the result of* for order of operations (14.26-14.40); state whether tiered rates are stepped or shifting flat (14.69-14.77).
+House style: digits for every number (fraction words such as *half* and a document's name such as *Second Amendment* keep their words); U.S. dates (*January 1, 2027*).
+
+Blake's deadline rules (November 7, 2026; `house-style.md` section 7):
+
+- A *no later than [date]* deadline that decides a right (exercising an option, curing a breach, terminating, giving a notice that starts or ends a right) always states a time of day and a time zone: *no later than 5:00 p.m. Eastern time on June 30, 2027* (MSCD 10.33-10.34).
+- Every backward-counted period gets a finding (MSCD 10.65-10.67), not only minimum-notice wording. Fix *no later than 30 days before the Closing Date* as *no later than the 30th day before the Closing Date* (the count stated) or as a stated date. The `R-10.65-minimum-notice-ambiguity` record below still says to flag a plain deadline only when the parties' intent plainly differs: its HOUSE note governs.
+- Every *from [date] through [date]* (or *to* or *until*) gets a finding, because *from* leaves the 1st day in doubt (MSCD 10.24). Write *starting on November 1, 2027, and ending on April 30, 2028*. The finding needs an explicit date or a defined date term after *from*; *from time to time* and a place aren't findings.
+
+Key MSCD rules: state whether a point in time is inclusive or exclusive (10.22-10.28); *no later than X days after*, not *within* (10.69-10.71); for a minimum-notice period (*at least 20 days before*), name the deadline day and offer both counts, the 20th day before (1 end day, 10.65) and the 21st day before (clear days, 10.66), and ask which the parties intend; *until*, *to*, and *by* leave an end day in doubt, so write *through* or *before* (10.23-10.24); *midnight at the beginning of*, never *12:00 a.m.* (10.35-10.38); name the time zone (10.51-10.56); *promptly*, not *immediately* (10.118-10.131); state the time component of a reference, *as of the date of this agreement* or *then in effect* (10.152-10.156); never words and digits (14.5-14.11); *the result of* for order of operations (14.26-14.40); state whether tiered rates are stepped or shifting flat (14.69-14.77).
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 
@@ -34,16 +42,20 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-10.19-no-date-notified** [sev 3] Don't use the date notified; say the date that ABC specifies by notice to XYZ. (10.19, 10.20; PDF p. 472)
 - **R-10.21-points-in-time** [sev 3] Fix a point in time by reference to a date or other day (on 9 April 2024; the Closing Day) or an anniversary; on expresses something happening by reference to a day. (10.21, 10.22; PDF p. 472)
 - **R-10.23-inclusive-exclusive-ambiguity** [sev 1] Inclusive-versus-exclusive ambiguity: a preposition marking the beginning or end of a period (from, after, until, to, by, between) can leave unclear whether the stated day is included. (10.23, 10.24, 10.25...; PDF p. 473)
+  - HOUSE: House addition: Every from [date] through [date] (or to or until) gets a finding, because from leaves the 1st day in doubt: write starting on November 1, 2027, and ending on April 30, 2028 (Blake's decision; MSCD 10.24). The finding needs an explicit date or a defined date term after from; from time to time and a place aren't findings. See house-style.md section 7.
   - Look for: a period bounded by a day using from, after, until, to, by, or between
   - Test: Ask whether the boundary day itself falls inside the period. Caselaw: from and after mostly exclusive; until, to, and by split; between mostly exclusive at both ends; starting and commences on likely inclusive; before likely exclusive; through likely inclusive.
   - Fix: State the time of day for each boundary (10.33), or use starting [day] and ending on or through [day], or say expressly inclusive or exclusive.
   - Exceptions: Even where caselaw is consistent, a court could hold otherwise on the circumstances, and the parties may not have had that effect in mind (10.27-.28).
 - **R-10.24-preposition-verdicts** [sev 1] Prefer prepositions courts read consistently: starting [day] and commences on (likely inclusive), through (likely inclusive), before (likely exclusive). Avoid until, to, and by for ending points and from, after, and between for beginning points, because courts split or default to exclusive. (10.24, 10.25, 10.26; PDF p. 473)
+  - HOUSE: House addition: Every from [date] through [date] (or to or until) gets a finding, because from leaves the 1st day in doubt: write starting on November 1, 2027, and ending on April 30, 2028 (Blake's decision; MSCD 10.24). The finding needs an explicit date or a defined date term after from; from time to time and a place aren't findings. See house-style.md section 7.
 - **R-10.29-day-insufficiently-specific** [sev 1] Recognize that fixing a point in time by reference to a day is insufficiently specific: a beginning or ending point could fall at the midnight starting or ending the day, and a party might claim it had some other time in mind. (10.29, 10.30, 10.31...; PDF p. 474)
+  - HOUSE: House addition: A no later than [date] deadline that decides a right (exercising an option, curing a breach, terminating, giving a notice that starts or ends a right) always states a time of day and a time zone: no later than 5:00 p.m. Eastern time on June 30, 2027 (Blake's decision; MSCD 10.33-10.34). See house-style.md section 7.
   - Look for: deadline or period stated by day with no time of day
   - Test: Ask at what moment on the day the period begins or ends.
   - Fix: State a time of day (10.33); or say from the beginning of 15 April 2023 to the end of 30 April 2023 (which could be read as business hours); or state inclusive or exclusive expressly (legalistic); or add a comprehensive interpretation section.
 - **R-10.33-state-time-of-day** [sev 1] State a time of day for each beginning and ending point (the Option expires at 2:00 p.m. on 25 September 2022); avoid close of business and opening of business, which can cause disputes. (10.33, 10.34; PDF p. 475)
+  - HOUSE: House addition: A no later than [date] deadline that decides a right (exercising an option, curing a breach, terminating, giving a notice that starts or ends a right) always states a time of day and a time zone: no later than 5:00 p.m. Eastern time on June 30, 2027 (Blake's decision; MSCD 10.33-10.34). See house-style.md section 7.
 - **R-10.35-use-midnight** [sev 3] Prefer midnight as the time of day: it lets you deal in entire days and reduces disputes over when a notice or payment was received. (10.35; PDF p. 475)
 - **R-10.36-no-12-am-pm** [sev 1] Don't refer to midnight or noon as 12:00 a.m. or 12:00 p.m.; they are boundaries between a.m. and p.m. hours. (10.36; PDF p. 475)
   - Fix: Say noon, or midnight at the beginning [or end] of [date].
@@ -61,16 +73,17 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: (none) → If during the 30 days after that 15-month period the Buyer notifies the Seller it wishes to sell the Property back to the Seller ...
 - **R-10.62-forward-period** [sev 1] In a forward-looking period (from, following, after), the convention excludes the day you count from and includes the last day; be explicit about how the ending date is determined, and if you know both ends, use paired points in time instead. (10.62, 10.63, 10.64; PDF p. 480)
   - Exceptions: The convention doesn't apply if the period clearly must consist of entire days (both terminal days excluded) or the parties clearly intend the first day to be included (10.63).
-- **R-10.65-minimum-notice-ambiguity** [sev 1] Backward-looking period ambiguity: in a period counted back from an event (before, prior to), especially minimum notice (at least ten days' prior notice), courts split between counting one terminal day and requiring "clear" or "entire" days that exclude both. (10.65, 10.66, 10.67; PDF p. 481)
-  - Look for: minimum notice or a period counted back from a date or event
-  - Test: Count back both ways (exclude one terminal day; exclude both) and see whether the last valid day differs (for a 31 December transfer with ten days' notice: 21 December versus 20 December).
-  - Fix: Be explicit about how the beginning date is determined; you could denote the period in entire days.
+- **R-10.65-minimum-notice-ambiguity** [sev 1] Minimum-notice ambiguity: when a provision requires at least (or no fewer than, or not less than) N days' notice before an event, courts split between counting 1 terminal day (the Nth day before the event is the last valid day, 10.66) and requiring "clear" days that exclude both (the N+1th day before). A plain backward deadline (no later than 10 days before the audit; during the 10 days before the Exclusivity Period expires) follows the convention in 10.65 (count 1 terminal day, not the other): it is not the court split, and making the count explicit there is at most a low-severity improvement. (10.65, 10.66, 10.67; PDF p. 481)
+  - HOUSE: partly superseded: Blake's decision: every backward-counted period gets a finding, not only minimum-notice wording. Fix a plain deadline (no later than 30 days before the Closing Date) as no later than the 30th day before the Closing Date (the count stated) or a stated date; a minimum-notice period (at least 20 days' notice) still gets both counts and a question to Blake. See house-style.md section 7.
+  - Look for: minimum notice: at least, no fewer than or not less than N days' notice (or N days before an event, where the provision sets how much notice a party must give)
+  - Test: For a minimum-notice period, count back both ways (exclude 1 terminal day; exclude both) and see whether the last valid day differs (for a 31 December transfer with at least 10 days' notice: 21 December versus 20 December). For a plain deadline (no later than N days before), apply the 10.65 convention; flag it only if the parties' intent plainly differs.
+  - Fix: Name the deadline day and offer both counts (the Nth day before; the N+1th day before) and ask which the parties intend; or denote the period in entire days.
 - **R-10.68-no-confusing-points** [sev 1] Don't measure a period from a point in time that could cause argument over when or whether it occurred (final resolution of any disputes). (10.68; PDF p. 482)
   - Look for: period keyed to an event of uncertain timing
 - **R-10.69-within-ambiguity** [sev 1] Within ambiguity: within X days of an event can denote a period running forward, backward, or both (within seven days of the first anniversary), and within X days prior to can mean "during the X days before" or "at least X days before." (10.69, 10.70, 10.71; PDF p. 483)
   - Look for: within X days (or months) of, or within X days prior to, an event or date
   - Test: Ask whether the period could run before the reference point, after it, or both.
-  - Fix: Say no later than seven days after it receives a Sale Notice (or during the X days before, or at least X days before).
+  - Fix: Say no later than 7 days after it receives a Sale Notice (or during the X days before, or at least X days before).
   - Book example: within seven days of receiving a Sale Notice → no later than seven days after it receives a Sale Notice
 - **R-10.72-choose-unit** [sev 3] Choose the unit of time deliberately; for days, often prefer business days, defined as a day other than a weekend or public holiday in a specified jurisdiction, or a day banks are open. (10.72, 10.73; PDF p. 483)
 - **R-10.74-no-calendar-days** [sev 3] Don't use calendar days instead of days; it is unnecessary and potentially confusing. (10.74; PDF p. 484)
@@ -81,7 +94,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-10.80-bi-semi-ambiguity** [sev 1] Bi- and semi- ambiguity: biannual and semiannual both mean twice a year, but some dictionaries give biannual the meaning of biennial; bimonthly and biweekly invite similar confusion. (10.80; PDF p. 485)
   - Look for: a frequency word with the prefix bi- or semi-
   - Test: Ask whether the word could mean twice per unit or once every two units.
-  - Fix: Say twice a year (month, week) or every two years (months, weeks).
+  - Fix: Say twice a year (month, week) or every 2 years (months, weeks).
 - **R-10.81-no-year-and-a-day** [sev 3] Instead of agreeing not to start bankruptcy proceedings until one year and a day after repayment, say no sooner than one year after. (10.81, 10.82, 10.83; PDF p. 485)
 - **R-10.84-on-day-long** [sev 3] When an act must occur on a specified date, the period is that day's 24 hours; no beginning or ending point need be stated, though you may add a time of day. (10.84; PDF p. 486)
 - **R-10.85-not-less-than-obligation** [sev 1] To state how many units of time satisfy a condition, use at least X (not not less than X or X or more); don't use any of these in language of obligation or prohibition, where they suggest the duration is open-ended. (10.85, 10.86, 10.87; PDF p. 486)
@@ -117,7 +130,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-10.111-consecutive-ambiguity** [sev 1] Block-of-time ambiguity: when the thing apportioned is itself a unit of time (two months of each year), it is unclear whether it must be taken as a single block. (10.111, 10.112, 10.113; PDF p. 492)
   - Look for: a number of days, weeks, or months to be taken within a year or month
   - Test: Ask whether the time may be split into several shorter blocks.
-  - Fix: To require a block, use consecutive (two consecutive months each year; convert one month to 30 consecutive days). If not, say so (over the course of one or more visits, each no shorter than five business days).
+  - Fix: To require a block, use consecutive (2 consecutive months each year; convert 1 month to 30 consecutive days). If not, say so (over the course of 1 or more visits, each no shorter than 5 business days).
   - Book example: (none) → Over the course of one or more visits, each no shorter than five business days, excluding travel days, the Employee shall work in Acme's Budapest office for two months of each year.
 - **R-10.114-promptly-equals-immediately** [sev 2] Treat promptly and immediately (and prompt and immediate) as meaning the same thing in contracts: courts apply a reasonableness standard to both. (10.114, 10.115, 10.116...; PDF p. 493)
   - Exceptions: Immediately also means "without intermediary" (the immediately preceding Business Day); that use is not a speed standard (10.119).
@@ -141,7 +154,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Test: Ask whether the class could grow or change after signing, and which members the provision should cover.
   - Fix: Say so in the provision or definition: "Subsidiary" means, for a Person [on the date of this agreement] [at a given time], ... ; say whether shares includes shares acquired later.
 
-### Chapter 10: Blog: revisiting-date-and-day
+### Chapter 10: Blog: Revisiting "Date" and "Day"
 
 - **R-rider-date-day** [sev 3] Use date for the point on a calendar that a given day occupies and day for a unit of time; but because using date for day can't cause confusion, don't insist on either. Closing date is fine; don't change closing day to closing date either. (10.15, 10.16; elaboration)
 
@@ -160,7 +173,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.546-money-decimals** [sev 3] Use zeros after a decimal point only when fractional amounts appear in the same context ($2, not $2.00, unless the provision also refers to, say, $3.94); don't add and 00/100 dollars; for less than a whole unit, use $0.32, not 32 cents written with the cent sign. (13.546, 13.547; PDF p. 702)
 - **R-13.548-money-separators** [sev 2] Decimal and thousands separators vary by country; pick conventions and apply them consistently. (13.548; PDF p. 702)
   - Look for: amounts using both 1,000.00 and 1.000,00 styles
-  - Fix: Use one separator convention throughout.
+  - Fix: Use 1 separator convention throughout.
 - **R-13.549-money-large-amounts** [sev 3] A mix of words and digits for large amounts ($4.4 billion; $3 million) is acceptable and can aid reading, but don't switch to it if other numbers in the same context use all digits, and don't go beyond two decimal places. (13.549; PDF p. 703)
 - **R-13.550-billion** [sev 1] Billion means a thousand million in the U.S. but a million million in Germany and many non-English-speaking regions; if confusion might arise in an international transaction, use only digits for amounts of one thousand million units or more. (13.550; PDF p. 703)
   - Fix: Digits only (1,000,000,000)
@@ -193,11 +206,11 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-14.5-words-and-digits** [sev 3] Don't state numbers in words followed by digits (six (6)); it is tedious, says the same thing twice (a source of inconsistency), interferes with phrasal-adjective hyphens (five (5)-year periods), and a digit in parentheses can look like an enumerated clause. (14.5, 14.6, 14.9...; PDF p. 802)
 - **R-14.12-big-number-digits** [sev 3] Use just digits for the big number in a contract (for example, the loan amount in loan documentation); don't assume words and digits help. A mix of words and digits can be appropriate for very large amounts of money. (14.12, 14.17; PDF p. 803)
 - **R-14.15-words-then-digits** [sev 3] Use words for whole numbers one through ten and digits for 11 and above, for ordinal (seventh, 22nd) as well as cardinal numbers. The fix for digit errors is proofreading. (14.15, 14.16, 14.18; PDF p. 804)
-  - HOUSE: Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Never start a sentence with a digit; restructure. See house-style.md section 2.
+  - HOUSE: Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Fraction words stay words (half, one-half, a third, a quarter), and a document's name keeps its word (Second Amendment, this second amendment). Never start a sentence with a digit; restructure. See house-style.md section 2.
 - **R-14.16-number-exceptions** [sev 3] Use digits even for numbers below 11 in lists of numbers, where numbers occur frequently, in percentages, in amounts of money, and in times of day; use words for numbers 11 and over at the beginning of a sentence; above all, be consistent. (14.16; PDF p. 804)
-  - HOUSE: Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Never start a sentence with a digit; restructure. See house-style.md section 2.
+  - HOUSE: Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Fraction words stay words (half, one-half, a third, a quarter), and a document's name keeps its word (Second Amendment, this second amendment). Never start a sentence with a digit; restructure. See house-style.md section 2.
 - **R-14.19-digits-only-optional** [sev 3] The manual doesn't recommend using digits for all numbers (it can seem intrusive in prose), but you can elect to do so; it is a relatively harmless choice. (14.19, 14.20, 14.21; PDF p. 805)
-  - HOUSE: Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Never start a sentence with a digit; restructure. See house-style.md section 2.
+  - HOUSE: Digits for every number, including 1-10 and ordinals that count (2nd anniversary). Fraction words stay words (half, one-half, a third, a quarter), and a document's name keeps its word (Second Amendment, this second amendment). Never start a sentence with a digit; restructure. See house-style.md section 2.
 - **R-14.22-simple-formula** [sev 3] For a single calculation, use an amount equal to X [plus] [minus] [multiplied by] [divided by] Y; don't put a comma before plus, minus, multiplied by, or divided by; when calculating money, insert an amount equal to; and with simple formulas, omit end-product phrases such as the sum of X plus Y or the excess of X over Y. A quantum can be a percentage (an amount equal to 5% of the Overdue Amount). (14.22, 14.23, 14.24; PDF p. 805)
 - **R-14.25-order-of-operations** [sev 1] When a formula mixes operations, specify the order. In equations, use parentheses even where mathematical convention would make them unnecessary ((2 x 3) + 4; (10 - 4) + 2), because a lawyer may not know the convention and left-to-right can't be counted on. (14.25, 14.26, 14.27; PDF p. 806)
   - Look for: formula combining plus/minus with multiplied by/divided by

@@ -1,0 +1,212 @@
+{
+  "id": "c14-distribution-legacy",
+  "file": "contracts/c14-distribution-legacy.docx",
+  "title": "Distribution Agreement",
+  "tier": "obvious",
+  "whose_draft": "other-side",
+  "issues": [
+    {
+      "n": 1,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "[format]",
+      "severity": 2,
+      "why": "Body font is Times New Roman throughout; house rule 9 requires Aptos.",
+      "fix": "Set all text to 12-point Aptos."
+    },
+    {
+      "n": 2,
+      "type": "formatting",
+      "anchor": "[format]",
+      "quote": "[format]",
+      "severity": 2,
+      "why": "Body paragraphs are justified; house rule 9 bars justified text.",
+      "fix": "Left-align all paragraphs."
+    },
+    {
+      "n": 3,
+      "type": "date-format",
+      "anchor": "this ___ day of",
+      "quote": "This Distribution Agreement (this \"Agreement\") is dated this ___ day of ____________, 2027, and is between Harrow Valley Foods, Inc., a Wisconsin corporation (the \"Supplier\"), and Blue Ridge Provisions LLC, a North Carolina limited liability company (the \"Distributor\").",
+      "severity": 3,
+      "why": "\"this ___ day of\" date format (house rule 7).",
+      "fix": "This agreement is dated [Month Day], 2027, and is between ..."
+    },
+    {
+      "n": 4,
+      "type": "party-article",
+      "anchor": "(the \"Supplier\")",
+      "quote": "This Distribution Agreement (this \"Agreement\") is dated this ___ day of ____________, 2027, and is between Harrow Valley Foods, Inc., a Wisconsin corporation (the \"Supplier\"), and Blue Ridge Provisions LLC, a North Carolina limited liability company (the \"Distributor\").",
+      "severity": 3,
+      "why": "Document-wide: both party names are defined and used with \"the\" (the Supplier, the Distributor). House rule 11.",
+      "fix": "Define (\"Supplier\") and (\"Distributor\") and drop \"the\" throughout: Supplier shall ..., Distributor shall ..."
+    },
+    {
+      "n": 5,
+      "type": "archaic",
+      "anchor": "WHEREAS, the Supplier manufactures",
+      "quote": "WHEREAS, the Supplier manufactures packaged cheese and other dairy products (the \"Products\"); and",
+      "severity": 3,
+      "why": "WHEREAS recitals (both paragraphs).",
+      "fix": "Delete WHEREAS; if background is needed, state it in plain sentences under a Background heading."
+    },
+    {
+      "n": 6,
+      "type": "archaic",
+      "anchor": "NOW, THEREFORE",
+      "quote": "NOW, THEREFORE, in consideration of the mutual covenants herein and other good and valuable consideration, the parties hereto agree as follows:",
+      "severity": 3,
+      "why": "Archaic lead-in: NOW, THEREFORE; herein; good and valuable consideration; hereto.",
+      "fix": "Delete; use \"The parties agree as follows:\""
+    },
+    {
+      "n": 7,
+      "type": "enumeration",
+      "anchor": "1.1 The Supplier grants",
+      "quote": "1.1 The Supplier grants the Distributor the exclusive right to distribute the Products in the Territory.",
+      "severity": 2,
+      "why": "MSCD-style 1.1 numbering throughout (house rule 3).",
+      "fix": "Sections A., B., C. ...; subsections 1., 2., 3."
+    },
+    {
+      "n": 8,
+      "type": "efforts",
+      "anchor": "best efforts",
+      "quote": "The Distributor shall use its best efforts to promote and sell the Products throughout the Territory.",
+      "severity": 2,
+      "why": "\"best efforts\" (MSCD ch. 8).",
+      "fix": "Distributor shall use reasonable efforts to promote ..."
+    },
+    {
+      "n": 9,
+      "type": "category-shall",
+      "anchor": "term of this Agreement shall be",
+      "quote": "The term of this Agreement shall be three (3) years, beginning on the date of this Agreement.",
+      "severity": 2,
+      "why": "No duty imposed; language of policy.",
+      "fix": "The term of this agreement is 3 years, beginning on the date of this agreement."
+    },
+    {
+      "n": 10,
+      "type": "number-words",
+      "anchor": "three (3) years",
+      "quote": "The term of this Agreement shall be three (3) years, beginning on the date of this Agreement.",
+      "severity": 3,
+      "why": "Words with digits (house rule 2).",
+      "fix": "3 years"
+    },
+    {
+      "n": 11,
+      "type": "attachment-language",
+      "anchor": "attached hereto as Exhibit A",
+      "quote": "The Distributor shall purchase the Products at the prices in the price list attached hereto as Exhibit A.",
+      "severity": 3,
+      "why": "\"attached hereto\" (house rule 6).",
+      "fix": "at the prices in Schedule A."
+    },
+    {
+      "n": 12,
+      "type": "attachment-classification",
+      "anchor": "EXHIBIT A",
+      "quote": "EXHIBIT A",
+      "severity": 2,
+      "why": "A price list is information the body refers to, so it belongs in a schedule, not an exhibit (and an exhibit would take a number).",
+      "fix": "Move it to Schedule A, placed before the exhibits."
+    },
+    {
+      "n": 13,
+      "type": "number-words",
+      "anchor": "thirty (30) days",
+      "quote": "The Distributor shall pay each invoice no later than thirty (30) days after the invoice date by wire transfer to the Supplier's account at Fifth Third Bank.",
+      "severity": 3,
+      "why": "Words with digits.",
+      "fix": "30 days"
+    },
+    {
+      "n": 14,
+      "type": "shall-in-condition",
+      "anchor": "shall fail to pay",
+      "quote": "If the Distributor shall fail to pay any invoice when due, the Supplier may suspend shipments until the Distributor pays all overdue amounts.",
+      "severity": 2,
+      "why": "\"shall\" in a condition.",
+      "fix": "If Distributor fails to pay any invoice when due, ..."
+    },
+    {
+      "n": 15,
+      "type": "attachment-label",
+      "anchor": "EXHIBIT B",
+      "quote": "EXHIBIT B",
+      "severity": 3,
+      "why": "Lettered exhibit; exhibits take numbers (house rule 6). The form of purchase order is correctly an exhibit.",
+      "fix": "Exhibit 1 (Form of Purchase Order), after the schedule."
+    },
+    {
+      "n": 16,
+      "type": "category-will",
+      "anchor": "The Supplier will deliver",
+      "quote": "The Supplier will deliver the Products FOB the Supplier's plant in Sheboygan, Wisconsin.",
+      "severity": 2,
+      "why": "\"will\" used to impose a duty on a party.",
+      "fix": "Supplier shall deliver the Products FOB ..."
+    },
+    {
+      "n": 17,
+      "type": "agrees-to",
+      "anchor": "agrees to indemnify",
+      "quote": "The Distributor agrees to indemnify the Supplier against all third-party claims arising out of the Distributor's storage or resale of the Products.",
+      "severity": 3,
+      "why": "\"agrees to\" instead of language of obligation.",
+      "fix": "Distributor shall indemnify Supplier against ..."
+    },
+    {
+      "n": 18,
+      "type": "negative-subject-shall",
+      "anchor": "Neither party shall assign",
+      "quote": "Neither party shall assign this Agreement without the other party's written consent.",
+      "severity": 1,
+      "why": "\"shall\" with a negative subject reads as \"neither party has a duty to assign\" (house rule 8).",
+      "fix": "Neither party may assign this agreement without the other party's written consent."
+    },
+    {
+      "n": 19,
+      "type": "headings-clause",
+      "anchor": "Headings are for convenience only",
+      "quote": "Headings are for convenience only and shall not affect the interpretation of this Agreement.",
+      "severity": 2,
+      "why": "Headings-for-convenience clause; house rule 4 requires deleting or limiting it because the contract refers to provisions by heading.",
+      "fix": "Delete it."
+    },
+    {
+      "n": 20,
+      "type": "archaic",
+      "anchor": "IN WITNESS WHEREOF",
+      "quote": "IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above written.",
+      "severity": 3,
+      "why": "Archaic concluding clause: IN WITNESS WHEREOF, hereto, executed, date first above written.",
+      "fix": "The parties are signing this agreement on the date stated in the introductory clause."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "Fifth Third Bank",
+      "quote": "The Distributor shall pay each invoice no later than thirty (30) days after the invoice date by wire transfer to the Supplier's account at Fifth Third Bank.",
+      "why_correct": "Real bank name; the number words are part of a proper name (house rule 2)."
+    },
+    {
+      "anchor": "one another",
+      "quote": "The parties shall cooperate with one another in any recall of the Products.",
+      "why_correct": "\"one another\" is a pronoun; keep the word (house rule 2)."
+    },
+    {
+      "anchor": "first-class mail",
+      "quote": "A party giving notice under this Agreement shall send the notice by certified mail or first-class mail to the other party's address on the signature page.",
+      "why_correct": "Fixed term; keep the word (house rule 2)."
+    },
+    {
+      "anchor": "represents and warrants",
+      "quote": "The Supplier represents and warrants that the Products comply with all federal and state food-safety laws.",
+      "why_correct": "Other side's draft: house rule 10 says keep \"represents and warrants\". A comment suggesting the remedies-neutral \"states\" is fine; flagging it as an error or rewriting it is a false positive."
+    }
+  ],
+  "notes": "Other side's draft. Party-article and 1.1 enumeration are document-wide and anchored at the 1st occurrence. The WHEREAS issue covers both recital paragraphs. Exhibit A is a misclassified price list (should be Schedule A); Exhibit B is a correctly classified form with a wrong (lettered) label. Section 2.2 and the notice clause are clean. Sentence spacing is 2 spaces throughout (most paragraphs are single sentences)."
+}

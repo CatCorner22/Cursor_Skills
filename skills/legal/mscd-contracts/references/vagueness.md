@@ -1,15 +1,20 @@
 # Vagueness
 
-Vagueness is not ambiguity: text is vague when whether it is satisfied depends on the circumstances (7.46). MSCD treats vagueness, used with restraint, as an essential tool; ambiguity is never acceptable.
+Vagueness is not ambiguity: text is vague when the circumstances decide whether a party has met it (7.46). MSCD treats vagueness, used with restraint, as an essential tool; ambiguity is never acceptable.
+
+## Contents
+
+- Policy
+- Contents of the rules list, then Rules: every vagueness rule, by MSCD chapter
 
 ## Policy
 
-- **Flag every vague standard** (*reasonable*, *promptly*, *material*, *substantial*, *satisfactory*, *best efforts* and the like) and classify it: keep on purpose, replace with a specific standard, or ask Blake.
-- **Keep vagueness only when** the stakes are low and the context is commonplace (7.51-7.53), the party can't control the outcome (*reasonable legal expenses*), or negotiating precision costs more than it saves (7.48-7.49). Even then, narrow its scope.
+- **Flag every vague standard** (*reasonable*, *promptly*, *material*, *substantial*, *satisfactory*, *best efforts*, and the like) and classify it: keep on purpose, replace with a specific standard, or ask Blake.
+- **Rule *keep* only when no measure exists** (*reasonable efforts*, *substantially all*) and say why; otherwise offer the measure the contract supplies, or a bracketed number, and ask Blake. MSCD 7.48-7.53 give the reasons a drafter keeps vagueness (low stakes, an outcome the party can't control, the cost of negotiating precision); whether they apply is Blake's deal judgment, not yours. Even where it stays, narrow its scope.
 - **Never use gradations of vagueness** such as degrees of negligence or a hierarchy of efforts (7.54; 8.3).
 - **Never invent a number.** Use a bracketed blank and ask: *promptly, but no later than [__] Business Days after* (10.131).
 - **Pair every efforts obligation with a performance standard**; even *promptly* is enough (8.139-8.143). Use only *reasonable efforts* (8.134).
-- ***material***: decide whether "nontrivial" or "dealbreaker" is meant (9.21-9.32); omit it, use *nontrivial*, or use a defined *Material* (9.51-9.64).
+- ***material***: decide whether the drafter means "nontrivial" or "dealbreaker" (9.21-9.32); omit it, use *nontrivial*, or use a defined *Material* (9.51-9.64).
 
 > **Book examples are in MSCD5's style, not house style.** They may use lowercase *schedule*, *1 January 2024*, spelled-out numbers, 1.1 numbering, *the* before party names, or a passive that MSCD accepts. Restate any example in house style (`house-style.md`) before you put it in a contract or a comment. For the other side's drafts, the house rule is to flag everything, whatever a rule's "let-pass" or "style-only" label says.
 
@@ -43,6 +48,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
   - Book example: [3-4d] ×: Parent shall procure Sub to sell the Widget Assets ... . → [3-4c] ✓✓: Parent shall cause Sub to sell the Widget Assets ... .
   - Book example: [3-4e] ×: Parent shall ensure that Sub sells the Widget Assets ... . → [3-4c] ✓✓: Parent shall cause Sub to sell the Widget Assets ... .
 - **R-3.176-prevent-undesirable-events** [sev 2] To stop an undesirable event not fully within a party's control, use two provisions: a reasonable efforts obligation to take steps to prevent it, and a risk-allocation provision making the party liable for resulting losses if it happens anyway. Avoid shall prohibit (unclear how much is required) and shall prevent (liable regardless?). (3.176, 3.178, 3.179...; PDF p. 173)
+  - HOUSE: House addition: For a nonparty subject (an Authorized User, an employee, a subcontractor), restructure so a party is the subject (Blake's decision): a reasonable-efforts duty plus a risk allocation, Customer shall use reasonable efforts to prevent any Authorized User from sharing credentials, and Customer is liable for any loss that results from an Authorized User's sharing them (3.180; 8.5); shall cause only for the party's instrumentality, such as its subsidiary or its own board (3.160-3.161). In a review, bracket the liability for Blake. See house-style.md section 8.
 
 ### Chapter 3: Language of Discretion
 
@@ -240,6 +246,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 ### Chapter 10: References to Time
 
 - **R-10.29-day-insufficiently-specific** [sev 1] Recognize that fixing a point in time by reference to a day is insufficiently specific: a beginning or ending point could fall at the midnight starting or ending the day, and a party might claim it had some other time in mind. (10.29, 10.30, 10.31...; PDF p. 474)
+  - HOUSE: House addition: A no later than [date] deadline that decides a right (exercising an option, curing a breach, terminating, giving a notice that starts or ends a right) always states a time of day and a time zone: no later than 5:00 p.m. Eastern time on June 30, 2027 (Blake's decision; MSCD 10.33-10.34). See house-style.md section 7.
   - Look for: deadline or period stated by day with no time of day
   - Test: Ask at what moment on the day the period begins or ends.
   - Fix: State a time of day (10.33); or say from the beginning of 15 April 2023 to the end of 30 April 2023 (which could be read as business hours); or state inclusive or exclusive expressly (legalistic); or add a comprehensive interpretation section.
@@ -265,7 +272,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.41-arising-out-of-or-relating-to** [sev 2] Don't rely on arising out of or relating to to set the scope of dispute-resolution, liability-limitation, or release provisions; it combines two nonspecific standards. To bring in a broad but predictable set of claims, refer to the contract and to the activities the parties will engage in as part of the transaction, and drop or relating to. (13.41, 13.45, 13.47...; PDF p. 586)
   - Fix: any dispute arising out of this agreement or [named transaction activities]
 - **R-13.48-subject-matter-of-this-agreement** [sev 2] Say what the subject matter is rather than arising out of the subject matter of this agreement; that phrase trades one nonspecificity for another and has generated litigation. (13.48, 13.49; PDF p. 588)
-  - Fix: Name the activities (for example, ownership of any Interest, or management or operations of the Company).
+  - Fix: Name the activities (for example, ownership of any Interest, or management or operations of Company).
   - Book example: any action or proceeding brought to enforce any provision of this Agreement → any dispute arising out of this agreement, ownership of any Interest, or management or operations of the Company
 - **R-13.101-because** [sev 2] Whenever you use because in a contract (typically in a conditional clause, If X because of Y, then Z), consider being specific about the type of causation required, such as sole cause or but-for cause. (13.101, 13.103; PDF p. 602)
   - Test: Must Y be the sole cause or only one of several causes? If the provision doesn't say, it invites dispute.
@@ -280,7 +287,7 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.287-faithfully** [sev 2] Don't use faithfully and comparable adverbs (diligently, competently, industriously) to state an employee's standard of performance; be specific about the employee's duties. (13.287, 13.288, 13.290...; PDF p. 641)
   - Fix: State the employee's duties and any measurable targets.
 - **R-13.320-fraud-intentional-misrepresentation** [sev 2] In exceptions to indemnification limits, referring to both fraud and intentional misrepresentation is safer than fraud alone, because the elements differ and a court might treat fraud as a distinct claim. Clearer still, avoid the terms of art and describe the conduct. (13.320, 13.323, 13.324...; PDF p. 649)
-  - Fix: any claim that the Indemnifying Party intentionally supplied one or more Indemnified Parties with information that the Indemnifying Party knew [or should have known] was inaccurate or any claim that the Indemnifying Party intentionally withheld information from one or more Indemnified Parties
+  - Fix: any claim that the Indemnifying Party intentionally supplied 1 or more Indemnified Parties with information that the Indemnifying Party knew [or, after reasonable inquiry, would have known] was inaccurate or any claim that the Indemnifying Party intentionally withheld information from 1 or more Indemnified Parties
 - **R-13.330-full-time** [sev 2] Be more specific than full-time when referring to work: state the minimum hours per day and days per week, how long that level must be maintained, and whether the person must be employed (and whether volunteer or independent-contractor work counts). (13.330, 13.331, 13.332; PDF p. 651)
   - Fix: State minimum hours and days, duration, and what kinds of work count.
 - **R-13.346-absolute-unconditional-guarantee** [sev 2] Omit absolutely, unconditionally, irrevocably, and the adjectives absolute, continuing, irrevocable, and unconditional from guarantees; be specific about the deal terms instead. They are unclear terms of art, add words, don't prevail over the law (a guarantor may revoke as to future advances), and don't prevail over the deal terms. (13.346, 13.347, 13.348...; PDF p. 654)
@@ -292,8 +299,9 @@ Format: id, severity (1 = ambiguity or meaning-changing; 2 = vagueness or disput
 - **R-13.452-defend** [sev 2] Don't rely on adding defend; address explicitly, in the indemnification procedure provisions, how defense of nonparty claims is handled. (13.452; PDF p. 679)
   - Fix: Procedures stating who controls the defense, counsel, expenses, and settlement.
 - **R-13.500-knowledge-qualifier** [sev 2] Consider a knowledge qualification in a statement of fact if the party can't determine whether the statement is accurate, usually because the matters might be hidden (contamination) or under others' control (threatened litigation). It means the party claims only that it isn't aware of anything suggesting inaccuracy; who bears unknown risk is a risk-allocation question. (13.500, 13.501, 13.502...; PDF p. 691)
-  - Fix: To the Seller's knowledge, ...
+  - Fix: To Seller's knowledge, ...
 - **R-13.506-define-knowledge** [sev 2] Consider making Knowledge a defined term to address whose knowledge counts (narrow for the stating party, broad for the other) and the level of knowledge (actual knowledge, or knowledge after inquiry of specified employees or after reasonable investigation, using knows or should have known). In a sale of a business, consider whether to include its managers. Avoid reasonable knowledge as unclear. (13.506, 13.507, 13.508...; PDF p. 692)
+  - HOUSE: partly superseded: Never should: define Knowledge with wording for actual knowledge and for knowledge after reasonable inquiry, not should have known. See house-style.md section 12.
   - Fix: Autonomous definition of Knowledge naming the individuals and the level of investigation.
 - **R-13.521-likely** [sev 2] Be aware of the uncertain meaning of likely (more or less than 50%? synonymous with probable?); in some contexts you can't avoid it. You could state a percentage probability instead, though debating 49% versus 51% is often meaningless for contract provisions. (13.521, 13.522, 13.523...; PDF p. 697)
   - Fix: has a probability of greater than 50% of [result]

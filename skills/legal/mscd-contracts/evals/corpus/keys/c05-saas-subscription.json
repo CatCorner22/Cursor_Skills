@@ -1,0 +1,170 @@
+{
+ "id": "c05-saas-subscription",
+ "file": "contracts/c05-saas-subscription.docx",
+ "title": "Software-as-a-Service Subscription Agreement",
+ "tier": "mixed",
+ "whose_draft": "blake",
+ "issues": [
+  {
+   "n": 1,
+   "type": "category-shall",
+   "anchor": "shall be 12 months",
+   "quote": "The term of this agreement (the \"Subscription Term\") shall be 12 months, beginning on February 1, 2027.",
+   "severity": 2,
+   "why": "No duty; the length of the term is a matter of policy.",
+   "fix": "The term of this agreement (the \"Subscription Term\") is 12 months, beginning on February 1, 2027."
+  },
+  {
+   "n": 2,
+   "type": "time-ambiguity",
+   "anchor": "within 30 days of the invoice date",
+   "quote": "Provider shall invoice the annual fee at the start of each 12-month period, and Customer shall pay each invoice within 30 days of the invoice date.",
+   "severity": 2,
+   "why": "\"within 30 days of\" could include days before the invoice date.",
+   "fix": "no later than 30 days after the invoice date"
+  },
+  {
+   "n": 3,
+   "type": "reduced-passive",
+   "anchor": "any fees paid by Customer",
+   "quote": "If Customer terminates this agreement under the section titled \"Termination for Cause,\" Provider shall refund any fees paid by Customer for the remainder of the Subscription Term.",
+   "severity": 3,
+   "why": "Recastable reduced passive.",
+   "fix": "any fees that Customer paid"
+  },
+  {
+   "n": 4,
+   "type": "defined-term",
+   "anchor": "in accordance with the Documentation",
+   "quote": "Provider shall make its hosted practice-accounting software (the \"Service\") available to Customer for the Subscription Term, in accordance with the Documentation.",
+   "severity": 2,
+   "why": "\"Documentation\" is capitalized and used 3 times but never defined. Keyed at the 1st use.",
+   "fix": "Define \"Documentation\" (for example, Provider's user guides for the Service as of the date of this agreement)."
+  },
+  {
+   "n": 5,
+   "type": "sole-discretion",
+   "anchor": "in its sole discretion",
+   "quote": "Provider may, in its sole discretion, modify the Service, except that Provider may not remove any feature that the Documentation describes.",
+   "severity": 3,
+   "why": "Redundant with \"may\" (MSCD 3.249).",
+   "fix": "Provider may modify the Service, except that ..."
+  },
+  {
+   "n": 6,
+   "type": "nonparty-obligation",
+   "anchor": "Provider's subcontractors shall comply",
+   "quote": "Provider's subcontractors shall comply with the restrictions in this agreement on the use of Customer Data.",
+   "severity": 2,
+   "why": "\"shall\" with a nonparty subject; the subcontractors are not bound.",
+   "fix": "Provider shall cause its subcontractors to comply ..."
+  },
+  {
+   "n": 7,
+   "type": "party-article",
+   "anchor": "the Customer's personnel",
+   "quote": "\"Customer Data\" means all data that Customer or the Customer's personnel enter into the Service.",
+   "severity": 3,
+   "why": "Article before the defined party name (house rule 11); everywhere else the draft correctly says \"Customer\".",
+   "fix": "Customer's personnel"
+  },
+  {
+   "n": 8,
+   "type": "category-will",
+   "anchor": "Provider will notify Customer",
+   "quote": "Provider will notify Customer no later than 5 days after Provider discovers any unauthorized access to Customer Data.",
+   "severity": 2,
+   "why": "\"will\" used to impose a duty.",
+   "fix": "Provider shall notify Customer ..."
+  },
+  {
+   "n": 9,
+   "type": "represents-warrants",
+   "anchor": "Provider represents and warrants",
+   "quote": "Provider represents and warrants that the Service will perform as the Documentation describes.",
+   "severity": 2,
+   "why": "Blake's own draft: statements of fact use \"states\" (house rule 10).",
+   "fix": "Provider states that the Service will perform as the Documentation describes."
+  },
+  {
+   "n": 10,
+   "type": "throat-clearing",
+   "anchor": "For the avoidance of doubt",
+   "quote": "For the avoidance of doubt, Provider makes no other statement about the Service.",
+   "severity": 3,
+   "why": "Throat-clearing.",
+   "fix": "Provider makes no other statement about the Service."
+  },
+  {
+   "n": 11,
+   "type": "doublet",
+   "anchor": "including without limitation",
+   "quote": "Neither party is liable to the other party for indirect or consequential damages, including without limitation lost profits.",
+   "severity": 3,
+   "why": "\"including\" suffices.",
+   "fix": "including"
+  },
+  {
+   "n": 12,
+   "type": "scope-ambiguity",
+   "anchor": "more than $25,000 for claims",
+   "quote": "Neither party is liable to the other party for more than $25,000 for claims arising out of this agreement.",
+   "severity": 1,
+   "why": "Unclear whether the $25,000 cap applies to each claim or to all claims in the aggregate.",
+   "fix": "Neither party is liable to the other party for more than $25,000 in the aggregate for all claims arising out of this agreement."
+  },
+  {
+   "n": 13,
+   "type": "category-will",
+   "severity": 2,
+   "tier": "sneaky",
+   "anchor": "agreement is effective",
+   "quote": "A notice under this agreement is effective when the recipient receives it by email at the address below the recipient's signature, except that a notice that the recipient receives after 5:00 p.",
+   "why": "Present tense for a policy about a contingent future event (MSCD 3.334; 3.361 in a matrix clause after a conditional clause; 13.209): the event may never happen, so the verb takes will.",
+   "fix": "A notice under this agreement will be effective when the recipient receives it by email at the address below the recipient's signature, except that a notice that the recipient receives after 5:00 p",
+   "added_by": "audit"
+  }
+ ],
+ "traps": [
+  {
+   "anchor": "is dated January 4, 2027",
+   "quote": "This software-as-a-service subscription agreement is dated January 4, 2027, and is between Ledgerwise Software, Inc., a Tennessee corporation (\"Provider\"), and Cumberland Valley Dental Group, PLLC, a Tennessee professional limited liability company (\"Customer\").",
+   "why_correct": "House exception: \"is dated\" in the introductory clause."
+  },
+  {
+   "anchor": "a one-time implementation fee",
+   "quote": "Customer shall pay Provider an annual subscription fee of $18,000 and a one-time implementation fee of $3,000.",
+   "why_correct": "\"one-time\" keeps its word form (house rule 2)."
+  },
+  {
+   "anchor": "the section titled \"Termination for Cause,\"",
+   "quote": "If Customer terminates this agreement under the section titled \"Termination for Cause,\" Provider shall refund any fees paid by Customer for the remainder of the Subscription Term.",
+   "why_correct": "Cross-reference by heading is the house form (rule 4)."
+  },
+  {
+   "anchor": "return the Customer Data",
+   "quote": "Provider shall return the Customer Data to Customer no later than 30 days after this agreement ends.",
+   "why_correct": "\"Customer Data\" is a defined term that is not a party name, so it keeps \"the\" (house rule 11); compare \"the Company Plan\"."
+  },
+  {
+   "anchor": "5:00 p.m. Central time",
+   "quote": "A notice under this agreement is effective when the recipient receives it by email at the address below the recipient's signature, except that a notice that the recipient receives after 5:00 p.m. Central time is effective on the next day.",
+   "why_correct": "Correct time format."
+  }
+ ],
+ "notes": "Blake's draft.  Formatting is compliant (Aptos 12, left-aligned, bold headings, house enumeration I./A.).  The references to Sections 164.308, 164.310, and 164.312 of Title 45 of the Code of Federal Regulations are regulation references, not internal cross-references.  \"Neither party is liable\" is correct (no \"shall\").  About half the issues are subtle: the reduced passive, the undefined Documentation, the nonparty subcontractors, the lone \"the Customer's\", and the cap scope.",
+ "audit": [
+  {
+   "n": 13,
+   "traps_removed": [],
+   "change": "optional category-will issue n13 added",
+   "why": "Converted from a trap (or added): a notice, payment, change, or transfer is a contingent future event, so MSCD 3.334 (3.361 after a conditional clause; 13.209 for deem; MSCD's own form \"A notice ... will be effective if\") takes will, not the present tense. Optional pending Blake's answer to question 18 (house rule 8 tense). The passive-voice point stays true: is effective is not passive."
+  },
+  {
+   "n": 13,
+   "anchor": "agreement is effective",
+   "change": "Blake answer Q18 (November 7, 2026): optional dropped; the issue is required (will for a policy about a contingent future event, MSCD 3.334, 3.369, 13.209) (optional dropped)",
+   "why": "See the key entry."
+  }
+ ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "c19-independent-contractor",
+  "file": "contracts/c19-independent-contractor.docx",
+  "title": "Independent Contractor Agreement",
+  "tier": "mixed",
+  "whose_draft": "blake",
+  "issues": [
+    {
+      "n": 1,
+      "type": "efforts",
+      "anchor": "commercially reasonable efforts",
+      "quote": "Contractor shall use commercially reasonable efforts to complete the Services by April 30, 2027.",
+      "severity": 2,
+      "why": "\"commercially reasonable efforts\" instead of the single MSCD standard (MSCD ch. 8).",
+      "fix": "Contractor shall use reasonable efforts to complete the Services ..."
+    },
+    {
+      "n": 2,
+      "type": "time-ambiguity",
+      "anchor": "by April 30, 2027",
+      "quote": "Contractor shall use commercially reasonable efforts to complete the Services by April 30, 2027.",
+      "severity": 2,
+      "why": "\"by\" leaves unclear whether April 30 is included.",
+      "fix": "no later than April 30, 2027"
+    },
+    {
+      "n": 3,
+      "type": "term-of-art",
+      "anchor": "assign personnel",
+      "quote": "Studio may assign personnel to coordinate with Contractor on the Services.",
+      "severity": 2,
+      "why": "\"assign\" is a term of art for transferring rights; here it means designate.",
+      "fix": "Studio may designate personnel to coordinate with Contractor ..."
+    },
+    {
+      "n": 4,
+      "type": "passive-voice",
+      "anchor": "Contractor will be paid",
+      "quote": "Contractor will be paid $95 per hour for the Services, up to a maximum of $28,500.",
+      "severity": 2,
+      "why": "Passive hides the payer (and uses \"will\").",
+      "fix": "Studio shall pay Contractor $95 per hour for the Services, up to a maximum of $28,500."
+    },
+    {
+      "n": 5,
+      "type": "reduced-passive",
+      "anchor": "invoice submitted by Contractor",
+      "quote": "Contractor shall invoice Studio monthly, and Studio shall pay each invoice submitted by Contractor no later than 15 days after receiving it.",
+      "severity": 3,
+      "why": "Recastable reduced passive.",
+      "fix": "each invoice that Contractor submits"
+    },
+    {
+      "n": 6,
+      "type": "category-must",
+      "anchor": "Studio must reimburse",
+      "quote": "Studio must reimburse Contractor for travel expenses that Studio approves in advance.",
+      "severity": 2,
+      "why": "\"must\" for a duty on the subject, a party.",
+      "fix": "Studio shall reimburse Contractor ..."
+    },
+    {
+      "n": 7,
+      "type": "defined-term",
+      "anchor": "all Deliverables",
+      "quote": "Contractor shall deliver all Deliverables to Studio no later than 5 days after Studio requests them.",
+      "severity": 2,
+      "why": "\"Deliverables\" is used but never defined; the defined term is \"Work Product\".",
+      "fix": "Contractor shall deliver all Work Product to Studio ..."
+    },
+    {
+      "n": 8,
+      "type": "vagueness",
+      "anchor": "substantial progress",
+      "quote": "Studio may terminate this agreement by notice to Contractor if Contractor fails to make substantial progress on the Services.",
+      "severity": 2,
+      "why": "Undefined \"substantial\" where a measure was possible (it controls a termination right).",
+      "fix": "State a measure: for example, fails to deliver the page designs in Schedule A no later than March 15, 2027."
+    },
+    {
+      "n": 9,
+      "type": "cross-reference-number",
+      "anchor": "Section D.2",
+      "quote": "If Studio terminates this agreement under Section D.2, Studio shall pay Contractor for all hours that Contractor worked before termination.",
+      "severity": 2,
+      "why": "Numbered internal cross-reference (house rule 4).",
+      "fix": "If Studio terminates this agreement for lack of progress, ..."
+    },
+    {
+      "n": 10,
+      "type": "represents-warrants",
+      "anchor": "Contractor represents and warrants",
+      "quote": "Contractor represents and warrants that Contractor has the skills and licenses necessary to perform the Services.",
+      "severity": 2,
+      "why": "Blake's own draft: statements of fact use \"states\" (house rule 10), as E.2 does.",
+      "fix": "Contractor states that Contractor has the skills and licenses necessary to perform the Services."
+    },
+    {
+      "n": 11,
+      "type": "category-shall",
+      "anchor": "shall be entitled to",
+      "quote": "Studio shall be entitled to recover its attorneys' fees if Studio prevails in any action to enforce this agreement.",
+      "severity": 2,
+      "why": "\"shall be entitled to\": no duty imposed.",
+      "fix": "Studio is entitled to recover its attorneys' fees if Studio prevails ..."
+    }
+  ],
+  "traps": [
+    {
+      "anchor": "No one other than Contractor may",
+      "quote": "No one other than Contractor may perform the Services without Studio's prior written consent.",
+      "why_correct": "\"no one\" keeps its word, and a negative subject with \"may\" is the correct prohibition (house rule 8)."
+    },
+    {
+      "anchor": "Section 1401 of the Internal Revenue Code",
+      "quote": "Contractor is responsible for all taxes on payments under this agreement, including self-employment tax under Section 1401 of the Internal Revenue Code.",
+      "why_correct": "Statute reference; fine."
+    },
+    {
+      "anchor": "are work made for hire under",
+      "quote": "All designs, code, text, and other materials that Contractor creates in performing the Services (the \"Work Product\") are work made for hire under the Copyright Act, and Studio owns the Work Product.",
+      "why_correct": "Statutory term (Copyright Act)."
+    },
+    {
+      "anchor": "is not required to provide",
+      "quote": "Studio is not required to provide Contractor with equipment, training, or benefits.",
+      "why_correct": "House exception: \"is not required to\" (MSCD 3.292)."
+    },
+    {
+      "anchor": "Contractor is liable for",
+      "quote": "Contractor is liable for any damage that Contractor's equipment causes to Studio's property.",
+      "why_correct": "Adjective after \"is\" (house exception)."
+    }
+  ],
+  "notes": "Blake's draft. Party names correctly have no article; enumeration, spacing, and attachments (Schedule A) are correct. \"Contractor assigns to Studio all copyright\" uses \"assign\" in its legal sense and is correct; only \"assign personnel\" is the term-of-art issue."
+}

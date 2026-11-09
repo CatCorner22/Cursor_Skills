@@ -1,0 +1,274 @@
+{
+ "about": "Terms of art of contract law that keep their legal meaning in Blake's contracts (house rule 13; MSCD 1.57 one word, one meaning; MSCD 1.8-1.13 terms of art). For each: the word forms (term_word, matched in a defined term's name), its legal meaning, what marks the legal sense in a definition (legal_def) and in the contract's text (legal_use), what marks another sense in a defined term's name (name_other) or definition (def_other), ordinary-word uses in another sense (uses_other), and the replacement. only_with_legal_use: report a defined term or an ordinary-word use in the other sense only when the contract also uses the word in its legal sense (for words whose other sense is common and harmless alone). Patterns are case-insensitive unless noted. Each entry's examples must each produce a finding, and its lookalikes none (the lint self-test runs them).",
+ "terms": [
+  {
+   "id": "assignment",
+   "term_word": "\\bAssign(?:ment|ments|ee|ees)?\\b",
+   "legal_meaning": "the transfer of a contract right (Restatement (Second) of Contracts § 317)",
+   "legal_def": "\\b(?:transfer|transfers|convey|conveys|conveyance|rights?\\s+(?:under|in)|interest\\s+in)\\b",
+   "legal_use": "\\b(?:may\\s+not|shall\\s+not|not\\s+to)\\s+assign\\b|\\bassign(?:s|ed)?\\s+(?:this\\s+agreement|its\\s+rights|any\\s+(?:of\\s+its\\s+)?rights|any\\s+interest)|\\bassignment\\s+of\\s+(?:this\\s+agreement|(?:any\\s+|its\\s+)?rights|any\\s+interest|the\\s+(?:lease|contract|claims?|receivables?))\\b|\\bassignees?\\b|\\bsuccessors\\s+and\\s+(?:permitted\\s+)?assigns\\b",
+   "name_other": "\\b(?:Work|Job|Task|Project|Staffing|Staff|Client|Shift|Field|Service)(?:\\s+\\w+)?\\s+Assignments?\\b",
+   "def_other": "\\b(?:work\\s+orders?|tasks?|projects?|jobs?|engagements?|shifts?|placements?|postings?|scope\\s+of\\s+work|statements?\\s+of\\s+work|duties|services\\s+that|work\\s+that)\\b",
+   "uses_other": "\\bassign(?:s|ed|ing)?\\s+(?:(?:the|any|such|those|other|additional|new|its|their|his|her)\\s+)?(?:duties|tasks|work|responsibilit(?:y|ies)|projects?|personnel|staff|employees|engineers|technicians|a\\s+task|an?\\s+(?:[\\w-]+\\s+){0,2}(?:project\\s+manager|employee|engineer|technician|developer|consultant)|(?:at\\s+least\\s+|up\\s+to\\s+|no\\s+fewer\\s+than\\s+)?\\d+\\s+(?:[\\w-]+\\s+){0,2}(?:engineers?|employees?|technicians?|developers?|consultants?|people|individuals?|project\\s+managers?))\\b|\\b(?:duties|tasks|work|responsibilities)\\s+(?:that|which)\\s+[^.;]{1,40}?\\bassigns?\\b|\\bassigned\\s+to\\s+(?:the|a|each|that)\\s+(?:project|team|account|matter|engagement|Statement\\s+of\\s+Work|Work\\s+Order)\\b|\\bassign(?:s|ed|ing)?\\s+(?:the\\s+)?(?:Key\\s+)?Personnel\\b|\\bsuch\\s+other\\s+duties\\s+as\\b[^.;]{0,40}\\bassigns?\\b|\\bassigned\\s+to\\s+(?:the|a|each|that)\\s+(?:\\w+\\s+)?(?:project|team|account|matter|engagement)\\b",
+   "only_with_legal_use": false,
+   "replace": "Work Order, Task, or Engagement (for staff, designate)",
+   "examples": [
+    "\"Assignment\" means each work order that Customer issues under this agreement.\n\nNeither party may assign this agreement.",
+    "Customer may issue a written work order (each, a \"Work Assignment\").",
+    "Executive shall perform the duties that the Chief Executive Officer assigns to Executive.",
+    "Contractor shall assign 2 engineers to the project.",
+    "The Statement of Work assigns responsibility for notifying Customer to the Provider project manager."
+   ],
+   "lookalikes": [
+    "\"Assignment\" means a transfer of any right under this agreement.\n\nNeither party may assign this agreement.",
+    "Customer may issue a written work order (each, a \"Work Order\").",
+    "Neither party may assign this agreement without the other party's consent."
+   ]
+  },
+  {
+   "id": "delegation",
+   "term_word": "\\bDelegat(?:e|es|ion)\\b",
+   "legal_meaning": "the transfer of the performance of a duty to another (Restatement (Second) of Contracts § 318)",
+   "legal_def": "\\b(?:perform|performance|duties|duty|obligations?)\\b",
+   "legal_use": "\\bdelegat(?:e|es|ed|ion)\\s+(?:any\\s+of\\s+)?(?:its\\s+|their\\s+)?(?:duties|obligations|performance)\\b|\\bmay\\s+not\\s+delegate\\b",
+   "name_other": "",
+   "def_other": "\\b(?:attendees?|participants?|individuals?|persons?|people|representatives?|members?)\\b",
+   "uses_other": "",
+   "only_with_legal_use": false,
+   "replace": "Attendee or Participant",
+   "examples": [
+    "\"Delegate\" means each individual whom Sponsor registers for the Conference.\n\nNeither party may delegate its duties."
+   ],
+   "lookalikes": [
+    "\"Attendee\" means each individual whom Sponsor registers for the Conference.\n\nNeither party may delegate its duties."
+   ]
+  },
+  {
+   "id": "consideration",
+   "term_word": "\\bConsideration\\b",
+   "legal_meaning": "the bargained-for exchange that makes a promise enforceable (Restatement (Second) of Contracts § 71)",
+   "legal_def": "\\b(?:price|payment|paid|payable|amount|cash|shares|stock|exchange|value)\\b",
+   "legal_use": "\\bin\\s+consideration\\s+of\\b|\\bconsideration\\s+for\\b|\\bsufficient\\s+consideration\\b",
+   "name_other": "",
+   "def_other": "\\b(?:review|reviews|evaluation|deliberation|assessment)\\b",
+   "uses_other": "",
+   "only_with_legal_use": false,
+   "replace": "Review or Evaluation",
+   "examples": [
+    "\"Consideration\" means Lender's review of each Loan Request."
+   ],
+   "lookalikes": [
+    "\"Merger Consideration\" means the cash that Buyer pays for each Share."
+   ]
+  },
+  {
+   "id": "release",
+   "term_word": "\\bReleases?\\b",
+   "legal_meaning": "the giving up of a claim or right",
+   "legal_def": "\\b(?:claims?|liabilit\\w*|demands?|causes?\\s+of\\s+action|discharge\\w*|waive\\w*|relinquish\\w*)\\b",
+   "legal_use": "\\breleas(?:e|es|ed|ing)\\s+(?:and\\s+(?:forever\\s+)?discharg\\w+\\s+)?(?:\\w+\\s+){0,6}(?:from\\s+|of\\s+)?(?:all|any|each|every)\\s+(?:\\w+\\s+){0,2}(?:claims?|liabilit\\w*|demands?|causes?\\s+of\\s+action)\\b|\\bgeneral\\s+release\\b|\\breleased\\s+claims?\\b",
+   "name_other": "\\b(?:Software|Product|Major|Minor|Maintenance|Feature|Press|Code)\\s+Releases?\\b",
+   "def_other": "\\b(?:version|versions|update|updates|upgrade|upgrades|build|builds|patch|patches|software|code|features?|announcements?|press)\\b",
+   "uses_other": "\\b(?:software|product|new|major|minor|maintenance|feature|code|point|latest|current|general\\s+availability)\\s+releases?\\b|\\breleases?\\s+(?:notes?|of\\s+the\\s+Software)\\b",
+   "only_with_legal_use": false,
+   "replace": "Version (or Update); for funds in escrow, release is the usual word and stays",
+   "examples": [
+    "\"Release\" means each new version of the Software that Provider makes generally available.\n\nCustomer releases Provider from all claims arising out of the Pilot.",
+    "Provider shall support each major release of the Software.  Customer releases Provider from all claims arising out of the Pilot.",
+    "Provider shall support each major release of the Software."
+   ],
+   "lookalikes": [
+    "\"Released Claims\" means all claims that Customer has against Provider.\n\nCustomer releases Provider from all claims arising out of the Pilot.",
+    "The Escrow Agent shall release the Escrow Funds to Seller no later than 5 Business Days after the Closing."
+   ]
+  },
+  {
+   "id": "default",
+   "term_word": "\\bDefaults?\\b",
+   "legal_meaning": "a failure to perform a contract obligation (an Event of Default)",
+   "legal_def": "\\b(?:fail\\w*|breach\\w*|not\\s+pay|does\\s+not\\s+perform|event)\\b",
+   "legal_use": "\\bEvents?\\s+of\\s+Default\\b|\\bdefault(?:s|ed)?\\s+(?:in|on|under)\\b|\\bin\\s+default\\b|\\bdefaulting\\s+part(?:y|ies)\\b|\\bif\\s+\\w+\\s+defaults\\b",
+   "name_other": "\\bDefault\\s+(?:Settings?|Values?|Configurations?|Options?|Passwords?|Language|Format|View)\\b",
+   "def_other": "\\b(?:settings?|values?|configurations?|presets?|factory|options?|passwords?)\\b",
+   "uses_other": "\\bdefault\\s+(?:[\\w-]+\\s+){0,2}(?:settings?|values?|configurations?|passwords?|options?|language|font|format|view)\\b|\\bby\\s+default\\b",
+   "only_with_legal_use": true,
+   "replace": "Standard Setting (or Preset); for by default, automatically or unless Customer changes it",
+   "examples": [
+    "Provider shall ship the Devices with the default settings that Schedule A lists.  If Customer defaults in paying any invoice, Provider may suspend the Services."
+   ],
+   "lookalikes": [
+    "Provider shall ship the Devices with the standard settings that Schedule A lists.  If Customer defaults in paying any invoice, Provider may suspend the Services."
+   ]
+  },
+  {
+   "id": "option",
+   "term_word": "\\bOptions?\\b",
+   "legal_meaning": "a right to buy, sell, extend or renew on stated terms (an irrevocable offer)",
+   "legal_def": "\\b(?:right\\s+to|purchase|acquire|buy|sell|extend|renew|exercise)\\b",
+   "legal_use": "\\boption\\s+to\\s+(?:purchase|buy|acquire|extend|renew|lease|sell)\\b|\\bexercis(?:e|es|ed|ing)\\s+(?:the|its|an?|this|that)\\s+(?:\\w+\\s+)?option\\b|\\bstock\\s+options?\\b|\\boption\\s+price\\b",
+   "name_other": "\\b(?:Product|Feature|Optional|Add-On|Configuration|Service|Color)\\s+Options?\\b",
+   "def_other": "\\b(?:features?|add-ons?|configurations?|optional\\s+(?:services?|modules?|components?)|modules?|upgrades?)\\b",
+   "uses_other": "\\b(?:product|feature|configuration|add-on|optional|color)\\s+options?\\b|\\boptions?\\s+(?:menu|package|list)\\b",
+   "only_with_legal_use": true,
+   "replace": "Optional Features (or Add-Ons)",
+   "examples": [
+    "\"Options\" means the optional modules that Schedule A lists.\n\nTenant may exercise the option to extend the Term."
+   ],
+   "lookalikes": [
+    "\"Optional Modules\" means the modules that Schedule A lists.\n\nTenant may exercise the option to extend the Term."
+   ]
+  },
+  {
+   "id": "tender",
+   "term_word": "\\bTenders?\\b",
+   "legal_meaning": "an offer to perform, such as tender of delivery or of payment (UCC 2-503)",
+   "legal_def": "\\b(?:offer\\w*\\s+(?:to\\s+)?(?:perform|deliver|pay)|delivery|payment|performance)\\b",
+   "legal_use": "\\btender(?:s|ed)?\\s+(?:of\\s+)?(?:delivery|payment|performance|the\\s+goods)\\b|\\btender(?:s|ed)?\\s+(?:the\\s+|its\\s+)?defen[cs]e\\b|\\baccepts?\\s+(?:the|that|a|any)\\s+tender\\b",
+   "name_other": "\\bTender\\s+(?:\\w+\\s+)?(?:Documents?|Process|Submissions?|Responses?|Evaluation(?:\\s+Report)?)\\b",
+   "def_other": "\\b(?:bids?|proposals?|requests?\\s+for\\s+proposals?|RFPs?|procurement|solicitations?)\\b",
+   "uses_other": "\\b(?:submit|respond\\s+to|issue|award|win)\\s+(?:(?:a|the|its|any|each)\\s+)?(?:[\\w-]+\\s+){0,2}tenders?\\b(?!\\s+offer)|\\btender\\s+(?:process|documents?|submission|response|evaluation)\\b",
+   "only_with_legal_use": false,
+   "replace": "Bid or Proposal",
+   "examples": [
+    "Contractor shall submit a tender for each Project no later than 10 days after Owner's request."
+   ],
+   "lookalikes": [
+    "Seller's tender of delivery is complete when the Goods reach Buyer's dock.  Acme may make a tender offer for the Shares."
+   ]
+  },
+  {
+   "id": "security",
+   "term_word": "\\bSecurity\\b",
+   "legal_meaning": "a security interest: property rights that secure an obligation (UCC Article 9)",
+   "legal_def": "\\b(?:security\\s+interest|lien|collateral|secur(?:e|es|ing)\\s+(?:the|its|all|each)?\\s*(?:obligations?|payment|debt))\\b",
+   "legal_use": "\\bsecurity\\s+interests?\\b|\\bsecurity\\s+agreement\\b|\\bsecured\\s+part(?:y|ies)\\b|\\bas\\s+security\\s+for\\b",
+   "name_other": "^Security$|\\bSecurity\\s+(?:Badges?|Personnel|Guards?)\\b",
+   "def_other": "\\b(?:guards?|badges?|access\\s+cards?|key\\s*cards?|fobs?)\\b",
+   "uses_other": "\\bsecurity\\s+(?:guards?|personnel|badges?)\\b",
+   "only_with_legal_use": false,
+   "replace": "Security Interest or Collateral for a bare defined Security; for a physical-safety use, a plain word (Access Badge, guard, site staff)",
+   "examples": [
+    "Company issued Employee a building access badge (the \"Security Badge\").  Employee shall return the Security Badge.  Employee grants Company a security interest in the Bonus.",
+    "Borrower grants Lender a security interest in the Equipment (the \"Security\").  Lender may enforce the Security after an Event of Default.",
+    "Owner shall provide security personnel at the Site during each delivery.  Owner grants Supplier a security interest in the Equipment until Owner pays for it.",
+    "Company issued Employee a building access badge (the \"Security Badge\").  Employee shall return the Security Badge when the Term ends.",
+    "Owner shall provide security personnel at the Site during each delivery."
+   ],
+   "lookalikes": [
+    "Provider shall maintain the data protection measures that Schedule B describes.  Borrower grants Lender a security interest in the Equipment.",
+    "Provider shall maintain the data security measures that Schedule B describes.",
+    "Provider shall maintain the data security measures that Schedule B describes.  Borrower grants Lender a security interest in the Equipment.",
+    "\"Security Incident\" means any unauthorized access to Customer Data.\n\nProvider shall notify Customer of each Security Incident.  Customer grants Provider a security interest in the Equipment.",
+    "Tenant shall pay Landlord a security deposit of $5,000 when Tenant signs this agreement.  Tenant grants Landlord a security interest in Tenant's trade fixtures."
+   ]
+  },
+  {
+   "id": "collateral",
+   "term_word": "\\bCollateral\\b",
+   "legal_meaning": "property subject to a security interest (UCC 9-102)",
+   "legal_def": "\\b(?:security\\s+interest|lien|pledg\\w*|secur(?:e|es|ing))\\b",
+   "legal_use": "\\b(?:security\\s+interest|lien|pledge)\\b[^.]{0,80}\\bcollateral\\b|\\bcollateral\\s+(?:assignment|security)\\b",
+   "name_other": "\\b(?:Marketing|Sales|Promotional|Brand|Advertising|Print|Digital)\\s+Collateral\\b|\\bCollateral\\s+Materials?\\b",
+   "def_other": "\\b(?:brochures?|marketing|advertising|promotional|sales\\s+materials?|flyers?|signage|banners?)\\b",
+   "uses_other": "\\b(?:marketing|sales|promotional|advertising|brand|print|digital)\\s+collateral\\b|\\b(?:printed\\s+)?collateral\\s+materials?\\b|\\bprinted\\s+collateral\\b",
+   "only_with_legal_use": false,
+   "replace": "Marketing Materials",
+   "examples": [
+    "Agency shall deliver the marketing collateral that Schedule A lists."
+   ],
+   "lookalikes": [
+    "Agency shall deliver the marketing materials that Schedule A lists.  Borrower grants Lender a security interest in the Collateral."
+   ]
+  },
+  {
+   "id": "guarantee",
+   "term_word": "\\bGuarant(?:ee|ees|y)\\b",
+   "legal_meaning": "a promise to answer for another's debt or performance (MSCD 13.333: use guarantee for it)",
+   "legal_def": "\\b(?:debts?|obligations?\\s+of|payment\\s+of|performance\\s+of|guarantor)\\b",
+   "legal_use": "\\bguarant(?:ee|ees|eed|y|ies)\\s+(?:the\\s+)?(?:payment|performance)\\s+(?:of|by)\\b|\\bguarantors?\\b",
+   "name_other": "\\b(?:Uptime|Availability|Satisfaction|Response[- ]Time|Service[- ]Level|Money[- ]Back|Price|Performance|Lowest[- ]Price|Delivery)\\s+Guarantees?\\b",
+   "def_other": "\\b(?:uptime|availability|percent|%|response\\s+times?|service\\s+credits?|refunds?|satisfaction|lowest\\s+price)\\b",
+   "uses_other": "\\b(?:uptime|availability|satisfaction|response[- ]time|service[- ]level|money[- ]back|price|lowest[- ]price|delivery)\\s+guarantees?\\b|\\bguaranteed\\s+(?:uptime|availability|delivery|response\\s+times?)\\b",
+   "only_with_legal_use": false,
+   "replace": "Availability Commitment (or Service Level)",
+   "examples": [
+    "Provider shall meet the uptime guarantee that Schedule B states."
+   ],
+   "lookalikes": [
+    "Provider shall meet the availability commitment that Schedule B states.  Parent shall guarantee the payment of each Obligation."
+   ]
+  },
+  {
+   "id": "representation",
+   "term_word": "\\bRepresentations?\\b",
+   "legal_meaning": "a statement of fact made to induce the contract (MSCD 3.415-3.463)",
+   "legal_def": "\\b(?:statements?|states|facts?|true|accurate|correct)\\b",
+   "legal_use": "\\brepresents?\\s+and\\s+warrants?\\b|\\brepresentations?\\s+and\\s+warrant\\w*\\b|\\bmakes?\\s+(?:no|the\\s+following)\\s+representations?\\b",
+   "name_other": "",
+   "def_other": "\\b(?:legal\\s+services|engagement|matter|act(?:ing)?\\s+(?:for|on\\s+behalf\\s+of)|advocacy|counsel)\\b",
+   "uses_other": "",
+   "only_with_legal_use": false,
+   "replace": "Engagement (or Matter)",
+   "examples": [
+    "\"Representation\" means the legal services that Firm provides to Client in the Litigation.\n\nClient represents and warrants that it has authority to sign this agreement."
+   ],
+   "lookalikes": [
+    "\"Engagement\" means the legal services that Firm provides to Client in the Litigation.\n\nClient represents and warrants that it has authority to sign this agreement."
+   ]
+  },
+  {
+   "id": "condition",
+   "term_word": "\\bConditions?\\b",
+   "legal_meaning": "an event that must occur before a performance becomes due (Restatement (Second) of Contracts § 224)",
+   "legal_def": "\\b(?:occur\\w*|before|precedent|subsequent|satisf\\w*|unless|if\\b)",
+   "legal_use": "\\bconditions?\\s+(?:precedent|subsequent|to\\s+(?:the\\s+)?(?:closing|its\\s+obligations?|payment|performance))\\b|\\bon\\s+condition\\s+that\\b|\\bis\\s+a\\s+condition\\s+(?:to|of)\\b",
+   "name_other": "\\bCondition\\s+(?:Reports?|Assessments?|Surveys?)\\b",
+   "def_other": "\\b(?:physical\\s+(?:state|condition)|state\\s+of\\s+repair|wear\\s+and\\s+tear|appearance|working\\s+order|inspection\\s+report)\\b",
+   "uses_other": "",
+   "only_with_legal_use": false,
+   "replace": "Physical State (for a report: Inspection Report)",
+   "examples": [
+    "\"Condition\" means the physical state of the Equipment on the Return Date.\n\nBuyer's obligation to pay is subject to the conditions precedent in Schedule C."
+   ],
+   "lookalikes": [
+    "\"Return State\" means the physical state of the Equipment on the Return Date.\n\nBuyer's obligation to pay is subject to the conditions precedent in Schedule C."
+   ]
+  },
+  {
+   "id": "agent",
+   "term_word": "\\bAgents?\\b",
+   "legal_meaning": "a person who acts for a principal and owes the principal fiduciary duties (agency law)",
+   "legal_def": "\\b(?:act\\w*\\s+(?:for|on\\s+behalf\\s+of)|on\\s+behalf\\s+of|appoint\\w*|escrow|paying|collateral|administrative)\\b",
+   "legal_use": "\\b(?:is\\s+not|not\\s+an?|no\\s+party\\s+is\\s+the)\\s+agent\\b|\\bagent\\s+(?:of|for)\\b|\\bno\\s+agency\\b|\\bappoints?\\s+\\w+\\s+as\\s+(?:its\\s+)?agent\\b",
+   "name_other": "\\b(?:AI|Software|Digital|Virtual|Chat|Voice|Autonomous)(?:[- ]\\w+)?\\s+(?:\\w+\\s+)?Agents?\\b",
+   "def_other": "\\b(?:software|program|bot|automated|artificial\\s+intelligence|machine\\s+learning|model|application|AI)\\b",
+   "uses_other": "\\b(?:AI|software|digital|virtual|chat|voice|autonomous)(?:[- ]\\w+)?\\s+(?:\\w+\\s+)?agents?\\b",
+   "only_with_legal_use": true,
+   "replace": "Automated Assistant (or Bot, or the product's name)",
+   "examples": [
+    "\"Agent\" means the software program that Provider licenses to Customer.\n\nProvider is not an agent of Customer."
+   ],
+   "lookalikes": [
+    "\"Escrow Agent\" means the bank that acts as escrow agent on behalf of the parties.\n\nProvider is not an agent of Customer."
+   ]
+  },
+  {
+   "id": "title",
+   "term_word": "\\bTitle\\b",
+   "legal_meaning": "ownership of property",
+   "legal_def": "\\b(?:own\\w*|property|goods|equipment)\\b",
+   "legal_use": "\\btitle\\s+(?:to|in)\\s+(?:the\\s+|each\\s+|all\\s+)?[A-Za-z]|\\bpass(?:es)?\\s+title\\b|\\bgood\\s+(?:and\\s+marketable\\s+)?title\\b",
+   "name_other": "\\b(?:Job|Position|Employee)\\s+Titles?\\b",
+   "def_other": "\\b(?:position|job|role|office)\\b",
+   "uses_other": "",
+   "only_with_legal_use": false,
+   "replace": "Position",
+   "examples": [
+    "\"Title\" means the position that Schedule A lists for Employee.\n\nTitle to the Equipment passes to Buyer at delivery."
+   ],
+   "lookalikes": [
+    "\"Position\" means the position that Schedule A lists for Employee.\n\nTitle to the Equipment passes to Buyer at delivery."
+   ]
+  }
+ ]
+}
