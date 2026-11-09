@@ -17,25 +17,25 @@
 | Period | Event | Tag |
 |---|---|---|
 | Millennia before 1500 | Ceremonial use of psilocybin mushrooms (Mesoamerica, *teonanácatl*), peyote and San Pedro cacti (mescaline), ayahuasca (Amazon basin), and iboga (Bwiti tradition, Central Africa) | M |
-| 1897 | Arthur Heffter isolates mescaline from peyote | M |
+| 1897 (published 1898) | Arthur Heffter isolates mescaline from peyote | V |
 | 1912 | Merck patents a synthesis that yields MDMA as an intermediate; no clinical use follows | M |
-| 1938 / 1943 | Albert Hofmann (Sandoz) synthesizes LSD in 1938; discovers its effects in April 1943 | M |
+| 1938 / 1943 | Albert Hofmann (Sandoz) synthesizes LSD in 1938; discovers its effects on 1943-04-16 (accidental exposure) and 1943-04-19 (deliberate self-experiment, "Bicycle Day") | V |
 | 1947 onward | Sandoz distributes LSD (Delysid) to researchers as an experimental drug | M |
 | 1950s | Humphry Osmond and Abram Hoffer run LSD trials for alcoholism in Saskatchewan; Osmond coins "psychedelic" (1956–57) | M |
-| 1953–1973 | CIA MKUltra: LSD given to people **without consent**, including unwitting civilians; documented by the Church Committee (1975) and the 1977 Senate hearings | M |
-| 1957–1958 | R. Gordon Wasson's *Life* article on Mazatec mushroom ceremonies (with María Sabina) brings psilocybin mushrooms to Western attention; Hofmann isolates psilocybin (1958) | M |
-| 1960–1963 | Harvard Psilocybin Project (Timothy Leary, Richard Alpert); Pahnke's Good Friday Experiment (1962); Leary and Alpert leave Harvard amid controversy over methods and student recruitment | M |
+| 1953–1964 (records destroyed 1973) | CIA MKUltra: LSD given to people **without consent**, including unwitting civilians. CIA Director Turner testified in 1977 that the program ran 1953–1964; most records were destroyed in 1973. Investigated by the Church Committee (1975; report published 1976) and the 1977 Senate hearings | V: 1977 Senate hearing record |
+| 1957–1958 | R. Gordon Wasson's *Life* article (1957-05-13) on Mazatec mushroom ceremonies brings psilocybin mushrooms to Western attention; the article does not name María Sabina, the curandera who led the ceremony. Hofmann isolates psilocybin (1958; *Experientia* 14(3):107) | V |
+| 1960–1963 | Harvard Psilocybin Project (Timothy Leary, Richard Alpert); Pahnke's Good Friday Experiment (1962). Harvard fired Alpert and dismissed Leary in 1963 amid controversy over methods and student recruitment | V: *Harvard Crimson* 1963-05-31 (Alpert); S (Leary) |
 | 1962 | Kefauver–Harris Amendments tighten FDA drug-testing rules, including investigational new drug requirements | M |
-| 1965–1970 | Drug Abuse Control Amendments (1965); state LSD bans (California, 1966); Sandoz stops LSD distribution (1966); **Controlled Substances Act (1970)** places LSD, psilocybin, mescaline, and DMT in Schedule I | M |
+| 1965–1970 | Drug Abuse Control Amendments (Pub. L. 89-74, 1965-07-15); state LSD bans (California, 1966); Sandoz stops LSD distribution (1966); **Controlled Substances Act (1970)** places LSD, psilocybin, mescaline, and DMT in Schedule I | V (1965 Amendments, California, Sandoz); M (CSA schedule listing: check 21 U.S.C. 812) |
 | 1971 | UN Convention on Psychotropic Substances internationalizes the controls | M |
 | 1976–1985 | Alexander Shulgin's work brings MDMA to a small circle of therapists | M |
-| 1984–1988 | DEA proposes Schedule I for MDMA (1984-07-27); emergency scheduling announced 1985-05-31; Administrative Law Judge Francis Young recommends **Schedule III** (1986-05-22); the DEA overrules him; the First Circuit vacates the listing (Grinspoon v. DEA, 1987); DEA re-places MDMA in Schedule I (effective 1988-03-23) | V: MAPS legal archive; court and Federal Register citations within |
-| 1986 | MAPS founded (Rick Doblin) | M |
+| 1984–1988 | DEA proposes Schedule I for MDMA (1984-07-27); emergency scheduling announced 1985-05-28 (MAPS archive) and effective 1985-07-01 (First Circuit opinion); Administrative Law Judge Francis Young recommends **Schedule III** (1986-05-22); the DEA overrules him; the First Circuit vacates the listing (Grinspoon v. DEA, 1987); DEA re-places MDMA in Schedule I (effective 1988-03-23) | V: MAPS legal archive; court and Federal Register citations within |
+| 1986 | MAPS founded (Rick Doblin), 1986-04-08 | V |
 | 1990–1995 | Rick Strassman's DMT studies (New Mexico): the first new US human psychedelic research in about 20 years | M |
-| 1993 | Heffter Research Institute founded | M |
-| 2006 | Griffiths et al., *Psychopharmacology*: psilocybin can occasion mystical-type experiences with lasting personal meaning. *Gonzales v. O Centro Espírita* (US Supreme Court) protects religious ayahuasca use under RFRA | M |
+| 1993 | Heffter Research Institute founded | V |
+| 2006 | Griffiths et al., *Psychopharmacology*: psilocybin can occasion mystical-type experiences with lasting personal meaning. *Gonzales v. O Centro Espírita* (US Supreme Court) upholds a preliminary injunction under RFRA letting one church (the UDV) use ayahuasca tea in its services while the case proceeds. It is a narrow ruling for one church, not a general protection of religious ayahuasca use | V: opinion |
 | 2016 | Cancer-related distress trials (NYU; Johns Hopkins) and Imperial's open-label TRD study | M |
-| 2017–2019 | FDA Breakthrough designations: MDMA for PTSD (2017), Compass psilocybin for TRD (2018), Usona psilocybin for MDD (2019) | M (Compass [V] in fda-pipeline.md) |
+| 2017–2019 | FDA Breakthrough designations: MDMA for PTSD (2017), Compass psilocybin for TRD (2018), Usona psilocybin for MDD (2019-11-22) | V |
 | 2018–2019 | MAPS Phase 2 Canadian site (MP4): video later shows misconduct (psychedelic-ethics-issues.md §3) | V (see that file) |
 | 2019–2022 | Local decriminalization (Denver 2019); Oregon Measure 109 (2020); Colorado Proposition 122 (2022) | M |
 | 2023 | Australia permits authorised psychiatrists to prescribe MDMA and psilocybine (from 2023-07-01) | V |
@@ -89,7 +89,7 @@ Durations are typical ranges [M]. Effects vary with dose, setting, expectation, 
 **DMT and ayahuasca**
 - *DMT* smoked or injected: onset in seconds to minutes; total 15–30 minutes; very intense. It is inactive orally unless combined with an MAO inhibitor.
 - *Ayahuasca:* a brew of DMT-containing plants plus *Banisteriopsis caapi* (harmine and harmaline, which inhibit MAO-A). Onset 30–60 minutes; total 4–6 hours; vomiting is common and ritually expected.
-- *Risks:* the MAO inhibition creates **dangerous interactions with serotonergic drugs** (§6). About 1.3% of 8,216 ayahuasca users reported seizures in one large survey [S: scoping review summary].
+- *Risks:* the MAO inhibition creates **dangerous interactions with serotonergic drugs** (§6). About 1.3% of 8,216 ayahuasca users (a subsample of a 10,836-person global survey) self-reported "fits or seizures" (Bouso et al., *PLOS Glob Public Health* 2022;2(11):e0000438) [V]. Self-report, not a clinical rate.
 - *Clinical:* short-acting IV and inhaled DMT programs are in development [M].
 
 **5-MeO-DMT**
@@ -131,7 +131,7 @@ Durations are typical ranges [M]. Effects vary with dose, setting, expectation, 
 
 **Ibogaine**
 - *Course:* a very long experience (24–36 hours or more); the metabolite noribogaine persists for days.
-- *Main risk:* cardiac. Ibogaine blocks hERG potassium channels, causing QT prolongation and torsades de pointes. **33 ibogaine-related deaths were publicly reported between 1990 and 2020**, most in settings without cardiac monitoring [V: *Expert Opin Drug Metab Toxicol* 2021 review]. Other harms include ataxia and severe vomiting.
+- *Main risk:* cardiac. Ibogaine blocks hERG potassium channels, causing QT prolongation and torsades de pointes. **33 ibogaine-related deaths were publicly reported between 1990 and 2020**, most in settings without cardiac monitoring [V: Luz & Mash, *Expert Opin Drug Metab Toxicol* 2021;17(9):1019–1022, a short commentary; the count matches Corkery's 2018 tally]. A 2026 preprint (not peer-reviewed) counts 48 deaths for 1990–2026 [S: preprint]. Other harms include ataxia and severe vomiting.
 - *Use:* opioid withdrawal and addiction. The 2026 FDA ibogaine RFI and EO 14401 encourage research (fda-pipeline.md).
 
 **Salvinorin A** (*Salvia divinorum*)
@@ -155,7 +155,7 @@ Durations are typical ranges [M]. Effects vary with dose, setting, expectation, 
 
 | Combination | Effect | Evidence | Tag |
 |---|---|---|---|
-| **Lithium + classic psychedelics** | Seizures: 47% of 62 online experience reports; 39% involved medical attention; none of 34 lamotrigine reports involved seizures | Nayak, Gukasyan, Barrett, Erowid, Erowid & Griffiths, *Pharmacopsychiatry* 2021;54(5):240–245. Self-reported data; a signal, not a rate | V |
+| **Lithium + classic psychedelics** | Seizures: 47% of 62 online experience reports (the 39% medical-attention figure appears only in an abstract-summary site [S]); none of 34 lamotrigine reports involved seizures | Nayak, Gukasyan, Barrett, Erowid, Erowid & Griffiths, *Pharmacopsychiatry* 2021;54(5):240–245. Self-reported data; a signal, not a rate | V |
 | **Ayahuasca (MAO-A inhibition) + SSRIs, SNRIs, MDMA, and other serotonergic drugs** | Serotonin toxicity | Pharmacological and case evidence | M/S |
 | **SSRIs + psilocybin** | Older reports of blunting; two small recent studies found the effects were not blocked | Mixed; small studies | S |
 | **SSRIs or SNRIs + MDMA** | Blocks or blunts the effects; theoretical serotonin-toxicity risk | Controlled studies | S |

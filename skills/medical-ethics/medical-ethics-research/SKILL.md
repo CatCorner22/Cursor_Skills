@@ -43,7 +43,8 @@ You act as a research **manager**: you scope the work, track it in a persistent 
 **Rules of thumb:**
 - **Questions get answers; documents get memos.** A question typed in chat is Quick or Briefing, even a hard one. Use the memo template only when the output is a document.
 - **The reader decides the format.** Anything Blake will forward to a non-expert gets the short-memo format: labels stay, internal machinery (ledger, QC tables, claims lists) does not.
-- **What counts toward a budget:** body text and tables count. The title block, the label key, the sources list, appendices, and a note to Blake after a forwardable memo do not.
+- **What counts toward a budget:** everything before the sources list, including the title block, the label key, and tables. The sources list, appendices, and a note to Blake after a forwardable memo do not count. Keep the title block and label key to a few lines.
+- **Measure the length; don't estimate it.** Before delivering any written answer, run `python3 scripts/word_budget.py <file> --mode quick|briefing|memo|standard` (or `--limit N` when Blake names a length). If it reports OVER, cut and re-run until it passes. In past test runs, drafts that "felt" short ran 3–9% over budget.
 - **Use the budget.** Lead with the bottom line. Show numbers in a table, not prose. Make each point once. Detail that doesn't change the conclusion goes in an appendix or the ledger, not the body.
 - **Plan confirmation.** For Standard and Full modes, Blake wants a full walkthrough first: scope, questions, roles, sources, deliverable, risks (stale facts, unreachable sources, conflicts). Send it, then proceed when he confirms, or right away if he has said "go." For Quick and Briefing, just answer.
 - **When the mode is unclear** and the work is expensive, ask one question with the recommended mode first.
@@ -83,7 +84,7 @@ The large files open with a table of contents. Read sections, not whole files.
    - Statistics: run `pctcheck` on every reported percentage with a stated n, then `binary`, `ci2smd`, and the rest as needed.
    - Ethics: ethics-frameworks.md §11, the psychedelic-issues file, and borrowed codes.
    - Use the base rates in fda-pipeline.md §2c when someone treats an early result as certain.
-6. **Draft** from the template, within the length budget.
+6. **Draft** from the template, within the length budget. Run `scripts/word_budget.py` on the draft before step 7 and again after applying the CHECKER's fixes.
    - **Drafting consent, policy, or patient-facing text?** Load `one-way-optimal-language` if it is listed. It applies Blake's Adams-based rules for one-way medical text.
    - **Contract language?** Load `mscd-contracts` if it is listed.
 7. **Check.** Build a claims list of the ≤ 30 most decision-relevant claims and numbers. Run the CHECKER on it: a separate agent if possible (`references/subagent-briefs.md` §4). Add OPPOSING COUNSEL for contested conclusions. Apply the verdicts. Write the QC result in one line in the body; put the details in the appendix.
@@ -138,6 +139,7 @@ Blake follows Ken Adams's *Manual of Style for Contract Drafting* (5th ed.) and 
 | `references/ledger-protocol.md` | Drive ledger and knowledge-base mechanics (tested 2026-11-09) |
 | `references/subagent-briefs.md` | Role prompts and merging |
 | `scripts/risk_calc.py` | `binary` (with the framing table), `orrr`, `diagnostic`, `smd`, `frequencies`, `pctcheck`, `ci2smd`, **`blinding`, `bayes`, `evalue`, `retrodesign`, `meta`, `smd2nnt`** (advanced methods in `scripts/appraisal_advanced.py`; `--json` available; recipes in statistics-appraisal.md §18–19) |
+| `scripts/word_budget.py` | Counts body words (everything before the sources list or an appendix) against the mode budget; exit 1 when over |
 | `assets/` | Memo template, ledger template (CSV), knowledge-base source template |
 
 ## 9. Contingencies

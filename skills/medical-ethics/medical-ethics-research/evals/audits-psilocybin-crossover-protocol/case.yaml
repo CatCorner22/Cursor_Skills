@@ -1,0 +1,15 @@
+schema_version: "1.1"
+name: audits-psilocybin-crossover-protocol
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  A design audit that names the optimal design (a parallel-group randomized trial with an active placebo
+  or low-dose comparator, blinded remote raters, a pre-specified single primary endpoint, intention-to-treat
+  analysis, a blinding assessment, systematic adverse-event capture, and randomized durability follow-up),
+  explains why a crossover is inappropriate for a drug with lasting effects (carryover through a 4-week
+  washout), and flags the unblinded therapist-rater, the 25% responder threshold, the best-of-weeks
+  endpoint, the completers-only analysis with differential dropout, spontaneous-only adverse-event
+  reporting, the responder-only open-label extension, the missing blinding check, the missing power
+  calculation, and the hype-based recruitment. It states the direction of each bias, gives the framing
+  table for 9/15 vs 3/15 (60% vs 20%, +40 percentage points, RR 3, NNT 2.5 so 3, with wide intervals and
+  Fisher p about 0.06), and rebuts the "tripled" and "89% stayed well" headline.

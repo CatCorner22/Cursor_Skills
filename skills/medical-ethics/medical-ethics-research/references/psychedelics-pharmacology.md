@@ -58,7 +58,7 @@ Durations are approximate oral ranges unless noted [M].
   - Schedule III.
   - Esketamine (Spravato) nasal spray: FDA-approved, REMS, certified settings, 2-hour monitoring [M].
   - The regulatory precedent most often cited for psychedelic REMS design.
-- **Ayahuasca.** DMT plus β-carbolines (harmine, harmaline: reversible MAO-A inhibitors). Religious use protected in U.S. cases (*Gonzales v. O Centro Espírita*, 2006 [M]).
+- **Ayahuasca.** DMT plus β-carbolines (harmine, harmaline: reversible MAO-A inhibitors). In *Gonzales v. O Centro Espírita* (2006), the US Supreme Court upheld a preliminary injunction under RFRA for one church (the UDV); the ruling is narrow, not a general protection of religious ayahuasca use [V].
 
 ## 3. Safety: what is and is not known
 

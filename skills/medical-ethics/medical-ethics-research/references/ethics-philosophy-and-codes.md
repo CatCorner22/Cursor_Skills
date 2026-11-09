@@ -131,7 +131,7 @@ Moving between levels is the core skill. A code (level 5) is justified by princi
 
 - **What a profession is** [M]: specialized knowledge, a service ideal, self-regulation, and a social contract in which society grants autonomy in exchange for trust (Michael Davis on codes as conventions among professionals; social-contract accounts).
 - **Functions of codes:** aspirational (ideals), educational (teaching norms), regulatory (enforceable standards), protective (of the public and of the profession), and symbolic (signalling trustworthiness).
-- **The built-in tension:** codes both hold professionals accountable and protect them. Sadowski calls this the "ambivalence of professionalization" (*IEEE Technol Soc Mag* 2014;33(4)) [V: manuscript].
+- **The built-in tension:** codes both hold professionals accountable and protect them. Sadowski, quoting Bob Brecher, calls this the "ambivalence of professionalization" ("Leaning on the Ethical Crutch," *IEEE Technol Soc Mag* 2014;33(4):44–47, 72) [V]. Credit the phrase to Brecher.
 - **Structure of modern codes:** aspirational principles (not enforceable) plus enforceable standards. APA's code states this split explicitly, and its draft revision keeps it [V: APA comment portal: principles are "not enforceable"].
 
 ## 7. Current professional codes: versions and status
@@ -144,35 +144,35 @@ Moving between levels is the core skill. A code (level 5) is justified by princi
 | Code of Medical Ethics | American Medical Association | Opinions updated continually; first code 1847 | Chaperone Opinion 1.2.4 cited in this skill | M/V |
 | Principles of Medical Ethics with Annotations Especially Applicable to Psychiatry | American Psychiatric Association | Current edition | Includes the Goldwater Rule | M |
 | Ethical Principles of Psychologists and Code of Conduct | American Psychological Association | 2002, amended 2010 and 2017 | New draft out for 90-day comment (December 2024 to 2025-03-19); revision continuing | V |
-| ACA Code of Ethics | American Counseling Association | 2014 | Draft 2026 code; comments closed 2026-04-24; final expected **fall 2026**; the 2014 code governs until then | V |
-| NASW Code of Ethics | National Association of Social Workers | 2021 revision | Includes self-care and cultural competence updates | M |
-| Code of Conduct | Psychology Board of Australia | Applies from 2025-12-01 | Coexists with the APS Code of Ethics | S |
-| Good Medical Practice | UK General Medical Council | 2024 | — | M |
+| ACA Code of Ethics | American Counseling Association | 2014 | Draft 2026 code; comments were due 2026-04-17 (ACA draft-code page); final expected **fall 2026**; the 2014 code governs until then | V |
+| NASW Code of Ethics | National Association of Social Workers | 2021 revision | Includes self-care and cultural competence updates | V (revision date); M (content summary) |
+| Code of Conduct | Psychology Board of Australia | Applies from 2025-12-01 | Replaces the APS Code of Ethics, which the APS says "is no longer in effect" from that date | V |
+| Good Medical Practice | UK General Medical Council | 2024 (in effect 2024-01-30) | — | V |
 | MAPS Code of Ethics for psychedelic therapy | MAPS | v4 (2021-01-07) | Field-specific; see ethics-codes-to-borrow.md | V |
 | Colorado and Oregon facilitator rules | State regulators | Current | Enforceable, field-specific | V |
 
 ## 8. Do codes work? The evidence and the critiques
 
-- **Empirical evidence is weak and mixed.** In business ethics, Schwartz (2001) reviewed 19 studies: 8 found a significant effect of codes on behaviour and 9 found none [S: summary of Schwartz 2001]. In law, Wilkinson, Walker & Mercer (*McGill Law Journal* vol. 45) studied whether Ontario lawyers actually used their code to resolve ethical problems [V: article page].
+- **Empirical evidence is weak and mixed.** In business ethics, Schwartz (2001) is an interview study (57 interviews; *J Bus Ethics* 32(3):247–262) of how codes influence behaviour [V: citation]. A tally often attributed to the literature, 19 earlier studies with 8 finding an effect and 9 none, could not be traced to a primary source [M]; do not cite it. In law, Wilkinson, Walker & Mercer (*McGill Law Journal* vol. 45) studied whether Ontario lawyers actually used their code to resolve ethical problems [V: article page].
 - **Healthcare critiques:**
-  - Lipworth, Kerridge, Montgomery & Komesaroff, "Promoting ethics across the healthcare sector: what can codes achieve?" (*Intern Med J* 2020/2021; doi 10.1111/imj.15051) [V]: codes face conceptual tensions, power imbalances, organisational barriers, and exploitation (codes used as cover).
-  - "The promises and limitations of codes of medical ethics as instruments of policy change" (*Bioethics* 2023;37(4):406–415; doi 10.1111/bioe.13143) [V], tracing the Canadian Medical Association's code: codes are interpretive and "multivocal," so they often give more than one answer.
-  - A 2025 scoping review of comparative healthcare-code studies (*J Adv Nurs*; doi 10.1111/jan.16857) [V].
+  - Lipworth, Kerridge, Montgomery & Komesaroff, "Promoting ethics across the healthcare sector: what can codes achieve?" (*Intern Med J* 2020;50(11):1333–1338; doi 10.1111/imj.15051) [V]: codes face conceptual tensions, power imbalances, organisational barriers, and exploitation (codes used as cover).
+  - Komparic, Garon-Sayegh & Bensimon, "The promises and limitations of codes of medical ethics as instruments of policy change" (*Bioethics* 2023;37(4):406–415; doi 10.1111/bioe.13143) [V: citation; the content summary that follows is M until the full text is read], tracing the Canadian Medical Association's code: codes are interpretive and "multivocal," so they often give more than one answer.
+  - Essex et al., a 2025 scoping review of comparative healthcare-code studies (*J Adv Nurs* 2025;81(12):8457–8469; doi 10.1111/jan.16857) [V].
 - **What the critiques imply for drafting** (patient-protection-code.md §1): make rules specific and enforceable, separate aspiration from obligation, build in independent oversight, give clients the code, and audit compliance.
 
 ## 9. Psychedelic bioethics: the live debates
 
 | Debate | One side | Other side | Key sources |
 |---|---|---|---|
-| **Can consent be informed?** | The experience is epistemically transformative, so standard informed consent may be impossible; consider "transformative consent" or enhanced consent | Consent is possible with practical disclosure; many medical experiences are hard to imagine | Jacobs, *Front Psychol* 2023 (doi 10.3389/fpsyg.2023.1108333) [V]; Smith & Sisti, *JME* 2021;47:807–814 [V]; Kious, Peterson & McGuire, *Perspect Biol Med* 2024 special section [V]; Villiger, *AJOB* 2025, with a reply by Smith & Patch, *AJOB* 2025;25(7):151–153 [V] |
+| **Can consent be informed?** | The experience is epistemically transformative, so standard informed consent may be impossible; consider "transformative consent" or enhanced consent | Consent is possible with practical disclosure; many medical experiences are hard to imagine | Jacobs, *Front Psychol* 2023 (doi 10.3389/fpsyg.2023.1108333) [V]; Smith & Sisti, *JME* 2021;47:807–814 [V]; Kious, Peterson & McGuire, *Perspect Biol Med* 2024 special section [V]; Villiger, *AJOB* 2025;25(7):126–138 (target article), with an open peer commentary by Patch & Smith, *AJOB* 2025;25(7):151–153 [V] |
 | **Are psychedelics ethically exceptional?** | Unique risks (ego dissolution, suggestibility, belief change) need unique rules | "Distinctive but not exceptional": existing ethics tools mostly suffice; exceptionalism feeds hype | Cheung, Earp, Patch & Yaden, *AJOB* 2025;25(1):16–28 [V] |
 | **What consent documents actually say** | Bioethicists propose tailored disclosures | Trial consent forms often omit them | Cheung et al., *AJOB Empirical Bioethics* 2025;16(4):247–266 [V] |
-| **Set and setting as an ethical matter** | The environment is part of the intervention and must meet ethical standards | — | Patch & Smith, *Neuroethics* 2025;18(2):35 [V] |
-| **Medical vs. non-medical use** | Medical gatekeeping protects patients | Non-medical, guided use has its own value; medicalization narrows it | Caraccio et al., *Philos Psychol* 2025 [V]; Cheung, Earp & Yaden in *Perspect Biol Med* 2024 [V] |
-| **Must the experience matter?** | The subjective experience is central to benefit and has value in itself | Non-hallucinogenic analogues may deliver benefit without it ("neuroreductionism" vs. experience) | *Perspect Biol Med* 2024 special section [V] |
+| **Set and setting as an ethical matter** | The environment is part of the intervention and must meet ethical standards | A published reply: Hartogsohn et al., *Neuroethics* 2026;19(3):56 [V: citation; read it before summarizing its position] | Patch & Smith, *Neuroethics* 2025;18(2):35 [V] |
+| **Medical vs. non-medical use** | Medical gatekeeping protects patients | Non-medical, guided use has its own value; medicalization narrows it | Caraccio et al., *Philos Psychol* 2025 [V] |
+| **Must the experience matter?** | The subjective experience is central to benefit and has value in itself | Non-hallucinogenic analogues may deliver benefit without it ("neuroreductionism" vs. experience) | *Perspect Biol Med* 2024 special section, including Cheung, Earp & Yaden, "Valuing the Acute Subjective Experience," 67(1):155–165 [V: citation; filed here by title, full text not read] |
 | **Belief change** | Metaphysical belief change is a risk to disclose, and possibly a harm | It may be a benefit or neutral | Smith & Sisti 2021 [V]; Letheby, *Philosophy of Psychedelics* (2021) [M] |
 | **Facilitator personal experience** | Experience builds empathy and competence | It is not required and may bias practice | JAMA consensus point 14 [V]; Greenwall Foundation webinar, 2026-07-23 [V] |
-| **Hype and social value** | Optimism mobilizes funding and access | Hype distorts consent and policy | Cheung & Propes, *AJOB* 2025;25(8):107–110 [V]; Ehrenkranz, Cheung & Yaden, *Research Ethics* 2026;22(1):57–80 on de-biasing [V] |
+| **Hype and social value** | Optimism mobilizes funding and access | Hype distorts consent and policy | Propes & Cheung, *AJOB* 2025;25(8):107–110 [V]; Cheung, Ehrenkranz & Yaden, "Enhanced independence: De-biasing processes…," *Research Ethics* 2026;22(1):57–80 [V] |
 | **Malpractice and physician risk** | Liability fears slow adoption | Clear standards of care can reduce risk | *J Law Med Ethics* 2025;53(2):256–264 [V] |
 | **The overall map** | — | — | Caporuscio, Poppe, Gieselmann & Repantis, "Ethical issues with psychedelic-assisted treatments in psychiatry: a systematic scoping review," *Psychol Med* 2025;55 (doi 10.1017/S0033291725101761), which finds 7 domains ending with research ethics, special contexts, and societal implications [V] |
 | **Expert consensus** | — | — | McGuire et al., *JAMA Netw Open* 2024 (20 points; psychedelic-ethics-issues.md §14) [V] |
