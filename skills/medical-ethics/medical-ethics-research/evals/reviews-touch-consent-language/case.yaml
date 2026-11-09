@@ -1,0 +1,12 @@
+schema_version: "1.1"
+name: reviews-touch-consent-language
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  A review that identifies that touch consent is deferred to the altered state and left to facilitator
+  judgment, that the permitted touch is broad, that a single possibly unlicensed facilitator is a
+  boundary risk, that the recording clause lacks consent, access, retention and review terms, and that
+  "anything you say is confidential" is inaccurate (mandatory reporting, duty to protect, regulators,
+  subpoena). It proposes replacement provisions that cite donor sources such as Oregon OAR 333-333-5040
+  and 333-333-5120, the MAPS Code of Ethics touch and sexual-boundaries sections, ABA Model Rule 1.14 or
+  similar diminished-capacity analogues, and chaperone norms, and it states how each was adapted.

@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: pipeline-status-and-voucher-ethics
+expected_outcome: |
+  An answer, dated to the current date, stating that no psilocybin product is FDA-approved, that Compass
+  submitted (completed) its COMP360 NDA for treatment-resistant depression in November 2026 under a
+  Commissioner's National Priority Voucher, and that Usona's MDD filing is reported but unconfirmed; giving
+  the Phase 3 MADRS differences (about 3.6 and 3.8 points) with confidence intervals and noting that the
+  clinical-importance threshold is debated; and presenting the strongest arguments on both sides of the
+  accelerated review without a personal political verdict, with sources.

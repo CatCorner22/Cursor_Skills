@@ -1,0 +1,6 @@
+ID,Type,Item,Status,Owner,Evidence label,Source,Source tag,Checked on,Links / notes,Updated
+L-001,LOG,"Ledger created for project <project-slug>; objective: <one sentence>",DONE,MANAGER,,,,<YYYY-MM-DD>,,<YYYY-MM-DD HH:MM>
+SC-001,SCOPE,"In scope: <what this review covers>",OPEN,MANAGER,,,,,,<YYYY-MM-DD HH:MM>
+SC-002,SCOPE,"Out of scope: <what this review does not cover>",OPEN,MANAGER,,,,,,<YYYY-MM-DD HH:MM>
+SC-003,SCOPE,"Definition of done: <deliverable, format, audience, deadline>",OPEN,MANAGER,,,,,,<YYYY-MM-DD HH:MM>
+Q-001,QUESTION,"<First research question, one sentence>",OPEN,MANAGER,,,,,,<YYYY-MM-DD HH:MM>

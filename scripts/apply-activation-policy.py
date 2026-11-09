@@ -79,6 +79,11 @@ PACK_BLURBS = {
         "Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style.",
         "Mention when reviewing, marking up, or drafting contract language.",
     ),
+    "medical-ethics": (
+        "Medical and research ethics",
+        "Research manager for medical, psychiatric, therapy, and research ethics, psychedelics and the FDA pipeline, and trial statistics; ships a calculator, a knowledge base, and evals.",
+        "Mention when appraising a study or press release, reviewing a consent form or protocol, or asking an ethics or psychedelic-pipeline question.",
+    ),
     "microsoft365": (
         "Microsoft 365",
         "Word, Excel, PowerPoint, Outlook, Teams, OneDrive.",
