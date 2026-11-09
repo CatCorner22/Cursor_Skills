@@ -23,6 +23,7 @@ Tags: **[M]** marks a figure from training knowledge that has not been re-verifi
 16. Bayesian reasoning and prior plausibility
 17. Checklist: reading a press release or abstract
 18. Calculator recipes
+19. Advanced methods: blinding indexes, Bayesian reanalysis, E-value, retrodesign, meta-analysis, SMD to NNT
 
 ---
 
@@ -286,3 +287,47 @@ python3 $S ci2smd --md -3.6 --lo -5.7 --hi -1.5 --n1 171 --n0 87
 - Say so in the memo: "counts reconstructed from rounded percentages; ±1 participant."
 - Run a sensitivity check with ±1 event if the conclusion is close.
 - Always run `pctcheck` first. An impossible percentage means the analysis population differs from the randomized population, and that is a finding in itself.
+
+## 19. Advanced methods (added 2026-11-09)
+
+All six were checked against SciPy, statsmodels, or simulation: 3,814 checks, 0 failures (workspace script `verify_advanced.py`). Each prints its assumptions; repeat them in the memo. The method citations below are from training memory [M] except Petroff 2024 [V] and the James and Bang citations, which match the R package BI documentation [V]; check volume and page before quoting them.
+
+**Blinding indexes** (`blinding`). Use when a trial reports end-of-study guesses. Inputs are counts by true arm: guessed treatment, guessed control, don't know.
+- *Bang index* (Bang, Ni & Davis, *Control Clin Trials* 2004;25:143–156), per arm, from −1 to 1: 0 = random guessing; 1 = all correct; −1 = all wrong. The usual convention treats −0.2 to 0.2 as consistent with blinding.
+- *James index* (James et al., *Stat Med* 1996;15:1421–1434), overall, from 0 to 1: 0 = all correct; 0.5 = random; 1 = all "don't know." Unblinding is claimed when the CI's upper limit is below 0.5.
+- Known weakness: the James index rewards "don't know" answers and is hard to read above 0.5 (Petroff et al., *Contemp Clin Trials Commun* 2024). Report both indexes and the raw guess table.
+- Psychedelic use: correct-guess rates near 90% or more are common [S]. A high Bang index in the drug arm is direct evidence for the functional-unblinding flag.
+
+**Bayesian reanalysis** (`bayes`). Turns a reported estimate and CI into the probabilities a reader cares about: P(any benefit), P(benefit at least the MCID), P(harm), under four priors.
+- *Flat:* the data alone.
+- *Skeptical:* centred on no effect, with a 5% prior chance the effect is at least the MCID. This is Spiegelhalter's standard skeptic.
+- *Enthusiastic:* centred on the MCID, with a 5% prior chance of no benefit.
+- *Custom:* a prior mean and SD you supply, for example from a prior meta-analysis.
+- *Analysis of Credibility* (Matthews, *JRSS A* 2001; *Am Stat* 2019). For a significant result, the **critical skeptical limit** is the smallest effect a skeptic must already find plausible before the finding is credible. For a non-significant result, the **critical advocacy limit** marks how far a favourable prior must reach before the result counts as evidence of an effect. Solved numerically and checked against the closed forms.
+- Use it when a press release says "statistically significant" and the question is "how likely is a meaningful benefit?" COMP005 (−3.6, CI −5.7 to −1.5; MCID −2) gives P(benefit ≥ MCID) of 0.93 with a flat prior and 0.51 with a skeptical prior. Report every prior, never only the favourable one.
+
+**E-value** (`evalue`; VanderWeele & Ding, *Ann Intern Med* 2017;167:268–274). The minimum strength of association, on the risk-ratio scale, that an unmeasured confounder would need with both exposure and outcome to explain away an observed association. It applies only to **comparisons between groups** in observational data. It does **not** apply to a single-arm before/after change such as the OPEN Oregon cohort, which has no comparison group to confound.
+
+**Retrodesign** (`retrodesign`; Gelman & Carlin, *Perspect Psychol Sci* 2014;9:641–651). Given a plausible true effect from outside the study, plus the study's SE: power, Type S error (the chance a significant result has the wrong sign), and the exaggeration ratio (how much a significant result overstates the truth on average). It explains why Phase 2 effects shrink in Phase 3. Example: a true MADRS effect of −3.7 and the Phase 2b SE of 1.86 give 51% power and an expected 1.4-fold exaggeration among significant results. Never use the study's own estimate as the "true effect."
+
+**Meta-analysis** (`meta`). Inverse-variance pooling: fixed effect, DerSimonian–Laird, Paule–Mandel, or REML (the default). It reports Q, I², tau², and the **Hartung–Knapp–Sidik–Jonkman** CI using t(k−1); the SE may not fall below the Wald SE. It also gives a **prediction interval** (Higgins, Thompson & Spiegelhalter, *JRSS A* 2009), which describes where a new setting's true effect may fall and is often far wider than the CI.
+- With 2–4 studies, tau² is poorly estimated: prefer HKSJ and say so.
+- Pooling does not fix shared bias. Every psychedelic trial shares functional unblinding.
+- Example (COMP360 Phase 2b, COMP005, COMP006 on MADRS): pooled −4.1 (Wald CI −5.4 to −2.8; HKSJ CI −7.1 to −1.1); prediction interval −12.8 to +4.6. The trials differ in comparator and dose, so treat this as an illustration, not a finding.
+
+**SMD to NNT** (`smd2nnt`).
+- *Kraemer & Kupfer* (*Biol Psychiatry* 2006;59:990–996): NNT = 1 / (2Φ(d/√2) − 1). No control rate is needed. It is the probability that a random treated patient does better than a random control patient, restated as an NNT.
+- *Furukawa & Leucht* (*PLoS One* 2011;6:e19070) uses the control-group responder rate, which the answer depends on heavily. d = 0.44 gives NNT 4.1 (Kraemer), or 6.9 at a 20% control response rate (Furukawa).
+- Flip the sign first so that positive d means benefit.
+
+```bash
+S=scripts/risk_calc.py
+python3 $S blinding --t-guess-t 82 --t-guess-c 27 --t-dk 25 --c-guess-t 29 --c-guess-c 170 --c-dk 83
+python3 $S bayes --est -3.6 --lo -5.7 --hi -1.5 --mcid -2 --better lower
+python3 $S bayes --est 0.5 --lo 0.2 --hi 1.25 --scale ratio --mcid 0.8 --better lower
+python3 $S evalue --measure rr --est 3.9 --lo 1.8 --hi 8.7
+python3 $S retrodesign --true-effect -3.7 --se 1.86
+python3 $S meta --est -6.6 -3.6 -3.8 --lo -10.2 -5.7 -5.8 --hi -2.9 -1.5 -1.8 --labels P2b COMP005 COMP006
+python3 $S smd2nnt --d 0.44 --cer 0.2
+```
+

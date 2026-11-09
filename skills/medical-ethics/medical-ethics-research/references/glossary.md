@@ -21,6 +21,7 @@
 ---
 
 ## A
+- **Authorised Prescriber (AP) scheme** — Australia's TGA pathway that lets an individually approved psychiatrist prescribe an unapproved medicine; since 2023-07-01, MDMA for PTSD and psilocybine for TRD. Not a product approval (international-access.md §2).
 - **Absolute benefit increase (ABI)** — risk1 − risk0 for a *good* outcome (e.g., response). → NNT.
 - **Absolute risk increase (ARI)** — risk1 − risk0 for a *bad* outcome that the intervention increases. → NNH.
 - **Absolute risk reduction (ARR)** — risk0 − risk1 for a bad outcome the intervention reduces. Expressed in percentage points.
@@ -106,6 +107,7 @@
 - **Justice** — fair distribution of benefits and burdens, including fair selection of research participants and fair access.
 
 ## L
+- **Limited medical use** — Switzerland's FOPH exceptional authorisation, under Narcotics Act Art. 8(5), to treat a named patient with a banned narcotic (LSD, MDMA, psilocybin). Case by case; not a marketing authorisation.
 - **Least-squares (LS) mean** — a model-adjusted mean. Typical of press-release efficacy numbers.
 - **Likelihood ratio (LR+ / LR−)** — how much a positive or negative test result changes the odds of disease.
 - **LOCF** — last observation carried forward. An outdated missing-data method.
@@ -179,4 +181,5 @@
 - **Voluntariness** — freedom from coercion and undue influence. A threshold element of consent.
 
 ## W
+- **Within-person relative risk** — the ratio of a condition's prevalence after an exposure to its prevalence before, in the same people (e.g., OPEN cohort depression RR 0.40). It has no control group, so it is not a treatment effect.
 - **Winner's curse** — statistically significant estimates from underpowered studies overstate the true effect.

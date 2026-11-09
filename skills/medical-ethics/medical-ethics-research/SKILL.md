@@ -1,7 +1,7 @@
 ---
 name: medical-ethics-research
 disable-model-invocation: true
-description: Research manager, progress tracker, and agent facilitator for medical-ethics and evidence reviews, with a built-in, dated knowledge base on psychedelics and the 2026 FDA psychedelic pipeline (including the priority-voucher controversy), medical/research/therapy/psychiatric ethics and bioethics, codes of ethics to borrow from, consent-form review, and statistical appraisal (absolute vs relative risk, NNT, CIs, base rates, study-design flaws). Use it whenever Blake asks to review, appraise, or research the ethics or evidence behind a study, trial, protocol, consent form, press release, FDA action, or psychedelic therapy; asks whether a medical claim's numbers hold up; wants a code-of-ethics comparison; or wants to resume a tracked ethics research project — even if he never says "ethics review."
+description: Research manager, tracker, and agent facilitator for medical-ethics and evidence reviews. Dated knowledge base on psychedelics (history, substances, risks, the 2026 FDA pipeline and voucher controversy, access in Australia, New Zealand, Europe, Canada, and Oregon), medical, research, therapy, and psychiatric ethics and bioethics with their philosophy and literature, codes of ethics to borrow from, what a patient-protection code must contain, consent-form review, trial-design evaluation, and statistical appraisal (absolute vs relative risk, NNT, CIs, Bayesian and meta-analytic tools). Use it whenever Blake asks to review, appraise, or research the ethics, evidence, or design behind a study, trial, protocol, consent form, press release, regulator's decision, code, or psychedelic therapy; asks whether a medical claim's numbers hold up; or wants to resume a tracked ethics project, even if he never says "ethics review."
 ---
 # Medical Ethics Research Manager
 
@@ -19,8 +19,8 @@ You act as a research **manager**: you scope the work, track it in a persistent 
    **Computed numbers take the label of their inputs.** The calculator's arithmetic is exact, but its result is only as good as what went in. Write **[FACT; calc]** when the inputs are FACTs and **[CLAIM; calc]** when they come from a press release or other unverified source. Never label a calculator result [JUDGMENT]. Say so when the counts were reconstructed from rounded percentages. Use **[calc; hypothetical]** for an illustration with made-up inputs.
 
    **Source tags map to labels:** [V] primary source checked → FACT; [S] secondary only → CLAIM, unless two independent secondary sources agree and the fact is not contested; [U] → CLAIM, unconfirmed; [M] → do not state it until you check it. Textbook definitions and general explanations need no label; label every statement about a study, a drug, a person, or an agency.
-2. **Never do statistics in your head.** Run `scripts/risk_calc.py` for every ARR, RRR, NNT, OR, RR, CI, SMD, denominator check, or fragility index you report. Mental arithmetic on rounded percentages is the most common appraisal error.
-3. **Report absolute and relative effects together,** with the time frame. Put benefits and harms on the same scale.
+2. **Never do statistics in your head.** Run `scripts/risk_calc.py` for every ARR, RRR, NNT, OR, RR, CI, SMD, denominator check, fragility index, blinding index, Bayesian probability, E-value, power or exaggeration figure, or pooled estimate you report. Mental arithmetic on rounded percentages is the most common appraisal error.
+3. **Absolute and relative effects, always together.** This is the skill's most important habit. Every answer that reports a treatment effect on a yes/no outcome includes the **framing table** that `risk_calc.py binary` prints (`framing_table`): baseline risk, intervention risk, absolute difference with its CI, relative difference with its CI, counts per 1,000, and NNT or NNH with its CI. Give the time frame. Put benefits and harms on the same scale, side by side. Lead with the absolute figure when the baseline risk is low. When a source reports only a relative figure, say so and reconstruct the absolute one, or say it cannot be reconstructed. For continuous outcomes (MADRS points), give the mean difference, the SMD, and an NNT from `smd2nnt`, and say the NNT is a conversion.
 4. **Re-verify anything that changes.** `references/fda-pipeline.md` was verified on 2026-11-09. Treat any status fact older than 60 days as "last known," re-check it with a search, and record the check date. **A search miss is not a contradiction.** A standard search often misses news less than a week old. Before you downgrade a bundled [V] fact, run one *extended* search for it. If that also misses, keep the fact, its bundled source, and its verification date, keep the FACT label when the bundled source is primary and less than 60 days old, and say that today's search did not find it again. Downgrade to CLAIM only when the bundled source was secondary or a newer source contradicts it.
 5. **Be fair on contested questions.**
    - On policy and political disputes (EO 14401, the voucher program, drug policy), give the strongest version of each side.
@@ -53,12 +53,18 @@ You act as a research **manager**: you scope the work, track it in a persistent 
 | Request type | Read first | Read if needed |
 |---|---|---|
 | Press release, abstract, or "do the numbers hold up?" | statistics-appraisal.md §2–3, §17–18; study-design-flaws.md §3, §6 | fda-pipeline.md §2b–2c (benchmarks, base rates); ethics-frameworks.md §2, §11 and consent-review-checklist.md §3 (21 CFR 312.7) when the user asks about ethics or promotion |
-| Trial or paper appraisal | study-design-flaws.md; statistics-appraisal.md | psychedelics-pharmacology.md §3–6 |
+| Trial or paper appraisal | study-design-flaws.md; statistics-appraisal.md; **trial-design.md §1 and §6** (the seven-step audit and the bias-direction table) | psychedelics-pharmacology.md §3–6 |
+| "What design should this study use?", protocol design, or "what would a better trial look like?" | **trial-design.md** (§2 question-to-design table; §7 the optimal psychedelic trial) | study-design-flaws.md; statistics-appraisal.md §7 |
 | Pipeline, status, or "where does X stand?" | fda-pipeline.md §1, §2a, §3, and the program's §4 entry; §2b when the user asks how well it works | psychedelic-ethics-issues.md §7; statistics-appraisal.md §8 (MCID debate) when the user asks how well a drug works |
 | A concept explained with a named trial's numbers ("ARR vs RRR using Emerge") | statistics-appraisal.md §2–3, §18; the trial's fda-pipeline.md §4 entry (for group sizes) | glossary.md |
 | Consent form, protocol, or facilitator policy | **consent-review-checklist.md**; ethics-codes-to-borrow.md §1 | psychedelic-ethics-issues.md §1–3 |
-| Ethics question (general) | ethics-frameworks.md §2, §11 | §4–8 by topic; psychedelic-ethics-issues.md |
+| Ethics question (general) | ethics-frameworks.md §2, §11 | §4–8 by topic; psychedelic-ethics-issues.md; **ethics-philosophy-and-codes.md** when the question needs theory in depth, a concept's history, or literature citations |
+| Philosophy of ethics, "what would a Kantian / utilitarian / care ethicist say," codes in general, or "what does the bioethics literature say?" | **ethics-philosophy-and-codes.md** (§2 theories; §7 current codes; §8 do codes work; §9 psychedelic debates; §10 journals) | ethics-frameworks.md |
+| "What should a code of ethics for psychedelic care include?", or auditing a facilitator code or policy | **patient-protection-code.md** (20 domains; enforcement; model provisions; audit steps) | ethics-codes-to-borrow.md; consent-review-checklist.md |
+| History, a specific substance's effects and risks, or drug interactions | **psychedelic-history-and-substances.md** | psychedelics-pharmacology.md; fda-pipeline.md for status |
 | Code comparison or "borrow from other professions" | ethics-codes-to-borrow.md | consent-review-checklist.md §5 |
+| Other countries, Oregon or Colorado program data, or "is it legal/approved in X?" | **international-access.md** (status table §1, then the country's section) | fda-pipeline.md §5; psychedelic-ethics-issues.md §8, §11 |
+| Consensus statements, expert guidance, or "what does JAMA say?" | psychedelic-ethics-issues.md §14 | study-design-flaws.md §3 (JAMA trials and meta-analyses) |
 | Terminology | glossary.md | — |
 
 **Two-part requests:** combine the rows. Read every matching row's "Read first" column; open "Read if needed" only when a gap appears.
@@ -116,17 +122,22 @@ Blake follows Ken Adams's *Manual of Style for Contract Drafting* (5th ed.) and 
 | File | Contents |
 |---|---|
 | `references/fda-pipeline.md` | Status (dated 2026-11-09), regulatory actions, **voucher program facts and controversy (§2a)**, **effect-size table (§2b)**, **development base rates (§2c)**, program details |
+| `references/psychedelic-history-and-substances.md` | Timeline from ceremonial use to 2026; lessons from history (MKUltra, Harvard, MDMA scheduling, MP4, Lykos); substance monographs; cross-cutting risks; interactions (lithium seizures, MAOIs); higher-risk groups. No dosing guidance |
+| `references/patient-protection-code.md` | What a psychedelic code of ethics must address: why codes fail, 20 domains with minimum vs. optimal standards and donors, enforcement architecture, model provisions, audit steps |
+| `references/ethics-philosophy-and-codes.md` | Normative theories applied to medicine, mid-level frameworks, core concepts with their history, justice and the health system, theory of professional codes, current code versions, evidence on whether codes work, psychedelic bioethics debates, journals |
 | `references/psychedelics-pharmacology.md` | Mechanisms, durations, safety, interactions, legal status, rating scales |
 | `references/statistics-appraisal.md` | Absolute vs relative risk, NNT, CIs and p-values, MCID, missing data, multiplicity, meta-analysis, diagnostics, priors, calculator recipes |
+| `references/trial-design.md` | Question-to-design matching, every major randomized and observational design with its failure modes, a table of suboptimal design → consequence → direction of bias, the optimal psychedelic trial, a seven-step design audit |
 | `references/study-design-flaws.md` | Bias catalog, psychedelic design problems, CONSORT/SPIRIT 2025, RoB 2, ROBINS-I V2, GRADE, spin |
 | `references/ethics-frameworks.md` | Theories, principlism, research regulations, consent and capacity, psychiatry and therapy ethics, landmark cases, the analysis method |
-| `references/psychedelic-ethics-issues.md` | Consent under altered states (Smith & Sisti; Caporuscio), touch, the MAPS/Buisson case, the hype and voucher debate, access, Indigenous reciprocity, commercialization |
+| `references/psychedelic-ethics-issues.md` | Consent under altered states (Smith & Sisti; Caporuscio), touch, the MAPS/Buisson case, the hype and voucher debate, access, Indigenous reciprocity, commercialization, **the JAMA consensus statement's 20 points and the 2026 JAMA EO Viewpoint (§14)** |
+| `references/international-access.md` | Australia, New Zealand, Switzerland, Germany, Czech Republic, Canada, EU/UK access pathways (dated 2026-11-09); Oregon finances and the OPEN cohort; appraising real-world program data; a cross-model ethics table |
 | `references/consent-review-checklist.md` | 21 CFR 50.25 elements, psychedelic-specific items, confidentiality law (Certificates of Confidentiality, *Jaffee*, 312.62, 312.7), drafting steps, donor table |
 | `references/ethics-codes-to-borrow.md` | Gap map from psychedelic-care problems to donor code provisions; how to write a borrowed provision |
 | `references/glossary.md` | One meaning per term |
 | `references/ledger-protocol.md` | Drive ledger and knowledge-base mechanics (tested 2026-11-09) |
 | `references/subagent-briefs.md` | Role prompts and merging |
-| `scripts/risk_calc.py` | `binary`, `orrr`, `diagnostic`, `smd`, `frequencies`, `pctcheck`, `ci2smd` (`--json` available) |
+| `scripts/risk_calc.py` | `binary` (with the framing table), `orrr`, `diagnostic`, `smd`, `frequencies`, `pctcheck`, `ci2smd`, **`blinding`, `bayes`, `evalue`, `retrodesign`, `meta`, `smd2nnt`** (advanced methods in `scripts/appraisal_advanced.py`; `--json` available; recipes in statistics-appraisal.md §18–19) |
 | `assets/` | Memo template, ledger template (CSV), knowledge-base source template |
 
 ## 9. Contingencies

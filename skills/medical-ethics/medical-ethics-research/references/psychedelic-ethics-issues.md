@@ -24,6 +24,7 @@ For contested political questions (the executive order, the pace of FDA review, 
 11. Non-medical (state) models vs the medical model
 12. Special populations
 13. Data, recording, and privacy
+14. The JAMA consensus statement and JAMA commentary (2024–2026)
 
 ---
 
@@ -219,7 +220,8 @@ An approval can be scientifically sound and procedurally contestable at the same
 
 ## 11. Non-medical (state) models vs the medical model
 
-- **Oregon** frames psilocybin services as *not* medical treatment. No diagnosis is required, and facilitators may not make therapeutic claims [V/S].
+- **Oregon** frames psilocybin services as *not* medical treatment. No diagnosis is required, and facilitators may not make therapeutic claims [V/S]. Program finances, closures, and the 2026 OPEN cohort data are in international-access.md §9.
+- **International medical models** (Australia, New Zealand, Switzerland, Germany, Czech Republic) and a comparison table are in international-access.md §1 and §11.
 - **Colorado** licenses facilitators and healing centers [V].
 - **Ethical tension:** autonomy and access vs medical screening; harm-reduction vs consumer-protection models; equity of access when prices are high; unlicensed facilitators working with people who in fact have serious mental illness.
 
@@ -237,3 +239,52 @@ An approval can be scientifically sound and procedurally contestable at the same
 - **Sensitivity.** Session recordings contain highly sensitive disclosures. Ask who owns them, who may access them, how long they are retained, and whether they may be used for training.
 - **Legal exposure.** Use of a Schedule I drug creates legal risk if records are subpoenaed. Certificates of Confidentiality for NIH-funded and other qualifying research protect against compelled disclosure [M].
 - **Real-world data.** Post-approval REMS registries and digital monitoring raise consent and secondary-use questions. Helsinki 2024 addresses broad consent for data reuse [V].
+
+## 14. The JAMA consensus statement and JAMA commentary (2024–2026)
+
+**McGuire AL, Cohen IG, Sisti D, et al. "Developing an Ethics and Policy Framework for Psychedelic Clinical Care: A Consensus Statement." *JAMA Netw Open* 2024;7(6):e2414650 (published 2024-06-04)** [V: JAMA Network page].
+- **Method:** not a Delphi study. It came from a 2.5-day in-person workshop at the Banbury Center (Cold Spring Harbor Laboratory) in June 2023, with 27 attendees (clinicians, researchers, Indigenous groups, industry, philanthropy, veterans, retreat facilitators, training programs, bioethicists). The organizers drafted the summary and the attendees revised it. **The paper does not grade the evidence behind its points**, so cite it as expert consensus, not evidence.
+- **Five issues, 20 points** (paraphrased; responsible actor in parentheses):
+  - *Reparations, reciprocity, equity, and respect:*
+    1. Medical practice and policy should not interfere with Indigenous or religious use (policymakers).
+    2. Historically marginalized groups should have a voice in policy at every level (policymakers).
+    3. Build Indigenous and marginalized groups' expertise into training and certification (researchers, training programs).
+    4. Credit Indigenous knowledge in publications (journal editors).
+    5. Make diversity and inclusion central to research and clinical use (researchers, clinicians).
+    6. Encourage data sharing (sponsors, researchers).
+  - *Informed consent:*
+    7. Tell patients about the full range of possible experiences, **including no response** (researchers, clinicians).
+    8. Trials should test how the consent process affects outcomes (researchers, sponsors).
+  - *Professional boundaries and physical touch:*
+    9. Tell patients that **safety touch will be used as necessary**; patients should share in decisions about supportive touch (researchers, clinicians).
+    10. **Patients can always refuse supportive touch during a session, even if their capacity is impaired at that moment** (researchers, clinicians).
+    11. **Video-record sessions if mutually agreed** (researchers, clinicians).
+    12. Professional oversight bodies should vet facilitators (professional societies, training programs).
+    13. Trials should study supportive touch (researchers, sponsors).
+  - *Personal experience:*
+    14. **Personal psychedelic experience should not be required** for training, certification, or licensure (training programs, societies, licensing boards).
+    15. Trials should study how facilitators' personal experience affects the therapeutic relationship (researchers, sponsors).
+  - *Gatekeeping:*
+    16. Set core competencies for training and certification (societies, training programs).
+    17. Public and private insurers, including Medicare and Medicaid, should cover psychedelic medicines **at parity** with other mental-illness drugs (payers).
+    18. Trials should clarify how therapy and psychosocial support affect outcomes (researchers, sponsors).
+    19. The DEA should consider rescheduling psychedelics with accepted medical use (DEA).
+    20. FDA-approved psychedelic medicines should be prescribed by licensed providers (state licensing boards).
+- **How to use it in a review:**
+  - Points 9–11 are donor language for consent forms, alongside Colorado Rule 6.6 and MAPS §5 (consent-review-checklist.md).
+  - Point 11 ("if mutually agreed") is weaker than Colorado Rule 6.18(G)(2), which requires a recording when no second facilitator is present outside a healing center. Say which standard you recommend and why.
+  - Point 10 fits the Colorado rule that consent during a session can only narrow the contract: a refusal narrows consent, so honoring an in-session refusal satisfies both.
+
+**Cohen IG, Fernandez Lynch H, McGuire AL. "The Psychedelic Therapies Executive Order: On Approval and Clinical Readiness." *JAMA* 2026;336(5):367–368 (Viewpoint; online 2026-07-01; issue 2026-08-04; doi 10.1001/jama.2026.11892)** [V for the citation]. The arguments below come from a page excerpt; the full text is paywalled [U]. The legal premise is correct [V]: Right to Try (Pub. L. 115-176) defines eligibility by reference to 21 CFR 312.81.
+- It discusses EO 14401 (2026-04-18): CNPVs for psychedelics with Breakthrough designation, public investment, and pre-approval access.
+- **Right to Try point:** Right to Try eligibility depends on a life-threatening condition (21 CFR 312.81). Most psychedelic trials do not use survival as an endpoint, so whether psychedelics qualify for Right to Try is unclear.
+- **Practice-of-medicine point:** states retain primary authority over medical practice, but the authors argue federal leadership is needed for an effective clinical rollout.
+- Use it as the mainstream bioethics-law response to the EO. Attribute its arguments to the authors.
+
+**Related JAMA-network items in this knowledge base:**
+- Williams, Barnett & Szigeti, *JAMA Psychiatry* 2026 (equal-unblinding meta-analysis): study-design-flaws.md §3.
+- Hieronymus et al., *JAMA Netw Open* 2025 (control-arm underperformance): study-design-flaws.md §3.
+- Korthuis et al., *JAMA Netw Open* 2026 (OPEN Oregon cohort): international-access.md §9.
+- McNamee, Devenot & Buisson, "Studying Harms Is Key to Improving Psychedelic-Assisted Therapy," *JAMA Psychiatry* 2023;80(5):411–412 [V: citation in arXiv reference list]: participants call for harms research. Use it with §3.
+- Raison et al., *JAMA* 2023 (Usona PSIL201): fda-pipeline.md §2b.
+

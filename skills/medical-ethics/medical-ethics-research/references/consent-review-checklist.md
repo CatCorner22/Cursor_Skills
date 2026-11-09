@@ -64,6 +64,7 @@ Tags: **[V]** verified 2026-11-09; **[S]** secondary; **[M]** training knowledge
 2. **Staffing.**
    - Who is present, and their license status.
    - At least two monitors for high-dose sessions: Johnson, Richards & Griffiths, *J Psychopharmacol* 2008;22(6):603–620 [V].
+   - Australia (TGA, May 2026): the authorised psychiatrist plus at least one National Board-registered practitioner; the psychiatrist does screening and consent in real time (virtual judged inadequate) and is physically present during administration [V: TGA outcomes page]. See international-access.md §2.
    - Whether the participant may request a particular gender or a second person.
    - Medical cover and its response time.
 3. **Recording.** All of these should be stated:
@@ -133,6 +134,8 @@ Tags: **[V]** verified 2026-11-09; **[S]** secondary; **[M]** training knowledge
 | Touch scope (alternative) | Oregon OAR 333-333-5120(7) | Client-requested; prior written consent; hugs or hands on hands, feet, shoulders; group peer touch by consent | V |
 | Touch acknowledgment | Oregon OAR 333-333-5040 consent form, item 9 | No touch without prior written consent; types discussed beforehand | V |
 | Re-consent each session | Texas massage rule, 16 TAC §117.91(c) (new written consent before each session) | Re-sign the touch agreement for every dosing session | S (cited by a test run; verify) |
+| Supportive-touch refusal; safety-touch notice; recording | JAMA consensus (McGuire et al., *JAMA Netw Open* 2024;7(6):e2414650), points 9–11 | Tell participants safety touch will be used as necessary; participants can always refuse supportive touch, even with impaired capacity; video-record if mutually agreed (weaker than Colorado 6.18(G)(2)) | V |
+| Two-person team; real-time consent by the prescriber | TGA Authorised Prescriber recommendations, May 2026 | Psychiatrist plus a registered second practitioner; real-time screening and consent (virtual judged inadequate); prescriber physically present during administration | V |
 | Two monitors; preparation hours | Johnson, Richards & Griffiths 2008 | At least two monitors; rapport built before dosing; safe setting; follow-up for HPPD | V |
 | Sexual boundaries | MAPS Code v4 §6; AMA and APA (psychiatry) prohibitions | Absolute prohibition | V / M |
 | Chaperone | AMA Code of Medical Ethics Opinion 1.2.4 (Use of Chaperones) | Offer or require a chaperone; honor a patient's request for one | V (checked by a test run 2026-11-09) |

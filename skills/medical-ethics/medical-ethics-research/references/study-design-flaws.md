@@ -94,6 +94,12 @@ Names follow the Catalogue of Bias (Oxford CEBM) and Cochrane RoB 2 domains wher
 
 1. **Functional unblinding.**
    - Problem: intense subjective effects reveal assignment. Evidence: MDMA participants nearly all guessed correctly (Lykos AdComm); TEAE rates of 95% vs 63% (Definium Panorama).
+   - **Equal-unblinding comparison.** Williams ZJ, Barnett H, Szigeti B. "Psychedelic Therapy vs Antidepressants for the Treatment of Depression Under Equal Unblinding Conditions." *JAMA Psychiatry* 2026;83(5):461–468 (online 2026-03-18; doi 10.1001/jamapsychiatry.2025.4809) [V: JAMA abstract page].
+     - Logic: psychedelic trials are effectively open label, so compare them with **open-label** antidepressant trials, not placebo-controlled ones.
+     - Data: 8 psychedelic-assisted-therapy trials (249 patients) vs. 16 open-label antidepressant trials (7,921 patients); a blinded-antidepressant comparison set of 144 trials (31,792 patients). Outcome: within-arm HAM-D-17 change.
+     - Result: **difference 0.3 points favoring open-label antidepressants (95% CI −1.39 to 1.98; P = .73).** Blinding mattered for antidepressants (open label better by 1.3 points, 95% CI 0.07 to 2.51) but not for psychedelic therapy (printed as 0.67 points, 95% CI −3.08 to 1.73; the CI centres near −0.68, so the printed sign is probably a typo in the source), which supports "effectively always open label."
+     - Critiques to report alongside it [S: published reader comments; expert reactions]: the psychedelic samples skew toward treatment-resistant patients; the sample sizes are very unequal; there is no patient-level adjustment for severity or treatment history; and within-arm comparisons across trials are observational.
+     - Use: when a source claims psychedelics beat SSRIs, cite this paper and Hieronymus 2025 (below) together, with their limitations. Neither shows psychedelics are ineffective; both show the size of the advantage is not established.
    - **Control arms underperform.** Hieronymus, López, Sjögren & Lundberg, *JAMA Netw Open* 2025 (doi 10.1001/jamanetworkopen.2025.24119; 17 double-blind MADRS trials, n=4,960): control-arm improvement was about half as large in psilocybin trials (standardized mean change 0.50) as in SSRI (1.00) and esketamine (1.12) trials; control-arm response 19% vs 33% vs 42%. Part of psilocybin's large between-group effect comes from control groups that did poorly, likely from disappointment once participants realize they did not get the drug [V: Technology Networks and AJMC summaries of the paper; the mechanism is the authors' hypothesis]. Hsu et al., *BMJ* 2024;386:e078607 (Bayesian network meta-analysis) reached a similar conclusion: against the placebo response seen in antidepressant trials, high-dose psilocybin's advantage shrank to a small effect [V: AAFP POEM]. Use both when a press release compares psilocybin's effect size with SSRIs'.
    - Mitigations, none complete:
      - active placebo (niacin, diphenhydramine, methylphenidate);
@@ -125,6 +131,7 @@ Names follow the Catalogue of Bias (Oxford CEBM) and Cochrane RoB 2 domains wher
 
 | Situation | Tool | Notes |
 |---|---|---|
+| Reporting set and setting in psychedelic trials | **ReSPCT** (Reporting of Setting in Psychedelic Clinical Trials): 30 extra-pharmacological items in four domains (physical environment, dosing-session procedure, therapeutic framework and protocol, subjective experiences); 4-round Delphi, 89 experts from 17 countries, consensus at ≥70% | Pronovost-Morgan C, Greenway KT, Roseman L, et al. *Nat Med* 2025;31(7):2186–2195 (doi 10.1038/s41591-025-03685-9) [V: PubMed]. Use it with CONSORT 2025 to check whether a trial reports therapy hours, music, room, touch policy, and therapist training. |
 | Reporting of a completed RCT | **CONSORT 2025** (30-item checklist + flow diagram; new open-science section) [V] | Published April 2025 in BMJ, JAMA, Lancet, Nat Med, PLOS Med. Replaces CONSORT 2010. |
 | Trial protocol completeness | **SPIRIT 2025** (34 items + schedule diagram) [V] | Replaces SPIRIT 2013 |
 | Harms reporting | CONSORT Harms (2022 extension) [M] | |

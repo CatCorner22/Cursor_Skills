@@ -281,12 +281,13 @@ These are industry-wide averages across drug classes. A Breakthrough-designated 
 
 ## 5. State (non-FDA) access programs
 
-These are *not* FDA approvals. They operate under state law while the substances remain federally Schedule I.
+These are *not* FDA approvals. They operate under state law while the substances remain federally Schedule I. Non-US pathways (Australia, New Zealand, Switzerland, Germany, Czech Republic, Canada) are in **international-access.md**.
 - **Oregon (Measure 109, 2020; Oregon Psilocybin Services, OAR chapter 333, division 333):**
   - Licensed service centers and facilitators.
   - Oregon frames services as **not a medical or clinical treatment** and requires no diagnosis or referral.
   - Detailed informed-consent and touch rules (see ethics-codes-to-borrow.md §4).
-  - OHA circulated draft rule amendments to a Rules Advisory Committee in November 2026, with adoption expected early 2027 [V: OHA draft PDFs].
+  - **2026 fee increases withdrawn** (September 2026) after industry backlash; a new rulemaking unrelated to fees has a planned effective date of 2027-01-15 [V: OHA October 2026 budget overview]. OHA circulated draft rule amendments to a Rules Advisory Committee in November 2026 [V: OHA draft PDFs].
+  - About half of all service-center licenses ever issued were active in July 2026 (20 of 39). Program finances, closures, and the 2026 OPEN cohort (*JAMA Netw Open*) are in **international-access.md §9**.
 - **Colorado (Natural Medicine Health Act, Proposition 122, 2022):**
   - DORA licenses facilitators; the Department of Revenue licenses healing centers and other businesses [V: DORA site].
   - Facilitator training of at least 150 hours, including 25 hours of ethics and Colorado rules and 10 hours of relational boundaries and touch [S].

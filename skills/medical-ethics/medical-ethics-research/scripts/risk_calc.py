@@ -41,6 +41,16 @@ Subcommands
   frequencies restate a relative effect as natural frequencies per N people
   pctcheck    test whether a reported percentage is possible with the stated n
   ci2smd      derive SD and an approximate SMD from a mean difference and its CI
+  blinding    Bang (per arm) and James (overall) blinding indexes from guess data
+  bayes       Bayesian reanalysis of an estimate + CI under skeptical, flat,
+              enthusiastic, and custom priors; Analysis of Credibility limits
+  evalue      E-value for unmeasured confounding (observational comparisons)
+  retrodesign power, Type S and Type M (exaggeration) error for a plausible effect
+  meta        fixed/random-effects meta-analysis (DL, PM, REML), HKSJ CI,
+              I-squared, Q, prediction interval
+  smd2nnt     standardized mean difference -> NNT (Kraemer; Furukawa)
+
+Advanced methods live in appraisal_advanced.py (same folder).
 
 Every subcommand accepts --json for machine-readable output.
 
@@ -54,6 +64,9 @@ import json
 import math
 import sys
 from typing import Dict, List, Optional, Tuple
+
+sys.path.insert(0, __import__("os").path.dirname(__import__("os").path.abspath(__file__)))
+import appraisal_advanced as adv  # noqa: E402
 
 Z_95 = 1.959963984540054  # two-sided 95% normal quantile
 
@@ -295,7 +308,42 @@ def binary(x1: int, n1: int, x0: int, n0: int, event: str, level: float = 0.95,
         out["notes"].append("An arm has fewer than 30 participants: intervals are wide and "
                             "normal approximations are rough; rely on the Fisher p and Wilson/"
                             "Newcombe intervals reported here.")
+    out["framing_table"] = _framing(r1, r0, rd_lo, rd_hi, rr, rr_ci, event, out.get("NNT_ci_altman"))
     return out
+
+
+def _framing(r1: float, r0: float, rd_lo: float, rd_hi: float, rr: float,
+             rr_ci: Tuple[float, float], event: str, nnt_ci: Optional[Dict[str, object]]) -> Dict[str, object]:
+    """The required absolute-vs-relative framing: the same result stated every way a reader meets it."""
+    per = 1000
+    rel = rr - 1
+    word = "fewer" if (r1 < r0) else "more"
+    kind = "events" if event == "bad" else "responders"
+    rows = [
+        ("Baseline (control) risk", f"{r0:.1%}"),
+        ("Intervention risk", f"{r1:.1%}"),
+        ("Absolute difference", f"{(r1 - r0) * 100:+.1f} percentage points (CI {rd_lo * 100:+.1f} to {rd_hi * 100:+.1f})"),
+        ("Relative difference", f"{rel:+.0%} (RR {rr:.2f}, CI {rr_ci[0]:.2f} to {rr_ci[1]:.2f})"),
+        (f"Per {per:,} people", f"{round(r0 * per)} vs {round(r1 * per)} {kind}: {abs(round(r1 * per) - round(r0 * per))} {word}"),
+    ]
+    if r1 != r0:
+        nn = 1 / abs(r1 - r0)
+        good = (r1 < r0) if event == "bad" else (r1 > r0)
+        label = "NNT (benefit)" if good else "NNH (harm)"
+        if nnt_ci and nnt_ci.get("crosses_zero"):
+            ci_txt = nnt_ci["statement"]
+        elif nnt_ci and "range" in nnt_ci:
+            ci_txt = f"CI {nnt_ci['range'][0]:.1f} to {nnt_ci['range'][1]:.1f}"
+        else:
+            ci_txt = "CI not available"
+        rows.append((label, f"{nn:.1f}, so {math.ceil(nn - 1e-12)} when rounded up ({ci_txt})"))
+    warnings = []
+    if r0 < 0.05 and abs(rel) >= 0.25:
+        warnings.append("Low baseline risk: a large relative change is a small absolute change. Lead with the absolute figure.")
+    if rd_lo < 0 < rd_hi:
+        warnings.append("The absolute-difference CI includes zero: the data are compatible with no difference.")
+    return {"rows": rows, "warnings": warnings,
+            "rule": "State the absolute and the relative figure together, with the time frame and the baseline risk."}
 
 
 def _nnt_ci(rd_lo: float, rd_hi: float, event: str) -> Dict[str, object]:
@@ -557,6 +605,61 @@ def main(argv: Optional[List[str]] = None) -> int:
     cs.add_argument("--level", type=float, default=0.95)
     cs.add_argument("--json", action="store_true")
 
+    bl = sub.add_parser("blinding", help="Bang and James blinding indexes from end-of-trial guesses")
+    bl.add_argument("--t-guess-t", type=int, required=True, help="treatment arm: guessed treatment")
+    bl.add_argument("--t-guess-c", type=int, required=True, help="treatment arm: guessed control")
+    bl.add_argument("--t-dk", type=int, default=0, help="treatment arm: don't know")
+    bl.add_argument("--c-guess-t", type=int, required=True, help="control arm: guessed treatment")
+    bl.add_argument("--c-guess-c", type=int, required=True, help="control arm: guessed control")
+    bl.add_argument("--c-dk", type=int, default=0, help="control arm: don't know")
+    bl.add_argument("--level", type=float, default=0.95)
+    bl.add_argument("--json", action="store_true")
+
+    by = sub.add_parser("bayes", help="Bayesian reanalysis of a reported estimate and CI")
+    by.add_argument("--est", type=float, required=True)
+    by.add_argument("--lo", type=float, required=True)
+    by.add_argument("--hi", type=float, required=True)
+    by.add_argument("--level", type=float, default=0.95, help="confidence level of the reported CI")
+    by.add_argument("--scale", choices=["diff", "ratio"], default="diff")
+    by.add_argument("--mcid", type=float, default=None, help="smallest meaningful effect, on the reported scale")
+    by.add_argument("--better", choices=["lower", "higher"], required=True,
+                    help="lower = lower values favour treatment (MADRS change, RR < 1)")
+    by.add_argument("--prior-mean", type=float, default=None, help="custom prior mean (reported scale)")
+    by.add_argument("--prior-sd", type=float, default=None, help="custom prior SD (working scale: log for ratios)")
+    by.add_argument("--json", action="store_true")
+
+    ev = sub.add_parser("evalue", help="E-value for unmeasured confounding")
+    ev.add_argument("--measure", choices=["rr", "or", "hr", "smd"], required=True)
+    ev.add_argument("--est", type=float, required=True)
+    ev.add_argument("--lo", type=float, default=None)
+    ev.add_argument("--hi", type=float, default=None)
+    ev.add_argument("--common", action="store_true", help="outcome prevalence above about 15%% (OR and HR)")
+    ev.add_argument("--se", type=float, default=None, help="SE of d (SMD only)")
+    ev.add_argument("--json", action="store_true")
+
+    rd = sub.add_parser("retrodesign", help="power, Type S and Type M error for a plausible true effect")
+    rd.add_argument("--true-effect", type=float, required=True)
+    rd.add_argument("--se", type=float, required=True)
+    rd.add_argument("--alpha", type=float, default=0.05)
+    rd.add_argument("--json", action="store_true")
+
+    ma = sub.add_parser("meta", help="fixed or random-effects meta-analysis")
+    ma.add_argument("--est", type=float, nargs="+", required=True, help="study estimates (ratios if --scale ratio)")
+    ma.add_argument("--se", type=float, nargs="+", default=None, help="SEs (of the log ratio if --scale ratio)")
+    ma.add_argument("--lo", type=float, nargs="+", default=None, help="lower CI limits (instead of --se)")
+    ma.add_argument("--hi", type=float, nargs="+", default=None, help="upper CI limits (instead of --se)")
+    ma.add_argument("--labels", nargs="+", default=None)
+    ma.add_argument("--method", choices=["fixed", "dl", "pm", "reml"], default="reml")
+    ma.add_argument("--no-hksj", action="store_true")
+    ma.add_argument("--scale", choices=["diff", "ratio"], default="diff")
+    ma.add_argument("--level", type=float, default=0.95)
+    ma.add_argument("--json", action="store_true")
+
+    sn = sub.add_parser("smd2nnt", help="standardized mean difference -> NNT")
+    sn.add_argument("--d", type=float, required=True, help="positive = treatment better")
+    sn.add_argument("--cer", type=float, default=None, help="control-group responder rate, 0-1")
+    sn.add_argument("--json", action="store_true")
+
     a = p.parse_args(argv)
     try:
         if a.cmd == "binary":
@@ -573,6 +676,28 @@ def main(argv: Optional[List[str]] = None) -> int:
             res = pctcheck(float(a.percent), a.n, dec, a.count)
         elif a.cmd == "ci2smd":
             res = ci2smd(a.md, a.lo, a.hi, a.n1, a.n0, a.level)
+        elif a.cmd == "blinding":
+            res = adv.blinding(a.t_guess_t, a.t_guess_c, a.t_dk, a.c_guess_t, a.c_guess_c, a.c_dk, a.level)
+        elif a.cmd == "bayes":
+            res = adv.bayes(a.est, a.lo, a.hi, a.level, a.scale, a.mcid, a.better, a.prior_mean, a.prior_sd)
+        elif a.cmd == "evalue":
+            res = adv.evalue(a.measure, a.est, a.lo, a.hi, a.common, a.se)
+        elif a.cmd == "retrodesign":
+            res = adv.retrodesign(a.true_effect, a.se, a.alpha)
+        elif a.cmd == "meta":
+            if a.se is None:
+                if a.lo is None or a.hi is None:
+                    raise ValueError("give --se, or both --lo and --hi")
+                zz = adv._z2(a.level)
+                if a.scale == "ratio":
+                    ses = [(math.log(h) - math.log(l)) / (2 * zz) for l, h in zip(a.lo, a.hi)]
+                else:
+                    ses = [(h - l) / (2 * zz) for l, h in zip(a.lo, a.hi)]
+            else:
+                ses = a.se
+            res = adv.meta(a.est, ses, a.method, not a.no_hksj, a.level, a.scale, a.labels)
+        elif a.cmd == "smd2nnt":
+            res = adv.smd2nnt(a.d, a.cer)
         else:
             res = frequencies(a.baseline, a.relative_change, a.per)
     except ValueError as e:
