@@ -1,0 +1,129 @@
+P|Your blood pressure is checked at every visit.
+P|The results were reviewed by Dr. Lee.
+P|Your prescription has been sent to the pharmacy.
+P|The form must be signed before surgery.
+P|You will be asked to remove your jewelry.
+P|Visitors are not permitted after 9 p.m.
+P|Your appointment has been cancelled.
+P|The medicine should be taken with food.
+P|This information may be shared with your insurer.
+P|Fasting is required for this test.
+P|Your blood will be drawn in the lab.
+P|The tablet can be cut in half.
+P|The dressing is put on after surgery.
+P|Your sample was set aside for testing.
+P|The leaflet must be read before use.
+P|Records are kept for 7 years.
+P|The vial was shaken before use.
+P|The capsules should be swallowed whole.
+P|The patch is worn on the upper arm.
+P|Your gown will be laid on the bed.
+P|Tissue was frozen for later study.
+P|The wound was bound with gauze.
+P|The fee is withheld until the claim closes.
+P|The patient was fed through a tube.
+P|Patients are led to the recovery room.
+P|The syringe must be thrown away after one use.
+P|This medicine is made from human plasma.
+P|Your results are carefully reviewed by a pathologist.
+P|The device is then gently removed.
+P|All forms are promptly sent to records.
+P|Consent was not properly obtained.
+P|Your test isn't covered by insurance.
+P|The order wasn't signed.
+P|You won't be charged for this visit.
+P|Your refill's been approved.
+P|Results aren't released until your doctor reviews them.
+P|If you get hurt during the study, call us.
+P|You will get vaccinated at the next visit.
+P|Some patients got infected after the procedure.
+P|While the drug is being tested, do not drive.
+P|After having been discharged, call your doctor.
+P|You need to be seen no later than 2 days after you get home.
+P|The patient wants to be told the results.
+P|The form signed by the patient goes in the chart.
+P|Medicines prescribed by another doctor might interact.
+P|Any sample collected after noon goes out tomorrow.
+P|Patients given this drug might feel dizzy.
+P|The dose listed on the label is correct.
+P|Your dressing needs changing every day.
+P|You must have your blood tested before the visit.
+P|Get your eyes checked once a year.
+P|Your concerns will be dealt with by the ethics team.
+P|The issue was looked into by the nurse manager.
+P|Your bill is taken care of.
+P|It is recommended that you rest for 2 days.
+P|It is not known whether this drug harms an unborn baby.
+P|It was decided that the trial would stop.
+P|Your records remain protected by law.
+P|The wound must stay covered for 2 days.
+P|If you were born before 1957, you might be immune.
+P|The test should have been done last week.
+P|Your sample might have been mislabeled.
+P|Was the consent form signed?
+P|Has your medicine been changed?
+P|The patient is deemed incapable of deciding.
+P|Smoking is considered a risk factor.
+P|You are entitled to a copy of your records.
+P|You are allowed to bring one visitor.
+P|You are required to show photo ID.
+P|This medicine is used to treat high blood pressure.
+P|If you have been diagnosed with diabetes, tell your pharmacist.
+P|Your surgery is scheduled for 3 March.
+S|The clinic is located on Main Street.
+S|This guide is based on federal guidance.
+S|You might feel tired after the infusion.
+S|Your ankle might look swollen.
+S|If you are worried, call us.
+S|You seem confused today.
+S|The wound is infected.
+S|Are you married?
+S|You are interested in the study.
+S|The pharmacy is closed on Sunday.
+S|The vial is sealed.
+A|The nurse checks your blood pressure at every visit.
+A|Take 1 tablet in the morning.
+A|We will call you no later than 2 days after your test.
+A|Your appointment is on 3 March.
+A|The dose will change next week.
+A|Federal law protects this information.
+A|Do not drive after you take this medicine.
+A|You need to rest.
+A|Your heart rate increased overnight.
+A|The doctor reviewed your results.
+A|We have sent your prescription to the pharmacy.
+A|The nurse has given you the dose.
+A|You have lost weight.
+A|She's taken her medicine.
+A|It is important to rest.
+A|There is a bed for you.
+A|The red pills are the strongest.
+A|Call us if the bleeding gets worse.
+A|The swelling should go down in 2 days.
+A|This study tests a new medicine.
+A|Bring a list of the medicines you take.
+A|Children under 12 need an adult with them.
+A|If you feel faint, sit down.
+A|Your skin might become red.
+A|Your skin is red.
+A|Your insurance covers the visit.
+A|Use the medicine that your doctor prescribed.
+A|We need your signed consent form.
+A|Ask a licensed pharmacist.
+A|Your scheduled visit is on Monday.
+A|The patient needed help.
+A|The trial used a placebo.
+A|Bleeding is rare.
+A|The medicine is in the fridge.
+A|Your bill is due on 1 May.
+A|You are eligible for the program.
+A|Call 911 if you are bleeding.
+A|Your child has grown 2 inches.
+A|You've been sick for 3 days.
+A|You have been taking this drug.
+A|The bandage got wet.
+A|She got better.
+A|Read the leaflet before use.
+A|Cut the tablet in half.
+A|We have set your appointment for Monday.
+A|Keep the medicine cold.
