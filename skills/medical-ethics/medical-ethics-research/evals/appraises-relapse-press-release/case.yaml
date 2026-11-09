@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: appraises-relapse-press-release
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  A short memo that recomputes the relapse result in absolute terms (10 vs 20 percent, an absolute
+  reduction of 10 percentage points, NNT 10) with a confidence interval that includes no effect,
+  restates the headache harm on the same absolute scale (NNH 5), flags the nonstandard 25 percent
+  "response" threshold, the responder-only open-label durability claim, functional unblinding, and
+  the spin language, and separates verified facts, source claims, and judgments.

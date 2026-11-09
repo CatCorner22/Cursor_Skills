@@ -70,6 +70,7 @@ pack_description() {
     huggingface) printf '%s' "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker. Skills are manual." ;;
     langchain) printf '%s' "LangChain/LangGraph agents, RAG, persistence, Deep Agents. Skills are manual." ;;
     legal) printf '%s' "Contract review, redlines, comments and drafting to MSCD5 with Blake's house style. Skill is manual." ;;
+    medical-ethics) printf '%s' "Medical, research, and psychedelic ethics research manager with a statistics calculator. Skill is manual." ;;
     microsoft365) printf '%s' "Microsoft 365: Word, Excel, PowerPoint, Outlook, Teams, OneDrive. Skills are manual." ;;
     plaud) printf '%s' "Plaud recorder: capture, transcription, summaries, AutoFlow, export. Skills are manual." ;;
     playwright) printf '%s' "Playwright browser automation, component tests, traces (non-Adobe). Skills are manual." ;;

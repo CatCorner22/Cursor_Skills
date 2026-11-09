@@ -79,6 +79,11 @@ PACK_BLURBS = {
         "Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style; draft and review one-way medical text (policies, SOPs, patient materials) in active voice.",
         "Mention when working on contract language, or on medical, pharmacy, or research text that readers can't ask questions about.",
     ),
+    "medical-ethics": (
+        "Medical and research ethics",
+        "Research manager for medical, psychiatric, therapy, and research ethics, psychedelics and the FDA pipeline, and trial statistics; ships a calculator, a knowledge base, and evals.",
+        "Mention when appraising a study or press release, reviewing a consent form or protocol, or asking an ethics or psychedelic-pipeline question.",
+    ),
     "microsoft365": (
         "Microsoft 365",
         "Word, Excel, PowerPoint, Outlook, Teams, OneDrive.",
@@ -325,7 +330,7 @@ def write_catalog(skill_rows: list[dict], runtime: list[dict]) -> None:
         "",
         f"- **Always on (1):** `{ALWAYS_ON}` — `metadata.sessionStart: true`. Injected every session so the agent does the work instead of describing it.",
         f"- **Manual ({len(manual)}):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.",
-        "- **Cursor plugin packs (19):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.",
+        f"- **Cursor plugin packs ({len(by_pack)}):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.",
         "- **Python runtime plugins (100):** a separate pipeline in `scripts/ai_plugin_bundle.py`. Not Cursor skills. Default tier considers catalog #1–50 plus orchestrator utilities; security scanners and the rest stay off unless you pass `--enable-all` or `enabled_plugins`.",
         "",
         "How to invoke a manual skill: say the skill name (`` `nextjs` ``), ask for the job it covers, or attach the `SKILL.md` in Cursor.",

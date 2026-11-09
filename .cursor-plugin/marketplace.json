@@ -91,6 +91,13 @@
     }
 ,
     {
+      "name": "medical-ethics",
+      "source": "./plugins/medical-ethics",
+      "skills": "skills",
+      "description": "Medical, research, and psychedelic ethics research manager with a statistics calculator. Skill is manual."
+    }
+,
+    {
       "name": "microsoft365",
       "source": "./plugins/microsoft365",
       "skills": "skills",

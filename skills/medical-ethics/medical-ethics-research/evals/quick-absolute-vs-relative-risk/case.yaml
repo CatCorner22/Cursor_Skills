@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: quick-absolute-vs-relative-risk
+expected_outcome: |
+  A short, direct answer (about 400 words or fewer, no memo template) that explains absolute vs
+  relative measures using Emerge response rates of 35% vs 7%: an absolute increase of about 28
+  percentage points, an NNT of about 4 (3.6), and a relative measure of about 5 times (a 400%
+  relative increase), computed with the calculator from counts reconstructed from rounded
+  percentages, and that notes response is a good outcome so the terms are "benefit increase"
+  rather than "risk reduction".

@@ -6,13 +6,13 @@ Regenerate with `python3 scripts/apply-activation-policy.py --catalog-only`.
 ## Activation policy
 
 - **Always on (1):** `proactive-agency` — `metadata.sessionStart: true`. Injected every session so the agent does the work instead of describing it.
-- **Manual (190):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.
-- **Cursor plugin packs (19):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.
+- **Manual (191):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.
+- **Cursor plugin packs (21):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.
 - **Python runtime plugins (100):** a separate pipeline in `scripts/ai_plugin_bundle.py`. Not Cursor skills. Default tier considers catalog #1–50 plus orchestrator utilities; security scanners and the rest stay off unless you pass `--enable-all` or `enabled_plugins`.
 
 How to invoke a manual skill: say the skill name (`` `nextjs` ``), ask for the job it covers, or attach the `SKILL.md` in Cursor.
 
-**Counts:** 191 Cursor skills, 20 plugin packs, 100 runtime plugins.
+**Counts:** 192 Cursor skills, 21 plugin packs, 100 runtime plugins.
 
 ## Cursor plugin packs
 
@@ -32,6 +32,7 @@ Each pack is a Cursor plugin under `plugins/<pack>/` (and `~/.cursor/plugins/loc
 | `huggingface` (26) — Hugging Face Hub | Models, datasets, Spaces, training, Gradio, SageMaker, Hub CLI. | Mention when working on Hugging Face models, Spaces, or training jobs. | Installed wrapper — skills inside are Manual |
 | `langchain` (12) — LangChain / LangGraph | Agents, RAG, persistence, human-in-the-loop, Deep Agents, LangSmith evals. | Mention when building or debugging LangChain or LangGraph apps. | Installed wrapper — skills inside are Manual |
 | `legal` (2) — Legal and one-way text (MSCD) | Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style; draft and review one-way medical text (policies, SOPs, patient materials) in active voice. | Mention when working on contract language, or on medical, pharmacy, or research text that readers can't ask questions about. | Installed wrapper — skills inside are Manual |
+| `medical-ethics` (1) — Medical and research ethics | Research manager for medical, psychiatric, therapy, and research ethics, psychedelics and the FDA pipeline, and trial statistics; ships a calculator, a knowledge base, and evals. | Mention when appraising a study or press release, reviewing a consent form or protocol, or asking an ethics or psychedelic-pipeline question. | Installed wrapper — skills inside are Manual |
 | `microsoft365` (7) — Microsoft 365 | Word, Excel, PowerPoint, Outlook, Teams, OneDrive. | Mention when producing or organizing Office documents or mail. | Installed wrapper — skills inside are Manual |
 | `plaud` (8) — Plaud recorder | Capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export. | Mention when working with Plaud recordings or notes. | Installed wrapper — skills inside are Manual |
 | `playwright` (3) — Playwright (general) | Browser automation, component testing, and trace inspection outside Adobe. | Mention for Playwright tests that are not Adobe App Builder E2E. | Installed wrapper — skills inside are Manual |
@@ -261,6 +262,14 @@ Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake'
 |---|---|---|---|
 | `mscd-contracts` | Review, redline (real Word tracked changes), comment on, revise, proofread and draft business contracts to Kenneth A | Adams's A Manual of Style for Contract Drafting (MSCD, 5th edition) as updated by his blog, applying Blake Reagan's house style (active voice only, digits for every number, I./A./1./(a)/(i) enumeration, two spaces between sentences, Schedule A and Exhibit 1, cross-references by heading, no article before party names). Use it whenever Blake asks to review, mark up, redline, edit, tighten, fix, comment on or draft any contract, agreement, amendment, NDA, clause, definition or term sheet; whenever he asks about shall, will, may, must, should, active voice, ambiguity, vagueness, defined terms or schedules versus exhibits in contract language; and whenever he pastes contract language and asks what's wrong with it, even without naming MSCD. Not for deal or legal-risk advice on its own, or for writing that isn't contract language. | Manual |
 | `one-way-optimal-language` | Draft, review, or rewrite medical, dental, pharmacy, or research text that readers use without a chance to ask questions — policies, SOPs, ethics codes, guidelines, clinical notes, patient handouts, labels, consent forms, HIPAA and other notices, portal messages — for plain language, reading level, ambiguity, and Ken Adams (MSCD) style, with every clause in active voice | Mention this skill by name when you need it. | Manual |
+
+### `medical-ethics` — Medical and research ethics
+
+Research manager for medical, psychiatric, therapy, and research ethics, psychedelics and the FDA pipeline, and trial statistics; ships a calculator, a knowledge base, and evals. Mention when appraising a study or press release, reviewing a consent form or protocol, or asking an ethics or psychedelic-pipeline question.
+
+| Skill | What it is for | When to use | Activation |
+|---|---|---|---|
+| `medical-ethics-research` | Research manager, tracker, and agent facilitator for medical-ethics and evidence reviews | Dated knowledge base on psychedelics (history, substances, risks, the 2026 FDA pipeline and voucher controversy, access in Australia, New Zealand, Europe, Canada, and Oregon), medical, research, therapy, and psychiatric ethics and bioethics with their philosophy and literature, codes of ethics to borrow from, what a patient-protection code must contain, consent-form review, trial-design evaluation, and statistical appraisal (absolute vs relative risk, NNT, CIs, Bayesian and meta-analytic tools). Use it whenever Blake asks to review, appraise, or research the ethics, evidence, or design behind a study, trial, protocol, consent form, press release, regulator's decision, code, or psychedelic therapy; asks whether a medical claim's numbers hold up; or wants to resume a tracked ethics project, even if he never says "ethics review." | Manual |
 
 ### `microsoft365` — Microsoft 365
 
