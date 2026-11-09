@@ -1,0 +1,55 @@
+P|You can stop the study at any time, and your care will not be affected.
+P|If the bottle is dropped, check the pump for cracks.
+P|Bring the medicine bottles you were given at discharge.
+P|Our staff follow the steps outlined in this policy.
+P|When a patient is judged to lack capacity, the team calls the surrogate.
+P|Please call us if your appointment needs to be moved.
+P|The spray is not meant for children.
+P|A full refund is issued when the device is returned unopened.
+P|We use the information gathered during your visit to plan your care.
+P|Ethics consultations can be requested by anyone involved in the patient's care.
+P|Your pain will be checked every hour and treated as needed.
+P|Medicines left in the car can lose strength.
+P|The meeting will be led by the chaplain.
+P|Your stitches dissolve and do not have to be taken out.
+P|Treatment decisions are shared between you and your doctor.
+P|This form, once signed, becomes part of your record.
+P|The doctor on call is paged when your score rises.
+P|Life support was withdrawn after the family met with the team.
+P|Fees not paid in 60 days go to collections.
+P|Your feeding pump has to be cleaned daily.
+P|Keep the area covered until it heals.
+P|No blood was found in your stool.
+P|The risks of the study are described in Section 4.
+P|The inhaler should be primed before the first use.
+P|Ask for help if you get stuck.
+A|You can stop the study at any time, and we will still care for you.
+A|If you drop the bottle, check the pump for cracks.
+A|Our staff follow the steps in Section 3 of this policy.
+A|The team calls the surrogate when the attending physician finds that the patient lacks capacity.
+A|Call us if you need to move your appointment.
+A|We will refund the full price when you return the unopened device.
+A|Anyone who helps care for the patient may ask for an ethics consultation.
+A|A nurse will check your pain every hour.
+A|Heat can weaken medicines in a hot car.
+A|The chaplain will lead the meeting.
+A|Your stitches dissolve on their own.
+A|You and your doctor make treatment decisions together.
+A|The nurse pages the doctor on call when your score rises.
+A|The family met with the team on Tuesday.
+A|Clean your feeding pump every day.
+A|Section 4 describes the risks of the study.
+A|Prime the inhaler before you use it the first time.
+A|Your score rose overnight.
+A|We sent the bill to collections.
+A|The pain eased after the second dose.
+A|Has the pharmacist talked with you about this medicine?
+A|Your stomach might hurt for a day.
+A|Is the bleeding heavier than yesterday?
+A|Take the pills you got at the pharmacy.
+A|The doctor stopped by your room this morning.
+S|You might feel dazed for a few minutes.
+S|Are you employed?
+S|You might seem distracted after the procedure.
+A|The skin around the site might feel numb and tender.
+S|If you feel rushed, ask the nurse to slow down.

@@ -1,0 +1,62 @@
+P|The patient was transferred to the ICU at 3 a.m.
+P|Your sample is labeled and stored in the freezer.
+P|Blood was noted in the urine.
+P|The decision is made by the attending physician.
+P|Pain is managed with acetaminophen.
+P|Informed consent must be obtained before any procedure.
+P|Conflicts of interest will be disclosed to the committee.
+P|The request was denied because the form was incomplete.
+P|Your privacy is respected at all times.
+P|A copy of this form will be given to you.
+P|Surrogates are chosen in the order that state law sets.
+P|The patient's wishes were honored.
+P|Medicines brought from home go to the pharmacy.
+P|Anyone harmed by the study drug gets free care.
+P|Treatment can be stopped at any time.
+P|The study is funded by the National Institutes of Health.
+P|You might be billed for this test.
+P|Your ID will be scanned at check-in.
+P|The shot is given in the thigh.
+P|Doses missed by more than 12 hours count as skipped doses.
+P|Your device has been recalled.
+P|Patients are screened for falls on admission.
+P|The ethics consult was requested by the family.
+P|Records older than 10 years are destroyed.
+P|Measure each dose with the cup provided.
+P|Have your blood sugar checked every 3 months.
+P|You'll get your results mailed to you.
+P|The wound needs cleaning twice a day.
+P|Restraints are used only as a last resort.
+P|The patient was found on the floor.
+P|Your insurance card must be shown at every visit.
+P|Feeding tubes are not inserted without consent.
+P|The drug is excreted in urine.
+P|This leaflet was last updated in May 2026.
+P|The room gets disinfected after each patient.
+A|The attending physician makes the decision.
+A|We use restraints only as a last resort.
+A|Your device stopped working.
+A|The patient fell at 2 a.m.
+A|Doctors give the shot in the thigh.
+A|Bring your insurance card to every visit.
+A|The patient has signed the form.
+A|The nurse has cleaned the wound.
+A|We updated this leaflet in May 2026.
+A|Your kidneys remove the drug in urine.
+A|You might feel a cold spot on your skin.
+A|The family requested an ethics consult.
+A|The study drug lowered blood pressure by 10 points.
+A|Take your medicine with a full glass of water.
+A|Call us if you see blood in your urine.
+A|The nurse will check your blood sugar every 3 months.
+A|The pharmacy stores medicines that you bring from home.
+A|Each cup holds 10 mL.
+A|Your doctor wrote the order at 9 a.m.
+A|Get some rest after the procedure.
+A|Get a ride home after surgery.
+A|The cut on your hand should heal in a week.
+A|The wound looks clean and dry.
+S|You might feel sleepy and confused.
+S|If you feel overwhelmed, take a break.
+S|Your knee might look bruised.
+S|Are you depressed or anxious?

@@ -1,0 +1,55 @@
+P|Your balance has been sent to our billing office.
+P|A message was left on your voicemail.
+P|Your results have been released to the portal.
+P|Charges not covered by your plan appear on this bill.
+P|This letter is being sent because your payment is late.
+P|The attending physician, if contacted, must respond no later than 1 hour after the page.
+P|A patient who is believed to lack capacity keeps every right this policy lists.
+P|Decisions reached by the committee are advisory.
+P|The surrogate must be told about the prognosis.
+P|Any treatment refused by the patient must not be given.
+P|The nurse kept the patient informed.
+P|Your copay will be collected at check-in.
+P|Your order is ready to be picked up.
+P|Bring any forms you were asked to fill out.
+P|The ethics consultant gets paged for urgent cases.
+P|We need the form returned by Friday.
+P|Make sure the cap is closed tightly.
+P|Your refill request was received on Monday.
+P|The screening is offered to everyone over 45.
+P|Your pain medicine will be tapered over 2 weeks.
+P|Unless contraindicated, start aspirin on day 1.
+P|If not treated, the infection can spread.
+P|The device should not be worn in the shower.
+P|Patients transferred from other hospitals get a new wristband.
+P|Each case reviewed by the committee gets a written summary.
+A|Our billing office sent you a statement.
+A|We left a message on your voicemail.
+A|You can see your results in the portal.
+A|This bill lists charges that your plan does not cover.
+A|We are writing because your payment is late.
+A|The attending physician must answer the page no later than 1 hour after it arrives.
+A|The committee gives advice only.
+A|Tell the surrogate about the prognosis.
+A|Do not give any treatment that the patient refuses.
+A|We will collect your copay at check-in.
+A|You can pick up your order now.
+A|Bring any forms we asked you to fill out.
+A|Page the ethics consultant for urgent cases.
+A|Return the form no later than Friday.
+A|Close the cap tightly.
+A|We received your refill request on Monday.
+A|We offer the screening to everyone over 45.
+A|Your doctor will lower your pain medicine dose over 2 weeks.
+A|Take the device off before you shower.
+A|The committee writes a summary of each case it reviews.
+A|Has the pharmacy filled your prescription yet?
+A|Your heart rhythm returned to normal.
+A|The swelling went down overnight.
+A|Patients who move from other hospitals get a new wristband.
+A|The infection can spread if nobody treats it.
+S|You might feel drowsy and relaxed.
+S|Are you insured?
+S|The patient seemed agitated.
+A|If you are unsure, ask your pharmacist.
+S|You might feel disappointed by the results.
