@@ -155,7 +155,7 @@ Durations are typical ranges [M]. Effects vary with dose, setting, expectation, 
 
 | Combination | Effect | Evidence | Tag |
 |---|---|---|---|
-| **Lithium + classic psychedelics** | Seizures: 47% of 62 online experience reports (the 39% medical-attention figure appears only in an abstract-summary site [S]); none of 34 lamotrigine reports involved seizures | Nayak, Gukasyan, Barrett, Erowid, Erowid & Griffiths, *Pharmacopsychiatry* 2021;54(5):240–245. Self-reported data; a signal, not a rate | V |
+| **Lithium + classic psychedelics** | Seizures: 47% of 62 online experience reports (the 39% medical-attention figure appears only in an abstract-summary site [S]); none of 34 lamotrigine reports involved seizures | Nayak, Gukasyan, Barrett, Erowid, Erowid & Griffiths, *Pharmacopsychiatry* 2021;54(5):240–245. Self-reported data; a signal, not a rate. Oregon bars anyone who has taken lithium in the last 30 days from a session (OAR 333-333-5050(3)(a), (5)(a)) [V] | V |
 | **Ayahuasca (MAO-A inhibition) + SSRIs, SNRIs, MDMA, and other serotonergic drugs** | Serotonin toxicity | Pharmacological and case evidence | M/S |
 | **SSRIs + psilocybin** | Older reports of blunting; two small recent studies found the effects were not blocked | Mixed; small studies | S |
 | **SSRIs or SNRIs + MDMA** | Blocks or blunts the effects; theoretical serotonin-toxicity risk | Controlled studies | S |

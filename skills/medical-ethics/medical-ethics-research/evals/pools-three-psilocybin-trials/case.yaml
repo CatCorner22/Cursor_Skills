@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: pools-three-psilocybin-trials
+expected_outcome: |
+  A pooled analysis run with the calculator: inputs Phase 2b -6.6 (-10.2 to -2.9), COMP005 -3.6 (-5.7 to
+  -1.5), COMP006 -3.8 (-5.8 to -1.8); random-effects pooled estimate about -4.1 with an HKSJ interval of
+  about -7.1 to -1.1, I2 near 0, and a prediction interval about -12.8 to +4.6 that crosses zero mainly
+  because three studies leave very few degrees of freedom. It flags that the trials differ (placebo vs
+  1 mg comparator; week 3 vs week 6), that the Phase 2b is a smaller, earlier trial, and that pooling does
+  not fix functional unblinding. It gives the probability of at least a clinically meaningful benefit
+  under more than one prior, states the MCID assumption and its dispute (about 2 vs 3 points), and shows
+  that the answer depends on the prior and on which interval feeds the analysis.

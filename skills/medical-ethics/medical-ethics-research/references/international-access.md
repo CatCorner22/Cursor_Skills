@@ -97,6 +97,8 @@
 
 ## 9. Oregon (and Colorado) real-world data
 
+**Oregon screening hard stops** [V: Cornell LII, OAR text effective 2025-01-01, read 2026-11-09]: the state's required Client Information Form asks, "Have you taken the prescription drug Lithium in the last 30 days?" and a client who answers yes "may not participate in an administration session" (OAR 333-333-5050(3)(a), (5)(a)); the facilitator has no discretion. A session may not exceed 50 mg of psilocybin analyte in total (OAR 333-333-5240(1)). Use these when someone asks whether a person on lithium can use an Oregon service center, and never present the 50 mg cap as a dose recommendation.
+
 **Program status** [V: OHA budget documents, August and October 2026]:
 - **Licensing counts, 2023-01-01 to 2026-07-23** (all-time issued vs. approved as of 2026-07-23): facilitators 641 vs. 379; service centers 39 vs. 20; manufacturers 19 vs. 7; laboratories 2 vs. 1.
 - **Products sold:** over 50,000 psilocybin products for administration sessions by 2026-10-01. That is not a client count, because one client can buy secondary doses.
