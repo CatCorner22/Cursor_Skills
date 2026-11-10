@@ -113,7 +113,8 @@ When Blake or Claude identifies a new ambiguous term:
 2. Add a row with the word, both meanings, the replacement, and the source.
 3. Add the same entry to Blake's memory preferences.
 4. Propose the skill update so Blake can review and save it.
-5. Tell Blake in one line what the update adds.
+5. Commit the same change to skills/legal/unambiguous-language/SKILL.md in the catcorner22/cursor_skills repo.
+6. Tell Blake in one line what the update adds.
 
 ## Sources
 
