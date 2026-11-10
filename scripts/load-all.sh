@@ -69,7 +69,7 @@ pack_description() {
     first-party) printf '%s' "proactive-agency is always on. skill-library-audit, smolagents, and v0 are manual." ;;
     huggingface) printf '%s' "Hugging Face Hub: models, Spaces, training, Gradio, SageMaker. Skills are manual." ;;
     langchain) printf '%s' "LangChain/LangGraph agents, RAG, persistence, Deep Agents. Skills are manual." ;;
-    legal) printf '%s' "Contract review, redlines, comments and drafting to MSCD5 with Blake's house style. Skill is manual." ;;
+    legal) printf '%s' "Contract review, redlines, comments and drafting to MSCD5 with Blake's house style, one-way medical text, and Blake's living list of ambiguous words to avoid. Skills are manual." ;;
     medical-ethics) printf '%s' "Medical, research, and psychedelic ethics research manager with a statistics calculator. Skill is manual." ;;
     microsoft365) printf '%s' "Microsoft 365: Word, Excel, PowerPoint, Outlook, Teams, OneDrive. Skills are manual." ;;
     plaud) printf '%s' "Plaud recorder: capture, transcription, summaries, AutoFlow, export. Skills are manual." ;;
