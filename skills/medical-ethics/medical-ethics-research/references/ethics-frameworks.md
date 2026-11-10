@@ -70,7 +70,7 @@ Critiques to acknowledge: the principles are "a checklist without a theory" (Clo
     - post-trial access obligations;
     - research integrity;
     - environmental sustainability [V: Cuatrecasas; Practical Neurology].
-  - **Placebo controls** remain restricted where proven interventions exist, except under specified scientific necessity with no serious or irreversible harm (the long-standing Helsinki placebo paragraph [M]).
+  - **Placebo controls** remain restricted where proven interventions exist, except under specified scientific necessity with no serious or irreversible harm (Declaration of Helsinki, 2024 revision, paragraph 33 [V]).
 - **Belmont Report (1979)** [M]. Three principles, each with an application:
 
   | Principle | Application |
@@ -219,7 +219,7 @@ Use these for analogical reasoning. Name them accurately; dates are [M].
 - **Dan Markingson** (2004, University of Minnesota). Psychiatric research consent and conflicts of interest.
 - **Henrietta Lacks / HeLa.** Consent and commercialization of biospecimens.
 - **Harvard Psilocybin Project / Leary–Alpert (1960–63) and the Marsh Chapel "Good Friday" experiment (1962).** Recruitment of students; investigator self-experimentation; publicity. A historical cautionary analogy for psychedelic research [M].
-- **CIA MKUltra** (1953–1973). Non-consensual LSD administration. It shapes public and institutional distrust [M].
+- **CIA MKUltra** (1953–1964 per CIA testimony in 1977; most records destroyed in 1973). Non-consensual LSD administration. It shapes public and institutional distrust [V: 1977 Senate hearing].
 - **MAPS MP4 Canadian site (2015) / Buisson v. Yensen & Dryer** (see psychedelic-ethics-issues.md §3).
 
 ## 11. A structured method for an ethics analysis

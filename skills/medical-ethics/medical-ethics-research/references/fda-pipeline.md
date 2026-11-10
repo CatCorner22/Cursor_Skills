@@ -64,6 +64,13 @@ Company press releases are primary sources for *what the company says*. They are
 - **Pharmacology:** 5-HT2B functional activity must be assessed for serotonergic drugs, because of the risk of cardiac valvulopathy.
 - **Abuse-potential testing:** a human abuse-potential study "may not be scientifically necessary" in some cases. Self-administration and conditioned-place-preference studies are usually not needed.
 
+**Specific recommendations, checked against the guidance PDF** [V: fda.gov/media/169694/download, cover dated July 2026, read 2026-11-09]. Use these when auditing a protocol (trial-design.md §7):
+- **Staffing:** two monitors for the whole session. The lead monitor has graduate-level training and is licensed to practise independently. The assistant has at least 1 year of clinical experience in a licensed mental-health setting. If the lead is not a physician, a licensed on-call physician must be able to reach the site within 15 minutes.
+- **Raters:** "central raters blinded to treatment allocation and visit number."
+- **Blinding and expectancy:** a blinding questionnaire for subjects and raters in randomized trials; an expectancy questionnaire "should be considered," given before randomization and at the end of treatment.
+- **Durability:** before a first application for a chronic illness (for example PTSD or MDD), evaluate "with a double-blind design the effect of treatment at 12 weeks"; the most informative design adds "blinded long-term follow-up (typically 12 months)" with pre-specified retreatment criteria.
+- **Adverse events:** expected psychoactive effects such as euphoria "should also be recorded as AEs," even when participants do not call them adverse.
+
 ### 2a. The Commissioner's National Priority Voucher (CNPV) program: facts and controversy
 
 Use this section for any question about the vouchers. These facts are tagged; the arguments are attributed. Present both sides (see psychedelic-ethics-issues.md §7).

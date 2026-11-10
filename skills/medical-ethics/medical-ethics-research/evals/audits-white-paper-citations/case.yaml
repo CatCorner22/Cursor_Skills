@@ -1,0 +1,15 @@
+schema_version: "1.1"
+name: audits-white-paper-citations
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  A citation audit with one verdict per claim. [1] Goodwin 2022 supports the 6.6-point week-3 claim but
+  contradicts "no serious safety signals" (suicidal ideation, behavior, or self-injury occurred in all
+  dose groups). [2] Raison 2023 does not support "sustained remission in most patients" (sustained
+  response 42% vs 11%; sustained remission not significant). [3] Hartman 2025 cannot be found: the DOI does
+  not resolve and no matching record exists, so it is unverifiable and possibly fabricated. [4] Nayak
+  2021 counts online reports, not a risk, and says nothing about screening managing the risk. [5]
+  Gukasyan 2022 is an open-label follow-up with no placebo group, so it cannot show durability versus
+  placebo. [6] Jerome 2020 was retracted on 2024-08-10 by Psychopharmacology. [7] Hieronymus 2025 found the
+  opposite: psilocybin control groups improved about half as much as SSRI control groups. The audit
+  names the quality tool or design limits for the critical studies and lists required changes.

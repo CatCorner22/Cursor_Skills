@@ -1,0 +1,18 @@
+schema_version: "1.1"
+name: audits-facilitator-code
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  A ranked audit that checks the code domain by domain and finds the high-harm gaps: touch consent
+  sought during the altered state at the facilitator's initiative (fix: a written touch contract before
+  dosing, touch only at the participant's request, limited to hands, feet, and shoulders, stop signal,
+  per Colorado 4 CCR 755-1 Rule 6.6); single-facilitator and 1:12 staffing with phone recording at the
+  facilitator's discretion (fix: disclosed, consented recording with secure storage and independent
+  review; Colorado 6.5(H) and 6.18(G)(2); Oregon OAR 333-333-4640); no post-care limit on sexual
+  contact (fix: Colorado 6.10(B) 2 years, or lifelong per MAPS); absolute confidentiality promise
+  (fix: state the limits); intuitive screening (fix: documented medical and psychiatric screening for
+  lithium, psychosis or bipolar history, cardiac risk); commissions, supplements, and paid retreats
+  (conflicts of interest); cure claims and testimonials; complaints routed only to the
+  founder-director (fix: independent complaint route, notice of the regulator, sanctions, duty to
+  report, non-retaliation); and encouraged personal use. Each fix cites a donor source and how it
+  was adapted, and the memo says what makes the code enforceable.

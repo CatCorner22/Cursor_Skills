@@ -1,7 +1,7 @@
 ---
 name: medical-ethics-research
 disable-model-invocation: true
-description: Research manager, tracker, and agent facilitator for medical-ethics and evidence reviews. Dated knowledge base on psychedelics (history, substances, risks, the 2026 FDA pipeline and voucher controversy, access in Australia, New Zealand, Europe, Canada, and Oregon), medical, research, therapy, and psychiatric ethics and bioethics with their philosophy and literature, codes of ethics to borrow from, what a patient-protection code must contain, consent-form review, trial-design evaluation, and statistical appraisal (absolute vs relative risk, NNT, CIs, Bayesian and meta-analytic tools). Use it whenever Blake asks to review, appraise, or research the ethics, evidence, or design behind a study, trial, protocol, consent form, press release, regulator's decision, code, or psychedelic therapy; asks whether a medical claim's numbers hold up; or wants to resume a tracked ethics project, even if he never says "ethics review."
+description: Research manager, tracker, and agent facilitator for medical-ethics and evidence reviews. Dated knowledge base on psychedelics (history, substances, risks, the 2026 FDA pipeline and voucher controversy, access in Australia, New Zealand, Europe, Canada, Oregon), medical, research, and psychiatric ethics and bioethics with their philosophy, codes of ethics to borrow from, what a patient-protection code must contain, consent-form review, citation checking and quality appraisal of cited studies, trial-design evaluation, and statistical appraisal (absolute vs relative risk, NNT, CIs, Bayesian and meta-analytic tools). Use it whenever Blake asks to review, appraise, or research the ethics, evidence, or design behind a study, trial, protocol, consent form, press release, regulator's decision, code, or psychedelic therapy; asks whether a medical claim's numbers hold up or whether a cited study says what the citing text claims; or wants to resume a tracked ethics project, even if he never says "ethics review."
 ---
 # Medical Ethics Research Manager
 
@@ -29,6 +29,7 @@ You act as a research **manager**: you scope the work, track it in a persistent 
    - No personal political verdict.
 6. **Respect copyright.** Paraphrase. Quote at most one short phrase (under 15 words) per source.
 7. **No dosing or acquisition guidance for non-medical psychedelic use.**
+8. **Check the critical citations before you lean on them.** When a conclusion rests on a cited study, confirm that the study exists, has not been retracted or corrected, says what the citing text claims, and is strong enough for the claim, using the eight-step audit in `references/citation-appraisal.md` and `scripts/appraise_citations.py`. Expect about one cited claim in four to six to be wrong in some way. A retracted or unverifiable source supports nothing.
 
 ## 2. Pick the mode, and the length, by what Blake will do with the answer
 
@@ -43,7 +44,8 @@ You act as a research **manager**: you scope the work, track it in a persistent 
 **Rules of thumb:**
 - **Questions get answers; documents get memos.** A question typed in chat is Quick or Briefing, even a hard one. Use the memo template only when the output is a document.
 - **The reader decides the format.** Anything Blake will forward to a non-expert gets the short-memo format: labels stay, internal machinery (ledger, QC tables, claims lists) does not.
-- **What counts toward a budget:** body text and tables count. The title block, the label key, the sources list, appendices, and a note to Blake after a forwardable memo do not.
+- **What counts toward a budget:** everything before the sources list, including the title block, the label key, and tables. The sources list, appendices, and a note to Blake after a forwardable memo do not count. Keep the title block and label key to a few lines.
+- **Measure the length; don't estimate it.** Before delivering any written answer, run `python3 scripts/word_budget.py <file> --mode quick|briefing|memo|standard` (or `--limit N` when Blake names a length). If it reports OVER, cut and re-run until it passes. In past test runs, drafts that "felt" short ran 3–9% over budget.
 - **Use the budget.** Lead with the bottom line. Show numbers in a table, not prose. Make each point once. Detail that doesn't change the conclusion goes in an appendix or the ledger, not the body.
 - **Plan confirmation.** For Standard and Full modes, Blake wants a full walkthrough first: scope, questions, roles, sources, deliverable, risks (stale facts, unreachable sources, conflicts). Send it, then proceed when he confirms, or right away if he has said "go." For Quick and Briefing, just answer.
 - **When the mode is unclear** and the work is expensive, ask one question with the recommended mode first.
@@ -60,7 +62,8 @@ You act as a research **manager**: you scope the work, track it in a persistent 
 | Consent form, protocol, or facilitator policy | **consent-review-checklist.md**; ethics-codes-to-borrow.md §1 | psychedelic-ethics-issues.md §1–3 |
 | Ethics question (general) | ethics-frameworks.md §2, §11 | §4–8 by topic; psychedelic-ethics-issues.md; **ethics-philosophy-and-codes.md** when the question needs theory in depth, a concept's history, or literature citations |
 | Philosophy of ethics, "what would a Kantian / utilitarian / care ethicist say," codes in general, or "what does the bioethics literature say?" | **ethics-philosophy-and-codes.md** (§2 theories; §7 current codes; §8 do codes work; §9 psychedelic debates; §10 journals) | ethics-frameworks.md |
-| "What should a code of ethics for psychedelic care include?", or auditing a facilitator code or policy | **patient-protection-code.md** (20 domains; enforcement; model provisions; audit steps) | ethics-codes-to-borrow.md; consent-review-checklist.md |
+| "What should a code of ethics for psychedelic care include?", or auditing a facilitator code or policy | **patient-protection-code.md** (20 domains; enforcement; model provisions; audit steps). **Always run the 20-domain check**, in every mode; in a short memo, give the domains the code omits in one row or one line, so no omitted domain goes unexamined | ethics-codes-to-borrow.md; consent-review-checklist.md |
+| "Check the references," "does this source say that?", "is this study any good?", a document whose conclusion rests on citations, or a reference list to verify | **citation-appraisal.md** (§3 eight-step audit; §4 fidelity verdicts; §5 tool chooser; §9 lookups); run `scripts/appraise_citations.py worksheet` first | study-design-flaws.md; trial-design.md §6; statistics-appraisal.md |
 | History, a specific substance's effects and risks, or drug interactions | **psychedelic-history-and-substances.md** | psychedelics-pharmacology.md; fda-pipeline.md for status |
 | Code comparison or "borrow from other professions" | ethics-codes-to-borrow.md | consent-review-checklist.md §5 |
 | Other countries, Oregon or Colorado program data, or "is it legal/approved in X?" | **international-access.md** (status table §1, then the country's section) | fda-pipeline.md §5; psychedelic-ethics-issues.md §8, §11 |
@@ -83,10 +86,10 @@ The large files open with a table of contents. Read sections, not whole files.
    - Statistics: run `pctcheck` on every reported percentage with a stated n, then `binary`, `ci2smd`, and the rest as needed.
    - Ethics: ethics-frameworks.md §11, the psychedelic-issues file, and borrowed codes.
    - Use the base rates in fda-pipeline.md §2c when someone treats an early result as certain.
-6. **Draft** from the template, within the length budget.
+6. **Draft** from the template, within the length budget. Run `scripts/word_budget.py` on the draft before step 7 and again after applying the CHECKER's fixes.
    - **Drafting consent, policy, or patient-facing text?** Load `one-way-optimal-language` if it is listed. It applies Blake's Adams-based rules for one-way medical text.
    - **Contract language?** Load `mscd-contracts` if it is listed.
-7. **Check.** Build a claims list of the ≤ 30 most decision-relevant claims and numbers. Run the CHECKER on it: a separate agent if possible (`references/subagent-briefs.md` §4). Add OPPOSING COUNSEL for contested conclusions. Apply the verdicts. Write the QC result in one line in the body; put the details in the appendix.
+7. **Check.** Build a claims list of the ≤ 30 most decision-relevant claims and numbers. Run the CHECKER on it: a separate agent if possible (`references/subagent-briefs.md` §4). Add OPPOSING COUNSEL for contested conclusions. Apply the verdicts. Write the QC result in one line in the body; put the details in the appendix. Report a claims check only if you wrote the claims list down (in the appendix or a work file); a check done only in your head is not a check.
 8. **Deliver.**
    - Produce the memo in the format the environment favors: a Docs artifact when that type is available; otherwise a document file.
    - Save a Google Doc copy to the "Medical Ethics Research" Drive folder unless Blake says otherwise ("MER Memo - <slug> - <date>"; `create_file`, `text/plain`, conversion on).
@@ -128,6 +131,7 @@ Blake follows Ken Adams's *Manual of Style for Contract Drafting* (5th ed.) and 
 | `references/psychedelics-pharmacology.md` | Mechanisms, durations, safety, interactions, legal status, rating scales |
 | `references/statistics-appraisal.md` | Absolute vs relative risk, NNT, CIs and p-values, MCID, missing data, multiplicity, meta-analysis, diagnostics, priors, calculator recipes |
 | `references/trial-design.md` | Question-to-design matching, every major randomized and observational design with its failure modes, a table of suboptimal design → consequence → direction of bias, the optimal psychedelic trial, a seven-step design audit |
+| `references/citation-appraisal.md` | Evidence that citation errors are common; which citations are critical; the eight-step citation audit; fidelity verdicts; the tool for each cited design (RoB 2, ROBINS-I v1 and v2, ROBINS-E, QUADAS-2, PROBAST+AI, AMSTAR 2, GRADE) and their overall-judgement rules; venue and conflict checks; Crossref lookups for retractions; the three retracted MDMA papers |
 | `references/study-design-flaws.md` | Bias catalog, psychedelic design problems, CONSORT/SPIRIT 2025, RoB 2, ROBINS-I V2, GRADE, spin |
 | `references/ethics-frameworks.md` | Theories, principlism, research regulations, consent and capacity, psychiatry and therapy ethics, landmark cases, the analysis method |
 | `references/psychedelic-ethics-issues.md` | Consent under altered states (Smith & Sisti; Caporuscio), touch, the MAPS/Buisson case, the hype and voucher debate, access, Indigenous reciprocity, commercialization, **the JAMA consensus statement's 20 points and the 2026 JAMA EO Viewpoint (§14)** |
@@ -138,6 +142,8 @@ Blake follows Ken Adams's *Manual of Style for Contract Drafting* (5th ed.) and 
 | `references/ledger-protocol.md` | Drive ledger and knowledge-base mechanics (tested 2026-11-09) |
 | `references/subagent-briefs.md` | Role prompts and merging |
 | `scripts/risk_calc.py` | `binary` (with the framing table), `orrr`, `diagnostic`, `smd`, `frequencies`, `pctcheck`, `ci2smd`, **`blinding`, `bayes`, `evalue`, `retrodesign`, `meta`, `smd2nnt`** (advanced methods in `scripts/appraisal_advanced.py`; `--json` available; recipes in statistics-appraisal.md §18–19) |
+| `scripts/appraise_citations.py` | `worksheet` (extracts DOI, PMID, PMCID, NCT, and arXiv IDs, flags preprints, and lists the Crossref, PubMed, and registry URLs to fetch with WebFetch), `rob2`, `robins-i`, `amstar2`, `grade` (each prints the published rule it applied) |
+| `scripts/word_budget.py` | Counts body words (everything before the sources list or an appendix) against the mode budget; exit 1 when over |
 | `assets/` | Memo template, ledger template (CSV), knowledge-base source template |
 
 ## 9. Contingencies
