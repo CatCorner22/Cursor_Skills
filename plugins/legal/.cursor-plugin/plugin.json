@@ -1,6 +1,6 @@
 {
   "name": "legal",
   "version": "1.0.0-snapshot",
-  "description": "Contract review, redlines, comments and drafting to MSCD5 with Blake's house style, plus one-way medical text (policies, SOPs, patient materials) in active voice. Skills are manual.",
+  "description": "Contract review, redlines, comments and drafting to MSCD5 with Blake's house style, plus one-way medical text (policies, SOPs, patient materials) in active voice, plus Blake's living list of ambiguous words to avoid. Skills are manual.",
   "skills": "skills"
 }

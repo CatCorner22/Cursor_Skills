@@ -76,8 +76,8 @@ PACK_BLURBS = {
     ),
     "legal": (
         "Legal and one-way text (MSCD)",
-        "Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style; draft and review one-way medical text (policies, SOPs, patient materials) in active voice.",
-        "Mention when working on contract language, or on medical, pharmacy, or research text that readers can't ask questions about.",
+        "Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style; draft and review one-way medical text (policies, SOPs, patient materials) in active voice; screen any text against Blake's living list of ambiguous words to avoid.",
+        "Mention when working on contract language, on medical, pharmacy, or research text that readers can't ask questions about, or on any text for Blake that must carry one meaning.",
     ),
     "medical-ethics": (
         "Medical and research ethics",
