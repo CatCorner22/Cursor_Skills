@@ -53,7 +53,7 @@ Use per screen and per flow. Tick or note a fix. Evidence links are in files 01-
 
 ## F. Measure with people
 - [ ] 5 users per key segment, including AT users where relevant
-- [ ] Task success, time, errors; SUS or UEQ-S; NASA-TLX for heavy tasks (verify instrument source)
+- [ ] Task success, time, errors; SUS or UEQ-S; NASA-TLX for heavy tasks (instrument facts: [13](13-ux-research-methods-and-measurement.md))
 - [ ] Decision log of fixes and retests
 
 ---

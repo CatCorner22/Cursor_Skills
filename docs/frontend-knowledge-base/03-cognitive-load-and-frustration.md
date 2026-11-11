@@ -81,9 +81,9 @@ Source: https://www.w3.org/TR/coga-usable/ and https://www.w3.org/WAI/cognitive/
 
 | Method | Notes |
 |---|---|
-| **NASA-TLX** (public-domain NASA instrument) | Self-reported workload across six dimensions; widely used in HCI **(not searched this session; verify the current NASA source before citing)** |
-| **UEQ-S** | Short user experience questionnaire used in the 2026 AI-vs-human study (see frontend-design report) |
-| **SUS** | 10-item usability scale **(not searched this session)** |
+| **NASA-TLX** (public-domain NASA instrument) | Self-reported workload across six dimensions; 16-experiment development, six subscales; verified in [13](13-ux-research-methods-and-measurement.md) |
+| **UEQ-S** | Short UX questionnaire (8 items) from the UEQ family (six scales); used in the 2026 AI-vs-human study; details in [13](13-ux-research-methods-and-measurement.md) |
+| **SUS** | 10-item usability scale; average score about 68; see [13](13-ux-research-methods-and-measurement.md) (origin-date conflict noted) |
 | **Task success, time on task, errors, rage clicks, backtracking** | Behavioral signals from usability tests and analytics |
 | **Eye tracking: fixation counts and regressions** | Inline-validation study: 47% fewer fixations indicated easier processing |
 | **Think-aloud with 5 users per segment** | Cheap, qualitative |

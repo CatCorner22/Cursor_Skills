@@ -91,7 +91,7 @@
 10. **Unpaywall browser extension** surfaces legal free copies.
 11. **Federal Register and eCFR** for regulations; **regulations.gov** for public comments, which often cite research and user data.
 
-Suggested next reads (not yet ingested): NASA TLX original paper and NASA NTRS record, ACM CHI/ASSETS open-access accessibility papers, W3C WAI "Understanding" documents per criterion, NN/g articles on mobile eye tracking, HHS guidelines chapters 3, 6, 7, 11, 13 and 17.
+Suggested next reads (not yet ingested): ACM CHI/ASSETS open-access accessibility papers, W3C WAI "Understanding" documents per criterion, NN/g articles on mobile eye tracking, HHS guidelines chapters 3, 6, 7, 11, 13 and 17.
 
 ## G. Skeptical notes
 
@@ -102,3 +102,20 @@ Suggested next reads (not yet ingested): NASA TLX original paper and NASA NTRS r
 - **Secondary sources:** litigation counts and overlay claims come from secondary summaries (grade C/D); verify before citing in legal or business documents.
 - **Eye tracking** measures gaze, not understanding.
 - **I did not verify** all links resolve to free full text beyond what search results showed.
+
+## H. Sources added in files 09-17 (read via fetch or search excerpts, 2026-11-11)
+
+| Area | Sources | Grade | File |
+|---|---|---|---|
+| Visual design | Lindgaard et al. first impressions; Tractinsky; Reinecke et al.; Fogg credibility; NN/g aesthetic-usability; Piepenbrock dark/light polarity; W3C WCAG 2.3.x | A-/B | [09](09-visual-design-fundamentals.md) |
+| Design systems | DTCG Format Module 2025.10; Radix, React Aria, shadcn/ui, Tailwind docs; Storybook testing; Playwright snapshots; Deque automation coverage | A/C | [10](10-design-systems-and-tokens.md) |
+| Responsive/i18n | MDN container queries, `clamp()`, logical properties; Hoober touch research; NN/g target size, seniors, lower literacy; W3C i18n text expansion | A/B/C | [11](11-responsive-mobile-and-localization.md) |
+| Engineering | web.dev rendering and budgets; OWASP and MDN XSS/CSP/Trusted Types; Utz 2019; Mathur 2019; EDPB; CNIL; CPPA/GPC; Google Search docs | A/A-/C | [12](12-frontend-engineering-issues.md) |
+| Research methods | Nielsen 5 users; Faulkner 2003; NN/g critiques; Kohavi/Twyman on A/B; SUS, NASA-TLX (NASA, archive, NTRS), UEQ | B/A- | [13](13-ux-research-methods-and-measurement.md) |
+| WCAG check | [W3C WCAG overview](https://www.w3.org/WAI/standards-guidelines/wcag/), [What's New in 2.2](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/), [wai-wcag-quickref data](https://github.com/w3c/wai-wcag-quickref), [WCAG 3 WD](https://www.w3.org/TR/wcag-3.0/) | A | [14](14-inclusive-design-ai-ux-and-wcag-check.md) |
+| AI UX | [Amershi 2019](https://dl.acm.org/doi/fullHtml/10.1145/3290605.3300233); [Google PAIR](https://pair.withgoogle.com/guidebook); NN/g prompt structure, articulation barrier, chatbot guidelines | B/C | 14 |
+| Generated-code a11y | [W4A 2024 ChatGPT study](https://dl.acm.org/doi/full/10.1145/3677846.3677854); [arXiv 2501.03572](https://arxiv.org/abs/2501.03572); [CodeA11y 2502.10884](https://arxiv.org/html/2502.10884) | A-/B | 14 |
+| Prompting research | arXiv 2310.11324, 2406.06608, 2201.11903, 2205.11916, 2303.17651, 2310.01798, 2306.05685, 2307.03172, 2403.03163, 2507.09089, 2108.09293, 2211.03622, 2406.10279; Zheng 2024 and Principled Personas (ACL Anthology) | A-/B | [15](15-llm-prompting-for-frontend.md) |
+| Vendor/tool docs | Anthropic prompting, context engineering, frontend-design skill blog; OpenAI prompt engineering; Cursor rules; Claude Code memory; Figma MCP; Playwright MCP. **Gemini prompting docs not read.** | C | 15 |
+
+NASA-TLX is now ingested (file 13); the earlier "not yet ingested" note is resolved. Open gaps: [17](17-issues-and-open-problems.md).
