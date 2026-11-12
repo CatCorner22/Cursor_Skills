@@ -84,6 +84,13 @@
     }
 ,
     {
+      "name": "kimi",
+      "source": "./plugins/kimi",
+      "skills": "skills",
+      "description": "Moonshot Kimi API and Kimi Code CLI: reasoning, tools, caching, files, web research, agents. Skills are manual; ZIPs at dist/kimi/."
+    }
+,
+    {
       "name": "legal",
       "source": "./plugins/legal",
       "skills": "skills",
