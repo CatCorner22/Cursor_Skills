@@ -1,0 +1,6 @@
+{
+  "name": "kimi",
+  "version": "1.0.0-snapshot",
+  "description": "Moonshot Kimi API and Kimi Code CLI: reasoning, tools, caching, files, web research, agents. Skills are manual.",
+  "skills": "skills"
+}

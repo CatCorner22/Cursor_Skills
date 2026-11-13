@@ -24,6 +24,9 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Microsoft 365 (authored here, 7) | `skills/microsoft365/` | **Not vendored** — Word, Excel, PowerPoint, Outlook, Teams, OneDrive; compatible with M365 Copilot custom skills format | n/a | n/a |
 | Plaud (authored here, 8) | `skills/plaud/` | **Not vendored** — Plaud Note recorder workflows: capture, transcription, summaries, Ask Plaud, AutoFlow, lecture notes, export | n/a | n/a |
 | AI Transfer (authored here, 53) | `skills/ai-transfer/` | **Not vendored** — 45 loadable techniques (catalog #1–50, five merges) + 7 routers + primer; runtime `scripts/ai_plugin_bundle.py` (100 plugins). See `docs/AI-TRANSFER-SKILLS.md`; generator `scripts/generate-ai-transfer-skills.py` | n/a | n/a |
+| Kimi / Moonshot (authored here, 8) | `skills/kimi/` | **Not vendored** — platform-native skills for Kimi Open Platform API and Kimi Code CLI; packaged per skill as `dist/kimi/*.zip` via `scripts/package-kimi-skills.sh`. Docs: https://platform.kimi.ai/docs/llms.txt , https://www.kimi.com/code/docs/en/kimi-code-cli/customization/skills.html | n/a | n/a |
+
+**Inventory as of 2026-11-12:** 201 `SKILL.md` across 22 packs — includes kimi 8 (see README packs table for full breakdown).
 
 **Inventory as of 2026-08-27:** 189 `SKILL.md` across 19 packs — vercel 33, huggingface 26, langchain 12, adobe 10, ai-transfer 53, cursor-team-kit 8, coding 7, microsoft365 7, plaud 8, cursor-cloud 5, first-party 4, academic 4, craft 3, playwright 3, supabase 2, cursor-sdk 1, prompt-optimizer 1, pydantic-ai 1, projects 1.
 
