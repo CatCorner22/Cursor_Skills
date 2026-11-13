@@ -4,8 +4,11 @@ Built 2026-11-11. Every fact below came from a source I read in search results o
 
 ## Contents
 
+**Start with the consolidated [FRONTEND-MASTER-GUIDE.md](../FRONTEND-MASTER-GUIDE.md)** (executive summary, reading order, all chapters, prompts, checklists, source log, refreshed 2026-11-13). The files below are its deep dives.
+
 | File | Topic |
 |---|---|
+| [../FRONTEND-MASTER-GUIDE.md](../FRONTEND-MASTER-GUIDE.md) | Consolidated master guide (start here) |
 | [01-legal-and-compliance.md](01-legal-and-compliance.md) | US law and standards: ADA Title II, Section 508, HHS Section 504, ADA Title III, FTC dark patterns, WCAG 2.2 vs 3 |
 | [02-accessibility-engineering.md](02-accessibility-engineering.md) | How to build accessible UI: who is affected, the common failures, criterion-by-criterion practice, testing |
 | [03-cognitive-load-and-frustration.md](03-cognitive-load-and-frustration.md) | Working memory, cognitive load theory, Hick's law, COGA, forms, errors, dark patterns, frustration reducers |
@@ -26,9 +29,9 @@ Built 2026-11-11. Every fact below came from a source I read in search results o
 
 ## Top takeaways
 
-1. **Legal baseline in the US:** federal ICT (Section 508) requires WCAG 2.0 A/AA. State and local government web content and apps (ADA Title II) require WCAG 2.1 AA by **April 26, 2027** (population 50,000+) or **April 26, 2028** (smaller). HHS-funded recipients (Section 504): WCAG 2.1 AA by **May 11, 2027** (15+ employees) or **May 10, 2028**. Private businesses (ADA Title III) have no finalized web rule, but courts and DOJ settlements use WCAG as the benchmark. Build to **WCAG 2.2 AA**, which satisfies 2.1 and 2.0 AA.
+1. **Legal baseline in the US:** federal ICT (Section 508) requires WCAG 2.0 A/AA. State and local government web content and apps (ADA Title II) require WCAG 2.1 AA by **April 26, 2027** (population 50,000+) or **April 26, 2028** (smaller). HHS-funded recipients (Section 504): WCAG 2.1 AA by **May 11, 2027** (15+ employees) or **May 10, 2028**. Private businesses (ADA Title III) have no finalized web rule, but courts and DOJ settlements use WCAG as the benchmark. DOJ has said it may reopen the Title II rule, so recheck dates. Build to **WCAG 2.2 AA**, which satisfies 2.1 and 2.0 AA.
 2. **Accessibility is mainstream:** 1 in 4 US adults report a disability (CDC, 2022); cognition is the most common type (13.9%). About 1 in 12 men have color vision deficiency (NEI).
-3. **The web mostly fails:** 94.8% of the top 1M home pages had detectable WCAG failures in 2025; six issue types account for 96% of errors, led by low-contrast text (79.1%) (WebAIM Million 2025).
+3. **The web mostly fails:** 95.9% of the top 1M home pages had detectable WCAG failures in February 2026 (94.8% in 2025); six issue types account for 96% of errors, led by low-contrast text (79.1%) (WebAIM Million 2025).
 4. **Working memory is tiny:** about 4 chunks when rehearsal and chunking are controlled (Cowan 2001), not Miller's 7. Do not make people remember things across screens.
 5. **Choice costs time:** reaction time grows with the log of the number of alternatives (Hick-Hyman).
 6. **People scan, then leave the top:** in NN/g eye tracking, about 57% of viewing time was above the fold and 74% in the first two screenfuls (desktop, 2018). F-pattern is one of several scanning patterns and mostly appears when content lacks structure.

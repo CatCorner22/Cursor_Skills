@@ -50,3 +50,7 @@ Design rules that follow:
 - W3C WCAG 2.2: https://www.w3.org/TR/WCAG22/ and What's New: https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
 - USWDS accessibility: https://designsystem.digital.gov/documentation/accessibility/
 - plainlanguage.gov, digital.gov plain language guides
+
+## Refresh note (2026-11-13)
+
+DOJ has said it may reopen the Title II rule (secondary reporting; check the Federal Register and ADA.gov). EN 301 549 v3.2.1 is the harmonised EU standard; v4.1.1 exists and its citation status is unconfirmed. The FTC accessiBe order is a primary source (grade A). Consolidated view: [master guide, chapter 7](../FRONTEND-MASTER-GUIDE.md#7-accessibility-law-us-and-eu).

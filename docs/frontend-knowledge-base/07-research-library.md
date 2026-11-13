@@ -119,3 +119,7 @@ Suggested next reads (not yet ingested): ACM CHI/ASSETS open-access accessibilit
 | Vendor/tool docs | Anthropic prompting, context engineering, frontend-design skill blog; OpenAI prompt engineering; Cursor rules; Claude Code memory; Figma MCP; Playwright MCP. **Gemini prompting docs not read.** | C | 15 |
 
 NASA-TLX is now ingested (file 13); the earlier "not yet ingested" note is resolved. Open gaps: [17](17-issues-and-open-problems.md).
+
+## Refresh note (2026-11-13)
+
+Added in the 2026-11-13 refresh: CrUX release notes, FTC accessiBe order, WebAIM Million 2026 and survey #11, METR follow-up. Full graded list: [master guide, Appendix C](../FRONTEND-MASTER-GUIDE.md#appendix-c-source-log).

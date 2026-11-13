@@ -130,9 +130,9 @@ Scores are my estimates on a 1-5 scale. They are not measured. Confidence is mod
 | UX flow and information architecture | 3 | 3 | 4 | 5 |
 | Consistency across screens | 2.5 | 2.5 | 4 | 5 |
 | Content/microcopy | 2 | 2.5 | 3.5 | 5 |
-| **Average** | **2.4** | **3.0** | **3.9** | **4.9** |
+| **Average** | **2.3** | **3.0** | **3.9** | **4.95** |
 
-**Reading it:** default AI is ~49% of top human; AI with a good skill ~61%; best directed vibe-coded ~80%. Gap closure from default to best-directed: about **(3.9-2.4)/(4.9-2.4) = 60%** of the total distance, with most of the gain coming from process, not model choice.
+**Reading it:** default AI is ~47% of top human; AI with a good skill ~61%; best directed vibe-coded ~78%. Gap closure from default to best-directed: about **(3.86-2.32)/(4.95-2.32) = 59%** of the total distance, with most of the gain coming from process, not model choice.
 
 **What closes the gap, ranked by estimated impact (judgment):**
 1. Design tokens and a written system before any screen (type, color, space, radius, motion).
@@ -182,3 +182,7 @@ Scores are my estimates on a 1-5 scale. They are not measured. Confidence is mod
 - No controlled study of multi-screen consistency or long-lived products built by agents.
 - No peer-reviewed comparison of "with skill" vs "without skill" outputs with blind designer raters.
 - I did not run any of the plugins or models myself. Recommendations come from documentation and third-party reviews.
+
+## Refresh note (2026-11-13)
+
+The rubric averages above were corrected (the earlier 2.4 / 4.9 were arithmetic errors). The AI default "fingerprint" has also shifted: the official frontend-design skill now lists 2026 defaults (cream backgrounds, serif display type, terracotta accents) to avoid. See the [master guide, chapter 5](../FRONTEND-MASTER-GUIDE.md#5-why-llm-interfaces-converge-and-how-close-vibe-coded-work-can-get).
