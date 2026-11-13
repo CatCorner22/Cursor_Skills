@@ -100,3 +100,7 @@ Plain language, specific cause, a way forward, preserve user input, never blame 
 ## 10. Analytics ethics (partially researched)
 
 Verified only through the consent material above: nudged consent changes data you collect, so analytics from consent-gated users are a **biased sample**, and A/B tests need trustworthy instrumentation ([13](13-ux-research-methods-and-measurement.md)). Broader ethics (fingerprinting, dark analytics, retention) not researched.
+
+## Refresh note (2026-11-13)
+
+The vitals-and-ranking question is resolved to Google's wording: good vitals "aligns with what our core ranking systems seek to reward"; no weight is stated. Treat any ranking effect as modest and unquantified.

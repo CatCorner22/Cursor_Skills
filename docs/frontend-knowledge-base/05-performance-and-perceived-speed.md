@@ -80,3 +80,7 @@ Use field data for decisions: lab scores don't equal p75 user experience.
 - Respect `prefers-reduced-motion` and `prefers-reduced-data` where supported.
 - Timeouts need warnings and extensions (WCAG 2.2.1).
 - Large text, zoom, and forced-colors modes must not trigger layout shift or clipping.
+
+## Refresh note (2026-11-13)
+
+Core Web Vitals thresholds are unchanged (LCP 2.5 s, INP 200 ms, CLS 0.1 at p75). Chrome added experimental soft-navigation variants to CrUX and plans to include them from May 2027; in the latest CrUX release 56.3% of origins had good stable vitals. See [master guide, 11.2](../FRONTEND-MASTER-GUIDE.md#112-core-web-vitals-refreshed-2026-11-13-thresholds-unchanged).

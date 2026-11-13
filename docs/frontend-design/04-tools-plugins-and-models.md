@@ -117,3 +117,7 @@ Caveat: these giant models are API-first for most people. Self-hosting a multi-t
 6. Run Part 6 (states + accessibility), Part 8.1 and 8.3 (critique, anti-slop).
 7. Reuse system on remaining screens (Part 7).
 8. Final audit with Vercel `web-design-guidelines` and Lighthouse.
+
+## Refresh note (2026-11-13)
+
+Values re-checked 2026-11-13 (GitHub API, Hub, arena.ai 2026-11-11): Kimi K3.1 Pro about 2.78T parameters; DeepSeek-V4.1-Flash about 763B parameters (MIT); Qwen3.8-27B Apache-2.0; skill star counts and the updated frontend-design skill behavior are in [master guide, chapter 20](../FRONTEND-MASTER-GUIDE.md#20-tools-plugins-and-models), which supersedes numbers here if they differ.

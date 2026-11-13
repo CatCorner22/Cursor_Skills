@@ -115,3 +115,7 @@ Automated tools: Deque 57% by issue volume vs 16 of 50 criteria; Springer study 
 | [Human or LLM? (arXiv 2503.15885)](https://arxiv.org/html/2503.15885) | Compared GPT-4o and Qwen2.5-Coder with human-written code; I saw only a partial snippet. | unverified details |
 
 **Takeaway (judgment):** models are better than not-asking, worse than a reviewed result. State the accessibility bar in the prompt, use accessible primitives (Radix/React Aria), run automated checks, then do keyboard and screen-reader checks yourself. See [15](15-llm-prompting-for-frontend.md).
+
+## Refresh note (2026-11-13)
+
+WebAIM survey #11 supersedes #10 numbers. 2026 studies on the accessibility of LLM-generated code are mixed: basics are good, ARIA and interactive widgets are weak, and feedback loops and pattern grounding help (AXIS-Bench read at abstract level). See [master guide, 8.5](../FRONTEND-MASTER-GUIDE.md#85-accessibility-of-ai-generated-code).

@@ -114,3 +114,7 @@ Section 508 and USWDS both state that tool results need checking for accuracy an
 - Understanding 2.5.8: https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum (A)
 - CDC, NEI, WebAIM, USWDS links as above.
 - VA.gov heading guidance: https://design.va.gov/content-style-guide/plain-language/structure-your-content (B, federal agency)
+
+## Refresh note (2026-11-13)
+
+WebAIM Million 2026 (February 2026): 95.9% of home pages had detectable failures (94.8% in 2025); pages with ARIA again had more detected errors (correlation, not proof). WebAIM screen reader survey #11 supersedes #10. See [master guide, chapter 8](../FRONTEND-MASTER-GUIDE.md#8-accessibility-engineering).

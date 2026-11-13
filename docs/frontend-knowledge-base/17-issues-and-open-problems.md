@@ -59,3 +59,7 @@ Use this file to know what is **settled**, **contested**, or **not researched**.
 - [ ] Prefer replication or independent sources for vendor claims
 - [ ] Move items from section 3 to a file only after reading the primary source
 - [ ] Re-run the prompt eval ([15](15-llm-prompting-for-frontend.md) section 9) when the model changes
+
+## Refresh note (2026-11-13)
+
+Closed in the 2026-11-13 refresh: Gemini prompting docs (read via excerpts), Core Web Vitals ranking wording. Still open: see [master guide, section 24](../FRONTEND-MASTER-GUIDE.md#24-evidence-gaps-and-open-problems).

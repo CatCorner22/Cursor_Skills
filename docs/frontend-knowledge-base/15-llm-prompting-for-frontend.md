@@ -213,3 +213,7 @@ What changed and why: **scope** (users, success), **constraints** (stack, tokens
 - **Reliably useful:** clear specs with real content, examples, tokens/constraints, verification tools, small scoped tasks, evals, human review.
 - **Plausible but under-measured for UI:** steering text against generic design, rubric loops, persona framing, Figma/Playwright loops.
 - **Weak or unsupported:** "magic" prompt phrases, roles as accuracy boosters, trusting self-review without external signal, assuming generated code is secure or accessible.
+
+## Refresh note (2026-11-13)
+
+METR published a late-2025 follow-up whose results are unreliable and unsettled (see master guide 19.2). Gemini prompting docs were read via search excerpts: examples are recommended, and broad negative instructions can backfire. Generated-UI accessibility evidence is mixed (see file 14 note).

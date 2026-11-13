@@ -1,5 +1,7 @@
 # Frontend Design with LLMs: Research, Guide, and Prompt Kit
 
+Consolidated edition: [../FRONTEND-MASTER-GUIDE.md](../FRONTEND-MASTER-GUIDE.md) (these files are its deep dives).
+
 | File | What it is |
 |---|---|
 | [01-research-report.md](01-research-report.md) | Why LLM frontends look identical; quality spectrum from best human to worst AI; benchmarks; estimated gap to top human design; graded source log and skeptical notes |
