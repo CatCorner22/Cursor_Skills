@@ -17,7 +17,7 @@ Copied 2026-08-25T10:16:01Z from this Cloud Agent environment so plugin updates 
 | Prompt Optimizer | `skills/prompt-optimizer/` | https://github.com/getsentry/skills (`skills/prompt-optimizer/`) | `c2f99a5b04b4cd992ec3022d7c2c3e23e938d241` | n/a |
 | Pydantic AI | `skills/pydantic-ai/` | https://github.com/pydantic/pydantic-ai — shipped inside the `pydantic_ai_slim` PyPI wheel at `pydantic_ai/.agents/skills/` | `bfa8e9187b86aad7ec583665ab2743fadea458b1` (tag `v2.34.0`) | wheel sha256 `933acdd8139674df53e8453c1ccc39b08d6b1a80bf238d212bd6fed1d023c95d` |
 | LangChain (curated 12 of 22) | `skills/langchain/` | https://github.com/langchain-ai/langchain-skills (`config/skills/`) | `7f00812b2b8b3022f766a223db579dd381a23813` | n/a |
-| Coding (authored here, 7) | `skills/coding/` | **Not vendored** — deliverable-first engineering craft pack | n/a | n/a |
+| Coding (authored here, 8) | `skills/coding/` | **Not vendored** — deliverable-first engineering craft pack | n/a | n/a |
 | Projects (authored here, 1) | `skills/projects/` | **Not vendored** — project reference material, not capability skills. `nyx` is a character bible carried here so it loads and backs up with the library. | n/a | n/a |
 | Academic (authored here, 4+) | `skills/academic/` | **Not vendored** — college coursework pack: writing, citations, study system (expanding) | n/a | n/a |
 | Craft (authored here, 3) | `skills/craft/` | **Not vendored** — OODA×lean, mise en place, operational craft meta-layer | n/a | n/a |

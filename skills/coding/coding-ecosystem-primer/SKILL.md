@@ -17,6 +17,7 @@ Pick the **smallest set of skills** that covers the task. This pack is **stack-a
 | Code is verbose, muddy, or over-abstracted | **`clean-minimal-code`** |
 | Fragile coupling, hard to change, "house of cards" | **`stable-architecture`** |
 | Need tests while coding, TDD, watch mode, "verify as you go" | **`real-time-testing`** |
+| Multi-session Claude Code build that keeps ending "done" with bugs; enforce checks with hooks | **`verified-build-loop`** |
 | Components, layout, design tokens, Tailwind/shadcn/Radix | **`ui-engineering`** → then `shadcn`/`nextjs` if Next.js |
 | Flows, usability, a11y, empty/error/loading states | **`ux-engineering`** |
 | React/Next **performance** only (waterfalls, bundle size) | **`react-best-practices`** (not this pack) |

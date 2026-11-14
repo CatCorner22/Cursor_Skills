@@ -2,7 +2,7 @@
 
 Versioned snapshot of every skill loaded in the Cloud Agent session that reviewed them, plus a line-by-line review.
 
-- **Snapshot:** [skills/](skills/) — 201 `SKILL.md` files across 22 packs
+- **Snapshot:** [skills/](skills/) — 202 `SKILL.md` files across 22 packs
 - **Kimi (Moonshot):** [skills/kimi/](skills/kimi/) — 8 Kimi-optimized skills; installable ZIPs at [dist/kimi/](dist/kimi/) via `scripts/package-kimi-skills.sh`
 - **AI-transfer reference:** [docs/AI-TRANSFER-SKILLS.md](docs/AI-TRANSFER-SKILLS.md) — 45 loadable cross-domain techniques (catalog #1–50) plus a 100-plugin runtime at `scripts/ai_plugin_bundle.py` (Cursor Cloud, Vercel, Hugging Face, LangChain, Adobe, Supabase, Cursor Team Kit, Playwright, Cursor SDK, Pydantic AI, Prompt Optimizer, **Coding**, **Academic**, **Microsoft 365**, **Plaud**, **Projects**, plus four first-party skills authored here). Provenance in [skills/SOURCE.md](skills/SOURCE.md).
 - **Frontend master guide (start here):** [docs/FRONTEND-MASTER-GUIDE.md](docs/FRONTEND-MASTER-GUIDE.md) — one consolidated, refreshed guide: why LLM UIs converge, accessibility law and engineering, cognitive load, performance, visual design, prompting, tools, audit checklist and prompts, source log. The two folders below are its deep dives.
@@ -35,7 +35,7 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 | [Cursor SDK](skills/cursor-sdk/) | 1 | Driving Cursor agents from code (`@cursor/sdk`) — CI, scripts, backends |
 | [Prompt Optimizer](skills/prompt-optimizer/) | 1 | Authoring and optimizing prompt text itself — layering, few-shot, eval slices |
 | [Pydantic AI](skills/pydantic-ai/) | 1 | Python agent framework — typed deps/outputs, tools, streaming |
-| [Coding](skills/coding/) | 7 | Deliverable-first, clean minimal code, stable architecture, real-time testing, UI/UX engineering |
+| [Coding](skills/coding/) | 8 | Deliverable-first, clean minimal code, stable architecture, real-time testing, UI/UX engineering; `verified-build-loop` — sets up an enforced Claude Code build loop (spec and feature list, Stop/PreToolUse/PostToolUse hooks that block stopping until checks pass and block weakening tests, read-only reviewer subagent); ships the hook scripts and their tests |
 | [Academic](skills/academic/) | 4 | College coursework router, writing, citations, study system |
 | [Craft](skills/craft/) | 3 | OODA×lean loops, mise en place, operational craft router |
 | [Microsoft 365](skills/microsoft365/) | 7 | Word, Excel, PowerPoint, Outlook, Teams, OneDrive — Copilot-compatible SKILL.md format |
@@ -45,6 +45,6 @@ Versioned snapshot of every skill loaded in the Cloud Agent session that reviewe
 | [Legal](skills/legal/) | 3 | `mscd-contracts` — review, redline (Word tracked changes), comment on, and draft contracts to Ken Adams's *A Manual of Style for Contract Drafting* (5th ed.) and his blog, with Blake's house style; ships a rule database, a lint script, and evals. `one-way-optimal-language` — draft, review, or rewrite one-way medical, pharmacy, and research text (policies, SOPs, ethics codes, patient handouts, labels, consent forms, notices) to MSCD-based rules with every clause in active voice; ships an active-voice checker, its test sets, and the research behind the rules. `unambiguous-language` — Blake's always-on language rules for any text: active voice, *might* for possibility, and a living, sourced list of ambiguous words to avoid (contronyms, *bi-* frequency words, MSCD strike-list phrases) with precise replacements and a seven-step check |
 | [Medical ethics](skills/medical-ethics/) | 1 | `medical-ethics-research` — research manager for medical, psychiatric, therapy, and research ethics, psychedelics and the FDA pipeline, and trial statistics (absolute vs relative risk, NNT, CIs, design flaws); ships a 16-file knowledge base (incl. international access, trial design, psychedelic history and substances, patient-protection codes, ethics philosophy), a 13-subcommand stdlib statistics calculator (incl. blinding indexes, Bayesian reanalysis, E-values, retrodesign, meta-analysis), a Google Drive ledger protocol, and evals |
 | [Projects](skills/projects/) | 1 | Project reference material, not capability skills — `nyx` character bible with reference sheets |
-| **Total** | **201** | reconciles with `find skills -name SKILL.md \| wc -l` |
+| **Total** | **202** | reconciles with `find skills -name SKILL.md \| wc -l` |
 
 `vercel-agent` (pure product/pricing reference, no procedure) was removed from the Vercel pack. The LangChain pack is 12 of 22 upstream skills, and Cursor Team Kit 8 of 18 — see [skills/SOURCE.md](skills/SOURCE.md) for what was cut and why, and for the cross-pack trigger deconfliction applied to `vercel/ai-sdk` and `vercel/build-agents` so they stop steering off other packs' frameworks.

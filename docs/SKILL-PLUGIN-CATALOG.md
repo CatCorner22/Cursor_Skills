@@ -6,13 +6,24 @@ Regenerate with `python3 scripts/apply-activation-policy.py --catalog-only`.
 ## Activation policy
 
 - **Always on (1):** `proactive-agency` — `metadata.sessionStart: true`. Injected every session so the agent does the work instead of describing it.
-- **Manual (192):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.
-- **Cursor plugin packs (21):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.
+- **Manual (193):** every other Cursor skill. Frontmatter `disable-model-invocation: true`. The model will not auto-invoke these; mention the skill by name, attach it, or ask for that capability explicitly.
+- **Cursor plugin packs (22):** installed wrappers. They do not run themselves. Enabling a pack only makes its skills *available*; those skills stay manual except `proactive-agency`.
 - **Python runtime plugins (100):** a separate pipeline in `scripts/ai_plugin_bundle.py`. Not Cursor skills. Default tier considers catalog #1–50 plus orchestrator utilities; security scanners and the rest stay off unless you pass `--enable-all` or `enabled_plugins`.
 
 How to invoke a manual skill: say the skill name (`` `nextjs` ``), ask for the job it covers, or attach the `SKILL.md` in Cursor.
 
-**Counts:** 193 Cursor skills, 21 plugin packs, 100 runtime plugins.
+**Counts:** 202 Cursor skills, 22 plugin packs, 100 runtime plugins.
+
+### Activation anomalies
+
+- `kimi-agent-builder` in `kimi`: Manual (flag missing — treat as manual)
+- `kimi-api-fundamentals` in `kimi`: Manual (flag missing — treat as manual)
+- `kimi-code-plugin-authoring` in `kimi`: Manual (flag missing — treat as manual)
+- `kimi-context-cost-batch` in `kimi`: Manual (flag missing — treat as manual)
+- `kimi-files-vision` in `kimi`: Manual (flag missing — treat as manual)
+- `kimi-reasoning-thinking` in `kimi`: Manual (flag missing — treat as manual)
+- `kimi-tool-orchestration` in `kimi`: Manual (flag missing — treat as manual)
+- `kimi-web-research` in `kimi`: Manual (flag missing — treat as manual)
 
 ## Cursor plugin packs
 
@@ -23,13 +34,14 @@ Each pack is a Cursor plugin under `plugins/<pack>/` (and `~/.cursor/plugins/loc
 | `academic` (4) — College coursework | Writing, citations, and a study system for class assignments. | Mention when doing homework, papers, citations, or exam prep. | Installed wrapper — skills inside are Manual |
 | `adobe` (10) — Adobe App Builder / Workfront | Runtime actions, UI extensions, CI/CD, testing, and Workfront apps. | Mention when scaffolding or shipping an App Builder or Workfront extension. | Installed wrapper — skills inside are Manual |
 | `ai-transfer` (53) — AI-transfer techniques | Cross-domain quality gates ported from other crafts (accounting, aviation, chess, etc.). | Mention a technique or router when you want a specific verification or pipeline gate. | Installed wrapper — skills inside are Manual |
-| `coding` (7) — Software craft | Deliverable-first engineering, architecture, UI/UX, and test-while-coding. | Mention when writing or reviewing application code, not vendor-platform docs. | Installed wrapper — skills inside are Manual |
+| `coding` (8) — Software craft | Deliverable-first engineering, architecture, UI/UX, and test-while-coding. | Mention when writing or reviewing application code, not vendor-platform docs. | Installed wrapper — skills inside are Manual |
 | `craft` (3) — Operational craft | Human mise en place and OODA×lean loops; routes into domain packs. | Mention for workspace prep or a decide-act loop — not AI pipeline preflight. | Installed wrapper — skills inside are Manual |
 | `cursor-cloud` (5) — Cursor Cloud Agents | Environment setup, snapshots, subscriptions, canvases, walkthroughs. | Mention when configuring or debugging a Cloud Agent environment. | Installed wrapper — skills inside are Manual |
 | `cursor-sdk` (1) — Cursor SDK | Drive Cursor agents from code (CI, scripts, backends). | Mention when automating Cursor via @cursor/sdk. | Installed wrapper — skills inside are Manual |
 | `cursor-team-kit` (8) — GitHub PR workflow | Branches, PR reviews, CI loops, merge conflicts, shipping. | Mention when opening, reviewing, or landing a GitHub pull request. | Installed wrapper — skills inside are Manual |
 | `first-party` (4) — First-party library skills | Always-on execution posture plus library audit, smolagents, and v0. | proactive-agency is always on. Mention the others by name. | Installed wrapper; `proactive-agency` inside is Always on, other skills Manual |
 | `huggingface` (26) — Hugging Face Hub | Models, datasets, Spaces, training, Gradio, SageMaker, Hub CLI. | Mention when working on Hugging Face models, Spaces, or training jobs. | Installed wrapper — skills inside are Manual |
+| `kimi` (8) — kimi | Skill pack kimi. | Mention a skill from `kimi`. | Installed wrapper — skills inside are Manual |
 | `langchain` (12) — LangChain / LangGraph | Agents, RAG, persistence, human-in-the-loop, Deep Agents, LangSmith evals. | Mention when building or debugging LangChain or LangGraph apps. | Installed wrapper — skills inside are Manual |
 | `legal` (3) — Legal and one-way text (MSCD) | Review, redline, comment on, and draft contracts to Ken Adams's MSCD5 and Blake's house style; draft and review one-way medical text (policies, SOPs, patient materials) in active voice; screen any text against Blake's living list of ambiguous words to avoid. | Mention when working on contract language, on medical, pharmacy, or research text that readers can't ask questions about, or on any text for Blake that must carry one meaning. | Installed wrapper — skills inside are Manual |
 | `medical-ethics` (1) — Medical and research ethics | Research manager for medical, psychiatric, therapy, and research ethics, psychedelics and the FDA pipeline, and trial statistics; ships a calculator, a knowledge base, and evals. | Mention when appraising a study or press release, reviewing a consent form or protocol, or asking an ethics or psychedelic-pipeline question. | Installed wrapper — skills inside are Manual |
@@ -145,6 +157,7 @@ Deliverable-first engineering, architecture, UI/UX, and test-while-coding. Menti
 | `stable-architecture` | Design code that avoids houses of cards: clear module boundaries, dependency direction, fail-fast invariants, and replaceable adapters | Use when structuring a feature, splitting services, reviewing coupling, or when changes in one file break unrelated areas. Scope boundary: line-level clarity → `clean-minimal-code`; defining what done looks like → `deliverable-first`; running tests while editing → `real-time-testing`. | Manual |
 | `ui-engineering` | Modern UI implementation: component composition, design tokens, Tailwind/shadcn/Radix stacks, responsive layout, and accessible markup foundations | Use when building or refactoring UI components, pages, design systems, or styling. Scope boundary: React/Next render performance → `react-best-practices`; shadcn CLI install and registries → `shadcn`; App Router data fetching and RSC → `nextjs`; UX flows and copy → `ux-engineering`. | Manual |
 | `ux-engineering` | User experience engineering: task flows, Nielsen heuristics, loading/empty/error patterns, accessibility (WCAG-oriented), microcopy, and feedback loops | Use when designing or reviewing screens, forms, onboarding, or when the user mentions UX, usability, a11y, accessibility, or user flow. Scope boundary: component implementation and Tailwind/shadcn structure → `ui-engineering`; React render performance → `react-best-practices`; full browser E2E proof → `verification`/`playwright-cli`. | Manual |
+| `verified-build-loop` | Sets up and repairs an enforced build loop in a Claude Code project - a written definition of done, pass-or-fail checks, hooks that block Claude from stopping until the checks pass and from weakening tests, and a read-only reviewer subagent | Use when the user invokes /verified-build-loop to start or repair a multi-session build. | Manual |
 
 ### `craft` — Operational craft
 
@@ -234,6 +247,21 @@ Models, datasets, Spaces, training, Gradio, SageMaker, Hub CLI. Mention when wor
 | `train-sentence-transformers` | Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder; dense or static embedding model; for retrieval, similarity, clustering, classification, paraphrase mining, dedup, multimodal), `CrossEncoder` (reranker; pair scoring for two-stage retrieval / pair classification), and `SparseEncoder` (SPLADE, sparse embedding model; for learned-sparse retrieval) | Covers loss selection, hard-negative mining, evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. Use for any sentence-transformers training task. | Manual |
 | `transformers-js` | Use Transformers.js to run state-of-the-art machine learning models directly in JavaScript/TypeScript | Supports NLP (text classification, translation, summarization), computer vision (image classification, object detection), audio (speech recognition, audio classification), and multimodal tasks. Works in browsers and server-side runtimes (Node.js, Bun, Deno) with WebGPU/WASM using pre-trained models from Hugging Face Hub. | Manual |
 | `trl-training` | Train and fine-tune transformer language models locally with the TRL CLI (SFT, DPO, GRPO, KTO, RLOO, Reward Model) | For managed Hugging Face Jobs, use huggingface-llm-trainer and hf-cli instead. | Manual |
+
+### `kimi` — kimi
+
+
+
+| Skill | What it is for | When to use | Activation |
+|---|---|---|---|
+| `kimi-agent-builder` | Build a runnable Kimi K3 agent — streaming tool loop, official and custom tools, structured output, and integration hygiene | Mention this skill by name when you need it. | Manual (flag missing — treat as manual) |
+| `kimi-api-fundamentals` | Moonshot Kimi API bootstrap — API keys, base URLs, model choice, OpenAI/Anthropic compatibility, and common errors | Mention this skill by name when you need it. | Manual (flag missing — treat as manual) |
+| `kimi-code-plugin-authoring` | Author Kimi Code CLI plugins and Agent Skills — kimi.plugin.json, SKILL.md frontmatter, ZIP packaging, sessionStart, and MCP hooks | Mention this skill by name when you need it. | Manual (flag missing — treat as manual) |
+| `kimi-context-cost-batch` | Kimi API cost control — context caching TTL, stable prefixes, token estimation, and Batch API for async bulk inference | Mention this skill by name when you need it. | Manual (flag missing — treat as manual) |
+| `kimi-files-vision` | Kimi multimodal inputs — Files API extraction, image and video in chat, and multi-file question answering | Mention this skill by name when you need it. | Manual (flag missing — treat as manual) |
+| `kimi-reasoning-thinking` | Kimi thinking models — reasoning_effort, reading reasoning_content, streaming order, and Preserved Thinking across multi-turn and tool calls | Mention this skill by name when you need it. | Manual (flag missing — treat as manual) |
+| `kimi-tool-orchestration` | Kimi K3 tool calling at scale — dynamic tool loading, tool_choice, search_tools pattern, prefix cache, and fixing repeated tool calls | Mention this skill by name when you need it. | Manual (flag missing — treat as manual) |
+| `kimi-web-research` | Kimi web research — Web Search Basic vs Pro, URL fetch, official tools in chat, and cost-aware query design | Mention this skill by name when you need it. | Manual (flag missing — treat as manual) |
 
 ### `langchain` — LangChain / LangGraph
 
